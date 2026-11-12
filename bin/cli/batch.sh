@@ -2,7 +2,7 @@
 # Batch-run MLE-bench tasks listed in one or more subset files.
 #
 # Subset files contain one competition id per line; blank lines and lines
-# starting with '#' are ignored. Files are resolved from experiments/subsets/
+# starting with '#' are ignored. Files are resolved from subsets/
 # first, then from the repo root.
 set -euo pipefail
 
@@ -14,7 +14,7 @@ if in_container; then
   exit 1
 fi
 
-SUBSET_DIR="$ROOT/experiments/subsets"
+SUBSET_DIR="$ROOT/subsets"
 TASK_FILES=()
 AGENT_COUNT="${SWARM_AGENTS:-3}"
 HOURS="${SWARM_HOURS:-12}"
@@ -38,7 +38,7 @@ usage:
 
 options:
   --subset FILE         subset file (repeatable); a bare name resolves under
-                        experiments/subsets/ (with or without .txt)
+                        subsets/ (with or without .txt)
   --agents N            parallel agent sessions per task (default: 3)
   --hours H             wall-clock budget per task in hours (default: 12)
   --model M             opencode model (default: deepseek/deepseek-flash)
@@ -50,7 +50,7 @@ options:
   --no-save             disable automatic saving to results/
   --fail-fast           stop after the first failed task
   --dry-run             print the resolved task list and exit
-  --list                list available files in experiments/subsets/
+  --list                list available files in subsets/
   -h, --help            show this help
 
 The batch runs tasks sequentially: clean -> prepare_data -> swarm up ->
@@ -115,7 +115,7 @@ resolve_subset() {
       return 0
     fi
   done
-  die "subset file not found: $raw (looked in experiments/subsets/ and repo root)"
+  die "subset file not found: $raw (looked in subsets/ and repo root)"
 }
 
 TASKS=()

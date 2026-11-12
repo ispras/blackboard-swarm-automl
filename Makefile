@@ -4,7 +4,7 @@ AGENTS ?= 3
 HOURS ?= 12
 MODEL ?= deepseek/deepseek-flash
 PROMPT ?= prompts/PROMPT_SWARM.md
-SUBSET ?= experiments/subsets/lite10.txt
+SUBSET ?= subsets/lite10.txt
 
 .PHONY: help build build-min up batch status logs down clean toy-prepare toy-grade analysis shell
 
@@ -12,7 +12,7 @@ help:
 	@echo "make build        - build full swarm + tools images"
 	@echo "make build-min    - build light images for the offline toy example"
 	@echo "make up           - start the swarm (needs a prompt/model; use bin/cli/swarm.sh directly)"
-	@echo "make batch        - run the tasks from SUBSET sequentially (default: experiments/subsets/lite10.txt)"
+	@echo "make batch        - run the tasks from SUBSET sequentially (default: subsets/lite10.txt)"
 	@echo "make status       - show Docker and swarm state"
 	@echo "make logs         - follow swarm/grader logs"
 	@echo "make down         - stop swarm and grader"

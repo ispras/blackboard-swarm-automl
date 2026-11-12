@@ -123,7 +123,7 @@ and 32 CPU cores; a GPU run additionally requires
 
 ```bash
 # Run the ten-task subset sequentially (lite10 = the paper subset):
-make batch SUBSET=experiments/subsets/lite10.txt
+make batch SUBSET=subsets/lite10.txt
 
 # Rebuild the post-run analysis (citation graph, message metrics, costs):
 make analysis
@@ -241,7 +241,7 @@ seconds.
 ## Experiments and results
 
 The paper evaluates the swarm on a ten-task subset of MLE-Bench
-([`experiments/subsets/lite10.txt`](experiments/subsets/lite10.txt)), balanced across
+([`subsets/lite10.txt`](subsets/lite10.txt)), balanced across
 complexity (3 high, 4 medium, 3 low) and task category. Each task is run three times
 with fresh agents, empty blackboards, and a 12-hour budget, for 30 task-runs total.
 Scoring uses the official MLE-Bench grading on held-out test labels.
@@ -268,7 +268,7 @@ compose.gpu.yaml     NVIDIA GPU reservation override
 docker/              Dockerfile with swarm/tools/swarm-min/tools-min stages
 prompts/             Single-agent baseline and swarm protocol prompts
 examples/            Offline toy example (toy-spaceship dataset + baseline submission)
-experiments/         Task subsets (dev, low, high, lite10)
+subsets/             Task subsets (dev, low, high, lite10)
 paper/               LaTeX source of the paper and the analysis pipeline/artifacts
 sandbox/             Runtime state per run: blackboard, workspaces, final_solution, analysis
 costs/, results/     Token costs and saved results produced by runs

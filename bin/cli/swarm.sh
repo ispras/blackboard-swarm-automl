@@ -33,7 +33,7 @@ up:
 
 batch:
   --subset FILE         subset file (repeatable); bare names resolve under
-                        experiments/subsets/
+                        subsets/
   --list                list available subset files
   all other up flags (--agents, --hours, --model, --prompt, --gpus) apply per task;
   see bin/cli/batch.sh --help for --no-clean/--no-prepare/--no-save/--fail-fast/--dry-run.
