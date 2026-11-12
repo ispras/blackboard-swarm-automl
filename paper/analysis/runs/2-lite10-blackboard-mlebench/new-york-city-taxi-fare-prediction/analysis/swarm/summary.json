@@ -1,0 +1,314 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "label": "new-york-city-taxi-fare-prediction",
+  "metric": "root-mean-squared-error",
+  "is_lower_better": true,
+  "final_score": 3.85714,
+  "thresholds": {
+    "gold": 2.83377,
+    "silver": 2.88191,
+    "bronze": 2.92371,
+    "median": 3.59741
+  },
+  "messages": {
+    "agent": 70,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 2,
+    "without_metric": 47,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 70,
+    "edges": 84,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 15,
+    "mean_depth_all": 4.142857142857143,
+    "mean_depth_linked": 6.170212765957447,
+    "longest_path": [
+      "dubhe_tau_gpu_shared_d15.md",
+      "deneb_phi_seedbag_gpu_taken.md",
+      "deneb_phi_lgb_v3te_excluded_seedbag.md",
+      "procyon_alpha_extra_methods_negative.md",
+      "procyon_alpha_final_verification.md",
+      "deneb_phi_package_synced_6member.md",
+      "dubhe_tau_final_weights_res.md",
+      "deneb_phi_residual_te_insight.md",
+      "dubhe_tau_te_breakthrough_interim_sub.md",
+      "deneb_phi_catboost_and_route_negative.md",
+      "deneb_phi_lgb_big_result.md",
+      "deneb_phi_feature_store_ready.md",
+      "dubhe_tau_ack_gpu_lane.md",
+      "procyon_alpha_dedupe_plan.md",
+      "dubhe_tau_intro_and_plan.md",
+      "procyon_alpha_intro.md"
+    ],
+    "max_indegree": 5,
+    "hubs": [
+      {
+        "name": "deneb_phi_lgb_baseline_and_fallback.md",
+        "agent": "deneb",
+        "in_degree": 5,
+        "depth": 7,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-11-04T01:31:15+03:00"
+      },
+      {
+        "name": "procyon_alpha_v2_full_running_blend.md",
+        "agent": "procyon",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "plan",
+          "status"
+        ],
+        "time": "2026-11-04T02:23:51+03:00"
+      },
+      {
+        "name": "deneb_phi_feature_store_ready.md",
+        "agent": "deneb",
+        "in_degree": 4,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "feature_engineering",
+          "plan",
+          "status"
+        ],
+        "time": "2026-11-04T01:17:30+03:00"
+      },
+      {
+        "name": "dubhe_tau_te_breakthrough_interim_sub.md",
+        "agent": "dubhe",
+        "in_degree": 4,
+        "depth": 7,
+        "tags": [
+          "communication",
+          "ensembling",
+          "feature_engineering",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T02:53:30+03:00"
+      },
+      {
+        "name": "deneb_phi_catboost_and_route_negative.md",
+        "agent": "deneb",
+        "in_degree": 3,
+        "depth": 6,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-11-04T02:19:14+03:00"
+      },
+      {
+        "name": "dubhe_tau_final_weights_res.md",
+        "agent": "dubhe",
+        "in_degree": 3,
+        "depth": 9,
+        "tags": [
+          "communication",
+          "ensembling",
+          "feature_engineering",
+          "postprocessing",
+          "submission"
+        ],
+        "time": "2026-11-04T04:24:59+03:00"
+      },
+      {
+        "name": "deneb_phi_package_synced_nn3.md",
+        "agent": "deneb",
+        "in_degree": 3,
+        "depth": 1,
+        "tags": [
+          "communication",
+          "ensembling",
+          "final",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T06:15:58+03:00"
+      }
+    ],
+    "submission_count": 29,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      15
+    ],
+    "final_submission": {
+      "name": "procyon_alpha_final_phase_confirmed.md",
+      "time": "2026-11-04T12:50:54+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 10,
+      "mean": 0.05205600000000001,
+      "median": -0.004349999999999854,
+      "positive": 0.4,
+      "max": 0.6290499999999999
+    },
+    "transitive": {
+      "n": 12,
+      "mean": -0.05627916666666669,
+      "median": -0.06849499999999997,
+      "positive": 0.4166666666666667,
+      "max": 0.6290499999999999
+    },
+    "prev_linked": {
+      "n": 14,
+      "mean": -0.19457928571428568,
+      "median": -0.220275,
+      "positive": 0.14285714285714285,
+      "max": 0.6290499999999999
+    },
+    "prev_unlinked": {
+      "n": 8,
+      "mean": -0.447405,
+      "median": -0.5880000000000001,
+      "positive": 0.0,
+      "max": -0.14966999999999997
+    },
+    "perm_prev": {
+      "diff": 0.2528257142857143,
+      "p": 0.062493750624937505
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 314.0
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 314.0
+      }
+    },
+    "broad": {
+      "n_events": 7,
+      "direct": {
+        "events": 7,
+        "adopted": 6,
+        "rate": 0.8571428571428571,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.8333333333333333,
+        "median_seconds": 328.5
+      },
+      "transitive": {
+        "events": 7,
+        "adopted": 6,
+        "rate": 0.8571428571428571,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.8333333333333333,
+        "median_seconds": 328.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 3,
+      "direct": {
+        "events": 3,
+        "adopted": 2,
+        "rate": 0.6666666666666666,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 314.0
+      },
+      "transitive": {
+        "events": 3,
+        "adopted": 3,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 2,
+        "median_seconds": 490.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 1,
+      "rate": 0.5,
+      "median_msgs": 5,
+      "median_seconds": 962.0,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 1,
+      "rate": 0.5,
+      "median_msgs": 5,
+      "median_seconds": 962.0,
+      "different_author": 1
+    },
+    "problem_authors": {
+      "dubhe": 1,
+      "procyon": 1
+    },
+    "recovery_authors": {
+      "deneb": 1
+    }
+  }
+}

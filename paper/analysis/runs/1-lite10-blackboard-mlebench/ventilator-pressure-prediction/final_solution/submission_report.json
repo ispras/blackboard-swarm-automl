@@ -1,0 +1,123 @@
+{
+  "models": [
+    {
+      "name": "dubhe_blstm512ft5",
+      "val": "workspaces/dubhe_phi/preds/val_seed42_pred_blstm512ft5.csv",
+      "test": "workspaces/dubhe_phi/preds/test_blstm512ft5full.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "dubhe_blstm512ft3",
+      "val": "workspaces/dubhe_phi/preds/val_seed42_pred_blstm512ft3.csv",
+      "test": "workspaces/dubhe_phi/preds/test_blstm512ft3full.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c2_lstm3x512_refE2",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_refE2.csv",
+      "test": "workspaces/sirius_tau/runs/c2_lstm3x512_refE2_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c2_lstm3x512_s777",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_s777.csv",
+      "test": "workspaces/sirius_tau/runs/c2_lstm3x512_s777_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c3_lstm3x512_s888",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm3x512_s888.csv",
+      "test": "workspaces/sirius_tau/runs/c3_lstm3x512_s888_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c2_lstm384_refS",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm384_refS.csv",
+      "test": "workspaces/sirius_tau/runs/c2_lstm384_refS_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c3_lstm448_refF",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm448_refF.csv",
+      "test": "workspaces/sirius_tau/runs/c3_lstm448_refF_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c2_lstm3x512_refE",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_refE.csv",
+      "test": "workspaces/sirius_tau/runs/c2_lstm3x512_refE_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "sirius_c3_lstm448_s4242",
+      "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm448_s4242.csv",
+      "test": "workspaces/sirius_tau/runs/c3_lstm448_s4242_full/test_pred.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "antares_lstm_c2_512_ft",
+      "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_512_ft.csv",
+      "test": "workspaces/antares_nu/preds/test_lstm_c2_512_ft_full.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "antares_lstm_c2_448_s99",
+      "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_448_s99.csv",
+      "test": "workspaces/antares_nu/preds/test_lstm_c2_448_s99.csv",
+      "exp_ok": true
+    },
+    {
+      "name": "antares_lstm_c2_s21_ft",
+      "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_s21_ft.csv",
+      "test": "workspaces/antares_nu/preds/test_lstm_c2_s21_ft.csv",
+      "exp_ok": true
+    }
+  ],
+  "w_insp": [
+    0.3517023679617338,
+    3.2814101599299466e-17,
+    2.898762344311336e-18,
+    0.1671015847153879,
+    0.09257642095287265,
+    0.07203720454619228,
+    0.015692688154517343,
+    0.17827526246355693,
+    0.05590198121041994,
+    0.06542143072269006,
+    0.001291059272628861,
+    6.944927122702998e-19
+  ],
+  "w_exp": [
+    0.24495810674864668,
+    2.997901996653431e-17,
+    0.05067998641043008,
+    0.05751233473002024,
+    0.2643910965552583,
+    0.2864164176371113,
+    0.0,
+    8.568506483466385e-18,
+    5.171296099767255e-23,
+    0.09604205791853351,
+    5.824405683173098e-18,
+    0.0
+  ],
+  "exp_ok": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "val_insp_weighted": 0.1603695105996887,
+  "use_bias": false,
+  "val_insp_corrected": 0.16024197957277864,
+  "bias_honest_base": 0.16089049703947525,
+  "bias_honest_corr": 0.16092838103630405
+}

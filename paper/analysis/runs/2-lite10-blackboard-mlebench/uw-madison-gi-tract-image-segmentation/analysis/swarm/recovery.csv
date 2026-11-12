@@ -1,0 +1,8 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+betelgeuse_zeta_status_2.md,betelgeuse,2026-11-03T21:01:26+03:00,problem,mimosa_sigma_b4v2_early_result.md,mimosa,0,7,3328.0,mimosa_sigma_b4v2_early_result.md,7,3328.0
+dubhe_zeta_bug_mimosa_valgt.md,dubhe,2026-11-03T21:03:38+03:00,bug problem,betelgeuse_zeta_decode_bug_fixed.md,betelgeuse,0,7,3545.0,betelgeuse_zeta_decode_bug_fixed.md,7,3545.0
+mimosa_sigma_bugfix_status.md,mimosa,2026-11-03T21:14:19+03:00,bug,betelgeuse_zeta_decode_bug_fixed.md,betelgeuse,0,6,2904.0,betelgeuse_zeta_decode_bug_fixed.md,6,2904.0
+dubhe_zeta_URGENT_rle_order_bug.md,dubhe,2026-11-03T21:38:06+03:00,bug conflict problem,dubhe_zeta_status_3.md,dubhe,1,3,1113.0,dubhe_zeta_status_3.md,3,1113.0
+mimosa_sigma_rle_confirmed.md,mimosa,2026-11-03T21:40:24+03:00,bug,mimosa_sigma_b4v2_early_result.md,mimosa,1,3,990.0,dubhe_zeta_status_3.md,2,975.0
+dubhe_zeta_ping_betelgeuse.md,dubhe,2026-11-03T21:48:14+03:00,bug problem,dubhe_zeta_status_3.md,dubhe,1,1,505.0,dubhe_zeta_status_3.md,1,505.0
+betelgeuse_zeta_decode_bug_fixed.md,betelgeuse,2026-11-03T22:02:43+03:00,bug,dubhe_zeta_oof_e2.md,dubhe,0,1,1594.0,dubhe_zeta_oof_e2.md,1,1594.0

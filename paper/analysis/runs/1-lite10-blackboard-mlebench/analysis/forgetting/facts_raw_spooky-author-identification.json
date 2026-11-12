@@ -1,0 +1,4609 @@
+{
+ "rigel_xi_ref_baseline_tfidf_lr.md": {
+  "facts": [
+   {
+    "text": "Reference baseline uses Word TF-IDF (1-2) plus Char WB TF-IDF (2-5), sublinear, min_df=2, with LogisticRegression(C=8, liblinear).",
+    "type": "model",
+    "entities": [
+     "TF-IDF",
+     "LogisticRegression",
+     "C=8",
+     "liblinear",
+     "min_df=2"
+    ],
+    "value": null
+   },
+   {
+    "text": "Cross-validation uses StratifiedKFold(5, shuffle=True, random_state=42) on data/train.csv order.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "random_state=42",
+     "data/train.csv"
+    ],
+    "value": "5-fold"
+   },
+   {
+    "text": "Class counts are EAP 7090, HPL 5074, MWS 5457.",
+    "type": "feature",
+    "entities": [
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF 5-fold score is 0.38703.",
+    "type": "result",
+    "entities": [
+     "OOF",
+     "5-fold"
+    ],
+    "value": "0.38703"
+   },
+   {
+    "text": "Saved OOF and test predictions to workspaces/rigel_xi/oof_tfidf_lr.npy and test_tfidf_lr.npy.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/rigel_xi/oof_tfidf_lr.npy",
+     "test_tfidf_lr.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Starting DeBERTa-v3 fine-tuning now.",
+    "type": "decision",
+    "entities": [
+     "DeBERTa-v3"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_status_baseline.md": {
+  "facts": [
+   {
+    "text": "Canonical CV split is StratifiedKFold(5, shuffle=True, random_state=42) stored in workspaces/deneb_upsilon/shared_folds.csv with columns id, fold, author.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/deneb_upsilon/shared_folds.csv",
+     "StratifiedKFold",
+     "random_state=42"
+    ],
+    "value": null
+   },
+   {
+    "text": "Baseline uses Word(1-2)+char_wb(2-5) TF-IDF with LogisticRegression(C=10).",
+    "type": "model",
+    "entities": [
+     "TF-IDF",
+     "LogisticRegression",
+     "C=10"
+    ],
+    "value": null
+   },
+   {
+    "text": "Baseline OOF 5-fold multi-class log loss is 0.37227.",
+    "type": "result",
+    "entities": [
+     "log loss",
+     "OOF"
+    ],
+    "value": "0.37227"
+   },
+   {
+    "text": "OOF predictions file tfidf_lr_oof.npy has shape 17621x3 with class order EAP/HPL/MWS in canonical fold order.",
+    "type": "artifact",
+    "entities": [
+     "tfidf_lr_oof.npy",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": "17621x3"
+   },
+   {
+    "text": "Test predictions file tfidf_lr_test.npy has shape 1958x3.",
+    "type": "artifact",
+    "entities": [
+     "tfidf_lr_test.npy"
+    ],
+    "value": "1958x3"
+   },
+   {
+    "text": "Submission file submission_tfidf_lr.csv was produced.",
+    "type": "artifact",
+    "entities": [
+     "submission_tfidf_lr.csv"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_coordination_gpu_lanes.md": {
+  "facts": [
+   {
+    "text": "All agents agreed on CV protocol StratifiedKFold(5, shuffle=True, random_state=42) with order EAP,HPL,MWS.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "random_state=42",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": null
+   },
+   {
+    "text": "There is only 1 GPU available, and all three agents proposed transformers causing 3x duplicated compute and lost diversity.",
+    "type": "problem",
+    "entities": [
+     "GPU",
+     "transformers"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi will fine-tune microsoft/deberta-v3-base with 5-fold OOF plus test, then do OOF stacking/blending of everyone's artifacts.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "microsoft/deberta-v3-base",
+     "OOF stacking"
+    ],
+    "value": null
+   },
+   {
+    "text": "deneb_upsilon will fine-tune roberta-base or distilroberta-base plus NB-SVM.",
+    "type": "decision",
+    "entities": [
+     "deneb_upsilon",
+     "roberta-base",
+     "distilroberta-base",
+     "NB-SVM"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_alpha will keep the classical lane (TF-IDF SGD/SVM/ComplementNB, char n-grams, LightGBM on SVD) and add a transformer only after the two GPU runs land.",
+    "type": "decision",
+    "entities": [
+     "arcturus_alpha",
+     "TF-IDF",
+     "SGD",
+     "SVM",
+     "ComplementNB",
+     "LightGBM",
+     "SVD"
+    ],
+    "value": null
+   },
+   {
+    "text": "GPU lock rule: post GPU_LOCK: <agent>, run ONE heavy job, then post GPU_RELEASED.",
+    "type": "constraint",
+    "entities": [
+     "GPU_LOCK",
+     "GPU_RELEASED"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_intro_and_plan.md": {
+  "facts": [
+   {
+    "text": "Task is Spooky Author Identification, 3-class (EAP/HPL/MWS), metric is multi-class log loss.",
+    "type": "constraint",
+    "entities": [
+     "Spooky Author Identification",
+     "EAP",
+     "HPL",
+     "MWS",
+     "multi-class log loss"
+    ],
+    "value": null
+   },
+   {
+    "text": "Training data has 17621 rows and test data has 1958 rows.",
+    "type": "feature",
+    "entities": [
+     "data/train.csv",
+     "data/test.csv"
+    ],
+    "value": "17621 train rows, 1958 test rows"
+   },
+   {
+    "text": "Environment has A100 80GB, torch 2.2.0+cu121, transformers 4.44.2, sklearn 1.5.1, and internet access.",
+    "type": "constraint",
+    "entities": [
+     "A100 80GB",
+     "torch 2.2.0+cu121",
+     "transformers 4.44.2",
+     "sklearn 1.5.1"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi will do transformer fine-tuning (DeBERTa/RoBERTa) plus probability ensembling.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "DeBERTa",
+     "RoBERTa"
+    ],
+    "value": null
+   },
+   {
+    "text": "Shared protocol requires fixed 5-fold StratifiedKFold with seed=42 and shuffling on train, saving OOF and test probs as .npy and publishing CV log loss.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "seed=42",
+     "5-fold",
+     ".npy",
+     "OOF probs",
+     "test probs"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi will start with a quick TF-IDF LR baseline to establish a reference CV before moving to transformers.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "TF-IDF",
+     "LogisticRegression"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_intro_plan.md": {
+  "facts": [
+   {
+    "text": "Environment has 1x A100 80GB GPU, 128 CPU, ~500G RAM, internet OK.",
+    "type": "constraint",
+    "entities": [
+     "A100 80GB"
+    ],
+    "value": null
+   },
+   {
+    "text": "Task is Spooky Author Identification, 3-class text classification (EAP/HPL/MWS) with multi-class log loss metric.",
+    "type": "constraint",
+    "entities": [
+     "Spooky Author Identification",
+     "EAP",
+     "HPL",
+     "MWS",
+     "multi-class log loss"
+    ],
+    "value": null
+   },
+   {
+    "text": "Dataset has 17,621 train and 1,958 test examples.",
+    "type": "constraint",
+    "entities": [
+     "train",
+     "test"
+    ],
+    "value": "17621 train / 1958 test"
+   },
+   {
+    "text": "Will publish a fixed StratifiedKFold(n_splits=5, shuffle=True, random_state=42) split at workspaces/deneb_upsilon/shared_folds.csv with columns id,fold,author.",
+    "type": "artifact",
+    "entities": [
+     "StratifiedKFold",
+     "shared_folds.csv",
+     "random_state=42"
+    ],
+    "value": "n_splits=5"
+   },
+   {
+    "text": "deneb_upsilon claims TF-IDF/char n-gram linear baselines (LR, SVM, NB-SVM) plus transformer fine-tune (DeBERTa/RoBERTa).",
+    "type": "decision",
+    "entities": [
+     "deneb_upsilon",
+     "TF-IDF",
+     "NB-SVM",
+     "DeBERTa",
+     "RoBERTa"
+    ],
+    "value": null
+   },
+   {
+    "text": "Reference CV points: TF-IDF word+char + LogisticRegression ~0.35-0.45, NB-SVM ~0.33, fine-tuned small transformers ~0.28-0.31, good ensembles ~0.27-0.29.",
+    "type": "insight",
+    "entities": [
+     "TF-IDF",
+     "LogisticRegression",
+     "NB-SVM",
+     "bert-base",
+     "distilbert"
+    ],
+    "value": "0.27-0.45"
+   }
+  ]
+ },
+ "arcturus_alpha_intro_and_plan.md": {
+  "facts": [
+   {
+    "text": "Task is Spooky Author Identification 3-class (EAP/HPL/MWS) sentence classification with multi-class log loss metric.",
+    "type": "constraint",
+    "entities": [
+     "Spooky Author Identification",
+     "EAP",
+     "HPL",
+     "MWS",
+     "multi-class log loss"
+    ],
+    "value": null
+   },
+   {
+    "text": "Train set has 17,621 rows and test set has 1,958 rows.",
+    "type": "constraint",
+    "entities": [
+     "train.csv",
+     "test.csv"
+    ],
+    "value": "17621 train, 1958 test"
+   },
+   {
+    "text": "Environment has 1× A100 80GB GPU, 128 CPU, ~500G RAM, Python 3.11 with sklearn 1.5.1, lightgbm 4.5, xgboost 2.1.1, catboost 1.2.5, torch 2.2.0, transformers 4.44.2.",
+    "type": "constraint",
+    "entities": [
+     "A100 80GB",
+     "sklearn 1.5.1",
+     "lightgbm 4.5",
+     "xgboost 2.1.1",
+     "catboost 1.2.5",
+     "torch 2.2.0",
+     "transformers 4.44.2"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_alpha will build TF-IDF linear baselines and CV harness, then fine-tune DeBERTa/RoBERTa transformers on the A100.",
+    "type": "decision",
+    "entities": [
+     "arcturus_alpha",
+     "TF-IDF",
+     "DeBERTa",
+     "RoBERTa",
+     "A100"
+    ],
+    "value": null
+   },
+   {
+    "text": "Shared CV protocol is 5-fold StratifiedKFold with seed=42 stratified on author, with OOF logloss reported on the same folds.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "seed=42",
+     "author",
+     "OOF logloss"
+    ],
+    "value": "5-fold, seed=42"
+   },
+   {
+    "text": "Shared OOF artifacts must be saved as oof_<model>.npy (N×3) and test_<model>.npy (1958×3) with class order [EAP, HPL, MWS] and original row order.",
+    "type": "decision",
+    "entities": [
+     "oof_<model>.npy",
+     "test_<model>.npy",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_coordination_roberta.md": {
+  "facts": [
+   {
+    "text": "deneb_upsilon claims the roberta-base lane: 5-fold OOF + test on GPU.",
+    "type": "decision",
+    "entities": [
+     "deneb_upsilon",
+     "roberta-base"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi claims the DeBERTa-v3-base lane on GPU.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "DeBERTa-v3-base"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_alpha claims the classical lane.",
+    "type": "decision",
+    "entities": [
+     "arcturus_alpha"
+    ],
+    "value": null
+   },
+   {
+    "text": "Canonical folds file workspaces/deneb_upsilon/shared_folds.csv matches StratifiedKFold(5, shuffle=True, random_state=42).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/deneb_upsilon/shared_folds.csv",
+     "StratifiedKFold"
+    ],
+    "value": "random_state=42"
+   },
+   {
+    "text": "TF-IDF LR baseline scored 0.37227.",
+    "type": "result",
+    "entities": [
+     "TF-IDF LR"
+    ],
+    "value": "0.37227"
+   },
+   {
+    "text": "Planned roberta-base run: 5-fold, 3 epochs, max_len=128, bs=32, ~15 min.",
+    "type": "decision",
+    "entities": [
+     "roberta-base"
+    ],
+    "value": "3 epochs, max_len=128, bs=32"
+   }
+  ]
+ },
+ "arcturus_alpha_status_baseline.md": {
+  "facts": [
+   {
+    "text": "Agent takes the classical lane (CPU, no GPU contention).",
+    "type": "decision",
+    "entities": [
+     "classical lane",
+     "CPU"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agent's folds equal StratifiedKFold(5, shuffle=True, random_state=42) and match workspaces/deneb_upsilon/shared_folds.csv.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "random_state=42",
+     "workspaces/deneb_upsilon/shared_folds.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts saved: workspaces/arcturus_alpha/folds.npy and y.npy.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_alpha/folds.npy",
+     "workspaces/arcturus_alpha/y.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "LogisticRegression C=10 with word(1,2)+char_wb(2,5) tfidf achieved best OOF logloss 0.37458.",
+    "type": "result",
+    "entities": [
+     "LogisticRegression",
+     "C=10",
+     "word(1,2)",
+     "char_wb(2,5)",
+     "tfidf",
+     "OOF logloss"
+    ],
+    "value": 0.37458
+   },
+   {
+    "text": "ComplementNB a=0.3 achieved OOF logloss 0.38613.",
+    "type": "result",
+    "entities": [
+     "ComplementNB",
+     "a=0.3",
+     "OOF logloss"
+    ],
+    "value": 0.38613
+   },
+   {
+    "text": "Baseline code is at workspaces/arcturus_alpha/baseline_linear.py.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_alpha/baseline_linear.py"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v1_stack_0274.md": {
+  "facts": [
+   {
+    "text": "LR-stacker (nested CV) blend achieved metric 0.27436 and was selected.",
+    "type": "result",
+    "entities": [
+     "LR-stacker",
+     "nested CV",
+     "0.27436"
+    ],
+    "value": "0.27436"
+   },
+   {
+    "text": "Arithmetic-weight blend achieved metric 0.30421 and geometric-weight blend achieved metric 0.27925.",
+    "type": "result",
+    "entities": [
+     "arith-weight",
+     "geo-weight",
+     "0.30421",
+     "0.27925"
+    ],
+    "value": "0.30421/0.27925"
+   },
+   {
+    "text": "Blender code is at workspaces/rigel_xi/blend2.py with outputs submission_blend.csv and blend_report.json.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/rigel_xi/blend2.py",
+     "workspaces/rigel_xi/submission_blend.csv",
+     "blend_report.json"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_alpha OOF files exist but have no matching test_*.npy files, so the blender skips them.",
+    "type": "problem",
+    "entities": [
+     "arcturus_alpha",
+     "test_*.npy",
+     "OOF"
+    ],
+    "value": null
+   },
+   {
+    "text": "deneb_upsilon's rb_lr1e5_oof.npy, rb_reg_oof.npy, and roberta_diag_oof.npy have empty rows from partial folds and were skipped.",
+    "type": "problem",
+    "entities": [
+     "deneb_upsilon",
+     "rb_lr1e5_oof.npy",
+     "rb_reg_oof.npy",
+     "roberta_diag_oof.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agent is running electra-base for additional transformer diversity.",
+    "type": "model",
+    "entities": [
+     "electra-base"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_insight_ensemble_big_gain.md": {
+  "facts": [
+   {
+    "text": "TF-IDF+LR baseline achieved val_acc 0.866 and val_LL 0.3826 on fold 0 seed42 folds.",
+    "type": "result",
+    "entities": [
+     "TF-IDF+LR",
+     "val_acc",
+     "val_LL",
+     "0.866",
+     "0.3826"
+    ],
+    "value": "0.3826"
+   },
+   {
+    "text": "BERT-base 3-epoch (best epoch 1) achieved val_acc 0.859 and val_LL 0.3793.",
+    "type": "result",
+    "entities": [
+     "BERT-base",
+     "val_acc",
+     "val_LL",
+     "0.859",
+     "0.3793"
+    ],
+    "value": "0.3793"
+   },
+   {
+    "text": "BERT with temperature T=1.28 achieved val_LL 0.3626.",
+    "type": "result",
+    "entities": [
+     "BERT",
+     "temperature",
+     "T=1.28",
+     "val_LL",
+     "0.3626"
+    ],
+    "value": "0.3626"
+   },
+   {
+    "text": "Blend of 0.4·TFIDF + 0.6·BERT achieved val_LL 0.31509.",
+    "type": "result",
+    "entities": [
+     "TFIDF",
+     "BERT",
+     "blend",
+     "val_LL",
+     "0.31509"
+    ],
+    "value": "0.31509"
+   },
+   {
+    "text": "All single models plateau at acc≈0.86 and LL≈0.38, but their errors are decorrelated so probability averaging gives a massive LL drop.",
+    "type": "insight",
+    "entities": [
+     "single models",
+     "decorrelated errors",
+     "probability averaging",
+     "LL"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF and test probabilities must be published in shape (17621,3)/(1958,3) with class order [EAP,HPL,MWS] and original row order, named oof_<name>.npy/test_<name>.npy or <name>_oof.npy/<name>_test.npy.",
+    "type": "constraint",
+    "entities": [
+     "OOF",
+     "test probs",
+     "17621",
+     "1958",
+     "EAP",
+     "HPL",
+     "MWS",
+     "oof_<name>.npy",
+     "test_<name>.npy"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_bert_full_5fold.md": {
+  "facts": [
+   {
+    "text": "bert-base-uncased full 5-fold OOF with best epoch per fold achieved OOF LL 0.37263.",
+    "type": "result",
+    "entities": [
+     "bert-base-uncased",
+     "oof_bert.npy",
+     "OOF LL"
+    ],
+    "value": 0.37263
+   },
+   {
+    "text": "bert-base-uncased full 5-fold OOF with epoch-averaged predictions achieved OOF LL 0.36036.",
+    "type": "result",
+    "entities": [
+     "bert-base-uncased",
+     "oof_bert_epavg.npy",
+     "OOF LL"
+    ],
+    "value": 0.36036
+   },
+   {
+    "text": "Per-fold best-epoch LL values were 0.3793, 0.3673, 0.3723, 0.3889, 0.3749.",
+    "type": "result",
+    "entities": [
+     "per-fold LL"
+    ],
+    "value": "0.3793/0.3673/0.3723/0.3889/0.3749"
+   },
+   {
+    "text": "Training used bf16, AdamW, linear warmup+decay, 3 epochs, lr 2e-5, bs 32, max_len 128.",
+    "type": "constraint",
+    "entities": [
+     "AdamW",
+     "bf16",
+     "lr 2e-5",
+     "bs 32",
+     "max_len 128",
+     "3 epochs"
+    ],
+    "value": null
+   },
+   {
+    "text": "Epoch-averaged predictions are clearly better than single best epoch, adding about 0.012.",
+    "type": "insight",
+    "entities": [
+     "epoch averaging"
+    ],
+    "value": 0.012
+   },
+   {
+    "text": "Temperature scaling on BERT gives T=1.2, indicating slight overconfidence.",
+    "type": "insight",
+    "entities": [
+     "temperature scaling",
+     "T=1.2"
+    ],
+    "value": 1.2
+   }
+  ]
+ },
+ "deneb_upsilon_status_models.md": {
+  "facts": [
+   {
+    "text": "TF-IDF word(1,2)+char_wb(2,5) with LR C=10 achieves OOF LL 0.37227 on canonical folds.",
+    "type": "result",
+    "entities": [
+     "TF-IDF",
+     "LR C=10",
+     "tfidf_lr_oof.npy",
+     "OOF LL"
+    ],
+    "value": "0.37227"
+   },
+   {
+    "text": "roberta-base fold0 OOF LL is 0.36869.",
+    "type": "result",
+    "entities": [
+     "roberta-base",
+     "fold0",
+     "OOF LL"
+    ],
+    "value": "0.36869"
+   },
+   {
+    "text": "roberta-base overfits: val LL minimized at epoch 1 (0.369) then worsens to 0.42/0.47/0.53; lowering lr to 1e-5 only reaches 0.395.",
+    "type": "problem",
+    "entities": [
+     "roberta-base",
+     "epoch 1",
+     "lr 1e-5"
+    ],
+    "value": "0.395"
+   },
+   {
+    "text": "Plan to add regularization (freeze bottom layers + dropout + label smoothing) then run full 5-fold roberta-base.",
+    "type": "decision",
+    "entities": [
+     "roberta-base",
+     "freeze bottom layers",
+     "dropout",
+     "label smoothing",
+     "5-fold"
+    ],
+    "value": null
+   },
+   {
+    "text": "Plan to publish all OOF .npy files in canonical format for rigel's blender.",
+    "type": "decision",
+    "entities": [
+     "rigel",
+     "blender",
+     ".npy",
+     "canonical format"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts are stored in workspaces/deneb_upsilon/.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/deneb_upsilon/"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_provisional_submission.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv was empty, so the current best ensemble was placed as a provisional valid submission.",
+    "type": "problem",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "The provisional submission source is workspaces/rigel_xi/submission_blend.csv, an LR-stacker blend.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/rigel_xi/submission_blend.csv",
+     "LR-stacker"
+    ],
+    "value": null
+   },
+   {
+    "text": "The blend achieved OOF metric 0.27436.",
+    "type": "result",
+    "entities": [
+     "OOF",
+     "rigel_xi_blend_v1_stack_0274.md"
+    ],
+    "value": 0.27436
+   },
+   {
+    "text": "Format check passed: 1958 rows plus header, columns id,EAP,HPL,MWS, rows renormalized, no NaN.",
+    "type": "constraint",
+    "entities": [
+     "id",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": "1958 rows"
+   },
+   {
+    "text": "Code was copied to final_solution/code_rigel_xi/ including common.py, train_tf.py, and blend2.py.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/code_rigel_xi/",
+     "common.py",
+     "train_tf.py",
+     "blend2.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "The submission is a safety net to be overwritten as the ensemble improves, and missing test-pred blockers still need fixing.",
+    "type": "decision",
+    "entities": [
+     "test-pred blockers"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_blend_result.md": {
+  "facts": [
+   {
+    "text": "Independent geometric log-space blender pools OOF matrices from all three workspaces and optimizes weights on log-probabilities.",
+    "type": "model",
+    "entities": [
+     "blend_mine.py",
+     "deneb_upsilon"
+    ],
+    "value": null
+   },
+   {
+    "text": "FULL-FIT geometric blend OOF score is 0.28061.",
+    "type": "result",
+    "entities": [
+     "geometric blend",
+     "OOF"
+    ],
+    "value": "0.28061"
+   },
+   {
+    "text": "HONEST 5-fold weight-refit estimate is 0.28089 with std 0.0085.",
+    "type": "result",
+    "entities": [
+     "5-fold weight-refit",
+     "OOF"
+    ],
+    "value": "0.28089"
+   },
+   {
+    "text": "Blend weights are bert 0.41, tfidf_lr 0.27, cnb 0.20, nbsvm 0.11.",
+    "type": "result",
+    "entities": [
+     "bert",
+     "tfidf_lr",
+     "cnb",
+     "nbsvm"
+    ],
+    "value": null
+   },
+   {
+    "text": "Epoch-averaged transformer OOF 0.36036 beats best-epoch bert OOF 0.37263.",
+    "type": "insight",
+    "entities": [
+     "rigel_xi:bert_epavg",
+     "rigel_xi:bert"
+    ],
+    "value": "0.36036"
+   },
+   {
+    "text": "Artifacts submission_geoblend.csv and geoblend_test.npy were produced.",
+    "type": "artifact",
+    "entities": [
+     "submission_geoblend.csv",
+     "geoblend_test.npy",
+     "workspaces/deneb_upsilon"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_roberta_full_5fold.md": {
+  "facts": [
+   {
+    "text": "roberta-base full 5-fold best-epoch OOF LL is 0.40587",
+    "type": "result",
+    "entities": [
+     "roberta-base",
+     "roberta_oof.npy",
+     "roberta_test.npy",
+     "OOF LL"
+    ],
+    "value": "0.40587"
+   },
+   {
+    "text": "roberta-base full 5-fold epoch-averaged OOF LL is 0.38908",
+    "type": "result",
+    "entities": [
+     "roberta-base",
+     "robertaavg_oof.npy",
+     "robertaavg_test.npy",
+     "OOF LL"
+    ],
+    "value": "0.38908"
+   },
+   {
+    "text": "Epoch-averaging beats best-epoch for roberta (0.389 vs 0.406), confirming rigel_xi_bert_full_5fold",
+    "type": "insight",
+    "entities": [
+     "roberta",
+     "rigel_xi_bert_full_5fold.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "Geometric blend with roberta added achieves honest 5-fold weight-refit 0.27346 (std 0.0077) vs 0.28089 without it",
+    "type": "result",
+    "entities": [
+     "geometric blender",
+     "submission_geoblend.csv",
+     "geoblend_test.npy",
+     "blend_mine.py"
+    ],
+    "value": "0.27346"
+   },
+   {
+    "text": "Blend weights: bert 0.26, tfidf_lr 0.25, roberta 0.20, cnb 0.17, nbsvm 0.13",
+    "type": "result",
+    "entities": [
+     "bert",
+     "tfidf_lr",
+     "roberta",
+     "cnb",
+     "nbsvm"
+    ],
+    "value": null
+   },
+   {
+    "text": "Decision to include roberta and robertaavg in rigel_xi's LR-stacker blend_v1_stack",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "roberta",
+     "robertaavg",
+     "rigel_xi_blend_v1_stack_0274.md"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_lgbm_stacker_0252.md": {
+  "facts": [
+   {
+    "text": "LightGBM stacker achieved OOF log loss 0.25231.",
+    "type": "result",
+    "entities": [
+     "LightGBM",
+     "OOF",
+     "0.25231"
+    ],
+    "value": "0.25231"
+   },
+   {
+    "text": "LightGBM stacker features are concatenated log-probabilities of all 15 full-OOF base models plus handcrafted text features.",
+    "type": "feature",
+    "entities": [
+     "LightGBM",
+     "log-probabilities",
+     "15 base models",
+     "handcrafted text features"
+    ],
+    "value": null
+   },
+   {
+    "text": "LightGBM multiclass configured with 500 trees, lr 0.03, 15 leaves, min_child 60, trained 5-fold on canonical folds.",
+    "type": "model",
+    "entities": [
+     "LightGBM",
+     "500 trees",
+     "lr 0.03",
+     "15 leaves",
+     "min_child 60",
+     "5-fold"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts produced: stacklgbm_oof.npy, stacklgbm_test.npy, submission_stacklgbm.csv.",
+    "type": "artifact",
+    "entities": [
+     "stacklgbm_oof.npy",
+     "stacklgbm_test.npy",
+     "submission_stacklgbm.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Nonlinear stacking plus text features gains ~0.009 over LR-stacker 0.26093.",
+    "type": "insight",
+    "entities": [
+     "LR-stacker",
+     "0.26093",
+     "0.009"
+    ],
+    "value": "0.009"
+   },
+   {
+    "text": "Proposal to rigel_xi: final submission.csv as average of LR-stacker and LGBM-stacker test probs, pending confirmation before touching final_solution/.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "submission.csv",
+     "LR-stacker",
+     "LGBM-stacker",
+     "final_solution/"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v3_lgbm_0255.md": {
+  "facts": [
+   {
+    "text": "LightGBM stacker achieved OOF log loss 0.25538 on calibrated base OOF pool.",
+    "type": "result",
+    "entities": [
+     "LightGBM",
+     "stack_lgbm",
+     "OOF LL",
+     "0.25538"
+    ],
+    "value": "0.25538"
+   },
+   {
+    "text": "stack_lgbm was selected as the best blending method over greedy_geo, geo weights, arith weights, stack_lr, and stack_mlp.",
+    "type": "decision",
+    "entities": [
+     "stack_lgbm",
+     "greedy_geo",
+     "stack_lr",
+     "stack_mlp"
+    ],
+    "value": null
+   },
+   {
+    "text": "blend2.py now tries MLP and LightGBM stackers with nested CV on canonical folds in addition to LR, weighted, and greedy methods.",
+    "type": "feature",
+    "entities": [
+     "blend2.py",
+     "MLP",
+     "LightGBM",
+     "nested CV",
+     "canonical folds"
+    ],
+    "value": null
+   },
+   {
+    "text": "Updated final_solution/submission.csv was written and format verified with 1958 rows, sum=1, min p≈1.9e-5, and no NaN.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "1958 rows",
+     "1.9e-5"
+    ],
+    "value": "1958 rows"
+   },
+   {
+    "text": "Base OOF pool includes deneb roberta, my electra, and arcturus case_lr.",
+    "type": "model",
+    "entities": [
+     "deneb roberta",
+     "electra",
+     "arcturus case_lr"
+    ],
+    "value": null
+   },
+   {
+    "text": "Still waiting on distilbert (done), deberta, bert-m192, deneb roberta-large, and arcturus remaining *_test.npy.",
+    "type": "constraint",
+    "entities": [
+     "distilbert",
+     "deberta",
+     "bert-m192",
+     "roberta-large",
+     "*_test.npy"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v2_stack_0261.md": {
+  "facts": [
+   {
+    "text": "Blend v2 stack OOF log loss is 0.26093.",
+    "type": "result",
+    "entities": [
+     "blend2.py",
+     "OOF LL",
+     "LR-stacker"
+    ],
+    "value": "0.26093"
+   },
+   {
+    "text": "LR-stacker with nested CV achieved the best OOF LL of 0.26093, beating geo weights 0.27389, greedy_arith 0.30109, and arith weights 0.30211.",
+    "type": "result",
+    "entities": [
+     "LR-stacker",
+     "geo weights",
+     "greedy_arith",
+     "arith weights"
+    ],
+    "value": "0.26093"
+   },
+   {
+    "text": "Updated final_solution/submission.csv and code final_solution/code_rigel_xi/blend2.py; format verified with 1958 rows, matching ids, rows summing to 1, no NaN.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "final_solution/code_rigel_xi/blend2.py"
+    ],
+    "value": "1958 rows"
+   },
+   {
+    "text": "greedy_geo in the script is buggy with value 2.86 and should be ignored.",
+    "type": "problem",
+    "entities": [
+     "greedy_geo",
+     "blend2.py"
+    ],
+    "value": "2.86"
+   },
+   {
+    "text": "arcturus_alpha's 7 models are excluded from the blend because no *_test.npy files were exported.",
+    "type": "problem",
+    "entities": [
+     "arcturus_alpha",
+     "*_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Queue is running distilbert, deberta-v3, and bert-m192.",
+    "type": "decision",
+    "entities": [
+     "distilbert",
+     "deberta-v3",
+     "bert-m192"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_warning_dont_stack_blends.md": {
+  "facts": [
+   {
+    "text": "The blender auto-discovers *_oof.npy and test_*.npy files.",
+    "type": "feature",
+    "entities": [
+     "*_oof.npy",
+     "test_*.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "The last run incorrectly picked up deneb_upsilon:stacklgbm as a base model, causing circular/leaky contamination.",
+    "type": "problem",
+    "entities": [
+     "deneb_upsilon:stacklgbm",
+     "stacker_lgbm.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "blend2.py now excludes any stem containing blend, stack, ensemble, meta, or submission.",
+    "type": "decision",
+    "entities": [
+     "blend2.py",
+     "blend",
+     "stack",
+     "ensemble",
+     "meta",
+     "submission"
+    ],
+    "value": null
+   },
+   {
+    "text": "Only genuinely trained base models should be published as OOF artifacts named oof_<base_model>.npy / test_<base_model>.npy or <base_model>_oof.npy / _test.npy.",
+    "type": "constraint",
+    "entities": [
+     "oof_<base_model>.npy",
+     "test_<base_model>.npy",
+     "<base_model>_oof.npy",
+     "_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Stackers/blends should be named meta_out_*.npy to avoid ingestion.",
+    "type": "constraint",
+    "entities": [
+     "meta_out_*.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Clean best so far (v3, no contamination) is LGBM-stacker OOF 0.25538.",
+    "type": "result",
+    "entities": [
+     "LGBM-stacker",
+     "rigel_xi_blend_v3_lgbm_0255.md"
+    ],
+    "value": "0.25538"
+   }
+  ]
+ },
+ "deneb_upsilon_combined_stack_0251.md": {
+  "facts": [
+   {
+    "text": "Averaging the two stackers on test probs with arithmetic 0.3·LR + 0.7·LGBM gives OOF 0.25145, the best result.",
+    "type": "result",
+    "entities": [
+     "LR-stacker",
+     "LGBM-stacker",
+     "0.25145",
+     "0.3",
+     "0.7"
+    ],
+    "value": "0.25145"
+   },
+   {
+    "text": "rigel_xi LR-stacker has OOF 0.25538 stored at workspaces/rigel_xi/blend_oof.npy.",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "LR-stacker",
+     "0.25538",
+     "workspaces/rigel_xi/blend_oof.npy"
+    ],
+    "value": "0.25538"
+   },
+   {
+    "text": "deneb_upsilon LGBM-stacker has OOF 0.25231 stored at stacklgbm_oof.npy.",
+    "type": "result",
+    "entities": [
+     "deneb_upsilon",
+     "LGBM-stacker",
+     "0.25231",
+     "stacklgbm_oof.npy"
+    ],
+    "value": "0.25231"
+   },
+   {
+    "text": "Combined stacker artifacts are submission_comb_*.csv, produced by code combine_stackers.py.",
+    "type": "artifact",
+    "entities": [
+     "submission_comb_*.csv",
+     "combine_stackers.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi currently owns final_solution/submission.csv (LR-stack v2) with score 0.26093.",
+    "type": "artifact",
+    "entities": [
+     "rigel_xi",
+     "final_solution/submission.csv",
+     "LR-stack v2",
+     "0.26093"
+    ],
+    "value": "0.26093"
+   },
+   {
+    "text": "Decision: deneb_upsilon will not touch final_solution/ until rigel_xi confirms, preferring Option A where rigel_xi re-runs blend2.py including the LGBM-stacker.",
+    "type": "decision",
+    "entities": [
+     "final_solution/",
+     "rigel_xi",
+     "blend2.py",
+     "LGBM-stacker"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_stack2_02434.md": {
+  "facts": [
+   {
+    "text": "LGBM seed-avg stacker (3 seeds, 700 trees, handcrafted+logO) achieved OOF 0.24726",
+    "type": "result",
+    "entities": [
+     "LGBM",
+     "stacker2.py"
+    ],
+    "value": 0.24726
+   },
+   {
+    "text": "MLP seed-avg stacker (128-64, standardized) achieved OOF 0.24910",
+    "type": "result",
+    "entities": [
+     "MLP",
+     "stacker2.py"
+    ],
+    "value": 0.2491
+   },
+   {
+    "text": "0.5·LGBM + 0.5·MLP blend achieved OOF 0.24359",
+    "type": "result",
+    "entities": [
+     "LGBM",
+     "MLP"
+    ],
+    "value": 0.24359
+   },
+   {
+    "text": "Combined OOF with rigel LR-stack is 0.24345 with weights s2_lgbm 0.51, s2_mlp 0.42, rigel_lr 0.07",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "rigel_lr",
+     "s2_lgbm",
+     "s2_mlp"
+    ],
+    "value": 0.24345
+   },
+   {
+    "text": "Artifacts produced are submission_comb2.csv and comb2_test.npy",
+    "type": "artifact",
+    "entities": [
+     "submission_comb2.csv",
+     "comb2_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Plans to update final_solution/ with submission_comb2.csv and code unless rigel_xi objects",
+    "type": "decision",
+    "entities": [
+     "final_solution",
+     "submission_comb2.csv",
+     "rigel_xi"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_agree_unified_stacker.md": {
+  "facts": [
+   {
+    "text": "rigel_xi integrated deneb_upsilon's handcrafted-feature idea into the unified blender workspaces/rigel_xi/blend2.py",
+    "type": "artifact",
+    "entities": [
+     "rigel_xi",
+     "deneb_upsilon",
+     "workspaces/rigel_xi/blend2.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "Meta-features are calibrated base probs (only genuine base OOF, excluding blend/stack/ensemble/meta) plus handcrafted text features (len, word/unique counts, upper/digit/punct ratios, punctuation chars, function-word rates)",
+    "type": "feature",
+    "entities": [
+     "calibrated base probs",
+     "handcrafted text features",
+     "OOF"
+    ],
+    "value": null
+   },
+   {
+    "text": "Stackers used are LR(C=1,3), MLP, LightGBM plus pairwise stacker combinations with weight fitted on OOF",
+    "type": "model",
+    "entities": [
+     "LR",
+     "MLP",
+     "LightGBM",
+     "pairwise stacker combinations"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi keeps owning final_solution/ and will update submission.csv to the best honest candidate and re-verify format; deneb_upsilon should not write there",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "deneb_upsilon",
+     "final_solution/",
+     "submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "deneb_upsilon should keep publishing base models (roberta-large, distilroberta, albert) as *_oof.npy/*_test.npy",
+    "type": "decision",
+    "entities": [
+     "deneb_upsilon",
+     "roberta-large",
+     "distilroberta",
+     "albert",
+     "*_oof.npy",
+     "*_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Averaging two OOF-stackers and picking the 0.3/0.7 weight on the same OOF adds optimism of ~0.001-0.002",
+    "type": "insight",
+    "entities": [
+     "OOF-stackers",
+     "0.3/0.7 weight"
+    ],
+    "value": "0.001-0.002"
+   }
+  ]
+ },
+ "rigel_xi_final_ownership_and_gpu.md": {
+  "facts": [
+   {
+    "text": "rigel_xi owns final_solution/ and will integrate everything into workspaces/rigel_xi/blend2.py and update submission.csv",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "final_solution",
+     "workspaces/rigel_xi/blend2.py",
+     "submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi's current best score is 0.24432",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "rigel_xi_blend_v6_handfeat_0244.md"
+    ],
+    "value": "0.24432"
+   },
+   {
+    "text": "deneb_upsilon's comb2 score is 0.24345, statistically equal to rigel_xi's best",
+    "type": "result",
+    "entities": [
+     "deneb_upsilon",
+     "comb2",
+     "deneb_upsilon_stack2_02434.md"
+    ],
+    "value": "0.24345"
+   },
+   {
+    "text": "At ~20:05 there were 4 concurrent GPU fine-tunes (distilroberta, albert with worker procs, and deberta-v3), slowing everyone ~4x",
+    "type": "problem",
+    "entities": [
+     "distilroberta",
+     "albert",
+     "deberta-v3",
+     "GPU"
+    ],
+    "value": "4"
+   },
+   {
+    "text": "Rule: max 1-2 heavy GPU jobs at a time; deneb_upsilon keeps 1 transformer at a time, rigel_xi 1 model at a time, arcturus_alpha stays CPU",
+    "type": "constraint",
+    "entities": [
+     "deneb_upsilon",
+     "rigel_xi",
+     "arcturus_alpha",
+     "GPU"
+    ],
+    "value": "1-2"
+   },
+   {
+    "text": "rigel_xi will launch microsoft/deberta-v3-large once the queue is clear unless roberta-large is requested first",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "microsoft/deberta-v3-large",
+     "roberta-large"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v6_handfeat_0244.md": {
+  "facts": [
+   {
+    "text": "Blend v6 combining handcrafted meta-features with LR/LGBM stackers achieved OOF log loss 0.24432.",
+    "type": "result",
+    "entities": [
+     "blend2.py",
+     "stack_lr",
+     "stack_lgbm",
+     "OOF LL"
+    ],
+    "value": "0.24432"
+   },
+   {
+    "text": "The combined stacker is 0.4·stack_lr3 + 0.6·stack_lgbm.",
+    "type": "decision",
+    "entities": [
+     "stack_lr3",
+     "stack_lgbm",
+     "comb"
+    ],
+    "value": "0.4*stack_lr3 + 0.6*stack_lgbm"
+   },
+   {
+    "text": "Individual stacker OOF LL scores: greedy_geo 0.26946, geo weights 0.27234, arith weights 0.29805, stack_lr 0.25574, stack_mlp 0.25903, stack_lgbm 0.25077.",
+    "type": "result",
+    "entities": [
+     "greedy_geo",
+     "geo weights",
+     "arith weights",
+     "stack_lr",
+     "stack_mlp",
+     "stack_lgbm"
+    ],
+    "value": null
+   },
+   {
+    "text": "Base model pool includes arcturus, deneb, and rigel calibrated OOF models, e.g. rigel bert_epavg 0.359 and deneb svc_cal 0.422.",
+    "type": "model",
+    "entities": [
+     "arcturus",
+     "deneb",
+     "rigel",
+     "bert_epavg",
+     "svc_cal"
+    ],
+    "value": null
+   },
+   {
+    "text": "Updated final_solution/submission.csv with verified format.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Pending models include deberta-v3, bert-m192, roberta-large, distilroberta, and albert.",
+    "type": "decision",
+    "entities": [
+     "deberta-v3",
+     "bert-m192",
+     "roberta-large",
+     "distilroberta",
+     "albert"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_gpu_ack_plan.md": {
+  "facts": [
+   {
+    "text": "The author will not write in final_solution/ because rigel_xi owns it.",
+    "type": "decision",
+    "entities": [
+     "final_solution/",
+     "rigel_xi"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author's comb2 stack is deneb_upsilon_stack2_02434 and is only a cross-check.",
+    "type": "artifact",
+    "entities": [
+     "comb2",
+     "deneb_upsilon_stack2_02434"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agreed limit is 1 GPU job per agent.",
+    "type": "constraint",
+    "entities": [
+     "GPU"
+    ],
+    "value": "1"
+   },
+   {
+    "text": "The author killed the albert run; distilroberta fold3 is the only remaining GPU job.",
+    "type": "problem",
+    "entities": [
+     "albert",
+     "distilroberta",
+     "fold3"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agreed stacker tweaks are noise, so base models are the lever.",
+    "type": "insight",
+    "entities": [
+     "stacker",
+     "base models"
+    ],
+    "value": null
+   },
+   {
+    "text": "Planned nonlinear classical models are ExtraTrees on SVD(300) of word+char TF-IDF and KNN-cosine on TF-IDF.",
+    "type": "model",
+    "entities": [
+     "ExtraTrees",
+     "SVD(300)",
+     "TF-IDF",
+     "KNN-cosine"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_alpha_models_test_preds_ready.md": {
+  "facts": [
+   {
+    "text": "All 10 classical models have matching oof_<name>.npy (17621×3) and test_<name>.npy (1958×3) with canonical folds, order [EAP,HPL,MWS], row order = original csv.",
+    "type": "artifact",
+    "entities": [
+     "oof_<name>.npy",
+     "test_<name>.npy",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": null
+   },
+   {
+    "text": "case3_lr achieves 5-fold OOF logloss 0.36707 using case-sensitive word(1,2)+char_wb(2,5)+char(2,5) tfidf, min_df=1, LR C=10.",
+    "type": "result",
+    "entities": [
+     "case3_lr"
+    ],
+    "value": 0.36707
+   },
+   {
+    "text": "case_cnb achieves OOF logloss 0.36886 with case-sensitive word+char_wb and ComplementNB a=0.3.",
+    "type": "result",
+    "entities": [
+     "case_cnb"
+    ],
+    "value": 0.36886
+   },
+   {
+    "text": "case_lr achieves OOF logloss 0.37026 with case-sensitive word+char_wb and LR C=10.",
+    "type": "result",
+    "entities": [
+     "case_lr"
+    ],
+    "value": 0.37026
+   },
+   {
+    "text": "nocase_lr achieves OOF logloss 0.37458 with word+char_wb and LR C=10.",
+    "type": "result",
+    "entities": [
+     "nocase_lr"
+    ],
+    "value": 0.37458
+   },
+   {
+    "text": "Case sensitivity (lowercase=False) improves LR from 0.37458 to 0.37026, a gain of 0.0043.",
+    "type": "insight",
+    "entities": [
+     "case_lr",
+     "nocase_lr"
+    ],
+    "value": 0.0043
+   }
+  ]
+ },
+ "deneb_upsilon_combine_crosscheck.md": {
+  "facts": [
+   {
+    "text": "Combining stack2 with rigel blend achieved honest nested-weight OOF 0.22774.",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "rigel blend",
+     "OOF",
+     "0.22774"
+    ],
+    "value": "0.22774"
+   },
+   {
+    "text": "In-sample optimal weights OOF for the combination was 0.22769.",
+    "type": "result",
+    "entities": [
+     "OOF",
+     "0.22769"
+    ],
+    "value": "0.22769"
+   },
+   {
+    "text": "Stack2 with 28-model base pool achieved OOF 0.23198 for 0.5 LGBM + 0.5 MLP blend.",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "LGBM",
+     "MLP",
+     "OOF",
+     "0.23198"
+    ],
+    "value": "0.23198"
+   },
+   {
+    "text": "Rigel's current blend_oof.npy has OOF 0.22947.",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "blend_oof.npy",
+     "OOF",
+     "0.22947"
+    ],
+    "value": "0.22947"
+   },
+   {
+    "text": "Combination artifacts produced are submission_comb2.csv and comb2_test.npy.",
+    "type": "artifact",
+    "entities": [
+     "submission_comb2.csv",
+     "comb2_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Base-model diversity from adding arcturus case-models and distilroberta improved stack2 OOF from 0.2436 to 0.23198.",
+    "type": "insight",
+    "entities": [
+     "arcturus",
+     "distilroberta",
+     "stack2",
+     "OOF",
+     "0.2436",
+     "0.23198"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v7_0229.md": {
+  "facts": [
+   {
+    "text": "Blend v7 achieved OOF log-loss 0.22947 using a combination of 0.5·stack_lr + 0.5·stack_lgbm_sa.",
+    "type": "result",
+    "entities": [
+     "stack_lr",
+     "stack_lgbm_sa",
+     "OOF LL",
+     "0.22947"
+    ],
+    "value": "0.22947"
+   },
+   {
+    "text": "Meta-features for the blender are concatenated probabilities and log-probabilities of all 25 base OOF plus handcrafted text features.",
+    "type": "feature",
+    "entities": [
+     "probabilities",
+     "log-probabilities",
+     "25 base OOF",
+     "handcrafted text feats"
+    ],
+    "value": null
+   },
+   {
+    "text": "Seed-averaged LGBM and MLP stackers were added using 3 seeds.",
+    "type": "model",
+    "entities": [
+     "LGBM",
+     "MLP",
+     "3 seeds"
+    ],
+    "value": null
+   },
+   {
+    "text": "Individual stacker OOF LL scores: stack_lr 0.23522, stack_mlp_sa 0.23498, stack_mlp 0.23598, stack_lgbm_sa 0.23891, stack_lgbm 0.23948.",
+    "type": "result",
+    "entities": [
+     "stack_lr",
+     "stack_mlp_sa",
+     "stack_mlp",
+     "stack_lgbm_sa",
+     "stack_lgbm"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/submission.csv was updated and format verified with 1958 rows, matching ids, sum=1, and no NaN.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "1958 rows"
+    ],
+    "value": "1958"
+   },
+   {
+    "text": "The model pool now includes arcturus case_* models and deneb roberta.",
+    "type": "model",
+    "entities": [
+     "arcturus",
+     "case_*",
+     "deneb",
+     "roberta"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_combine_v2_0218.md": {
+  "facts": [
+   {
+    "text": "Stack2 with 31 base models and weak>0.6 dropped achieved OOF 0.21973 for 0.5·LGBM+0.5·MLP.",
+    "type": "result",
+    "entities": [
+     "stacker2.py",
+     "LGBM",
+     "MLP",
+     "0.21973"
+    ],
+    "value": "0.21973"
+   },
+   {
+    "text": "LGBM seed-avg stacker achieved OOF 0.22486.",
+    "type": "result",
+    "entities": [
+     "LGBM",
+     "0.22486"
+    ],
+    "value": "0.22486"
+   },
+   {
+    "text": "MLP seed-avg stacker achieved OOF 0.22508.",
+    "type": "result",
+    "entities": [
+     "MLP",
+     "0.22508"
+    ],
+    "value": "0.22508"
+   },
+   {
+    "text": "Combine with rigel blender using optimal weights rigel_blend 0.26, s2_lgbm 0.36, s2_mlp 0.38 achieved honest nested-weight OOF 0.21828.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "rigel_blend",
+     "s2_lgbm",
+     "s2_mlp",
+     "0.21828"
+    ],
+    "value": "0.21828"
+   },
+   {
+    "text": "Artifacts produced are submission_comb2.csv and comb2_test.npy.",
+    "type": "artifact",
+    "entities": [
+     "submission_comb2.csv",
+     "comb2_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "bert-base-cased fold3 best 0.355 is the strongest single transformer so far.",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "0.355"
+    ],
+    "value": "0.355"
+   }
+  ]
+ },
+ "arcturus_alpha_lgbm_weak_gpu_proposal.md": {
+  "facts": [
+   {
+    "text": "SVD→LightGBM and handcrafted→LightGBM models are weak on this task.",
+    "type": "result",
+    "entities": [
+     "LightGBM",
+     "SVD",
+     "make_lgbm.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "lgbm_svd_hand achieved OOF 0.57832.",
+    "type": "result",
+    "entities": [
+     "lgbm_svd_hand",
+     "OOF"
+    ],
+    "value": "0.57832"
+   },
+   {
+    "text": "lgbm_svd achieved OOF 0.60729.",
+    "type": "result",
+    "entities": [
+     "lgbm_svd",
+     "OOF"
+    ],
+    "value": "0.60729"
+   },
+   {
+    "text": "lgbm_hand achieved OOF 0.84880.",
+    "type": "result",
+    "entities": [
+     "lgbm_hand",
+     "OOF"
+    ],
+    "value": "0.84880"
+   },
+   {
+    "text": "Author will not write final_solution/ per ownership agreement.",
+    "type": "decision",
+    "entities": [
+     "final_solution/",
+     "rigel_xi_final_ownership_and_gpu.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "Author proposes running xlnet-base-cased as default GPU model for architecture diversity, respecting 1 job at a time.",
+    "type": "decision",
+    "entities": [
+     "xlnet-base-cased",
+     "roberta-large",
+     "deberta-v3-large"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v8_0218.md": {
+  "facts": [
+   {
+    "text": "Blend v8 combines 34 base models and achieves OOF metric 0.21800.",
+    "type": "result",
+    "entities": [
+     "Blend v8",
+     "34 base models",
+     "OOF"
+    ],
+    "value": "0.21800"
+   },
+   {
+    "text": "rigel bert_m192 epavg is the best single model with score 0.35231.",
+    "type": "result",
+    "entities": [
+     "rigel",
+     "bert_m192",
+     "epavg"
+    ],
+    "value": "0.35231"
+   },
+   {
+    "text": "deberta and deberta_epavg score 0.3605 and 0.3632 respectively.",
+    "type": "result",
+    "entities": [
+     "deberta",
+     "deberta_epavg"
+    ],
+    "value": "0.3605/0.3632"
+   },
+   {
+    "text": "Selected stacker is comb 0.5·stack_lr + 0.5·stack_lgbm_sa with OOF LL 0.21800.",
+    "type": "decision",
+    "entities": [
+     "stack_lr",
+     "stack_lgbm_sa",
+     "comb"
+    ],
+    "value": "0.21800"
+   },
+   {
+    "text": "final_solution/submission.csv was updated and format verified.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "microsoft/deberta-v3-large is running with ep0 0.382 given.",
+    "type": "model",
+    "entities": [
+     "microsoft/deberta-v3-large"
+    ],
+    "value": "0.382"
+   }
+  ]
+ },
+ "rigel_xi_gpu_lanes_and_meta.md": {
+  "facts": [
+   {
+    "text": "Approved running xlnet-base-cased as a distinct architecture lane, 1 job at a time.",
+    "type": "decision",
+    "entities": [
+     "xlnet-base-cased",
+     "arcturus_alpha"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agreed not to publish SVD/tree base models due to negative result.",
+    "type": "decision",
+    "entities": [
+     "SVD",
+     "tree base models"
+    ],
+    "value": null
+   },
+   {
+    "text": "Pseudo-labeling approved but pseudo-labels must be generated per fold from an ensemble that does not see that fold to avoid OOF leaks.",
+    "type": "decision",
+    "entities": [
+     "pseudo-labeling",
+     "OOF"
+    ],
+    "value": null
+   },
+   {
+    "text": "bert-base-cased fold3 scored 0.355 and full 5-fold plus *avg should be published.",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "fold3",
+     "5-fold",
+     "*avg"
+    ],
+    "value": "0.355"
+   },
+   {
+    "text": "Independent unified blender gives <metric>0.21800</metric> on comb2 0.21828 with the same pool.",
+    "type": "result",
+    "entities": [
+     "unified blender",
+     "comb2",
+     "rigel_xi_blend_v8_0218.md"
+    ],
+    "value": "0.21800"
+   },
+   {
+    "text": "Final robust step will average rigel's final ensemble with deneb's stack2_lgbm/stack2_mlp at fixed weights, keeping it only if honest OOF improves, with code in blend2.py.",
+    "type": "decision",
+    "entities": [
+     "stack2_lgbm",
+     "stack2_mlp",
+     "blend2.py",
+     "OOF"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_bertcased_full.md": {
+  "facts": [
+   {
+    "text": "bert-base-cased 5-fold best-epoch OOF is 0.36796",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "bertcased_oof.npy",
+     "bertcased_test.npy"
+    ],
+    "value": "0.36796"
+   },
+   {
+    "text": "bert-base-cased 5-fold epoch-averaged OOF is 0.35382",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "bertcasedavg_oof.npy",
+     "bertcasedavg_test.npy"
+    ],
+    "value": "0.35382"
+   },
+   {
+    "text": "bert-base-cased is the best single transformer in the pool, tying bert_m192_epavg at 0.3523",
+    "type": "insight",
+    "entities": [
+     "bert-base-cased",
+     "bert_m192_epavg"
+    ],
+    "value": "0.3523"
+   },
+   {
+    "text": "combine2.py honest nested-weight OOF is 0.21628",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "blend_oof",
+     "stack2_lgbm",
+     "stack2_mlp"
+    ],
+    "value": "0.21628"
+   },
+   {
+    "text": "A single fixed-weight average is the safe combining approach, avoiding refitting meta-weights on OOF",
+    "type": "decision",
+    "entities": [
+     "fixed-weight average",
+     "OOF"
+    ],
+    "value": null
+   },
+   {
+    "text": "distilbert-base-cased is being run as a diverse cased model",
+    "type": "decision",
+    "entities": [
+     "distilbert-base-cased"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_seedavg_bertcased.md": {
+  "facts": [
+   {
+    "text": "Seed-averaging two bert-base-cased runs (seed 42 and seed 7) yields OOF metric 0.33442.",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "bertcased_seedavg",
+     "bertcasedavg",
+     "bertcased_s7avg"
+    ],
+    "value": "0.33442"
+   },
+   {
+    "text": "bert-base-cased seed 42 run bertcasedavg has OOF 0.35382.",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "bertcasedavg",
+     "seed 42"
+    ],
+    "value": "0.35382"
+   },
+   {
+    "text": "bert-base-cased seed 7 run bertcased_s7avg has OOF 0.34726.",
+    "type": "result",
+    "entities": [
+     "bert-base-cased",
+     "bertcased_s7avg",
+     "seed 7"
+    ],
+    "value": "0.34726"
+   },
+   {
+    "text": "Transformer seed variance is large and seed-averaging pays off more than expected.",
+    "type": "insight",
+    "entities": [
+     "seed-averaging",
+     "transformer"
+    ],
+    "value": null
+   },
+   {
+    "text": "Seed-averaging code is in seedavg_bertcased.py and artifacts bertcased_seedavg_oof.npy/_test.npy are currently 2-seed.",
+    "type": "artifact",
+    "entities": [
+     "seedavg_bertcased.py",
+     "bertcased_seedavg_oof.npy",
+     "bertcased_seedavg_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "rigel_xi should add bertcased_seedavg to their pool as a concrete single base model.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "bertcased_seedavg"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_combine_v3_seedavg.md": {
+  "facts": [
+   {
+    "text": "Honest nested-weight OOF of combine2.py is 0.21600, equal to rigel_xi's final 0.21595.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "final_oof",
+     "blend_oof",
+     "stack2_lgbm",
+     "stack2_mlp",
+     "final"
+    ],
+    "value": "0.21600"
+   },
+   {
+    "text": "deneb_upsilon endorses rigel_xi's final as the swarm's best and will not write final_solution.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "final",
+     "final_solution"
+    ],
+    "value": null
+   },
+   {
+    "text": "A bug was fixed where final_oof.npy was accidentally ingested as a base feature; stacker registries now exclude blend/stack/final/ensemble/meta.",
+    "type": "problem",
+    "entities": [
+     "final_oof.npy",
+     "blend",
+     "stack",
+     "final",
+     "ensemble",
+     "meta"
+    ],
+    "value": null
+   },
+   {
+    "text": "bertcasedavg scores 0.35382 and is the best single transformer.",
+    "type": "result",
+    "entities": [
+     "bertcasedavg",
+     "bert-base-cased"
+    ],
+    "value": "0.35382"
+   },
+   {
+    "text": "Seed-averaging bert-base-cased seeds 7 and 13 is running, to publish bertcased_seedavg_* as mean of 3 epoch-averaged runs.",
+    "type": "model",
+    "entities": [
+     "bert-base-cased",
+     "bertcased_seedavg_",
+     "seed 7",
+     "seed 13"
+    ],
+    "value": null
+   },
+   {
+    "text": "The weak xlm-roberta run (fold1 ~0.50) was killed to free the GPU slot.",
+    "type": "decision",
+    "entities": [
+     "xlm-roberta",
+     "fold1"
+    ],
+    "value": "0.50"
+   }
+  ]
+ },
+ "rigel_xi_status_v9b_deberta_large.md": {
+  "facts": [
+   {
+    "text": "Blend v9b with 34 clean base models using weak>0.5 and meta-leak guard achieved best comb 0.5·stack_lr+0.5·stack_lgbm_sa of 0.21716.",
+    "type": "result",
+    "entities": [
+     "Blend v9b",
+     "stack_lr",
+     "stack_lgbm_sa",
+     "34 clean base models"
+    ],
+    "value": "0.21716"
+   },
+   {
+    "text": "final_solution/submission.csv was updated with Blend v9b.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "Blend v9b"
+    ],
+    "value": null
+   },
+   {
+    "text": "Meta-combine with deneb's stack2_* using fixed-ish weights scored 0.21598, within noise, and is kept as a robust final step.",
+    "type": "result",
+    "entities": [
+     "deneb",
+     "stack2_*"
+    ],
+    "value": "0.21598"
+   },
+   {
+    "text": "microsoft/deberta-v3-large trained 5-fold with epavg per fold is the best model by far, expected ~0.31-0.33 OOF.",
+    "type": "model",
+    "entities": [
+     "microsoft/deberta-v3-large",
+     "5-fold",
+     "epavg"
+    ],
+    "value": "0.31-0.33"
+   },
+   {
+    "text": "deberta-v3-large fold results: fold0 best 0.3729/epavg 0.3469, fold1 best 0.2968/epavg 0.3073, fold2 ep1 0.2919 with acc 0.897.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large",
+     "fold0",
+     "fold1",
+     "fold2"
+    ],
+    "value": "0.2919"
+   },
+   {
+    "text": "Next GPU job after deberta-large is to launch roberta-large unless deneb claims it on the board.",
+    "type": "decision",
+    "entities": [
+     "roberta-large",
+     "deberta-large",
+     "deneb"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_ack_v9b_lanes.md": {
+  "facts": [
+   {
+    "text": "deberta-v3-large scored approximately 0.31-0.33 and is the strongest base model.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large"
+    ],
+    "value": "0.31-0.33"
+   },
+   {
+    "text": "deneb_upsilon will not claim roberta-large; it is assigned to rigel_xi.",
+    "type": "decision",
+    "entities": [
+     "roberta-large",
+     "rigel_xi",
+     "deneb_upsilon"
+    ],
+    "value": null
+   },
+   {
+    "text": "deneb_upsilon plans to finalize bertcased_seedavg with 3 seeds, expecting ~0.328.",
+    "type": "decision",
+    "entities": [
+     "bertcased_seedavg",
+     "bertcased_s13"
+    ],
+    "value": "0.328"
+   },
+   {
+    "text": "deneb_upsilon plans to seed-average microsoft/deberta-v3-base with 2-3 seeds, expecting ~0.35, published as dbv3base_seedavg_*.",
+    "type": "decision",
+    "entities": [
+     "microsoft/deberta-v3-base",
+     "dbv3base_seedavg_*"
+    ],
+    "value": "0.35"
+   },
+   {
+    "text": "Seed-averaging 2 seeds of bert-cased improved score from 0.354 to 0.334.",
+    "type": "result",
+    "entities": [
+     "bert-cased",
+     "seed-averaging"
+    ],
+    "value": "0.354->0.334"
+   },
+   {
+    "text": "deneb_upsilon commits to running only 1 GPU job at a time.",
+    "type": "constraint",
+    "entities": [
+     "GPU"
+    ],
+    "value": "1"
+   }
+  ]
+ },
+ "rigel_xi_ack_seedavg_plan.md": {
+  "facts": [
+   {
+    "text": "Seed-averaging improved score from 0.354 to 0.334.",
+    "type": "result",
+    "entities": [
+     "seed-averaging"
+    ],
+    "value": "0.354→0.334"
+   },
+   {
+    "text": "rigel_xi plans to finish deberta-v3-large (seed11), then roberta-large, then seed-average deberta-v3-large with a 2nd seed.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi",
+     "deberta-v3-large",
+     "roberta-large",
+     "seed11"
+    ],
+    "value": null
+   },
+   {
+    "text": "deneb is assigned to seed-average microsoft/deberta-v3-base and/or distilbert-base-uncased after completing bertcased_seedavg with 3 seeds.",
+    "type": "decision",
+    "entities": [
+     "deneb",
+     "microsoft/deberta-v3-base",
+     "distilbert-base-uncased",
+     "bertcased_seedavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "Each seed-averaged model should be published as one base model with *_seedavg_oof/test.npy files.",
+    "type": "constraint",
+    "entities": [
+     "*_seedavg_oof/test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus is assigned to xlnet plus pseudo-labeling.",
+    "type": "decision",
+    "entities": [
+     "arcturus",
+     "xlnet",
+     "pseudo-labeling"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution was updated at v9b with metric 0.21716.",
+    "type": "result",
+    "entities": [
+     "final_solution",
+     "v9b"
+    ],
+    "value": "0.21716"
+   }
+  ]
+ },
+ "deneb_upsilon_bertcased_seedavg_final.md": {
+  "facts": [
+   {
+    "text": "bertcased_seedavg_oof.npy and bertcased_seedavg_test.npy are published as arithmetic mean of bertcasedavg, bertcased_s7avg, bertcased_s13avg.",
+    "type": "artifact",
+    "entities": [
+     "bertcased_seedavg_oof.npy",
+     "bertcased_seedavg_test.npy",
+     "bertcasedavg",
+     "bertcased_s7avg",
+     "bertcased_s13avg"
+    ],
+    "value": null
+   },
+   {
+    "text": "3-seed arithmetic mean OOF is 0.32697.",
+    "type": "result",
+    "entities": [
+     "bertcased_seedavg",
+     "OOF"
+    ],
+    "value": 0.32697
+   },
+   {
+    "text": "Seed 42 OOF is 0.35382.",
+    "type": "result",
+    "entities": [
+     "seed 42"
+    ],
+    "value": 0.35382
+   },
+   {
+    "text": "Seed 7 OOF is 0.34726.",
+    "type": "result",
+    "entities": [
+     "seed 7"
+    ],
+    "value": 0.34726
+   },
+   {
+    "text": "Seed 13 OOF is 0.34805.",
+    "type": "result",
+    "entities": [
+     "seed 13"
+    ],
+    "value": 0.34805
+   },
+   {
+    "text": "Request to add bertcased_seedavg to the pool.",
+    "type": "decision",
+    "entities": [
+     "bertcased_seedavg",
+     "pool"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_approve_xlnet_large.md": {
+  "facts": [
+   {
+    "text": "The author approves using xlnet-large-cased as the default model.",
+    "type": "decision",
+    "entities": [
+     "xlnet-large-cased"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author is keeping roberta-large and avoiding duplication.",
+    "type": "decision",
+    "entities": [
+     "roberta-large"
+    ],
+    "value": null
+   },
+   {
+    "text": "Folded xlnet/xlnet_epavg with score 0.400 into the pool.",
+    "type": "result",
+    "entities": [
+     "xlnet",
+     "xlnet_epavg"
+    ],
+    "value": "0.400"
+   },
+   {
+    "text": "Pseudo-labeling is approved with per-fold honesty, using labels for fold f only from a model that never saw fold f.",
+    "type": "decision",
+    "entities": [
+     "pseudo-labeling"
+    ],
+    "value": null
+   },
+   {
+    "text": "Current blend v10 metric is 0.20601.",
+    "type": "result",
+    "entities": [
+     "blend v10"
+    ],
+    "value": "0.20601"
+   },
+   {
+    "text": "The author's deberta_large2 (seed-avg) and roberta-large are running.",
+    "type": "model",
+    "entities": [
+     "deberta_large2",
+     "roberta-large"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_stack2_0211.md": {
+  "facts": [
+   {
+    "text": "stack2 (LGBM+MLP seed-avg) scored 0.21157, down from 0.2206",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "LGBM",
+     "MLP"
+    ],
+    "value": "0.21157"
+   },
+   {
+    "text": "bertcased_seedavg scored 0.327",
+    "type": "result",
+    "entities": [
+     "bertcased_seedavg"
+    ],
+    "value": "0.327"
+   },
+   {
+    "text": "dbv3base_s7 scored 0.365",
+    "type": "result",
+    "entities": [
+     "dbv3base_s7"
+    ],
+    "value": "0.365"
+   },
+   {
+    "text": "final_oof scored 0.20460, the best result",
+    "type": "result",
+    "entities": [
+     "final_oof"
+    ],
+    "value": "0.20460"
+   },
+   {
+    "text": "Combined in-sample score was 0.20439 and honest nested score was 0.20507, showing no gain over final alone",
+    "type": "result",
+    "entities": [
+     "final",
+     "stack2"
+    ],
+    "value": "0.20507"
+   },
+   {
+    "text": "Decision to stop pushing meta-mixing and focus purely on base models",
+    "type": "decision",
+    "entities": [
+     "stack2",
+     "final"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_alpha_xlnet_base_result.md": {
+  "facts": [
+   {
+    "text": "xlnet-base-cased 5-fold OOF LL is 0.40018 (best epoch/fold), epoch-avg 0.39979",
+    "type": "result",
+    "entities": [
+     "xlnet-base-cased",
+     "oof_xlnet.npy",
+     "test_xlnet.npy",
+     "oof_xlnet_epavg.npy",
+     "test_xlnet_epavg.npy"
+    ],
+    "value": "0.40018"
+   },
+   {
+    "text": "Per-fold best OOF LL: 0.4035 / 0.3897 / 0.4023 / 0.4052 / 0.4002",
+    "type": "result",
+    "entities": [
+     "xlnet-base-cased"
+    ],
+    "value": "0.4035/0.3897/0.4023/0.4052/0.4002"
+   },
+   {
+    "text": "Training recipe: 3 epochs, batch size 32, lr 2e-5, label smoothing 0.05, dropout 0.1, bf16, max_len 128",
+    "type": "constraint",
+    "entities": [
+     "xlnet-base-cased"
+    ],
+    "value": null
+   },
+   {
+    "text": "Training code is at workspaces/arcturus_alpha/train_tf.py",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_alpha/train_tf.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "XLNet is worse than bert-base-cased (0.354) but architecturally decorrelated via permutation LM, making it useful as a stack input",
+    "type": "insight",
+    "entities": [
+     "xlnet-base-cased",
+     "bert-base-cased"
+    ],
+    "value": null
+   },
+   {
+    "text": "Default next GPU job is xlnet-large-cased to avoid duplicating roberta-large",
+    "type": "decision",
+    "entities": [
+     "xlnet-large-cased",
+     "roberta-large"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v10_0206.md": {
+  "facts": [
+   {
+    "text": "microsoft/deberta-v3-large 5-fold epavg achieved OOF 0.31096 with best 0.32679.",
+    "type": "result",
+    "entities": [
+     "microsoft/deberta-v3-large",
+     "OOF",
+     "0.31096",
+     "0.32679"
+    ],
+    "value": "0.31096"
+   },
+   {
+    "text": "Selected stacker comb 0.65·stack_lr + 0.35·stack_mlp_sa achieved OOF LL 0.20601.",
+    "type": "result",
+    "entities": [
+     "stack_lr",
+     "stack_mlp_sa",
+     "OOF LL",
+     "0.20601"
+    ],
+    "value": "0.20601"
+   },
+   {
+    "text": "Meta-combine with deneb stack2_* achieved 0.20460 with weights 0.78/0.16/0.07.",
+    "type": "result",
+    "entities": [
+     "deneb",
+     "stack2_*",
+     "0.20460"
+    ],
+    "value": "0.20460"
+   },
+   {
+    "text": "final_solution/submission.csv is kept as the unified blend at 0.20601 for robustness.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "0.20601"
+    ],
+    "value": "0.20601"
+   },
+   {
+    "text": "Folded in deneb bertcased_seedavg 0.334 and seed variants, distilbertcased, and arcturus case_* models.",
+    "type": "model",
+    "entities": [
+     "deneb",
+     "bertcased_seedavg",
+     "distilbertcased",
+     "arcturus",
+     "case_*"
+    ],
+    "value": "0.334"
+   },
+   {
+    "text": "Next running deberta_large2 (seed 2 to seed-avg) then roberta-large.",
+    "type": "decision",
+    "entities": [
+     "deberta_large2",
+     "roberta-large"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_dbv3base_seedavg.md": {
+  "facts": [
+   {
+    "text": "dbv3base_seedavg is the arithmetic mean of dbv3base_s7avg 0.365, dbv3base_s13avg 0.354, and deberta_epavg 0.364.",
+    "type": "model",
+    "entities": [
+     "dbv3base_seedavg",
+     "dbv3base_s7avg",
+     "dbv3base_s13avg",
+     "deberta_epavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "dbv3base_seedavg achieves OOF metric 0.33854.",
+    "type": "result",
+    "entities": [
+     "dbv3base_seedavg",
+     "OOF"
+    ],
+    "value": 0.33854
+   },
+   {
+    "text": "dbv3base_seedavg OOF and test predictions are stored in dbv3base_seedavg_oof.npy and dbv3base_seedavg_test.npy.",
+    "type": "artifact",
+    "entities": [
+     "dbv3base_seedavg_oof.npy",
+     "dbv3base_seedavg_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Three strong seed-averaged base models exist: deberta-v3-large 0.311, bertcased_seedavg 0.327, and dbv3base_seedavg 0.339.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large",
+     "bertcased_seedavg",
+     "dbv3base_seedavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author claims google/electra-large-discriminator for 5-fold training.",
+    "type": "decision",
+    "entities": [
+     "google/electra-large-discriminator"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author requests that dbv3base_seedavg be folded into the pool.",
+    "type": "decision",
+    "entities": [
+     "dbv3base_seedavg"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_alpha_pseudo_label_result.md": {
+  "facts": [
+   {
+    "text": "Pseudo-labeling with pow=2 thr=0.6 achieved OOF 0.36117, improving over base case3_lr OOF 0.36707.",
+    "type": "result",
+    "entities": [
+     "case3_lr",
+     "pseudo_lr",
+     "OOF",
+     "0.36117",
+     "0.36707",
+     "pow=2",
+     "thr=0.6"
+    ],
+    "value": "0.36117"
+   },
+   {
+    "text": "Self-training gives a real improvement of -0.006 and a decorrelated base model.",
+    "type": "insight",
+    "entities": [
+     "self-training",
+     "-0.006"
+    ],
+    "value": "-0.006"
+   },
+   {
+    "text": "The teacher ensemble consists of LR(case3) + ComplementNB + MultinomialNB fit on train-fold only, predicting soft labels on 1958 test rows.",
+    "type": "model",
+    "entities": [
+     "LR(case3)",
+     "ComplementNB",
+     "MultinomialNB",
+     "1958"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts oof_pseudo_lr.npy and test_pseudo_lr.npy were produced with canonical folds in order EAP/HPL/MWS.",
+    "type": "artifact",
+    "entities": [
+     "oof_pseudo_lr.npy",
+     "test_pseudo_lr.npy",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": null
+   },
+   {
+    "text": "Request to add pseudo_lr as a base model to the blend v9b.",
+    "type": "decision",
+    "entities": [
+     "pseudo_lr",
+     "rigel_xi_blend_v9b_deberta_large.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author's xlnet-base model is published.",
+    "type": "artifact",
+    "entities": [
+     "xlnet-base",
+     "arcturus_alpha_xlnet_base_result.md"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_switch_mpnet.md": {
+  "facts": [
+   {
+    "text": "google/electra-large-discriminator fold0 best-ep OOF was 0.41424.",
+    "type": "result",
+    "entities": [
+     "google/electra-large-discriminator",
+     "fold0",
+     "OOF"
+    ],
+    "value": "0.41424"
+   },
+   {
+    "text": "google/electra-large-discriminator took ~20 min/fold.",
+    "type": "result",
+    "entities": [
+     "google/electra-large-discriminator"
+    ],
+    "value": "20 min/fold"
+   },
+   {
+    "text": "Switched base model to microsoft/mpnet-base for architecture diversity.",
+    "type": "decision",
+    "entities": [
+     "microsoft/mpnet-base"
+    ],
+    "value": null
+   },
+   {
+    "text": "microsoft/mpnet-base runs ~12 min/5-fold.",
+    "type": "result",
+    "entities": [
+     "microsoft/mpnet-base"
+    ],
+    "value": "12 min/5-fold"
+   },
+   {
+    "text": "Current swarm best is rigel final with 0.20460.",
+    "type": "result",
+    "entities": [
+     "rigel",
+     "final"
+    ],
+    "value": "0.20460"
+   },
+   {
+    "text": "Meta-combine only ties swarm best at 0.2043.",
+    "type": "result",
+    "entities": [
+     "meta-combine"
+    ],
+    "value": "0.2043"
+   }
+  ]
+ },
+ "rigel_xi_deberta_large_seedavg.md": {
+  "facts": [
+   {
+    "text": "Seed-averaged deberta-v3-large base OOF is 0.29612.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large",
+     "deberta_large_sa",
+     "OOF"
+    ],
+    "value": "0.29612"
+   },
+   {
+    "text": "deberta-v3-large seed11 OOF is 0.31096.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large",
+     "seed11",
+     "OOF"
+    ],
+    "value": "0.31096"
+   },
+   {
+    "text": "deberta-v3-large seed22 OOF is 0.31301.",
+    "type": "result",
+    "entities": [
+     "deberta-v3-large",
+     "seed22",
+     "OOF"
+    ],
+    "value": "0.31301"
+   },
+   {
+    "text": "Arithmetic seed-averaging of deberta-v3-large was confirmed as a lever.",
+    "type": "insight",
+    "entities": [
+     "deberta-v3-large",
+     "seed-averaging",
+     "deberta_large_sa"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF and test prediction artifacts for deberta_large_sa are saved as oof_deberta_large_sa.npy and test_deberta_large_sa.npy.",
+    "type": "artifact",
+    "entities": [
+     "oof_deberta_large_sa.npy",
+     "test_deberta_large_sa.npy",
+     "deberta_large_sa"
+    ],
+    "value": null
+   },
+   {
+    "text": "roberta-large is running in queue2.",
+    "type": "decision",
+    "entities": [
+     "roberta-large",
+     "queue2"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_combine_v4_0200.md": {
+  "facts": [
+   {
+    "text": "Combined nested-weight OOF score is 0.20046.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "final_oof",
+     "stack2"
+    ],
+    "value": "0.20046"
+   },
+   {
+    "text": "stack2 uses 56 clean base models with mix50 OOF 0.20373.",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "mix50"
+    ],
+    "value": "0.20373"
+   },
+   {
+    "text": "deberta_large_sa base scores 0.29612.",
+    "type": "result",
+    "entities": [
+     "deberta_large_sa"
+    ],
+    "value": "0.29612"
+   },
+   {
+    "text": "dbv3base_seedavg base scores 0.33854.",
+    "type": "result",
+    "entities": [
+     "dbv3base_seedavg"
+    ],
+    "value": "0.33854"
+   },
+   {
+    "text": "mpnet base has best-epoch score 0.410 and is published as mpnet_oof/mpnetavg_oof plus test.",
+    "type": "artifact",
+    "entities": [
+     "mpnet",
+     "mpnet_oof",
+     "mpnetavg_oof"
+    ],
+    "value": "0.410"
+   },
+   {
+    "text": "Currently running nghuyong/ernie-2.0-base-en as an additional diverse base model.",
+    "type": "decision",
+    "entities": [
+     "nghuyong/ernie-2.0-base-en"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v11_0202.md": {
+  "facts": [
+   {
+    "text": "Blend v11 achieves OOF 0.20240 with nested-honest check 0.20268.",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "Blend v11",
+     "OOF",
+     "0.20240",
+     "0.20268"
+    ],
+    "value": "0.20240"
+   },
+   {
+    "text": "The blend combines deberta_large_sa, deberta_large2, arcturus xlnet with pseudo_lr, and deneb dbv3base_seedavg.",
+    "type": "model",
+    "entities": [
+     "deberta_large_sa",
+     "deberta_large2",
+     "xlnet",
+     "pseudo_lr",
+     "dbv3base_seedavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "stack_lgbm OOF is 0.21293 and stack_mlp OOF is 0.21584.",
+    "type": "result",
+    "entities": [
+     "stack_lgbm",
+     "stack_mlp",
+     "0.21293",
+     "0.21584"
+    ],
+    "value": "0.21293"
+   },
+   {
+    "text": "The chosen combiner is 0.5·stack_lr + 0.5·stack_lgbm_sa.",
+    "type": "decision",
+    "entities": [
+     "stack_lr",
+     "stack_lgbm_sa"
+    ],
+    "value": "0.5·stack_lr + 0.5·stack_lgbm_sa"
+   },
+   {
+    "text": "final_solution/submission.csv was updated with the unified blend.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Meta-combining with deneb stack2_* yields 0.20012.",
+    "type": "result",
+    "entities": [
+     "deneb",
+     "stack2_*",
+     "0.20012"
+    ],
+    "value": "0.20012"
+   }
+  ]
+ },
+ "deneb_upsilon_ernie_bertlarge.md": {
+  "facts": [
+   {
+    "text": "nghuyong/ernie-2.0-base-en achieved best-ep 0.38490 and epoch-avg 0.37100.",
+    "type": "result",
+    "entities": [
+     "nghuyong/ernie-2.0-base-en",
+     "best-ep",
+     "epoch-avg"
+    ],
+    "value": "0.37100"
+   },
+   {
+    "text": "ernie_oof, ernieavg_oof, and ernie test predictions were published.",
+    "type": "artifact",
+    "entities": [
+     "ernie_oof",
+     "ernieavg_oof"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agreed with rigel_xi_blend_v11_0202.md that seed-avg base models are redundant once the stacker has both seeds.",
+    "type": "decision",
+    "entities": [
+     "rigel_xi_blend_v11_0202.md",
+     "seed-avg",
+     "stacker"
+    ],
+    "value": null
+   },
+   {
+    "text": "Claimed bert-large-cased as the next model, combining case and large effects.",
+    "type": "decision",
+    "entities": [
+     "bert-large-cased"
+    ],
+    "value": null
+   },
+   {
+    "text": "Swarm best is v11 with metric 0.20240 and meta-combine 0.20012.",
+    "type": "result",
+    "entities": [
+     "v11",
+     "meta-combine"
+    ],
+    "value": "0.20240"
+   }
+  ]
+ },
+ "arcturus_alpha_xlnet_large_result.md": {
+  "facts": [
+   {
+    "text": "XLNet-large-cased 5-fold OOF LL is 0.34548 with epoch averaging and 0.35235 at best epoch.",
+    "type": "result",
+    "entities": [
+     "xlnet-large-cased",
+     "OOF LL",
+     "0.34548",
+     "0.35235"
+    ],
+    "value": "0.34548"
+   },
+   {
+    "text": "Best epoch for XLNet-large is ep1; ep2 overfits by about +0.04.",
+    "type": "insight",
+    "entities": [
+     "xlnet-large-cased",
+     "ep1",
+     "ep2"
+    ],
+    "value": null
+   },
+   {
+    "text": "Training recipe: 3 epochs, batch size 16, lr 1.5e-5, label smoothing 0.05, dropout 0.1, max_len 128, bf16.",
+    "type": "constraint",
+    "entities": [
+     "bs16",
+     "lr1.5e-5",
+     "ls0.05",
+     "do0.1",
+     "max_len128",
+     "bf16"
+    ],
+    "value": null
+   },
+   {
+    "text": "Per-fold best OOF LL scores are 0.3652, 0.3516, 0.3601, 0.3403, 0.3446.",
+    "type": "result",
+    "entities": [
+     "0.3652",
+     "0.3516",
+     "0.3601",
+     "0.3403",
+     "0.3446"
+    ],
+    "value": null
+   },
+   {
+    "text": "XLNet-large improves over XLNet-base (0.400 to 0.345), confirming the large-model jump applies to XLNet.",
+    "type": "insight",
+    "entities": [
+     "xlnet-large-cased",
+     "XLNet-base",
+     "0.400",
+     "0.345"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts oof_xlnet_large.npy, test_xlnet_large.npy, oof_xlnet_large_epavg.npy, test_xlnet_large_epavg.npy were produced from code workspaces/arcturus_alpha/train_tf.py.",
+    "type": "artifact",
+    "entities": [
+     "oof_xlnet_large.npy",
+     "test_xlnet_large.npy",
+     "oof_xlnet_large_epavg.npy",
+     "test_xlnet_large_epavg.npy",
+     "workspaces/arcturus_alpha/train_tf.py"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v12_0202.md": {
+  "facts": [
+   {
+    "text": "Blend v12 achieved OOF metric 0.20164 with nested 0.20212.",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "Blend v12",
+     "0.20164",
+     "0.20212"
+    ],
+    "value": "0.20164"
+   },
+   {
+    "text": "New bases folded: roberta_large epavg 0.3404, xlnet_large 0.3455, ernie 0.3710.",
+    "type": "result",
+    "entities": [
+     "roberta_large",
+     "xlnet_large",
+     "ernie",
+     "0.3404",
+     "0.3455",
+     "0.3710"
+    ],
+    "value": null
+   },
+   {
+    "text": "Combined stacker 0.65·stack_lr + 0.35·stack_lgbm produced OOF 0.20164.",
+    "type": "model",
+    "entities": [
+     "stack_lr",
+     "stack_lgbm",
+     "0.65",
+     "0.35",
+     "0.20164"
+    ],
+    "value": "0.20164"
+   },
+   {
+    "text": "Meta-combine with deneb stack2_* yielded 0.19898 with weights 0.61/0.10/0.28.",
+    "type": "result",
+    "entities": [
+     "deneb",
+     "stack2_*",
+     "0.19898",
+     "0.61",
+     "0.10",
+     "0.28"
+    ],
+    "value": "0.19898"
+   },
+   {
+    "text": "final_solution/submission.csv is v12 blend; meta-combine candidate at workspaces/rigel_xi/submission_final.csv.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "workspaces/rigel_xi/submission_final.csv",
+     "v12"
+    ],
+    "value": null
+   },
+   {
+    "text": "Stack is saturating around 0.20; adding correlated large transformers buys only ~0.001 each.",
+    "type": "insight",
+    "entities": [
+     "stack",
+     "0.20",
+     "0.001"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_bert_large_cased_bart.md": {
+  "facts": [
+   {
+    "text": "bert-large-cased 5-fold epoch-avg OOF scored 0.34474.",
+    "type": "result",
+    "entities": [
+     "bert-large-cased",
+     "bertlargecasedavg_oof",
+     "0.34474"
+    ],
+    "value": "0.34474"
+   },
+   {
+    "text": "bert-large-cased best-epoch OOF scored 0.36753.",
+    "type": "result",
+    "entities": [
+     "bert-large-cased",
+     "bertlargecased_oof",
+     "0.36753"
+    ],
+    "value": "0.36753"
+   },
+   {
+    "text": "bert-large-cased overfits at epoch 2 with best at ep0/ep1.",
+    "type": "insight",
+    "entities": [
+     "bert-large-cased"
+    ],
+    "value": null
+   },
+   {
+    "text": "Now training facebook/bart-base with 4 epochs and lr 2e-5.",
+    "type": "model",
+    "entities": [
+     "facebook/bart-base",
+     "bart",
+     "bartavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "bertlargecased OOF should be folded into the rigel_xi_blend_v11_0202 pool.",
+    "type": "decision",
+    "entities": [
+     "bertlargecased",
+     "rigel_xi_blend_v11_0202.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "Seed-avg base OOF scores: deberta_large_sa 0.296, bertcased_seedavg 0.327, dbv3base_seedavg 0.339, bertlargecased 0.345.",
+    "type": "result",
+    "entities": [
+     "deberta_large_sa",
+     "bertcased_seedavg",
+     "dbv3base_seedavg",
+     "bertlargecased"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_fgm_breakthrough.md": {
+  "facts": [
+   {
+    "text": "FGM adversarial training reduced fold-0 validation loss from 0.3753 to 0.3087 on bert-base-cased.",
+    "type": "result",
+    "entities": [
+     "FGM",
+     "bert-base-cased",
+     "fold-0",
+     "0.3753",
+     "0.3087"
+    ],
+    "value": "0.3087"
+   },
+   {
+    "text": "FGM perturbs input embeddings by eps·g/||g|| with a second backward pass.",
+    "type": "feature",
+    "entities": [
+     "FGM",
+     "input embeddings",
+     "eps"
+    ],
+    "value": null
+   },
+   {
+    "text": "The FGM run was still improving at epoch 3, so a full 5-fold run with 6 epochs is being executed.",
+    "type": "decision",
+    "entities": [
+     "FGM",
+     "5-fold",
+     "6 epochs"
+    ],
+    "value": "6"
+   },
+   {
+    "text": "FGM training code is at workspaces/deneb_upsilon/train_fgm.py using bf16 and --fgm 1.0.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/deneb_upsilon/train_fgm.py",
+     "bf16",
+     "--fgm 1.0"
+    ],
+    "value": null
+   },
+   {
+    "text": "FGM slows early epochs but avoids the epoch-2 collapse, so more epochs (5-6) should be used.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "epoch-2 collapse",
+     "5-6 epochs"
+    ],
+    "value": null
+   },
+   {
+    "text": "FGM OOF and test predictions will be published as fgm_bertcased_oof/_test.",
+    "type": "artifact",
+    "entities": [
+     "fgm_bertcased_oof",
+     "fgm_bertcased_test"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_fgm_adopted_deberta.md": {
+  "facts": [
+   {
+    "text": "Implemented FGM in workspaces/rigel_xi/train_tf.py with --fgm <eps> flag using embedding-parameter perturbation and a second backward pass.",
+    "type": "feature",
+    "entities": [
+     "workspaces/rigel_xi/train_tf.py",
+     "FGM",
+     "--fgm"
+    ],
+    "value": null
+   },
+   {
+    "text": "Running microsoft/deberta-v3-base with FGM for 6 epochs, max_len 160, lr 1e-5, eps 1.0 under run name deberta_fgm.",
+    "type": "model",
+    "entities": [
+     "microsoft/deberta-v3-base",
+     "deberta_fgm",
+     "FGM"
+    ],
+    "value": "6 epochs, max_len160, lr1e-5, eps1.0"
+   },
+   {
+    "text": "Running microsoft/deberta-v3-large with FGM for 4 epochs, max_len 160, lr 8e-6, eps 1.0 under run name deberta_large_fgm.",
+    "type": "model",
+    "entities": [
+     "microsoft/deberta-v3-large",
+     "deberta_large_fgm",
+     "FGM"
+    ],
+    "value": "4 epochs, max_len160, lr8e-6, eps1.0"
+   },
+   {
+    "text": "Killed the non-FGM queue to prioritize FGM runs.",
+    "type": "decision",
+    "entities": [
+     "FGM"
+    ],
+    "value": null
+   },
+   {
+    "text": "Role split: deneb keeps bert-base-cased FGM, arcturus considers FGM on xlnet-large, rigel_xi takes DeBERTa.",
+    "type": "decision",
+    "entities": [
+     "deneb",
+     "bert-base-cased",
+     "arcturus",
+     "xlnet-large",
+     "rigel_xi",
+     "DeBERTa"
+    ],
+    "value": null
+   },
+   {
+    "text": "Current swarm best is blend v12 with metric 0.20164.",
+    "type": "result",
+    "entities": [
+     "blend v12",
+     "rigel_xi_blend_v12_0202.md"
+    ],
+    "value": "0.20164"
+   }
+  ]
+ },
+ "arcturus_alpha_xlnet_large_seedavg.md": {
+  "facts": [
+   {
+    "text": "xlnet_large_seedavg OOF metric is 0.33275",
+    "type": "result",
+    "entities": [
+     "xlnet_large_seedavg",
+     "OOF"
+    ],
+    "value": "0.33275"
+   },
+   {
+    "text": "xlnet_large seed42 OOF best-ep is 0.35235 and 3-ep avg is 0.34548",
+    "type": "result",
+    "entities": [
+     "xlnet_large",
+     "seed42"
+    ],
+    "value": "0.35235"
+   },
+   {
+    "text": "xlnet_large_s7 seed7 OOF best-ep is 0.37275 and 3-ep avg is 0.39090 with fold3 diverged at ep0",
+    "type": "result",
+    "entities": [
+     "xlnet_large_s7",
+     "seed7",
+     "fold3"
+    ],
+    "value": "0.37275"
+   },
+   {
+    "text": "Published files oof_xlnet_large_seedavg.npy and test_xlnet_large_seedavg.npy plus 4 individual seed files",
+    "type": "artifact",
+    "entities": [
+     "oof_xlnet_large_seedavg.npy",
+     "test_xlnet_large_seedavg.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Training code is workspaces/arcturus_alpha/train_tf.py",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_alpha/train_tf.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "Decision to fold xlnet_large_seedavg and optionally xlnet_large_s7 into rigel_xi_blend_v11_0202 and deneb_upsilon_combine_v4_0200",
+    "type": "decision",
+    "entities": [
+     "xlnet_large_seedavg",
+     "xlnet_large_s7",
+     "rigel_xi_blend_v11_0202",
+     "deneb_upsilon_combine_v4_0200"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_fgm_bertcased_full.md": {
+  "facts": [
+   {
+    "text": "FGM on full 5-fold bert-base-cased achieved OOF metric 0.31787 with best epoch.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_oof",
+     "fgm_bertcased_test",
+     "bert-base-cased",
+     "FGM"
+    ],
+    "value": "0.31787"
+   },
+   {
+    "text": "FGM epoch-averaged OOF metric was 0.32176.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcasedavg_oof",
+     "fgm_bertcasedavg_test",
+     "FGM"
+    ],
+    "value": "0.32176"
+   },
+   {
+    "text": "Non-FGM bertcased baseline scored 0.36796 best and 0.35382 epoch-averaged.",
+    "type": "result",
+    "entities": [
+     "bertcased",
+     "non-FGM"
+    ],
+    "value": "0.36796"
+   },
+   {
+    "text": "FGM improved over non-FGM by approximately 0.05 and showed no epoch-2 collapse, with best typically at epoch 2-3.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "bertcased"
+    ],
+    "value": "-0.05"
+   },
+   {
+    "text": "fgm_bertlargecased fold0 best was 0.3113 versus 0.3447 non-FGM.",
+    "type": "result",
+    "entities": [
+     "fgm_bertlargecased",
+     "bertlargecased",
+     "fold0"
+    ],
+    "value": "0.3113"
+   },
+   {
+    "text": "Decision to seed-average multiple FGM runs in the future, expecting FGM and seed-averaging to compound.",
+    "type": "decision",
+    "entities": [
+     "FGM",
+     "seed-average"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v13_0200.md": {
+  "facts": [
+   {
+    "text": "Blend v13 achieved metric 0.20035 with nested 0.20067.",
+    "type": "result",
+    "entities": [
+     "Blend v13",
+     "0.20035",
+     "0.20067"
+    ],
+    "value": "0.20035"
+   },
+   {
+    "text": "Best blend is comb 0.65·stack_lr + 0.35·stack_mlp_sa.",
+    "type": "decision",
+    "entities": [
+     "stack_lr",
+     "stack_mlp_sa",
+     "0.65",
+     "0.35"
+    ],
+    "value": "0.65·stack_lr + 0.35·stack_mlp_sa"
+   },
+   {
+    "text": "New bases folded include deneb bertlargecasedavg 0.339, bart, dbv3base_*, and arcturus xlnet_large_seedavg 0.333.",
+    "type": "model",
+    "entities": [
+     "deneb",
+     "bertlargecasedavg",
+     "bart",
+     "dbv3base_*",
+     "arcturus",
+     "xlnet_large_seedavg",
+     "0.339",
+     "0.333"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/submission.csv was updated.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Meta-combine with deneb stack2 scored 0.19749 but fitted weights are unstable across blends (deneb_s2_lgbm weight swung 0.10→0.41), likely noise-fitting.",
+    "type": "problem",
+    "entities": [
+     "deneb stack2",
+     "0.19749",
+     "deneb_s2_lgbm",
+     "0.10",
+     "0.41"
+    ],
+    "value": "0.19749"
+   },
+   {
+    "text": "FGM DeBERTa fold0 scores improved 0.579→0.431→0.398→0.350 with no ep2 collapse; deberta_large_fgm is queued next.",
+    "type": "result",
+    "entities": [
+     "FGM DeBERTa",
+     "deberta_large_fgm",
+     "0.579",
+     "0.431",
+     "0.398",
+     "0.350"
+    ],
+    "value": "0.350"
+   }
+  ]
+ },
+ "deneb_upsilon_combine_fgm_01936.md": {
+  "facts": [
+   {
+    "text": "FGM bertcased stack2 (mix50) OOF is 0.19579",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "FGM bertcased",
+     "mix50"
+    ],
+    "value": "0.19579"
+   },
+   {
+    "text": "stack2_lgbm OOF is 0.19977 and stack2_mlp OOF is 0.20222",
+    "type": "result",
+    "entities": [
+     "stack2_lgbm",
+     "stack2_mlp"
+    ],
+    "value": "0.19977"
+   },
+   {
+    "text": "Combining with rigel bases via combine2.py with weights rigel_lr 0.33, s2_lgbm 0.47, s2_mlp 0.19 yields honest nested 0.19364",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "rigel_lr",
+     "s2_lgbm",
+     "s2_mlp"
+    ],
+    "value": "0.19364"
+   },
+   {
+    "text": "The combine is ahead of the unified blend v13 0.20035 by ~0.007",
+    "type": "insight",
+    "entities": [
+     "v13",
+     "unified blend"
+    ],
+    "value": "0.007"
+   },
+   {
+    "text": "Recommendation is to include stack2_* as meta-inputs in the final submission",
+    "type": "decision",
+    "entities": [
+     "stack2_",
+     "rigel_xi"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts submission_comb2.csv and comb2_test.npy were produced",
+    "type": "artifact",
+    "entities": [
+     "submission_comb2.csv",
+     "comb2_test.npy"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v14_0194.md": {
+  "facts": [
+   {
+    "text": "Best blend is comb 0.6·stack_lr + 0.4·stack_mlp_sa scoring 0.19417 with nested 0.19438.",
+    "type": "result",
+    "entities": [
+     "stack_lr",
+     "stack_mlp_sa",
+     "comb"
+    ],
+    "value": "0.19417"
+   },
+   {
+    "text": "Meta-combine with deneb stack2 yields 0.19182 in submission_final.csv.",
+    "type": "result",
+    "entities": [
+     "deneb stack2",
+     "submission_final.csv"
+    ],
+    "value": "0.19182"
+   },
+   {
+    "text": "FGM signal added to unified pool via deneb fgm_bertcased 0.317 and fgm_bertcasedavg 0.322.",
+    "type": "feature",
+    "entities": [
+     "fgm_bertcased",
+     "fgm_bertcasedavg",
+     "deneb"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/submission.csv was updated with the best blend.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "deberta_fgm best epoch/fold is approximately 0.335-0.360 with fold4 running.",
+    "type": "result",
+    "entities": [
+     "deberta_fgm",
+     "fold4"
+    ],
+    "value": "0.335-0.360"
+   },
+   {
+    "text": "FGM + large + more epochs is identified as the current frontier.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "deberta_large_fgm"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_fgm_seedavg_01907.md": {
+  "facts": [
+   {
+    "text": "fgm_bertcased scored 0.3179 and fgm_bertcased_s7 scored 0.3148.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased",
+     "fgm_bertcased_s7"
+    ],
+    "value": "0.3179"
+   },
+   {
+    "text": "2-seed geometric average fgm_bertcased_seedavg scored 0.31618.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_seedavg"
+    ],
+    "value": "0.31618"
+   },
+   {
+    "text": "stack2 (mix50) with FGM bases folded in scored 0.19329.",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "mix50"
+    ],
+    "value": "0.19329"
+   },
+   {
+    "text": "combine2.py versus final (0.19177) achieved honest nested metric 0.19070 with folds 0.1956/0.1811/0.2006/0.1880/0.1882.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "final"
+    ],
+    "value": "0.19070"
+   },
+   {
+    "text": "fgm_bertcased_s13 is running toward a 3-seed fgm_bertcased_seedavg of about 0.312 followed by a final re-stack.",
+    "type": "decision",
+    "entities": [
+     "fgm_bertcased_s13",
+     "fgm_bertcased_seedavg"
+    ],
+    "value": "0.312"
+   },
+   {
+    "text": "rigel_xi's deberta_large_fgm is expected to be the biggest remaining lever, likely reaching about 0.18 after re-run.",
+    "type": "insight",
+    "entities": [
+     "rigel_xi",
+     "deberta_large_fgm"
+    ],
+    "value": "0.18"
+   }
+  ]
+ },
+ "arcturus_alpha_xlnet_large_fgm.md": {
+  "facts": [
+   {
+    "text": "xlnet_large_fgm achieved OOF best 0.31641 with FGM applied.",
+    "type": "result",
+    "entities": [
+     "xlnet_large_fgm",
+     "FGM",
+     "OOF"
+    ],
+    "value": 0.31641
+   },
+   {
+    "text": "xlnet_large without FGM had OOF best 0.35235 and OOF epavg 0.34548.",
+    "type": "result",
+    "entities": [
+     "xlnet_large",
+     "OOF"
+    ],
+    "value": 0.35235
+   },
+   {
+    "text": "xlnet_large_fgm OOF epavg was 0.31728.",
+    "type": "result",
+    "entities": [
+     "xlnet_large_fgm",
+     "OOF epavg"
+    ],
+    "value": 0.31728
+   },
+   {
+    "text": "Training used code workspaces/arcturus_alpha/train_tf.py with --fgm 1.0, 4 epochs, batch size 16, lr 1.5e-5, label smoothing 0.05, max_len 112, bf16.",
+    "type": "decision",
+    "entities": [
+     "workspaces/arcturus_alpha/train_tf.py",
+     "--fgm 1.0",
+     "bf16"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts oof_xlnet_large_fgm.npy and test_xlnet_large_fgm.npy (plus _epavg variants) were produced.",
+    "type": "artifact",
+    "entities": [
+     "oof_xlnet_large_fgm.npy",
+     "test_xlnet_large_fgm.npy",
+     "_epavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "FGM eliminated the ep1-to-ep2 collapse, with validation improving through ep2-3.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "xlnet_large_fgm"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v16_0188.md": {
+  "facts": [
+   {
+    "text": "Blend v16 achieved OOF 0.18812 with nested 0.18836.",
+    "type": "result",
+    "entities": [
+     "Blend v16",
+     "OOF",
+     "nested"
+    ],
+    "value": "0.18812"
+   },
+   {
+    "text": "Meta-combine with deneb stack2_* achieved nested 0.18660 with weights 0.66/0.30/0.04.",
+    "type": "result",
+    "entities": [
+     "deneb stack2_*",
+     "meta-combine",
+     "nested"
+    ],
+    "value": "0.18660"
+   },
+   {
+    "text": "stack_lgbm OOF was 0.19820 and stack_mlp OOF was 0.20378.",
+    "type": "result",
+    "entities": [
+     "stack_lgbm",
+     "stack_mlp",
+     "OOF"
+    ],
+    "value": "0.19820"
+   },
+   {
+    "text": "Combined stacker 0.65·stack_lr+0.35·stack_mlp_sa achieved OOF 0.18812.",
+    "type": "result",
+    "entities": [
+     "stack_lr",
+     "stack_mlp_sa",
+     "combined stacker"
+    ],
+    "value": "0.18812"
+   },
+   {
+    "text": "final_solution/submission.csv currently holds the blend, while the combined candidate is at workspaces/rigel_xi/submission_final.csv.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "workspaces/rigel_xi/submission_final.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "FGM requires late-epoch averaging; for FGM the _epavg averages only the last half of epochs.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "_epavg"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_fgm_seedavg3_01856.md": {
+  "facts": [
+   {
+    "text": "fgm_bertcased_seedavg with 3 seeds geometric mean scored 0.31411, individual seeds 0.318/0.315/0.318.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_seedavg",
+     "0.31411"
+    ],
+    "value": "0.31411"
+   },
+   {
+    "text": "stack2 (mix50) scored 0.18947.",
+    "type": "result",
+    "entities": [
+     "stack2",
+     "mix50",
+     "0.18947"
+    ],
+    "value": "0.18947"
+   },
+   {
+    "text": "combine2.py versus final (0.18635) achieved honest nested metric 0.18562 with folds 0.1932/0.1764/0.1932/0.1796/0.1857.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "final",
+     "0.18562",
+     "0.18635"
+    ],
+    "value": "0.18562"
+   },
+   {
+    "text": "Running fgm_roberta (roberta-base FGM, distinct cased pretraining) as a final diverse base, then final re-stack.",
+    "type": "decision",
+    "entities": [
+     "fgm_roberta",
+     "roberta-base"
+    ],
+    "value": null
+   },
+   {
+    "text": "If deberta_large_fgm lands, re-run and expect ~0.18.",
+    "type": "decision",
+    "entities": [
+     "deberta_large_fgm",
+     "rigel_xi"
+    ],
+    "value": null
+   },
+   {
+    "text": "Keep final_solution/ updated; independent format/consistency check near the end; work_end 06:22.",
+    "type": "constraint",
+    "entities": [
+     "final_solution/",
+     "06:22"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "deneb_upsilon_fgm_seedavg_best_0299.md": {
+  "facts": [
+   {
+    "text": "fgm_bertcased_seedavg_best (arithmetic mean of 3 seeds' best-epoch predictions) achieved OOF metric 0.29914.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_seedavg_best",
+     "0.29914"
+    ],
+    "value": "0.29914"
+   },
+   {
+    "text": "fgm_bertcased_seedavg (epoch-avg) achieved OOF metric 0.31411.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_seedavg",
+     "0.31411"
+    ],
+    "value": "0.31411"
+   },
+   {
+    "text": "OOF and test prediction files for fgm_bertcased_seedavg_best were published as *_oof.npy and *_test.npy.",
+    "type": "artifact",
+    "entities": [
+     "fgm_bertcased_seedavg_best",
+     "*_oof.npy",
+     "*_test.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Seed-averaging FGM best-epoch predictions outperforms epoch-averaging.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "seed-averaging",
+     "best-epoch"
+    ],
+    "value": null
+   },
+   {
+    "text": "fgm_roberta is running with fold0 best 0.335 vs 0.375 non-FGM.",
+    "type": "result",
+    "entities": [
+     "fgm_roberta",
+     "fold0",
+     "0.335",
+     "0.375"
+    ],
+    "value": "0.335"
+   },
+   {
+    "text": "Decision to fold fgm_bertcased_seedavg_best into the ensemble pool.",
+    "type": "decision",
+    "entities": [
+     "fgm_bertcased_seedavg_best"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_blend_v17_0185.md": {
+  "facts": [
+   {
+    "text": "Meta-combine with deneb stack2_* (0.565/0.364/0.070) achieves nested OOF 0.18532.",
+    "type": "result",
+    "entities": [
+     "meta-combine",
+     "deneb stack2_*",
+     "nested OOF"
+    ],
+    "value": "0.18532"
+   },
+   {
+    "text": "Unified blend v17 (comb 0.65·stack_lr+0.35·stack_mlp_sa) has nested OOF 0.18749 and in-sample 0.18734.",
+    "type": "result",
+    "entities": [
+     "blend v17",
+     "stack_lr",
+     "stack_mlp_sa",
+     "nested OOF"
+    ],
+    "value": "0.18749"
+   },
+   {
+    "text": "New base models include arcturus xlnet_large_fgm 0.316, distilbert_fgm 0.371, and deneb fgm_bertcased_s*/mpnet.",
+    "type": "model",
+    "entities": [
+     "arcturus",
+     "xlnet_large_fgm",
+     "distilbert_fgm",
+     "deneb",
+     "fgm_bertcased_s*",
+     "mpnet"
+    ],
+    "value": null
+   },
+   {
+    "text": "The meta-combine has been consistently ~0.002 ahead (nested) across 3 blends.",
+    "type": "insight",
+    "entities": [
+     "meta-combine",
+     "nested"
+    ],
+    "value": "0.002"
+   },
+   {
+    "text": "Decision to ship the meta-combine as final_solution/submission.csv.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "meta-combine"
+    ],
+    "value": null
+   },
+   {
+    "text": "Submission format verified: ids match, sum=1, min p≈1e-5, no NaN.",
+    "type": "constraint",
+    "entities": [
+     "submission.csv",
+     "ids",
+     "sum=1",
+     "min p"
+    ],
+    "value": "1e-5"
+   }
+  ]
+ },
+ "deneb_upsilon_final_bases_0518.md": {
+  "facts": [
+   {
+    "text": "fgm_roberta (roberta-base FGM) achieved best 0.33820 and epavg 0.34160, producing fgm_roberta_oof/fgm_robertaavg_oof plus test artifacts.",
+    "type": "result",
+    "entities": [
+     "fgm_roberta",
+     "roberta-base",
+     "fgm_roberta_oof",
+     "fgm_robertaavg_oof"
+    ],
+    "value": "0.33820"
+   },
+   {
+    "text": "fgm_bertcased_seedavg_best scored 0.29914.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased_seedavg_best"
+    ],
+    "value": "0.29914"
+   },
+   {
+    "text": "Refreshed stack2_* artifacts were produced with mix50 = 0.18890.",
+    "type": "result",
+    "entities": [
+     "stack2_*",
+     "mix50"
+    ],
+    "value": "0.18890"
+   },
+   {
+    "text": "combine2.py versus final (0.18507) gives honest nested 0.18527, statistically identical.",
+    "type": "result",
+    "entities": [
+     "combine2.py",
+     "final"
+    ],
+    "value": "0.18527"
+   },
+   {
+    "text": "All base OOF/test artifacts from deneb_upsilon are final and no more GPU jobs will be launched.",
+    "type": "decision",
+    "entities": [
+     "deneb_upsilon"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/ remains owned by the other agent; deneb_upsilon will only run a read-only format/consistency check.",
+    "type": "decision",
+    "entities": [
+     "final_solution/"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_alpha_fgm_seedavg_final.md": {
+  "facts": [
+   {
+    "text": "Seed-averaging two FGM XLNet-large runs (seed42 4ep 0.31641 and seed7 3ep 0.31471) produced OOF 0.29918.",
+    "type": "result",
+    "entities": [
+     "xlnet_large_fgm",
+     "xlnet_large_fgm_s7",
+     "xlnet_large_fgm_seedavg"
+    ],
+    "value": "0.29918"
+   },
+   {
+    "text": "The seed-averaged FGM XLNet-large model is named xlnet_large_fgm_seedavg.",
+    "type": "model",
+    "entities": [
+     "xlnet_large_fgm_seedavg"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF and test prediction artifacts are oof_xlnet_large_fgm_seedavg.npy and test_xlnet_large_fgm_seedavg.npy.",
+    "type": "artifact",
+    "entities": [
+     "oof_xlnet_large_fgm_seedavg.npy",
+     "test_xlnet_large_fgm_seedavg.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Requested that xlnet_large_fgm_seedavg be added to the blend pool.",
+    "type": "decision",
+    "entities": [
+     "xlnet_large_fgm_seedavg",
+     "rigel_xi_blend_v14_0194.md",
+     "deneb_upsilon_fgm_seedavg_01907.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "Weak nonlinear LGBM/MLP/Nystroem models were deleted per a negative result.",
+    "type": "decision",
+    "entities": [
+     "LGBM",
+     "MLP",
+     "Nystroem",
+     "arcturus_alpha_lgbm_weak_gpu_proposal.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "The agent did not write final_solution/ because rigel owns it.",
+    "type": "constraint",
+    "entities": [
+     "final_solution",
+     "rigel",
+     "rigel_xi_final_ownership_and_gpu.md"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_FINAL_submission.md": {
+  "facts": [
+   {
+    "text": "Final submission placed at final_solution/submission.csv with OOF metric 0.18463.",
+    "type": "result",
+    "entities": [
+     "final_solution/submission.csv",
+     "OOF"
+    ],
+    "value": "0.18463"
+   },
+   {
+    "text": "Final submission is a unified ensemble (v18) meta-combined with deneb's stacker.",
+    "type": "model",
+    "entities": [
+     "v18",
+     "deneb stacker"
+    ],
+    "value": null
+   },
+   {
+    "text": "Meta-combine weights: rigel_blend 0.60, deneb s2_lgbm 0.35, deneb s2_mlp 0.05.",
+    "type": "decision",
+    "entities": [
+     "rigel_blend",
+     "deneb s2_lgbm",
+     "deneb s2_mlp"
+    ],
+    "value": "0.60/0.35/0.05"
+   },
+   {
+    "text": "Unified blend v18 achieved in-sample 0.18644 and nested 0.18657.",
+    "type": "result",
+    "entities": [
+     "v18"
+    ],
+    "value": "0.18657"
+   },
+   {
+    "text": "Submission format verified: 1958 rows, ids match test.csv, rows renormalize to 1, no NaN, min p≈1e-5.",
+    "type": "constraint",
+    "entities": [
+     "test.csv",
+     "1958 rows"
+    ],
+    "value": "1958"
+   },
+   {
+    "text": "FGM adversarial training broke the transformer overfitting ceiling, e.g. xlnet-large improved 0.345 to 0.316.",
+    "type": "insight",
+    "entities": [
+     "FGM",
+     "xlnet-large"
+    ],
+    "value": "0.316"
+   }
+  ]
+ },
+ "deneb_upsilon_final_verify.md": {
+  "facts": [
+   {
+    "text": "Verified final_solution/submission.csv has 1958 rows with columns id,EAP,HPL,MWS and ids matching data/test.csv, 0 NaN, 0 duplicate ids.",
+    "type": "result",
+    "entities": [
+     "final_solution/submission.csv",
+     "data/test.csv",
+     "id",
+     "EAP",
+     "HPL",
+     "MWS"
+    ],
+    "value": "1958 rows"
+   },
+   {
+    "text": "Submission row sums are within [1-1e-15, 1+1e-15] and probabilities within [1.01e-5, 0.99997].",
+    "type": "result",
+    "entities": [
+     "submission.csv"
+    ],
+    "value": "[1.01e-5, 0.99997]"
+   },
+   {
+    "text": "Submission id set matches sample_submission.csv.",
+    "type": "result",
+    "entities": [
+     "sample_submission.csv",
+     "submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Added final_solution/code_deneb_upsilon/ containing stacker2.py, train_fgm.py, train_transformer.py, seedavg.py, combine2.py, and shared_folds.csv.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/code_deneb_upsilon/",
+     "stacker2.py",
+     "train_fgm.py",
+     "train_transformer.py",
+     "seedavg.py",
+     "combine2.py",
+     "shared_folds.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Final OOF (swarm) nested score is 0.1846.",
+    "type": "result",
+    "entities": [
+     "OOF",
+     "swarm"
+    ],
+    "value": "0.1846"
+   },
+   {
+    "text": "The final meta-combine uses deneb_upsilon's stack2_* artifacts, closing the reproducibility gap.",
+    "type": "insight",
+    "entities": [
+     "stack2_*",
+     "final_combine.py"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_alpha_final_code_added.md": {
+  "facts": [
+   {
+    "text": "Added reproducible code and README to final_solution/code_arcturus_alpha/ without touching rigel's or deneb's files or submission.csv.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/code_arcturus_alpha/",
+     "submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Code directory includes train_tf.py, make_models.py, pseudo_label.py, make_folds.py with folds.npy, baseline_linear.py, feature_search.py, make_lgbm.py, make_cpu_diverse.py, final_crosscheck.py, and README.md.",
+    "type": "artifact",
+    "entities": [
+     "train_tf.py",
+     "make_models.py",
+     "pseudo_label.py",
+     "make_folds.py",
+     "folds.npy",
+     "baseline_linear.py",
+     "feature_search.py",
+     "make_lgbm.py",
+     "make_cpu_diverse.py",
+     "final_crosscheck.py",
+     "README.md"
+    ],
+    "value": null
+   },
+   {
+    "text": "Final submission nested OOF metric is 0.18463.",
+    "type": "result",
+    "entities": [
+     "nested OOF"
+    ],
+    "value": "0.18463"
+   },
+   {
+    "text": "Submission format verified: 1958 rows, ids match test.csv, sums=1, no NaN, min p≈1e-5.",
+    "type": "result",
+    "entities": [
+     "test.csv",
+     "1958 rows"
+    ],
+    "value": "1958"
+   },
+   {
+    "text": "FGM XLNet-large family is folded in with xlnet_large_fgm_seedavg scoring 0.29918.",
+    "type": "model",
+    "entities": [
+     "xlnet_large_fgm_seedavg",
+     "XLNet-large",
+     "FGM"
+    ],
+    "value": "0.29918"
+   }
+  ]
+ },
+ "deneb_upsilon_closing.md": {
+  "facts": [
+   {
+    "text": "Final submission.csv is verified at 1958x4 with ids matching test, no NaN, and rows summing to 1.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "1958x4"
+   },
+   {
+    "text": "Swarm OOF nested score is approximately 0.1846.",
+    "type": "result",
+    "entities": [
+     "swarm OOF",
+     "nested"
+    ],
+    "value": "0.1846"
+   },
+   {
+    "text": "Canonical folds shared_folds.csv and the OOF/test protocol were contributed.",
+    "type": "artifact",
+    "entities": [
+     "shared_folds.csv",
+     "OOF/test protocol"
+    ],
+    "value": null
+   },
+   {
+    "text": "FGM adversarial training improved fgm_bertcased from 0.368 to 0.318, with seed-avg best-epoch reaching 0.299.",
+    "type": "result",
+    "entities": [
+     "fgm_bertcased",
+     "FGM",
+     "seed-avg"
+    ],
+    "value": "0.299"
+   },
+   {
+    "text": "An independent stacker stacker2.py using LGBM+MLP seed-avg plus handcrafted features and nested-honest checks was consumed by the final meta-combine.",
+    "type": "model",
+    "entities": [
+     "stacker2.py",
+     "LGBM",
+     "MLP"
+    ],
+    "value": null
+   },
+   {
+    "text": "Classical bases include tfidf_lr 0.372, cnb 0.380, nbsvm 0.405, sgd 0.388, char16, and svc_cal.",
+    "type": "result",
+    "entities": [
+     "tfidf_lr",
+     "cnb",
+     "nbsvm",
+     "sgd",
+     "char16",
+     "svc_cal"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "rigel_xi_FINAL_submission_v19.md": {
+  "facts": [
+   {
+    "text": "Final meta-combine achieved nested metric 0.18448.",
+    "type": "result",
+    "entities": [
+     "rigel_xi",
+     "meta-combine",
+     "nested metric"
+    ],
+    "value": "0.18448"
+   },
+   {
+    "text": "Unified blend v19 achieved in-sample 0.18615 and nested 0.18623.",
+    "type": "result",
+    "entities": [
+     "unified blend v19",
+     "in-sample",
+     "nested"
+    ],
+    "value": "0.18623"
+   },
+   {
+    "text": "Meta-combine weights are rigel_blend 0.617, deneb s2_lgbm 0.335, deneb s2_mlp 0.048.",
+    "type": "decision",
+    "entities": [
+     "rigel_blend",
+     "deneb s2_lgbm",
+     "deneb s2_mlp"
+    ],
+    "value": null
+   },
+   {
+    "text": "Folded in xlnet_large_fgm_seedavg base with score 0.299 from arcturus.",
+    "type": "model",
+    "entities": [
+     "xlnet_large_fgm_seedavg",
+     "arcturus"
+    ],
+    "value": "0.299"
+   },
+   {
+    "text": "final_solution/submission.csv was updated and verified with 1958 rows, matching ids, sum=1, no NaN.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "1958"
+   },
+   {
+    "text": "Fallback snapshot exists at workspaces/rigel_xi/submission_FALLBACK.csv.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/rigel_xi/submission_FALLBACK.csv"
+    ],
+    "value": null
+   }
+  ]
+ }
+}

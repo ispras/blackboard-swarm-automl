@@ -1,0 +1,3214 @@
+{
+ "billion-word-imputation/aldebaran_xi_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/aldebaran_xi_metric_is_char_level.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_metric_corrected_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_mlm_gap_bottleneck.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/deneb_xi_ngram_status.md": {
+  "role": "communicator",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/aldebaran_xi_winner_report_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/aldebaran_xi_gap_signal_ensemble.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_quick_answers.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_ngram_findings.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/aldebaran_xi_first_result.md": {
+  "role": "producer",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/deneb_xi_word_rerank_validation.md": {
+  "role": "coordinator",
+  "confidence": 0.8
+ },
+ "billion-word-imputation/alkaid_psi_gap_detector_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_deliverables_wordrerank.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_status_and_requests.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_fusion_rerank_result.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/aldebaran_xi_fast_candidates.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/aldebaran_xi_fused_submission.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_consensus_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.72
+ },
+ "billion-word-imputation/deneb_xi_tapt_proposal.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_joint_and_coverage.md": {
+  "role": "explorer",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/aldebaran_xi_plan_ack.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_final_submission_ready.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_union_candidates.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/alkaid_psi_headroom_and_tapt.md": {
+  "role": "explorer",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/deneb_xi_val_merged_ready.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_3way_mlm_ensemble.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/deneb_xi_fused5_start.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_fused5_proposal.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_decision_gaps.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_final_submission_2737.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_deberta_gap_ensemble.md": {
+  "role": "explorer",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/aldebaran_xi_large5_candidates.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_fused5_running.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_fused5_ready.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_fused5_done_stop.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_fused5_ack.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_fused5_weights_frozen.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_final_updated.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_bert_negative.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/aldebaran_xi_bert_diversity.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_multitoken_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_final_summary.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_final_summary.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_psi_final_summary.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_multitoken_negative.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_final_confirmed.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_ceiling_monitor.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/aldebaran_xi_r2_verified.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/deneb_xi_final_confirmed.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/alkaid_psi_final_confirmed.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/alkaid_psi_decision_improved.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "bms-molecular-translation/dubhe_phi_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_baseline_finding.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_tokenizer_conflict.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_baseline_split.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_tokenizer_interface.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_train_review.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "bms-molecular-translation/mirfak_mu_floor_update.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_train_launch.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "bms-molecular-translation/mirfak_mu_inference_ready.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_trajectory.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_model_beats_floor.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_ack_no_prefix.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_early_signal.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_no_prefix_wins.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_rescore_iface.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "bms-molecular-translation/altair_lambda_lm_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_plan_ack.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_error_analysis.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_decode_locked.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_beam_dead.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_beam_timing.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_endgame_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_beam_drop_ack.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_ensemble_wins.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "bms-molecular-translation/dubhe_phi_epoch_progress.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_training_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_val_leak.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "bms-molecular-translation/mirfak_mu_ensemble_ready.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_train_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_ship_ack.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "bms-molecular-translation/mirfak_mu_ship_decision.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_solution_placed.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_leak_clarified.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_ft384_probe.md": {
+  "role": "explorer",
+  "confidence": 0.72
+ },
+ "bms-molecular-translation/altair_lambda_sub_verified.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "bms-molecular-translation/mirfak_mu_canon_helps.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_ft384_nogo.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_canon_ack.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_canon_clarify.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_finetune_negative.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_finetune_start.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_independent_verify.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "bms-molecular-translation/dubhe_phi_final_summary.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_frozen.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_postproc_closed.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/altair_lambda_freeze_confirm.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_final_confirmation.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/dubhe_phi_postproc_recheck.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "bms-molecular-translation/mirfak_mu_final_qa.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "bms-molecular-translation/mirfak_mu_final_confirmation.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/capella_kappa_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/achernar_delta_role_claim.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_split_fix.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_split_alignment.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_status_swin.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_convnext_smoke.md": {
+  "role": "producer",
+  "confidence": 0.92
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_smoke_effb4.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_split_ack.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_capella_swin_died.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_swin_relaunch.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_tools_endgame.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_swin_done_ensemble.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_convnext_fold0.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/capella_kappa_round2_slots.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_pivot_v2s.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_effb4_fold0.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_effb4_test_probs.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_vit_done.md": {
+  "role": "producer",
+  "confidence": 0.75
+ },
+ "cassava-leaf-disease-classification/capella_kappa_artifacts.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_equal_weights.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_v2s_mix.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/capella_kappa_6model.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_mixup_insight.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_ensemble_analysis.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_v2s_mix_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_convnext_5fold_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_verification.md": {
+  "role": "validator",
+  "confidence": 0.92
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_full_and_v2m.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_cvnxb.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_v2s_full_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_final_paths.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_union9.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_cvnxb_done.md": {
+  "role": "validator",
+  "confidence": 0.75
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_final_paths.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_final_submission.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_standby.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_final_v3.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/capella_kappa_xcit_final.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_v3_validated.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/achernar_delta_final_submission_v2.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_final_validation.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/capella_kappa_swinmix_full.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_wrapup.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_tta_negative.md": {
+  "role": "validator",
+  "confidence": 0.75
+ },
+ "cassava-leaf-disease-classification/achernar_delta_repro_check.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_wrapup.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "cassava-leaf-disease-classification/achernar_delta_signoff.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_signoff.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_signoff.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_nan_bug.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/achernar_delta_last_experiments.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_v4_repro.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_v4_ack.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/capella_kappa_nan_scope.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "cassava-leaf-disease-classification/capella_kappa_nan_fixed.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "cassava-leaf-disease-classification/capella_kappa_final_confirmation.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/arcturus_kappa_final_confirm.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_metadata_finding.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "cassava-leaf-disease-classification/achernar_delta_v4_repro.md": {
+  "role": "validator",
+  "confidence": 0.92
+ },
+ "mlsp-2013-birds/capella_iota_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/altair_theta_role_claim.md": {
+  "role": "explorer",
+  "confidence": 0.75
+ },
+ "mlsp-2013-birds/rigel_omega_audio_features_results.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/capella_iota_baseline_metadata_confirmed.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_ast_embeddings_major.md": {
+  "role": "explorer",
+  "confidence": 0.9
+ },
+ "mlsp-2013-birds/capella_iota_ensemble_result.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/rigel_omega_ast_meta_best_negatives.md": {
+  "role": "producer",
+  "confidence": 0.72
+ },
+ "mlsp-2013-birds/rigel_omega_ensemble_probmean.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/altair_theta_status_windowed_ast.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_patch_ast_best.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_coordinate_final.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/rigel_omega_birdnet_major.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_reply_birdnet_blend.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "mlsp-2013-birds/rigel_omega_biolingual_breakthrough.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_birdnet_embed_breakthrough.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_ensemble_094.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/capella_iota_blend_update_birdnet.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "mlsp-2013-birds/altair_theta_finalizer_status.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/capella_iota_combiner_study.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/rigel_omega_perch_logits_final_blend.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_birdsxc_breakthrough.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "mlsp-2013-birds/altair_theta_finalizer_update2.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "mlsp-2013-birds/rigel_omega_perch_breakthrough.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_urgent_perch_in_finalizer.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_finalizer_fixed_perch.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "mlsp-2013-birds/altair_theta_finalizer_perch.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/capella_iota_perch_confirmed_finalizer_bug.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_robustness_check.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/capella_iota_status_plateau.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_endgame_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/rigel_omega_final_summary.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_convnext_member.md": {
+  "role": "explorer",
+  "confidence": 0.75
+ },
+ "mlsp-2013-birds/rigel_omega_ack_endgame.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/rigel_omega_perch_views_saturated.md": {
+  "role": "communicator",
+  "confidence": 0.82
+ },
+ "mlsp-2013-birds/capella_iota_ack_endgame.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_clap_status.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_final_state.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_convnext_miml.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "mlsp-2013-birds/altair_theta_final_locked.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "mlsp-2013-birds/capella_iota_final_verification.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/rigel_omega_final_verification.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "mlsp-2013-birds/altair_theta_thanks.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_cache_start.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_coordination.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_canonical_data.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_canonical_agree.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_features_ready.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_cache2_ready.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_holdout_agreement.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_roles.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_claim_xgb_cat.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_eda1.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_lgb_q1_outliers.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_bulk_metric.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_alignment_caveat.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_rmse_insight.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_stacking_convention.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_status2.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_lgb_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_endgame_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_big25_alignbug.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_xgb_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_missing_coords.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_malformed_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_malformed_quantified.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_xgb2_blend.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_cache3_nan.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_checkpoint.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_v2_40M_best.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_full_launch.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_blend_v5.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_full53.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_blend_34461.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_best_single.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_blend_34399.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_full_rmse_weights.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_xgb_and_blend.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_logtarget_metric.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_log_target.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_plateau_freeze.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_mm2_backbone.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_test_is_train_slice.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_ack_fullrmse_log53.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_stacker_negatives.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_blend_34195.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_mm2_models.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_verify_final.md": {
+  "role": "validator",
+  "confidence": 0.92
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_full53b.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_malformed_saturated.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_final_verify.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_freeze_ack.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_final_verify.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_override_crosscheck.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_final_submission.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_indep_blend.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_final_ack.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_negative_lintree.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_consensus_final.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_saturation_audit.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/achernar_zeta_final_confirmation.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_final_status.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_final_audit.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/vega_pi_system_confirm.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/rigel_rho_final_confirmation.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_result1.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_baseline_tracking_lgb.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_division.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_ablation1.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_honest_cv_helmet.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_cv_feat2.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_lane_cnn_and_cv_note.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_temporal_smoothing.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_status1.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_ensemble_protocol.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/procyon_theta_submission_update.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_feat3.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_ground_cnn_signal.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_level2_0727.md": {
+  "role": "producer",
+  "confidence": 0.75
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_ens_v3.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/procyon_theta_global_0725.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_seqcnn_0733.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_ens_greedy_0737.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_ens_v5.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_ping_sirius.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_artifacts_final.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_ping_integrator.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_ground_cnn_oof.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_cnn_feature_share.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "nfl-player-contact-detection/procyon_theta_pertype_0747.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/procyon_theta_ens_0745_coord.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_path_fix.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_ens_0744.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_final_writer_0745.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/sirius_tau_updated_artifacts.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_independent_blend_check.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_pertype_0750.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_final_write_check.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/sirius_tau_ack_feat5.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_verify_0750.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/sirius_tau_feat5d2_final_ping.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_final_clarify.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_pertype_0751.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_final_ping.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_final_submission.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_final_07516.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_final_verified.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/procyon_theta_final_status.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/procyon_theta_final_confirmation.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_pertype_threshold_gain.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_final_locked.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/procyon_theta_endorse_thr.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_fine_thr_check.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_bitwise_repro.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "nfl-player-contact-detection/sirius_tau_final_confirm_07559.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_final_0754.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/procyon_theta_final_07559.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_postproc_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/sirius_tau_state_clarify.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_final_07559_confirm.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "nfl-player-contact-detection/fomalhaut_omicron_last_candidate.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_ref_baseline_tfidf_lr.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_status_baseline.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_coordination_gpu_lanes.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_coordination_roberta.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_insight_ensemble_big_gain.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_status_models.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_status_baseline.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_bert_full_5fold.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v1_stack_0274.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "spooky-author-identification/deneb_upsilon_blend_result.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_provisional_submission.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_lgbm_stacker_0252.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_warning_dont_stack_blends.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_roberta_full_5fold.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v2_stack_0261.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/rigel_xi_blend_v3_lgbm_0255.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_combined_stack_0251.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_agree_unified_stacker.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_stack2_02434.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/rigel_xi_blend_v6_handfeat_0244.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_gpu_ack_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_models_test_preds_ready.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v7_0229.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_combine_v2_0218.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/rigel_xi_final_ownership_and_gpu.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_combine_crosscheck.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_blend_v8_0218.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/deneb_upsilon_bertcased_full.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_combine_v3_seedavg.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_lgbm_weak_gpu_proposal.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "spooky-author-identification/rigel_xi_gpu_lanes_and_meta.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_seedavg_bertcased.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_ack_v9b_lanes.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_status_v9b_deberta_large.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_bertcased_seedavg_final.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_ack_seedavg_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/arcturus_alpha_xlnet_base_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v10_0206.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/arcturus_alpha_pseudo_label_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_approve_xlnet_large.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_stack2_0211.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_dbv3base_seedavg.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_switch_mpnet.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_deberta_large_seedavg.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_combine_v4_0200.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_ernie_bertlarge.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v11_0202.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "spooky-author-identification/arcturus_alpha_xlnet_large_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_fgm_adopted_deberta.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_bert_large_cased_bart.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_fgm_breakthrough.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_xlnet_large_seedavg.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v12_0202.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_blend_v13_0200.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_fgm_bertcased_full.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/arcturus_alpha_xlnet_large_fgm.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_fgm_seedavg_01907.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_combine_fgm_01936.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_blend_v14_0194.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_fgm_seedavg3_01856.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_blend_v16_0188.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/arcturus_alpha_fgm_seedavg_final.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_fgm_seedavg_best_0299.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_final_bases_0518.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/rigel_xi_blend_v17_0185.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_FINAL_submission.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/deneb_upsilon_final_verify.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/arcturus_alpha_final_code_added.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "spooky-author-identification/deneb_upsilon_closing.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "spooky-author-identification/rigel_xi_FINAL_submission_v19.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/vega_pi_sn_filter_finding.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_cv_protocol.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_cv_baseline.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_role.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_conflict_submission.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_oof_baseline.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_ensemble_result.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/vega_pi_roles_ack.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_nnls.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/vega_pi_diverse_oofs.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_blend_check.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v2.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "stanford-covid-vaccine/mirfak_zeta_ownership_clarification.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_multiseed_and_blend.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v3.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_diverse_loss.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_saturation_probes.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v4.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/vega_pi_blend_and_insights.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_watcher.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_negative_results.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_cnn_models.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_kfold10_finding.md": {
+  "role": "explorer",
+  "confidence": 0.55
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v5.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v6.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_wide_lstm.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_kfold10_adopt.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_blend_v7.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/vega_pi_k30_and_stacker.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "stanford-covid-vaccine/mirfak_zeta_ack_stacker.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/vega_pi_ew_pair_kfold.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_kfold10.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_final_status.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/mirfak_zeta_final_status.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "stanford-covid-vaccine/vega_pi_verification.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_closing.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_final_status.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_watcher_recovered.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/vega_pi_watcher_bug.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/mirfak_zeta_bugfix.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_introduction_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.92
+ },
+ "stanford-covid-vaccine/mirfak_zeta_final_confirmed.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "stanford-covid-vaccine/fomalhaut_beta_work_complete.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_ack_roles.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_metric_split.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_data_prep_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_status_fold0.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_ack_metric3d_handoff.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_metric3d_insight.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_status_mitb2_claim.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_tools_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_status2_training.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_schedule_pp.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_rle_confirmed_fixed.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_confirm_order_C.md": {
+  "role": "validator",
+  "confidence": 0.92
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_CRITICAL_rle_order.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_tools_revalidated.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_request_early_probs.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_ack_orderC_plan.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_metric3d_ep3.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_pp_study.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_fold0_val_3d.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_crosscheck_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_pp_sweep2.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_gpu_schedule.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_ack_endgame.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_pivot_384.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_safety_submission.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_encoder_gap_pivot.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_endgame_schedule.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_model_launched.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_safety_upgraded.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_ensemble_validated.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_final_probs.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_models_published.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_b3_probs.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_KEY_prob_resize.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_alldata_probs.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_pp3d_result.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_resize_bug_fixed.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_ensemble_backup.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_audit_alldata_scratch.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_multiscale_tta.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_alldata_ft_claim.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_audit_final.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_FINAL_submission.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_alldata_done.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_vflip_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_FINAL_v2.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_repro_details.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_scratch_ready.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/dubhe_beta_FINAL_STATUS.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_tta_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/alderamin_rho_FINAL_confirmation.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_final_status.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/pollux_kappa_repro_discrepancy.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/dubhe_beta_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/castor_nu_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/castor_nu_status_01.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_physics_probe.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_eda_findings.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_01_status_split_lstm.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_00_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status01_bench.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_key_insights_quant_pid.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_insight_simple_lstm_recipe.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status02_pivot.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_02.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_02_status_winner_recipe.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status03_simple_lstm.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_03_interop_flag.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status04_interop.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_04_bugfix_status.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_04.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_05.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_05_blend_validated.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_03.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status06_blend_progress.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/castor_nu_status_06.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status05_assembly_ready.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status07_calib_and_gpu.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_07.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_07_status.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_06_simple_v1_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_09_final.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "ventilator-pressure-prediction/castor_nu_status_08.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_08_exports.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_09_final_artifacts.md": {
+  "role": "communicator",
+  "confidence": 0.72
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status08_final_plan.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/castor_nu_status_11_stacking.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/mimosa_beta_10_quarantine_note.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_10_final_verify.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/castor_nu_status_12_final_confirm.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status11_final_reconcile.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/mimosa_beta_11_final_summary.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status09_final_submission.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_beta_status10_final_v2.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_mlm_rerank_breakthrough.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_coordination_mlm.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_cost_structure.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_intro_and_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_holdout_and_baselines.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_decoder_plan_and_headroom.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_retrieval_and_compute.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_full_holdout_confirmed.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_mlm_recall_pruning.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_rerank_negative_and_timeline.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_reverse_negative_bakeoff.md": {
+  "role": "explorer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_start_test_mlm.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_cost_decoder_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_test_artifacts_and_formats.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_bakeoff_gpu_window.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_reranker_bakeoff_ensemble.md": {
+  "role": "explorer",
+  "confidence": 0.72
+ },
+ "billion-word-imputation/castor_iota_topw_and_rerank_ownership.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_ensemble_cascade_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_cheaper_cascade_qwen_smol.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_qwen_blend_and_cascade_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_decoder_ready.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_holdout_cascade_ask.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_cascade_execution_final.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_cascade_accept.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_ack_cascade_and_base_status.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_cascade_decoder_guidance.md": {
+  "role": "validator",
+  "confidence": 0.82
+ },
+ "billion-word-imputation/achernar_tau_qwen3b_member.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_cascade_holdout_dump_and_K.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_cascade_comparison_final.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_domain_lm_proposal.md": {
+  "role": "coordinator",
+  "confidence": 0.75
+ },
+ "billion-word-imputation/achernar_tau_qwen3b_correction.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_qa_scaffolding.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_domain_lm_yes.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_mlm_done_base_eta.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_domain_lm_eval_protocol.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_cascade_started.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_base_DONE_cascade_GO.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/castor_iota_FINAL_CASCADE_ASSEMBLED.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_domain_lm_result.md": {
+  "role": "producer",
+  "confidence": 0.72
+ },
+ "billion-word-imputation/achernar_tau_cascade_done_promoted.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/castor_iota_ft_gain_note_and_assembly.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/alkaid_pi_domain_leakage_check.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_5m_promoted.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_domain_lm_paired_result.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_ftlarge_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_ftlarge_gate_result.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_ftlarge_mb_clarification.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/alkaid_pi_final_verification.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "billion-word-imputation/achernar_tau_6m_promoted.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_seventh_gate_setup.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_7th_rejected_final.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_6m_verified.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_FINAL_SUMMARY.md": {
+  "role": "coordinator",
+  "confidence": 0.72
+ },
+ "billion-word-imputation/castor_iota_final_locked.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_readme_fix_retracted.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/achernar_tau_fusion_negative_final.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_aggregation_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/alkaid_pi_FINAL_CONFIRMATION.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "billion-word-imputation/achernar_tau_FINAL_CONFIRMATION.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_weight_tuning_negative.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "billion-word-imputation/castor_iota_FINAL_UPLOAD_CONFIRMATION.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_status_prep.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_status1.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_ack_holdout.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_baseline_xgb.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_corrupt_insight.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_parquet_ready.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_xgb_full_result.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_corrupt_fallback_v2.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_testpreds_blend.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_gpu_full.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_result_lgb19m.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_corrupt_and_blend.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_coord_recovery.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_request.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_artifacts_blend.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v2_nn.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v1.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v4_logtarget.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v3_canopus.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_full_data_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_new_models_blend.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_corrupt_improved.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v5.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_gpu_taken.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_gpu_window.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_g54m_progress.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_correction_f54m.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_g54m_best_single.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_neg_results_v6.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_new_best_single.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v8_g54m.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v9_8192.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_j54m_and_corrupt_code.md": {
+  "role": "producer",
+  "confidence": 0.55
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_tail_analysis.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_blend_v10.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_two_more_big_models.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_j54m_3258.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_log8192_and_code.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_final_status.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_final_v11.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_rot29_best_single.md": {
+  "role": "producer",
+  "confidence": 0.75
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_negative_noise_filter.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_final_v12.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_final_v13.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_last_model_rot29log.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_final_validation.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_independent_blend_verification.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_final_consensus.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_calibration_negative.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "new-york-city-taxi-fare-prediction/canopus_pi_integrity_check.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/mimosa_omicron_FINAL_CONFIRM.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "new-york-city-taxi-fare-prediction/aldebaran_omicron_FINAL_CONFIRM.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_role_split.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_roles_proposal.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_role_claim.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_cache_and_gpu.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_modelA_start.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_cache_ready.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_holdout_gpu.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_status_metric.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_fusion_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_dice_loss_bugfix.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_ack_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_multiclass_switch.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_modelC_launch.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_val_metric_scaling_note.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_metric_correction.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_ack_fusion_round2.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_status_ep3.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_modelC_restart.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_postproc_insight.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_maskbug_restart.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_CRITICAL_rle_order_bug.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_postproc_v1.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_fusion_space_warning.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_probs_ready_insight.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_confirm_rle_C.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_plan_after_rle_fix.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_encoding_algebra.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_rle_fix_works.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_interim_fused_B6.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_AC_interim_metric.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_fixed_final_rle.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_postproc_v2.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_probs_ep6.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_c_trained_clarify.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_postproc_v2b.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_AC_probs_ready.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_alldata_probs.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_fused3_submission.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_fusion_QA.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_3model_backup.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_alldata_probs.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_zsmooth_gain.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_code_ownership.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_zsmooth_confirmed.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_helper_bugfix_candidate.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_final_qa.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_final_placed.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_weight_check.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_final_placed_and_modelD.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_D_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_modelE_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_modelE.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_E_rejected.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_D_negative_result.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_modelE_reject.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_D_E_reject_freeze.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_DE_no_gain_freeze.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_final_summary.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_stomach_cc_finding.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_final_summary.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_perclass_weights_negative.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_final_signoff.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/aldebaran_omicron_perclass_sigma.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "uw-madison-gi-tract-image-segmentation/regulus_alpha_last_checks.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_intro.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "uw-madison-gi-tract-image-segmentation/canopus_phi_FINAL_CONFIRM.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_split_baseline.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_intro_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_baseline_shared_cache.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_cache_ready.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_split_conflict_resolution.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/antares_nu_agree_seed42_roles.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_status_gru_cache2.md": {
+  "role": "producer",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/sirius_tau_val_format_agreed.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_ensemble_protocol.md": {
+  "role": "coordinator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_phi_data2_and_bug_note.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_mae_ensemble_tips.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_bilstm320_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_status_ep29.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_model1_done.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_3models_published.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_blend_check_2models.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend3_status.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/antares_nu_tcn_adds_to_blend.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_blstm512_done_blend017.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend_status2.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend6_0170.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/antares_nu_plan_strong_members.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_blend_diagnostics.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "ventilator-pressure-prediction/dubhe_phi_blstm512_csv_published.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_timeline_finalization.md": {
+  "role": "coordinator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_timeline_ack.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_lstm448_done_blend01696.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_timeline_plan.md": {
+  "role": "coordinator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend14_01669.md": {
+  "role": "integrator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/dubhe_phi_dropin_mapping.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend12_01689.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft2_new_best_01678.md": {
+  "role": "producer",
+  "confidence": 0.72
+ },
+ "ventilator-pressure-prediction/antares_nu_refine_inflight.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_final_members_01668.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft3_01662.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend16_01645.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "ventilator-pressure-prediction/sirius_tau_blend20_01619.md": {
+  "role": "integrator",
+  "confidence": 0.92
+ },
+ "ventilator-pressure-prediction/antares_nu_ft_full_dropin.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft4full_ready.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_refined_members_016245.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/sirius_tau_final_blend_written.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft4_01627_and_ft4full.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_reminder_dropin_ft2.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft5_new_best_01729.md": {
+  "role": "producer",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_final_ft5_refresh.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_phi_final_blend_ready.md": {
+  "role": "integrator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_phi_ft5full_ready.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_ft2_final.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_final_solution_shipped.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/dubhe_phi_qa_final_passed.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/dubhe_phi_qa_final5_pass.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/sirius_tau_frozen_final.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/antares_nu_qa_final_pass.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/sirius_tau_saturation_confirmed.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/sirius_tau_final_touch_s4242_full.md": {
+  "role": "integrator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_final_audit.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/dubhe_phi_qa_final6_pass.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/sirius_tau_consensus_final.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/antares_nu_qa_final6_pass.md": {
+  "role": "validator",
+  "confidence": 0.95
+ },
+ "ventilator-pressure-prediction/antares_nu_closing_status.md": {
+  "role": "communicator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/dubhe_phi_final_phase_confirmation.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/antares_nu_postproc_negative_result.md": {
+  "role": "validator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/sirius_tau_subset_cv.md": {
+  "role": "validator",
+  "confidence": 0.85
+ },
+ "ventilator-pressure-prediction/antares_nu_final_phase_confirmed.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ },
+ "ventilator-pressure-prediction/sirius_tau_final_phase_confirmed.md": {
+  "role": "communicator",
+  "confidence": 0.9
+ }
+}

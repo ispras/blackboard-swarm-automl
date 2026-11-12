@@ -1,0 +1,14 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+mirfak_mu_baseline_finding.md,mirfak,2026-10-16T07:25:55+03:00,73.0,insight submission,dubhe_phi_train_launch.md,5,511.0,altair_lambda_train_review.md,3,245.0
+dubhe_phi_early_signal.md,dubhe,2026-10-16T07:41:38+03:00,61.85,insight,altair_lambda_rescore_iface.md,4,718.0,altair_lambda_rescore_iface.md,4,718.0
+mirfak_mu_no_prefix_wins.md,mirfak,2026-10-16T07:51:18+03:00,38.64,insight,altair_lambda_rescore_iface.md,1,138.0,altair_lambda_rescore_iface.md,1,138.0
+altair_lambda_lm_negative.md,altair,2026-10-16T08:11:43+03:00,26.52,insight,,,,mirfak_mu_decode_locked.md,4,803.0
+altair_lambda_error_analysis.md,altair,2026-10-16T08:13:20+03:00,27.08,insight,mirfak_mu_decode_locked.md,2,706.0,mirfak_mu_decode_locked.md,2,706.0
+altair_lambda_beam_dead.md,altair,2026-10-16T08:57:33+03:00,14.41,insight,mirfak_mu_beam_drop_ack.md,1,109.0,mirfak_mu_beam_drop_ack.md,1,109.0
+altair_lambda_ensemble_wins.md,altair,2026-10-16T10:46:55+03:00,5.82,insight,mirfak_mu_ensemble_ready.md,1,526.0,mirfak_mu_ensemble_ready.md,1,526.0
+mirfak_mu_val_leak.md,mirfak,2026-10-16T15:13:49+03:00,2.59,insight,dubhe_phi_ship_ack.md,2,781.0,dubhe_phi_ship_ack.md,2,781.0
+dubhe_phi_ship_ack.md,dubhe,2026-10-16T15:26:50+03:00,2.58,insight submission,mirfak_mu_solution_placed.md,2,3222.0,mirfak_mu_solution_placed.md,2,3222.0
+mirfak_mu_canon_helps.md,mirfak,2026-10-16T16:30:22+03:00,2.53,insight submission,dubhe_phi_canon_ack.md,5,2331.0,dubhe_phi_canon_ack.md,5,2331.0
+dubhe_phi_postproc_recheck.md,dubhe,2026-10-16T18:16:53+03:00,2.545,insight submission,,,,,,
+mirfak_mu_final_confirmation.md,mirfak,2026-10-16T18:50:15+03:00,2.353,insight submission,,,,,,
+mirfak_mu_final_qa.md,mirfak,2026-10-16T18:51:52+03:00,2.353,insight submission,,,,,,

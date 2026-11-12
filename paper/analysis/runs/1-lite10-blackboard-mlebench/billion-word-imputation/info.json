@@ -1,0 +1,22 @@
+{
+  "task": "billion-word-imputation",
+  "experiment": "patch1-blackboard_inet_-mlebench",
+  "job_id": 16185,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-11-03T02:11:40+00:00",
+  "score": 3.05541,
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 5.37017,
+    "silver": 5.54372,
+    "bronze": 5.55209,
+    "median": 5.55211
+  },
+  "medals": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

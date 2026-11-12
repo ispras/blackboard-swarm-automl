@@ -1,0 +1,15 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+aldebaran_omicron_role_split.md,aldebaran,2026-11-02T17:13:06+03:00,conflict,,,0,,,,,
+regulus_alpha_dice_loss_bugfix.md,regulus,2026-11-02T17:41:52+03:00,bug,regulus_alpha_multiclass_switch.md,regulus,1,2,1061.0,regulus_alpha_multiclass_switch.md,2,1061.0
+regulus_alpha_multiclass_switch.md,regulus,2026-11-02T17:59:33+03:00,bug,regulus_alpha_final_summary.md,regulus,1,46,35487.0,regulus_alpha_final_summary.md,46,35487.0
+canopus_phi_val_metric_scaling_note.md,canopus,2026-11-02T18:05:54+03:00,bug,,,0,,,,,
+canopus_phi_metric_correction.md,canopus,2026-11-02T18:44:44+03:00,bug,aldebaran_omicron_postproc_insight.md,aldebaran,0,1,540.0,aldebaran_omicron_postproc_insight.md,1,540.0
+aldebaran_omicron_maskbug_restart.md,aldebaran,2026-11-02T19:11:05+03:00,bug conflict,regulus_alpha_probs_ready_insight.md,regulus,0,2,2360.0,regulus_alpha_probs_ready_insight.md,2,2360.0
+canopus_phi_CRITICAL_rle_order_bug.md,canopus,2026-11-02T20:13:42+03:00,bug conflict,aldebaran_omicron_encoding_algebra.md,aldebaran,0,2,594.0,aldebaran_omicron_encoding_algebra.md,2,594.0
+aldebaran_omicron_encoding_algebra.md,aldebaran,2026-11-02T20:23:36+03:00,bug conflict,aldebaran_omicron_fusion_space_warning.md,aldebaran,1,2,332.0,aldebaran_omicron_fusion_space_warning.md,2,332.0
+regulus_alpha_confirm_rle_C.md,regulus,2026-11-02T20:25:21+03:00,bug conflict,aldebaran_omicron_fusion_space_warning.md,aldebaran,0,1,227.0,aldebaran_omicron_fusion_space_warning.md,1,227.0
+aldebaran_omicron_fusion_space_warning.md,aldebaran,2026-11-02T20:29:08+03:00,bug,,,0,,,,,
+regulus_alpha_rle_fix_works.md,regulus,2026-11-02T20:41:19+03:00,bug,regulus_alpha_fixed_final_rle.md,regulus,1,1,503.0,regulus_alpha_fixed_final_rle.md,1,503.0
+regulus_alpha_fixed_final_rle.md,regulus,2026-11-02T20:49:42+03:00,bug,,,0,,,,,
+regulus_alpha_c_trained_clarify.md,regulus,2026-11-02T20:58:05+03:00,bug,,,0,,,,,
+aldebaran_omicron_helper_bugfix_candidate.md,aldebaran,2026-11-03T00:16:50+03:00,bug,canopus_phi_final_placed_and_modelD.md,canopus,0,2,730.0,canopus_phi_final_placed_and_modelD.md,2,730.0

@@ -1,0 +1,74 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+deneb_upsilon_intro_plan.md,deneb,2026-10-09T18:53:30+03:00,communication data_pipeline plan,1,0,0,0
+rigel_xi_intro_and_plan.md,rigel,2026-10-09T18:53:37+03:00,communication plan status,1,0,0,0
+arcturus_alpha_intro_and_plan.md,arcturus,2026-10-09T18:53:48+03:00,communication model_selection plan,1,0,0,0
+rigel_xi_ref_baseline_tfidf_lr.md,rigel,2026-10-09T18:55:13+03:00,model_selection status submission,3,0,0,1
+rigel_xi_coordination_gpu_lanes.md,rigel,2026-10-09T18:55:21+03:00,communication ensembling optimization plan,2,4,1,0
+deneb_upsilon_status_baseline.md,deneb,2026-10-09T18:55:24+03:00,feature_engineering status submission,2,0,0,1
+deneb_upsilon_coordination_roberta.md,deneb,2026-10-09T18:55:40+03:00,communication optimization plan,1,2,2,0
+arcturus_alpha_status_baseline.md,arcturus,2026-10-09T19:01:46+03:00,model_selection plan status,6,2,3,0
+rigel_xi_insight_ensemble_big_gain.md,rigel,2026-10-09T19:10:15+03:00,communication ensembling insight model_selection postprocessing,2,1,1,0
+deneb_upsilon_status_models.md,deneb,2026-10-09T19:12:12+03:00,ensembling plan regularization status,3,1,2,0
+rigel_xi_blend_v1_stack_0274.md,rigel,2026-10-09T19:22:18+03:00,communication ensembling postprocessing status submission,4,4,4,1
+rigel_xi_bert_full_5fold.md,rigel,2026-10-09T19:22:21+03:00,architecture ensembling status training,3,1,5,0
+deneb_upsilon_blend_result.md,deneb,2026-10-09T19:22:25+03:00,ensembling insight postprocessing status,1,2,3,0
+rigel_xi_provisional_submission.md,rigel,2026-10-09T19:22:30+03:00,communication status submission,0,1,5,1
+deneb_upsilon_roberta_full_5fold.md,deneb,2026-10-09T19:29:38+03:00,architecture ensembling status submission,4,2,6,1
+rigel_xi_blend_v2_stack_0261.md,rigel,2026-10-09T19:35:55+03:00,ensembling postprocessing status submission,2,3,7,1
+deneb_upsilon_lgbm_stacker_0252.md,deneb,2026-10-09T19:39:58+03:00,ensembling model_selection postprocessing submission,2,1,8,1
+rigel_xi_blend_v3_lgbm_0255.md,rigel,2026-10-09T19:42:20+03:00,ensembling postprocessing status submission,1,2,7,1
+deneb_upsilon_combined_stack_0251.md,deneb,2026-10-09T19:43:05+03:00,communication conflict ensembling submission,1,0,0,1
+rigel_xi_warning_dont_stack_blends.md,rigel,2026-10-09T19:46:46+03:00,bug communication ensembling postprocessing,0,2,8,0
+rigel_xi_agree_unified_stacker.md,rigel,2026-10-09T19:51:17+03:00,communication ensembling postprocessing submission,0,2,9,1
+deneb_upsilon_stack2_02434.md,deneb,2026-10-09T19:53:49+03:00,communication ensembling postprocessing submission,3,2,8,1
+rigel_xi_blend_v6_handfeat_0244.md,rigel,2026-10-09T19:55:25+03:00,ensembling postprocessing status submission,2,3,9,1
+rigel_xi_final_ownership_and_gpu.md,rigel,2026-10-09T19:55:44+03:00,communication conflict ensembling optimization problem,4,2,10,0
+deneb_upsilon_gpu_ack_plan.md,deneb,2026-10-09T19:56:03+03:00,communication ensembling optimization plan,0,2,11,0
+arcturus_alpha_models_test_preds_ready.md,arcturus,2026-10-09T19:56:31+03:00,ensembling feature_engineering status submission,5,1,5,1
+rigel_xi_blend_v7_0229.md,rigel,2026-10-09T20:05:42+03:00,ensembling postprocessing status submission,1,2,7,1
+deneb_upsilon_combine_crosscheck.md,deneb,2026-10-09T20:06:19+03:00,ensembling postprocessing status submission,0,2,11,1
+deneb_upsilon_combine_v2_0218.md,deneb,2026-10-09T20:18:43+03:00,ensembling postprocessing status submission,1,3,8,1
+arcturus_alpha_lgbm_weak_gpu_proposal.md,arcturus,2026-10-09T20:22:08+03:00,communication ensembling plan problem status,4,3,11,0
+rigel_xi_blend_v8_0218.md,rigel,2026-10-09T20:23:20+03:00,ensembling postprocessing status submission,2,2,6,1
+rigel_xi_gpu_lanes_and_meta.md,rigel,2026-10-09T20:25:29+03:00,communication ensembling plan submission,4,3,12,1
+deneb_upsilon_bertcased_full.md,deneb,2026-10-09T20:25:35+03:00,architecture ensembling status submission,2,2,13,1
+deneb_upsilon_combine_v3_seedavg.md,deneb,2026-10-09T20:39:44+03:00,architecture ensembling status submission,0,4,14,1
+rigel_xi_status_v9b_deberta_large.md,rigel,2026-10-09T20:48:08+03:00,architecture ensembling status submission,4,0,0,1
+deneb_upsilon_seedavg_bertcased.md,deneb,2026-10-09T20:55:14+03:00,architecture ensembling insight status training,5,0,0,0
+deneb_upsilon_ack_v9b_lanes.md,deneb,2026-10-09T20:57:20+03:00,architecture communication plan training,1,3,12,0
+rigel_xi_ack_seedavg_plan.md,rigel,2026-10-09T21:02:08+03:00,architecture communication plan training,0,3,13,0
+deneb_upsilon_bertcased_seedavg_final.md,deneb,2026-10-09T21:16:19+03:00,architecture ensembling submission training,0,1,1,1
+arcturus_alpha_xlnet_base_result.md,arcturus,2026-10-09T21:17:10+03:00,architecture communication ensembling status,3,2,14,0
+rigel_xi_blend_v10_0206.md,rigel,2026-10-09T21:38:01+03:00,architecture ensembling postprocessing status submission,4,2,6,1
+rigel_xi_approve_xlnet_large.md,rigel,2026-10-09T21:40:08+03:00,architecture communication ensembling plan,1,2,15,0
+deneb_upsilon_stack2_0211.md,deneb,2026-10-09T21:44:21+03:00,ensembling status submission,2,0,0,1
+deneb_upsilon_dbv3base_seedavg.md,deneb,2026-10-09T21:58:52+03:00,architecture communication ensembling training,1,1,7,0
+arcturus_alpha_pseudo_label_result.md,arcturus,2026-10-09T21:59:10+03:00,ensembling insight semisupervised status training,1,2,15,0
+deneb_upsilon_switch_mpnet.md,deneb,2026-10-09T22:14:14+03:00,architecture communication status,0,2,16,0
+rigel_xi_deberta_large_seedavg.md,rigel,2026-10-09T22:35:01+03:00,architecture ensembling status training,3,2,1,0
+deneb_upsilon_combine_v4_0200.md,deneb,2026-10-09T22:45:53+03:00,ensembling status submission,1,2,8,1
+rigel_xi_blend_v11_0202.md,rigel,2026-10-09T22:52:05+03:00,ensembling postprocessing status submission,3,3,15,1
+deneb_upsilon_ernie_bertlarge.md,deneb,2026-10-09T23:05:37+03:00,architecture communication status,1,1,16,0
+arcturus_alpha_xlnet_large_result.md,arcturus,2026-10-09T23:15:41+03:00,architecture ensembling status training,1,3,16,0
+rigel_xi_blend_v12_0202.md,rigel,2026-10-09T23:42:52+03:00,ensembling postprocessing status submission,2,3,17,1
+deneb_upsilon_bert_large_cased_bart.md,deneb,2026-10-10T00:00:07+03:00,architecture ensembling status,1,1,16,0
+deneb_upsilon_fgm_breakthrough.md,deneb,2026-10-10T00:17:45+03:00,architecture insight optimization regularization training,5,0,0,0
+rigel_xi_fgm_adopted_deberta.md,rigel,2026-10-10T00:22:47+03:00,architecture communication insight regularization training,0,2,18,0
+arcturus_alpha_xlnet_large_seedavg.md,arcturus,2026-10-10T00:39:26+03:00,architecture ensembling status training,1,2,16,0
+rigel_xi_blend_v13_0200.md,rigel,2026-10-10T01:20:26+03:00,ensembling regularization status submission,0,2,17,1
+deneb_upsilon_fgm_bertcased_full.md,deneb,2026-10-10T01:36:09+03:00,ensembling insight regularization training,2,1,1,0
+deneb_upsilon_combine_fgm_01936.md,deneb,2026-10-10T01:42:16+03:00,ensembling regularization status submission,3,1,2,1
+rigel_xi_blend_v14_0194.md,rigel,2026-10-10T02:11:00+03:00,ensembling regularization status submission,1,2,3,1
+deneb_upsilon_fgm_seedavg_01907.md,deneb,2026-10-10T03:28:24+03:00,ensembling regularization status submission,1,0,0,1
+arcturus_alpha_xlnet_large_fgm.md,arcturus,2026-10-10T03:44:43+03:00,architecture ensembling insight regularization status training,3,2,18,0
+rigel_xi_blend_v16_0188.md,rigel,2026-10-10T04:08:27+03:00,ensembling regularization status submission,1,1,3,1
+deneb_upsilon_fgm_seedavg3_01856.md,deneb,2026-10-10T04:25:45+03:00,ensembling regularization status submission,0,1,19,1
+deneb_upsilon_fgm_seedavg_best_0299.md,deneb,2026-10-10T04:34:20+03:00,ensembling regularization status,2,1,4,0
+rigel_xi_blend_v17_0185.md,rigel,2026-10-10T04:34:20+03:00,ensembling regularization status submission,2,2,19,1
+deneb_upsilon_final_bases_0518.md,deneb,2026-10-10T05:20:51+03:00,communication ensembling status submission,1,2,20,1
+arcturus_alpha_fgm_seedavg_final.md,arcturus,2026-10-10T05:34:47+03:00,ensembling regularization status submission,2,4,12,1
+rigel_xi_FINAL_submission.md,rigel,2026-10-10T05:47:14+03:00,ensembling postprocessing regularization status submission,3,4,20,1
+deneb_upsilon_final_verify.md,deneb,2026-10-10T05:48:08+03:00,communication status submission,1,1,21,1
+arcturus_alpha_final_code_added.md,arcturus,2026-10-10T05:49:08+03:00,communication status submission,0,3,22,1
+deneb_upsilon_closing.md,deneb,2026-10-10T06:08:21+03:00,communication status submission,0,3,21,1
+rigel_xi_FINAL_submission_v19.md,rigel,2026-10-10T06:10:49+03:00,ensembling postprocessing status submission,0,2,21,1

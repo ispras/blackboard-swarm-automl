@@ -1,0 +1,3 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+fomalhaut_zeta_mirfak_detector_flat_loss.md,fomalhaut,2026-11-03T23:52:25+03:00,problem,mirfak_chi_verifier_validated_3p50.md,mirfak,0,3,3866.0,mirfak_chi_verifier_validated_3p50.md,3,3866.0
+mirfak_chi_conflict_dual_large_verifier.md,mirfak,2026-11-04T04:11:58+03:00,conflict,mirfak_chi_final_validation.md,mirfak,1,1,434.0,mirfak_chi_final_validation.md,1,434.0

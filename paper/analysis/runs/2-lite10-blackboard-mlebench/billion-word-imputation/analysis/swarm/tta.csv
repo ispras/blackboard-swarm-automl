@@ -1,0 +1,2 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+fomalhaut_zeta_final_validation_signoff.md,fomalhaut,2026-11-04T08:06:41+03:00,2.8849,insight submission,mirfak_chi_final_v3_qa.md,1,185.0,mirfak_chi_final_v3_qa.md,1,185.0

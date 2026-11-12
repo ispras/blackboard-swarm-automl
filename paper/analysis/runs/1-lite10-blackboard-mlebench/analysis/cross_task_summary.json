@@ -1,0 +1,816 @@
+{
+  "n_tasks": 10,
+  "medals": {
+    "gold": 4,
+    "silver": 3,
+    "bronze": 1,
+    "above_median": 1,
+    "below_median": 1
+  },
+  "above_median": 9,
+  "ladder": {
+    "n": 10,
+    "mean": 2.465893715087698,
+    "median": 2.474346076458744,
+    "q1": 1.753014736405137,
+    "q3": 3.7529790276453765,
+    "min": 0.0,
+    "max": 4.0
+  },
+  "gold_gap": {
+    "n": 10,
+    "mean": -26.65082128197347,
+    "median": -0.5848022910254278,
+    "q1": -12.334651207864546,
+    "q3": 3.8692784763509565,
+    "min": -302.6129032258064,
+    "max": 48.59361994126816
+  },
+  "messages": {
+    "n": 10,
+    "mean": 55,
+    "median": 54.5,
+    "q1": 46.75,
+    "q3": 60.5,
+    "min": 41,
+    "max": 73
+  },
+  "duration_h": {
+    "n": 10,
+    "mean": 11.559944444444444,
+    "median": 11.614166666666666,
+    "q1": 11.317083333333333,
+    "q3": 11.767291666666667,
+    "min": 11.150555555555556,
+    "max": 11.913333333333334
+  },
+  "cost_usd": {
+    "n": 10,
+    "mean": 0.6782900000000001,
+    "median": 0.6443000000000001,
+    "q1": 0.5327500000000001,
+    "q3": 0.86095,
+    "min": 0.4522,
+    "max": 0.9164
+  },
+  "cost_total": 6.7829,
+  "cost_per_msg": {
+    "n": 10,
+    "mean": 0.012661737831000733,
+    "median": 0.012755663956639567,
+    "q1": 0.00926750263435195,
+    "q3": 0.015110313256658596,
+    "min": 0.00741311475409836,
+    "max": 0.019766666666666665
+  },
+  "reactivity": {
+    "n": 10,
+    "mean": 0.7810440964269438,
+    "median": 0.8144719687092569,
+    "q1": 0.7837296459033343,
+    "q3": 0.8492602958816473,
+    "min": 0.4444444444444444,
+    "max": 0.8928571428571429
+  },
+  "cross_edge_share": {
+    "n": 10,
+    "mean": 0.6544009078879602,
+    "median": 0.6794774546986937,
+    "q1": 0.6014013749338974,
+    "q3": 0.7176907062403246,
+    "min": 0.5,
+    "max": 0.7404580152671756
+  },
+  "synergy_positive": {
+    "n": 9,
+    "mean": 0.5781160603529024,
+    "median": 0.625,
+    "q1": 0.509090909090909,
+    "q3": 0.6428571428571429,
+    "min": 0.3333333333333333,
+    "max": 0.8
+  },
+  "tta_rate": {
+    "n": 10,
+    "mean": 0.8852029914529914,
+    "median": 0.8819444444444444,
+    "q1": 0.8177083333333334,
+    "q3": 1.0,
+    "min": 0.6923076923076923,
+    "max": 1.0
+  },
+  "recovery_rate": {
+    "n": 10,
+    "mean": 0.7633333333333333,
+    "median": 0.8166666666666667,
+    "q1": 0.6375,
+    "q3": 0.975,
+    "min": 0.25,
+    "max": 1.0
+  },
+  "depth_max": {
+    "n": 10,
+    "mean": 27.2,
+    "median": 25.5,
+    "q1": 25.0,
+    "q3": 29.75,
+    "min": 10,
+    "max": 43
+  },
+  "max_indegree": {
+    "n": 10,
+    "mean": 6.6,
+    "median": 6.5,
+    "q1": 6.0,
+    "q3": 7.0,
+    "min": 5,
+    "max": 9
+  },
+  "generalization_gap": {
+    "n": 10,
+    "mean": -26.583878442399996,
+    "median": -2.298435302347571,
+    "q1": -7.148140163590427,
+    "q3": 0.1594866082974277,
+    "min": -217.9327421398134,
+    "max": 11.204466608846483
+  },
+  "n_new_best": {
+    "n": 10,
+    "mean": 11.6,
+    "median": 10.0,
+    "q1": 5.0,
+    "q3": 17.5,
+    "min": 1,
+    "max": 30
+  },
+  "last_improvement_frac": {
+    "n": 10,
+    "mean": 0.7833911458809932,
+    "median": 0.7867657601613034,
+    "q1": 0.6805832440302616,
+    "q3": 0.9767946760460913,
+    "min": 0.4766478653859769,
+    "max": 1.0
+  },
+  "top_producer_share": {
+    "n": 10,
+    "mean": 0.7112448589422273,
+    "median": 0.5894736842105264,
+    "q1": 0.5678571428571428,
+    "q3": 0.953125,
+    "min": 0.4444444444444444,
+    "max": 1.0
+  },
+  "agents_with_best": {
+    "n": 10,
+    "mean": 2.1,
+    "median": 2.0,
+    "q1": 1.25,
+    "q3": 3.0,
+    "min": 1,
+    "max": 3
+  },
+  "reactivity_pooled": {
+    "k": 432,
+    "n": 550,
+    "rate": 0.7854545454545454,
+    "ci": [
+      0.7492284971652842,
+      0.8177206088606986
+    ]
+  },
+  "cross_edges_pooled": {
+    "k": 814,
+    "n": 1243,
+    "rate": 0.6548672566371682,
+    "ci": [
+      0.6279969561494381,
+      0.68078324496031
+    ]
+  },
+  "self_cites_pooled": {
+    "k": 429,
+    "n": 1243,
+    "rate": 0.34513274336283184,
+    "ci": [
+      0.3192167550396901,
+      0.3720030438505619
+    ],
+    "self_links": 0
+  },
+  "tta_pooled": {
+    "k": 69,
+    "n": 82,
+    "rate": 0.8414634146341463,
+    "ci": [
+      0.7474193597033629,
+      0.9049449951082902
+    ]
+  },
+  "recovery_pooled": {
+    "k": 39,
+    "n": 52,
+    "rate": 0.75,
+    "ci": [
+      0.6179328224079477,
+      0.8476698823856113
+    ],
+    "different_author": 26
+  },
+  "synergy_direct": {
+    "k": 106,
+    "n": 192,
+    "rate": 0.5520833333333334,
+    "ci": [
+      0.4814068425997666,
+      0.6207165060656856
+    ]
+  },
+  "tag_tta": [
+    {
+      "tag": "status",
+      "tasks": 10,
+      "events": 224,
+      "adopted": 165,
+      "rate": 0.7366071428571429,
+      "ci": [
+        0.6752835944005466,
+        0.7899519025411885
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 2.4545454545454546,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 16.516666666666666,
+      "mean_minutes": 33.45515151515151,
+      "q1_minutes": 7.283333333333333,
+      "q3_minutes": 41.03333333333333
+    },
+    {
+      "tag": "ensembling",
+      "tasks": 10,
+      "events": 187,
+      "adopted": 148,
+      "rate": 0.7914438502673797,
+      "ci": [
+        0.7276370946252126,
+        0.8435172029702802
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.7027027027027026,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 16.458333333333332,
+      "mean_minutes": 39.08783783783784,
+      "q1_minutes": 7.0,
+      "q3_minutes": 44.59583333333333
+    },
+    {
+      "tag": "submission",
+      "tasks": 10,
+      "events": 159,
+      "adopted": 114,
+      "rate": 0.7169811320754716,
+      "ci": [
+        0.6424845656316249,
+        0.781240084580606
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.6315789473684212,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 13.983333333333334,
+      "mean_minutes": 32.427485380116956,
+      "q1_minutes": 6.4,
+      "q3_minutes": 39.3875
+    },
+    {
+      "tag": "communication",
+      "tasks": 10,
+      "events": 139,
+      "adopted": 94,
+      "rate": 0.6762589928057554,
+      "ci": [
+        0.5946390397781876,
+        0.7483982826824962
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.0638297872340425,
+      "q1_msgs": 1.0,
+      "q3_msgs": 2.0,
+      "median_minutes": 12.383333333333333,
+      "mean_minutes": 27.06436170212766,
+      "q1_minutes": 6.1875,
+      "q3_minutes": 37.849999999999994
+    },
+    {
+      "tag": "insight",
+      "tasks": 10,
+      "events": 71,
+      "adopted": 59,
+      "rate": 0.8309859154929577,
+      "ci": [
+        0.7274065601494254,
+        0.9005864277075953
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 2.8813559322033897,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 15.066666666666666,
+      "mean_minutes": 38.974293785310735,
+      "q1_minutes": 7.233333333333333,
+      "q3_minutes": 42.75833333333333
+    },
+    {
+      "tag": "model_selection",
+      "tasks": 9,
+      "events": 51,
+      "adopted": 41,
+      "rate": 0.803921568627451,
+      "ci": [
+        0.6754165732550456,
+        0.8898477516370072
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 3,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 11.766666666666667,
+      "mean_minutes": 37.71951219512195,
+      "q1_minutes": 6.766666666666667,
+      "q3_minutes": 27.866666666666667
+    },
+    {
+      "tag": "postprocessing",
+      "tasks": 8,
+      "events": 51,
+      "adopted": 42,
+      "rate": 0.8235294117647058,
+      "ci": [
+        0.6974559482722196,
+        0.9042770427419009
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.4761904761904763,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 11.925,
+      "mean_minutes": 26.937698412698413,
+      "q1_minutes": 6.766666666666667,
+      "q3_minutes": 25.0
+    },
+    {
+      "tag": "training",
+      "tasks": 8,
+      "events": 43,
+      "adopted": 29,
+      "rate": 0.6744186046511628,
+      "ci": [
+        0.5251593250655096,
+        0.7950688481822019
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 3.206896551724138,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 11.966666666666667,
+      "mean_minutes": 50.57126436781609,
+      "q1_minutes": 7.066666666666666,
+      "q3_minutes": 34.85
+    },
+    {
+      "tag": "architecture",
+      "tasks": 6,
+      "events": 41,
+      "adopted": 32,
+      "rate": 0.7804878048780488,
+      "ci": [
+        0.6329469790176472,
+        0.8799695984461366
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.71875,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 23.80833333333333,
+      "mean_minutes": 35.69479166666667,
+      "q1_minutes": 8.862499999999999,
+      "q3_minutes": 45.80833333333334
+    },
+    {
+      "tag": "inference",
+      "tasks": 5,
+      "events": 26,
+      "adopted": 22,
+      "rate": 0.8461538461538461,
+      "ci": [
+        0.6646841558168644,
+        0.9385006600107053
+      ],
+      "median_msgs": 1.0,
+      "mean_msgs": 2.590909090909091,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.5,
+      "median_minutes": 11.866666666666667,
+      "mean_minutes": 16.278787878787877,
+      "q1_minutes": 6.004166666666667,
+      "q3_minutes": 15.85
+    },
+    {
+      "tag": "feature_engineering",
+      "tasks": 5,
+      "events": 20,
+      "adopted": 16,
+      "rate": 0.8,
+      "ci": [
+        0.5839782779742401,
+        0.9193436467288
+      ],
+      "median_msgs": 1.5,
+      "mean_msgs": 2.5,
+      "q1_msgs": 1.0,
+      "q3_msgs": 4.0,
+      "median_minutes": 13.7,
+      "mean_minutes": 18.676041666666666,
+      "q1_minutes": 7.295833333333333,
+      "q3_minutes": 27.7125
+    },
+    {
+      "tag": "plan",
+      "tasks": 7,
+      "events": 19,
+      "adopted": 16,
+      "rate": 0.8421052631578947,
+      "ci": [
+        0.6243407235682331,
+        0.9447962896007217
+      ],
+      "median_msgs": 2.0,
+      "mean_msgs": 2.8125,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.0,
+      "median_minutes": 15.183333333333334,
+      "mean_minutes": 23.129166666666666,
+      "q1_minutes": 7.9125000000000005,
+      "q3_minutes": 30.433333333333334
+    },
+    {
+      "tag": "regularization",
+      "tasks": 3,
+      "events": 16,
+      "adopted": 11,
+      "rate": 0.6875,
+      "ci": [
+        0.4440393186673406,
+        0.8583556494803894
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 2.909090909090909,
+      "q1_msgs": 1.0,
+      "q3_msgs": 3.5,
+      "median_minutes": 34.85,
+      "mean_minutes": 51.25909090909091,
+      "q1_minutes": 17.991666666666667,
+      "q3_minutes": 43.775
+    },
+    {
+      "tag": "bug",
+      "tasks": 6,
+      "events": 7,
+      "adopted": 4,
+      "rate": 0.5714285714285714,
+      "ci": [
+        0.2504542304090258,
+        0.8417830777373732
+      ],
+      "median_msgs": 1.5,
+      "mean_msgs": 1.5,
+      "q1_msgs": 1.0,
+      "q3_msgs": 2.0,
+      "median_minutes": 7.833333333333333,
+      "mean_minutes": 7.745833333333334,
+      "q1_minutes": 5.8999999999999995,
+      "q3_minutes": 9.679166666666667
+    },
+    {
+      "tag": "loss",
+      "tasks": 4,
+      "events": 7,
+      "adopted": 6,
+      "rate": 0.8571428571428571,
+      "ci": [
+        0.48686549668097007,
+        0.9743210440510253
+      ],
+      "median_msgs": 1.0,
+      "mean_msgs": 1.3333333333333333,
+      "q1_msgs": 1.0,
+      "q3_msgs": 1.75,
+      "median_minutes": 10.45,
+      "mean_minutes": 41.68055555555556,
+      "q1_minutes": 7.683333333333334,
+      "q3_minutes": 55.016666666666666
+    },
+    {
+      "tag": "conflict",
+      "tasks": 5,
+      "events": 6,
+      "adopted": 5,
+      "rate": 0.8333333333333334,
+      "ci": [
+        0.43649056343635395,
+        0.9699474141282697
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 1.8,
+      "q1_msgs": 1.0,
+      "q3_msgs": 2.0,
+      "median_minutes": 6.45,
+      "mean_minutes": 6.3933333333333335,
+      "q1_minutes": 3.9833333333333334,
+      "q3_minutes": 8.2
+    },
+    {
+      "tag": "optimization",
+      "tasks": 3,
+      "events": 5,
+      "adopted": 4,
+      "rate": 0.8,
+      "ci": [
+        0.3755282641185388,
+        0.9637768390302125
+      ],
+      "median_msgs": 1.0,
+      "mean_msgs": 1.25,
+      "q1_msgs": 1.0,
+      "q3_msgs": 1.25,
+      "median_minutes": 1.4,
+      "mean_minutes": 2.3041666666666667,
+      "q1_minutes": 0.31666666666666665,
+      "q3_minutes": 3.3875
+    },
+    {
+      "tag": "data_pipeline",
+      "tasks": 1,
+      "events": 4,
+      "adopted": 4,
+      "rate": 1.0,
+      "ci": [
+        0.5100999795960008,
+        1.0
+      ],
+      "median_msgs": 4.5,
+      "mean_msgs": 12.5,
+      "q1_msgs": 2.5,
+      "q3_msgs": 14.5,
+      "median_minutes": 141.90833333333333,
+      "mean_minutes": 248.7875,
+      "q1_minutes": 89.09166666666667,
+      "q3_minutes": 301.60416666666663
+    },
+    {
+      "tag": "augmentation",
+      "tasks": 1,
+      "events": 2,
+      "adopted": 2,
+      "rate": 1.0,
+      "ci": [
+        0.34237195288961925,
+        1.0
+      ],
+      "median_msgs": 1.5,
+      "mean_msgs": 1.5,
+      "q1_msgs": 1.25,
+      "q3_msgs": 1.75,
+      "median_minutes": 8.741666666666667,
+      "mean_minutes": 8.741666666666667,
+      "q1_minutes": 8.295833333333333,
+      "q3_minutes": 9.1875
+    },
+    {
+      "tag": "data_preprocessing",
+      "tasks": 1,
+      "events": 2,
+      "adopted": 2,
+      "rate": 1.0,
+      "ci": [
+        0.34237195288961925,
+        1.0
+      ],
+      "median_msgs": 1.5,
+      "mean_msgs": 1.5,
+      "q1_msgs": 1.25,
+      "q3_msgs": 1.75,
+      "median_minutes": 4.366666666666666,
+      "mean_minutes": 4.366666666666666,
+      "q1_minutes": 2.7666666666666666,
+      "q3_minutes": 5.966666666666667
+    },
+    {
+      "tag": "problem",
+      "tasks": 2,
+      "events": 2,
+      "adopted": 2,
+      "rate": 1.0,
+      "ci": [
+        0.34237195288961925,
+        1.0
+      ],
+      "median_msgs": 1.0,
+      "mean_msgs": 1,
+      "q1_msgs": 1.0,
+      "q3_msgs": 1.0,
+      "median_minutes": 3.708333333333333,
+      "mean_minutes": 3.708333333333333,
+      "q1_minutes": 2.0125,
+      "q3_minutes": 5.404166666666667
+    },
+    {
+      "tag": "epochs",
+      "tasks": 1,
+      "events": 1,
+      "adopted": 1,
+      "rate": 1.0,
+      "ci": [
+        0.20654329147389294,
+        1.0
+      ],
+      "median_msgs": 2,
+      "mean_msgs": 2,
+      "q1_msgs": 2.0,
+      "q3_msgs": 2.0,
+      "median_minutes": 9.633333333333333,
+      "mean_minutes": 9.633333333333333,
+      "q1_minutes": 9.633333333333333,
+      "q3_minutes": 9.633333333333333
+    },
+    {
+      "tag": "experiment",
+      "tasks": 1,
+      "events": 1,
+      "adopted": 1,
+      "rate": 1.0,
+      "ci": [
+        0.20654329147389294,
+        1.0
+      ],
+      "median_msgs": 1,
+      "mean_msgs": 1,
+      "q1_msgs": 1.0,
+      "q3_msgs": 1.0,
+      "median_minutes": 7.5,
+      "mean_minutes": 7.5,
+      "q1_minutes": 7.5,
+      "q3_minutes": 7.5
+    },
+    {
+      "tag": "feats",
+      "tasks": 1,
+      "events": 1,
+      "adopted": 0,
+      "rate": 0.0,
+      "ci": [
+        0.0,
+        0.7934567085261071
+      ],
+      "median_msgs": null,
+      "mean_msgs": null,
+      "q1_msgs": null,
+      "q3_msgs": null,
+      "median_minutes": null,
+      "mean_minutes": null,
+      "q1_minutes": null,
+      "q3_minutes": null
+    },
+    {
+      "tag": "semisupervised",
+      "tasks": 1,
+      "events": 1,
+      "adopted": 1,
+      "rate": 1.0,
+      "ci": [
+        0.20654329147389294,
+        1.0
+      ],
+      "median_msgs": 1,
+      "mean_msgs": 1,
+      "q1_msgs": 1.0,
+      "q3_msgs": 1.0,
+      "median_minutes": 15.066666666666666,
+      "mean_minutes": 15.066666666666666,
+      "q1_minutes": 15.066666666666666,
+      "q3_minutes": 15.066666666666666
+    }
+  ],
+  "synergy_delta_pct": {
+    "n": 9,
+    "mean": -2.1124510328550894,
+    "median": -3.3610971894067734,
+    "q1": -5.471990373291009,
+    "q3": 2.0883669848779247,
+    "min": -34.735939643347066,
+    "max": 26.76706827309236
+  },
+  "synergy_delta_pct_weighted": -6.135509416279791,
+  "board_improve": {
+    "linked_k": 98,
+    "linked_n": 222,
+    "unlinked_k": 9,
+    "unlinked_n": 18,
+    "linked_rate": 0.44144144144144143,
+    "unlinked_rate": 0.5,
+    "linked_ci": [
+      0.37766716272691175,
+      0.5072079001490154
+    ],
+    "unlinked_ci": [
+      0.2903070395897999,
+      0.7096929604102
+    ]
+  },
+  "synergy_task_comparison": {
+    "n_tasks": 5,
+    "linked_gt_unlinked": 2,
+    "tasks": [
+      "billion-word",
+      "bms-mol",
+      "mlsp-birds",
+      "nfl-contact",
+      "spooky"
+    ]
+  },
+  "correlations": [
+    {
+      "key": "messages",
+      "label": "Messages",
+      "rho": -0.2523184421981317,
+      "p": 0.48187092770408346,
+      "n": 10
+    },
+    {
+      "key": "duration_h",
+      "label": "Duration (h)",
+      "rho": -0.16565664216775916,
+      "p": 0.6474077386053476,
+      "n": 10
+    },
+    {
+      "key": "cost_usd",
+      "label": "Cost",
+      "rho": 0.32517785314411984,
+      "p": 0.3592376707147829,
+      "n": 10
+    },
+    {
+      "key": "reactivity",
+      "label": "Reactivity",
+      "rho": -0.2024692293161501,
+      "p": 0.574812552641861,
+      "n": 10
+    },
+    {
+      "key": "cross_edge_share",
+      "label": "Cross-agent edges",
+      "rho": -0.23928181646454103,
+      "p": 0.5055248490013544,
+      "n": 10
+    },
+    {
+      "key": "synergy_positive",
+      "label": "Synergy: share improving",
+      "rho": -0.12766997805903665,
+      "p": 0.743419763237688,
+      "n": 9
+    },
+    {
+      "key": "tta_rate",
+      "label": "TTA adoption",
+      "rho": -0.2785312251041963,
+      "p": 0.43582162534535723,
+      "n": 10
+    },
+    {
+      "key": "recovery_rate",
+      "label": "Recovery rate",
+      "rho": -0.36645962732919257,
+      "p": 0.29762578931500366,
+      "n": 10
+    },
+    {
+      "key": "depth_max",
+      "label": "Max depth",
+      "rho": -0.3167701863354037,
+      "p": 0.3725104212256963,
+      "n": 10
+    },
+    {
+      "key": "max_indegree",
+      "label": "Max in-degree",
+      "rho": -0.39269404118311235,
+      "p": 0.2616431839941929,
+      "n": 10
+    }
+  ]
+}

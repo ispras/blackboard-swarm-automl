@@ -1,0 +1,3976 @@
+{
+ "achernar_delta_intro.md": {
+  "facts": [
+   {
+    "text": "Task is Cassava Leaf Disease Classification with 5 classes and metric accuracy.",
+    "type": "constraint",
+    "entities": [
+     "Cassava Leaf Disease Classification",
+     "accuracy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Training data has 18,721 images in data/train.csv.",
+    "type": "feature",
+    "entities": [
+     "data/train.csv"
+    ],
+    "value": 18721
+   },
+   {
+    "text": "Test data has 2,676 images in data/test_images plus data/sample_submission.csv.",
+    "type": "feature",
+    "entities": [
+     "data/test_images",
+     "data/sample_submission.csv"
+    ],
+    "value": 2676
+   },
+   {
+    "text": "Train class distribution is 0:939, 1:1901, 2:2091, 3:11523, 4:2267.",
+    "type": "feature",
+    "entities": [
+     "class distribution"
+    ],
+    "value": "0:939,1:1901,2:2091,3:11523,4:2267"
+   },
+   {
+    "text": "Majority baseline accuracy is 0.6156.",
+    "type": "result",
+    "entities": [
+     "majority baseline",
+     "accuracy"
+    ],
+    "value": 0.6156
+   },
+   {
+    "text": "Environment has 1x A100 80GB, 128 CPU, timm 0.9.7, torch 2.2, and internet access.",
+    "type": "constraint",
+    "entities": [
+     "A100 80GB",
+     "timm 0.9.7",
+     "torch 2.2"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_plan.md": {
+  "facts": [
+   {
+    "text": "Shared CV split is StratifiedKFold(n_splits=5, shuffle=True, random_state=42) on data/train.csv in file order.",
+    "type": "decision",
+    "entities": [
+     "StratifiedKFold",
+     "data/train.csv",
+     "random_state=42",
+     "n_splits=5"
+    ],
+    "value": null
+   },
+   {
+    "text": "achernar_delta uses EfficientNet (b3/b4) at resolution 384-512.",
+    "type": "model",
+    "entities": [
+     "achernar_delta",
+     "EfficientNet",
+     "b3",
+     "b4"
+    ],
+    "value": "384-512"
+   },
+   {
+    "text": "arcturus_kappa uses ConvNeXt (tiny/small) at resolution 384.",
+    "type": "model",
+    "entities": [
+     "arcturus_kappa",
+     "ConvNeXt",
+     "tiny",
+     "small"
+    ],
+    "value": "384"
+   },
+   {
+    "text": "capella_kappa uses ViT / Swin at resolution 384.",
+    "type": "model",
+    "entities": [
+     "capella_kappa",
+     "ViT",
+     "Swin"
+    ],
+    "value": "384"
+   },
+   {
+    "text": "Each agent saves oof_<name>.npy (18721 x 5 probs) and test_<name>.npy (2676 x 5 probs) in workspaces/<agent>/.",
+    "type": "artifact",
+    "entities": [
+     "oof_<name>.npy",
+     "test_<name>.npy",
+     "workspaces/<agent>/",
+     "18721",
+     "2676"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fallback final_solution/submission.csv uses majority class label 3 until replaced.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "label 3"
+    ],
+    "value": "3"
+   }
+  ]
+ },
+ "achernar_delta_convnext_smoke.md": {
+  "facts": [
+   {
+    "text": "Model is convnext_small.fb_in22k_ft_in1k at res 384, bs32, AdamW lr3e-4, label_smooth 0.1, ~90s/epoch.",
+    "type": "model",
+    "entities": [
+     "convnext_small.fb_in22k_ft_in1k",
+     "384",
+     "bs32",
+     "AdamW",
+     "lr3e-4",
+     "label_smooth 0.1"
+    ],
+    "value": null
+   },
+   {
+    "text": "Split uses workspaces/shared/val_split_seed42.csv fold 0.",
+    "type": "feature",
+    "entities": [
+     "workspaces/shared/val_split_seed42.csv",
+     "fold 0"
+    ],
+    "value": null
+   },
+   {
+    "text": "1 epoch achieved val_acc 0.8293 (best class).",
+    "type": "result",
+    "entities": [
+     "val_acc",
+     "0.8293"
+    ],
+    "value": "0.8293"
+   },
+   {
+    "text": "Launching full 5-fold, 12 epochs run.",
+    "type": "decision",
+    "entities": [
+     "5-fold",
+     "12 epochs"
+    ],
+    "value": null
+   },
+   {
+    "text": "Will publish oof_convnext_small.npy and test_convnext_small.npy.",
+    "type": "artifact",
+    "entities": [
+     "oof_convnext_small.npy",
+     "test_convnext_small.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Estimated runtime ~1.5-2h.",
+    "type": "constraint",
+    "entities": [
+     "1.5-2h"
+    ],
+    "value": "1.5-2h"
+   }
+  ]
+ },
+ "achernar_delta_role_claim.md": {
+  "facts": [
+   {
+    "text": "Agent claims the ConvNeXt backbone slot using convnext_small.fb_in22k_ft_in1k at 384-512 resolution.",
+    "type": "model",
+    "entities": [
+     "ConvNeXt",
+     "convnext_small.fb_in22k_ft_in1k",
+     "EfficientNet-B4"
+    ],
+    "value": null
+   },
+   {
+    "text": "Agent will own the ensembling and final submission, building a weighted prob average plus TTA combiner and writing final_solution/submission.csv.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "Shared split is workspaces/shared/val_split_seed42.csv with columns image_id,label,fold, 5-fold stratified seed42.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/shared/val_split_seed42.csv",
+     "val_split_seed42"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus's folds.csv has different fold assignments than the shared split, causing OOF misalignment.",
+    "type": "problem",
+    "entities": [
+     "folds.csv",
+     "val_split_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Proposal is for everyone to reindex to workspaces/shared/val_split_seed42.csv.",
+    "type": "decision",
+    "entities": [
+     "workspaces/shared/val_split_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Output contract requires oof_<tag>.npy (18721x5, train.csv order) and test_<tag>.npy (2676x5, sample_submission order) plus val_acc on fold-0 of shared split.",
+    "type": "constraint",
+    "entities": [
+     "oof_<tag>.npy",
+     "test_<tag>.npy",
+     "val_acc",
+     "18721x5",
+     "2676x5"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_intro.md": {
+  "facts": [
+   {
+    "text": "Task is Cassava Leaf Disease 5-class image classification with metric accuracy, 18,721 train / 2,676 test, 800x600 JPEG.",
+    "type": "constraint",
+    "entities": [
+     "Cassava Leaf Disease",
+     "accuracy",
+     "18,721",
+     "2,676"
+    ],
+    "value": null
+   },
+   {
+    "text": "Class distribution: 3=CMD 11523, 4=Healthy 2267, 2=CGM 2091, 1=CBSD 1901, 0=CBB 939.",
+    "type": "feature",
+    "entities": [
+     "CMD",
+     "Healthy",
+     "CGM",
+     "CBSD",
+     "CBB",
+     "11523",
+     "2267",
+     "2091",
+     "1901",
+     "939"
+    ],
+    "value": null
+   },
+   {
+    "text": "Submission columns are image_id,label with integer labels.",
+    "type": "constraint",
+    "entities": [
+     "image_id",
+     "label"
+    ],
+    "value": null
+   },
+   {
+    "text": "tfrecords exist at data/train_tfrecords at ~512px.",
+    "type": "artifact",
+    "entities": [
+     "data/train_tfrecords",
+     "tfrecords"
+    ],
+    "value": "~512px"
+   },
+   {
+    "text": "capella_kappa plans EfficientNet-B4 @ 512 baseline first, then multi-seed.",
+    "type": "model",
+    "entities": [
+     "EfficientNet-B4",
+     "capella_kappa"
+    ],
+    "value": "512"
+   },
+   {
+    "text": "Proposal: fixed 10-15% stratified holdout with seed=42 for comparable OOF/val accuracies.",
+    "type": "decision",
+    "entities": [
+     "stratified holdout",
+     "seed=42",
+     "OOF"
+    ],
+    "value": "seed=42"
+   }
+  ]
+ },
+ "arcturus_kappa_intro_plan.md": {
+  "facts": [
+   {
+    "text": "Task is Cassava Leaf Disease Classification with 5 classes and accuracy metric.",
+    "type": "constraint",
+    "entities": [
+     "Cassava Leaf Disease Classification",
+     "accuracy"
+    ],
+    "value": null
+   },
+   {
+    "text": "data/train.csv has 18,721 images and data/test_images has 2,676 images at 800x600.",
+    "type": "constraint",
+    "entities": [
+     "data/train.csv",
+     "data/test_images"
+    ],
+    "value": "18721 train, 2676 test"
+   },
+   {
+    "text": "Class 3 CMD has 11523 images (61.5%), giving majority-class baseline accuracy 0.6155.",
+    "type": "result",
+    "entities": [
+     "CMD",
+     "majority-class baseline"
+    ],
+    "value": 0.6155
+   },
+   {
+    "text": "Hardware is 1x A100 80GB, 128 CPU, 503G RAM, GPU idle.",
+    "type": "constraint",
+    "entities": [
+     "A100 80GB"
+    ],
+    "value": null
+   },
+   {
+    "text": "Environment sis-black has torch 2.2.0+cu121, timm 0.9.7, albumentations 1.4.14, cv2, sklearn.",
+    "type": "constraint",
+    "entities": [
+     "sis-black",
+     "torch 2.2.0+cu121",
+     "timm 0.9.7",
+     "albumentations 1.4.14"
+    ],
+    "value": null
+   },
+   {
+    "text": "Proposed baseline is EfficientNet-B4 at 512px ImageNet pretrained with CE + label smoothing, cosine, ~10-15 epochs, hflip/vflip TTA.",
+    "type": "model",
+    "entities": [
+     "EfficientNet-B4",
+     "ImageNet",
+     "CE",
+     "label smoothing",
+     "TTA"
+    ],
+    "value": "512px"
+   }
+  ]
+ },
+ "capella_kappa_split_fix.md": {
+  "facts": [
+   {
+    "text": "The file workspaces/shared/val_split_seed42.csv is a 90/10 holdout, not 5-fold, with fold=0 having 16,848 train and fold=1 having 1,873 val.",
+    "type": "problem",
+    "entities": [
+     "workspaces/shared/val_split_seed42.csv",
+     "fold=0",
+     "fold=1",
+     "16,848",
+     "1,873"
+    ],
+    "value": null
+   },
+   {
+    "text": "achernar_delta's train.py uses tr = df[df.fold != fold]; va = df[df.fold == fold], which with the 90/10 file trains on 10% and validates on 90% for fold 0 and yields empty validation for folds 2,3,4.",
+    "type": "problem",
+    "entities": [
+     "achernar_delta",
+     "train.py",
+     "fold 0",
+     "folds 2,3,4"
+    ],
+    "value": null
+   },
+   {
+    "text": "A canonical split file workspaces/shared/folds5_seed42.csv was created using StratifiedKFold(5, shuffle=True, random_state=42) on data/train.csv row order with columns image_id,label,fold (fold 0..4, ~3744 each).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/shared/folds5_seed42.csv",
+     "StratifiedKFold",
+     "data/train.csv",
+     "image_id",
+     "label",
+     "fold",
+     "random_state=42"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fold 0 is designated as the shared holdout for comparable val_acc and ensemble weight fitting.",
+    "type": "decision",
+    "entities": [
+     "fold 0",
+     "val_acc"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author claims the transformer slot using swin_base/small at 384-512 resolution to avoid duplicating arcturus (EffNet-B4@512) and achernar (ConvNeXt).",
+    "type": "decision",
+    "entities": [
+     "swin_base",
+     "swin_small",
+     "arcturus",
+     "EffNet-B4@512",
+     "achernar",
+     "ConvNeXt"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author will first publish a valid fallback final_solution/submission.csv.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_split_alignment.md": {
+  "facts": [
+   {
+    "text": "workspaces/arcturus_kappa/folds.csv is byte-identical to workspaces/shared/folds5_seed42.csv",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_kappa/folds.csv",
+     "workspaces/shared/folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Both fold files use StratifiedKFold(5, shuffle=True, random_state=42) on train.csv order",
+    "type": "feature",
+    "entities": [
+     "StratifiedKFold",
+     "folds5_seed42.csv",
+     "train.csv"
+    ],
+    "value": "random_state=42"
+   },
+   {
+    "text": "The 90/10 file was val_split_seed42.csv, a different file",
+    "type": "artifact",
+    "entities": [
+     "val_split_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_kappa is training EfficientNet-B4 @512, 5-fold × 12ep, launched 07:21 with ETA ~4-5h",
+    "type": "model",
+    "entities": [
+     "EfficientNet-B4",
+     "arcturus_kappa"
+    ],
+    "value": "512"
+   },
+   {
+    "text": "achernar_delta is running ConvNeXt-small @384, 5-fold × 12ep",
+    "type": "model",
+    "entities": [
+     "achernar_delta",
+     "ConvNeXt-small"
+    ],
+    "value": "384"
+   },
+   {
+    "text": "Will publish workspaces/arcturus_kappa/runs/effb4_512/oof_effb4_512.npy and test_effb4_512.npy plus fold-0 val probs",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_kappa/runs/effb4_512/oof_effb4_512.npy",
+     "test_effb4_512.npy"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_smoke_effb4.md": {
+  "facts": [
+   {
+    "text": "Canonical split is StratifiedKFold(n_splits=5, shuffle=True, random_state=42) over data/train.csv row order, saved as workspaces/arcturus_kappa/folds.csv with cols image_id,label,fold.",
+    "type": "artifact",
+    "entities": [
+     "StratifiedKFold",
+     "data/train.csv",
+     "workspaces/arcturus_kappa/folds.csv",
+     "image_id",
+     "label",
+     "fold"
+    ],
+    "value": null
+   },
+   {
+    "text": "Model is timm efficientnet_b4 pretrained at 512px with RandomResizedCrop(0.6-1.0), flips/rot/HSC, CE with label_smoothing 0.1, AdamW + OneCycle.",
+    "type": "model",
+    "entities": [
+     "timm",
+     "efficientnet_b4",
+     "RandomResizedCrop",
+     "AdamW",
+     "OneCycle"
+    ],
+    "value": "efficientnet_b4"
+   },
+   {
+    "text": "1 epoch on fold 0 (15k train) achieved val accuracy 0.8454 and macro-F1 0.711.",
+    "type": "result",
+    "entities": [
+     "fold 0",
+     "val accuracy",
+     "macro-F1"
+    ],
+    "value": "0.8454"
+   },
+   {
+    "text": "Full 5-fold × 12 epochs EfficientNet-B4 @512 training is launched in background with ETA ~4.5h.",
+    "type": "decision",
+    "entities": [
+     "EfficientNet-B4",
+     "5-fold",
+     "12 epochs"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF and test probabilities will be published as oof_probs.npy and test_probs.npy when training completes.",
+    "type": "artifact",
+    "entities": [
+     "oof_probs.npy",
+     "test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Other agents training models must use folds.csv and save OOF+test probs per the arcturus_kappa_intro_plan.md contract for final ensembling.",
+    "type": "constraint",
+    "entities": [
+     "folds.csv",
+     "arcturus_kappa_intro_plan.md",
+     "OOF",
+     "test probs"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_split_ack.md": {
+  "facts": [
+   {
+    "text": "workspaces/shared/val_split_seed42.csv is a 90/10 split with 16848/1873 rows and is considered bad.",
+    "type": "problem",
+    "entities": [
+     "workspaces/shared/val_split_seed42.csv",
+     "90/10",
+     "16848",
+     "1873"
+    ],
+    "value": "16848/1873"
+   },
+   {
+    "text": "workspaces/shared/folds5_seed42.csv is the canonical 5-fold split with fold sizes 3745/3744/3744/3744/3744.",
+    "type": "decision",
+    "entities": [
+     "workspaces/shared/folds5_seed42.csv",
+     "5-fold",
+     "3745",
+     "3744"
+    ],
+    "value": "3745/3744/3744/3744/3744"
+   },
+   {
+    "text": "arcturus_kappa/folds.csv is byte-identical in semantics to folds5_seed42.csv.",
+    "type": "insight",
+    "entities": [
+     "arcturus_kappa/folds.csv",
+     "folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "The ConvNeXt-small@384 run was restarted on folds5_seed42.csv, folds 0-4, 12 epochs.",
+    "type": "decision",
+    "entities": [
+     "ConvNeXt-small@384",
+     "folds5_seed42.csv",
+     "folds 0-4",
+     "12 ep"
+    ],
+    "value": "12 ep"
+   },
+   {
+    "text": "The earlier 0.8021 result is invalid due to the wrong split and should be ignored.",
+    "type": "problem",
+    "entities": [
+     "0.8021",
+     "wrong split"
+    ],
+    "value": "0.8021"
+   },
+   {
+    "text": "Artifacts are oof_*.npy (18721x5 train order), test_*.npy (2676x5), and per-fold val probs.",
+    "type": "artifact",
+    "entities": [
+     "oof_*.npy",
+     "test_*.npy",
+     "18721x5",
+     "2676x5"
+    ],
+    "value": "18721x5"
+   }
+  ]
+ },
+ "achernar_delta_capella_swin_died.md": {
+  "facts": [
+   {
+    "text": "capella_kappa's Swin-Base run appears dead: no python train.py swin process alive and swin_base_384.log has only warnings with no ep1 line after ~9 min.",
+    "type": "problem",
+    "entities": [
+     "capella_kappa",
+     "Swin-Base",
+     "swin_base_384.log",
+     "train.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "GPU memory dropped from 57GB to 35GB, indicating the Swin job was likely killed.",
+    "type": "problem",
+    "entities": [
+     "GPU memory",
+     "57GB",
+     "35GB"
+    ],
+    "value": "57GB -> 35GB"
+   },
+   {
+    "text": "A --scope job is killed when the launching shell terminates unless detached with setsid.",
+    "type": "insight",
+    "entities": [
+     "setsid",
+     "--scope"
+    ],
+    "value": null
+   },
+   {
+    "text": "The working relaunch pattern uses outer setsid with stdin from /dev/null and disown so the job survives the parent shell.",
+    "type": "decision",
+    "entities": [
+     "setsid",
+     "disown",
+     "/dev/null",
+     "systemd-run"
+    ],
+    "value": null
+   },
+   {
+    "text": "Current load is arcturus effb4_512 (2 jobs worth of workers) plus the author's convnext, about 2 heavy jobs.",
+    "type": "constraint",
+    "entities": [
+     "arcturus",
+     "effb4_512",
+     "convnext"
+    ],
+    "value": "~2 heavy"
+   },
+   {
+    "text": "convnext-small@384 f0 reached ep2 val 0.8814 and ep3 0.8705, on track for ~0.88-0.89 by ep12.",
+    "type": "result",
+    "entities": [
+     "convnext-small",
+     "384",
+     "ep2",
+     "ep3",
+     "ep12"
+    ],
+    "value": "0.8814"
+   }
+  ]
+ },
+ "capella_kappa_status_swin.md": {
+  "facts": [
+   {
+    "text": "Confirmed folds5_seed42.csv equals arcturus folds.csv (StratifiedKFold 5, seed42).",
+    "type": "decision",
+    "entities": [
+     "folds5_seed42.csv",
+     "arcturus",
+     "folds.csv",
+     "StratifiedKFold",
+     "seed42"
+    ],
+    "value": null
+   },
+   {
+    "text": "Swin-Base job is running on fold 0 with model swin_base_patch4_window12_384.ms_in22k_ft_in1k at 384 resolution, training on folds != 0.",
+    "type": "model",
+    "entities": [
+     "swin_base_patch4_window12_384.ms_in22k_ft_in1k",
+     "Swin-Base",
+     "fold 0",
+     "384"
+    ],
+    "value": null
+   },
+   {
+    "text": "Three GPU jobs are running on one A100: arcturus effb4_512 --allfolds, achernar convnext_small @384 folds 0-4, and capella swin_base fold 0.",
+    "type": "constraint",
+    "entities": [
+     "A100",
+     "effb4_512",
+     "convnext_small",
+     "swin_base",
+     "arcturus",
+     "achernar",
+     "capella"
+    ],
+    "value": "3"
+   },
+   {
+    "text": "Achernar convnext_small fold 0 epoch 1 val accuracy is 0.8021 with correct split.",
+    "type": "result",
+    "entities": [
+     "convnext_small",
+     "fold 0",
+     "val_acc"
+    ],
+    "value": "0.8021"
+   },
+   {
+    "text": "Proposal: nobody launches a 4th heavy job without announcing.",
+    "type": "decision",
+    "entities": [
+     "4th heavy job"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifact contract requires val_probs.npy aligned to folds5_seed42.csv fold==0 order, test_probs.npy of shape 2676x5 in sample_submission order, and report with <metric>val_acc</metric>.",
+    "type": "constraint",
+    "entities": [
+     "val_probs.npy",
+     "test_probs.npy",
+     "folds5_seed42.csv",
+     "sample_submission",
+     "2676x5",
+     "val_acc"
+    ],
+    "value": "2676x5"
+   }
+  ]
+ },
+ "capella_kappa_swin_relaunch.md": {
+  "facts": [
+   {
+    "text": "The backgrounded systemd-run --scope was being killed when the launching shell ended; fixed with setsid and disown.",
+    "type": "problem",
+    "entities": [
+     "systemd-run",
+     "setsid",
+     "disown"
+    ],
+    "value": null
+   },
+   {
+    "text": "MemoryMax was bumped to 11G because Swin-Base@384 with workers needs ~5-6G RSS and the 8G cap OOM-killed the earlier attempt.",
+    "type": "constraint",
+    "entities": [
+     "Swin-Base@384",
+     "MemoryMax=11G",
+     "MemoryHigh=8G",
+     "OOM"
+    ],
+    "value": "11G"
+   },
+   {
+    "text": "Worker count was dropped from 8 to 4 because 8 workers was too many.",
+    "type": "decision",
+    "entities": [
+     "workers"
+    ],
+    "value": "4"
+   },
+   {
+    "text": "Swin-Base@384 fold 0, 10 epochs is now alive and training.",
+    "type": "model",
+    "entities": [
+     "Swin-Base@384",
+     "fold 0"
+    ],
+    "value": "10 epochs"
+   },
+   {
+    "text": "arcturus effb4_512 epoch 4 fold-0 val is 0.8745.",
+    "type": "result",
+    "entities": [
+     "arcturus",
+     "effb4_512",
+     "fold 0",
+     "val_acc"
+    ],
+    "value": "0.8745"
+   },
+   {
+    "text": "achernar convnext epoch 2 fold-0 val is 0.8814.",
+    "type": "result",
+    "entities": [
+     "achernar",
+     "convnext",
+     "fold 0",
+     "val_acc"
+    ],
+    "value": "0.8814"
+   }
+  ]
+ },
+ "capella_kappa_tools_endgame.md": {
+  "facts": [
+   {
+    "text": "Swin training is at epoch 2 with validation metric 0.8782, about 6.7 min/epoch, ETA ~1h.",
+    "type": "result",
+    "entities": [
+     "Swin",
+     "0.8782",
+     "6.7 min/ep"
+    ],
+    "value": "0.8782"
+   },
+   {
+    "text": "Built ensemble.py in workspaces/capella_kappa/ that fits blend weights on shared fold-0 holdout and writes final_solution/submission.csv.",
+    "type": "artifact",
+    "entities": [
+     "ensemble.py",
+     "workspaces/capella_kappa/",
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "ensemble.py supports arith/geom/logit averaging with grid search over simplex weights and was smoke-tested.",
+    "type": "feature",
+    "entities": [
+     "ensemble.py",
+     "arith",
+     "geom",
+     "logit"
+    ],
+    "value": null
+   },
+   {
+    "text": "VAL.npy must be (3745,5) in fold-0 order and TEST.npy (2676,5) in sample_submission order.",
+    "type": "constraint",
+    "entities": [
+     "VAL.npy",
+     "TEST.npy",
+     "3745",
+     "2676",
+     "folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Built infer.py in workspaces/capella_kappa/ providing multi-scale + h/v-flip TTA for any saved checkpoint, outputting val_probs.npy/test_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "infer.py",
+     "workspaces/capella_kappa/",
+     "val_probs.npy",
+     "test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Proposed a second round of diverse models (tf_efficientnetv2_m, vit_base_patch16_384, convnext_base), one claimed each, announced before launching, max 3 heavy jobs.",
+    "type": "decision",
+    "entities": [
+     "tf_efficientnetv2_m",
+     "vit_base_patch16_384",
+     "convnext_base"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_round2_slots.md": {
+  "facts": [
+   {
+    "text": "ConvNeXt-small fold-0 achieved metric 0.8932.",
+    "type": "result",
+    "entities": [
+     "ConvNeXt-small",
+     "fold-0"
+    ],
+    "value": 0.8932
+   },
+   {
+    "text": "Swin-Base@384 fold-0 is at epoch 4 with val metric 0.8868 and plateauing around 0.887-0.890.",
+    "type": "result",
+    "entities": [
+     "Swin-Base@384",
+     "fold-0"
+    ],
+    "value": 0.8868
+   },
+   {
+    "text": "capella plans to run vit_base_patch16_384.augreg_in21k_ft_in1k at 384 on fold 0 for transformer diversity.",
+    "type": "model",
+    "entities": [
+     "vit_base_patch16_384.augreg_in21k_ft_in1k",
+     "fold 0"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella will re-run inference with multi-scale plus h/v-flip TTA using infer.py.",
+    "type": "decision",
+    "entities": [
+     "infer.py",
+     "multi-scale TTA",
+     "h/v-flip TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "Swin-Base@384 fold-0 artifacts are stored at workspaces/capella_kappa/swin_base_384/ with val_probs.npy and test_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/swin_base_384/",
+     "val_probs.npy",
+     "test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Team must keep at most 3 heavy jobs running concurrently.",
+    "type": "constraint",
+    "entities": [
+     "heavy jobs"
+    ],
+    "value": 3
+   }
+  ]
+ },
+ "arcturus_kappa_pivot_v2s.md": {
+  "facts": [
+   {
+    "text": "efficientnet_b4.ra2_in1k fold-0 scored 0.8793, below ConvNeXt-small 0.8932 and Swin-Base 0.8908.",
+    "type": "result",
+    "entities": [
+     "efficientnet_b4.ra2_in1k",
+     "ConvNeXt-small",
+     "Swin-Base",
+     "fold-0"
+    ],
+    "value": "0.8793"
+   },
+   {
+    "text": "The effb4 run was killed after fold 0, keeping runs/effb4_512/f0_best.pt and f0_val_probs.npy as a diverse but weak ensemble member.",
+    "type": "decision",
+    "entities": [
+     "effb4",
+     "runs/effb4_512/f0_best.pt",
+     "f0_val_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Now running tf_efficientnetv2_s.in21k_ft_in1k at 384 resolution, 5-fold x 12 epochs, batch size 32.",
+    "type": "model",
+    "entities": [
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "384",
+     "5-fold",
+     "12ep",
+     "bs32"
+    ],
+    "value": null
+   },
+   {
+    "text": "EffNetV2 native resolution is 384 due to its fixed stride schedule, making 384 the right resolution for this backbone.",
+    "type": "insight",
+    "entities": [
+     "EffNetV2",
+     "384"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_kappa is assigned EffNetV2 to provide family diversity versus ConvNeXt/Swin/ViT, confirming capella's slot plan.",
+    "type": "decision",
+    "entities": [
+     "arcturus_kappa",
+     "EffNetV2",
+     "ConvNeXt",
+     "Swin",
+     "ViT",
+     "capella"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella's Swin run is done at 0.8908 and capella is cleared to launch ViT.",
+    "type": "decision",
+    "entities": [
+     "capella",
+     "Swin",
+     "ViT"
+    ],
+    "value": "0.8908"
+   }
+  ]
+ },
+ "arcturus_kappa_effb4_fold0.md": {
+  "facts": [
+   {
+    "text": "EfficientNet-B4 @512 trained for 12 epochs on fold 0 using shared folds5_seed42.csv achieved fold-0 val accuracy 0.8793 and macro-F1 0.776.",
+    "type": "result",
+    "entities": [
+     "EfficientNet-B4",
+     "512",
+     "fold 0",
+     "folds5_seed42.csv",
+     "0.8793",
+     "0.776"
+    ],
+    "value": "0.8793"
+   },
+   {
+    "text": "Train loss decreased from 1.01 to 0.47 while val plateaued around 0.877-0.879 from epoch 6 to 12.",
+    "type": "result",
+    "entities": [
+     "train loss",
+     "1.01",
+     "0.47",
+     "val",
+     "0.877",
+     "0.879"
+    ],
+    "value": null
+   },
+   {
+    "text": "Folds 1-4 are still training with ETA ~13:20 under 3-job GPU contention.",
+    "type": "decision",
+    "entities": [
+     "folds 1-4",
+     "13:20",
+     "GPU contention"
+    ],
+    "value": null
+   },
+   {
+    "text": "Plans to publish runs/effb4_512/f0_val_probs.npy (3745x5, fold-0 order), test_probs.npy (2676x5, sample_submission order), and oof_probs.npy (18721x5, train.csv order).",
+    "type": "artifact",
+    "entities": [
+     "runs/effb4_512/f0_val_probs.npy",
+     "test_probs.npy",
+     "oof_probs.npy",
+     "3745x5",
+     "2676x5",
+     "18721x5"
+    ],
+    "value": null
+   },
+   {
+    "text": "Plan is to fine-tune at higher resolution @640 from these checkpoints for 2 epochs with low LR, expected to add +0.3-0.5% and scale diversity to the ensemble.",
+    "type": "decision",
+    "entities": [
+     "640",
+     "2 epochs",
+     "low LR",
+     "+0.3-0.5%"
+    ],
+    "value": null
+   },
+   {
+    "text": "Strong augmentation (RRC 0.6-1.0) may be slightly underfitting; HR fine-tune should recover leaf detail.",
+    "type": "insight",
+    "entities": [
+     "RRC 0.6-1.0",
+     "HR fine-tune"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_convnext_fold0.md": {
+  "facts": [
+   {
+    "text": "ConvNeXt-small fold-0 best val_acc is 0.8932 at epoch 12.",
+    "type": "result",
+    "entities": [
+     "ConvNeXt-small",
+     "fold-0",
+     "val_acc",
+     "0.8932",
+     "ep12"
+    ],
+    "value": "0.8932"
+   },
+   {
+    "text": "Training uses convnext_small.fb_in22k_ft_in1k at resolution 384, batch size 48, 12 epochs OneCycle, label_smooth 0.1, with RRC+flips+rot+jitter+coarse-dropout augmentation.",
+    "type": "model",
+    "entities": [
+     "convnext_small.fb_in22k_ft_in1k",
+     "384",
+     "bs48",
+     "OneCycle",
+     "label_smooth 0.1"
+    ],
+    "value": null
+   },
+   {
+    "text": "Canonical split is folds5_seed42.csv.",
+    "type": "feature",
+    "entities": [
+     "folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Per-fold artifacts will be at workspaces/achernar_delta/cvnx_s384/ as f{0..4}_val_probs.npy and f{0..4}_test_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/achernar_delta/cvnx_s384/",
+     "f{0..4}_val_probs.npy",
+     "f{0..4}_test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Full OOF oof_convnext_s384.npy will be 18721x5 and test_convnext_s384.npy will be 2676x5 with 5-fold avg + h/v-flip TTA.",
+    "type": "artifact",
+    "entities": [
+     "oof_convnext_s384.npy",
+     "test_convnext_s384.npy",
+     "18721x5",
+     "2676x5"
+    ],
+    "value": null
+   },
+   {
+    "text": "Round-2 proposal: claim convnext_base.fb_in22k_ft_in1k @384 5-fold OR a higher-res FixRes finetune @512 of the small, while capella_kappa keeps Swin/ViT and arcturus_kappa keeps EffNetV2.",
+    "type": "decision",
+    "entities": [
+     "convnext_base.fb_in22k_ft_in1k",
+     "FixRes",
+     "512",
+     "capella_kappa",
+     "arcturus_kappa",
+     "Swin",
+     "ViT",
+     "EffNetV2"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_swin_done_ensemble.md": {
+  "facts": [
+   {
+    "text": "Swin base patch4 window12 384 ms_in22k_ft_in1k fold-0 achieved best single-crop val accuracy 0.8908 at epoch 10.",
+    "type": "result",
+    "entities": [
+     "swin_base_patch4_window12_384.ms_in22k_ft_in1k",
+     "fold-0",
+     "0.8908"
+    ],
+    "value": "0.8908"
+   },
+   {
+    "text": "Swin base with multi-TTA h+v flip achieved val accuracy 0.8916.",
+    "type": "result",
+    "entities": [
+     "swin_base",
+     "multi-TTA",
+     "0.8916"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "Swin artifacts are saved at workspaces/capella_kappa/swin_base_384/ and workspaces/capella_kappa/infer_swin/ with val_probs and test_probs.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/swin_base_384/",
+     "workspaces/capella_kappa/infer_swin/",
+     "val_probs",
+     "test_probs"
+    ],
+    "value": null
+   },
+   {
+    "text": "Equal average of convnext_s, swin_base, and effb4 fold-0 models gives val accuracy 0.8975.",
+    "type": "result",
+    "entities": [
+     "convnext_s",
+     "swin_base",
+     "effb4",
+     "0.8975"
+    ],
+    "value": "0.8975"
+   },
+   {
+    "text": "Average of convnext_s and swin_base with weight 0.5 gives val accuracy 0.8983, a +0.5% gain over best single model.",
+    "type": "result",
+    "entities": [
+     "convnext_s",
+     "swin_base",
+     "0.8983"
+    ],
+    "value": "0.8983"
+   },
+   {
+    "text": "final_solution/submission.csv currently contains a 50/50 convnext_s(f0) + swin(f0) test-prob blend as a valid candidate.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "convnext_s",
+     "swin"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_vit_done.md": {
+  "facts": [
+   {
+    "text": "ViT base_patch16_384.augreg_in21k_ft_in1k at 384 achieved fold-0 val 0.8897 with h+v TTA (raw 0.8881).",
+    "type": "result",
+    "entities": [
+     "vit_base_patch16_384.augreg_in21k_ft_in1k",
+     "fold-0",
+     "0.8897",
+     "0.8881"
+    ],
+    "value": "0.8897"
+   },
+   {
+    "text": "swin_base at 384 achieved fold-0 val 0.8916 with h+v TTA.",
+    "type": "result",
+    "entities": [
+     "swin_base",
+     "fold-0",
+     "0.8916"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "convnext_small at 384 achieved fold-0 val 0.8932.",
+    "type": "result",
+    "entities": [
+     "convnext_small",
+     "fold-0",
+     "0.8932"
+    ],
+    "value": "0.8932"
+   },
+   {
+    "text": "3-model arithmetic ensemble (convnext_s + swin + vit) achieved fold-0 val 0.9004 with weights approximately 0.43/0.43/0.14.",
+    "type": "result",
+    "entities": [
+     "convnext_s",
+     "swin",
+     "vit",
+     "fold-0",
+     "0.9004"
+    ],
+    "value": "0.9004"
+   },
+   {
+    "text": "final_solution/submission.csv was updated to the 3-model ensemble candidate.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "convnext fold-2 achieved 0.9065.",
+    "type": "result",
+    "entities": [
+     "convnext",
+     "fold-2",
+     "0.9065"
+    ],
+    "value": "0.9065"
+   }
+  ]
+ },
+ "arcturus_kappa_effb4_test_probs.md": {
+  "facts": [
+   {
+    "text": "fold-0 val probs for effb4_512 saved at workspaces/arcturus_kappa/runs/effb4_512/f0_val_probs.npy with shape 3745x5 in df[fold==0] order",
+    "type": "artifact",
+    "entities": [
+     "effb4_512",
+     "f0_val_probs.npy",
+     "3745x5"
+    ],
+    "value": null
+   },
+   {
+    "text": "effb4_512 fold-0 val_acc is 0.8793",
+    "type": "result",
+    "entities": [
+     "effb4_512",
+     "val_acc"
+    ],
+    "value": "0.8793"
+   },
+   {
+    "text": "test probs for effb4_512 saved at workspaces/arcturus_kappa/runs/effb4_512/test_probs_2fold.npy with shape 2676x5 in sample_submission order, using h/v-flip TTA averaged over fold0+fold1 checkpoints",
+    "type": "artifact",
+    "entities": [
+     "effb4_512",
+     "test_probs_2fold.npy",
+     "2676x5",
+     "TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "full oof_probs.npy covering folds 0-1 saved at runs/effb4_512/oof_effb4_2fold.npy",
+    "type": "artifact",
+    "entities": [
+     "oof_effb4_2fold.npy",
+     "effb4_512"
+    ],
+    "value": null
+   },
+   {
+    "text": "EffNetV2-S @384 fold-0 in progress with ep4 val 0.8838 and ep6 val 0.8801",
+    "type": "result",
+    "entities": [
+     "EffNetV2-S",
+     "384",
+     "val"
+    ],
+    "value": "0.8838"
+   },
+   {
+    "text": "ETA for all EffNetV2-S @384 folds is ~11:30",
+    "type": "constraint",
+    "entities": [
+     "EffNetV2-S",
+     "384"
+    ],
+    "value": "11:30"
+   }
+  ]
+ },
+ "arcturus_kappa_v2s_mix.md": {
+  "facts": [
+   {
+    "text": "Previous tf_efficientnetv2_s.in21k_ft_in1k @384 run crashed between folds due to persistent dataloader workers accumulating RAM in one long process, killed at --allfolds.",
+    "type": "problem",
+    "entities": [
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "--allfolds"
+    ],
+    "value": null
+   },
+   {
+    "text": "Best epoch of previous run was ep4 with 0.8838 then plateaued, indicating overfitting label noise.",
+    "type": "insight",
+    "entities": [
+     "ep4",
+     "0.8838"
+    ],
+    "value": "0.8838"
+   },
+   {
+    "text": "New run uses per-fold separate processes and per-fold test-prob inference writing to runs/v2s_mix/f{0..4}_test_probs.npy.",
+    "type": "decision",
+    "entities": [
+     "runs/v2s_mix",
+     "f{0..4}_test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "New run adds mixup 0.4 + cutmix 1.0 (p=0.5) and lr 2e-4, 12 epochs, bs32, EffNetV2-S @384.",
+    "type": "feature",
+    "entities": [
+     "mixup",
+     "cutmix",
+     "EffNetV2-S",
+     "lr 2e-4",
+     "bs32",
+     "384"
+    ],
+    "value": "mixup 0.4, cutmix 1.0, p=0.5, lr 2e-4, 12 ep, bs32"
+   },
+   {
+    "text": "Will publish oof_v2s_mix.npy and test_v2s_mix.npy plus per-fold predictions for the combiner.",
+    "type": "artifact",
+    "entities": [
+     "oof_v2s_mix.npy",
+     "test_v2s_mix.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Already available artifacts: runs/v2s_384/f0_val_probs.npy (0.8838) and runs/effb4_512/test_probs_2fold.npy.",
+    "type": "artifact",
+    "entities": [
+     "runs/v2s_384/f0_val_probs.npy",
+     "runs/effb4_512/test_probs_2fold.npy",
+     "0.8838"
+    ],
+    "value": "0.8838"
+   }
+  ]
+ },
+ "arcturus_kappa_mixup_insight.md": {
+  "facts": [
+   {
+    "text": "With mixup 0.4 + cutmix 1.0 (p=0.5) and lr 2e-4, fold-0 best metric was 0.8916 at ep9 on tf_efficientnetv2_s.in21k_ft_in1k @384.",
+    "type": "result",
+    "entities": [
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "fold-0",
+     "mixup",
+     "cutmix",
+     "0.8916",
+     "ep9"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "Without mixup, fold-0 best was 0.8838 with best epoch at ep4 then plateau/decline.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "0.8838",
+     "ep4"
+    ],
+    "value": "0.8838"
+   },
+   {
+    "text": "The early epoch-plateau without mixup is interpreted as label-noise overfit that mixup/cutmix regularizes away.",
+    "type": "insight",
+    "entities": [
+     "label-noise overfit",
+     "mixup",
+     "cutmix"
+    ],
+    "value": null
+   },
+   {
+    "text": "Recommendation is for achernar_delta and capella_kappa to try mixup on ConvNeXt/Swin/ViT with a slightly lower peak LR.",
+    "type": "decision",
+    "entities": [
+     "achernar_delta",
+     "capella_kappa",
+     "ConvNeXt",
+     "Swin",
+     "ViT",
+     "mixup"
+    ],
+    "value": null
+   },
+   {
+    "text": "Artifacts saved: workspaces/arcturus_kappa/runs/v2s_mix/f0_val_probs.npy (0.8916) and f0_test_probs.npy (2676x5, TTA).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_kappa/runs/v2s_mix/f0_val_probs.npy",
+     "f0_test_probs.npy",
+     "2676x5",
+     "TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "Folds 1-4 training is in progress with ETA ~12:30 to full OOF plus test.",
+    "type": "decision",
+    "entities": [
+     "folds 1-4",
+     "OOF",
+     "test",
+     "12:30"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_convnext_5fold_done.md": {
+  "facts": [
+   {
+    "text": "ConvNeXt-small 5-fold training completed with CV mean 0.8957 (OOF over all 18,721).",
+    "type": "result",
+    "entities": [
+     "ConvNeXt-small",
+     "convnext_small.fb_in22k_ft_in1k",
+     "CV mean",
+     "0.8957",
+     "18721"
+    ],
+    "value": "0.8957"
+   },
+   {
+    "text": "Per-fold val acc: f0 0.8932, f1 0.8948, f2 0.9065, f3 0.8993, f4 0.8849.",
+    "type": "result",
+    "entities": [
+     "f0",
+     "f1",
+     "f2",
+     "f3",
+     "f4",
+     "0.8932",
+     "0.8948",
+     "0.9065",
+     "0.8993",
+     "0.8849"
+    ],
+    "value": null
+   },
+   {
+    "text": "Model config: ConvNeXt-small at 384px, bs48, 12ep OneCycle, label_smooth 0.1, RRC+flips+rot+jitter+coarse-dropout, h/v-flip TTA.",
+    "type": "model",
+    "entities": [
+     "ConvNeXt-small",
+     "384px",
+     "bs48",
+     "12ep",
+     "OneCycle",
+     "label_smooth 0.1",
+     "TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF artifact saved at workspaces/achernar_delta/cvnx_s384/oof_convnext_s384.npy (18721x5).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/achernar_delta/cvnx_s384/oof_convnext_s384.npy",
+     "18721x5"
+    ],
+    "value": null
+   },
+   {
+    "text": "Test predictions artifact saved at workspaces/achernar_delta/cvnx_s384/test_convnext_s384.npy (2676x5, 5-fold avg, 3x TTA).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/achernar_delta/cvnx_s384/test_convnext_s384.npy",
+     "2676x5",
+     "3x TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "Round-2 launched: claiming ViT vit_base_patch16_384.augreg_in21k_ft_in1k @384, 5-fold, 12ep, fold0 first.",
+    "type": "decision",
+    "entities": [
+     "ViT",
+     "vit_base_patch16_384.augreg_in21k_ft_in1k",
+     "384",
+     "5-fold",
+     "12ep",
+     "fold0"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_artifacts.md": {
+  "facts": [
+   {
+    "text": "ConvNeXt 5-fold CV scored 0.8957.",
+    "type": "result",
+    "entities": [
+     "ConvNeXt",
+     "5-fold CV"
+    ],
+    "value": "0.8957"
+   },
+   {
+    "text": "ViT vit_base_patch16_384.augreg_in21k_ft_in1k fold-0 val scored 0.8897.",
+    "type": "result",
+    "entities": [
+     "vit_base_patch16_384.augreg_in21k_ft_in1k",
+     "ViT",
+     "fold-0"
+    ],
+    "value": "0.8897"
+   },
+   {
+    "text": "Swin fold-0 val scored 0.8916.",
+    "type": "result",
+    "entities": [
+     "swin",
+     "fold-0"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "Current 4-model equal-weight ensemble (convnext(5f)+swin(full)+vit(full)+effb4) fold-0 val scored 0.8993.",
+    "type": "result",
+    "entities": [
+     "convnext",
+     "swin",
+     "vit",
+     "effb4",
+     "ensemble"
+    ],
+    "value": "0.8993"
+   },
+   {
+    "text": "Final artifacts are stored under workspaces/capella_kappa/infer_swin, infer_swin_full, infer_vit, infer_vit_full, and swin_mix.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/infer_swin",
+     "infer_swin_full",
+     "infer_vit",
+     "infer_vit_full",
+     "swin_mix"
+    ],
+    "value": null
+   },
+   {
+    "text": "A 5-fold ViT would duplicate existing ViT work, so achernar is suggested to instead run convnext_small or convnext_base with mixup/cutmix.",
+    "type": "decision",
+    "entities": [
+     "ViT",
+     "convnext_small",
+     "convnext_base",
+     "mixup",
+     "cutmix",
+     "achernar"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_ensemble_analysis.md": {
+  "facts": [
+   {
+    "text": "Nested 5-fold on fold-0 val probs: equal geometric mean achieved 0.9004 accuracy, the best combiner.",
+    "type": "result",
+    "entities": [
+     "equal geometric",
+     "fold-0",
+     "nested 5-fold"
+    ],
+    "value": "0.9004"
+   },
+   {
+    "text": "Nested 5-fold on fold-0 val probs: equal arithmetic mean achieved 0.8999 accuracy.",
+    "type": "result",
+    "entities": [
+     "equal arithmetic",
+     "fold-0",
+     "nested 5-fold"
+    ],
+    "value": "0.8999"
+   },
+   {
+    "text": "Nested 5-fold on fold-0 val probs: greedy weight search (Caruana) achieved 0.8977 accuracy, losing to plain averaging.",
+    "type": "result",
+    "entities": [
+     "greedy weight search",
+     "Caruana",
+     "fold-0"
+    ],
+    "value": "0.8977"
+   },
+   {
+    "text": "Best single model on fold-0 nested evaluation achieved 0.8972 accuracy.",
+    "type": "result",
+    "entities": [
+     "best single",
+     "fold-0"
+    ],
+    "value": "0.8972"
+   },
+   {
+    "text": "Decision: use equal weights with geometric mean of probabilities as the final combiner, since learned weights overfit with only ~3.7k val rows.",
+    "type": "decision",
+    "entities": [
+     "equal weights",
+     "geometric mean",
+     "3.7k val rows"
+    ],
+    "value": null
+   },
+   {
+    "text": "Launched convnext_small + mixup0.4/cutmix, lr2e-4, 5-fold @384, adopting arcturus's insight.",
+    "type": "model",
+    "entities": [
+     "convnext_small",
+     "mixup0.4",
+     "cutmix",
+     "lr2e-4",
+     "5-fold",
+     "384"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_equal_weights.md": {
+  "facts": [
+   {
+    "text": "On fold-0, arith-equal scored 0.8993 vs geom-equal 0.8991 (noise-level).",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "arith-equal",
+     "geom-equal"
+    ],
+    "value": "0.8993 vs 0.8991"
+   },
+   {
+    "text": "Equal weights were chosen over learned weights because learned weights overfit 3.7k rows.",
+    "type": "decision",
+    "entities": [
+     "equal weights",
+     "learned weights",
+     "3.7k rows"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/submission.csv was switched to the equal-weight geometric mean of convnext(5f) + swin(full) + vit(full) + effb4.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "convnext(5f)",
+     "swin(full)",
+     "vit(full)",
+     "effb4"
+    ],
+    "value": null
+   },
+   {
+    "text": "swin_base with mixup0.4/cutmix1.0 fold-0 (12 ep) had ep1 loss 0.82 vs 0.71 no-mixup.",
+    "type": "result",
+    "entities": [
+     "swin_base",
+     "mixup0.4",
+     "cutmix1.0",
+     "fold-0"
+    ],
+    "value": "0.82 vs 0.71"
+   },
+   {
+    "text": "vit_base with mixup/cutmix fold-0 (10 ep) had ep3 0.8740 vs 0.8430 no-mixup, indicating mixup helps ViT in early epochs.",
+    "type": "result",
+    "entities": [
+     "vit_base",
+     "mixup",
+     "cutmix",
+     "fold-0"
+    ],
+    "value": "0.8740 vs 0.8430"
+   },
+   {
+    "text": "Final union member list uses each model's strongest variant: convnext_s 5f, convnext_s+mixup 5f, swin full, swin+mixup full, vit full, vit+mixup full, effb4 2f, v2s_mix 5f.",
+    "type": "decision",
+    "entities": [
+     "convnext_s 5f",
+     "convnext_s+mixup 5f",
+     "swin full",
+     "swin+mixup full",
+     "vit full",
+     "vit+mixup full",
+     "effb4 2f",
+     "v2s_mix 5f"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_6model.md": {
+  "facts": [
+   {
+    "text": "6-member equal ensemble achieves arithmetic mean 0.9020 and geometric mean 0.9007 on fold-0 val.",
+    "type": "result",
+    "entities": [
+     "6-member ensemble",
+     "fold-0 val",
+     "0.9020",
+     "0.9007"
+    ],
+    "value": "0.9020"
+   },
+   {
+    "text": "final_solution/submission.csv is the 6-member geometric mean submission (safe fallback).",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "6-member geom mean"
+    ],
+    "value": null
+   },
+   {
+    "text": "ViT with mixup improves fold-0 val from 0.8881 to 0.8916 raw and from 0.8897 to 0.8943 with h/v TTA.",
+    "type": "result",
+    "entities": [
+     "ViT",
+     "mixup",
+     "0.8881",
+     "0.8916",
+     "0.8897",
+     "0.8943"
+    ],
+    "value": "0.8943"
+   },
+   {
+    "text": "Swin with mixup shows no gain: 0.8908 to 0.8903.",
+    "type": "result",
+    "entities": [
+     "Swin",
+     "mixup",
+     "0.8908",
+     "0.8903"
+    ],
+    "value": "0.8903"
+   },
+   {
+    "text": "BEiT-base @384 + mixup fold-0 run is in flight in beit_mix/ with ETA ~14:15, then full-data.",
+    "type": "decision",
+    "entities": [
+     "BEiT-base",
+     "beit_mix/",
+     "384",
+     "mixup"
+    ],
+    "value": null
+   },
+   {
+    "text": "Suggested final union build ~15:00 with all available members, keeping fallback updated meanwhile.",
+    "type": "decision",
+    "entities": [
+     "final union build",
+     "15:00"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_v2s_mix_done.md": {
+  "facts": [
+   {
+    "text": "EffNetV2-S with mixup 5-fold achieved OOF accuracy 0.8918 on all 18,721 samples.",
+    "type": "result",
+    "entities": [
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "OOF",
+     "0.8918",
+     "18721"
+    ],
+    "value": "0.8918"
+   },
+   {
+    "text": "Per-fold validation accuracies were f0 0.8916, f1 0.8924, f2 0.8980, f3 0.8924, f4 0.8849.",
+    "type": "result",
+    "entities": [
+     "f0",
+     "f1",
+     "f2",
+     "f3",
+     "f4"
+    ],
+    "value": null
+   },
+   {
+    "text": "Model config: tf_efficientnetv2_s.in21k_ft_in1k at 384 resolution, mixup 0.4/cutmix 1.0, lr 2e-4, 12 epochs, 5-fold with folds5_seed42.csv.",
+    "type": "model",
+    "entities": [
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "384",
+     "mixup0.4",
+     "cutmix1.0",
+     "lr2e-4",
+     "12ep",
+     "folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "OOF artifact oof_v2s_mix.npy is 18721x5 in train.csv order; test_v2s_mix.npy is 2676x5 in sample_submission order with 5-fold avg and 4-view TTA.",
+    "type": "artifact",
+    "entities": [
+     "oof_v2s_mix.npy",
+     "test_v2s_mix.npy",
+     "val0_v2s_mix.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Multi-scale TTA: 384=0.8916, 352=0.8889, 416=0.8895, 448=0.8870, so 384 is optimal and higher-res TTA does not help.",
+    "type": "insight",
+    "entities": [
+     "384",
+     "352",
+     "416",
+     "448",
+     "TTA"
+    ],
+    "value": "384"
+   },
+   {
+    "text": "Plan to train a 100%-data v2s_mix variant and publish test_v2s_full.npy for stronger test probs.",
+    "type": "decision",
+    "entities": [
+     "test_v2s_full.npy",
+     "v2s_mix"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_full_and_v2m.md": {
+  "facts": [
+   {
+    "text": "v2s_full uses tf_efficientnetv2_s.in21k_ft_in1k at 384 with mixup on 100% of train for 12 epochs.",
+    "type": "model",
+    "entities": [
+     "v2s_full",
+     "tf_efficientnetv2_s.in21k_ft_in1k",
+     "384",
+     "mixup"
+    ],
+    "value": null
+   },
+   {
+    "text": "v2s_full ETA is ~13:20 and writes test predictions to runs/v2s_full/f0_test_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "v2s_full",
+     "runs/v2s_full/f0_test_probs.npy"
+    ],
+    "value": "~13:20"
+   },
+   {
+    "text": "v2m_480 uses tf_efficientnetv2_m.in21k_ft_in1k at 480 with mixup on fold-0.",
+    "type": "model",
+    "entities": [
+     "v2m_480",
+     "tf_efficientnetv2_m.in21k_ft_in1k",
+     "480",
+     "fold-0",
+     "mixup"
+    ],
+    "value": null
+   },
+   {
+    "text": "v2m_480 ETA is ~14:40 and writes to runs/v2m_480/{f0_val_probs,f0_test_probs}.npy.",
+    "type": "artifact",
+    "entities": [
+     "v2m_480",
+     "runs/v2m_480/f0_val_probs.npy",
+     "runs/v2m_480/f0_test_probs.npy"
+    ],
+    "value": "~14:40"
+   },
+   {
+    "text": "GPU usage is 33/80 GB and RAM usage is 60/503 GB, so resources are not saturated and there is no OOM risk.",
+    "type": "constraint",
+    "entities": [
+     "GPU",
+     "RAM"
+    ],
+    "value": "33/80 GB GPU, 60/503 GB RAM"
+   },
+   {
+    "text": "Currently 4 jobs are running: achernar cvnx_mix, capella beit_mix, v2s_full, and v2m_480.",
+    "type": "result",
+    "entities": [
+     "achernar",
+     "cvnx_mix",
+     "capella",
+     "beit_mix",
+     "v2s_full",
+     "v2m_480"
+    ],
+    "value": 4
+   }
+  ]
+ },
+ "arcturus_kappa_v2s_full_done.md": {
+  "facts": [
+   {
+    "text": "v2s_full (EffNetV2-S @384 + mixup, 100% train, 12 epochs) finished and produced runs/v2s_full/f0_test_probs.npy of shape 2676x5 with TTA.",
+    "type": "artifact",
+    "entities": [
+     "v2s_full",
+     "EffNetV2-S",
+     "runs/v2s_full/f0_test_probs.npy",
+     "2676x5"
+    ],
+    "value": null
+   },
+   {
+    "text": "The two v2s variants have argmax agreement of 96.3%.",
+    "type": "result",
+    "entities": [
+     "v2s_mix",
+     "v2s_full"
+    ],
+    "value": "96.3%"
+   },
+   {
+    "text": "The recommended single v2s member for the union is workspaces/arcturus_kappa/runs/v2s_mix/test_v2s_best.npy, computed as mean of v2s_mix 5-fold avg and v2s_full.",
+    "type": "decision",
+    "entities": [
+     "test_v2s_best.npy",
+     "v2s_mix",
+     "v2s_full"
+    ],
+    "value": null
+   },
+   {
+    "text": "Separate v2s predictions are available at runs/v2s_mix/test_v2s_mix.npy (5-fold) and runs/v2s_full/test_v2s_full.npy (100%).",
+    "type": "artifact",
+    "entities": [
+     "runs/v2s_mix/test_v2s_mix.npy",
+     "runs/v2s_full/test_v2s_full.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fold-0 val for v2s_mix is runs/v2s_mix/val0_v2s_mix.npy with OOF score 0.8916, while v2s_full cannot be validated as it is in-sample.",
+    "type": "result",
+    "entities": [
+     "runs/v2s_mix/val0_v2s_mix.npy",
+     "v2s_mix",
+     "v2s_full"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "OOF for stacking is runs/v2s_mix/oof_v2s_mix.npy with score 0.8918.",
+    "type": "artifact",
+    "entities": [
+     "runs/v2s_mix/oof_v2s_mix.npy"
+    ],
+    "value": "0.8918"
+   }
+  ]
+ },
+ "arcturus_kappa_verification.md": {
+  "facts": [
+   {
+    "text": "Independent re-derivation of the 9-member equal-weight ensemble gives fold-0 val arithmetic mean 0.9007 and geometric mean 0.9004.",
+    "type": "result",
+    "entities": [
+     "convnext_mix",
+     "convnext_s384",
+     "vit_mix",
+     "swin_mix",
+     "v2s_mix",
+     "swin",
+     "vit",
+     "v2m_480",
+     "effb4"
+    ],
+    "value": "0.9007 arith / 0.9004 geom"
+   },
+   {
+    "text": "Top-k pruning scan (geom) yields top9 0.9004, top7 0.8993, top6 0.9007, top5 0.8999, top3 0.8964, all within ±0.001.",
+    "type": "result",
+    "entities": [
+     "top9",
+     "top7",
+     "top6",
+     "top5",
+     "top3"
+    ],
+    "value": "±0.001 spread"
+   },
+   {
+    "text": "Decision: no member removal is justified; keep the full union of 9 members.",
+    "type": "decision",
+    "entities": [
+     "full union"
+    ],
+    "value": null
+   },
+   {
+    "text": "v2s_mix entry should use runs/v2s_mix/test_v2s_best.npy (mean of 5-fold-avg and 100%-data).",
+    "type": "artifact",
+    "entities": [
+     "v2s_mix",
+     "runs/v2s_mix/test_v2s_best.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Candidate ensemble copy is at workspaces/arcturus_kappa/ensemble_candidate.csv, not written to final_solution to avoid clobbering capella.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/arcturus_kappa/ensemble_candidate.csv",
+     "final_solution",
+     "capella"
+    ],
+    "value": null
+   },
+   {
+    "text": "With 2676 test images, expected test-acc std is ≈±0.6%, so ranking among ~0.90 candidates is largely noise; equal-weight geom of full union is the robust choice.",
+    "type": "insight",
+    "entities": [
+     "2676 test images"
+    ],
+    "value": "±0.6%"
+   }
+  ]
+ },
+ "arcturus_kappa_cvnxb.md": {
+  "facts": [
+   {
+    "text": "Adding ConvNeXt-Base model convnext_base.fb_in22k_ft_in1k at 384 resolution with mixup0.4/cutmix1.0, lr2e-4, 12 epochs on fold 0.",
+    "type": "model",
+    "entities": [
+     "convnext_base.fb_in22k_ft_in1k",
+     "ConvNeXt-Base",
+     "384",
+     "mixup0.4",
+     "cutmix1.0",
+     "lr2e-4",
+     "12 ep",
+     "fold 0"
+    ],
+    "value": null
+   },
+   {
+    "text": "Outputs will be saved to runs/cvnxb_384/f0_val_probs.npy and runs/cvnxb_384/f0_test_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "runs/cvnxb_384",
+     "f0_val_probs.npy",
+     "f0_test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "ConvNeXt-Base has 89M parameters.",
+    "type": "model",
+    "entities": [
+     "ConvNeXt-Base",
+     "89M"
+    ],
+    "value": "89M"
+   },
+   {
+    "text": "Fold 0 is a hard fold: convnext-small f0=0.8932 vs f2=0.9065.",
+    "type": "insight",
+    "entities": [
+     "convnext-small",
+     "fold 0",
+     "fold 2",
+     "0.8932",
+     "0.9065"
+    ],
+    "value": null
+   },
+   {
+    "text": "If the model validates above 0.895 and time permits, a 100%-data version will be run.",
+    "type": "decision",
+    "entities": [
+     "0.895",
+     "100%-data"
+    ],
+    "value": "0.895"
+   },
+   {
+    "text": "Current CNNs are ConvNeXt-small and EffNetV2-S/M.",
+    "type": "model",
+    "entities": [
+     "ConvNeXt-small",
+     "EffNetV2-S",
+     "EffNetV2-M"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_union9.md": {
+  "facts": [
+   {
+    "text": "convnext_s 5f CV is 0.8957",
+    "type": "result",
+    "entities": [
+     "convnext_s 5f",
+     "CV"
+    ],
+    "value": "0.8957"
+   },
+   {
+    "text": "convnext_s + mixup 5f CV is 0.8973",
+    "type": "result",
+    "entities": [
+     "convnext_s + mixup 5f",
+     "CV"
+    ],
+    "value": "0.8973"
+   },
+   {
+    "text": "consolidated test_convnext_best.npy is mean of 5f_plain and 5f_mix with OOF 0.8987 and fold-0 0.8951",
+    "type": "result",
+    "entities": [
+     "test_convnext_best.npy",
+     "OOF",
+     "fold-0"
+    ],
+    "value": "0.8987"
+   },
+   {
+    "text": "Interim 9-member equal-geom union achieves fold-0 val 0.8999",
+    "type": "result",
+    "entities": [
+     "union9.csv",
+     "fold-0 val"
+    ],
+    "value": "0.8999"
+   },
+   {
+    "text": "Union9 members are achernar_convnext, capella_swin_full, capella_vit_full, capella_vitmix_full, capella_beitmix, capella_swinmix, arcturus_v2s_best, arcturus_v2m480, arcturus_effb4",
+    "type": "model",
+    "entities": [
+     "achernar_convnext",
+     "capella_swin_full",
+     "capella_vit_full",
+     "capella_vitmix_full",
+     "capella_beitmix",
+     "capella_swinmix",
+     "arcturus_v2s_best",
+     "arcturus_v2m480",
+     "arcturus_effb4"
+    ],
+    "value": null
+   },
+   {
+    "text": "Final union will be written at ~17:20 using equal-weight geometric mean",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "equal-weight geometric mean"
+    ],
+    "value": "17:20"
+   }
+  ]
+ },
+ "capella_kappa_final_paths.md": {
+  "facts": [
+   {
+    "text": "capella_kappa stopped writing final_solution/submission.csv; achernar owns it.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "achernar",
+     "capella_kappa"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella_kappa's independent candidate is at workspaces/capella_kappa/candidate_capella.csv (9-member arith, fold-0 0.9001).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/candidate_capella.csv",
+     "9-member arith"
+    ],
+    "value": "0.9001"
+   },
+   {
+    "text": "capella_swin val_probs at workspaces/capella_kappa/infer_swin/val_probs.npy and test_probs at workspaces/capella_kappa/infer_swin_full/test_probs.npy (100%).",
+    "type": "artifact",
+    "entities": [
+     "capella_swin",
+     "workspaces/capella_kappa/infer_swin/val_probs.npy",
+     "workspaces/capella_kappa/infer_swin_full/test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella_vit val_probs at workspaces/capella_kappa/infer_vit/val_probs.npy and test_probs at workspaces/capella_kappa/infer_vit_full/test_probs.npy (100%).",
+    "type": "artifact",
+    "entities": [
+     "capella_vit",
+     "workspaces/capella_kappa/infer_vit/val_probs.npy",
+     "workspaces/capella_kappa/infer_vit_full/test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella_beit_mix val_probs at workspaces/capella_kappa/infer_beit_mix/val_probs.npy and test_probs at workspaces/capella_kappa/infer_beit_full/test_probs.npy (100%).",
+    "type": "artifact",
+    "entities": [
+     "capella_beit_mix",
+     "workspaces/capella_kappa/infer_beit_mix/val_probs.npy",
+     "workspaces/capella_kappa/infer_beit_full/test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Recommended union members: convnext_best, v2s_best, v2m480, swin(100%), vit_mix(100%), beit_mix(100%), xcit_mix, effb4.",
+    "type": "decision",
+    "entities": [
+     "convnext_best",
+     "v2s_best",
+     "v2m480",
+     "swin",
+     "vit_mix",
+     "beit_mix",
+     "xcit_mix",
+     "effb4"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_final_paths.md": {
+  "facts": [
+   {
+    "text": "Agreed that final_solution/submission.csv belongs to achernar and arcturus_kappa will not write it.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "achernar"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_v2s_best has fold-0 val score 0.8916 with val_probs at arcturus_kappa/runs/v2s_mix/val0_v2s_mix.npy and test_probs at arcturus_kappa/runs/v2s_mix/test_v2s_best.npy.",
+    "type": "result",
+    "entities": [
+     "arcturus_v2s_best",
+     "0.8916",
+     "arcturus_kappa/runs/v2s_mix/val0_v2s_mix.npy",
+     "arcturus_kappa/runs/v2s_mix/test_v2s_best.npy"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "arcturus_v2m480 has fold-0 val score 0.8873 with val_probs at arcturus_kappa/runs/v2m_480/f0_val_probs.npy and test_probs at arcturus_kappa/runs/v2m_480/f0_test_probs.npy.",
+    "type": "result",
+    "entities": [
+     "arcturus_v2m480",
+     "0.8873",
+     "arcturus_kappa/runs/v2m_480/f0_val_probs.npy",
+     "arcturus_kappa/runs/v2m_480/f0_test_probs.npy"
+    ],
+    "value": "0.8873"
+   },
+   {
+    "text": "arcturus_effb4 has fold-0 val score 0.8793 with val_probs at arcturus_kappa/runs/effb4_512/f0_val_probs.npy and test_probs at arcturus_kappa/runs/effb4_512/test_probs_2fold.npy.",
+    "type": "result",
+    "entities": [
+     "arcturus_effb4",
+     "0.8793",
+     "arcturus_kappa/runs/effb4_512/f0_val_probs.npy",
+     "arcturus_kappa/runs/effb4_512/test_probs_2fold.npy"
+    ],
+    "value": "0.8793"
+   },
+   {
+    "text": "arcturus_cvnxb is ConvNeXt-Base @384 with mixup fold-0, val score pending (~15:30), early epochs ~0.88, to be included if >=~0.89 else optional.",
+    "type": "model",
+    "entities": [
+     "arcturus_cvnxb",
+     "ConvNeXt-Base",
+     "384",
+     "mixup",
+     "0.88",
+     "0.89"
+    ],
+    "value": null
+   },
+   {
+    "text": "All member paths are under /download_job_code/payload/sandbox/workspaces/ and OOF for stacking is at arcturus_kappa/runs/v2s_mix/oof_v2s_mix.npy.",
+    "type": "artifact",
+    "entities": [
+     "/download_job_code/payload/sandbox/workspaces/",
+     "arcturus_kappa/runs/v2s_mix/oof_v2s_mix.npy"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_final_submission.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv is the equal-weight geometric mean of all 11 members with argmax.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "equal-weight geometric mean",
+     "11 members"
+    ],
+    "value": null
+   },
+   {
+    "text": "fold-0 holdout accuracy of the equal-geom union is 0.9007.",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout accuracy",
+     "equal-geom union"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "Best single member fold-0 accuracy is 0.895.",
+    "type": "result",
+    "entities": [
+     "best single member"
+    ],
+    "value": "0.895"
+   },
+   {
+    "text": "The 11-member ALL set outperformed per-family subsets on fold-0 (0.9007 vs 0.8991/0.8996).",
+    "type": "result",
+    "entities": [
+     "11-member ALL",
+     "per-family subsets",
+     "fold-0"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "Nested CV shows equal-geom beats greedy weight search because weights overfit 3.7k rows.",
+    "type": "insight",
+    "entities": [
+     "nested CV",
+     "equal-geom",
+     "greedy weight search",
+     "3.7k rows"
+    ],
+    "value": null
+   },
+   {
+    "text": "submission.csv has 2676 rows with ids in sample_submission order and labels 0-4.",
+    "type": "artifact",
+    "entities": [
+     "submission.csv",
+     "2676 rows",
+     "sample_submission",
+     "labels 0-4"
+    ],
+    "value": "2676"
+   }
+  ]
+ },
+ "arcturus_kappa_cvnxb_done.md": {
+  "facts": [
+   {
+    "text": "convnext_base.fb_in22k_ft_in1k @384 + mixup achieved fold-0 best metric 0.8927",
+    "type": "result",
+    "entities": [
+     "convnext_base.fb_in22k_ft_in1k",
+     "fold-0",
+     "0.8927"
+    ],
+    "value": "0.8927"
+   },
+   {
+    "text": "cvnxb fold-0 validation and test probabilities saved to runs/cvnxb_384/f0_val_probs.npy and runs/cvnxb_384/f0_test_probs.npy with TTA",
+    "type": "artifact",
+    "entities": [
+     "runs/cvnxb_384/f0_val_probs.npy",
+     "runs/cvnxb_384/f0_test_probs.npy",
+     "TTA"
+    ],
+    "value": null
+   },
+   {
+    "text": "Re-verified 11-member fold-0 ensemble equal arithmetic metric is 0.9015",
+    "type": "result",
+    "entities": [
+     "11-member ensemble",
+     "fold-0",
+     "0.9015"
+    ],
+    "value": "0.9015"
+   },
+   {
+    "text": "Geometric mean of 11-member ensemble is 0.9012, up from 0.9007 with 9 members",
+    "type": "result",
+    "entities": [
+     "geometric mean",
+     "0.9012",
+     "0.9007"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Top-k scan remains flat at 0.898-0.902, confirming keep full union with equal weights",
+    "type": "decision",
+    "entities": [
+     "top-k scan",
+     "full union",
+     "equal weights"
+    ],
+    "value": null
+   },
+   {
+    "text": "arcturus_kappa has 4 members including cvnxb for the final build",
+    "type": "decision",
+    "entities": [
+     "arcturus_kappa",
+     "cvnxb",
+     "achernar_delta"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_xcit_final.md": {
+  "facts": [
+   {
+    "text": "capella_xcit_mix now has a 100%-data variant using workspaces/capella_kappa/infer_xcit_full/test_probs.npy instead of infer_xcit_mix/test_probs.npy, with val for weighting at infer_xcit_mix/val_probs.npy.",
+    "type": "artifact",
+    "entities": [
+     "capella_xcit_mix",
+     "infer_xcit_full",
+     "infer_xcit_mix",
+     "test_probs.npy",
+     "val_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "The newer cnvx_mix/test_convnext_v2.npy is 5-fold+100% data.",
+    "type": "artifact",
+    "entities": [
+     "cnvx_mix",
+     "test_convnext_v2.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Rebuilt exact 11-member union with test_convnext_v2 + infer_xcit_full gives fold-0 equal-geom 0.9007 and arith 0.9012.",
+    "type": "result",
+    "entities": [
+     "test_convnext_v2",
+     "infer_xcit_full",
+     "fold-0",
+     "equal-geom",
+     "arith"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "workspaces/capella_kappa/candidate_final11.csv is 99.6% identical to final_solution/submission.csv with only ~11 labels differing.",
+    "type": "result",
+    "entities": [
+     "candidate_final11.csv",
+     "final_solution/submission.csv"
+    ],
+    "value": "99.6%"
+   },
+   {
+    "text": "The current final submission is already effectively optimal; swapping xcit to 100% data is optional.",
+    "type": "decision",
+    "entities": [
+     "xcit",
+     "final_solution/submission.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "All train/infer/ensemble code is available to add to final_solution/code/.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/code"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_final_validation.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv has 2676 rows with columns image_id and label, ids in sample_submission order.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "image_id",
+     "label",
+     "2676"
+    ],
+    "value": "2676"
+   },
+   {
+    "text": "Submission label distribution is 0:135, 1:275, 2:266, 3:1670, 4:330.",
+    "type": "result",
+    "entities": [
+     "class 0",
+     "class 1",
+     "class 2",
+     "class 3",
+     "class 4"
+    ],
+    "value": "135/275/266/1670/330"
+   },
+   {
+    "text": "Submission agrees 98.8% with an independent 11-member equal-geom candidate.",
+    "type": "result",
+    "entities": [
+     "11-member equal-geom candidate"
+    ],
+    "value": "98.8%"
+   },
+   {
+    "text": "arcturus_cvnxb has a 100%-data variant at arcturus_kappa/runs/cvnxb_384/test_cvnxb_best.npy equal to mean(fold0, 100%).",
+    "type": "artifact",
+    "entities": [
+     "arcturus_cvnxb",
+     "arcturus_kappa/runs/cvnxb_384/test_cvnxb_best.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "cvnxb fold0 validation probs at runs/cvnxb_384/f0_val_probs.npy score 0.8927.",
+    "type": "result",
+    "entities": [
+     "runs/cvnxb_384/f0_val_probs.npy",
+     "cvnxb"
+    ],
+    "value": "0.8927"
+   },
+   {
+    "text": "Optional swaps shift at most ~0.5% of labels with expected test effect approximately 0.",
+    "type": "insight",
+    "entities": [
+     "arcturus_cvnxb",
+     "capella"
+    ],
+    "value": "0.5%"
+   }
+  ]
+ },
+ "arcturus_kappa_standby.md": {
+  "facts": [
+   {
+    "text": "Modeling is done with 4 members contributed: v2s_best, v2m480, cvnxb, effb4.",
+    "type": "model",
+    "entities": [
+     "v2s_best",
+     "v2m480",
+     "cvnxb",
+     "effb4"
+    ],
+    "value": null
+   },
+   {
+    "text": "achernar cvnx_512f0 and capella swin_mix_full are still training.",
+    "type": "model",
+    "entities": [
+     "cvnx_512f0",
+     "swin_mix_full",
+     "achernar",
+     "capella"
+    ],
+    "value": null
+   },
+   {
+    "text": "The agent will not launch new heavy jobs unless asked.",
+    "type": "decision",
+    "entities": [],
+    "value": null
+   },
+   {
+    "text": "final_solution/submission.csv must be re-validated after any rebuild with format 2676 rows, sample order, labels 0-4.",
+    "type": "constraint",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "2676 rows, labels 0-4"
+   },
+   {
+    "text": "final_solution/ currently contains submission.csv plus code and README.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "README"
+    ],
+    "value": null
+   },
+   {
+    "text": "Every referenced member test-prob file must exist with shape 2676x5.",
+    "type": "constraint",
+    "entities": [
+     "test-prob files"
+    ],
+    "value": "2676x5"
+   }
+  ]
+ },
+ "capella_kappa_swinmix_full.md": {
+  "facts": [
+   {
+    "text": "capella_swin_mix now has a 100%-data variant using test_probs.npy from infer_swin_mix_full instead of infer_swin_mix.",
+    "type": "artifact",
+    "entities": [
+     "capella_swin_mix",
+     "infer_swin_mix_full/test_probs.npy",
+     "infer_swin_mix/test_probs.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "capella_swin_mix val_probs.npy has a score of 0.8889.",
+    "type": "result",
+    "entities": [
+     "capella_swin_mix",
+     "infer_swin_mix/val_probs.npy"
+    ],
+    "value": "0.8889"
+   },
+   {
+    "text": "The complete final members are capella_swin, capella_swin_mix, capella_vit, capella_vit_mix, capella_beit_mix, and capella_xcit_mix.",
+    "type": "decision",
+    "entities": [
+     "capella_swin",
+     "capella_swin_mix",
+     "capella_vit",
+     "capella_vit_mix",
+     "capella_beit_mix",
+     "capella_xcit_mix"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fold-0 equal-geom of the 11-member union stays approximately 0.9007.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "11-member union"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "All member artifacts are under workspaces/capella_kappa/.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/"
+    ],
+    "value": null
+   },
+   {
+    "text": "The agent will stop launching jobs now.",
+    "type": "decision",
+    "entities": [],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_final_submission_v2.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv is an equal-geom mean of 11 members using 100%-data test variants where offered.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "capella_xcit_mix",
+     "capella_swin_mix",
+     "arcturus_cvnxb"
+    ],
+    "value": "11 members"
+   },
+   {
+    "text": "Fold-0 equal-geom validation metric is 0.9007.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "equal-geom"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "achernar_convnext_512 (ConvNeXt-s @512 + mixup, fold-0) achieved val 0.8919.",
+    "type": "result",
+    "entities": [
+     "achernar_convnext_512",
+     "ConvNeXt-s",
+     "mixup"
+    ],
+    "value": "0.8919"
+   },
+   {
+    "text": "Adding achernar_convnext_512 lowered fold-0 union from 0.9007 to 0.8993, so it was excluded.",
+    "type": "decision",
+    "entities": [
+     "achernar_convnext_512",
+     "fold-0"
+    ],
+    "value": "0.8993"
+   },
+   {
+    "text": "Submission format re-checked: 2676 rows, ids in sample_submission order, labels {0..4}, no nulls.",
+    "type": "constraint",
+    "entities": [
+     "submission.csv",
+     "sample_submission"
+    ],
+    "value": "2676 rows"
+   },
+   {
+    "text": "Label distribution is 0:136, 1:275, 2:265, 3:1672, 4:328.",
+    "type": "result",
+    "entities": [
+     "label distribution"
+    ],
+    "value": "0:136 1:275 2:265 3:1672 4:328"
+   }
+  ]
+ },
+ "achernar_delta_final_v3.md": {
+  "facts": [
+   {
+    "text": "Switched combiner to equal-weight arithmetic mean.",
+    "type": "decision",
+    "entities": [
+     "equal-weight arithmetic mean"
+    ],
+    "value": null
+   },
+   {
+    "text": "On the common fold-0 holdout, arithmetic mean scored 0.9012 vs geometric 0.9007, majority 0.9017, pow0.5 0.9009, and confidence-weighted 0.9001.",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout",
+     "arithmetic mean",
+     "geometric mean",
+     "majority",
+     "pow0.5",
+     "confidence-weighted"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "final_solution/submission.csv has 2676 rows with sample order and labels {0..4}.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "2676"
+   },
+   {
+    "text": "Submission label distribution: 0:137, 1:276, 2:266, 3:1673, 4:324.",
+    "type": "result",
+    "entities": [
+     "label distribution"
+    ],
+    "value": null
+   },
+   {
+    "text": "final_solution/ contains submission.csv, submission_meta.json, README.md, and code/.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "submission_meta.json",
+     "README.md",
+     "code/"
+    ],
+    "value": null
+   },
+   {
+    "text": "Ensemble has 11 members: achernar_convnext, capella_swin, capella_swin_mix, capella_vit, capella_vit_mix, capella_beit_mix, capella_xcit_mix, arcturus_v2s_best, arcturus_v2m480, arcturus_cvnxb, arcturus_effb4.",
+    "type": "model",
+    "entities": [
+     "achernar_convnext",
+     "capella_swin",
+     "capella_swin_mix",
+     "capella_vit",
+     "capella_vit_mix",
+     "capella_beit_mix",
+     "capella_xcit_mix",
+     "arcturus_v2s_best",
+     "arcturus_v2m480",
+     "arcturus_cvnxb",
+     "arcturus_effb4"
+    ],
+    "value": "11"
+   }
+  ]
+ },
+ "arcturus_kappa_v3_validated.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv (v3, 11-member equal-arith) has 2676 rows with columns image_id,label and ids in sample_submission order.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "image_id",
+     "label",
+     "sample_submission"
+    ],
+    "value": "2676 rows"
+   },
+   {
+    "text": "Submission labels are in {0..4}, int64, with 0 nulls and distribution 0:137, 1:276, 2:266, 3:1673, 4:324 (62.5% class-3).",
+    "type": "result",
+    "entities": [
+     "label",
+     "class-3"
+    ],
+    "value": "0:137,1:276,2:266,3:1673,4:324"
+   },
+   {
+    "text": "The submission agrees 98.7% with an independent geom candidate, with 34 label diffs attributed to arith vs geom noise.",
+    "type": "result",
+    "entities": [
+     "geom candidate",
+     "arith",
+     "geom"
+    ],
+    "value": "98.7%"
+   },
+   {
+    "text": "Running the 11-member union on fold-0 gave arith 0.9015 and geom 0.9012.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "arith",
+     "geom",
+     "11-member union"
+    ],
+    "value": "arith 0.9015 / geom 0.9012"
+   },
+   {
+    "text": "Arith and geom were judged indistinguishable, so the choice between them is fine.",
+    "type": "insight",
+    "entities": [
+     "arith",
+     "geom"
+    ],
+    "value": null
+   },
+   {
+    "text": "The author agrees with excluding convnext@512 because it lowered fold-0, and v3 is deemed valid and ready.",
+    "type": "decision",
+    "entities": [
+     "convnext@512",
+     "fold-0",
+     "v3"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_tta_negative.md": {
+  "facts": [
+   {
+    "text": "Aspect-preserving TTA (SmallestMaxSize 448 -> CenterCrop 384 + h/v flip) scored 0.8873 on fold-0, worse than squash Resize(384,384) + h/v flip at 0.8943.",
+    "type": "result",
+    "entities": [
+     "vit_base_patch16_384",
+     "fold-0",
+     "SmallestMaxSize",
+     "CenterCrop",
+     "Resize"
+    ],
+    "value": "0.8873"
+   },
+   {
+    "text": "Squash Resize(384,384) + h/v flip TTA scored 0.8943 on fold-0 for the vit_base_patch16_384 + mixup member.",
+    "type": "result",
+    "entities": [
+     "vit_base_patch16_384",
+     "mixup",
+     "fold-0",
+     "Resize"
+    ],
+    "value": "0.8943"
+   },
+   {
+    "text": "Averaging squash and aspect-preserving TTA views gave 0.8913, worse than squash alone.",
+    "type": "result",
+    "entities": [
+     "fold-0"
+    ],
+    "value": "0.8913"
+   },
+   {
+    "text": "The square-squash view matching RandomResizedCrop training is the best TTA choice; aspect-preserving crop and mixing views hurt.",
+    "type": "insight",
+    "entities": [
+     "RandomResizedCrop"
+    ],
+    "value": null
+   },
+   {
+    "text": "No change was made to ensemble members; final submission v3 (11-member arithmetic, fold-0 0.9012) remains as-is.",
+    "type": "decision",
+    "entities": [
+     "v3",
+     "11-member",
+     "fold-0"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Multi-scale/multi-view TTA does not help these nets, consistent with arcturus's finding.",
+    "type": "insight",
+    "entities": [
+     "arcturus"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_wrapup.md": {
+  "facts": [
+   {
+    "text": "Swarm final solution submission.csv is an equal-weight arithmetic mean of 11 models.",
+    "type": "decision",
+    "entities": [
+     "final_solution/submission.csv",
+     "11 models"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fold-0 holdout score of the final ensemble is 0.9012.",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Best single model is vit_base_patch16_384 + mixup at 0.8943 fold-0 val.",
+    "type": "result",
+    "entities": [
+     "vit_base_patch16_384",
+     "mixup"
+    ],
+    "value": "0.8943"
+   },
+   {
+    "text": "Caught the 90/10 vs 5-fold split bug and authored canonical workspaces/shared/folds5_seed42.csv used by everyone.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/shared/folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Authored workspaces/capella_kappa/{train.py,infer.py,ensemble.py} with multi-scale/hv TTA, mixup/cutmix, and blend combiner reused across the swarm.",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/train.py",
+     "workspaces/capella_kappa/infer.py",
+     "workspaces/capella_kappa/ensemble.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "All training used only data/train_images plus ImageNet-pretrained weights, validated strictly on shared fold-0 holdout.",
+    "type": "constraint",
+    "entities": [
+     "data/train_images",
+     "ImageNet",
+     "fold-0 holdout"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_repro_check.md": {
+  "facts": [
+   {
+    "text": "Re-ran final_solution/code/make_final.py (mode=arith, 11 members) and got 100% identical labels to final_solution/submission.csv.",
+    "type": "result",
+    "entities": [
+     "final_solution/code/make_final.py",
+     "final_solution/submission.csv",
+     "arith",
+     "11 members"
+    ],
+    "value": "100% identical"
+   },
+   {
+    "text": "Submission label distribution is 0:137, 1:276, 2:266, 3:1673, 4:324.",
+    "type": "result",
+    "entities": [
+     "submission.csv",
+     "label distribution"
+    ],
+    "value": "0:137 1:276 2:266 3:1673 4:324"
+   },
+   {
+    "text": "Full-set check on fold-0 with 11-member arith ensemble scored 0.9012.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "arith",
+     "11-member ensemble"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Every leave-one-out drop scored <=0.9007, indicating no member is dead weight.",
+    "type": "insight",
+    "entities": [
+     "leave-one-out",
+     "0.9007"
+    ],
+    "value": "0.9007"
+   },
+   {
+    "text": "The full diverse union of 11 members is optimal; exhaustive subset search peaks higher only via overfitting.",
+    "type": "decision",
+    "entities": [
+     "11-member union",
+     "exhaustive subset search"
+    ],
+    "value": null
+   },
+   {
+    "text": "Solution is converged and will not change unless a validated stronger member appears.",
+    "type": "decision",
+    "entities": [
+     "final_solution"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_signoff.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv is frozen with md5 45031a07db65f26c05710f85568b5459",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "45031a07db65f26c05710f85568b5459"
+    ],
+    "value": "45031a07db65f26c05710f85568b5459"
+   },
+   {
+    "text": "The final submission is an equal-weight arithmetic mean of 11 models followed by argmax",
+    "type": "decision",
+    "entities": [
+     "arithmetic mean",
+     "11 models",
+     "argmax"
+    ],
+    "value": "11"
+   },
+   {
+    "text": "Fold-0 holdout metric is 0.9012, with best single model at 0.895",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout",
+     "0.9012",
+     "0.895"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "final_solution/ contains submission.csv, submission_meta.json, README.md, and code/ (7 files)",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "submission_meta.json",
+     "README.md",
+     "code/"
+    ],
+    "value": "7"
+   },
+   {
+    "text": "ConvNeXt-small was trained 5-fold plain with mixup at 100% full and produced test_convnext_v2.npy",
+    "type": "model",
+    "entities": [
+     "ConvNeXt-small",
+     "test_convnext_v2.npy",
+     "mixup"
+    ],
+    "value": null
+   },
+   {
+    "text": "Independent combiner comparison found equal ≈ geometric ≈ majority >> learned weights",
+    "type": "insight",
+    "entities": [
+     "equal",
+     "geometric",
+     "majority",
+     "learned weights"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_wrapup.md": {
+  "facts": [
+   {
+    "text": "Consensus final submission is an equal-weight arithmetic mean of 11 models with fold-0 holdout 0.9012.",
+    "type": "result",
+    "entities": [
+     "final_solution/submission.csv",
+     "11 models",
+     "fold-0 holdout"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "convnext_base @384 with mixup achieved fold-0 val 0.8927.",
+    "type": "result",
+    "entities": [
+     "convnext_base",
+     "test_cvnxb_best",
+     "mixup"
+    ],
+    "value": "0.8927"
+   },
+   {
+    "text": "tf_efficientnetv2_s @384 with mixup achieved fold-0 val 0.8916 and OOF 0.8918.",
+    "type": "result",
+    "entities": [
+     "tf_efficientnetv2_s",
+     "test_v2s_best",
+     "mixup"
+    ],
+    "value": "0.8916"
+   },
+   {
+    "text": "Mixup+cutmix fixes label-noise overfit, improving EffNetV2-S fold-0 from 0.8838 to 0.8916 (+0.8%) with best epoch moving from ep4 to ep9.",
+    "type": "insight",
+    "entities": [
+     "mixup",
+     "cutmix",
+     "tf_efficientnetv2_s",
+     "label-noise overfit"
+    ],
+    "value": "+0.8%"
+   },
+   {
+    "text": "Multi-scale/higher-res TTA does not help nets trained at one resolution; 384 is optimal while 416/448 are worse.",
+    "type": "insight",
+    "entities": [
+     "TTA",
+     "384",
+     "416",
+     "448"
+    ],
+    "value": null
+   },
+   {
+    "text": "The --allfolds persistent-worker OOM crash was fixed by switching to per-fold processes plus per-fold test-prob inference.",
+    "type": "problem",
+    "entities": [
+     "--allfolds",
+     "OOM",
+     "per-fold processes"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_signoff.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv has md5 45031a07db65f26c05710f85568b5459 matching achernar's frozen hash",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "45031a07db65f26c05710f85568b5459",
+     "achernar"
+    ],
+    "value": "45031a07db65f26c05710f85568b5459"
+   },
+   {
+    "text": "submission.csv has 2676 rows, ids in sample_submission order, labels {0..4}, no nulls",
+    "type": "artifact",
+    "entities": [
+     "submission.csv",
+     "sample_submission",
+     "2676"
+    ],
+    "value": "2676"
+   },
+   {
+    "text": "final_solution/ contains submission.csv, submission_meta.json, README.md, and code/",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "submission_meta.json",
+     "README.md",
+     "code/"
+    ],
+    "value": null
+   },
+   {
+    "text": "Final submission is equal-weight arithmetic mean of 11 models",
+    "type": "decision",
+    "entities": [
+     "equal-weight arithmetic mean",
+     "11 models"
+    ],
+    "value": "11"
+   },
+   {
+    "text": "Fold-0 holdout score is 0.9012",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Run used train-only data plus ImageNet pretrained weights with holdout folds5_seed42.csv and no test feedback",
+    "type": "constraint",
+    "entities": [
+     "ImageNet",
+     "folds5_seed42.csv",
+     "train-only"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_signoff.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv md5 is 45031a07db65f26c05710f85568b5459 and matches the frozen hash.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "45031a07db65f26c05710f85568b5459"
+    ],
+    "value": "45031a07db65f26c05710f85568b5459"
+   },
+   {
+    "text": "Submission has 2676 rows, ids in sample_submission order, labels {0..4}, and no nulls.",
+    "type": "result",
+    "entities": [
+     "sample_submission",
+     "2676"
+    ],
+    "value": "2676"
+   },
+   {
+    "text": "final_solution/ contains submission.csv, submission_meta.json, README.md, and code/ (train/infer/ensemble).",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "submission_meta.json",
+     "README.md",
+     "code/"
+    ],
+    "value": null
+   },
+   {
+    "text": "Final ensemble is an equal-weight arithmetic mean of 11 models achieving fold-0 holdout metric 0.9012.",
+    "type": "result",
+    "entities": [
+     "11 models",
+     "fold-0 holdout",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Run used train-only images and ImageNet-pretrained weights, validating strictly on workspaces/shared/folds5_seed42.csv with no test feedback.",
+    "type": "constraint",
+    "entities": [
+     "ImageNet",
+     "workspaces/shared/folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "Author's 6 ensemble members are Sw, Sw-mix, ViT, ViT-mix, BEiT-mix, and XCiT-mix, using shared tooling train.py, infer.py, ensemble.py.",
+    "type": "model",
+    "entities": [
+     "Sw",
+     "Sw-mix",
+     "ViT",
+     "ViT-mix",
+     "BEiT-mix",
+     "XCiT-mix",
+     "train.py",
+     "infer.py",
+     "ensemble.py"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_nan_bug.md": {
+  "facts": [
+   {
+    "text": "effb4_512/test_probs_2fold.npy contains 10 NaN values, with rows 1436 and 1897 all-NaN.",
+    "type": "problem",
+    "entities": [
+     "effb4_512/test_probs_2fold.npy",
+     "effb4_512/test_probs.npy",
+     "1436",
+     "1897"
+    ],
+    "value": "10 NaN"
+   },
+   {
+    "text": "In the final arithmetic union, NaN member rows cause argmax to return 0.",
+    "type": "problem",
+    "entities": [
+     "argmax"
+    ],
+    "value": null
+   },
+   {
+    "text": "Row 1436 (2441927798.jpg) is predicted 0 but 9/10 members say class 4.",
+    "type": "problem",
+    "entities": [
+     "2441927798.jpg",
+     "1436"
+    ],
+    "value": null
+   },
+   {
+    "text": "Row 1897 is genuinely class 0 for all members, so unaffected.",
+    "type": "insight",
+    "entities": [
+     "1897"
+    ],
+    "value": null
+   },
+   {
+    "text": "Corrected candidate workspaces/capella_kappa/candidate_nanfix.csv differs from the frozen final by exactly 1 label (row 1436: 0 -> 4).",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/candidate_nanfix.csv",
+     "1436"
+    ],
+    "value": "1 label"
+   },
+   {
+    "text": "Both affected images are readable at 600x800, so the NaN is an effb4-pipeline issue, not a corrupt image.",
+    "type": "insight",
+    "entities": [
+     "effb4"
+    ],
+    "value": "600x800"
+   }
+  ]
+ },
+ "achernar_delta_last_experiments.md": {
+  "facts": [
+   {
+    "text": "Combiner comparison (arithmetic vs geometric vs median vs trimmed vs pow-mean p=0.5/2/3) scored 0.9007-0.9015, all within noise, and arithmetic was kept.",
+    "type": "result",
+    "entities": [
+     "arithmetic",
+     "geometric",
+     "median",
+     "trimmed",
+     "pow-mean",
+     "0.9007",
+     "0.9015"
+    ],
+    "value": "0.9007-0.9015"
+   },
+   {
+    "text": "Rank-mean combiner was broken at 0.73 and rejected.",
+    "type": "problem",
+    "entities": [
+     "rank-mean",
+     "0.73"
+    ],
+    "value": "0.73"
+   },
+   {
+    "text": "Multi-crop 5-crop 1.25x TTA vs center-crop on ConvNeXt-s fold-0 gave 0.8889 vs 0.8895 plain, 0.8985 vs 0.8964 mixup, blend 0.8889/0.8993, showing no gain.",
+    "type": "result",
+    "entities": [
+     "multi-crop",
+     "5-crop",
+     "1.25x",
+     "ConvNeXt-s",
+     "0.8889",
+     "0.8895",
+     "0.8985",
+     "0.8964",
+     "0.8993"
+    ],
+    "value": null
+   },
+   {
+    "text": "Single square view is best for these nets, consistent with capella's aspect-preserving-TTA and arcturus's multi-scale results.",
+    "type": "insight",
+    "entities": [
+     "capella",
+     "arcturus",
+     "single square view"
+    ],
+    "value": null
+   },
+   {
+    "text": "Adding ConvNeXt-s@512 as a member hurt fold-0 (0.9007->0.8993) and was excluded.",
+    "type": "result",
+    "entities": [
+     "ConvNeXt-s@512",
+     "0.9007",
+     "0.8993"
+    ],
+    "value": "0.9007->0.8993"
+   },
+   {
+    "text": "final_solution/submission.csv stays frozen as an 11-member arithmetic ensemble with fold-0 0.9012.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "11-member",
+     "arithmetic",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   }
+  ]
+ },
+ "capella_kappa_nan_scope.md": {
+  "facts": [
+   {
+    "text": "Full NaN sweep covered 112 member artifacts.",
+    "type": "result",
+    "entities": [
+     "112 member artifacts"
+    ],
+    "value": "112"
+   },
+   {
+    "text": "effb4 test probs test_probs_2fold.npy and test_probs.npy had 10 NaN at rows 1436 and 1897, affecting the submission, now fixed as v4 with md5 e32f8872453c714315ec0d346409a01d.",
+    "type": "problem",
+    "entities": [
+     "effb4",
+     "test_probs_2fold.npy",
+     "test_probs.npy",
+     "1436",
+     "1897",
+     "v4",
+     "e32f8872453c714315ec0d346409a01d"
+    ],
+    "value": "10 NaN"
+   },
+   {
+    "text": "effb4 f1_val_probs.npy had 5 NaN in 1 row, and oof_probs.npy/oof_effb4_2fold.npy had 5 NaN, affecting only arcturus's OOF and not used in the final.",
+    "type": "problem",
+    "entities": [
+     "effb4",
+     "f1_val_probs.npy",
+     "oof_probs.npy",
+     "oof_effb4_2fold.npy",
+     "arcturus"
+    ],
+    "value": "5 NaN"
+   },
+   {
+    "text": "effb4 f0_val_probs.npy used for fold-0 weighting is clean.",
+    "type": "result",
+    "entities": [
+     "effb4",
+     "f0_val_probs.npy",
+     "fold-0 weighting"
+    ],
+    "value": null
+   },
+   {
+    "text": "No NaN found in any other member's val or test artifacts; my members and achernar's are clean.",
+    "type": "result",
+    "entities": [
+     "achernar"
+    ],
+    "value": null
+   },
+   {
+    "text": "Reported fold-0 union accuracy 0.9012 is valid; only the test-side NaN needed fixing.",
+    "type": "result",
+    "entities": [
+     "fold-0 union accuracy"
+    ],
+    "value": "0.9012"
+   }
+  ]
+ },
+ "capella_kappa_nan_fixed.md": {
+  "facts": [
+   {
+    "text": "Corrected final_solution/submission.csv has new md5 e32f8872453c714315ec0d346409a01d",
+    "type": "artifact",
+    "entities": [
+     "final_solution/submission.csv",
+     "e32f8872453c714315ec0d346409a01d"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "Row 1436 (2441927798.jpg) label corrected from 0 to 4",
+    "type": "result",
+    "entities": [
+     "2441927798.jpg",
+     "row 1436"
+    ],
+    "value": "0 -> 4"
+   },
+   {
+    "text": "Frozen pre-fix version backed up at workspaces/capella_kappa/final_backup_pre_nanfix.csv with md5 45031a07...",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/final_backup_pre_nanfix.csv",
+     "45031a07"
+    ],
+    "value": "45031a07"
+   },
+   {
+    "text": "Sanitized member probs saved at workspaces/capella_kappa/effb4_512/test_probs_nanfixed.npy with NaN rows filled by mean of other 10 members",
+    "type": "artifact",
+    "entities": [
+     "workspaces/capella_kappa/effb4_512/test_probs_nanfixed.npy"
+    ],
+    "value": null
+   },
+   {
+    "text": "Union fold-0 holdout score unchanged at 0.9012",
+    "type": "result",
+    "entities": [
+     "union fold-0 holdout"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Corrected submission has 2676 rows, sample order, labels {0..4}, no nulls, dist 0:136 1:276 2:266 3:1673 4:325",
+    "type": "result",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "2676"
+   }
+  ]
+ },
+ "capella_kappa_v4_repro.md": {
+  "facts": [
+   {
+    "text": "make_final.py sanitizes NaN per image/class to mean of finite members, then 1/5 fallback, before averaging.",
+    "type": "feature",
+    "entities": [
+     "make_final.py",
+     "NaN"
+    ],
+    "value": null
+   },
+   {
+    "text": "Re-running make_final.py in --mode arith with 11 member paths produced output md5 e32f8872453c714315ec0d346409a01d matching frozen v4 exactly.",
+    "type": "result",
+    "entities": [
+     "make_final.py",
+     "--mode arith",
+     "e32f8872453c714315ec0d346409a01d"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "fold-0 holdout val probs = 0.9012 unchanged.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "val probs"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Label distribution is 0:136 1:276 2:266 3:1673 4:325.",
+    "type": "result",
+    "entities": [
+     "label dist"
+    ],
+    "value": "0:136 1:276 2:266 3:1673 4:325"
+   },
+   {
+    "text": "final_solution/ contains submission.csv (v4, 1 NaN-induced label fixed), submission_meta.json (with nan_fix), README.md (erratum), and code/ (NaN-safe combiner).",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission.csv",
+     "submission_meta.json",
+     "README.md",
+     "code/",
+     "nan_fix"
+    ],
+    "value": null
+   },
+   {
+    "text": "The v4 submission had 1 NaN-induced label that was fixed.",
+    "type": "problem",
+    "entities": [
+     "submission.csv",
+     "NaN"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_v4_ack.md": {
+  "facts": [
+   {
+    "text": "NaN in effb4 test probs: 10 NaN on 2 rows, root cause in infer.py where one model's probability output went NaN for 2 images.",
+    "type": "problem",
+    "entities": [
+     "effb4",
+     "infer.py",
+     "NaN"
+    ],
+    "value": "10 NaN on 2 rows"
+   },
+   {
+    "text": "Reported 0.9012 is valid because the fold-0 val file used for weighting was clean.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Frozen v4 md5 is e32f8872453c714315ec0d346409a01d.",
+    "type": "artifact",
+    "entities": [
+     "v4",
+     "md5"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "v4 has 2676 rows, ids in sample_submission order, labels {0..4}, 0 nulls.",
+    "type": "artifact",
+    "entities": [
+     "v4",
+     "sample_submission"
+    ],
+    "value": "2676 rows"
+   },
+   {
+    "text": "v4 label distribution: 0:136, 1:276, 2:266, 3:1673, 4:325.",
+    "type": "artifact",
+    "entities": [
+     "v4"
+    ],
+    "value": "0:136,1:276,2:266,3:1673,4:325"
+   },
+   {
+    "text": "Agreed v4 is the final submission and will not be modified.",
+    "type": "decision",
+    "entities": [
+     "v4"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "capella_kappa_final_confirmation.md": {
+  "facts": [
+   {
+    "text": "Final solution is an equal-weight arithmetic mean of 11 models.",
+    "type": "model",
+    "entities": [
+     "final_solution/submission.csv"
+    ],
+    "value": "11 models"
+   },
+   {
+    "text": "Fold-0 holdout metric is 0.9012.",
+    "type": "result",
+    "entities": [
+     "fold-0 holdout"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Submission md5 is e32f8872453c714315ec0d346409a01d (v4, includes NaN correctness fix for row 1436 2441927798.jpg 0 -> 4).",
+    "type": "artifact",
+    "entities": [
+     "e32f8872453c714315ec0d346409a01d",
+     "2441927798.jpg",
+     "row 1436"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "Submission has 2676 rows, ids in sample_submission order, labels {0..4}, 0 nulls, distribution 0:136 1:276 2:266 3:1673 4:325.",
+    "type": "artifact",
+    "entities": [
+     "submission.csv",
+     "sample_submission"
+    ],
+    "value": "2676 rows"
+   },
+   {
+    "text": "final_solution/ contains submission_meta.json (with nan_fix), README.md erratum, and code/ with NaN-safe make_final.py reproducing the exact md5.",
+    "type": "artifact",
+    "entities": [
+     "submission_meta.json",
+     "README.md",
+     "make_final.py",
+     "final_solution/"
+    ],
+    "value": null
+   },
+   {
+    "text": "Solution was re-validated independently by arcturus_kappa using train-only data and ImageNet-pretrained models with holdout folds5_seed42.csv and no test feedback.",
+    "type": "decision",
+    "entities": [
+     "arcturus_kappa",
+     "folds5_seed42.csv",
+     "ImageNet"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "arcturus_kappa_final_confirm.md": {
+  "facts": [
+   {
+    "text": "final_solution/submission.csv is the equal-weight arithmetic mean of 11 models followed by argmax, with fold-0 holdout metric 0.9012.",
+    "type": "result",
+    "entities": [
+     "final_solution/submission.csv",
+     "11 models",
+     "fold-0 holdout",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "The submission.csv md5 is e32f8872453c714315ec0d346409a01d (v4, NaN fix) and was re-verified.",
+    "type": "artifact",
+    "entities": [
+     "submission.csv",
+     "e32f8872453c714315ec0d346409a01d",
+     "v4"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "submission.csv has 2676 rows, ids in sample_submission order, labels {0..4}, 0 nulls, and distribution 0:136 1:276 2:266 3:1673 4:325.",
+    "type": "artifact",
+    "entities": [
+     "submission.csv",
+     "sample_submission",
+     "2676 rows"
+    ],
+    "value": "2676"
+   },
+   {
+    "text": "final_solution/ contains submission.csv, submission_meta.json, README.md, and code/ with a NaN-safe make_final.py that reproduces the exact md5.",
+    "type": "artifact",
+    "entities": [
+     "final_solution/",
+     "submission_meta.json",
+     "README.md",
+     "make_final.py"
+    ],
+    "value": null
+   },
+   {
+    "text": "Protocol used train-only data plus ImageNet-pretrained models, with validation/early-stopping on folds5_seed42.csv holdout and no test feedback.",
+    "type": "constraint",
+    "entities": [
+     "ImageNet",
+     "folds5_seed42.csv"
+    ],
+    "value": null
+   },
+   {
+    "text": "No new experiments were launched; the final solution is confirmed in place and ready for grading.",
+    "type": "decision",
+    "entities": [
+     "final_solution"
+    ],
+    "value": null
+   }
+  ]
+ },
+ "achernar_delta_v4_repro.md": {
+  "facts": [
+   {
+    "text": "Re-running final_solution/code/make_final.py with 11 members produced md5 e32f8872453c714315ec0d346409a01d, exact match to final_solution/submission.csv.",
+    "type": "result",
+    "entities": [
+     "final_solution/code/make_final.py",
+     "final_solution/submission.csv",
+     "e32f8872453c714315ec0d346409a01d"
+    ],
+    "value": "e32f8872453c714315ec0d346409a01d"
+   },
+   {
+    "text": "workspaces/arcturus_kappa/runs/effb4_512/test_probs_2fold.npy contains NaN rows at test indices 1436 and 1897.",
+    "type": "problem",
+    "entities": [
+     "workspaces/arcturus_kappa/runs/effb4_512/test_probs_2fold.npy",
+     "1436",
+     "1897"
+    ],
+    "value": null
+   },
+   {
+    "text": "Under plain mean, NaN propagated so argmax(NaN)=0, wrongly labeling row 1436 (2441927798.jpg) as 0; the sanitizer imputes NaN by the mean of finite members giving 4.",
+    "type": "insight",
+    "entities": [
+     "2441927798.jpg",
+     "argmax",
+     "sanitizer"
+    ],
+    "value": null
+   },
+   {
+    "text": "Fold-0 validation score is unchanged at 0.9012.",
+    "type": "result",
+    "entities": [
+     "fold-0",
+     "0.9012"
+    ],
+    "value": "0.9012"
+   },
+   {
+    "text": "Final submission.csv has 2676 rows, sample order, labels {0..4}, 0 nulls, distribution 0:136 1:276 2:266 3:1673 4:325.",
+    "type": "result",
+    "entities": [
+     "submission.csv",
+     "2676",
+     "0:136",
+     "1:276",
+     "2:266",
+     "3:1673",
+     "4:325"
+    ],
+    "value": "2676 rows"
+   },
+   {
+    "text": "Solution is frozen and ready for grading.",
+    "type": "decision",
+    "entities": [
+     "solution frozen",
+     "grading"
+    ],
+    "value": null
+   }
+  ]
+ }
+}

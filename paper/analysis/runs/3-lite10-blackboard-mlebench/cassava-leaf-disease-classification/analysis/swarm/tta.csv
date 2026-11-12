@@ -1,0 +1,10 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+aldebaran_epsilon_blend_check5.md,aldebaran,2026-10-31T01:04:08+03:00,0.90013,insight,bellatrix_delta_blend_cv_insight.md,1,469.0,bellatrix_delta_blend_cv_insight.md,1,469.0
+vega_eta_artifacts_blend.md,vega,2026-10-31T02:20:46+03:00,0.88892,feature_engineering,aldebaran_epsilon_timeline_ack.md,1,2553.0,aldebaran_epsilon_timeline_ack.md,1,2553.0
+vega_eta_pseudo_experiment.md,vega,2026-10-31T03:56:22+03:00,0.88865,insight,,,,bellatrix_delta_subset_analysis.md,2,1896.0
+bellatrix_delta_subset_analysis.md,bellatrix,2026-10-31T04:27:58+03:00,0.89159,insight submission,,,,,,
+aldebaran_epsilon_vit_result_blend8.md,aldebaran,2026-10-31T04:44:39+03:00,0.88598,insight,bellatrix_delta_final_decision.md,2,562.0,bellatrix_delta_final_decision.md,2,562.0
+vega_eta_combiner_and_9th.md,vega,2026-10-31T04:50:53+03:00,0.88785,insight submission,bellatrix_delta_final_decision.md,1,188.0,bellatrix_delta_final_decision.md,1,188.0
+bellatrix_delta_lastmile_negative.md,bellatrix,2026-10-31T07:16:52+03:00,0.8988,insight submission,vega_eta_final_reverify_swinms.md,2,342.0,vega_eta_final_reverify_swinms.md,2,342.0
+aldebaran_epsilon_swin_multiscale_upgrade.md,aldebaran,2026-10-31T07:20:59+03:00,0.8996,insight submission,vega_eta_final_reverify_swinms.md,1,95.0,vega_eta_final_reverify_swinms.md,1,95.0
+aldebaran_epsilon_late_final.md,aldebaran,2026-10-31T07:22:51+03:00,0.8996,insight submission,vega_eta_FINAL_CONFIRMED.md,1,91.0,vega_eta_FINAL_CONFIRMED.md,1,91.0

@@ -1,0 +1,50 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+pollux_beta_intro.md,pollux,2026-10-30T19:52:58+03:00,communication plan status,2,0,0,0
+altair_gamma_intro_and_plan.md,altair,2026-10-30T19:53:00+03:00,communication plan status,1,0,0,0
+pollux_epsilon_intro.md,pollux,2026-10-30T19:53:01+03:00,communication plan status,4,0,0,0
+altair_gamma_role_and_folds.md,altair,2026-10-30T19:54:16+03:00,communication data_pipeline model_selection plan,1,3,1,0
+altair_gamma_baseline_and_folds_conflict.md,altair,2026-10-30T20:10:32+03:00,ensembling feature_engineering insight model_selection status,3,3,2,0
+pollux_beta_folds_agreement_and_baseline.md,pollux,2026-10-30T20:22:57+03:00,communication feature_engineering model_selection status,3,2,3,0
+pollux_epsilon_ast_embeddings_09197.md,pollux,2026-10-30T20:32:53+03:00,ensembling feature_engineering insight model_selection status,1,2,4,0
+pollux_beta_blend_progress_and_leak_warning.md,pollux,2026-10-30T20:45:50+03:00,communication ensembling problem status,3,3,4,0
+pollux_epsilon_astneigh_09243_and_testpreds.md,pollux,2026-10-30T20:52:06+03:00,ensembling feature_engineering model_selection status,4,1,5,0
+altair_gamma_leak_audit_and_blend_status.md,altair,2026-10-30T20:58:23+03:00,communication ensembling insight problem status,3,3,6,0
+pollux_beta_folds_clean_and_blend_0_933.md,pollux,2026-10-30T21:02:27+03:00,communication ensembling model_selection status,5,2,7,0
+pollux_epsilon_blend_analysis_0935.md,pollux,2026-10-30T21:05:57+03:00,communication ensembling insight status,3,3,7,0
+pollux_epsilon_multiast_0930_and_m7_0937.md,pollux,2026-10-30T21:08:28+03:00,ensembling insight status,3,2,8,0
+pollux_beta_final_v1_09391.md,pollux,2026-10-30T21:09:56+03:00,communication ensembling status submission,3,3,8,1
+altair_gamma_final_correction_and_audit.md,altair,2026-10-30T21:14:19+03:00,communication conflict insight status submission,1,3,9,1
+altair_gamma_candidate_blend_09408.md,altair,2026-10-30T21:15:06+03:00,ensembling insight status submission,2,2,9,1
+pollux_epsilon_blend_N1_0940.md,pollux,2026-10-30T21:26:22+03:00,communication ensembling status submission,3,2,9,1
+pollux_beta_final_v3_09430.md,pollux,2026-10-30T21:30:51+03:00,communication ensembling status submission,4,3,10,1
+pollux_beta_gpu_cnn_start.md,pollux,2026-10-30T21:31:06+03:00,architecture communication status training,1,1,11,0
+altair_gamma_updated_blend_09440.md,altair,2026-10-30T21:32:02+03:00,ensembling insight status submission,2,3,10,1
+pollux_epsilon_birdnet_09494.md,pollux,2026-10-30T21:34:36+03:00,communication ensembling feature_engineering insight status,6,2,10,0
+altair_gamma_audit_birdnet_blend_09510.md,altair,2026-10-30T21:38:45+03:00,communication ensembling insight status submission,2,3,12,1
+pollux_epsilon_birdnet_emb_09536.md,pollux,2026-10-30T21:46:04+03:00,communication ensembling feature_engineering insight status,5,2,11,0
+pollux_epsilon_blend_V1_09547.md,pollux,2026-10-30T21:50:38+03:00,communication ensembling status submission,2,2,13,1
+pollux_beta_final_v5_09521.md,pollux,2026-10-30T21:54:58+03:00,communication ensembling insight status submission,2,3,11,1
+altair_gamma_bn_tree_blend_09533.md,altair,2026-10-30T21:57:48+03:00,communication ensembling insight status submission,2,3,13,1
+pollux_beta_final_v6_09533.md,pollux,2026-10-30T22:01:21+03:00,communication ensembling status submission,1,3,12,1
+pollux_beta_final_v7_09601.md,pollux,2026-10-30T22:09:25+03:00,communication ensembling insight status submission,5,4,14,1
+altair_gamma_best_denoise_blend_09605.md,altair,2026-10-30T22:13:57+03:00,bug communication ensembling insight status submission,1,3,14,1
+pollux_epsilon_cand_09607.md,pollux,2026-10-30T22:20:03+03:00,communication ensembling insight submission,4,3,15,1
+altair_gamma_cand_bug_and_A_dn3_09617.md,altair,2026-10-30T22:28:20+03:00,bug communication ensembling insight status submission,2,3,16,1
+pollux_beta_final_v8_09626.md,pollux,2026-10-30T22:31:13+03:00,communication ensembling status submission,2,3,17,1
+altair_gamma_final_v8_audit_pass.md,altair,2026-10-30T22:32:00+03:00,communication ensembling insight status submission,4,3,17,1
+altair_gamma_lgb_bnall_09451.md,altair,2026-10-30T22:48:13+03:00,ensembling insight model_selection status submission,1,2,18,1
+pollux_beta_final_v9_09651.md,pollux,2026-10-30T22:51:01+03:00,architecture communication ensembling status submission,2,2,18,1
+altair_gamma_final_v9_audit_pass.md,altair,2026-10-30T22:52:04+03:00,communication ensembling status submission,1,3,19,1
+pollux_beta_final_v10_09662.md,pollux,2026-10-30T23:07:12+03:00,architecture communication ensembling status submission,4,2,19,1
+altair_gamma_final_v10_audit_pass.md,altair,2026-10-30T23:09:00+03:00,communication ensembling status submission,3,2,20,1
+pollux_epsilon_cand2_correction.md,pollux,2026-10-30T23:13:43+03:00,communication ensembling insight status submission,0,2,16,1
+pollux_epsilon_v10_audit_and_rejects.md,pollux,2026-10-30T23:46:33+03:00,architecture audit communication ensembling status,6,2,21,0
+pollux_beta_perch_rejected.md,pollux,2026-10-31T00:59:06+03:00,architecture communication model_selection other status,1,2,22,0
+pollux_epsilon_perch_checks.md,pollux,2026-10-31T01:13:29+03:00,audit ensembling feature_engineering status,2,2,22,0
+pollux_beta_final_audit_v10.md,pollux,2026-10-31T05:36:51+03:00,communication ensembling status submission,3,4,23,1
+altair_gamma_final_consensus_verification.md,altair,2026-10-31T06:16:17+03:00,communication ensembling status submission,4,3,24,1
+pollux_epsilon_final_consensus_confirm.md,pollux,2026-10-31T06:18:32+03:00,communication ensembling status submission,2,8,25,1
+pollux_beta_final_consensus_closed.md,pollux,2026-10-31T06:43:46+03:00,communication status submission,1,2,26,1
+altair_gamma_last_probe_spcond.md,altair,2026-10-31T07:07:17+03:00,communication ensembling status submission,2,3,27,1
+altair_gamma_final_submission_confirmed.md,altair,2026-10-31T07:36:07+03:00,communication status submission,0,4,28,1
+pollux_beta_final_submission_confirmed.md,pollux,2026-10-31T07:42:04+03:00,communication status submission,0,1,28,1

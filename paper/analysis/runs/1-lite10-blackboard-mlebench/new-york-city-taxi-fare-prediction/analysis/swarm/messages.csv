@@ -1,0 +1,58 @@
+name,agent,kind,time,tags,metric_values,metric_best,links,links_time_ok
+canopus_pi_intro.md,canopus,agent,2026-11-03T19:43:24+03:00,communication plan,,,,
+mimosa_omicron_intro_plan.md,mimosa,agent,2026-11-03T19:43:47+03:00,communication model_selection plan,,,canopus_pi_intro.md,canopus_pi_intro.md
+aldebaran_omicron_intro_plan.md,aldebaran,agent,2026-11-03T19:43:55+03:00,communication data_pipeline feature_engineering plan,,,,
+mimosa_omicron_status_prep.md,mimosa,agent,2026-11-03T19:44:13+03:00,communication data_pipeline feature_engineering status,,,,
+aldebaran_omicron_ack_holdout.md,aldebaran,agent,2026-11-03T19:46:24+03:00,communication model_selection,,,mimosa_omicron_intro_plan.md canopus_pi_intro.md,mimosa_omicron_intro_plan.md canopus_pi_intro.md
+mimosa_omicron_baseline_xgb.md,mimosa,agent,2026-11-03T19:50:34+03:00,communication insight model_selection training,,,mimosa_omicron_status_prep.md,mimosa_omicron_status_prep.md
+canopus_pi_status1.md,canopus,agent,2026-11-03T19:52:20+03:00,communication feature_engineering model_selection status,,,mimosa_omicron_intro_plan.md aldebaran_omicron_ack_holdout.md,mimosa_omicron_intro_plan.md aldebaran_omicron_ack_holdout.md
+aldebaran_omicron_parquet_ready.md,aldebaran,agent,2026-11-03T19:54:52+03:00,data_pipeline feature_engineering insight,,,,
+aldebaran_omicron_corrupt_insight.md,aldebaran,agent,2026-11-03T20:07:16+03:00,communication data_preprocessing insight model_selection,,,mimosa_omicron_baseline_xgb.md,mimosa_omicron_baseline_xgb.md
+mimosa_omicron_xgb_full_result.md,mimosa,agent,2026-11-03T20:19:28+03:00,ensembling feature_engineering insight status training,,,aldebaran_omicron_corrupt_insight.md,aldebaran_omicron_corrupt_insight.md
+aldebaran_omicron_gpu_full.md,aldebaran,agent,2026-11-03T20:21:00+03:00,communication ensembling model_selection training,,,mimosa_omicron_baseline_xgb.md mimosa_omicron_status_prep.md,mimosa_omicron_baseline_xgb.md mimosa_omicron_status_prep.md
+mimosa_omicron_corrupt_fallback_v2.md,mimosa,agent,2026-11-03T20:25:48+03:00,communication insight model_selection postprocessing,,,mimosa_omicron_xgb_full_result.md,mimosa_omicron_xgb_full_result.md
+mimosa_omicron_coord_recovery.md,mimosa,agent,2026-11-03T20:41:13+03:00,ensembling insight postprocessing training,,,,
+aldebaran_omicron_corrupt_and_blend.md,aldebaran,agent,2026-11-03T21:00:15+03:00,communication ensembling postprocessing status,,,mimosa_omicron_corrupt_fallback_v2.md mimosa_omicron_coord_recovery.md aldebaran_omicron_gpu_full.md,mimosa_omicron_corrupt_fallback_v2.md mimosa_omicron_coord_recovery.md aldebaran_omicron_gpu_full.md
+mimosa_omicron_testpreds_blend.md,mimosa,agent,2026-11-03T21:03:50+03:00,communication ensembling status,,,aldebaran_omicron_corrupt_and_blend.md,aldebaran_omicron_corrupt_and_blend.md
+canopus_pi_result_lgb19m.md,canopus,agent,2026-11-03T21:10:24+03:00,communication ensembling status training,,,aldebaran_omicron_gpu_full.md aldebaran_omicron_corrupt_and_blend.md,aldebaran_omicron_gpu_full.md aldebaran_omicron_corrupt_and_blend.md
+canopus_pi_artifacts_blend.md,canopus,agent,2026-11-03T21:13:03+03:00,communication ensembling status,,,,
+aldebaran_omicron_blend_request.md,aldebaran,agent,2026-11-03T21:15:42+03:00,communication ensembling status,,,,
+aldebaran_omicron_blend_v1.md,aldebaran,agent,2026-11-03T21:29:39+03:00,communication ensembling status submission,,,,
+aldebaran_omicron_blend_v2_nn.md,aldebaran,agent,2026-11-03T21:32:26+03:00,communication ensembling status,,,,
+canopus_pi_full_data_plan.md,canopus,agent,2026-11-03T21:41:25+03:00,communication ensembling plan training,,,aldebaran_omicron_blend_v2_nn.md,aldebaran_omicron_blend_v2_nn.md
+aldebaran_omicron_blend_v3_canopus.md,aldebaran,agent,2026-11-03T21:41:50+03:00,communication ensembling status,,,,
+aldebaran_omicron_blend_v4_logtarget.md,aldebaran,agent,2026-11-03T21:47:28+03:00,communication ensembling status,,,,
+mimosa_omicron_new_models_blend.md,mimosa,agent,2026-11-03T21:54:51+03:00,communication ensembling status training,,,,
+aldebaran_omicron_blend_v5.md,aldebaran,agent,2026-11-03T21:58:38+03:00,communication ensembling status,,,,
+canopus_pi_corrupt_improved.md,canopus,agent,2026-11-03T22:20:58+03:00,communication ensembling postprocessing status,,,mimosa_omicron_corrupt_fallback_v2.md aldebaran_omicron_corrupt_and_blend.md aldebaran_omicron_blend_v5.md,mimosa_omicron_corrupt_fallback_v2.md aldebaran_omicron_corrupt_and_blend.md aldebaran_omicron_blend_v5.md
+aldebaran_omicron_gpu_window.md,aldebaran,agent,2026-11-03T22:23:03+03:00,communication ensembling status,,,,
+canopus_pi_correction_f54m.md,canopus,agent,2026-11-03T22:27:08+03:00,bug communication ensembling status,,,aldebaran_omicron_gpu_window.md,aldebaran_omicron_gpu_window.md
+aldebaran_omicron_gpu_taken.md,aldebaran,agent,2026-11-03T23:04:57+03:00,communication ensembling status,,,,
+canopus_pi_g54m_progress.md,canopus,agent,2026-11-03T23:06:23+03:00,communication insight status training,,,,
+aldebaran_omicron_neg_results_v6.md,aldebaran,agent,2026-11-03T23:21:29+03:00,ensembling model_selection status,,,,
+canopus_pi_g54m_best_single.md,canopus,agent,2026-11-03T23:38:09+03:00,communication ensembling status training,,,,
+aldebaran_omicron_blend_v8_g54m.md,aldebaran,agent,2026-11-03T23:40:53+03:00,communication ensembling status,,,,
+mimosa_omicron_new_best_single.md,mimosa,agent,2026-11-03T23:57:07+03:00,communication ensembling status training,,,,
+aldebaran_omicron_blend_v9_8192.md,aldebaran,agent,2026-11-04T00:00:20+03:00,communication ensembling status,,,,
+canopus_pi_j54m_and_corrupt_code.md,canopus,agent,2026-11-04T00:13:48+03:00,communication ensembling postprocessing status,,,aldebaran_omicron_blend_v9_8192.md,aldebaran_omicron_blend_v9_8192.md
+canopus_pi_j54m_3258.md,canopus,agent,2026-11-04T01:12:16+03:00,communication ensembling status training,,,,
+aldebaran_omicron_blend_v10.md,aldebaran,agent,2026-11-04T01:13:57+03:00,communication ensembling status,,,,
+canopus_pi_tail_analysis.md,canopus,agent,2026-11-04T02:46:52+03:00,ensembling insight model_selection status,,,aldebaran_omicron_blend_v10.md,aldebaran_omicron_blend_v10.md
+mimosa_omicron_two_more_big_models.md,mimosa,agent,2026-11-04T03:52:46+03:00,ensembling insight status training,,,,
+mimosa_omicron_log8192_and_code.md,mimosa,agent,2026-11-04T03:53:48+03:00,communication ensembling status submission,,,canopus_pi_tail_analysis.md,canopus_pi_tail_analysis.md
+aldebaran_omicron_final_v11.md,aldebaran,agent,2026-11-04T03:58:02+03:00,communication ensembling status submission,,,,
+mimosa_omicron_negative_noise_filter.md,mimosa,agent,2026-11-04T04:12:54+03:00,communication insight problem training,,,canopus_pi_tail_analysis.md,canopus_pi_tail_analysis.md
+mimosa_omicron_rot29_best_single.md,mimosa,agent,2026-11-04T05:05:04+03:00,communication ensembling status training,,,,
+aldebaran_omicron_final_v12.md,aldebaran,agent,2026-11-04T05:13:42+03:00,communication ensembling status submission,,,,
+canopus_pi_final_status.md,canopus,agent,2026-11-04T05:37:12+03:00,communication ensembling status submission,,,canopus_pi_tail_analysis.md aldebaran_omicron_blend_v10.md,canopus_pi_tail_analysis.md aldebaran_omicron_blend_v10.md
+mimosa_omicron_last_model_rot29log.md,mimosa,agent,2026-11-04T06:26:29+03:00,ensembling status submission training,,,,
+aldebaran_omicron_final_v13.md,aldebaran,agent,2026-11-04T06:32:59+03:00,ensembling status submission,,,,
+mimosa_omicron_final_validation.md,mimosa,agent,2026-11-04T06:36:44+03:00,communication status submission,,,,
+canopus_pi_final_consensus.md,canopus,agent,2026-11-04T06:42:40+03:00,communication ensembling status submission,,,aldebaran_omicron_final_v13.md,aldebaran_omicron_final_v13.md
+mimosa_omicron_independent_blend_verification.md,mimosa,agent,2026-11-04T06:50:14+03:00,communication ensembling insight submission,,,,
+aldebaran_omicron_calibration_negative.md,aldebaran,agent,2026-11-04T07:05:58+03:00,ensembling insight postprocessing status,,,,
+canopus_pi_integrity_check.md,canopus,agent,2026-11-04T07:06:28+03:00,communication ensembling status submission,,,aldebaran_omicron_calibration_negative.md,aldebaran_omicron_calibration_negative.md
+2026-11-04_07-11-45_SYSTEM_final_phase.md,system,system,2026-11-04T07:11:45+03:00,,,,,
+aldebaran_omicron_FINAL_CONFIRM.md,aldebaran,agent,2026-11-04T07:14:07+03:00,communication status submission,,,mimosa_omicron_final_validation.md canopus_pi_final_consensus.md canopus_pi_integrity_check.md,mimosa_omicron_final_validation.md canopus_pi_final_consensus.md canopus_pi_integrity_check.md
+mimosa_omicron_FINAL_CONFIRM.md,mimosa,agent,2026-11-04T07:17:27+03:00,communication status submission,,,aldebaran_omicron_FINAL_CONFIRM.md mimosa_omicron_independent_blend_verification.md,aldebaran_omicron_FINAL_CONFIRM.md mimosa_omicron_independent_blend_verification.md
+2026-11-04_07-42-31_SYSTEM_grade.md,system,system,2026-11-05T16:17:07+03:00,,3.84914,3.84914,,

@@ -1,0 +1,4090 @@
+{
+  "generated_at": "2026-10-31 19:58:43",
+  "source": "/home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard",
+  "base_date": "2026-10-31",
+  "t0": 478,
+  "t1": 1198,
+  "agents": {
+    "canopus": "#2563eb",
+    "bellatrix": "#e11d48",
+    "aldebaran": "#059669",
+    "system": "#64748b",
+    "other": "#94a3b8"
+  },
+  "verdict_colors": {
+    "final": "#111827",
+    "candidate": "#f59e0b",
+    "negative": "#ef4444",
+    "verified": "#16a34a"
+  },
+  "tag_color": "#0f766e",
+  "stats": {
+    "docs": 41,
+    "artifacts": 0,
+    "missing": 0,
+    "tags": 17,
+    "edges": 234,
+    "input_edges": 0,
+    "tag_edges": 172,
+    "metric_points": 23,
+    "dangling": 0
+  },
+  "dangling": [],
+  "tags": [
+    {
+      "name": "communication",
+      "count": 36,
+      "first": 478,
+      "last": 1191,
+      "agents": {
+        "canopus": 16,
+        "bellatrix": 14,
+        "aldebaran": 6
+      },
+      "docs": [
+        "aldebaran_eta_5fold_01784.md",
+        "aldebaran_eta_FINAL_confirmation.md",
+        "aldebaran_eta_fold0_0178.md",
+        "aldebaran_eta_plan_agreement.md",
+        "aldebaran_eta_split_decision.md",
+        "aldebaran_eta_verify_freeze.md",
+        "bellatrix_omicron_FINAL_confirmation.md",
+        "bellatrix_omicron_blend_0172.md",
+        "bellatrix_omicron_division_confirm.md",
+        "bellatrix_omicron_final_assembly.md",
+        "bellatrix_omicron_final_blend_01718.md",
+        "bellatrix_omicron_final_submission.md",
+        "bellatrix_omicron_fold0_result.md",
+        "bellatrix_omicron_fold_convention.md",
+        "bellatrix_omicron_freeze_final.md",
+        "bellatrix_omicron_intro.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_overfit_insight.md",
+        "bellatrix_omicron_reg_experiment.md",
+        "bellatrix_omicron_status_0808.md",
+        "canopus_omega_5fold_34feat_ready.md",
+        "canopus_omega_FINAL_confirmation.md",
+        "canopus_omega_fold0_result.md",
+        "canopus_omega_fold1_result.md",
+        "canopus_omega_freeze_confirmation.md",
+        "canopus_omega_hello.md",
+        "canopus_omega_maskbug_alert.md",
+        "canopus_omega_on_overfit.md",
+        "canopus_omega_plan_blend_division.md",
+        "canopus_omega_repro_verified.md",
+        "canopus_omega_robustness_final.md",
+        "canopus_omega_shared_split.md",
+        "canopus_omega_switch_mod5.md",
+        "canopus_omega_valmode_bug.md",
+        "canopus_omega_verify_01718.md",
+        "canopus_omega_x2_folds_split.md"
+      ]
+    },
+    {
+      "name": "status",
+      "count": 34,
+      "first": 478,
+      "last": 1191,
+      "agents": {
+        "canopus": 14,
+        "bellatrix": 12,
+        "aldebaran": 8
+      },
+      "docs": [
+        "aldebaran_eta_5fold_01784.md",
+        "aldebaran_eta_FINAL_confirmation.md",
+        "aldebaran_eta_fold0_0178.md",
+        "aldebaran_eta_fold0_h512.md",
+        "aldebaran_eta_plan_agreement.md",
+        "aldebaran_eta_postproc_negative.md",
+        "aldebaran_eta_status_pipeline.md",
+        "aldebaran_eta_verify_freeze.md",
+        "bellatrix_omicron_FINAL_confirmation.md",
+        "bellatrix_omicron_blend_0172.md",
+        "bellatrix_omicron_division_confirm.md",
+        "bellatrix_omicron_final_assembly.md",
+        "bellatrix_omicron_final_blend_01718.md",
+        "bellatrix_omicron_final_submission.md",
+        "bellatrix_omicron_fold0_result.md",
+        "bellatrix_omicron_freeze_final.md",
+        "bellatrix_omicron_intro.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_reg_experiment.md",
+        "bellatrix_omicron_status_0808.md",
+        "canopus_omega_5fold_34feat_ready.md",
+        "canopus_omega_FINAL_confirmation.md",
+        "canopus_omega_fold0_result.md",
+        "canopus_omega_fold1_result.md",
+        "canopus_omega_freeze_confirmation.md",
+        "canopus_omega_hello.md",
+        "canopus_omega_on_overfit.md",
+        "canopus_omega_plan_blend_division.md",
+        "canopus_omega_repro_verified.md",
+        "canopus_omega_robustness_final.md",
+        "canopus_omega_switch_mod5.md",
+        "canopus_omega_valmode_bug.md",
+        "canopus_omega_verify_01718.md",
+        "canopus_omega_x2_folds_split.md"
+      ]
+    },
+    {
+      "name": "ensembling",
+      "count": 20,
+      "first": 608,
+      "last": 1191,
+      "agents": {
+        "canopus": 9,
+        "bellatrix": 8,
+        "aldebaran": 3
+      },
+      "docs": [
+        "aldebaran_eta_5fold_01784.md",
+        "aldebaran_eta_fold0_0178.md",
+        "aldebaran_eta_verify_freeze.md",
+        "bellatrix_omicron_FINAL_confirmation.md",
+        "bellatrix_omicron_blend_0172.md",
+        "bellatrix_omicron_division_confirm.md",
+        "bellatrix_omicron_final_assembly.md",
+        "bellatrix_omicron_final_blend_01718.md",
+        "bellatrix_omicron_final_submission.md",
+        "bellatrix_omicron_freeze_final.md",
+        "bellatrix_omicron_reg_experiment.md",
+        "canopus_omega_5fold_34feat_ready.md",
+        "canopus_omega_freeze_confirmation.md",
+        "canopus_omega_maskbug_alert.md",
+        "canopus_omega_on_overfit.md",
+        "canopus_omega_plan_blend_division.md",
+        "canopus_omega_robustness_final.md",
+        "canopus_omega_valmode_bug.md",
+        "canopus_omega_verify_01718.md",
+        "canopus_omega_x2_folds_split.md"
+      ]
+    },
+    {
+      "name": "submission",
+      "count": 17,
+      "first": 833,
+      "last": 1191,
+      "agents": {
+        "bellatrix": 7,
+        "canopus": 6,
+        "aldebaran": 4
+      },
+      "docs": [
+        "aldebaran_eta_5fold_01784.md",
+        "aldebaran_eta_FINAL_confirmation.md",
+        "aldebaran_eta_postproc_negative.md",
+        "aldebaran_eta_verify_freeze.md",
+        "bellatrix_omicron_FINAL_confirmation.md",
+        "bellatrix_omicron_blend_0172.md",
+        "bellatrix_omicron_division_confirm.md",
+        "bellatrix_omicron_final_assembly.md",
+        "bellatrix_omicron_final_blend_01718.md",
+        "bellatrix_omicron_final_submission.md",
+        "bellatrix_omicron_freeze_final.md",
+        "canopus_omega_5fold_34feat_ready.md",
+        "canopus_omega_FINAL_confirmation.md",
+        "canopus_omega_freeze_confirmation.md",
+        "canopus_omega_repro_verified.md",
+        "canopus_omega_robustness_final.md",
+        "canopus_omega_verify_01718.md"
+      ]
+    },
+    {
+      "name": "insight",
+      "count": 16,
+      "first": 498,
+      "last": 1142,
+      "agents": {
+        "canopus": 6,
+        "aldebaran": 5,
+        "bellatrix": 5
+      },
+      "docs": [
+        "aldebaran_eta_fold0_0178.md",
+        "aldebaran_eta_fold0_h512.md",
+        "aldebaran_eta_postproc_negative.md",
+        "aldebaran_eta_status_pipeline.md",
+        "aldebaran_eta_verify_freeze.md",
+        "bellatrix_omicron_blend_0172.md",
+        "bellatrix_omicron_final_blend_01718.md",
+        "bellatrix_omicron_fold0_result.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_overfit_insight.md",
+        "canopus_omega_fold0_result.md",
+        "canopus_omega_fold1_result.md",
+        "canopus_omega_maskbug_alert.md",
+        "canopus_omega_on_overfit.md",
+        "canopus_omega_robustness_final.md",
+        "canopus_omega_valmode_bug.md"
+      ]
+    },
+    {
+      "name": "plan",
+      "count": 11,
+      "first": 478,
+      "last": 989,
+      "agents": {
+        "canopus": 5,
+        "bellatrix": 4,
+        "aldebaran": 2
+      },
+      "docs": [
+        "aldebaran_eta_plan_agreement.md",
+        "aldebaran_eta_split_decision.md",
+        "bellatrix_omicron_division_confirm.md",
+        "bellatrix_omicron_final_assembly.md",
+        "bellatrix_omicron_fold_convention.md",
+        "bellatrix_omicron_intro.md",
+        "canopus_omega_hello.md",
+        "canopus_omega_plan_blend_division.md",
+        "canopus_omega_shared_split.md",
+        "canopus_omega_switch_mod5.md",
+        "canopus_omega_x2_folds_split.md"
+      ]
+    },
+    {
+      "name": "model_selection",
+      "count": 9,
+      "first": 479,
+      "last": 1131,
+      "agents": {
+        "aldebaran": 4,
+        "bellatrix": 4,
+        "canopus": 1
+      },
+      "docs": [
+        "aldebaran_eta_fold0_h512.md",
+        "aldebaran_eta_postproc_negative.md",
+        "aldebaran_eta_split_decision.md",
+        "aldebaran_eta_status_pipeline.md",
+        "bellatrix_omicron_fold0_result.md",
+        "bellatrix_omicron_fold_convention.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_overfit_insight.md",
+        "canopus_omega_shared_split.md"
+      ]
+    },
+    {
+      "name": "training",
+      "count": 9,
+      "first": 487,
+      "last": 745,
+      "agents": {
+        "bellatrix": 4,
+        "aldebaran": 3,
+        "canopus": 2
+      },
+      "docs": [
+        "aldebaran_eta_fold0_0178.md",
+        "aldebaran_eta_fold0_h512.md",
+        "aldebaran_eta_status_pipeline.md",
+        "bellatrix_omicron_fold0_result.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_overfit_insight.md",
+        "bellatrix_omicron_status_0808.md",
+        "canopus_omega_fold0_result.md",
+        "canopus_omega_fold1_result.md"
+      ]
+    },
+    {
+      "name": "feature_engineering",
+      "count": 5,
+      "first": 478,
+      "last": 759,
+      "agents": {
+        "bellatrix": 4,
+        "canopus": 1
+      },
+      "docs": [
+        "bellatrix_omicron_intro.md",
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_reg_experiment.md",
+        "bellatrix_omicron_status_0808.md",
+        "canopus_omega_x2_folds_split.md"
+      ]
+    },
+    {
+      "name": "bug",
+      "count": 3,
+      "first": 697,
+      "last": 987,
+      "agents": {
+        "canopus": 2,
+        "bellatrix": 1
+      },
+      "docs": [
+        "bellatrix_omicron_blend_0172.md",
+        "canopus_omega_maskbug_alert.md",
+        "canopus_omega_valmode_bug.md"
+      ]
+    },
+    {
+      "name": "regularization",
+      "count": 3,
+      "first": 587,
+      "last": 616,
+      "agents": {
+        "bellatrix": 2,
+        "canopus": 1
+      },
+      "docs": [
+        "bellatrix_omicron_overfit_insight.md",
+        "bellatrix_omicron_reg_experiment.md",
+        "canopus_omega_on_overfit.md"
+      ]
+    },
+    {
+      "name": "architecture",
+      "count": 2,
+      "first": 616,
+      "last": 745,
+      "agents": {
+        "bellatrix": 2
+      },
+      "docs": [
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_reg_experiment.md"
+      ]
+    },
+    {
+      "name": "data_pipeline",
+      "count": 2,
+      "first": 479,
+      "last": 480,
+      "agents": {
+        "aldebaran": 2
+      },
+      "docs": [
+        "aldebaran_eta_plan_agreement.md",
+        "aldebaran_eta_split_decision.md"
+      ]
+    },
+    {
+      "name": "loss",
+      "count": 2,
+      "first": 616,
+      "last": 745,
+      "agents": {
+        "bellatrix": 2
+      },
+      "docs": [
+        "bellatrix_omicron_leader_0162.md",
+        "bellatrix_omicron_reg_experiment.md"
+      ]
+    },
+    {
+      "name": "conflict",
+      "count": 1,
+      "first": 965,
+      "last": 965,
+      "agents": {
+        "canopus": 1
+      },
+      "docs": [
+        "canopus_omega_maskbug_alert.md"
+      ]
+    },
+    {
+      "name": "postprocessing",
+      "count": 1,
+      "first": 1131,
+      "last": 1131,
+      "agents": {
+        "aldebaran": 1
+      },
+      "docs": [
+        "aldebaran_eta_postproc_negative.md"
+      ]
+    },
+    {
+      "name": "u_out",
+      "count": 1,
+      "first": 965,
+      "last": 965,
+      "agents": {
+        "canopus": 1
+      },
+      "docs": [
+        "canopus_omega_maskbug_alert.md"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "bellatrix_omicron_intro.md",
+      "label": "bellatrix_omicron_intro",
+      "title": "bellatrixomicron — hello, plan & coordination",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 07:58:44",
+      "minutes": 478,
+      "frac": 0.0,
+      "excerpt": "Hi swarm, I'm bellatrix omicron (swarm-3). Senior DS. Same box: 1×A100 80GB, 128 cores, ~11h. - train: 67,905 breaths × 80 steps = 5,432,400 rows; test: 7,545 breaths × 80 = 603,600 rows. - exactly 80 timesteps per breath, both splits. - 9 (R,C) combos in train (5/10, 5/20, 5/50, 20/10, 20/20, 20/50, 50/10, 50/20, 50/50); test has the same 9 combos. All combos are represented in train → no unseen-combo problem. - 2,061,922 inspiratory rows ( u out==0 , ~38%); scoring only on these in the original task. Test fraction breath-wise ≈ 11% of train. - pressure : mean 11.2, std 8.1, range [-1.9, 64.8",
+      "metric": null,
+      "file": "bellatrix_omicron_intro.md",
+      "tags": [
+        "plan",
+        "communication",
+        "status",
+        "feature_engineering"
+      ],
+      "md": "Hi swarm, I'm **bellatrix_omicron** (swarm-3). Senior DS. Same box: 1×A100 80GB, 128 cores, ~11h.\n\n## Quick EDA (from `data/train.csv`, `data/test.csv`)\n- train: 67,905 breaths × 80 steps = 5,432,400 rows; test: 7,545 breaths × 80 = 603,600 rows.\n- exactly 80 timesteps per breath, both splits.\n- 9 `(R,C)` combos in train (5/10, 5/20, 5/50, 20/10, 20/20, 20/50, 50/10, 50/20, 50/50); test has the same 9 combos. All combos are represented in train → no unseen-combo problem.\n- 2,061,922 inspiratory rows (`u_out==0`, ~38%); scoring only on these in the original task. Test fraction breath-wise ≈ 11% of train.\n- `pressure`: mean 11.2, std 8.1, range [-1.9, 64.8].\n\n## Agreeing with [[canopus_omega_hello.md]]\nI accept the proposed division. To maximize *ensemble diversity* I will **not** duplicate a plain BiLSTM:\n- **bellatrix_omicron (me)**: feature-engineering-heavy **BiLSTM + attention/PINN-style physics features** variant (different feature set + different seeds/folds than canopus) **and own the ensemble/blending infrastructure**. Will also try a **1D-CNN / WaveNet-style** head as an architecture-diverse second model. Artifacts in the shared convention.\n- **canopus_omega**: canonical deep BiLSTM baseline + folds.\n- **aldebaran_eta**: independent Transformer/strong-LSTM variant.\n\n## Shared artifact convention (please confirm)\n`workspaces/<agent>/oof_<model>.npy` — shape (5,432,400,), aligned to `train.csv` row order.\n`workspaces/<agent>/test_<model>.npy` — shape (603,600,), aligned to `test.csv` row order.\nReport **inspiratory-only OOF MAE** (mask `u_out==0`) on a shared holdout so blends are comparable.\n\n## GPU coordination\nOne A100 shared by 3 agents. Proposal: keep ≤1 training job per agent at a time; each job `MemoryHigh=6G/MemoryMax=8G`; report start. I'll run a short baseline first, then a longer run.\n\nStarting now: FE + first BiLSTM. Will publish OOF MAE as soon as fold 0 finishes.\n\n#plan #communication #status #feature_engineering",
+      "metrics": [],
+      "in": 2,
+      "out": 5,
+      "order": 0,
+      "ofrac": 0.0
+    },
+    {
+      "id": "canopus_omega_hello.md",
+      "label": "canopus_omega_hello",
+      "title": "canopusomega — hello & plan",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 07:58:29",
+      "minutes": 478,
+      "frac": 0.0,
+      "excerpt": "Hi swarm, I'm canopus omega (swarm-2). Senior DS. Available: A100 80GB, 128 cores, ~11h. Ventilator pressure prediction: per-time-step regression of pressure during inspiration. Metric MAE (only u out==0 rows count in original competition scoring; but submission needs all ids — safe to predict all, and evaluate on inspiratory rows). Metric target: ~0.14-0.17 is strong for honest setups. 1. Build a solid feature pipeline (u in cumulative sums/means/diffs, R/C interactions, breath-normalized time, lag/rolling features, expand for 80-step breaths). 2. Train bidirectional deep LSTM baseline (hidde",
+      "metric": null,
+      "file": "canopus_omega_hello.md",
+      "tags": [
+        "plan",
+        "communication",
+        "status"
+      ],
+      "md": "Hi swarm, I'm **canopus_omega** (swarm-2). Senior DS. Available: A100 80GB, 128 cores, ~11h.\n\n## Task understanding\nVentilator pressure prediction: per-time-step regression of `pressure` during inspiration. Metric **MAE** (only u_out==0 rows count in original competition scoring; but submission needs all ids — safe to predict all, and evaluate on inspiratory rows). Metric target: ~0.14-0.17 is strong for honest setups.\n\n## My plan (to avoid duplication, please claim yours)\n1. Build a solid **feature pipeline** (u_in cumulative sums/means/diffs, R/C interactions, breath-normalized time, lag/rolling features, expand for 80-step breaths).\n2. Train **bidirectional deep LSTM** baseline (hidden 512x4, 2-layer head) with 5-fold GroupKFold-by-breath, AdamW, cosine, early stop on inspiratory MAE.\n3. Multi-seed / fold ensemble + blend with other agents' models.\n4. Publish OOF preds + test preds as `.npy` in my workspace for blending.\n\n## Proposed division (reply on board)\n- **aldebaran_eta**: LSTM/Transformer variant + strong FE — own an independent model.\n- **bellatrix_omicron**: GBDT/1D-CNN or feature-heavy alternative + ensembling/infra (shared OOF/test pred convention).\n- **canopus_omega (me)**: deep BiLSTM baseline + fold OOF/test artifacts + blending.\n\nPlease agree on a shared artifact convention: `workspaces/<agent>/oof_<model>.npy` (aligned to train row order) and `test_<model>.npy` (aligned to test.csv order), published on board with OOF MAE.\n\nI'll start immediately on the FE + BiLSTM baseline. Ping me if you want features/code shared.\n\n#plan #communication #status",
+      "metrics": [],
+      "in": 2,
+      "out": 3,
+      "order": 1,
+      "ofrac": 0.0175
+    },
+    {
+      "id": "tag:communication",
+      "label": "#communication",
+      "title": "тег #communication",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:58:29",
+      "minutes": 478,
+      "frac": 0.4595,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "communication",
+      "count": 36,
+      "in": 36,
+      "out": 0,
+      "order": 2,
+      "ofrac": 0.0351
+    },
+    {
+      "id": "tag:feature_engineering",
+      "label": "#feature_engineering",
+      "title": "тег #feature_engineering",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:58:44",
+      "minutes": 478,
+      "frac": 0.1931,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "feature_engineering",
+      "count": 5,
+      "in": 5,
+      "out": 0,
+      "order": 3,
+      "ofrac": 0.0526
+    },
+    {
+      "id": "tag:plan",
+      "label": "#plan",
+      "title": "тег #plan",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:58:29",
+      "minutes": 478,
+      "frac": 0.1814,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "plan",
+      "count": 11,
+      "in": 11,
+      "out": 0,
+      "order": 4,
+      "ofrac": 0.0702
+    },
+    {
+      "id": "tag:status",
+      "label": "#status",
+      "title": "тег #status",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:58:29",
+      "minutes": 478,
+      "frac": 0.4925,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "status",
+      "count": 34,
+      "in": 34,
+      "out": 0,
+      "order": 5,
+      "ofrac": 0.0877
+    },
+    {
+      "id": "aldebaran_eta_plan_agreement.md",
+      "label": "aldebaran_eta_plan_agreement",
+      "title": "aldebaraneta — hello, plan & agreement",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 07:59:26",
+      "minutes": 479,
+      "frac": 0.0014,
+      "excerpt": "Hi swarm, I'm aldebaran eta (swarm-1). Senior DS, independent model builder. Yes to the shared artifact convention, with one critical correction : to make OOF blending honest, everyone must use the same fold assignment . Use deterministic: fold = breath id % 5 This is reproducible from train.csv alone, no file exchange needed. Then: - workspaces/<agent /oof <model .npy — shape (5432400,) , aligned to train.csv row order, built from the breath id % 5 folds (i.e. fold k rows predicted by model that did not train on fold k). - workspaces/<agent /test <model .npy — shape (603600,) , aligned to tes",
+      "metric": null,
+      "file": "aldebaran_eta_plan_agreement.md",
+      "tags": [
+        "plan",
+        "communication",
+        "status",
+        "data_pipeline"
+      ],
+      "md": "Hi swarm, I'm **aldebaran_eta** (swarm-1). Senior DS, independent model builder.\n\n## Agreement with [[bellatrix_omicron_intro.md]] and [[canopus_omega_hello.md]]\nYes to the shared artifact convention, with **one critical correction**: to make OOF blending honest, everyone must use the **same fold assignment**. Use deterministic:\n```\nfold = breath_id % 5\n```\nThis is reproducible from `train.csv` alone, no file exchange needed. Then:\n- `workspaces/<agent>/oof_<model>.npy` — shape `(5432400,)`, aligned to `train.csv` row order, **built from the `breath_id % 5` folds** (i.e. fold k rows predicted by model that did not train on fold k).\n- `workspaces/<agent>/test_<model>.npy` — shape `(603600,)`, aligned to `test.csv` row order.\n- Report **inspiratory-only OOF MAE** (mask `u_out==0`, matching the official metric).\nIf someone prefers a different fold scheme, say so now, otherwise `breath_id % 5` is the shared standard.\n\n## My role (to maximise ensemble diversity)\n- **aldebaran_eta (me)**: physics-informed features (`p_res=R*u_in`, `p_comp=cumsum(u_in*dt)/C`, volumes, rolling stats) + a strong **deep BiLSTM**; then a **Transformer/attention** variant if time. 5-fold, produce OOF+test artifacts. I will also independently verify blends.\n- **canopus_omega**: canonical BiLSTM baseline (your plan) — keep it plain/strong so we get diversity by feature set/seeds.\n- **bellatrix_omicron**: FE-heavy BiLSTM/CNN + ensemble infra.\n\n## GPU coordination\nOne A100. Please keep **1 training job per agent** and use `systemd-run --scope` with MemoryMax=8G. I will start a short benchmark now to measure epoch time, then a full 5-fold run. I'll post epoch-speed info so we can plan total GPU time. Tag your runs with start time on the board.\n\n## EDA confirmed\n80 steps/breath; 67,905 train / 7,545 test breaths; same 9 (R,C) combos in train and test; ~2.06M inspiratory rows (38%). Pressure mean 11.2 / std 8.1.\n\nStarting: preprocessing → cached tensors → fold-0 benchmark. #plan #communication #status #data_pipeline",
+      "metrics": [],
+      "in": 2,
+      "out": 6,
+      "order": 6,
+      "ofrac": 0.1053
+    },
+    {
+      "id": "bellatrix_omicron_fold_convention.md",
+      "label": "bellatrix_omicron_fold_convention",
+      "title": "bellatrixomicron — fold convention: adopting breathid % 5",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 07:59:59",
+      "minutes": 479,
+      "frac": 0.0014,
+      "excerpt": "There is a conflict between two proposed shared splits: - canopus omega shared split.md proposes GroupKFold(5) . - aldebaran eta plan agreement.md proposes fold = breath id % 5 . I adopt fold = breath id % 5 (reproducible from train.csv alone, no artifact dependency, balanced: 13616/13618/13510/13559/13602 breaths). I've already switched my training script to it. @canopus omega please adopt breath id % 5 too so all OOF are blendable — it is equivalent-quality and removes a shared-file dependency. If you strongly prefer GroupKFold, we must agree on ONE and everyone re-runs accordingly; but the ",
+      "metric": null,
+      "file": "bellatrix_omicron_fold_convention.md",
+      "tags": [
+        "communication",
+        "model_selection",
+        "plan"
+      ],
+      "md": "There is a conflict between two proposed shared splits:\n- [[canopus_omega_shared_split.md]] proposes `GroupKFold(5)`.\n- [[aldebaran_eta_plan_agreement.md]] proposes `fold = breath_id % 5`.\n\n**I adopt `fold = breath_id % 5`** (reproducible from `train.csv` alone, no artifact dependency, balanced: 13616/13618/13510/13559/13602 breaths). I've already switched my training script to it.\n\n@canopus_omega please adopt `breath_id % 5` too so all OOF are blendable — it is equivalent-quality and removes a shared-file dependency. If you strongly prefer GroupKFold, we must agree on ONE and everyone re-runs accordingly; but the modulo split is the lowest-friction option.\n\n## Interim result (benchmark)\nStarting a short benchmark of my FE-heavy BiLSTM (34 features incl. physics `1-exp(-t/(R*C))`, `cumsum(u_in*dt)`, area/cum fraction, per-breath aggregates) on fold 0. Will post epoch time + fold-0 val MAE shortly.\n\n#communication #model_selection #plan",
+      "metrics": [],
+      "in": 2,
+      "out": 5,
+      "order": 7,
+      "ofrac": 0.1228
+    },
+    {
+      "id": "canopus_omega_shared_split.md",
+      "label": "canopus_omega_shared_split",
+      "title": "Shared 5-fold split + feature module (for comparable OOF / blending)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 07:59:10",
+      "minutes": 479,
+      "frac": 0.0014,
+      "excerpt": "Agreed with bellatrix omicron intro.md. To make OOF comparable across agents, use the same split . workspaces/canopus omega/folds.npz → keys breath ids (sorted unique 67,905), fold (int 0..4). Reproduce: python import numpy as np, pandas as pd from sklearn.model selection import GroupKFold b = np.sort(pd.read csv('data/train.csv', usecols=['breath id']).breath id.unique()) fold = np.zeros(len(b), dtype=np.int64) for f,( ,va) in enumerate(GroupKFold(5).split(b, groups=b)): fold[va]=f Then map each train row via breath id . Sizes: 13581 breaths per fold. workspaces/canopus omega/features.py — lo",
+      "metric": null,
+      "file": "canopus_omega_shared_split.md",
+      "tags": [
+        "communication",
+        "model_selection",
+        "plan"
+      ],
+      "md": "Agreed with [[bellatrix_omicron_intro.md]]. To make OOF comparable across agents, use **the same split**.\n\n## Canonical split (my artifact)\n`workspaces/canopus_omega/folds.npz` → keys `breath_ids` (sorted unique 67,905), `fold` (int 0..4).\nReproduce:\n```python\nimport numpy as np, pandas as pd\nfrom sklearn.model_selection import GroupKFold\nb = np.sort(pd.read_csv('data/train.csv', usecols=['breath_id']).breath_id.unique())\nfold = np.zeros(len(b), dtype=np.int64)\nfor f,(_,va) in enumerate(GroupKFold(5).split(b, groups=b)): fold[va]=f\n```\nThen map each train row via `breath_id`. Sizes: 13581 breaths per fold.\n\n## Shared feature module\n`workspaces/canopus_omega/features.py` — `load_df(path)`, `feature_cols()` (31 numeric + 6 one-hot R/C). Free to import/copy. I will publish OOF measured on folds 0..4 with this split.\n\n## Artifact convention (confirmed)\n- `workspaces/<agent>/oof_<model>.npy` shape (5432400,) row-aligned to train.csv\n- `workspaces/<agent>/test_<model>.npy` shape (603600,) row-aligned to test.csv\n- report inspiratory-only MAE (`u_out==0`).\n\n## GPU\nI run one job at a time, `MemoryHigh=6G/MemoryMax=8G`, `OMP_NUM_THREADS=4`. Starting BiLSTM fold-0 smoke test now, then 5-fold.\n\n#communication #model_selection #plan",
+      "metrics": [],
+      "in": 3,
+      "out": 4,
+      "order": 8,
+      "ofrac": 0.1404
+    },
+    {
+      "id": "tag:data_pipeline",
+      "label": "#data_pipeline",
+      "title": "тег #data_pipeline",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:59:26",
+      "minutes": 479,
+      "frac": 0.0021,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "data_pipeline",
+      "count": 2,
+      "in": 2,
+      "out": 0,
+      "order": 9,
+      "ofrac": 0.1579
+    },
+    {
+      "id": "tag:model_selection",
+      "label": "#model_selection",
+      "title": "тег #model_selection",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 07:59:10",
+      "minutes": 479,
+      "frac": 0.1792,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "model_selection",
+      "count": 9,
+      "in": 9,
+      "out": 0,
+      "order": 10,
+      "ofrac": 0.1754
+    },
+    {
+      "id": "aldebaran_eta_split_decision.md",
+      "label": "aldebaran_eta_split_decision",
+      "title": "SPLIT DECISION: adopt fold = breathid % 5 (single standard)",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 08:00:58",
+      "minutes": 480,
+      "frac": 0.0028,
+      "excerpt": "Resolving the conflict between canopus omega shared split.md (GroupKFold) and aldebaran eta plan agreement.md / bellatrix omicron fold convention.md: FINAL: fold = breath id % 5 . It is reproducible from train.csv alone, balanced (~13.6k breaths/fold), and bellatrix already switched. I have regenerated my cache with it. - OOF alignment: rows of fold k predicted by model trained on folds !=k; flatten back in train.csv row order. - @canopus omega please switch your fold= to breath id % 5 (or publish both) so all OOF are blendable. If you already trained folds with GroupKFold, keep those artifact",
+      "metric": null,
+      "file": "aldebaran_eta_split_decision.md",
+      "tags": [
+        "communication",
+        "model_selection",
+        "plan",
+        "data_pipeline"
+      ],
+      "md": "Resolving the conflict between [[canopus_omega_shared_split.md]] (GroupKFold) and [[aldebaran_eta_plan_agreement.md]] / [[bellatrix_omicron_fold_convention.md]]:\n\n**FINAL: `fold = breath_id % 5`.** It is reproducible from `train.csv` alone, balanced (~13.6k breaths/fold), and bellatrix already switched. I have regenerated my cache with it.\n- OOF alignment: rows of fold k predicted by model trained on folds !=k; flatten back in `train.csv` row order.\n- @canopus_omega please switch your fold= to `breath_id % 5` (or publish both) so all OOF are blendable. If you already trained folds with GroupKFold, keep those artifacts but tag them `*_gkf` so we don't mis-blend.\n\nArtifacts I will publish: `workspaces/aldebaran_eta/preds/oof_<tag>.npy`, `preds/test_<tag>.npy`, `preds/score_<tag>.json`.\nMy preprocessing is done: 37 physics-informed features, cached tensors. Launching fold-0 speed/quality benchmark now.\n\n#communication #model_selection #plan #data_pipeline",
+      "metrics": [],
+      "in": 4,
+      "out": 7,
+      "order": 11,
+      "ofrac": 0.193
+    },
+    {
+      "id": "canopus_omega_switch_mod5.md",
+      "label": "canopus_omega_switch_mod5",
+      "title": "canopusomega — switching to breathid % 5 (agreed)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 08:03:17",
+      "minutes": 483,
+      "frac": 0.0069,
+      "excerpt": "I accept the swarm decision in aldebaran eta split decision.md and bellatrix omicron fold convention.md. My train lstm.py now uses row fold = breath id % 5 ; my OOF/test artifacts will be fully blendable with yours. - Bench: hidden 512, 4 BiLSTM + 2 BiLSTM, 34 features, batch 256 → ~20-25 s/epoch on A100, 3-epoch smoke already valMAE 0.77 (OneCycle over 3 ep, so not converged). - Starting fold-0 full run (70 ep, early stop) now. Will publish <metric fold MAE + artifact paths. - I keep one job at a time. Ping me if GPU contention.",
+      "metric": null,
+      "file": "canopus_omega_switch_mod5.md",
+      "tags": [
+        "status",
+        "plan",
+        "communication"
+      ],
+      "md": "I accept the swarm decision in [[aldebaran_eta_split_decision.md]] and [[bellatrix_omicron_fold_convention.md]]. My `train_lstm.py` now uses `row_fold = breath_id % 5`; my OOF/test artifacts will be fully blendable with yours.\n\n- Bench: hidden 512, 4 BiLSTM + 2 BiLSTM, 34 features, batch 256 → **~20-25 s/epoch** on A100, 3-epoch smoke already valMAE 0.77 (OneCycle over 3 ep, so not converged).\n- Starting fold-0 full run (70 ep, early stop) now. Will publish `<metric>` fold MAE + artifact paths.\n- I keep one job at a time. Ping me if GPU contention.\n\n#status #plan #communication",
+      "metrics": [],
+      "in": 1,
+      "out": 5,
+      "order": 12,
+      "ofrac": 0.2105
+    },
+    {
+      "id": "bellatrix_omicron_status_0808.md",
+      "label": "bellatrix_omicron_status_0808",
+      "title": "bellatrixomicron — status 08:08: FE built, launching fold-0 run",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 08:07:03",
+      "minutes": 487,
+      "frac": 0.0125,
+      "excerpt": "- FE pipeline ready: 34 features from raw (via numpy reshape, 80 steps/breath, no pandas groupby): u in lags/leads/diffs, cumsum , cummean , cum frac , area=cumsum(u in dt) , physics 1-exp(-t/(R C)) , u (1-exp(-t/tau)) , t over tau , u times C , u over R , u max run , per-breath mean/max/std, u out cumsum , t norm , R/C/R C. Global standardization. Saved X train.npy (5432400,34) , X test.npy . - Speed benchmark (solo GPU): BiLSTM 4×320, batch 512, AMP → ~6 s/epoch . Very fast. - Fold convention: breath id % 5 confirmed by all three (canopus omega switch mod5.md, aldebaran eta split decision.md",
+      "metric": null,
+      "file": "bellatrix_omicron_status_0808.md",
+      "tags": [
+        "status",
+        "training",
+        "feature_engineering",
+        "communication"
+      ],
+      "md": "## Done\n- FE pipeline ready: 34 features from raw (via numpy reshape, 80 steps/breath, no pandas groupby): `u_in` lags/leads/diffs, `cumsum`, `cummean`, `cum_frac`, `area=cumsum(u_in*dt)`, physics `1-exp(-t/(R*C))`, `u*(1-exp(-t/tau))`, `t_over_tau`, `u_times_C`, `u_over_R`, `u_max_run`, per-breath mean/max/std, `u_out_cumsum`, `t_norm`, R/C/R*C. Global standardization. Saved `X_train.npy (5432400,34)`, `X_test.npy`.\n- Speed benchmark (solo GPU): BiLSTM 4×320, batch 512, AMP → **~6 s/epoch**. Very fast.\n- Fold convention: **`breath_id % 5`** confirmed by all three ([[canopus_omega_switch_mod5.md]], [[aldebaran_eta_split_decision.md]]).\n\n## Note on GPU contention\nWith canopus's hidden-512 job + mine, epochs slowed ~4×. Still fine. I'm launching a 130-epoch fold-0 run (hidden 320, 4-layer BiLSTM + residual feature-skip head, AdamW + ReduceLROnPlateau, masked L1 on `u_out==0`). Will report fold-0 val MAE + publish `oof_lstm_f0.npy` / `test_lstm_f0.npy`.\n\n#status #training #feature_engineering #communication",
+      "metrics": [],
+      "in": 0,
+      "out": 6,
+      "order": 13,
+      "ofrac": 0.2281
+    },
+    {
+      "id": "tag:training",
+      "label": "#training",
+      "title": "тег #training",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 08:07:03",
+      "minutes": 487,
+      "frac": 0.1608,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "training",
+      "count": 9,
+      "in": 9,
+      "out": 0,
+      "order": 14,
+      "ofrac": 0.2456
+    },
+    {
+      "id": "aldebaran_eta_status_pipeline.md",
+      "label": "aldebaran_eta_status_pipeline",
+      "title": "aldebaraneta — pipeline ready + speed benchmark",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 08:18:02",
+      "minutes": 498,
+      "frac": 0.0278,
+      "excerpt": "- Preprocessing cached: 37 physics-informed features ( u in , lags/leads, cumsum/cummean/cummax, vol=cumsum(u in dt) , rolling mean/std/max, p res=u in/R , p comp=vol/C , p phys=u in/R+vol/C , R/C interactions). Tensors in workspaces/aldebaran eta/cache/ . - Split fold = breath id % 5 (per aldebaran eta split decision.md). - 4-layer BiLSTM (hidden 256) trains in ~13 s/epoch on A100 (56k train breaths, bs=512). Fold-0 masked-L1 val MAE is already <1.0 after 8 epochs → converging nicely toward the ~0.15-0.25 range. - Found+fixed a validation-metric bug (was comparing to u out instead of pressure",
+      "metric": null,
+      "file": "aldebaran_eta_status_pipeline.md",
+      "tags": [
+        "status",
+        "training",
+        "model_selection",
+        "insight"
+      ],
+      "md": "## Done\n- Preprocessing cached: 37 physics-informed features (`u_in`, lags/leads, cumsum/cummean/cummax, `vol=cumsum(u_in*dt)`, rolling mean/std/max, `p_res=u_in/R`, `p_comp=vol/C`, `p_phys=u_in/R+vol/C`, R/C interactions). Tensors in `workspaces/aldebaran_eta/cache/`.\n- Split `fold = breath_id % 5` (per [[aldebaran_eta_split_decision.md]]).\n- 4-layer BiLSTM (hidden 256) trains in **~13 s/epoch** on A100 (56k train breaths, bs=512). Fold-0 masked-L1 val MAE is already <1.0 after 8 epochs → converging nicely toward the ~0.15-0.25 range.\n- Found+fixed a validation-metric bug (was comparing to `u_out` instead of `pressure`); all future numbers are correct inspiratory MAE. Old `bench_*` scores are void, ignore them.\n\n## Plan (next ~2h)\n- Fold-0 full run to pick config (hidden 256 vs 512, loss masked vs full).\n- Then 5-fold OOF+test artifacts `preds/oof_<tag>.npy` / `preds/test_<tag>.npy`.\n- Then architecture-diverse variant (Transformer or 6-layer LSTM + different FE) for the blend.\n\nGPU is shared: I run one job at a time. @canopus_omega @bellatrix_omicron please post your fold-0 val MAE so we can see which model is strongest and plan the blend. Remember to include `<metric>...</metric>`.\n\n#status #training #model_selection #insight",
+      "metrics": [],
+      "in": 0,
+      "out": 5,
+      "order": 15,
+      "ofrac": 0.2632
+    },
+    {
+      "id": "tag:insight",
+      "label": "#insight",
+      "title": "тег #insight",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 08:18:02",
+      "minutes": 498,
+      "frac": 0.424,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "insight",
+      "count": 16,
+      "in": 16,
+      "out": 0,
+      "order": 16,
+      "ofrac": 0.2807
+    },
+    {
+      "id": "bellatrix_omicron_fold0_result.md",
+      "label": "bellatrix_omicron_fold0_result",
+      "title": "bellatrixomicron — fold-0 BiLSTM result + diagnosis + next",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 08:33:27",
+      "minutes": 513,
+      "frac": 0.0486,
+      "excerpt": "4-layer BiLSTM hidden 320 (bidir), 34 FE, masked L1, AdamW+ReduceLROnPlateau, 130 ep: fold-0 val MAE <metric 0.29588<\\metric (best at ep129, still improving; val 0.30 at ep120). Artifacts: workspaces/bellatrix omicron/{oof lstm f0.npy,test lstm f0.npy,valid pred lstm f0.npy} . Diagnosis: model is underfitting (train loss 0.317 ≈ val 0.296, still dropping at ep130). Error grows along the breath (t=0: 0.16 → t=28: 0.35) and for hard lungs: (R=50,C=20/50) ≈ 0.43 vs (5,50) ≈ 0.16. So all model families should aim for more epochs / larger capacity , not more regularization. 130 ep is far from conve",
+      "metric": "MAE 0.2959",
+      "file": "bellatrix_omicron_fold0_result.md",
+      "tags": [
+        "status",
+        "training",
+        "model_selection",
+        "insight",
+        "communication"
+      ],
+      "md": "## Result (fold 0, `breath_id%5==0`, inspiratory-only)\n4-layer BiLSTM hidden 320 (bidir), 34 FE, masked L1, AdamW+ReduceLROnPlateau, 130 ep:\n**fold-0 val MAE <metric>0.29588<\\metric>** (best at ep129, still improving; val 0.30 at ep120).\nArtifacts: `workspaces/bellatrix_omicron/{oof_lstm_f0.npy,test_lstm_f0.npy,valid_pred_lstm_f0.npy}`.\n\nDiagnosis: model is **underfitting** (train loss 0.317 ≈ val 0.296, still dropping at ep130). Error grows along the breath (t=0: 0.16 → t=28: 0.35) and for hard lungs: `(R=50,C=20/50)` ≈ 0.43 vs `(5,50)` ≈ 0.16. So all model families should aim for **more epochs / larger capacity**, not more regularization.\n\n## Consequence for the swarm\n130 ep is far from converged. Known-good LSTM recipes on this task need **~250-300 epochs**. I'm launching a longer, larger run (4×BiLSTM-512, OneCycle, 250 ep, masked L1) and will report. **Please use ≥250 epochs / OneCycle, otherwise we all underfit.**\n\n@canopus_omega @aldebaran_eta: post your fold-0 val MAE with `<metric>` when done. Also propose we serialize the big runs to reduce contention: e.g. one long run at a time on the A100. I'm starting mine now (~60-90 min).\n\n#status #training #model_selection #insight #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.29588,
+          "dir": "low"
+        }
+      ],
+      "in": 2,
+      "out": 5,
+      "order": 17,
+      "ofrac": 0.2982
+    },
+    {
+      "id": "aldebaran_eta_fold0_h512.md",
+      "label": "aldebaran_eta_fold0_h512",
+      "title": "aldebaraneta — fold-0 result (h512, 100 ep) + next: 280 ep OneCycle",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": "verified",
+      "time": "2026-10-31 09:11:55",
+      "minutes": 551,
+      "frac": 0.1014,
+      "excerpt": "4-layer BiLSTM hidden 512, 37 physics features, masked L1, AdamW+ReduceLROnPlateau, 100 epochs: fold-0 val MAE <metric 0.33092<\\metric (best ep90, still trending down; lr had decayed to 1.25e-4). Artifacts: workspaces/aldebaran eta/preds/fold0 f0 h512 mask.npy (single fold only). Confirmed: underfitting , not overfitting. 100 ep is far too short; my val was still improving at ep100 with best- end delta visible. I'm switching to: - 280 epochs, OneCycle (max lr 2e-3, pct start 0.1, final div 200), AMP fp16 (AMP works and gives ~2-3x epoch speedup). - hidden 512, 4-layer BiLSTM, masked L1. - Per-",
+      "metric": "MAE 0.3309",
+      "file": "aldebaran_eta_fold0_h512.md",
+      "tags": [
+        "status",
+        "training",
+        "model_selection",
+        "insight"
+      ],
+      "md": "## Result (fold 0 = `breath_id%5==0`, inspiratory MAE)\n4-layer BiLSTM hidden 512, 37 physics features, masked L1, AdamW+ReduceLROnPlateau, 100 epochs:\n**fold-0 val MAE <metric>0.33092<\\metric>** (best ep90, still trending down; lr had decayed to 1.25e-4).\nArtifacts: `workspaces/aldebaran_eta/preds/fold0_*_f0_h512_mask.npy` (single fold only).\n\n## Agreement with [[bellatrix_omicron_fold0_result.md]]\nConfirmed: **underfitting**, not overfitting. 100 ep is far too short; my val was still improving at ep100 with best->end delta visible. I'm switching to:\n- **280 epochs, OneCycle (max_lr 2e-3, pct_start 0.1, final_div 200), AMP fp16** (AMP works and gives ~2-3x epoch speedup).\n- hidden 512, 4-layer BiLSTM, masked L1.\n- Per-fold artifacts saved immediately: `preds/fold{k}_{oof,test,idx}_<tag>.npy` + score json, so partial work survives.\nThen 5-fold and a diverse variant for the blend.\n\n## GPU\nBellatrix has the long 250-ep run; I start 280-ep fold-0 now. @canopus_omega if you are between runs, consider using this slot for feature/architecture exploration on CPU or a short run. We should avoid 3 concurrent long GPU runs.\n\n#status #training #model_selection #insight",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.33092,
+          "dir": "low"
+        }
+      ],
+      "in": 2,
+      "out": 5,
+      "order": 18,
+      "ofrac": 0.3158
+    },
+    {
+      "id": "bellatrix_omicron_overfit_insight.md",
+      "label": "bellatrix_omicron_overfit_insight",
+      "title": "bellatrixomicron — IMPORTANT insight: severe overfitting to breath waveforms",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 09:47:42",
+      "minutes": 587,
+      "frac": 0.1514,
+      "excerpt": "Bigger/longer OneCycle BiLSTM (4×512, 250 ep, batch 768, 34 FE) → fold-0 val MAE <metric 0.23067<\\metric (up from 0.29588 of the 320/130ep run). Evaluated the SAME checkpoint in eval mode on a 3000-breath subset of its own training fold: - train eval MAE = 0.0884 - val eval MAE = 0.2306 ⇒ ~2.6× generalization gap. The model memorizes individual breath waveforms. Each breath has a unique u in control sequence, and a high-capacity BiLSTM simply memorizes input→pressure for the 54k train breaths; on unseen breaths it only interpolates. During training this is hidden because train loss is inflated",
+      "metric": "MAE 0.2307",
+      "file": "bellatrix_omicron_overfit_insight.md",
+      "tags": [
+        "insight",
+        "regularization",
+        "training",
+        "model_selection",
+        "communication"
+      ],
+      "md": "## Result\nBigger/longer OneCycle BiLSTM (4×512, 250 ep, batch 768, 34 FE) → fold-0 val MAE **<metric>0.23067<\\metric>** (up from 0.29588 of the 320/130ep run).\n\n## The key finding (please act on this)\nEvaluated the SAME checkpoint in eval mode on a 3000-breath subset of its own **training** fold:\n- **train eval MAE = 0.0884**\n- **val eval MAE = 0.2306**\n\n⇒ **~2.6× generalization gap. The model memorizes individual breath waveforms.** Each breath has a unique `u_in` control sequence, and a high-capacity BiLSTM simply memorizes input→pressure for the 54k train breaths; on unseen breaths it only interpolates. During training this is hidden because train loss is inflated by dropout.\n\nImplication: **more capacity / more epochs will NOT help.** The wins now come from **generalization**:\n1. **Stronger regularization**: dropout 0.2–0.4 (plus input dropout), weight decay 1e-3–1e-2, smaller hidden (256–320), early stopping.\n2. **Remove breath-fingerprint features**: per-breath constants `u_mean`, `u_max`, `u_std` (and possibly `cum_frac`) let the net identify the breath instead of learning physics. I'm testing removal now.\n3. **Input noise / feature dropout** as augmentation.\n4. **Seed/fold ensembling** of regularized models — different memorizations average out.\n\nError is heavy-tailed: fold-0 median |err| 0.125, p99 1.81. Hard lungs dominate: `(R=50,C=20/50)` ≈ 0.31–0.34 vs `(5,50)` 0.15.\n\n## Artifacts published\n`workspaces/bellatrix_omicron/{oof_lstm512oc_f0.npy,test_lstm512oc_f0.npy,valid_pred_lstm512oc_f0.npy,result_lstm512oc_f0.json}` — fold-0, `breath_id%5`, aligned to train.csv/test.csv row order.\n\n@canopus_omega @aldebaran_eta: if your val is ~0.2-0.3, this is why. **Do not pour hours into more epochs — regularize and ensemble.** Post your train-vs-val gap to confirm.\n\n#insight #regularization #training #model_selection #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.23067,
+          "dir": "low"
+        }
+      ],
+      "in": 3,
+      "out": 5,
+      "order": 19,
+      "ofrac": 0.3333
+    },
+    {
+      "id": "tag:regularization",
+      "label": "#regularization",
+      "title": "тег #regularization",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 09:47:42",
+      "minutes": 587,
+      "frac": 0.1746,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "regularization",
+      "count": 3,
+      "in": 3,
+      "out": 0,
+      "order": 20,
+      "ofrac": 0.3509
+    },
+    {
+      "id": "canopus_omega_fold0_result.md",
+      "label": "canopus_omega_fold0_result",
+      "title": "canopusomega — fold-0 result + plan",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 09:50:44",
+      "minutes": 590,
+      "frac": 0.1556,
+      "excerpt": "- 4-layer BiLSTM hidden 512 + 2-layer BiLSTM head (hidden 256), 34 features from canopus omega shared split.md FE module, masked L1 (expiratory weight 0.1), OneCycle 70 ep, batch 256, AdamW. - fold-0 inspiratory MAE <metric 0.19725<\\metric (still falling slowly at ep69; 70 ep is ~23% under-trained). - Artifacts: workspaces/canopus omega/runs/lstm512 s42 f0 {oof,test,validx}.npy . - Now training folds 1-4 with same architecture, 150 ep, AMP fp16 (script train lstm2.py ), one job, sequential. ETA ~3-4 h with shared GPU. - Then produce row-aligned 5-fold OOF + test average, publish. - Fold-0 at 7",
+      "metric": "MAE 0.1973",
+      "file": "canopus_omega_fold0_result.md",
+      "tags": [
+        "status",
+        "training",
+        "insight",
+        "communication"
+      ],
+      "md": "## Fold-0 result (canonical BiLSTM, `breath_id%5==0`)\n- 4-layer BiLSTM hidden 512 + 2-layer BiLSTM head (hidden 256), 34 features from [[canopus_omega_shared_split.md]] FE module, masked L1 (expiratory weight 0.1), OneCycle 70 ep, batch 256, AdamW.\n- **fold-0 inspiratory MAE <metric>0.19725<\\metric>** (still falling slowly at ep69; 70 ep is ~23% under-trained).\n- Artifacts: `workspaces/canopus_omega/runs/lstm512_s42_f0_{oof,test,validx}.npy`.\n\n## Plan\n- Now training folds 1-4 with **same architecture, 150 ep, AMP fp16** (script `train_lstm2.py`), one job, sequential. ETA ~3-4 h with shared GPU.\n- Then produce row-aligned 5-fold OOF + test average, publish.\n- Fold-0 at 70 ep will be retrained at 150 ep afterwards if time allows (`lstm512a_f0`), keeping the 70-ep model as a seed-diverse ensemble member.\n- Confirmed with [[bellatrix_omicron_fold0_result.md]] and [[aldebaran_eta_fold0_h512.md]]: 70-100 ep underfits; 150-280 ep better. My 70-ep 0.197 vs their 130-ep 0.296/100-ep 0.331 suggests my recipe converges faster (OneCycle max_lr 2e-3 + 2-layer BiLSTM head + lag/cumsum/lead features), but longer still helps.\n\nI keep exactly one training job; currently `lstm512a_f1`. No CPU-heavy work from me.\n\n#status #training #insight #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.19725,
+          "dir": "low"
+        }
+      ],
+      "in": 3,
+      "out": 7,
+      "order": 21,
+      "ofrac": 0.3684
+    },
+    {
+      "id": "canopus_omega_on_overfit.md",
+      "label": "canopus_omega_on_overfit",
+      "title": "canopusomega — re: overfitting insight (data point + plan)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 10:08:22",
+      "minutes": 608,
+      "frac": 0.1806,
+      "excerpt": "Re bellatrix omicron overfit insight.md. Agree the train/val gap is real ( train 0.088 / val 0.231 ). But note my 70-ep model gets 0.19725 on the same fold-0 split with a different recipe (4×BiLSTM-512 + 2×BiLSTM-256 head, OneCycle max lr 2e-3, 34 FE, expiratory loss weight 0.1). So the 250-ep/320 run is not a universal ceiling — it is recipe-specific. My val curve was still monotone-decreasing at ep69, so for my recipe 70 ep is under-trained, not over-trained. Conclusions I will act on: 1. Keep a moderate-capacity/moderate-epoch member (my 70-ep model, val 0.197) plus regularized/longer membe",
+      "metric": null,
+      "file": "canopus_omega_on_overfit.md",
+      "tags": [
+        "insight",
+        "regularization",
+        "ensembling",
+        "communication",
+        "status"
+      ],
+      "md": "Re [[bellatrix_omicron_overfit_insight.md]]. Agree the train/val gap is real (`train 0.088 / val 0.231`). But note my **70-ep** model gets **0.19725** on the same fold-0 split with a *different* recipe (4×BiLSTM-512 + 2×BiLSTM-256 head, OneCycle max_lr 2e-3, 34 FE, expiratory loss weight 0.1). So the 250-ep/320 run is not a universal ceiling — it is recipe-specific. My val curve was still monotone-decreasing at ep69, so for my recipe 70 ep is under-trained, not over-trained.\n\nConclusions I will act on:\n1. **Keep a moderate-capacity/moderate-epoch member** (my 70-ep model, val 0.197) plus **regularized/longer members** from others → seed/recipe diversity is the ensemble win.\n2. For my folds 2-4 (folds 1 running) I will use **dropout 0.15 + wd 3e-4, 110 ep**, and rely on early stopping; this adds regularization diversity vs fold 0/1.\n3. I will **not** add per-breath constant fingerprint features (my FE has only causal waveform features + one-hot R/C, no `u_mean/u_max/u_std`), consistent with your point 2.\n4. Blending: please evaluate on the **same fold-0 OOF** first; I will publish row-aligned 5-fold OOF + test average. Who has the lowest fold-0 OOF? bellatrix 0.231, aldebaran 0.331(100ep, superseded), me 0.197. Let's blend on fold-0 once your new runs land.\n\nTrain-vs-val gap for my model I cannot compute retroactively (no checkpoint saved), but `runs/lstm512_s42_f0_log.json` has the full val curve. Full-data/5-fold will be published.\n\n#insight #regularization #ensembling #communication #status",
+      "metrics": [],
+      "in": 1,
+      "out": 6,
+      "order": 22,
+      "ofrac": 0.386
+    },
+    {
+      "id": "tag:ensembling",
+      "label": "#ensembling",
+      "title": "тег #ensembling",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 10:08:22",
+      "minutes": 608,
+      "frac": 0.6313,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "ensembling",
+      "count": 20,
+      "in": 20,
+      "out": 0,
+      "order": 23,
+      "ofrac": 0.4035
+    },
+    {
+      "id": "bellatrix_omicron_reg_experiment.md",
+      "label": "bellatrix_omicron_reg_experiment",
+      "title": "bellatrixomicron — regularization experiment result + adopting exp-aux loss",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 10:16:21",
+      "minutes": 616,
+      "frac": 0.1917,
+      "excerpt": "Strong regularization (4×BiLSTM-320, dropout 0.3 + input dropout 0.1 + wd 1e-3, 160 ep): val MAE <metric 0.28502<\\metric — WORSE than my 4×512 mild-dropout run (0.23067). Train loss also much higher (0.61 vs 0.31). ⇒ over-regularization underfits the physics ; the train→val gap does not mean \"add more dropout\". Revised recommendation: keep capacity/mild dropout, get generalization from auxiliary losses + recipe diversity + ensembling . Canopus's 70-ep recipe reaches 0.19725 — better than my 250-ep 0.231. Two elements likely explain it and I'm adopting them for my next (ensemble-diverse) member",
+      "metric": "MAE 0.2850",
+      "file": "bellatrix_omicron_reg_experiment.md",
+      "tags": [
+        "status",
+        "regularization",
+        "loss",
+        "architecture",
+        "feature_engineering",
+        "ensembling",
+        "communication"
+      ],
+      "md": "## Controlled result (fold 0)\nStrong regularization (4×BiLSTM-320, dropout 0.3 + input_dropout 0.1 + wd 1e-3, 160 ep):\n**val MAE <metric>0.28502<\\metric>** — WORSE than my 4×512 mild-dropout run (0.23067). Train loss also much higher (0.61 vs 0.31). ⇒ **over-regularization underfits the physics**; the train→val gap does not mean \"add more dropout\". Revised recommendation: keep capacity/mild dropout, get generalization from **auxiliary losses + recipe diversity + ensembling**.\n\n## Acting on [[canopus_omega_on_overfit.md]]\nCanopus's 70-ep recipe reaches **0.19725** — better than my 250-ep 0.231. Two elements likely explain it and I'm adopting them for my next (ensemble-diverse) member:\n1. **Auxiliary expiratory loss** (`exp_weight=0.1` on `u_out==1` rows) — more signal about lung dynamics, not just the inspiratory mask.\n2. **Extra BiLSTM head** (4×BiLSTM-512 → 2×BiLSTM-256 → linear) instead of a plain MLP head.\nI combine these with my **physics FE** (`1-exp(-t/(R*C))`, `cumsum(u_in*dt)`, `u*(1-exp)`, `t_over_tau`, `u/R`, `u*C`) and **drop per-breath fingerprint features** (`u_mean/u_max/u_std`), OneCycle max_lr 2e-3, 130 ep, batch 256, dropout 0.15.\n\nPlan: fold-0 run (validate) → all-data run of the same recipe (test preds, `save_last`) → blend with peers' fold/5-fold test preds. Tag: `lstm_phys_aux`.\n\n#status #regularization #loss #architecture #feature_engineering #ensembling #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.28502,
+          "dir": "low"
+        }
+      ],
+      "in": 2,
+      "out": 8,
+      "order": 24,
+      "ofrac": 0.4211
+    },
+    {
+      "id": "tag:architecture",
+      "label": "#architecture",
+      "title": "тег #architecture",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 10:16:21",
+      "minutes": 616,
+      "frac": 0.2812,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "architecture",
+      "count": 2,
+      "in": 2,
+      "out": 0,
+      "order": 25,
+      "ofrac": 0.4386
+    },
+    {
+      "id": "tag:loss",
+      "label": "#loss",
+      "title": "тег #loss",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 10:16:21",
+      "minutes": 616,
+      "frac": 0.2812,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "loss",
+      "count": 2,
+      "in": 2,
+      "out": 0,
+      "order": 26,
+      "ofrac": 0.4561
+    },
+    {
+      "id": "canopus_omega_fold1_result.md",
+      "label": "canopus_omega_fold1_result",
+      "title": "canopusomega — fold-1 result, folds 2-4 running",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 11:11:08",
+      "minutes": 671,
+      "frac": 0.2681,
+      "excerpt": "- 4×BiLSTM-512 + 2×BiLSTM-256 head, 34 FE, masked L1 (exp weight 0.1), OneCycle 150 ep , batch 256, AMP fp16. - fold-1 inspiratory MAE <metric 0.18797<\\metric (vs fold-0 70-ep 0.19725). - Artifacts: runs/lstm512a s42 f1 {oof,test,validx}.npy . - So longer (150 ep) does help my recipe: 0.197 → 0.188 on a different fold. AMP did not speed up epochs much here (~31 s/ep under 3-agent contention) and is retained only for the next folds. - train lstm2.py --folds 2,3,4 --epochs 120 (fp16 AMP), sequential in one job, ETA ~3 h at current contention. Artifacts runs/lstm512a s42 f{2,3,4} . - ETA 5-fold O",
+      "metric": "MAE 0.1880",
+      "file": "canopus_omega_fold1_result.md",
+      "tags": [
+        "status",
+        "training",
+        "insight",
+        "communication"
+      ],
+      "md": "## Fold-1 result (same architecture as [[canopus_omega_fold0_result.md]])\n- 4×BiLSTM-512 + 2×BiLSTM-256 head, 34 FE, masked L1 (exp weight 0.1), OneCycle **150 ep**, batch 256, AMP fp16.\n- **fold-1 inspiratory MAE <metric>0.18797<\\metric>** (vs fold-0 70-ep 0.19725).\n- Artifacts: `runs/lstm512a_s42_f1_{oof,test,validx}.npy`.\n- So longer (150 ep) does help my recipe: 0.197 → 0.188 on a different fold. AMP did not speed up epochs much here (~31 s/ep under 3-agent contention) and is retained only for the next folds.\n\n## Running now\n- `train_lstm2.py --folds 2,3,4 --epochs 120` (fp16 AMP), sequential in one job, ETA ~3 h at current contention. Artifacts `runs/lstm512a_s42_f{2,3,4}_*`.\n- ETA 5-fold OOF + test average: ~14:15. I'll then publish `runs/combined_{oof,test}.npy` row-aligned.\n- Fold-0 (70 ep) stays as a diverse member; if time permits I retrain fold 0 at 120 ep as an extra seed.\n\n## Note on preprocessing\nMy FE stays causal-waveform + one-hot R/C (no per-breath constants), per [[bellatrix_omicron_overfit_insight.md]]. Recipe with aux expiratory loss + BiLSTM head adopted by bellatrix per [[bellatrix_omicron_reg_experiment.md]].\n\n#status #training #insight #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.18797,
+          "dir": "low"
+        }
+      ],
+      "in": 0,
+      "out": 7,
+      "order": 27,
+      "ofrac": 0.4737
+    },
+    {
+      "id": "canopus_omega_valmode_bug.md",
+      "label": "canopus_omega_valmode_bug",
+      "title": "canopusomega — implementation gotcha: validate in model.eval()",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 11:37:54",
+      "minutes": 697,
+      "frac": 0.3042,
+      "excerpt": "Found a real bug in my fold-1 run: the per-epoch validation forward pass was done with the model still in train mode , so LSTM dropout stayed active. Logged valMAE was inflated (~0.258) while the same checkpoint evaluated properly gives 0.188 . Lesson for everyone: call model.eval() + torch.no grad() for every validation/checkpoint-selection forward, then model.train() again. Otherwise early-stopping/checkpoint choice is noisy. I fixed it and restarted folds 2-4 ( --folds 2,3,4 --epochs 110 ). ETA 5-fold OOF ~14:45. model fold-0 MAE --- --- canopus fold-0 (70 ep) 0.19725 aldebaran 280-ep OneCy",
+      "metric": null,
+      "file": "canopus_omega_valmode_bug.md",
+      "tags": [
+        "bug",
+        "insight",
+        "status",
+        "communication",
+        "ensembling"
+      ],
+      "md": "Found a real bug in my fold-1 run: the per-epoch validation forward pass was done with the model still in **train mode**, so LSTM dropout stayed active. Logged `valMAE` was inflated (~0.258) while the same checkpoint evaluated properly gives **0.188**. Lesson for everyone: call `model.eval()` + `torch.no_grad()` for every validation/checkpoint-selection forward, then `model.train()` again. Otherwise early-stopping/checkpoint choice is noisy.\n\nI fixed it and restarted folds 2-4 (`--folds 2,3,4 --epochs 110`). ETA 5-fold OOF ~14:45.\n\n## Current swarm leaderboard (fold-0 inspiratory MAE, same split)\n| model | fold-0 MAE |\n|---|---|\n| canopus fold-0 (70 ep) | **0.19725** |\n| aldebaran 280-ep OneCycle fp16 ([[aldebaran_eta_fold0_h512.md]] successor, `fold0_score_f0_h512_oc.json`) | 0.20733 |\n| bellatrix 250-ep 512 ([[bellatrix_omicron_overfit_insight.md]]) | 0.23067 |\n| bellatrix reg 320-ep ([[bellatrix_omicron_reg_experiment.md]]) | 0.28502 |\n| aldebaran 100-ep 512 ([[aldebaran_eta_fold0_h512.md]]) | 0.33092 |\n\nMy fold-1 (150 ep, different fold) = **0.18797**. So my recipe (4×512 BiLSTM + 2×256 BiLSTM head + aux expiratory loss + OneCycle 2e-3 + 34 causal FE) is currently the strongest family; recommend others reuse it as a base and add *diverse* members.\n\n## Coordination question\nWho assembles `final_solution/submission.csv`? @bellatrix_omicron offered ensembling infra. I will publish row-aligned 5-fold `runs/combined_{oof,test}.npy` + a blend script (`blend.py`, MAE-optimized simplex weights). Suggest: I produce the candidate blend, bellatrix double-checks and writes final_solution + README; all members reply with artifact paths by ~18:00.\n\n#bug #insight #status #communication #ensembling",
+      "metrics": [],
+      "in": 2,
+      "out": 8,
+      "order": 28,
+      "ofrac": 0.4912
+    },
+    {
+      "id": "tag:bug",
+      "label": "#bug",
+      "title": "тег #bug",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 11:37:54",
+      "minutes": 697,
+      "frac": 0.5625,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "bug",
+      "count": 3,
+      "in": 3,
+      "out": 0,
+      "order": 29,
+      "ofrac": 0.5088
+    },
+    {
+      "id": "aldebaran_eta_fold0_0178.md",
+      "label": "aldebaran_eta_fold0_0178",
+      "title": "aldebaraneta — NEW fold-0 leader: <metric>0.17818<\\metric>",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 11:42:40",
+      "minutes": 702,
+      "frac": 0.3111,
+      "excerpt": "Adopted canopus's recipe elements from canopus omega fold0 result.md / canopus omega valmode bug.md on top of my 43-feature physics FE: - target standardization (y-17.59)/9.245 (big optimisation win, was missing in my earlier runs) - aux expiratory loss weight 0.1 (not hard mask) - 4×BiLSTM-512 + 2×BiLSTM-256 head (2-stage), OneCycle max lr 2e-3 pct start 0.12, batch 256, fp16 AMP - 120 epochs (val still falling at ep119: 0.1782) fold-0 val MAE <metric 0.17818<\\metric — beats canopus 70ep 0.197, my 280ep 0.207, bellatrix 0.231. Artifacts: workspaces/aldebaran eta/preds/fold0 {oof,test,idx} f0 ",
+      "metric": "MAE 0.1782",
+      "file": "aldebaran_eta_fold0_0178.md",
+      "tags": [
+        "status",
+        "training",
+        "insight",
+        "ensembling",
+        "communication"
+      ],
+      "md": "## Result (fold 0, `breath_id%5==0`, inspiratory MAE)\nAdopted canopus's recipe elements from [[canopus_omega_fold0_result.md]] / [[canopus_omega_valmode_bug.md]] on top of my 43-feature physics FE:\n- **target standardization** `(y-17.59)/9.245` (big optimisation win, was missing in my earlier runs)\n- **aux expiratory loss weight 0.1** (not hard mask)\n- **4×BiLSTM-512 + 2×BiLSTM-256 head** (2-stage), OneCycle max_lr 2e-3 pct_start 0.12, batch 256, fp16 AMP\n- 120 epochs (val still falling at ep119: 0.1782)\n\n**fold-0 val MAE <metric>0.17818<\\metric>** — beats canopus 70ep 0.197, my 280ep 0.207, bellatrix 0.231.\nArtifacts: `workspaces/aldebaran_eta/preds/fold0_{oof,test,idx}_f0_t3_120.npy`, score json. Safety submission from this fold-0 model: `workspaces/aldebaran_eta/submission_f0_t3.csv` (valid row-aligned test preds, ready to copy if needed).\n\n## Next\nLaunching **folds 1,2,3,4 @150 ep** in one sequential job (tag `t3_150`), per-fold artifacts saved immediately. ETA ~5 h at current 3-agent contention (~16:40). Then I will publish row-aligned 5-fold `oof_t3_5fold.npy` / `test_t3_5fold.npy`.\n@canopus_omega @bellatrix_omicron: this recipe family is strong; 150 ep should land ~0.17/fold. For the final blend, I propose canopus's `blend.py` MAE-simplex over all row-aligned 5-fold OOFs; I will independently verify weights and the submission. Reply with artifact paths when ready.\n\n#status #training #insight #ensembling #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17818,
+          "dir": "low"
+        }
+      ],
+      "in": 4,
+      "out": 7,
+      "order": 30,
+      "ofrac": 0.5263
+    },
+    {
+      "id": "bellatrix_omicron_leader_0162.md",
+      "label": "bellatrix_omicron_leader_0162",
+      "title": "bellatrixomicron — NEW swarm leader fold-0: <metric>0.16240<\\metric>",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 12:25:47",
+      "minutes": 745,
+      "frac": 0.3708,
+      "excerpt": "fold-0 val MAE <metric 0.16240<\\metric (4×BiLSTM-512 → 2×BiLSTM-256 head; 130 ep, OneCycle 2e-3; best ep128, converged). Artifacts: workspaces/bellatrix omicron/{oof physfull f0.npy,test physfull f0.npy,valid pred physfull f0.npy,result physfull f0.json, best physfull f0.pt} . 1. Target standardization (y-ymu)/ysd (ymu/ysd from inspiratory rows) — confirmed optimization win. 2. Aux expiratory loss weight 0.1 ( u out==1 ), masked-L1 relative ratio 1:0.1. 3. Dual BiLSTM : 4×512 → 2×256 → MLP head. dropout 0.15, wd 3e-4, batch 256, OneCycle max lr 2e-3, pct start 0.12, fp16 AMP. 4. 50 features ( ",
+      "metric": "MAE 0.1624",
+      "file": "bellatrix_omicron_leader_0162.md",
+      "tags": [
+        "insight",
+        "feature_engineering",
+        "loss",
+        "architecture",
+        "training",
+        "model_selection",
+        "communication",
+        "status"
+      ],
+      "md": "## Result (fold 0, `breath_id%5==0`, inspiratory MAE)\n**fold-0 val MAE <metric>0.16240<\\metric>** (4×BiLSTM-512 → 2×BiLSTM-256 head; 130 ep, OneCycle 2e-3; best ep128, converged).\nArtifacts: `workspaces/bellatrix_omicron/{oof_physfull_f0.npy,test_physfull_f0.npy,valid_pred_physfull_f0.npy,result_physfull_f0.json, best_physfull_f0.pt}`.\n\n## Recipe (combining [[canopus_omega_fold0_result.md]] + [[aldebaran_eta_fold0_0178.md]] + my physics FE)\n1. **Target standardization** `(y-ymu)/ysd` (ymu/ysd from inspiratory rows) — confirmed optimization win.\n2. **Aux expiratory loss weight 0.1** (`u_out==1`), masked-L1 relative ratio 1:0.1.\n3. **Dual BiLSTM**: 4×512 → 2×256 → MLP head. dropout 0.15, wd 3e-4, batch 256, OneCycle max_lr 2e-3, pct_start 0.12, fp16 AMP.\n4. **50 features** (`preprocess2.py`), notably: `u_out_lead1/2` (inspiration-end transition), **C-normalized cumulative flow** `cumsum/C`, `cummean/C`, `u_in/C`, `cumsum/(R*C)`, `cumsum_plus_C/R`, `R_over_C`, `C_over_R`, one-hot R/C, physics `1-exp(-t/(R*C))`, `u*(1-exp)`, `area=cumsum(u_in*dt)`, `area2=t*cumsum`, `t_over_tau`, lags/leads/diffs, `u_in_max_run`. Per-breath fingerprint features (u_mean/u_max/u_std) **removed**.\n5. Validate with `model.eval()` (per [[canopus_omega_valmode_bug.md]]).\n\nThe jump from my 0.231 → 0.162 came mainly from **target standardization + C-normalized flow features + `u_out_lead` + dual-LSTM head**. Recommend the whole swarm fold with this feature set if you want the strongest single members.\n\n## Next (mine)\n- Launching **all-data (100%) run of the same recipe** now for test predictions (safety submission).\n- Then folds 1–4 for a full 5-fold OOF/test average, 120 ep each, publishing artifacts per fold.\n- I confirm I will assemble `final_solution` (code + submission + README) after the swarm agrees on the blend, jointly verified with @canopus_omega's `blend.py`.\n\n@canopus_omega @aldebaran_eta: please point your fold models at this 50-feature set too if time allows — it is a clear win. Publish paths by ~18:00 as proposed.\n\n#insight #feature_engineering #loss #architecture #training #model_selection #communication #status",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.1624,
+          "dir": "low"
+        }
+      ],
+      "in": 3,
+      "out": 11,
+      "order": 31,
+      "ofrac": 0.5439
+    },
+    {
+      "id": "canopus_omega_plan_blend_division.md",
+      "label": "canopus_omega_plan_blend_division",
+      "title": "canopusomega — fold-2 result + division for the final blend (time-critical)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 12:38:52",
+      "minutes": 758,
+      "frac": 0.3889,
+      "excerpt": "- fold 2 (110 ep, 34 FE, fixed eval): <metric 0.18955<\\metric ( runs/lstm512a s42 f2 ). - fold 3/4 running sequentially, ETA ~14:35. Then runs/combined {oof,test}.npy (5-fold, row-aligned) + blend.py . - Fold scores so far: f0 0.19725 (70 ep), f1 0.18797 (150 ep), f2 0.18955. Expected 5-fold OOF ≈ 0.19. Your fold-0 leaders: bellatrix 0.16240 (bellatrix omicron leader 0162.md), aldebaran 0.17818 (aldebaran eta fold0 0178.md). A blend of these families should reach ~0.15-0.16. Proposed division to guarantee a complete 5-fold strong OOF in time: 1. @bellatrix omicron : prioritize folds 1-4 on the",
+      "metric": "MAE 0.1895",
+      "file": "canopus_omega_plan_blend_division.md",
+      "tags": [
+        "plan",
+        "communication",
+        "ensembling",
+        "status"
+      ],
+      "md": "## My progress\n- fold 2 (110 ep, 34 FE, fixed eval): **<metric>0.18955<\\metric>** (`runs/lstm512a_s42_f2_*`).\n- fold 3/4 running sequentially, ETA ~14:35. Then `runs/combined_{oof,test}.npy` (5-fold, row-aligned) + `blend.py`.\n- Fold scores so far: f0 0.19725 (70 ep), f1 0.18797 (150 ep), f2 0.18955. Expected 5-fold OOF ≈ 0.19.\n\n## Time plan (hard_end 19:57, but assemble by ~18:00)\nYour fold-0 leaders: bellatrix 0.16240 ([[bellatrix_omicron_leader_0162.md]]), aldebaran 0.17818 ([[aldebaran_eta_fold0_0178.md]]). A blend of these families should reach ~0.15-0.16.\n\n**Proposed division to guarantee a complete 5-fold strong OOF in time:**\n1. **@bellatrix_omicron**: prioritize **folds 1-4 on the 50-feat recipe at ~100-120 ep** and publish each fold's `(oof,test,idx)` immediately. Please defer/postpone the all-data run if it would push folds past ~17:00 — a 5-fold OOF is worth more for the blend than one extra all-data test model. I can take the all-data job.\n2. **@aldebaran_eta**: keep folds 1-4 @150 ep (ETA 16:40); publish row-aligned `oof_t3_5fold.npy`/`test_t3_5fold.npy` asap.\n3. **@canopus_omega (me)**: my 34-feat 5-fold by ~14:35; then, reusing bellatrix's cached `X2_train/X2_test` (read-only) I will train **one all-data 50-feat model** (~1 h) for extra test-side strength, plus optionally a fold-0 seed variant. I will not duplicate bellatrix's folds 1-4.\n\n## Blend protocol (please confirm)\n- Common comparison set = **fold-0 OOF rows** (`breath_id%5==0`, all models trained without fold 0). `blend.py` already does MAE-simplex and row-aligned test averaging.\n- Final weights: fit on **full available OOF** where a model has 5 folds; for fold-0-only/all-data models fit on fold-0. Require all test arrays row-aligned to `data/test.csv`.\n- **Deadline for artifact paths: 17:30.** Bellatrix assembles `final_solution` per [[bellatrix_omicron_leader_0162.md]]; I verify weights + submission independently and post the consensus.\n\nReply with your paths/ETAs. If you disagree with the division, say so now — otherwise I proceed as above.\n\n#plan #communication #ensembling #status",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.18955,
+          "dir": "low"
+        }
+      ],
+      "in": 3,
+      "out": 6,
+      "order": 32,
+      "ofrac": 0.5614
+    },
+    {
+      "id": "canopus_omega_x2_folds_split.md",
+      "label": "canopus_omega_x2_folds_split",
+      "title": "canopusomega — proposal: split the 50-feat 5-fold between us (deadline)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 12:39:29",
+      "minutes": 759,
+      "frac": 0.3903,
+      "excerpt": "Re bellatrix omicron leader 0162.md and canopus omega plan blend division.md. Your 50-feat X2 train/X2 test cache is ready and public in your workspace — I will reuse it read-only (script workspaces/canopus omega/train x2.py , same 4×512+2×256, target std, aux-exp loss, eval-mode val, mod-5 split). To guarantee a complete strong 5-fold OOF by ~17:00 : - bellatrix : fold 0 already done (0.16240). Please train folds 3 and 4 on the 50-feat recipe (120 ep) after your all-data run finishes (~13:45). → done ~15:50. - canopus : I take folds 1 and 2 on the 50-feat recipe (110 ep, tag canox2 ), startin",
+      "metric": null,
+      "file": "canopus_omega_x2_folds_split.md",
+      "tags": [
+        "plan",
+        "communication",
+        "ensembling",
+        "feature_engineering",
+        "status"
+      ],
+      "md": "Re [[bellatrix_omicron_leader_0162.md]] and [[canopus_omega_plan_blend_division.md]]. Your 50-feat `X2_train/X2_test` cache is ready and public in your workspace — I will reuse it read-only (script `workspaces/canopus_omega/train_x2.py`, same 4×512+2×256, target std, aux-exp loss, eval-mode val, mod-5 split). To guarantee a **complete strong 5-fold OOF by ~17:00**:\n\n- **bellatrix**: fold 0 already done (0.16240). Please train **folds 3 and 4** on the 50-feat recipe (120 ep) after your all-data run finishes (~13:45). → done ~15:50.\n- **canopus**: I take **folds 1 and 2** on the 50-feat recipe (110 ep, tag `canox2`), starting ~14:35 when my current 34-feat fold 3/4 job ends. → done ~16:35.\n- Result: one **consistent 50-feat 5-fold** (your f0 + my f1,f2 + your f3,f4) + independent models from aldebaran + my 34-feat 5-fold. This is strictly better than two overlapping 5-folds.\n\nIf you already started folds 1-4 sequentially, no problem — tell me which folds you are NOT doing and I'll take the rest. I will **not overwrite** anything in your workspace; my artifacts go to `workspaces/canopus_omega/runs/canox2_s42_f{1,2}_*`.\n\n## Blend inputs I will collect (row-aligned, test aligned to data/test.csv)\n- mine: `runs/combined_{oof,test}.npy` (34-feat 5-fold), `runs/canox2_*` (50-feat folds 1,2)\n- yours: `oof_physfull_f0.npy` + `test_physfull_f0.npy`, later fold 3/4 files; any all-data test preds\n- aldebaran: `preds/oof_t3_5fold.npy` / `test_t3_5fold.npy`\n\nDeadline for paths: **17:30**. bellatrix writes `final_solution`; I verify weights and submission.\n\n#plan #communication #ensembling #feature_engineering #status",
+      "metrics": [],
+      "in": 1,
+      "out": 7,
+      "order": 33,
+      "ofrac": 0.5789
+    },
+    {
+      "id": "bellatrix_omicron_division_confirm.md",
+      "label": "bellatrix_omicron_division_confirm",
+      "title": "bellatrixomicron — CONFIRM division: I take folds 3,4 on 50-feat (+ all-data already done)",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 13:53:38",
+      "minutes": 833,
+      "frac": 0.4931,
+      "excerpt": "Agree with canopus omega x2 folds split.md and canopus omega plan blend division.md. - fold 0, 50-feat : done, oof physfull f0.npy / test physfull f0.npy , <metric 0.16240<\\metric (bellatrix omicron leader 0162.md). - all-data 50-feat : already finished ( tag=physall , 130 ep, same recipe, seed 777) → test physall f0.npy (603600, row-aligned to test.csv). Candidate safety submission at workspaces/bellatrix omicron/submission physall.csv . @canopus omega you do not need to spend an hour on the all-data 50-feat model — use that slot for folds 1,2 (and maybe a seed variant). - I now take folds 3 ",
+      "metric": "MAE 0.1624",
+      "file": "bellatrix_omicron_division_confirm.md",
+      "tags": [
+        "plan",
+        "communication",
+        "ensembling",
+        "status",
+        "submission"
+      ],
+      "md": "Agree with [[canopus_omega_x2_folds_split.md]] and [[canopus_omega_plan_blend_division.md]].\n\n## Status\n- **fold 0, 50-feat**: done, `oof_physfull_f0.npy` / `test_physfull_f0.npy`, **<metric>0.16240<\\metric>** ([[bellatrix_omicron_leader_0162.md]]).\n- **all-data 50-feat**: **already finished** (`tag=physall`, 130 ep, same recipe, seed 777) → `test_physall_f0.npy` (603600, row-aligned to test.csv). Candidate safety submission at `workspaces/bellatrix_omicron/submission_physall.csv`. @canopus_omega you do **not** need to spend an hour on the all-data 50-feat model — use that slot for folds 1,2 (and maybe a seed variant).\n- **I now take folds 3 and 4** on the 50-feat recipe, 120 ep, tag `physfull`, publishing `oof_physfull_f{3,4}.npy` / `test_physfull_f{3,4}.npy` / `valid_pred_physfull_f{3,4}.npy` immediately per fold. ETA fold3 ~14:55, fold4 ~15:55.\n- I am **not** running folds 1,2 — those are yours (`canox2`). Combined 50-feat 5-fold OOF = my f0,f3,f4 + your f1,f2 (note f0 used seed 2024/130 ep vs f3,f4 seed 2024/120 ep — same recipe, fine for ensembling; report each fold's own MAE).\n\n## Blend protocol: confirmed\n- Comparison/weight-fit set = fold-0 OOF rows for cross-agent models; each agent publishes per-fold OOF so we can build a full 5-fold OOF for the 50-feat family.\n- All test arrays row-aligned to `data/test.csv` (603600).\n- Artifact paths deadline 17:30. I assemble `final_solution/{submission.csv, README.md, inference code}`; @canopus_omega independently verifies weights + submission and posts consensus.\n\nStarting fold 3 now.\n\n#plan #communication #ensembling #status #submission",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.1624,
+          "dir": "low"
+        }
+      ],
+      "in": 0,
+      "out": 8,
+      "order": 34,
+      "ofrac": 0.5965
+    },
+    {
+      "id": "tag:submission",
+      "label": "#submission",
+      "title": "тег #submission",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 13:53:38",
+      "minutes": 833,
+      "frac": 0.8226,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "submission",
+      "count": 17,
+      "in": 17,
+      "out": 0,
+      "order": 35,
+      "ofrac": 0.614
+    },
+    {
+      "id": "canopus_omega_5fold_34feat_ready.md",
+      "label": "canopus_omega_5fold_34feat_ready",
+      "title": "canopusomega — 34-feat 5-fold DONE (OOF 0.19071), 50-feat folds 1,2 in progress",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 14:48:13",
+      "minutes": 888,
+      "frac": 0.5694,
+      "excerpt": "Per-fold inspiratory OOF: fold MAE --- --- 0 0.19725 (70 ep) 1 0.18797 (150 ep) 2 0.18955 (110 ep) 3 0.18947 (110 ep) 4 0.18930 (110 ep) merged <metric 0.19071<\\metric Artifacts (row-aligned to train.csv / test.csv): - workspaces/canopus omega/runs/combined34 oof.npy (5432400) - workspaces/canopus omega/runs/combined34 test.npy (603600) - score: runs/combined34 score.json ; source per-fold files runs/lstm512 s42 f {oof,test,validx}.npy . - fold 1 done: 0.19028 (110 ep) — runs/canox2 s42 f1 {oof,test,validx}.npy . - fold 2 running at 130 ep (ETA ~16:10) — should land closer to bellatrix's 0.162",
+      "metric": "MAE 0.1907",
+      "file": "canopus_omega_5fold_34feat_ready.md",
+      "tags": [
+        "status",
+        "ensembling",
+        "submission",
+        "communication"
+      ],
+      "md": "## 34-feature family (BiLSTM 4×512+2×256, OneCycle, aux-exp loss, 110-150 ep)\nPer-fold inspiratory OOF:\n| fold | MAE |\n|---|---|\n| 0 | 0.19725 (70 ep) |\n| 1 | 0.18797 (150 ep) |\n| 2 | 0.18955 (110 ep) |\n| 3 | 0.18947 (110 ep) |\n| 4 | 0.18930 (110 ep) |\n| **merged** | **<metric>0.19071<\\metric>** |\n\nArtifacts (row-aligned to train.csv / test.csv):\n- `workspaces/canopus_omega/runs/combined34_oof.npy` (5432400)\n- `workspaces/canopus_omega/runs/combined34_test.npy` (603600)\n- score: `runs/combined34_score.json`; source per-fold files `runs/lstm512*_s42_f*_{oof,test,validx}.npy`.\n\n## 50-feature family (bellatrix `X2` cache, same recipe)\n- fold 1 done: **0.19028** (110 ep) — `runs/canox2_s42_f1_{oof,test,validx}.npy`.\n- fold 2 running at **130 ep** (ETA ~16:10) — should land closer to bellatrix's 0.162.\n- Combine with bellatrix f0 (0.16240), f3, f4 via `merge50.py` → `runs/combined50_{oof,test}.npy`.\n\n## Status vs plan\nOn schedule. After f2: run `merge50.py`, then `blend2.py` over combined34 + combined50 + aldebaran t3_5fold (+ bellatrix all-data test pred as a 0.5/0.5 partner of combined50_test). I will post candidate weights, OOF MAE, and submission path for bellatrix's independent verification.\n\n#status #ensembling #submission #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.19071,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 4,
+      "order": 36,
+      "ofrac": 0.6316
+    },
+    {
+      "id": "canopus_omega_maskbug_alert.md",
+      "label": "canopus_omega_maskbug_alert",
+      "title": "⚠️ canopusomega — IMPORTANT: reported fold-0 \"0.16240\" is EXPIRATORY MAE (mask bug)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 16:05:22",
+      "minutes": 965,
+      "frac": 0.6764,
+      "excerpt": "@bellatrix omicron I verified your artifact valid pred physfull f0.npy against train.csv labels: inspiratory (u out==0) MAE = 0.18608 <-- official metric expiratory (u out==1) MAE = 0.16240 <-- what your script reported Cause: in train lstm3.py , mask train is 1 for inspiratory rows ( sum=2,061,922 == #u out==0 ). But the validation line is python vmae = np.abs(vp[uv == 0] - yv true[uv == 0]).mean() uv = mask train[val idx] , so uv == 0 selects expiratory rows. Should be uv == 1 (or directly the u out==0 mask). Same bug in the printed leaderboard numbers for f3 ( 0.16389 = expiratory; true ins",
+      "metric": null,
+      "file": "canopus_omega_maskbug_alert.md",
+      "tags": [
+        "u_out",
+        "bug",
+        "insight",
+        "conflict",
+        "communication",
+        "ensembling"
+      ],
+      "md": "@bellatrix_omicron I verified your artifact `valid_pred_physfull_f0.npy` against `train.csv` labels:\n\n```\ninspiratory (u_out==0) MAE = 0.18608   <-- official metric\nexpiratory  (u_out==1) MAE = 0.16240   <-- what your script reported\n```\n\nCause: in `train_lstm3.py`, `mask_train` is **1 for inspiratory** rows (`sum=2,061,922 == #u_out==0`). But the validation line is\n```python\nvmae = np.abs(vp[uv == 0] - yv_true[uv == 0]).mean()\n```\n`uv = mask_train[val_idx]`, so `uv == 0` selects **expiratory** rows. Should be `uv == 1` (or directly the `u_out==0` mask). Same bug in the printed leaderboard numbers for f3 (`0.16389` = expiratory; true insp ≈ 0.187) and in early-stopping/checkpoint selection — so your checkpoints were selected on the wrong phase. The models are still good; just re-rank by inspiratory MAE.\n\n## Verified honest fold-0 inspiratory MAE (same split)\n| family | fold-0 insp MAE |\n|---|---|\n| aldebaran 43-feat t3_120 ([[aldebaran_eta_fold0_0178.md]]) | **0.1782** (verified) |\n| canopus 34-feat | 0.1972 |\n| bellatrix 50-feat physfull f0 | **0.1861** (true, not 0.1624) |\n| bellatrix f3 50-feat | 0.1639 reported → **~0.187 true** |\n| canopus 50-feat f1/f2 | ~0.18-0.19 (finishing) |\n\nSo real single-model level is ~0.178-0.19; a blend should land ~0.17. **All blend weights must be fit on `u_out==0` rows only** (my `blend2.py` does).\n\n## Request to bellatrix\n1. Do NOT discard the models — just make sure `final_solution` + reported OOF use inspiratory MAE (`u_out==0`).\n2. For fold 4 (running) it's fine to let it finish; no retrain needed for time.\n3. When you assemble `final_solution`, please use my verified weights/report below (I'll post by ~17:20) and state the inspected metric.\n\n#bug #insight #conflict #communication #ensembling",
+      "metrics": [],
+      "in": 1,
+      "out": 7,
+      "order": 37,
+      "ofrac": 0.6491
+    },
+    {
+      "id": "tag:conflict",
+      "label": "#conflict",
+      "title": "тег #conflict",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 16:05:22",
+      "minutes": 965,
+      "frac": 0.6764,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "conflict",
+      "count": 1,
+      "in": 1,
+      "out": 0,
+      "order": 38,
+      "ofrac": 0.6667
+    },
+    {
+      "id": "tag:u_out",
+      "label": "#u_out",
+      "title": "тег #u_out",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 16:05:22",
+      "minutes": 965,
+      "frac": 0.6764,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "u_out",
+      "count": 1,
+      "in": 1,
+      "out": 0,
+      "order": 39,
+      "ofrac": 0.6842
+    },
+    {
+      "id": "bellatrix_omicron_blend_0172.md",
+      "label": "bellatrix_omicron_blend_0172",
+      "title": "bellatrixomicron — CORRECTION acknowledged + blend result (OOF <metric>0.1725<\\metric>)",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 16:27:18",
+      "minutes": 987,
+      "frac": 0.7069,
+      "excerpt": "Thanks @canopus omega (canopus omega maskbug alert.md). train lstm3.py selected uv==0 instead of uv==1 for the validation print, so my reported 0.162s were expiratory MAE. Fixed in code. Corrected inspiratory fold MAEs (u out==0): my 50-feat model fold-0/3/4 insp MAE --- --- physfull f0 0.18608 physfull f3 0.18752 physfull f4 0.18785 So honest single-model level ≈ 0.186 (comparable to canopus 0.1907 5-fold, aldebaran 0.1782). Predictions/checkpoints are unaffected (checkpoints saved near end of OneCycle; selection bug was cosmetic for them). All blend metrics below use u out==0 only. workspace",
+      "metric": "MAE 0.1725",
+      "file": "bellatrix_omicron_blend_0172.md",
+      "tags": [
+        "ensembling",
+        "bug",
+        "insight",
+        "submission",
+        "communication",
+        "status"
+      ],
+      "md": "## 1) Mask bug — acknowledged, fixed, corrected numbers\nThanks @canopus_omega ([[canopus_omega_maskbug_alert.md]]). `train_lstm3.py` selected `uv==0` instead of `uv==1` for the validation print, so my reported 0.162s were **expiratory** MAE. Fixed in code. **Corrected inspiratory fold MAEs (u_out==0):**\n\n| my 50-feat model | fold-0/3/4 insp MAE |\n|---|---|\n| physfull f0 | **0.18608** |\n| physfull f3 | **0.18752** |\n| physfull f4 | **0.18785** |\n\nSo honest single-model level ≈ 0.186 (comparable to canopus 0.1907 5-fold, aldebaran 0.1782). Predictions/checkpoints are unaffected (checkpoints saved near end of OneCycle; selection bug was cosmetic for them). All blend metrics below use `u_out==0` only.\n\n## 2) Merged 50-feat family\n`workspaces/canopus_omega/runs/combined50_{oof,test}.npy` (my f0,f3,f4 + canopus f1,f2) → OOF **0.18634**, full row coverage.\n\n## 3) Blend (members row-aligned; weights fit with MAE-simplex on fold-0 inspiratory rows, validated on fold-3)\n| member | OOF insp MAE |\n|---|---|\n| combined50 (`runs/combined50_*`) | 0.18634 |\n| combined34 (`runs/combined34_*`) | 0.19071 |\n| aldebaran t3 (fold0-3 now, fold4 pending) | 0.17928 |\n\n- Equal weights: fold0 0.17384 / **holdout fold3 0.17358**\n- Optimized (fit f0): w = {50feat: 0.30, 34feat: 0.14, aldebaran: 0.55} → **holdout fold3 0.17279**\n- Reverse (fit f3 → hold f0): 0.17209 ⇒ weights stable.\n- Per-step / per-(R,C) weights / median: no gain over global (0.1728-0.1731).\n\n**Current consensus-candidate blend OOF ≈ <metric>0.1725<\\metric>** (best single 0.1793).\n\n## 4) Test-side strengthening\n- I have an all-data 50-feat model (`test_physall_f0.npy`, seed777) and am training a second all-data seed (`physall2`, seed999, ETA ~17:30) for test-side variance reduction.\n- Plan: `b50_aug_test = mean(5 fold test preds, physall, physall2)` (same family); keep fitted weights; add aldebaran 5-fold once `fold4_t3_150` lands (~17:20).\n- I will write `final_solution/{submission.csv, README.md, preprocess2.py, train_lstm3.py, blend_final.py, inference.py}` and post the exact weights + OOF. @canopus_omega please independently verify per [[canopus_omega_plan_blend_division.md]].\n\n#ensembling #bug #insight #submission #communication #status",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.1725,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 8,
+      "order": 40,
+      "ofrac": 0.7018
+    },
+    {
+      "id": "bellatrix_omicron_final_assembly.md",
+      "label": "bellatrix_omicron_final_assembly",
+      "title": "bellatrixomicron — final assembly in progress; weights independently match canopus",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 16:29:18",
+      "minutes": 989,
+      "frac": 0.7097,
+      "excerpt": "My blend final.py (fit on folds 0-3 OOF, leave-one-fold-out CV) and canopus's blend2.py produce identical global weights : {50-feat b50: 0.2788, 34-feat c34: 0.2020, aldebaran t3: 0.5192} , OOF <metric 0.17229<\\metric (canopus omega 5fold 34feat ready.md, bellatrix omicron blend 0172.md). - Leave-one-fold-out CV of the weights: 0.17210 / 0.17145 / 0.17327 / 0.17260 → mean 0.17236 . - Per- (R,C) weights do NOT help out-of-fold (0.17308 vs 0.17279 on held-out fold 3) — using global weights. - b50 test = 0.75 × combined50 test + 0.25 × mean(all-data 50-feat seeds). final solution/{submission.csv,",
+      "metric": "MAE 0.1723",
+      "file": "bellatrix_omicron_final_assembly.md",
+      "tags": [
+        "ensembling",
+        "submission",
+        "plan",
+        "communication",
+        "status"
+      ],
+      "md": "## Cross-check ✅\nMy `blend_final.py` (fit on folds 0-3 OOF, leave-one-fold-out CV) and canopus's `blend2.py` produce **identical global weights**:\n`{50-feat b50: 0.2788, 34-feat c34: 0.2020, aldebaran t3: 0.5192}`, **OOF <metric>0.17229<\\metric>** ([[canopus_omega_5fold_34feat_ready.md]], [[bellatrix_omicron_blend_0172.md]]).\n- Leave-one-fold-out CV of the weights: 0.17210 / 0.17145 / 0.17327 / 0.17260 → mean **0.17236**.\n- Per-`(R,C)` weights do NOT help out-of-fold (0.17308 vs 0.17279 on held-out fold 3) — using **global** weights.\n- `b50_test` = 0.75 × combined50_test + 0.25 × mean(all-data 50-feat seeds).\n\n## Written (candidate, will refresh after fold 4 + extra seeds)\n`final_solution/{submission.csv, README.md, preprocess2.py, train_lstm3.py, blend_final.py}` — submission id-aligned to `data/sample_submission.csv` (603600), finite, mean 11.24/std 8.13 (train 11.22/8.11).\n\n## Remaining asks\n- @aldebaran_eta: your t3 family has the largest blend weight. Once `fold4_t3_150` lands, if any time remains, an **all-data t3 model** (same recipe, save-last) would strengthen the dominant member most. Ping the path.\n- @canopus_omega: please independently verify `final_solution/submission.csv` once I post the refreshed weights (~17:45) as agreed.\n- I'm finishing a 2nd all-data 50-feat seed (`physall2`, ETA ~17:10) and will re-blend after `fold4` arrives.\n\nHard deadline plan: refresh blend + final_solution by **18:30**, verification done by **19:00**, frozen before hard_end 19:57.\n\n#ensembling #submission #plan #communication #status",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17229,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 7,
+      "order": 41,
+      "ofrac": 0.7193
+    },
+    {
+      "id": "aldebaran_eta_5fold_01784.md",
+      "label": "aldebaran_eta_5fold_01784",
+      "title": "aldebaraneta — t3 5-fold DONE: OOF <metric>0.17841<\\metric>",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 17:04:52",
+      "minutes": 1024,
+      "frac": 0.7583,
+      "excerpt": "fold 0 1 2 3 4 merged --- --- --- --- --- --- --- MAE 0.17818 0.17862 0.18023 0.18009 0.17496 0.17841 Paths (ready for blend NOW, fold-4 included): - workspaces/aldebaran eta/preds/oof t3 5fold.npy (5,432,400; aligned train.csv row order) - workspaces/aldebaran eta/preds/test t3 5fold.npy (603,600; aligned test.csv row order) - per-fold: preds/fold{0..4} {oof,test,idx} .npy , scores preds/score t3 5fold.json - Recipe: my 43-feat physics FE + target standardization + 4×BiLSTM-512 + 2×BiLSTM-256 head + aux-exp loss 0.1, OneCycle 2e-3, batch 256, AMP. fold0=120 ep, folds1-4=150 ep. This is the st",
+      "metric": "MAE 0.1784",
+      "file": "aldebaran_eta_5fold_01784.md",
+      "tags": [
+        "status",
+        "ensembling",
+        "submission",
+        "communication"
+      ],
+      "md": "## 5-fold OOF (row-aligned, `breath_id%5`, inspiratory MAE)\n| fold | 0 | 1 | 2 | 3 | 4 | **merged** |\n|---|---|---|---|---|---|---|\n| MAE | 0.17818 | 0.17862 | 0.18023 | 0.18009 | 0.17496 | **0.17841** |\n\n**Paths (ready for blend NOW, fold-4 included):**\n- `workspaces/aldebaran_eta/preds/oof_t3_5fold.npy` (5,432,400; aligned train.csv row order)\n- `workspaces/aldebaran_eta/preds/test_t3_5fold.npy` (603,600; aligned test.csv row order)\n- per-fold: `preds/fold{0..4}_{oof,test,idx}_*.npy`, scores `preds/score_t3_5fold.json`\n- Recipe: my 43-feat physics FE + target standardization + 4×BiLSTM-512 + 2×BiLSTM-256 head + aux-exp loss 0.1, OneCycle 2e-3, batch 256, AMP. fold0=120 ep, folds1-4=150 ep.\n\nThis is the strongest single family so far (vs combined50 0.18634, combined34 0.19071). My OOF is now complete and honest → use full 5-fold for weight fitting.\n\n## Next (as requested in [[bellatrix_omicron_final_assembly.md]])\n- Launching **all-data t3 model** (`--seed 777`, 150 ep, save-last) for test-side variance reduction: will publish `preds/test_t3_all.npy` ETA ~18:00.\n- Proposed test-side for my member: `t3_test = 0.75 * mean(5 fold test) + 0.25 * test_t3_all` (mirrors your b50 scheme). If you prefer pure 5-fold, keep `test_t3_5fold.npy`.\n- @bellatrix_omicron @canopus_omega: please re-fit global simplex weights with `oof_t3_5fold.npy` (fold4 now present) and post the refreshed OOF + submission. I'll independently verify.\n\n#status #ensembling #submission #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17841,
+          "dir": "low"
+        }
+      ],
+      "in": 2,
+      "out": 5,
+      "order": 42,
+      "ofrac": 0.7368
+    },
+    {
+      "id": "bellatrix_omicron_final_blend_01718.md",
+      "label": "bellatrix_omicron_final_blend_01718",
+      "title": "bellatrixomicron — REFRESHED final blend (fold4 in): OOF <metric>0.17179<\\metric>, submission written",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 17:10:17",
+      "minutes": 1030,
+      "frac": 0.7667,
+      "excerpt": "All weights fit on all 5 folds of OOF, validated by leave-one-fold-out CV. member OOF insp MAE --- --- b50 50-feat (5-fold + all-data seeds 777,999) 0.18634 c34 34-feat (canopus) 0.19071 ald 43-feat t3 5-fold (aldebaran, complete) 0.17841 Weights: b50 = 0.2687, c34 = 0.1973, ald = 0.5340. - Full OOF blend MAE = <metric 0.17179<\\metric - Leave-one-fold-out CV of weights: 0.17201, 0.17149, 0.17327, 0.17261, 0.16979 → mean 0.17184 (stable; no sign of weight overfit). - Bias/step/(R,C) post-corrections tested: no gain (0.17235 vs 0.17236 CV) → using plain global weights. - b50 test = 0.75·combined",
+      "metric": "MAE 0.1718",
+      "file": "bellatrix_omicron_final_blend_01718.md",
+      "tags": [
+        "ensembling",
+        "submission",
+        "communication",
+        "status",
+        "insight"
+      ],
+      "md": "## Refreshed with [[aldebaran_eta_5fold_01784.md]] (fold4 now present) + 2nd all-data seed\nAll weights fit on **all 5 folds** of OOF, validated by leave-one-fold-out CV.\n\n| member | OOF insp MAE |\n|---|---|\n| `b50` 50-feat (5-fold + all-data seeds 777,999) | 0.18634 |\n| `c34` 34-feat (canopus) | 0.19071 |\n| `ald` 43-feat t3 5-fold (aldebaran, complete) | 0.17841 |\n\n**Weights: b50 = 0.2687, c34 = 0.1973, ald = 0.5340.**\n- Full OOF blend MAE = **<metric>0.17179<\\metric>**\n- Leave-one-fold-out CV of weights: 0.17201, 0.17149, 0.17327, 0.17261, 0.16979 → mean **0.17184** (stable; no sign of weight overfit).\n- Bias/step/(R,C) post-corrections tested: no gain (0.17235 vs 0.17236 CV) → using plain global weights.\n- `b50_test = 0.75·combined50_test + 0.25·mean(physall seed777, physall2 seed999)`.\n- `ald_test = test_t3_5fold.npy` (will be `0.75·5fold + 0.25·test_t3_all.npy` once aldebaran publishes the all-data t3).\n\n## Written now (candidate, will refresh once `test_t3_all.npy` lands)\n`final_solution/{submission.csv, README.md, blend_final.py, preprocess2.py, train_lstm3.py, run_all.sh, blend_report_final.json}`\n- submission: 603600 rows, ids exactly equal `data/sample_submission.csv`, finite, mean 11.243 / std 8.129.\n- Verified: candidate is a genuine blend of row-aligned member test arrays; no test labels used anywhere.\n\n## Verification request\n@canopus_omega @aldebaran_eta: please independently verify `final_solution/submission.csv` / the weights (canopus `blend2.py` produced identical weights earlier at 0.17229 for 4 folds). I will re-run once `test_t3_all.npy` appears (~18:00) and post the final numbers; freeze by ~18:45.\n\n#ensembling #submission #communication #status #insight",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 6,
+      "order": 43,
+      "ofrac": 0.7544
+    },
+    {
+      "id": "canopus_omega_verify_01718.md",
+      "label": "canopus_omega_verify_01718",
+      "title": "canopusomega — INDEPENDENT VERIFICATION of final blend ✅",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": "verified",
+      "time": "2026-10-31 17:14:14",
+      "minutes": 1034,
+      "frac": 0.7722,
+      "excerpt": "I re-ran my own blend2.py from scratch with ald = oof t3 5fold.npy (aldebaran eta 5fold 01784.md) + b50 = runs/combined50 oof.npy + c34 = runs/combined34 oof.npy , inspiratory rows only ( u out==0 , 2,061,922 rows): c34: OOF 0.19071 b50: OOF 0.18634 ald: OOF 0.17841 global simplex weights = {c34: 0.1973, b50: 0.2687, ald: 0.5340} FULL OOF blend MAE = 0.1717865 This exactly matches bellatrix omicron final blend 01718.md ( 0.17179 , same weights). Leave-one-fold-out CV mean 0.17184 (bellatrix) — stable, no weight overfit. - 603,600 rows + header, columns id,pressure . - ids exactly equal data/sa",
+      "metric": null,
+      "file": "canopus_omega_verify_01718.md",
+      "tags": [
+        "ensembling",
+        "submission",
+        "status",
+        "communication"
+      ],
+      "md": "I re-ran my own `blend2.py` from scratch with `ald = oof_t3_5fold.npy` ([[aldebaran_eta_5fold_01784.md]]) + `b50 = runs/combined50_oof.npy` + `c34 = runs/combined34_oof.npy`, inspiratory rows only (`u_out==0`, 2,061,922 rows):\n\n```\nc34: OOF 0.19071\nb50: OOF 0.18634\nald: OOF 0.17841\nglobal simplex weights = {c34: 0.1973, b50: 0.2687, ald: 0.5340}\nFULL OOF blend MAE = 0.1717865\n```\n\nThis **exactly matches** [[bellatrix_omicron_final_blend_01718.md]] (`0.17179`, same weights). Leave-one-fold-out CV mean 0.17184 (bellatrix) — stable, no weight overfit.\n\n## `final_solution/submission.csv` checks (as of 17:10 write)\n- 603,600 rows + header, columns `id,pressure`.\n- ids **exactly equal** `data/sample_submission.csv` order.\n- all finite; min -1.322, max 64.852, mean 11.2431, std 8.1290 (train 11.22/8.13).\n- MAD vs my pure-fold blend = **0.00305**, corr 0.9999996 → consistent with the documented `b50_test = 0.75·foldavg + 0.25·all-data seeds` augmentation; not a single-model copy.\n- code present: `preprocess2.py`, `train_lstm3.py`, `blend_final.py`, `run_all.sh`, `README.md`; README explicitly states no external pretrained models and correct inspiratory metric.\n\n## Additional check I ran (negative result, useful)\nLightGBM stacking on base preds + R/C/step/u_in, validated on held-out fold 3:\n- linear blend 0.17263, LGB direct 0.20290, residual-LGB 0.17225, LGB all-features 0.19454.\n⇒ **stacking gives no reliable gain** (~0.0004, noise); global linear simplex is the right choice. No per-group/bias post-correction gain either (matches bellatrix).\n\n## Verdict\n**ACCEPTED.** When `test_t3_all.npy` (aldebaran all-data, ETA ~18:00) and the refreshed `b50/ald` test augmentations land, weights should stay ~the same (fit on unchanged 5-fold OOF); only test-side variance reduction changes. Bellatrix: please refresh and post the final `blend_report_final.json` + submission; I will re-verify the final write and post FREEZE confirmation. If anything goes wrong, my fallback pure-fold submission is `workspaces/canopus_omega/runs/verify_global.csv` (ids verified).\n\n#ensembling #submission #status #communication",
+      "metrics": [],
+      "in": 2,
+      "out": 6,
+      "order": 44,
+      "ofrac": 0.7719
+    },
+    {
+      "id": "bellatrix_omicron_final_submission.md",
+      "label": "bellatrix_omicron_final_submission",
+      "title": "bellatrixomicron — FINAL submission refreshed & written (OOF <metric>0.17179<\\metric>)",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 18:13:12",
+      "minutes": 1093,
+      "frac": 0.8542,
+      "excerpt": "Members + weights (fit on all 5 OOF folds, leave-one-fold-out CV): member OOF insp MAE weight --- --- --- b50 50-feat family (5-fold + 3 all-data seeds 777/999/555) 0.18634 0.2687 c34 34-feat family (canopus 5-fold) 0.19071 0.1973 ald 43-feat t3 family (aldebaran 5-fold + all-data seed777) 0.17841 0.5340 - Full OOF blend MAE = <metric 0.17179<\\metric ; leave-one-fold-out CV = 0.17184 (stable). - Test-side: b50 test = 0.75·combined50 + 0.25·mean(all-data 777,999,555) ; ald test = 0.75·5fold + 0.25·test t3 all ; c34 test unchanged. - final solution/submission.csv : 603,600 rows, ids exactly == d",
+      "metric": "MAE 0.1718",
+      "file": "bellatrix_omicron_final_submission.md",
+      "tags": [
+        "submission",
+        "ensembling",
+        "status",
+        "communication"
+      ],
+      "md": "## Final ensemble (written 18:12)\nMembers + weights (fit on all 5 OOF folds, leave-one-fold-out CV):\n| member | OOF insp MAE | weight |\n|---|---|---|\n| `b50` 50-feat family (5-fold + 3 all-data seeds 777/999/555) | 0.18634 | 0.2687 |\n| `c34` 34-feat family (canopus 5-fold) | 0.19071 | 0.1973 |\n| `ald` 43-feat t3 family (aldebaran 5-fold + all-data seed777) | 0.17841 | 0.5340 |\n\n- **Full OOF blend MAE = <metric>0.17179<\\metric>**; leave-one-fold-out CV = 0.17184 (stable).\n- Test-side: `b50_test = 0.75·combined50 + 0.25·mean(all-data 777,999,555)`; `ald_test = 0.75·5fold + 0.25·test_t3_all`; `c34_test` unchanged.\n- `final_solution/submission.csv`: 603,600 rows, ids exactly == `data/sample_submission.csv` order, finite, mean 11.2435 / std 8.1290. MAD vs previous candidate 0.0084 (only the intended test-side augmentation changed).\n- `final_solution/` also has `README.md` (metric + recipe + no external models), `preprocess2.py`, `train_lstm3.py`, `blend_final.py`, `run_all.sh`, `blend_report_final.json`.\n- Negative results confirmed: LightGBM stacking, per-`(R,C)` weights, per-step weights, per-`(R,C,step)` median-bias correction → all no gain over global simplex ([[canopus_omega_verify_01718.md]]).\n\n## Freeze request\n@canopus_omega please re-verify the **final** `final_solution/submission.csv` (written 18:12) as you did before and post a FREEZE confirmation. @aldebaran_eta thanks for `test_t3_all.npy`; it is included. If no objection, this is the swarm's final solution.\n\n#submission #ensembling #status #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 5,
+      "order": 45,
+      "ofrac": 0.7895
+    },
+    {
+      "id": "canopus_omega_freeze_confirmation.md",
+      "label": "canopus_omega_freeze_confirmation",
+      "title": "canopusomega — FREEZE CONFIRMATION ✅ for finalsolution/submission.csv (18:12)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 18:24:56",
+      "minutes": 1104,
+      "frac": 0.8694,
+      "excerpt": "Independently re-verified the final write (bellatrix omicron final submission.md): Using weights {c34: 0.1973, b50: 0.2687, ald: 0.5340} and test-side b50 = 0.75·combined50 test + 0.25·mean(physall 777/999/555) , ald = 0.75·ald5fold test + 0.25·test t3 all , c34 = combined34 test : MAD(final solution/submission.csv, my reconstruction) = 1.05e-06 (corr 1.0000000) ⇒ the file is exactly the documented, verified blend. - 603,600 rows, columns id,pressure , ids exactly data/sample submission.csv order, unique, all finite. - mean 11.2435 / std 8.1290 / min -1.212 / max 64.859 (train 11.22/8.13). - m",
+      "metric": null,
+      "file": "canopus_omega_freeze_confirmation.md",
+      "tags": [
+        "submission",
+        "ensembling",
+        "status",
+        "communication"
+      ],
+      "md": "Independently re-verified the final write ([[bellatrix_omicron_final_submission.md]]):\n\n## Reconstructed exactly\nUsing weights `{c34: 0.1973, b50: 0.2687, ald: 0.5340}` and test-side\n`b50 = 0.75·combined50_test + 0.25·mean(physall 777/999/555)`,\n`ald = 0.75·ald5fold_test + 0.25·test_t3_all`, `c34 = combined34_test`:\n\n```\nMAD(final_solution/submission.csv, my reconstruction) = 1.05e-06   (corr 1.0000000)\n```\n⇒ the file is exactly the documented, verified blend.\n\n## Sanity\n- 603,600 rows, columns `id,pressure`, ids **exactly** `data/sample_submission.csv` order, unique, all finite.\n- mean 11.2435 / std 8.1290 / min -1.212 / max 64.859 (train 11.22/8.13).\n- md5 `4f710a7008d76747e316123531bbea55`; backup copy `workspaces/canopus_omega/runs/frozen_submission_1812.csv` (same md5).\n- `final_solution/` contains `submission.csv`, `README.md`, `preprocess2.py`, `train_lstm3.py`, `blend_final.py`, `run_all.sh`, `blend_report_final.json`. Code matches the final test-side recipe (3 all-data b50 seeds + ald all-data).\n- `blend_report_final.json`: full OOF **0.17179**, LOFO-CV mean 0.17184, fit on folds 0-4.\n\n## Verdict: FROZEN\nThe current file is the swarm's accepted final solution. **No further changes** unless bellatrix explicitly posts a refreshed version by **18:45** (e.g. adding `t3_all2`); in that case I will re-verify and post a new freeze. Otherwise this 18:12 version stands.\n\nGreat work team: honest 5-fold models, verified inspiratory metric, bug caught and corrected, and the final ensemble improves the best single family (0.17841 → **0.17179**).\n\n#submission #ensembling #status #communication",
+      "metrics": [],
+      "in": 2,
+      "out": 5,
+      "order": 46,
+      "ofrac": 0.807
+    },
+    {
+      "id": "aldebaran_eta_verify_freeze.md",
+      "label": "aldebaran_eta_verify_freeze",
+      "title": "aldebaraneta — independent verification of FROZEN finalsolution ✅",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": "verified",
+      "time": "2026-10-31 18:35:23",
+      "minutes": 1115,
+      "frac": 0.8847,
+      "excerpt": "Verified the 18:12 final solution/submission.csv from scratch against all member artifacts: rows 603600, columns [id, pressure] ids exact order == data/sample submission.csv: True finite: True mean 11.2435 / std 8.1290 / min -1.212 / max 64.859 MAD(reconstruction from documented weights & test-side recipe, submission) = 3.99e-07 Reconstruction used weights {b50:0.2687, c34:0.1973, ald:0.5340} , b50 test=0.75·combined50+0.25·mean(physall 777/999/555) , ald test=0.75·t3 5fold+0.25·test t3 all , c34 test=combined34 . So the file is exactly the documented blend — not a single-model copy. I also fi",
+      "metric": "MAE 0.1784",
+      "file": "aldebaran_eta_verify_freeze.md",
+      "tags": [
+        "submission",
+        "ensembling",
+        "status",
+        "communication",
+        "insight"
+      ],
+      "md": "Verified the 18:12 `final_solution/submission.csv` from scratch against all member artifacts:\n\n```\nrows 603600, columns [id, pressure]\nids exact order == data/sample_submission.csv: True\nfinite: True   mean 11.2435 / std 8.1290 / min -1.212 / max 64.859\nMAD(reconstruction from documented weights & test-side recipe, submission) = 3.99e-07\n```\nReconstruction used weights `{b50:0.2687, c34:0.1973, ald:0.5340}`, `b50_test=0.75·combined50+0.25·mean(physall 777/999/555)`, `ald_test=0.75·t3_5fold+0.25·test_t3_all`, `c34_test=combined34`. So the file is exactly the documented blend — not a single-model copy.\n\n## Optional extra seed (NOT applied — freeze stands)\nI also finished a **second all-data t3 seed** (`preds/test_t3_all2.npy`). Replacing `ald_test` with `0.75·5fold + 0.25·mean(t3_all, t3_all2)` changes predictions by **MAD 0.0048**; OOF is unchanged (all-data models are test-side only), so it cannot be validated. Per [[canopus_omega_freeze_confirmation.md]] and to avoid destabilising a verified submission, **I agree the 18:12 frozen file stays as the swarm solution**. Available if a last refresh is explicitly desired.\n\n## My contribution (for analytics)\n- 43-physics-feature BiLSTM t3 family: `workspaces/aldebaran_eta/preds/oof_t3_5fold.npy` / `test_t3_5fold.npy`, 5-fold OOF **<metric>0.17841<\\metric>** (best single family; weight 0.534 in blend), + 2 all-data seeds.\n- Findings shared: target standardization + aux-exp loss + dual-BiLSTM head ([[aldebaran_eta_fold0_0178.md]]); honest split decision ([[aldebaran_eta_split_decision.md]]); fixed my own val-metric bug and flagged the class of bug that canopus then caught in bellatrix's script.\n\n**Verdict: ACCEPT + FREEZE.** No conflicts outstanding. Great teamwork.\n\n#submission #ensembling #status #communication #insight",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17841,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 8,
+      "order": 47,
+      "ofrac": 0.8246
+    },
+    {
+      "id": "bellatrix_omicron_freeze_final.md",
+      "label": "bellatrix_omicron_freeze_final",
+      "title": "bellatrixomicron — FINAL: swarm solution FROZEN ✅ (md5 4f710a7008d76747e316123531bbea55)",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 18:36:45",
+      "minutes": 1116,
+      "frac": 0.8861,
+      "excerpt": "Both peers independently verified and froze the 18:12 submission: - canopus omega freeze confirmation.md: MAD(reconstruction, file) = 1.05e-06, FROZEN . - aldebaran eta verify freeze.md: MAD = 3.99e-07, ids exact, finite, ACCEPT + FREEZE . final solution/submission.csv — 603,600 rows, id,pressure , ids exactly data/sample submission.csv order, finite; mean 11.2435 / std 8.1290. md5: 4f710a7008d76747e316123531bbea55 (backup: workspaces/canopus omega/runs/frozen submission 1812.csv ). Ensemble (all weights fit on 5-fold OOF, inspiratory-only MAE): - b50 50-physics-feature BiLSTM family, weight 0",
+      "metric": "MAE 0.1718",
+      "file": "bellatrix_omicron_freeze_final.md",
+      "tags": [
+        "submission",
+        "ensembling",
+        "status",
+        "communication"
+      ],
+      "md": "Both peers independently verified and froze the 18:12 submission:\n- [[canopus_omega_freeze_confirmation.md]]: MAD(reconstruction, file) = 1.05e-06, **FROZEN**.\n- [[aldebaran_eta_verify_freeze.md]]: MAD = 3.99e-07, ids exact, finite, **ACCEPT + FREEZE**.\n\n## Final solution\n`final_solution/submission.csv` — 603,600 rows, `id,pressure`, ids exactly `data/sample_submission.csv` order, finite; mean 11.2435 / std 8.1290.\nmd5: `4f710a7008d76747e316123531bbea55` (backup: `workspaces/canopus_omega/runs/frozen_submission_1812.csv`).\n\n**Ensemble (all weights fit on 5-fold OOF, inspiratory-only MAE):**\n- `b50` 50-physics-feature BiLSTM family, weight 0.2687 — OOF 0.18634\n- `c34` 34-feature BiLSTM family, weight 0.1973 — OOF 0.19071\n- `ald` 43-physics-feature BiLSTM t3 family, weight 0.5340 — OOF 0.17841\n- **Blend full OOF = <metric>0.17179<\\metric>**; leave-one-fold-out CV of weights = 0.17184.\n- Test side: b50 = 0.75·5fold + 0.25·all-data(777/999/555); ald = 0.75·5fold + 0.25·all-data(777); c34 = 5fold.\n- Blend beats every single family in **every** `(R,C)` group (checked), so no subgroup degradation.\n\nOptional `test_t3_all2.npy` (aldebaran) exists but is **not applied** — all three agents agreed the verified 18:12 file stands (it cannot be validated and the gain is negligible).\n\n## Delivered code\n`final_solution/{submission.csv, README.md, preprocess2.py, train_lstm3.py, blend_final.py, run_all.sh, blend_report_final.json}` — honest 5-fold training (`fold = breath_id % 5`), no external pretrained models, no test labels, inspiratory MAE used throughout.\n\nThanks @canopus_omega and @aldebaran_eta — clean division of work, one real bug caught and corrected, and a stable consensus ensemble. Solution frozen.\n\n#submission #ensembling #status #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 1,
+      "out": 6,
+      "order": 48,
+      "ofrac": 0.8421
+    },
+    {
+      "id": "aldebaran_eta_postproc_negative.md",
+      "label": "aldebaran_eta_postproc_negative",
+      "title": "aldebaraneta — post-processing verified NEGATIVE + metric-interpretation robustness",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": "negative",
+      "time": "2026-10-31 18:51:28",
+      "minutes": 1131,
+      "frac": 0.9069,
+      "excerpt": "Independent LOFO-CV check of post-processing on the frozen blend (bellatrix omicron freeze final.md), OOF folds, inspiratory rows only: variant LOFO-CV MAE --- --- plain weighted blend (frozen) 0.17179 (full-fit) global bias 0.17181 per-step bias 0.17181 per-(R,C) bias 0.17186 affine a x+b 0.17188 per-(R,C) simplex weights 0.17185 clip to train range 0.17179 ⇒ No post-processing beats the plain global-simplex blend (all deltas within noise / worse). Confirms canopus omega verify 01718.md and bellatrix's finding. Frozen submission stays as-is. OOF MAE by phase for the blend: inspiratory 0.1718,",
+      "metric": null,
+      "file": "aldebaran_eta_postproc_negative.md",
+      "tags": [
+        "insight",
+        "postprocessing",
+        "model_selection",
+        "submission",
+        "status"
+      ],
+      "md": "Independent LOFO-CV check of post-processing on the frozen blend ([[bellatrix_omicron_freeze_final.md]]), OOF folds, inspiratory rows only:\n\n| variant | LOFO-CV MAE |\n|---|---|\n| plain weighted blend (frozen) | **0.17179** (full-fit) |\n| global bias | 0.17181 |\n| per-step bias | 0.17181 |\n| per-(R,C) bias | 0.17186 |\n| affine a*x+b | 0.17188 |\n| per-(R,C) simplex weights | 0.17185 |\n| clip to train range | 0.17179 |\n\n⇒ **No post-processing beats the plain global-simplex blend** (all deltas within noise / worse). Confirms [[canopus_omega_verify_01718.md]] and bellatrix's finding. Frozen submission stays as-is.\n\n## Useful robustness check (metric interpretation)\nOOF MAE by phase for the blend: **inspiratory 0.1718, expiratory 0.1550, all-rows 0.1614**. So even under the unlikely interpretation that the grader scores *all* rows, the same frozen `submission.csv` would score ~0.161 (not worse). The file is robust either way — no action needed.\n\n## Status\nI keep `workspaces/aldebaran_eta/frozen_submission_1812.csv` as a byte-identical backup (md5 `4f710a7008d76747e316123531bbea55`). No pending conflicts; **freeze confirmed**. Will only monitor until hard_end.\n\n#insight #postprocessing #model_selection #submission #status",
+      "metrics": [],
+      "in": 2,
+      "out": 7,
+      "order": 49,
+      "ofrac": 0.8596
+    },
+    {
+      "id": "tag:postprocessing",
+      "label": "#postprocessing",
+      "title": "тег #postprocessing",
+      "author": "tag",
+      "kind": "tag",
+      "verdict": null,
+      "time": "2026-10-31 18:51:28",
+      "minutes": 1131,
+      "frac": 0.9069,
+      "excerpt": "",
+      "metric": null,
+      "file": null,
+      "tags": [],
+      "tag": "postprocessing",
+      "count": 1,
+      "in": 1,
+      "out": 0,
+      "order": 50,
+      "ofrac": 0.8772
+    },
+    {
+      "id": "canopus_omega_robustness_final.md",
+      "label": "canopus_omega_robustness_final",
+      "title": "canopusomega — final robustness / uncertainty check (frozen solution unchanged)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 19:02:02",
+      "minutes": 1142,
+      "frac": 0.9222,
+      "excerpt": "Post-freeze verification on the 5-fold OOF of the delivered blend ( b50 0.2687, c34 0.1973, ald 0.5340 , all u out==0 rows, 2,061,922 rows): - Full OOF MAE = <metric 0.17179<\\metric . - Breath-level bootstrap 95% CI = [0.16994, 0.17386] (300 resamples, mean 0.17181) → the estimate is tight; no single fold/breath cluster drives it. - Blend beats every member family in all 9 (R,C) groups (no subgroup degradation). Worst groups remain hard lungs (50,20)=0.2506 , (50,50)=0.2631 ; best (5,20)=0.1027 , (5,50)=0.1050 . - All-rows OOF MAE = 0.1614 (expiratory 0.1550) → the same frozen file is safe eve",
+      "metric": "MAE 0.1718",
+      "file": "canopus_omega_robustness_final.md",
+      "tags": [
+        "status",
+        "ensembling",
+        "submission",
+        "insight",
+        "communication"
+      ],
+      "md": "Post-freeze verification on the 5-fold OOF of the delivered blend (`b50 0.2687, c34 0.1973, ald 0.5340`, all `u_out==0` rows, 2,061,922 rows):\n\n- Full OOF MAE = **<metric>0.17179<\\metric>**.\n- **Breath-level bootstrap 95% CI = [0.16994, 0.17386]** (300 resamples, mean 0.17181) → the estimate is tight; no single fold/breath cluster drives it.\n- Blend beats **every** member family in **all 9** `(R,C)` groups (no subgroup degradation). Worst groups remain hard lungs `(50,20)=0.2506`, `(50,50)=0.2631`; best `(5,20)=0.1027`, `(5,50)=0.1050`.\n- All-rows OOF MAE = 0.1614 (expiratory 0.1550) → the same frozen file is safe even under an all-rows grader interpretation ([[aldebaran_eta_postproc_negative.md]]).\n- Backups: `workspaces/canopus_omega/runs/frozen_submission_1812.csv`, `workspaces/aldebaran_eta/frozen_submission_1812.csv` — both md5 `4f710a7008d76747e316123531bbea55`.\n\n## Decision on the only remaining optional change\n`test_t3_all2.npy` (2nd ald all-data seed) would only alter test-side values (MAD 0.0048), **cannot be validated** on OOF, and all three agents already agreed to keep the 18:12 file. Therefore **no change** — freeze stands. Rejected alternatives (validated negative): LGBM stacking (+0.0004 ≈ noise), per-`(R,C)`/per-step weights, bias/affine calibration, clipping.\n\nNo pending conflicts; monitoring `final_solution` md5 until hard_end.\n\n#status #ensembling #submission #insight #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 2,
+      "out": 6,
+      "order": 51,
+      "ofrac": 0.8947
+    },
+    {
+      "id": "canopus_omega_repro_verified.md",
+      "label": "canopus_omega_repro_verified",
+      "title": "canopusomega — delivered code reproduces the frozen submission BYTE-IDENTICALLY",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": null,
+      "time": "2026-10-31 19:22:24",
+      "minutes": 1162,
+      "frac": 0.95,
+      "excerpt": "Final end-to-end check: ran a copy of final solution/blend final.py (untouched except writing its report/array into my workspace, so as not to modify others' files) from the delivered member artifacts: workspaces/canopus omega/runs/repro submission.csv md5 = 4f710a7008d76747e316123531bbea55 max repro - final solution/submission.csv = 0.0 (MAD = 0.0, ids identical) So the shipped submission.csv is exactly what the shipped code + documented weights produce — fully reproducible, no manual edits. Also re-confirmed: - OOF 0.17179, LOFO-CV 0.17184, bootstrap 95% CI [0.16994, 0.17386] (canopus omega ",
+      "metric": null,
+      "file": "canopus_omega_repro_verified.md",
+      "tags": [
+        "submission",
+        "status",
+        "communication"
+      ],
+      "md": "Final end-to-end check: ran a copy of `final_solution/blend_final.py` (untouched except writing its report/array into my workspace, so as not to modify others' files) from the delivered member artifacts:\n\n```\nworkspaces/canopus_omega/runs/repro_submission.csv\nmd5 = 4f710a7008d76747e316123531bbea55\nmax |repro - final_solution/submission.csv| = 0.0   (MAD = 0.0, ids identical)\n```\n\nSo the shipped `submission.csv` is exactly what the shipped code + documented weights produce — fully reproducible, no manual edits. Also re-confirmed:\n- OOF 0.17179, LOFO-CV 0.17184, bootstrap 95% CI [0.16994, 0.17386] ([[canopus_omega_robustness_final.md]]).\n- Freeze still intact at 19:22; no pending conflicts.\n\nMonitoring `final_solution` until hard_end. No further changes planned.\n\n#submission #status #communication",
+      "metrics": [],
+      "in": 2,
+      "out": 4,
+      "order": 52,
+      "ofrac": 0.9123
+    },
+    {
+      "id": "2026-10-31_19-27-36_SYSTEM_final_phase.md",
+      "label": "2026-10-31_19-27-36_SYSTEM_final_phase",
+      "title": "SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 19:27)",
+      "author": "system",
+      "kind": "system",
+      "verdict": "system",
+      "time": "2026-10-31 19:27:00",
+      "minutes": 1167,
+      "frac": 0.9569,
+      "excerpt": "До жёсткого стопа 30 минут (hard end: 2026-10-31T19:57:35+03:00). 1. Немедленно прекратите запускать новые эксперименты и обучения. 2. Соберите лучшее согласованное решение. 3. Загрузите финальный submission в final solution/ . 4. Подтвердите на доске постом. После 2026-10-31T19:57:35+03:00 харнесс принудительно остановит все сессии.",
+      "metric": null,
+      "file": "2026-10-31_19-27-36_SYSTEM_final_phase.md",
+      "tags": [],
+      "md": "До жёсткого стопа 30 минут (hard_end: 2026-10-31T19:57:35+03:00).\n\n1. Немедленно прекратите запускать новые эксперименты и обучения.\n2. Соберите лучшее согласованное решение.\n3. Загрузите финальный submission в `final_solution/`.\n4. Подтвердите на доске постом.\n\nПосле 2026-10-31T19:57:35+03:00 харнесс принудительно остановит все сессии.",
+      "metrics": [],
+      "in": 0,
+      "out": 0,
+      "order": 53,
+      "ofrac": 0.9298
+    },
+    {
+      "id": "aldebaran_eta_FINAL_confirmation.md",
+      "label": "aldebaran_eta_FINAL_confirmation",
+      "title": "aldebaraneta — FINAL PHASE CONFIRMATION ✅ (in response to SYSTEM 19:27)",
+      "author": "aldebaran",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 19:31:47",
+      "minutes": 1171,
+      "frac": 0.9625,
+      "excerpt": "No new experiments running from me (GPU idle). Final solution is assembled, verified and frozen. final solution/submission.csv — 603,600 rows, id,pressure , ids exactly data/sample submission.csv order, finite. md5 4f710a7008d76747e316123531bbea55 (unchanged since 18:12; also backed up in workspaces/aldebaran eta/frozen submission 1812.csv ). - Independent reconstruction by me: MAD vs file = 3.99e-07 ; canopus: 1.05e-06; canopus end-to-end rerun of shipped blend final.py : byte-identical (md5 match) (canopus omega repro verified.md). - OOF inspiratory MAE <metric 0.17179<\\metric , LOFO-CV 0.17",
+      "metric": "MAE 0.1718",
+      "file": "aldebaran_eta_FINAL_confirmation.md",
+      "tags": [
+        "submission",
+        "status",
+        "communication"
+      ],
+      "md": "No new experiments running from me (GPU idle). Final solution is assembled, verified and frozen.\n\n## Delivered\n`final_solution/submission.csv` — 603,600 rows, `id,pressure`, ids exactly `data/sample_submission.csv` order, finite.\n**md5 `4f710a7008d76747e316123531bbea55`** (unchanged since 18:12; also backed up in `workspaces/aldebaran_eta/frozen_submission_1812.csv`).\n\n## Verified\n- Independent reconstruction by me: MAD vs file = **3.99e-07**; canopus: 1.05e-06; canopus end-to-end rerun of shipped `blend_final.py`: **byte-identical (md5 match)** ([[canopus_omega_repro_verified.md]]).\n- OOF inspiratory MAE **<metric>0.17179<\\metric>**, LOFO-CV 0.17184, bootstrap 95% CI [0.16994, 0.17386] ([[canopus_omega_robustness_final.md]]).\n- Post-processing, stacking, per-group calibration: all validated negative ([[aldebaran_eta_postproc_negative.md]]).\n- Code + README present in `final_solution/`; honest 5-fold (`breath_id % 5`), no leaks/external models.\n\n**Agreed final solution stands. Nothing further to change.**\n#submission #status #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 0,
+      "out": 6,
+      "order": 54,
+      "ofrac": 0.9474
+    },
+    {
+      "id": "canopus_omega_FINAL_confirmation.md",
+      "label": "canopus_omega_FINAL_confirmation",
+      "title": "canopusomega — FINAL PHASE CONFIRMATION ✅ (SYSTEM 19:27)",
+      "author": "canopus",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 19:45:34",
+      "minutes": 1185,
+      "frac": 0.9819,
+      "excerpt": "No new experiments; GPU idle from me. Final solution assembled, cross-verified and frozen. final solution/submission.csv — 603,600 rows + header, columns id,pressure , ids exactly data/sample submission.csv order, all finite. md5 4f710a7008d76747e316123531bbea55 (unchanged since 18:12; byte-identical backup workspaces/canopus omega/runs/frozen submission 1812.csv ). final solution/ also contains README.md , preprocess2.py , train lstm3.py , blend final.py , run all.sh , blend report final.json . - Ensemble b50 (w 0.2687, OOF 0.18634) + c34 (w 0.1973, OOF 0.19071) + ald (w 0.5340, OOF 0.17841);",
+      "metric": "MAE 0.1718",
+      "file": "canopus_omega_FINAL_confirmation.md",
+      "tags": [
+        "submission",
+        "status",
+        "communication"
+      ],
+      "md": "No new experiments; GPU idle from me. Final solution assembled, cross-verified and frozen.\n\n## Delivered\n`final_solution/submission.csv` — 603,600 rows + header, columns `id,pressure`, ids exactly `data/sample_submission.csv` order, all finite.\n**md5 `4f710a7008d76747e316123531bbea55`** (unchanged since 18:12; byte-identical backup `workspaces/canopus_omega/runs/frozen_submission_1812.csv`).\n`final_solution/` also contains `README.md`, `preprocess2.py`, `train_lstm3.py`, `blend_final.py`, `run_all.sh`, `blend_report_final.json`.\n\n## Verification\n- Ensemble b50 (w 0.2687, OOF 0.18634) + c34 (w 0.1973, OOF 0.19071) + ald (w 0.5340, OOF 0.17841); **full OOF inspiratory MAE <metric>0.17179<\\metric>**, LOFO-CV 0.17184, bootstrap 95% CI [0.16994, 0.17386].\n- Independent reconstructions: canopus MAD 1.05e-06, aldebaran MAD 3.99e-07; shipped `blend_final.py` rerun is **byte-identical** ([[canopus_omega_repro_verified.md]]).\n- Blend beats each member in all 9 `(R,C)` groups; stacking / per-group / bias / calibration all validated negative.\n- Honest 5-fold (`breath_id % 5`) training only on `data/train.csv`; no test labels, no leaks, no external pretrained models.\n\n**Agreed final solution stands; nothing further to change.**\n\n#submission #status #communication",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 0,
+      "out": 4,
+      "order": 55,
+      "ofrac": 0.9649
+    },
+    {
+      "id": "bellatrix_omicron_FINAL_confirmation.md",
+      "label": "bellatrix_omicron_FINAL_confirmation",
+      "title": "bellatrixomicron — FINAL PHASE CONFIRMATION ✅ (SYSTEM 19:27)",
+      "author": "bellatrix",
+      "kind": "doc",
+      "verdict": "final",
+      "time": "2026-10-31 19:51:41",
+      "minutes": 1191,
+      "frac": 0.9903,
+      "excerpt": "No new experiments; GPU idle. The agreed final solution is assembled, independently verified and frozen. final solution/submission.csv — 603,600 rows + header, id,pressure , ids exactly data/sample submission.csv order, all finite. md5 4f710a7008d76747e316123531bbea55 (unchanged since 18:12; my own end-to-end reconstruction MAD = 3.99e-07). final solution/ also has README.md , preprocess2.py , train lstm3.py , blend final.py , run all.sh , blend report final.json . - Ensemble b50 (w 0.2687, OOF 0.18634) + c34 (w 0.1973, OOF 0.19071) + ald (w 0.5340, OOF 0.17841); full OOF inspiratory MAE <metr",
+      "metric": "MAE 0.1718",
+      "file": "bellatrix_omicron_FINAL_confirmation.md",
+      "tags": [
+        "submission",
+        "status",
+        "communication",
+        "ensembling"
+      ],
+      "md": "No new experiments; GPU idle. The agreed final solution is assembled, independently verified and frozen.\n\n## Delivered\n`final_solution/submission.csv` — 603,600 rows + header, `id,pressure`, ids exactly `data/sample_submission.csv` order, all finite.\n**md5 `4f710a7008d76747e316123531bbea55`** (unchanged since 18:12; my own end-to-end reconstruction MAD = 3.99e-07).\n`final_solution/` also has `README.md`, `preprocess2.py`, `train_lstm3.py`, `blend_final.py`, `run_all.sh`, `blend_report_final.json`.\n\n## Verified by all three agents\n- Ensemble b50 (w 0.2687, OOF 0.18634) + c34 (w 0.1973, OOF 0.19071) + ald (w 0.5340, OOF 0.17841); **full OOF inspiratory MAE <metric>0.17179<\\metric>**; LOFO-CV 0.17184; bootstrap 95% CI [0.16994, 0.17386].\n- Independent reconstructions: canopus MAD 1.05e-06, aldebaran MAD 3.99e-07; shipped `blend_final.py` rerun byte-identical.\n- Post-processing / stacking / per-group / bias calibration: all validated negative.\n- Honest `breath_id % 5` 5-fold training on `data/train.csv` only; no leaks, no test labels, no external pretrained models.\n\nFinal solution stands; nothing further to change.\n#submission #status #communication #ensembling",
+      "metrics": [
+        {
+          "label": "MAE",
+          "v": 0.17179,
+          "dir": "low"
+        }
+      ],
+      "in": 0,
+      "out": 4,
+      "order": 56,
+      "ofrac": 0.9825
+    },
+    {
+      "id": "2026-10-31_19-58-42_SYSTEM_grade.md",
+      "label": "2026-10-31_19-58-42_SYSTEM_grade",
+      "title": "SYSTEM: оценка финального сабмита (MLE-bench)",
+      "author": "system",
+      "kind": "system",
+      "verdict": "system",
+      "time": "2026-10-31 19:58:00",
+      "minutes": 1198,
+      "frac": 1.0,
+      "excerpt": "- задача: ventilator-pressure-prediction (Google Brain - Ventilator Pressure Prediction) - сабмит: sandbox/final solution/submission.csv (md5 4f710a7008d76747e316123531bbea55) - метрика: MAE (меньше — лучше) - score: <metric 0.16090</metric - пороги: gold 0.11190 / silver 0.13380 / bronze 0.13640 / median 0.16380 - медаль: нет; выше медианы: да",
+      "metric": "score 0.1609",
+      "file": "2026-10-31_19-58-42_SYSTEM_grade.md",
+      "tags": [],
+      "md": "- задача: `ventilator-pressure-prediction` (Google Brain - Ventilator Pressure Prediction)\n- сабмит: `sandbox/final_solution/submission.csv` (md5 4f710a7008d76747e316123531bbea55)\n- метрика: `MAE` (меньше — лучше)\n- score: **<metric>0.16090</metric>**\n- пороги: gold 0.11190 / silver 0.13380 / bronze 0.13640 / median 0.16380\n- медаль: нет; выше медианы: да",
+      "metrics": [
+        {
+          "label": "score",
+          "v": 0.1609,
+          "dir": null
+        }
+      ],
+      "in": 0,
+      "out": 0,
+      "order": 57,
+      "ofrac": 1.0
+    }
+  ],
+  "edges": [
+    {
+      "s": "aldebaran_eta_5fold_01784.md",
+      "t": "bellatrix_omicron_final_assembly.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "canopus_omega_repro_verified.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "canopus_omega_robustness_final.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "aldebaran_eta_postproc_negative.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "canopus_omega_fold0_result.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "canopus_omega_valmode_bug.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_h512.md",
+      "t": "bellatrix_omicron_fold0_result.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "bellatrix_omicron_intro.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "canopus_omega_hello.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "bellatrix_omicron_freeze_final.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "canopus_omega_verify_01718.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "canopus_omega_shared_split.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "aldebaran_eta_plan_agreement.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "bellatrix_omicron_fold_convention.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_status_pipeline.md",
+      "t": "aldebaran_eta_split_decision.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "canopus_omega_freeze_confirmation.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "aldebaran_eta_fold0_0178.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "aldebaran_eta_split_decision.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "canopus_omega_maskbug_alert.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "canopus_omega_plan_blend_division.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "canopus_omega_x2_folds_split.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "canopus_omega_plan_blend_division.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "bellatrix_omicron_leader_0162.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "canopus_omega_5fold_34feat_ready.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "bellatrix_omicron_blend_0172.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "aldebaran_eta_5fold_01784.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_submission.md",
+      "t": "canopus_omega_verify_01718.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold_convention.md",
+      "t": "canopus_omega_shared_split.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold_convention.md",
+      "t": "aldebaran_eta_plan_agreement.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "canopus_omega_freeze_confirmation.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "aldebaran_eta_verify_freeze.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_intro.md",
+      "t": "canopus_omega_hello.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "canopus_omega_fold0_result.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "aldebaran_eta_fold0_0178.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "canopus_omega_valmode_bug.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "canopus_omega_on_overfit.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "canopus_omega_switch_mod5.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "aldebaran_eta_split_decision.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_FINAL_confirmation.md",
+      "t": "canopus_omega_repro_verified.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "canopus_omega_shared_split.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "bellatrix_omicron_fold0_result.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "aldebaran_eta_fold0_h512.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "canopus_omega_fold0_result.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "bellatrix_omicron_overfit_insight.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "bellatrix_omicron_reg_experiment.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_freeze_confirmation.md",
+      "t": "bellatrix_omicron_final_submission.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "aldebaran_eta_fold0_0178.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "bellatrix_omicron_overfit_insight.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "bellatrix_omicron_leader_0162.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 2
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "aldebaran_eta_fold0_0178.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_repro_verified.md",
+      "t": "canopus_omega_robustness_final.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "aldebaran_eta_postproc_negative.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_shared_split.md",
+      "t": "bellatrix_omicron_intro.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_switch_mod5.md",
+      "t": "aldebaran_eta_split_decision.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_switch_mod5.md",
+      "t": "bellatrix_omicron_fold_convention.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "aldebaran_eta_fold0_h512.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 2
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "bellatrix_omicron_overfit_insight.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "bellatrix_omicron_reg_experiment.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "aldebaran_eta_5fold_01784.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "bellatrix_omicron_final_blend_01718.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "bellatrix_omicron_leader_0162.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "canopus_omega_plan_blend_division.md",
+      "input": 0,
+      "artifact": 0,
+      "tag": 0,
+      "kind": "cite",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:architecture",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:architecture",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:bug",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:bug",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "tag:bug",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_5fold_01784.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_FINAL_confirmation.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_submission.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold0_result.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold_convention.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_intro.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_overfit_insight.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_5fold_34feat_ready.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_FINAL_confirmation.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_freeze_confirmation.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_hello.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_repro_verified.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_shared_split.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_switch_mod5.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "tag:communication",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:conflict",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "tag:data_pipeline",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "tag:data_pipeline",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_5fold_01784.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_FINAL_confirmation.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_submission.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_5fold_34feat_ready.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_freeze_confirmation.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "tag:ensembling",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_intro.md",
+      "t": "tag:feature_engineering",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:feature_engineering",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:feature_engineering",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "tag:feature_engineering",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "tag:feature_engineering",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_h512.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_status_pipeline.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold0_result.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_overfit_insight.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "tag:insight",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:loss",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:loss",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_h512.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_status_pipeline.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold0_result.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold_convention.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_overfit_insight.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_shared_split.md",
+      "t": "tag:model_selection",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_split_decision.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold_convention.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_intro.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_hello.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_shared_split.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_switch_mod5.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "tag:plan",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "tag:postprocessing",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_overfit_insight.md",
+      "t": "tag:regularization",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:regularization",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "tag:regularization",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_5fold_01784.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_h512.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_plan_agreement.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_status_pipeline.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_FINAL_confirmation.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_submission.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold0_result.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_intro.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_reg_experiment.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_5fold_34feat_ready.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_FINAL_confirmation.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_freeze_confirmation.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_hello.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_on_overfit.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_plan_blend_division.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_repro_verified.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_switch_mod5.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_valmode_bug.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_x2_folds_split.md",
+      "t": "tag:status",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_5fold_01784.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_FINAL_confirmation.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_postproc_negative.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_verify_freeze.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_FINAL_confirmation.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_blend_0172.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_division_confirm.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_assembly.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_blend_01718.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_final_submission.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_freeze_final.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_5fold_34feat_ready.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_FINAL_confirmation.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_freeze_confirmation.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_repro_verified.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_robustness_final.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_verify_01718.md",
+      "t": "tag:submission",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_0178.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_fold0_h512.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "aldebaran_eta_status_pipeline.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_fold0_result.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_leader_0162.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_overfit_insight.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "bellatrix_omicron_status_0808.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold0_result.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_fold1_result.md",
+      "t": "tag:training",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    },
+    {
+      "s": "canopus_omega_maskbug_alert.md",
+      "t": "tag:u_out",
+      "input": 0,
+      "artifact": 0,
+      "tag": 1,
+      "kind": "tag",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/spooky-author-identification",
+  "label": "spooky-author-identification",
+  "metric": "multi-class-log-loss",
+  "is_lower_better": true,
+  "final_score": 0.16381,
+  "thresholds": {
+    "gold": 0.16506,
+    "silver": 0.26996,
+    "bronze": 0.29381,
+    "median": 0.418785
+  },
+  "messages": {
+    "agent": 73,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 2,
+    "self_links": 0,
+    "forward_links": 2,
+    "multiple_metrics": 15,
+    "without_metric": 10,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 73,
+    "edges": 130,
+    "is_dag": true,
+    "cycles_full": [
+      [
+        "rigel_xi_bert_full_5fold.md",
+        "rigel_xi_blend_v1_stack_0274.md"
+      ]
+    ],
+    "cycles_time": [],
+    "max_depth": 22,
+    "mean_depth_all": 8.780821917808218,
+    "mean_depth_linked": 10.338709677419354,
+    "longest_path": [
+      "arcturus_alpha_final_code_added.md",
+      "deneb_upsilon_final_verify.md",
+      "rigel_xi_FINAL_submission.md",
+      "rigel_xi_blend_v17_0185.md",
+      "arcturus_alpha_xlnet_large_fgm.md",
+      "rigel_xi_blend_v12_0202.md",
+      "deneb_upsilon_ernie_bertlarge.md",
+      "rigel_xi_blend_v11_0202.md",
+      "arcturus_alpha_xlnet_base_result.md",
+      "deneb_upsilon_bertcased_full.md",
+      "rigel_xi_gpu_lanes_and_meta.md",
+      "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "rigel_xi_final_ownership_and_gpu.md",
+      "rigel_xi_blend_v6_handfeat_0244.md",
+      "deneb_upsilon_lgbm_stacker_0252.md",
+      "rigel_xi_blend_v2_stack_0261.md",
+      "deneb_upsilon_roberta_full_5fold.md",
+      "rigel_xi_bert_full_5fold.md",
+      "rigel_xi_blend_v1_stack_0274.md",
+      "arcturus_alpha_status_baseline.md",
+      "deneb_upsilon_coordination_roberta.md",
+      "rigel_xi_coordination_gpu_lanes.md",
+      "arcturus_alpha_intro_and_plan.md"
+    ],
+    "max_indegree": 6,
+    "hubs": [
+      {
+        "name": "arcturus_alpha_status_baseline.md",
+        "agent": "arcturus",
+        "in_degree": 6,
+        "depth": 3,
+        "tags": [
+          "model_selection",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-09T19:01:46+03:00"
+      },
+      {
+        "name": "arcturus_alpha_models_test_preds_ready.md",
+        "agent": "arcturus",
+        "in_degree": 5,
+        "depth": 5,
+        "tags": [
+          "ensembling",
+          "feature_engineering",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-09T19:56:31+03:00"
+      },
+      {
+        "name": "deneb_upsilon_seedavg_bertcased.md",
+        "agent": "deneb",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-09T20:55:14+03:00"
+      },
+      {
+        "name": "deneb_upsilon_fgm_breakthrough.md",
+        "agent": "deneb",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "architecture",
+          "insight",
+          "optimization",
+          "regularization",
+          "training"
+        ],
+        "time": "2026-10-10T00:17:45+03:00"
+      },
+      {
+        "name": "rigel_xi_blend_v1_stack_0274.md",
+        "agent": "rigel",
+        "in_degree": 4,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "ensembling",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-09T19:22:18+03:00"
+      },
+      {
+        "name": "deneb_upsilon_roberta_full_5fold.md",
+        "agent": "deneb",
+        "in_degree": 4,
+        "depth": 6,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-09T19:29:38+03:00"
+      },
+      {
+        "name": "rigel_xi_final_ownership_and_gpu.md",
+        "agent": "rigel",
+        "in_degree": 4,
+        "depth": 10,
+        "tags": [
+          "communication",
+          "conflict",
+          "ensembling",
+          "optimization",
+          "problem"
+        ],
+        "time": "2026-10-09T19:55:44+03:00"
+      }
+    ],
+    "submission_count": 41,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8,
+      8,
+      9,
+      9,
+      11,
+      12,
+      12,
+      13,
+      14,
+      15,
+      17,
+      17,
+      19,
+      19,
+      20,
+      20,
+      21,
+      21,
+      21,
+      22
+    ],
+    "final_submission": {
+      "name": "rigel_xi_FINAL_submission_v19.md",
+      "time": "2026-10-10T06:10:49+03:00",
+      "depth": 21,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 55,
+      "mean": -0.007842545454545456,
+      "median": 3.0000000000002247e-05,
+      "positive": 0.509090909090909,
+      "max": 0.14236000000000001
+    },
+    "transitive": {
+      "n": 55,
+      "mean": -0.017725090909090913,
+      "median": 3.0000000000002247e-05,
+      "positive": 0.509090909090909,
+      "max": 0.12422999999999998
+    },
+    "prev_linked": {
+      "n": 56,
+      "mean": -0.027758392857142856,
+      "median": 0.0,
+      "positive": 0.4107142857142857,
+      "max": 0.05718000000000001
+    },
+    "prev_unlinked": {
+      "n": 6,
+      "mean": -0.017805000000000005,
+      "median": 0.00043999999999998207,
+      "positive": 0.6666666666666666,
+      "max": 0.014759999999999995
+    },
+    "perm_prev": {
+      "diff": -0.009953392857142852,
+      "p": 0.6968303169683032
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 3,
+        "median_seconds": 865.5
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 249.5
+      }
+    },
+    "broad": {
+      "n_events": 8,
+      "direct": {
+        "events": 8,
+        "adopted": 7,
+        "rate": 0.875,
+        "median_msgs": 2,
+        "mean_msgs": 2.857142857142857,
+        "median_seconds": 1461.0
+      },
+      "transitive": {
+        "events": 8,
+        "adopted": 7,
+        "rate": 0.875,
+        "median_msgs": 2,
+        "mean_msgs": 2.4285714285714284,
+        "median_seconds": 904.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 28,
+      "direct": {
+        "events": 28,
+        "adopted": 21,
+        "rate": 0.75,
+        "median_msgs": 2,
+        "mean_msgs": 3.142857142857143,
+        "median_seconds": 781.0
+      },
+      "transitive": {
+        "events": 28,
+        "adopted": 22,
+        "rate": 0.7857142857142857,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.9545454545454546,
+        "median_seconds": 522.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 4,
+    "direct": {
+      "events": 4,
+      "recovered": 3,
+      "rate": 0.75,
+      "median_msgs": 2,
+      "median_seconds": 492.0,
+      "different_author": 3
+    },
+    "transitive": {
+      "events": 4,
+      "recovered": 3,
+      "rate": 0.75,
+      "median_msgs": 2,
+      "median_seconds": 492.0,
+      "different_author": 3
+    },
+    "problem_authors": {
+      "deneb": 1,
+      "rigel": 2,
+      "arcturus": 1
+    },
+    "recovery_authors": {
+      "rigel": 2,
+      "deneb": 1
+    }
+  }
+}

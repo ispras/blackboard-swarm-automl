@@ -1,0 +1,52 @@
+== задача: Google Brain - Ventilator Pressure Prediction (`ventilator-pressure-prediction`)
+== prepared: /home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/prepared (cache:/home/travvy/.cache/mle-bench/data)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/ventilator-pressure-prediction/answers.csv ← /home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/prepared/private/test.csv
+  written private/competitions/ventilator-pressure-prediction/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (5.7 KiB) md5 3fe7f22cc84d24cfb888abd6308114cd
+  installed data/sample_submission.csv (5.1 MiB) md5 6ab5162be2a03922cfc6068befc31c22
+  installed data/test.csv (24.4 MiB) md5 39c126e1ac7b2e6641ec54f698b1ebdf
+  installed data/train.csv (285.8 MiB) md5 4b0aaa1c637a452d5d1109aa585bca9f
+  written TASK.md (только description)
+  written data/README.md
+
+задача: Google Brain - Ventilator Pressure Prediction (`ventilator-pressure-prediction`)
+  метрика: `MAE` (меньше — лучше)
+  - пороги (2605 команд в лидерборде):
+  - gold 0.11190
+  - silver 0.13380
+  - bronze 0.13640
+  - median 0.16380
+  train: data/train.csv
+  test:  data/test.csv
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  ventilator-pressure-prediction
+sandbox/data:     316M (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (316MB) едут через бакет 'mlebench-ventilator-pressure-prediction' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-ventilator-pressure-prediction' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (200K)
+image:        swarm-mlm
+job:          ventilator-pressure-prediction
+/home/travvy/Desktop/sisyphus-blackboard-experiment/.venv-mlm/lib/python3.12/site-packages/ML_management/mlmanagement/git_info.py:93: UserWarning: Repo sisyphus-blackboard-experiment have changes.
+  warnings.warn(f"Repo {repo_name} have changes.")
+  0%|          | 0.00/180k [00:00<?, ?File/s]210kFile [00:00, 432kFile/s]                 
+{"job_id": "16136", "job_name": "ventilator-pressure-prediction", "status": "PLANNED"}
+
+Job запущен в MLM: ventilator-pressure-prediction (id 16136)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

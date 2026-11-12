@@ -1,0 +1,1948 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [297 kB]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [1108 B]
+Fetched 10.4 MB in 2s (4847 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Collecting pip
+  Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 12.8 MB/s  0:00:00
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 5.1 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+  Attempting uninstall: pip
+    Found existing installation: pip 26.2.1
+    Uninstalling pip-26.2.1:
+      Successfully uninstalled pip-26.2.1
+Successfully installed pip-26.3 setuptools-84.2.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.123-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.123 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.123-py3-none-any.whl (16.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.2/16.2 MB 13.6 MB/s  0:00:01
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.123 botocore-1.43.123 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/178k [00:00<?, ?File/s][A
+210kFile [00:00, 11.5MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-billion-word-imputation' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/1.64G [00:00<?, ?B/s][A
+  0%|          | 256k/1.64G [00:00<17:28, 1.68MB/s][A
+  0%|          | 8.25M/1.64G [00:00<01:02, 28.3MB/s][A
+  1%|          | 16.0M/1.64G [00:00<00:38, 45.1MB/s][A
+  1%|          | 21.0M/1.64G [00:00<00:41, 42.0MB/s][A
+  2%|▏         | 28.2M/1.64G [00:00<00:33, 51.7MB/s][A
+  2%|▏         | 37.0M/1.64G [00:00<00:28, 61.5MB/s][A
+  3%|▎         | 44.0M/1.64G [00:00<00:26, 65.8MB/s][A
+  3%|▎         | 44.0M/1.64G [00:00<00:26, 65.8MB/s][A
+  3%|▎         | 51.0M/1.64G [00:01<00:25, 68.0MB/s][A
+  3%|▎         | 58.8M/1.64G [00:01<00:23, 71.8MB/s][A
+  4%|▍         | 66.0M/1.64G [00:01<00:23, 73.0MB/s][A
+  4%|▍         | 73.2M/1.64G [00:01<00:23, 72.8MB/s][A
+  5%|▍         | 80.5M/1.64G [00:01<00:23, 71.1MB/s][A
+  5%|▌         | 87.5M/1.64G [00:01<00:26, 64.0MB/s][A
+  6%|▌         | 94.0M/1.64G [00:01<00:37, 44.2MB/s][A
+  6%|▌         | 104M/1.64G [00:01<00:29, 55.5MB/s] [A
+  7%|▋         | 110M/1.64G [00:02<00:32, 51.5MB/s][A
+  7%|▋         | 116M/1.64G [00:02<00:31, 52.3MB/s][A
+  7%|▋         | 124M/1.64G [00:02<00:27, 59.9MB/s][A
+  8%|▊         | 132M/1.64G [00:02<00:25, 63.5MB/s][A
+  8%|▊         | 138M/1.64G [00:02<00:25, 64.6MB/s][A
+  9%|▊         | 145M/1.64G [00:02<00:28, 55.9MB/s][A
+  9%|▉         | 157M/1.64G [00:02<00:22, 72.4MB/s][A
+ 10%|▉         | 167M/1.64G [00:02<00:19, 80.5MB/s][A
+ 11%|█         | 177M/1.64G [00:03<00:18, 85.9MB/s][A
+ 11%|█         | 186M/1.64G [00:03<00:25, 61.4MB/s][A
+ 12%|█▏        | 196M/1.64G [00:03<00:22, 70.0MB/s][A
+ 12%|█▏        | 204M/1.64G [00:03<00:26, 59.3MB/s][A
+ 12%|█▏        | 204M/1.64G [00:03<00:30, 50.4MB/s][A
+ 12%|█▏        | 204M/1.64G [00:03<00:30, 50.4MB/s][A
+ 12%|█▏        | 210M/1.64G [00:03<00:29, 52.6MB/s][A
+ 13%|█▎        | 218M/1.64G [00:03<00:26, 57.2MB/s][A
+ 13%|█▎        | 224M/1.64G [00:03<00:26, 57.8MB/s][A
+ 14%|█▎        | 231M/1.64G [00:03<00:23, 63.7MB/s][A
+ 14%|█▎        | 231M/1.64G [00:03<00:23, 63.7MB/s][A
+ 14%|█▍        | 238M/1.64G [00:04<00:24, 62.5MB/s][A
+ 15%|█▍        | 244M/1.64G [00:04<00:23, 65.3MB/s][A
+ 15%|█▍        | 252M/1.64G [00:04<00:22, 68.1MB/s][A
+ 15%|█▌        | 258M/1.64G [00:04<00:21, 68.0MB/s][A
+ 16%|█▌        | 266M/1.64G [00:04<00:20, 74.0MB/s][A
+ 16%|█▌        | 266M/1.64G [00:04<00:20, 74.0MB/s][A
+ 16%|█▋        | 274M/1.64G [00:04<00:21, 68.5MB/s][A
+ 17%|█▋        | 281M/1.64G [00:05<00:36, 39.8MB/s][A
+ 17%|█▋        | 288M/1.64G [00:05<00:31, 46.0MB/s][A
+ 18%|█▊        | 295M/1.64G [00:05<00:28, 51.6MB/s][A
+ 18%|█▊        | 296M/1.64G [00:05<00:25, 56.8MB/s][A
+ 18%|█▊        | 303M/1.64G [00:05<00:23, 61.9MB/s][A
+ 18%|█▊        | 311M/1.64G [00:05<00:21, 66.6MB/s][A
+ 19%|█▉        | 318M/1.64G [00:05<00:20, 68.3MB/s][A
+ 19%|█▉        | 325M/1.64G [00:05<00:20, 69.0MB/s][A
+ 20%|█▉        | 332M/1.64G [00:05<00:19, 71.4MB/s][A
+ 20%|██        | 340M/1.64G [00:05<00:20, 67.1MB/s][A
+ 21%|██        | 346M/1.64G [00:05<00:21, 63.9MB/s][A
+ 21%|██        | 353M/1.64G [00:06<00:24, 57.4MB/s][A
+ 21%|██▏       | 359M/1.64G [00:06<00:31, 44.3MB/s][A
+ 22%|██▏       | 364M/1.64G [00:06<00:31, 44.2MB/s][A
+ 22%|██▏       | 368M/1.64G [00:06<00:33, 41.3MB/s][A
+ 22%|██▏       | 375M/1.64G [00:06<00:28, 47.6MB/s][A
+ 23%|██▎       | 382M/1.64G [00:06<00:25, 53.0MB/s][A
+ 23%|██▎       | 383M/1.64G [00:06<00:20, 65.5MB/s][A
+ 23%|██▎       | 383M/1.64G [00:06<00:20, 65.5MB/s][A
+ 23%|██▎       | 383M/1.64G [00:06<00:20, 65.5MB/s][A
+ 23%|██▎       | 390M/1.64G [00:06<00:19, 67.9MB/s][A
+ 24%|██▎       | 397M/1.64G [00:07<00:20, 66.3MB/s][A
+ 24%|██▍       | 405M/1.64G [00:07<00:19, 69.8MB/s][A
+ 25%|██▍       | 413M/1.64G [00:07<00:18, 72.8MB/s][A
+ 25%|██▍       | 420M/1.64G [00:07<00:19, 68.2MB/s][A
+ 25%|██▍       | 420M/1.64G [00:07<00:19, 68.2MB/s][A
+ 25%|██▌       | 427M/1.64G [00:07<00:21, 60.6MB/s][A
+ 26%|██▌       | 433M/1.64G [00:07<00:22, 58.7MB/s][A
+ 26%|██▌       | 439M/1.64G [00:07<00:26, 50.0MB/s][A
+ 26%|██▋       | 445M/1.64G [00:07<00:24, 52.2MB/s][A
+ 27%|██▋       | 451M/1.64G [00:08<00:25, 50.8MB/s][A
+ 27%|██▋       | 458M/1.64G [00:08<00:19, 65.0MB/s][A
+ 27%|██▋       | 458M/1.64G [00:08<00:19, 65.0MB/s][A
+ 27%|██▋       | 458M/1.64G [00:08<00:19, 65.0MB/s][A
+ 28%|██▊       | 466M/1.64G [00:08<00:18, 67.4MB/s][A
+ 28%|██▊       | 474M/1.64G [00:08<00:16, 75.0MB/s][A
+ 28%|██▊       | 474M/1.64G [00:08<00:15, 80.7MB/s][A
+ 28%|██▊       | 475M/1.64G [00:08<00:15, 80.7MB/s][A
+ 28%|██▊       | 475M/1.64G [00:08<00:15, 80.7MB/s][A
+ 29%|██▊       | 483M/1.64G [00:08<00:17, 70.8MB/s][A
+ 29%|██▊       | 483M/1.64G [00:08<00:19, 65.6MB/s][A
+ 29%|██▉       | 490M/1.64G [00:08<00:20, 61.6MB/s][A
+ 30%|██▉       | 498M/1.64G [00:08<00:18, 67.9MB/s][A
+ 30%|███       | 505M/1.64G [00:08<00:19, 62.2MB/s][A
+ 30%|███       | 512M/1.64G [00:09<00:20, 59.3MB/s][A
+ 31%|███       | 518M/1.64G [00:09<00:22, 54.4MB/s][A
+ 31%|███       | 524M/1.64G [00:09<00:21, 57.6MB/s][A
+ 31%|███       | 524M/1.64G [00:09<00:20, 60.7MB/s][A
+ 32%|███▏      | 530M/1.64G [00:09<00:21, 56.0MB/s][A
+ 32%|███▏      | 530M/1.64G [00:09<00:21, 56.0MB/s][A
+ 32%|███▏      | 536M/1.64G [00:09<00:21, 55.3MB/s][A
+ 32%|███▏      | 544M/1.64G [00:09<00:17, 69.4MB/s][A
+ 32%|███▏      | 545M/1.64G [00:09<00:17, 69.4MB/s][A
+ 33%|███▎      | 552M/1.64G [00:09<00:15, 74.3MB/s][A
+ 33%|███▎      | 552M/1.64G [00:09<00:15, 74.3MB/s][A
+ 33%|███▎      | 560M/1.64G [00:09<00:17, 65.8MB/s][A
+ 33%|███▎      | 560M/1.64G [00:09<00:19, 61.2MB/s][A
+ 34%|███▎      | 566M/1.64G [00:09<00:19, 59.6MB/s][A
+ 34%|███▍      | 574M/1.64G [00:10<00:18, 63.7MB/s][A
+ 35%|███▍      | 582M/1.64G [00:10<00:18, 61.9MB/s][A
+ 35%|███▍      | 588M/1.64G [00:10<00:21, 53.4MB/s][A
+ 35%|███▌      | 595M/1.64G [00:10<00:21, 53.7MB/s][A
+ 36%|███▌      | 600M/1.64G [00:10<00:23, 48.5MB/s][A
+ 36%|███▌      | 607M/1.64G [00:10<00:23, 48.3MB/s][A
+ 36%|███▋      | 614M/1.64G [00:10<00:20, 54.2MB/s][A
+ 37%|███▋      | 620M/1.64G [00:11<00:21, 53.1MB/s][A
+ 37%|███▋      | 628M/1.64G [00:11<00:18, 61.3MB/s][A
+ 38%|███▊      | 636M/1.64G [00:11<00:16, 66.7MB/s][A
+ 38%|███▊      | 643M/1.64G [00:11<00:17, 63.3MB/s][A
+ 39%|███▊      | 651M/1.64G [00:11<00:14, 72.2MB/s][A
+ 39%|███▊      | 651M/1.64G [00:11<00:14, 72.2MB/s][A
+ 39%|███▉      | 658M/1.64G [00:11<00:19, 55.2MB/s][A
+ 40%|███▉      | 666M/1.64G [00:11<00:18, 59.2MB/s][A
+ 40%|███▉      | 672M/1.64G [00:11<00:18, 56.3MB/s][A
+ 40%|████      | 678M/1.64G [00:12<00:21, 49.3MB/s][A
+ 41%|████      | 686M/1.64G [00:12<00:19, 54.4MB/s][A
+ 41%|████      | 691M/1.64G [00:12<00:19, 53.4MB/s][A
+ 42%|████▏     | 699M/1.64G [00:12<00:17, 60.7MB/s][A
+ 42%|████▏     | 706M/1.64G [00:12<00:17, 57.3MB/s][A
+ 42%|████▏     | 706M/1.64G [00:12<00:17, 57.3MB/s][A
+ 42%|████▏     | 712M/1.64G [00:12<00:17, 56.8MB/s][A
+ 43%|████▎     | 719M/1.64G [00:12<00:16, 60.5MB/s][A
+ 43%|████▎     | 725M/1.64G [00:12<00:16, 60.6MB/s][A
+ 43%|████▎     | 732M/1.64G [00:12<00:15, 64.9MB/s][A
+ 44%|████▍     | 738M/1.64G [00:13<00:17, 56.6MB/s][A
+ 44%|████▍     | 747M/1.64G [00:13<00:15, 63.2MB/s][A
+ 45%|████▍     | 753M/1.64G [00:13<00:16, 60.5MB/s][A
+ 45%|████▌     | 759M/1.64G [00:13<00:18, 52.3MB/s][A
+ 45%|████▌     | 765M/1.64G [00:13<00:19, 49.8MB/s][A
+ 46%|████▌     | 770M/1.64G [00:13<00:19, 49.0MB/s][A
+ 46%|████▌     | 776M/1.64G [00:13<00:17, 53.6MB/s][A
+ 46%|████▋     | 782M/1.64G [00:14<00:17, 53.9MB/s][A
+ 47%|████▋     | 790M/1.64G [00:14<00:16, 56.0MB/s][A
+ 47%|████▋     | 790M/1.64G [00:14<00:16, 57.8MB/s][A
+ 47%|████▋     | 797M/1.64G [00:14<00:14, 62.6MB/s][A
+ 48%|████▊     | 804M/1.64G [00:14<00:15, 57.7MB/s][A
+ 48%|████▊     | 804M/1.64G [00:14<00:15, 57.7MB/s][A
+ 48%|████▊     | 811M/1.64G [00:14<00:14, 61.8MB/s][A
+ 49%|████▊     | 819M/1.64G [00:14<00:13, 68.9MB/s][A
+ 49%|████▉     | 826M/1.64G [00:14<00:13, 68.9MB/s][A
+ 49%|████▉     | 833M/1.64G [00:14<00:16, 54.0MB/s][A
+ 50%|████▉     | 840M/1.64G [00:14<00:15, 57.9MB/s][A
+ 50%|█████     | 846M/1.64G [00:15<00:17, 50.1MB/s][A
+ 51%|█████     | 852M/1.64G [00:15<00:17, 49.2MB/s][A
+ 51%|█████     | 858M/1.64G [00:15<00:17, 50.6MB/s][A
+ 51%|█████▏    | 864M/1.64G [00:15<00:15, 56.3MB/s][A
+ 51%|█████▏    | 864M/1.64G [00:15<00:15, 56.3MB/s][A
+ 52%|█████▏    | 874M/1.64G [00:15<00:12, 66.7MB/s][A
+ 52%|█████▏    | 881M/1.64G [00:15<00:11, 70.6MB/s][A
+ 52%|█████▏    | 882M/1.64G [00:15<00:11, 70.6MB/s][A
+ 53%|█████▎    | 888M/1.64G [00:15<00:11, 71.1MB/s][A
+ 53%|█████▎    | 896M/1.64G [00:15<00:11, 70.9MB/s][A
+ 54%|█████▎    | 902M/1.64G [00:16<00:12, 68.2MB/s][A
+ 54%|█████▍    | 909M/1.64G [00:16<00:15, 51.9MB/s][A
+ 54%|█████▍    | 916M/1.64G [00:16<00:14, 56.0MB/s][A
+ 55%|█████▍    | 922M/1.64G [00:16<00:15, 50.2MB/s][A
+ 55%|█████▌    | 929M/1.64G [00:16<00:14, 55.4MB/s][A
+ 56%|█████▌    | 935M/1.64G [00:16<00:16, 46.3MB/s][A
+ 56%|█████▌    | 943M/1.64G [00:16<00:13, 55.5MB/s][A
+ 56%|█████▋    | 949M/1.64G [00:17<00:13, 57.1MB/s][A
+ 57%|█████▋    | 956M/1.64G [00:17<00:12, 61.2MB/s][A
+ 57%|█████▋    | 963M/1.64G [00:17<00:12, 62.9MB/s][A
+ 57%|█████▋    | 964M/1.64G [00:17<00:11, 66.0MB/s][A
+ 57%|█████▋    | 964M/1.64G [00:17<00:11, 66.0MB/s][A
+ 58%|█████▊    | 971M/1.64G [00:17<00:10, 69.3MB/s][A
+ 58%|█████▊    | 978M/1.64G [00:17<00:11, 65.6MB/s][A
+ 59%|█████▊    | 985M/1.64G [00:17<00:10, 68.3MB/s][A
+ 59%|█████▉    | 992M/1.64G [00:17<00:14, 49.0MB/s][A
+ 59%|█████▉    | 992M/1.64G [00:17<00:17, 41.1MB/s][A
+ 59%|█████▉    | 999M/1.64G [00:17<00:15, 46.8MB/s][A
+ 60%|█████▉    | 0.98G/1.64G [00:18<00:16, 44.0MB/s][A
+ 60%|██████    | 0.99G/1.64G [00:18<00:12, 55.1MB/s][A
+ 60%|██████    | 0.99G/1.64G [00:18<00:12, 55.1MB/s][A
+ 60%|██████    | 0.99G/1.64G [00:18<00:15, 45.4MB/s][A
+ 61%|██████    | 1.00G/1.64G [00:18<00:12, 53.2MB/s][A
+ 61%|██████▏   | 1.01G/1.64G [00:18<00:11, 58.2MB/s][A
+ 62%|██████▏   | 1.02G/1.64G [00:18<00:10, 64.6MB/s][A
+ 62%|██████▏   | 1.02G/1.64G [00:18<00:09, 73.2MB/s][A
+ 62%|██████▏   | 1.02G/1.64G [00:18<00:09, 73.2MB/s][A
+ 63%|██████▎   | 1.03G/1.64G [00:18<00:10, 63.5MB/s][A
+ 63%|██████▎   | 1.03G/1.64G [00:18<00:10, 63.5MB/s][A
+ 63%|██████▎   | 1.04G/1.64G [00:19<00:10, 63.0MB/s][A
+ 64%|██████▎   | 1.05G/1.64G [00:19<00:13, 46.6MB/s][A
+ 64%|██████▍   | 1.05G/1.64G [00:19<00:15, 42.0MB/s][A
+ 64%|██████▍   | 1.06G/1.64G [00:19<00:13, 47.3MB/s][A
+ 65%|██████▍   | 1.06G/1.64G [00:19<00:13, 47.9MB/s][A
+ 65%|██████▍   | 1.07G/1.64G [00:19<00:13, 45.2MB/s][A
+ 65%|██████▌   | 1.07G/1.64G [00:19<00:11, 52.0MB/s][A
+ 66%|██████▌   | 1.08G/1.64G [00:19<00:11, 54.5MB/s][A
+ 66%|██████▌   | 1.08G/1.64G [00:19<00:10, 56.7MB/s][A
+ 66%|██████▌   | 1.09G/1.64G [00:20<00:08, 71.6MB/s][A
+ 66%|██████▌   | 1.09G/1.64G [00:20<00:08, 71.6MB/s][A
+ 67%|██████▋   | 1.10G/1.64G [00:20<00:07, 74.9MB/s][A
+ 67%|██████▋   | 1.10G/1.64G [00:20<00:07, 76.9MB/s][A
+ 68%|██████▊   | 1.11G/1.64G [00:20<00:08, 71.2MB/s][A
+ 68%|██████▊   | 1.12G/1.64G [00:20<00:07, 71.0MB/s][A
+ 68%|██████▊   | 1.13G/1.64G [00:20<00:09, 58.1MB/s][A
+ 68%|██████▊   | 1.13G/1.64G [00:20<00:09, 58.1MB/s][A
+ 69%|██████▉   | 1.13G/1.64G [00:20<00:11, 46.3MB/s][A
+ 69%|██████▉   | 1.14G/1.64G [00:21<00:11, 49.0MB/s][A
+ 70%|██████▉   | 1.14G/1.64G [00:21<00:10, 52.1MB/s][A
+ 70%|██████▉   | 1.15G/1.64G [00:21<00:10, 52.1MB/s][A
+ 70%|███████   | 1.16G/1.64G [00:21<00:08, 59.1MB/s][A
+ 71%|███████   | 1.16G/1.64G [00:21<00:08, 64.0MB/s][A
+ 71%|███████   | 1.16G/1.64G [00:21<00:07, 68.1MB/s][A
+ 71%|███████▏  | 1.17G/1.64G [00:21<00:07, 71.7MB/s][A
+ 72%|███████▏  | 1.18G/1.64G [00:21<00:06, 73.9MB/s][A
+ 72%|███████▏  | 1.19G/1.64G [00:21<00:07, 67.1MB/s][A
+ 72%|███████▏  | 1.19G/1.64G [00:21<00:07, 67.1MB/s][A
+ 73%|███████▎  | 1.19G/1.64G [00:21<00:09, 50.9MB/s][A
+ 73%|███████▎  | 1.19G/1.64G [00:21<00:09, 50.9MB/s][A
+ 73%|███████▎  | 1.20G/1.64G [00:22<00:08, 53.6MB/s][A
+ 73%|███████▎  | 1.21G/1.64G [00:22<00:08, 58.2MB/s][A
+ 74%|███████▎  | 1.21G/1.64G [00:22<00:08, 56.9MB/s][A
+ 74%|███████▍  | 1.22G/1.64G [00:22<00:08, 52.7MB/s][A
+ 74%|███████▍  | 1.22G/1.64G [00:22<00:09, 46.8MB/s][A
+ 75%|███████▍  | 1.23G/1.64G [00:22<00:10, 44.0MB/s][A
+ 75%|███████▌  | 1.23G/1.64G [00:22<00:08, 49.4MB/s][A
+ 76%|███████▌  | 1.24G/1.64G [00:22<00:06, 64.7MB/s][A
+ 76%|███████▌  | 1.24G/1.64G [00:22<00:06, 64.7MB/s][A
+ 76%|███████▌  | 1.25G/1.64G [00:22<00:06, 65.1MB/s][A
+ 76%|███████▋  | 1.26G/1.64G [00:23<00:06, 67.5MB/s][A
+ 77%|███████▋  | 1.27G/1.64G [00:23<00:06, 63.6MB/s][A
+ 77%|███████▋  | 1.27G/1.64G [00:23<00:06, 65.8MB/s][A
+ 78%|███████▊  | 1.28G/1.64G [00:23<00:06, 62.8MB/s][A
+ 78%|███████▊  | 1.28G/1.64G [00:23<00:06, 57.8MB/s][A
+ 78%|███████▊  | 1.28G/1.64G [00:23<00:06, 57.8MB/s][A
+ 78%|███████▊  | 1.29G/1.64G [00:23<00:06, 55.9MB/s][A
+ 79%|███████▉  | 1.30G/1.64G [00:23<00:07, 48.7MB/s][A
+ 80%|███████▉  | 1.31G/1.64G [00:24<00:06, 55.4MB/s][A
+ 80%|███████▉  | 1.31G/1.64G [00:24<00:06, 53.5MB/s][A
+ 80%|████████  | 1.32G/1.64G [00:24<00:05, 58.6MB/s][A
+ 81%|████████  | 1.33G/1.64G [00:24<00:05, 61.2MB/s][A
+ 81%|████████  | 1.33G/1.64G [00:24<00:05, 59.6MB/s][A
+ 82%|████████▏ | 1.34G/1.64G [00:24<00:06, 53.5MB/s][A
+ 82%|████████▏ | 1.34G/1.64G [00:24<00:06, 53.5MB/s][A
+ 82%|████████▏ | 1.34G/1.64G [00:24<00:06, 53.5MB/s][A
+ 82%|████████▏ | 1.34G/1.64G [00:24<00:06, 53.5MB/s][A
+ 82%|████████▏ | 1.35G/1.64G [00:24<00:06, 53.0MB/s][A
+ 82%|████████▏ | 1.35G/1.64G [00:24<00:05, 53.3MB/s][A
+ 83%|████████▎ | 1.36G/1.64G [00:25<00:04, 61.1MB/s][A
+ 83%|████████▎ | 1.37G/1.64G [00:25<00:05, 59.0MB/s][A
+ 84%|████████▎ | 1.37G/1.64G [00:25<00:04, 66.0MB/s][A
+ 84%|████████▍ | 1.38G/1.64G [00:25<00:04, 59.6MB/s][A
+ 84%|████████▍ | 1.39G/1.64G [00:25<00:05, 54.0MB/s][A
+ 85%|████████▍ | 1.39G/1.64G [00:25<00:05, 49.8MB/s][A
+ 85%|████████▌ | 1.40G/1.64G [00:25<00:04, 54.5MB/s][A
+ 86%|████████▌ | 1.41G/1.64G [00:25<00:04, 57.9MB/s][A
+ 86%|████████▌ | 1.41G/1.64G [00:26<00:04, 56.9MB/s][A
+ 86%|████████▋ | 1.42G/1.64G [00:26<00:03, 62.5MB/s][A
+ 87%|████████▋ | 1.43G/1.64G [00:26<00:03, 59.6MB/s][A
+ 87%|████████▋ | 1.43G/1.64G [00:26<00:03, 59.6MB/s][A
+ 87%|████████▋ | 1.43G/1.64G [00:26<00:03, 57.9MB/s][A
+ 87%|████████▋ | 1.43G/1.64G [00:26<00:03, 57.1MB/s][A
+ 87%|████████▋ | 1.43G/1.64G [00:26<00:03, 57.1MB/s][A
+ 88%|████████▊ | 1.44G/1.64G [00:26<00:03, 62.9MB/s][A
+ 88%|████████▊ | 1.45G/1.64G [00:26<00:03, 60.0MB/s][A
+ 88%|████████▊ | 1.45G/1.64G [00:26<00:03, 59.6MB/s][A
+ 89%|████████▊ | 1.46G/1.64G [00:26<00:03, 56.2MB/s][A
+ 89%|████████▉ | 1.46G/1.64G [00:26<00:03, 55.4MB/s][A
+ 89%|████████▉ | 1.47G/1.64G [00:27<00:03, 54.3MB/s][A
+ 90%|████████▉ | 1.47G/1.64G [00:27<00:03, 54.3MB/s][A
+ 90%|████████▉ | 1.48G/1.64G [00:27<00:03, 52.7MB/s][A
+ 90%|█████████ | 1.49G/1.64G [00:27<00:02, 58.6MB/s][A
+ 91%|█████████ | 1.49G/1.64G [00:27<00:02, 66.4MB/s][A
+ 91%|█████████▏| 1.50G/1.64G [00:27<00:02, 65.0MB/s][A
+ 92%|█████████▏| 1.51G/1.64G [00:27<00:02, 58.7MB/s][A
+ 92%|█████████▏| 1.52G/1.64G [00:27<00:02, 61.9MB/s][A
+ 93%|█████████▎| 1.52G/1.64G [00:27<00:02, 59.6MB/s][A
+ 93%|█████████▎| 1.53G/1.64G [00:28<00:02, 55.1MB/s][A
+ 93%|█████████▎| 1.53G/1.64G [00:28<00:02, 57.1MB/s][A
+ 94%|█████████▍| 1.54G/1.64G [00:28<00:01, 64.8MB/s][A
+ 94%|█████████▍| 1.55G/1.64G [00:28<00:01, 63.7MB/s][A
+ 94%|█████████▍| 1.55G/1.64G [00:28<00:01, 63.7MB/s][A
+ 95%|█████████▍| 1.55G/1.64G [00:28<00:01, 55.3MB/s][A
+ 95%|█████████▌| 1.56G/1.64G [00:28<00:01, 65.2MB/s][A
+ 95%|█████████▌| 1.57G/1.64G [00:28<00:01, 61.9MB/s][A
+ 96%|█████████▌| 1.58G/1.64G [00:28<00:01, 59.2MB/s][A
+ 96%|█████████▌| 1.58G/1.64G [00:29<00:01, 55.6MB/s][A
+ 97%|█████████▋| 1.59G/1.64G [00:29<00:00, 63.4MB/s][A
+ 97%|█████████▋| 1.60G/1.64G [00:29<00:01, 50.5MB/s][A
+ 97%|█████████▋| 1.60G/1.64G [00:29<00:01, 50.5MB/s][A
+ 98%|█████████▊| 1.60G/1.64G [00:29<00:00, 50.4MB/s][A
+ 98%|█████████▊| 1.61G/1.64G [00:29<00:00, 54.5MB/s][A
+ 98%|█████████▊| 1.62G/1.64G [00:29<00:00, 61.5MB/s][A
+ 99%|█████████▉| 1.62G/1.64G [00:29<00:00, 56.4MB/s][A
+ 99%|█████████▉| 1.63G/1.64G [00:29<00:00, 64.9MB/s][A
+100%|█████████▉| 1.64G/1.64G [00:30<00:00, 59.6MB/s][A
+100%|██████████| 1.64G/1.64G [00:30<00:00, 58.3MB/s]
+data ready: ['README.md', 'description.md', 'test_v2.txt.zip', 'train_v2.txt.zip']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT_SWARM.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=betelgeuse_tau swarm-2=mirfak_chi swarm-3=fomalhaut_zeta
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== mirfak_chi_intro_plan.md =====
+# mirfak_chi — intro & plan
+Hi swarm, I'm **mirfak_chi**. Task: Billion Word Imputation. Metric = mean char-level Levenshtein between our submitted sentence and the original (lower is better). Test = 302,645 sentences, each missing exactly one interior word. Baseline "submit test as-is" ≈ mean(len(missing word))+1 ≈ ~5.5.
+## Key insight on the metric
+Let original have true word `t` inserted at gap `p`.
+- If we insert our word `w` at the **correct** gap: cost = `lev(w,t)` (could be 0).
+- If we insert at the **wrong** gap: cost ≈ `len(w)+len(t)+2` (we pay for our wrong insert AND the missing word).
+- If we insert nothing: cost = `len(t)+1`.
+=> **Localization accuracy dominates.** We should only insert at a gap when we are confident, and choose a short/high-probability word. Inserting the wrong word at the right gap is still good (partial credit); inserting at the wrong gap is a loss.
+## Proposed plan
+1. Build a **validation harness** from a holdout slice of `train_v2.txt`: take full sentences, remove one random interior word, evaluate candidate methods on true `(gap, word)` picks with the real Levenshtein metric. This lets us compare approaches offline (allowed: holdout from train).
+2. Strong candidate: **pretrained masked LM** (roberta-base / bert-large / albert) on the A100. For every gap, insert `[MASK]` and read `P(w|context)`, pick `argmax_p max_w P`. ~8.5M gap forward passes; batched this is minutes on A100.
+3. Alternative/complement: **n-gram / KenLM-style LM trained on train.txt** for localization + word choice, and character-level word-similarity-aware scoring (prefer words whose char-length/edit-cost is low).
+4. Ensemble/decision rule: combine gap confidence + word choice + safe fallback (skip insertion when low confidence).
+## Hardware / coordination
+A100 80GB, 128 cores, but per-job cgroup = 8GB RAM. GPU is shared → **I propose a simple GPU time-slot board** (write `[GPU] <agent> <eta>` before heavy GPU jobs). I will only run one GPU inference job at a time.
+## Ask
+- Who wants which component? I can own the **pretrained-MLM inference + validation harness**. Looking for: (a) n-gram LM owner, (b) submission/format + safe-baseline owner, (c) ensembling/decision-rule owner.
+- Please don't duplicate the same heavy GPU job. Reply on the board.
+I'll post a first validation baseline shortly.
+#plan #communication #insight #model_selection
+===== betelgeuse_tau_intro_and_plan.md =====
+# betelgeuse_tau — intro + key metric insight + proposed division
+Hi team, I'm betelgeuse_tau. Task: **Billion Word Imputation**. For each test sentence one word (never first, last is always `.`) was deleted; we must re-insert it. Metric = **mean Levenshtein distance** to the original sentence (lower is better). 302,645 test sentences; train ~4.1 GB text (~30M sentences).
+## Key insight about the metric (please discuss)
+The submission is free text, **not constrained to insert a real word**. The deleted word is inserted into `T = prefix + " " + suffix`. If we insert string `x` at the right gap, then
+`Levenshtein(original, ours) ≈ Levenshtein(w_true, x)`.
+So:
+- submitting `test.txt` unchanged costs `mean(len(w_true))` (~4–5), i.e. the trivial baseline.
+- inserting a short string costs `≈ len(w) + len(x) - 2*matched`; **when unsure, a short string is much safer than a full word** (a wrong long word adds its full length).
+- Therefore the optimal submission is a **decision-theory problem**: choose gap `g` and string `x` minimizing expected char edit distance over the LM's candidate distribution — not necessarily the argmax word.
+## Proposed plan / roles (reply with preference)
+1. **betelgeuse_tau (me)**: validation harness (holdout from train, task-identical deletion), fast Levenshtein scorer, decision-theoretic insertion optimizer, keep shared baseline in `final_solution`.
+2. **fomalhaut_zeta**: n-gram language model (counts/backoff, custom or kenlm-style) → per-gap candidate word distributions for location+word.
+3. **mirfak_chi**: pretrained masked LM (e.g. RoBERTa/BERT MLM from HF) → candidate words per gap, and/or a location model.
+We must keep models **diverse** and compare on the *same* holdout. I'll publish the holdout + scorer format next.
+## Baseline to beat
+I'll publish exact numbers for (a) unchanged sentence, (b) single short char at random gap, (c) oracle-gap + short string, on a 20k holdout, within ~15 min. Please post your #status and which role you take.
+#plan #communication #insight #submission
+===== mirfak_chi_taking_mlm_role.md =====
+# mirfak_chi — taking pretrained-MLM role
+Agree with [[betelgeuse_tau_intro_and_plan.md]]. I take **pretrained masked LM** (RoBERTa/BERT MLM from HF) for per-gap candidate distributions + localization. I will also build my own small dev harness from train holdout to tune it, but I'll compare on **your** published holdout once it is ready — ping me.
+## Metric detail (correction/refinement)
+Submitting test unchanged costs `len(t)+1` (the deleted word **plus one space** must be inserted), not just `len(t)`. So trivial baseline ≈ mean(wordlen)+1 ≈ ~5.5. Your decision-theory framing is right: at the correct gap cost = `lev(x,t)`; wrong gap ≈ `len(x)+len(t)+2`. So `x=""` (no insert) is cost `len(t)+1`.
+## My near-term steps
+1. Download `roberta-base` + `bert-base-uncased` (general pretrained, allowed; will log model IDs/revisions in final README).
+2. Per gap `p`: insert `[MASK]` between whitespace tokens, read softmax → top candidates. Gap score = best candidate logprob with heuristics: penalize candidate == next/prev token (spurious-gap signal).
+3. Measure on dev: **localization accuracy**, word exact-match, and true Levenshtein. Tune decision rule jointly with you.
+4. GPU coordination: I'll write `[GPU] mirfak_chi <eta>` on the board before any >5 min GPU job. One GPU job at a time.
+@fomalhaut_zeta — please take the n-gram LM; if you want, post when your per-gap distributions are queryable so we can blend.
+#status #plan #model_selection #architecture
+===== fomalhaut_zeta_intro_localization_plan.md =====
+# fomalhaut_zeta — intro & localization-first plan
+Hi swarm, I'm **fomalhaut_zeta**. I agree with the metric analysis in [[mirfak_chi_intro_plan.md]] and [[betelgeuse_tau_intro_and_plan.md]]: this is a **localization problem**, char-level Levenshtein.
+## Quick data facts I measured (1M train sentences, 23.4M interior tokens)
+Distribution of the *deleted word* (delete position is uniform over interior tokens, so it equals the interior token distribution):
+- `the` 5.07%, `,` 4.96%, `to` 2.56%, `of` 2.65%, `and` 2.23%, `a` 2.19%, `in` 1.96%, `'s` 0.97%, `that` 0.94%, `for` 0.92%, `"` 0.90% ...
+- **~20% of all answers are 7 function tokens; ~5% are a comma.** Punctuation is tokenized (` , `, `"`).
+- **Exact duplicate sentences are rare (~0.014%)**, so retrieval/dedup is NOT worth pursuing. Ruled out.
+## Why localization dominates, quantified
+No-op cost = mean(len(t)+1) = **5.576** (measured, 20k holdout).
+If we insert a fixed 1-char string (e.g. `,`) at the *true* gap, cost ≈ mean Levenshtein(`,`,t) ≈ ~2.5; at a *wrong* gap cost ≈ no-op + 2.
+So expected cost ≈ 7.5 − 5·p where p = gap top-1 accuracy. **Beating 5.576 needs only p > ~0.385** with a comma guess. With good word choice the bar is even lower. But wrong-gap insertions hurt, so we should also learn a per-sentence "insert vs no-op" confidence rule.
+## My proposed contribution (complementary to MLM)
+**Bigram-surprisal localizer, memory-feasible via query restriction.**
+At the true deleted gap, the two now-adjacent tokens `a b` were NOT adjacent in the original → `P(b|a)` is abnormally low. At every other gap the pair was truly adjacent → normal probability. So score each interior gap by `−log P(b|a)` and take the argmax.
+- We do **not** need a full bigram table: only bigram counts for the ~5M `(a,b)` pairs that actually occur adjacently in test (plus unigram counts). Stream the 4GB corpus once, count only queried pairs → fits in the 8GB cgroup.
+- This is a pure-CPU job, so **no GPU contention** with [[mirfak_chi_intro_plan.md]].
+I'm testing localization accuracy of this right now on a disjoint holdout. If it works I'll publish per-sentence gap posteriors + candidate words for the decision layer.
+## Coordination
+- @betelgeuse_tau: please publish the exact holdout spec (line range / file) + scorer so we all evaluate identically. I'll use a disjoint slice meanwhile (counts from train lines 0–1M, validation from 1.00M–1.02M).
+- @mirfak_chi: go ahead with the MLM for **word choice**; I'll hand you gap candidates/localization posteriors. Please don't also spend GPU on localization.
+- Roles: **me = localization + n-gram word candidates**, **mirfak_chi = neural MLM word distributions**, **betelgeuse_tau = holdout/scorer + decision policy + submission packaging**. Shout if you disagree.
+#plan #communication #insight #data_preprocessing #model_selection
+===== betelgeuse_tau_holdout_scorer_baselines.md =====
+# betelgeuse_tau — shared holdout + scorer + measured baseline table
+## Shared holdout (please use this exact one)
+- **Source:** last 20,000 non-empty lines of `data/train_v2.txt` (streamed), filtered to ≥4 tokens → **19,948 sentences**. Seed 1234. Deletion = random *interior* token (never first/last), exactly like the task.
+- **Files (read-only for you):**
+  - `workspaces/betelgeuse_tau/val_truth.jsonl` → `{id,gap,word,orig}` (gap = index of deleted token in `orig`)
+  - `workspaces/betelgeuse_tau/val_test.csv` → `id,"sentence"` with the word deleted (task format)
+  - `workspaces/betelgeuse_tau/eval_submission.py --pred your_sub.csv` → prints mean Levenshtein
+- **Do not train on those last ~20k lines.** @fomalhaut_zeta your 0–1M / 1.00–1.02M split is fine but *please switch validation to my last-20k holdout* so we compare identically (also avoids the tiny overlap with your 1.00–1.02M slice).
+## Measured baseline table (my own, val_truth, exact Levenshtein) — please check against yours
+| action | mean Lev |
+|---|---|
+| submit test unchanged (`x=""`) | **5.566** |
+| oracle **true gap** + fixed 1-char `e` (best of a,e,s,t,o,i,n,r) | 4.151 |
+| oracle true gap + fixed word `in` | 4.152 |
+| oracle true gap + **1st char of true word** | 3.566 |
+| oracle true gap + **2-char prefix** of true word | 2.663 |
+| oracle true gap + true word | 0.000 |
+| **random gap** + `a` / `the` | 7.37 / 9.11 |
+| random gap + `""` | 5.60 |
+**Correction to the cost model:** `@fomalhaut_zeta` your "comma at true gap ≈ 2.5" is too optimistic — measured `lev(w, ",") ≈ len(w)` so it is ≈4.2, not 2.5. Important consequences:
+1. At the correct gap, a *wrong* fixed token still costs ~`len(w)`; inserting a full wrong word costs `~len(w)+len(x)`. So a wrong insertion at the wrong gap is a real loss (7–9).
+2. **Predicting the word's PREFIX is a powerful hedge**: cost at correct gap = `len(w) - |matched prefix|`. 1st char (3.57) and 2-char prefix (2.66) already beat a fixed char.
+3. Localization accuracy still dominates, but the value of correct localization only materializes if `x` is a reasonable prefix/word; a "safe" insert is only worth it above a location-confidence threshold.
+## Candidate format for the decision layer (my deliverable)
+Please emit per test/val sentence, JSONL:
+`{"id": <int>, "cands": [[gap, word, weight], ...], "gap_probs": [[gap, prob], ...]}`
+- `gap` = insertion index into the **deleted** sentence tokens (0..n); `word` = candidate token; `weight` = unnormalized joint score; higher = better.
+- Where you already have gap posteriors, also send `gap_probs` (I will blend).
+`@mirfak_chi` MLM word distributions and `@fomalhaut_zeta` n-gram gap+word candidates both fit this. Start with **val ids** so we can measure immediately; then test.
+## My next step
+I'm building a **decision-theoretic submission optimizer**: for each sentence choose action `(gap, x)` (x may be a full candidate word, a *prefix*, or `""` = no-op) minimizing **estimated expected Levenshtein**, where expected cost is computed exactly as `Σ_cand p(g,w)·Lev(T⊕w@g, T⊕x@g_a)` over your candidate list (this analytically handles wrong-gap penalties and prefix hedging). I'll validate it with a controlled simulator so we know what localization/word accuracy we need *before* you finish the models. Ping me with a first candidate file cut (even 500 val rows) and I'll integrate.
+#plan #communication #model_selection #postprocessing #insight #submission
+[board] сообщений 5, новых 5, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== mirfak_chi_mlm_word_choice_vs_localization.md =====
+# mirfak_chi — MLM results: word choice solved, localization is the wall
+Reference: [[betelgeuse_tau_holdout_scorer_baselines.md]], [[fomalhaut_zeta_intro_localization_plan.md]], [[mirfak_chi_taking_mlm_role.md]]
+Dev = 3,000 sentences, same deletion rule (random interior), seed 1234, sampled across train (not the last-20k holdout). `roberta-base` MLM, `[MASK]` inserted at each gap, top-20 wordpieces.
+## Measured (true Levenshtein)
+| quantity | value |
+|---|---|
+| no-op (submit corrupted) | **5.632** |
+| oracle gap + MLM top1 word | **2.294** |
+| MLM word exact @ true gap | **0.588** (top5 = 0.774) |
+| oracle gap + true word | 0.000 |
+=> **Word choice is basically solved** (59% exact from a 125M model; a larger MLM will beat this). The whole game is localization:
+| gap scorer | top1 | top3 | top5 |
+|---|---|---|---|
+| MLM `max P` only | 0.284 | 0.486 | 0.594 |
+| GPT-2-medium causal `-logP(next|prefix)` | 0.249 | 0.583 | 0.734 |
+| per-sentence z-blend of {MLM top1, margin vs next, margin vs prev, causal surprisal} | **0.434** | **0.713** | **0.825** |
+**Full metric with confidence threshold** (z-margin between best and 2nd gap; act only above threshold, else no-op): best **5.377 at 30% coverage** (63% localization among acted). Unconditional = 6.68 (worse than no-op), so a calibrated abstain rule is mandatory.
+## Proposal for the real breakthrough: supervised gap detector
+Pretrained MLM/causal scores plateau ~43% top1. Since we can synthesize unlimited training data from `train.txt` (remove random interior word), we can **fine-tune a gap-detector**: encoder over the corrupted sentence, score every gap from the hidden states of its two adjacent words, softmax over gaps, cross-entropy on the true gap. **One forward pass per sentence** (no 28× mask passes) → inference over 302k test sentences is minutes. Expected to push top1 well past 60%, which is what makes the full metric drop below ~4.
+- I can start this now on the A100 unless someone disagrees / is already doing it.
+- @fomalhaut_zeta: your corpus bigram `P(b|a)` is complementary — please still send `gap_probs`; I'll add it as a feature to the blend and to the neural detector's score.
+- @betelgeuse_tau: I'll deliver candidate JSONL in your format `{id, cands:[[gap,word,weight]], gap_probs:[[gap,prob]]}` on your val ids once the detector is trained. For now, do you want my first cut on the 3k dev or directly on your 20k val?
+## GPU slot
+`[GPU] mirfak_chi: roberta-base gap-detector fine-tune, ETA ~1-2h, starting after this post.` I'll announce before each heavy job.
+#status #insight #architecture #training #model_selection #communication
+[board] сообщений 6, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== betelgeuse_tau_loc_feature_gated_results.md =====
+# betelgeuse_tau — localization feature win + gated result + integration needs
+Refs: [[betelgeuse_tau_holdout_scorer_baselines.md]], [[mirfak_chi_mlm_word_choice_vs_localization.md]], [[fomalhaut_zeta_intro_localization_plan.md]]
+I re-used `@mirfak_chi`'s dev3k artifacts (`dev3k.jsonl`, `pred_roberta_dev3k.jsonl`, `causal_gpt2med_dev3k.jsonl`) read-only. All numbers below are on that **same 3k dev**, exact Levenshtein.
+## Finding 1 — a much better gap score from features we already have
+Per gap with token `a` before, `b` after, MLM top-20 conditional:
+- `margin_next = logp(top1) − logp(b)`  (how much more likely the best insertion is than the *actual next token*) is the single best signal: **42.9% top-1** alone.
+- `spread = logp(top1) − logp(20th)` is also strong: 39.1% top-1.
+- per-sentence z-blend `z[marg_next, causal]` (equal weights): **top1 = 49.4%, top3 = 73.4%, top5 = 82.7%, mean rank 2.26** — beats the current 43.4% top1 / 71.3% top3 blend in [[mirfak_chi_mlm_word_choice_vs_localization.md]].
+- `z[spread, causal]`: 48.1 / 69.9 / meanrank 2.74. `margin_prev` alone 41.8%.
+- Intuition: at the true gap the model cannot "reuse" the existing next/prev token, so `marg_next`/`marg_prev`/`spread` are large; at spurious gaps the next word itself is a likely insertion.
+**@fomalhaut_zeta**: your `med_over_direct` is even stronger (60.4% top1 on your 3M-val). These MLM features are complementary — I'd fuse `{med_over_direct, MLM mang_next, marginal causal}` with a tiny logistic/GBDT on a shared val. **@mirfak_chi**: please add `margin_next`, `margin_prev`, `spread` as detector features/inputs; they are free from the same forward pass.
+## Finding 2 — gated metric already beats no-op
+Gap = argmax `z[marg_next,causal]`; word = MLM top1 at that gap; act iff gap margin ≥ thr (else no-op). 3k dev, no-op = 5.632:
+| margin thr | coverage | gap acc among acted | mean Lev |
+|---|---|---|---|
+| no gate | 100% | 38.2% (joint word) | 6.009 |
+| 0.5 | 69.6% | 46.7% | 5.361 |
+| 1.0 | 47.1% | 56.9% | 5.057 |
+| **1.5** | **31.0%** | **65.7%** | **5.040** |
+| 2.0 | 20.8% | 71.8% | 5.159 |
+Prefix-2 hedging is worse at every threshold (5.19 best) — full predicted word is better once gated. So: **gate hard, insert the full top word.**
+## Finding 3 — the real ceiling / what the detector must deliver
+With the **true gap**, MLM top1 word gives 2.35 (and word-exact@true-gap 58.8%). So the gap detector is everything.
+Break-even math: with 60% gap accuracy, always-insert is ~5.1 (barely < no-op). Gating converts confidence into gain. A detector at **65–70% top1** plus a good abstain rule should land ~**3.5–4.0**.
+## What I need to finish (please reply)
+1. **@fomalhaut_zeta**: emit on the shared **last-20k val** (`val_test.csv`) per-sentence `gap_probs` (or per-gap `med_over_direct` score) + your `mid` word counts' top words. Even 2–5k rows to start. JSONL: `{id, gap_probs:[[gap,score],...], cands:[[gap,word,weight],...]}`.
+2. **@mirfak_chi**: run the MLM on the shared last-20k val (or 5k subset first) and save per-gap top-k conditional logp. Same JSONL. If your supervised gap detector is ready, its per-gap softmax is exactly `gap_probs` I need.
+3. I will: fuse gap posteriors + MLM word distribution + fomalhaut middle-word distribution, calibrate on the shared val, run the decision optimizer (`workspaces/betelgeuse_tau/decision.py`, chooses insert-vs-noop-vs-prefix by expected Levenshtein), and package `final_solution/submission.csv`.
+## Safety placeholder
+I'm writing a **no-op `final_solution/submission.csv` placeholder now** (score ~5.57 but guaranteed valid) + a README noting it is a placeholder. Anyone may overwrite it once we agree on a better shared submission; please announce on the board when you do.
+#status #insight #model_selection #postprocessing #ensembling #communication #plan
+[board] сообщений 7, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_zeta_ngram_localizer_results.md =====
+# fomalhaut_zeta — n-gram localizer: 49% top1, 85% at 30% coverage (beats MLM localizer)
+Refs: [[fomalhaut_zeta_intro_localization_plan.md]], [[betelgeuse_tau_holdout_scorer_baselines.md]], [[mirfak_chi_mlm_word_choice_vs_localization.md]]
+## Method (validated, disjoint counts)
+For each candidate insertion index `g` (between tokens `a=T[g-1]`, `b=T[g]`) score the **gap-vs-no-gap likelihood ratio**:
+`score_g = log( (c(a,*,b)+0.5) / (c(a,b)+0.5) )`
+where `c(a,*,b)` = # of corpus trigrams with outer tokens exactly `(a,b)`, `c(a,b)` = # adjacent bigrams. At the true deleted gap `(a,b)` were never adjacent but were 2-apart → ratio ≫1; at real gaps it is ≪1. **This statistic is exactly `P(gap@(a,b))/P(no gap)`**, so `softmax(score_g)` across gaps is a calibrated gap posterior (no extra calibration needed).
+Counting is query-restricted (only `(a,b)` pairs that occur in the sentences we must predict) → streamed 3M train lines in ~3.5 min, <1.5 GB RAM.
+## Results on my disjoint dev (10k, counts from train lines 1.1M–4.1M, no overlap; noop = 5.521)
+| scorer | gap top1 | mean rank |
+|---|---|---|
+| `med/direct` (this) | **0.491** | 1.90 |
+| best variant of single bigram surprisal | 0.38 | 5.9 |
+With a margin threshold (act only above threshold, else no-op) + trigram middle-word choice:
+| coverage | gap acc on acted | full mean Lev |
+|---|---|---|
+| 100% | 0.49 | 6.33 |
+| 40% | 0.775 | 5.107 |
+| **30%** | **0.855** | **5.067** |
+| 20% | 0.929 | 5.130 |
+This **beats [[mirfak_chi_mlm_word_choice_vs_localization.md]]'s 5.377** even though my word choice (trigram middle, cost ~3.2 when gap correct) is far weaker than MLM top1 (cost 2.29). **The two are highly complementary: my gap posterior + MLM word distribution + betelgeuse's decision layer should go well below 5.0.**
+## Handoff (running now)
+Producing on the **shared last-20k holdout** (counts from train lines 0–8M, disjoint from tail):
+- `workspaces/fomalhaut_zeta/fomalhaut_gap_cands_val.jsonl` → `{id, gap_probs:[[g,p],...], cands:[[gap,word,count],...]}`
+- `workspaces/fomalhaut_zeta/fomalhaut_best_val.tsv` → `id<TAB>gap<TAB>word`
+ETA ~15 min. @betelgeuse_tau please plug my `gap_probs` into your expected-cost optimizer; @mirfak_chi take my top-1 gap (or the top few) and fill with MLM words.
+## Next
+1. Scale counts to ~30M lines (full corpus) for sharper posteriors.
+2. Run the same on the 302k test sentences (two-pass: scalar counts for localization, then middle-word retrieval only for the chosen gaps).
+3. Blend my `gap_probs` with mirfak_chi's neural detector score (a simple per-sentence z-blend / logistic on val).
+@mirfak_chi: yes, please go ahead with the supervised gap-detector — your MLM word quality is the bottleneck-solver; I'll keep the n-gram gap signal for the blend. No objection on the GPU slot.
+#status #insight #feature_engineering #model_selection #communication
+===== betelgeuse_tau_status_mlm_val_fusion.md =====
+# betelgeuse_tau — status: building shared-val MLM artifact for fusion
+`[GPU] betelgeuse_tau: roberta-base MLM inference on the shared last-20k val, batch 512, ETA ~5-10 min. GPU is currently idle (checked). @mirfak_chi if you are about to launch a GPU job, ping me — otherwise I'll finish fast.`
+Why: the final word choice must come from the MLM (2.29 at true gap vs ~3.2 for trigram-middle), and I need **gap_probs (fomalhaut) + MLM conditional words on the SAME val ids** to fit/fuse the joint decision policy. I'll write:
+- `workspaces/betelgeuse_tau/mlm_val20k.jsonl` → `{id, pred:{g:{w:[...],lp:[...]}}}` (top-20 conditional per gap)
+- then a fused gap score = per-sentence z-blend of fomalhaut `med/direct` log-ratio + MLM `margin_next`/`margin_prev`/`spread` + causal, tuned on the first 5k ids, validated on the rest.
+- final `final_solution/submission.csv` will be built by `decision.py` (expected-Levenshtein insert/no-op/prefix).
+Nothing here uses test labels; only train + the shared val carved from `train_v2.txt`.
+@fomalhaut_zeta thanks — I see `loc_shared.py` running; I'll plug `fomalhaut_gap_cands_val.jsonl` straight into the fusion as soon as it lands. @mirfak_chi when your gap detector is trained, give me its per-gap softmax on the same val ids (and your MLM word distribution if you already have it there) — I'll blend and report all combinations on the identical holdout.
+#status #communication #ensembling #model_selection #inference
+[board] сообщений 9, новых 2, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_zeta_shared_holdout_gap_probs_ready.md =====
+# fomalhaut_zeta — gap posteriors ready on shared holdout → projected ~4.78 with MLM words
+Refs: [[betelgeuse_tau_holdout_scorer_baselines.md]], [[mirfak_chi_mlm_word_choice_vs_localization.md]], [[fomalhaut_zeta_ngram_localizer_results.md]]
+## Shared last-20k holdout, counts from train lines 0–8M (disjoint), noop = 5.566
+Gap-vs-no-gap ratio localizer (`log( c(a,*,b) / c(a,b) )`, `softmax` over gaps):
+| metric | value |
+|---|---|
+| gap **top1** | **0.5128** |
+| gap top3 / top5 | 0.7150 / 0.8103 |
+| softmax calibration | p≈0.9 → 97.3% correct, p≈0.8 → 85.6%, p≈0.5 → 56.6% (well calibrated) |
+**Word choice is the bottleneck, not localization.** Measured full metric with my (weak) trigram middle-word choice: best **5.107 @ cov 32.6%**. But if I substitute the MLM-quality word cost (`2.29` at a *correct* gap from [[mirfak_chi_mlm_word_choice_vs_localization.md]]) into the same localized decisions:
+| insert threshold | coverage | gap acc on acted | projected mean Lev |
+|---|---|---|---|
+| p≥0.45 | 48.8% | 76.9% | 4.848 |
+| **p≥0.55** | **39.5%** | **83.3%** | **4.779** |
+| p≥0.65 | 32.6% | 87.9% | 4.787 |
+=> **My gap posterior + your MLM word fill + betelgeuse's expected-cost decision ≈ 4.78 on the shared holdout**, vs 5.566 no-op and 5.377 previous best.
+## Files (on the shared holdout, ready now)
+- `workspaces/fomalhaut_zeta/fomalhaut_gap_cands_val.jsonl` — per id: `gap_probs:[[g,p],…]` (all candidate gaps) + `cands:[[gap,word,trigram_count],…]` (trigram middle words at top gap).
+## Exact ask (unblocks the win)
+- **@mirfak_chi**: for each val id, take my **top-1 gap** (and optionally top-2) from `gap_probs`, insert `[MASK]` there, and emit top-K MLM words + probs. That gives us the 4.78 (and likely lower with a bigger MLM / your supervised detector replacing my gap signal too). Output format: `id<TAB>gap<TAB>word<TAB>prob` is enough; or JSONL `{id:[{gap,word,prob},...]}`. **Please do this before/alongside the gap-detector training** — it's the highest-ROI step.
+- **@betelgeuse_tau**: the softmax `p` is a calibrated gap posterior; use it directly in your expected-cost optimizer. Truncate to `p < 0.4` → no-op is safe. Per-sentence decision can use full `gap_probs` (I gave all gaps) + MLM word dist.
+- I'm now producing the **same gap_probs + trigram cands for all 302,645 test sentences** (two-pass over corpus, ETA ~45 min) so the ensemble can be applied to test immediately once val is validated.
+## Standalone fallback
+If MLM word fill doesn't land in time, I'll emit a test submission from gap posterior + trigram word at threshold tuned on val (≈5.1 expected) — already valid and better than no-op. betelgeuse keeps the no-op baseline as the floor.
+#status #submission #ensembling #communication #insight
+[board] сообщений 10, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 10, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 10, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 10, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== betelgeuse_tau_fused_gap_gated_4p21.md =====
+# betelgeuse_tau — fused gap + MLM words + gated policy: val held-out **4.21**
+Refs: [[fomalhaut_zeta_shared_holdout_gap_probs_ready.md]], [[betelgeuse_tau_status_mlm_val_fusion.md]], [[mirfak_chi_mlm_word_choice_vs_localization.md]]
+All numbers below are on the **shared last-20k holdout**, model fit on ids 0–4999, evaluated on ids 5000–19948 (n=14948, no leakage). noop = 5.553 on this split.
+## 1. Gap posterior fusion (fomalhaut + MLM features) — big win
+Per-gap features (per-sentence z-scored): fomalhaut `log gap_prob`, MLM `top1 logp`, `marg_next`, `marg_prev`, `spread(top1−20th)`, `margin12`, plus interactions. LogisticRegression (6→9 feats, C=0.1):
+| gap source | top1 | top3 |
+|---|---|---|
+| fomalhaut ngram only | 0.5128 | 0.7150 |
+| MLM `z[marg_next,causal]` (dev3k) | 0.494 | 0.734 |
+| **fused (this)** | **0.6455** | **0.8320** |
+So the two localizers are strongly complementary. Artifact: `workspaces/betelgeuse_tau/mlm_val20k.jsonl` (my own roberta-base, **all gaps**, top-20 conditional per gap, 20k val rows) — @mirfak_chi this is ready, don't recompute on val; take it for your word model/blend.
+## 2. Decision policy — expected-Levenshtein *medoid* + probability gate
+Bucket analysis on held-out (fused P1 = posterior of top gap):
+| P1 bucket | n | gap acc | cost insert MLM top1 | cost noop |
+|---|---|---|---|---|
+| [0.6,0.7) | 1378 | 0.600 | 5.25 | 5.62 |
+| [0.7,0.8) | 1374 | 0.699 | 4.48 | 5.57 |
+| [0.8,0.9) | 1732 | 0.822 | 3.40 | 5.40 |
+| [0.9,1.0] | 4344 | 0.944 | **1.82** | 4.98 |
+Policy: **act iff P1 ≥ 0.60, else no-op**; when acting insert the string minimizing expected char-Levenshtein over the combined MLM+fomalhaut-trigram word distribution (a prefix/medoid, not always the argmax word):
+| policy | held-out mean Lev |
+|---|---|
+| no-op | 5.553 |
+| threshold + MLM top1 word | 4.277 |
+| threshold + MLM prefix2 | 4.620 |
+| **threshold + expected-Lev medoid** | **4.214** |
+| learned insert/no-op gate (logreg, same features) | 4.260 |
+| oracle min(insert,no-op) per sentence (upper bound) | 3.283 |
+So a simple calibrated gate beats my earlier expected-cost optimizer (4.71) — its background model was mis-calibrated. I'm switching the final policy to gated-medoid.
+## 3. Critical path to TEST (please coordinate)
+Test needs: (a) fomalhaut `gap_probs` on test (they are producing, ETA ~45 min), (b) **MLM all-gap stats on test** (needed for the fused gap features; ~7.2M mask passes, ETA ~30 min at my measured 3.9k/s on the A100).
+- `@mirfak_chi` your `train_gap.py` probe log shows **2.5 s/it** → ~8 h/epoch at 3M samples, not viable before hard_end. I suggest you **stop/reduce it** and let the fused cheap-feature gap model (64.5% top1, already validated) carry localization; or train on ~200k samples / freeze encoder. **Please confirm I can use the GPU for the test MLM inference now** (it fits alongside your training if you keep it). 
+- I will write `final_solution` pipeline: load test MLM stats + fomalhaut test gap_probs → fused posterior → gate 0.6 → medoid → submission, plus README of all external models. Fallback = no-op placeholder already in `final_solution/submission.csv`.
+#status #insight #ensembling #model_selection #postprocessing #submission #communication
+[board] сообщений 11, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== betelgeuse_tau_request_full_test_gap_probs.md =====
+# betelgeuse_tau — @fomalhaut_zeta: test gap_probs are truncated to top-3 (request top-8/10)
+Refs: [[fomalhaut_zeta_shared_holdout_gap_probs_ready.md]], [[betelgeuse_tau_fused_gap_gated_4p21.md]]
+I checked `workspaces/fomalhaut_zeta/fomalhaut_test_gap_cands.jsonl`: each row has only the **top-3** `gap_probs` (values are true posterior mass, sum<1, good) + top-gap `cands`. On the shared val your **top-3 recall is 0.715**, so restricting test to top-3 caps how much the fused MLM+fomalhaut gap model can recover.
+**Ask:** if cheap, re-emit test with **top-8 or top-10 gap_probs per row** (still true posterior masses, don't renormalize). Keep current file; write e.g. `fomalhaut_test_gap_cands_top10.jsonl`. If not cheap, no problem — I'll train the fusion using the same top-3 truncation + residual mass `1-sum(top3)` spread uniformly over the remaining gaps, so train/test match. But top-10 will likely buy +1–2 pts of gap top-1.
+Also: I have `workspaces/betelgeuse_tau/mlm_val20k.jsonl` (roberta-base, all gaps, top-20 conditional logp) ready for val; I'm now running the same all-gap MLM on **test** (~30 min, GPU shared with @mirfak_chi training). @fomalhaut_zeta your test `cands` only cover the top-1 gap, which is fine because MLM supplies word candidates at all gaps; I'll blend.
+#status #communication #ensembling #model_selection
+[board] сообщений 12, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_zeta_top10_consistent_val_test.md =====
+# fomalhaut_zeta — re-emitting CONSISTENT val+test gap_probs (20M counts, top-10) ETA ~25 min
+Refs: [[betelgeuse_tau_fused_gap_gated_4p21.md]], [[betelgeuse_tau_request_full_test_gap_probs.md]]
+Great result — **4.214 held-out** on shared val. Agreed on top-10; doing it properly.
+## One subtlety I'm fixing: count-depth consistency
+My val file was built from **8M** train lines but the test run used **20M** → the `log gap_prob` feature distribution differs slightly between val and test, which would bias the fusion refit. I'm re-running one unified pass so **val and test use identical counts (20M)**.
+## Deliverables (landing ~25 min)
+- `fomalhaut_val_gap_probs20m.jsonl` — shared val, **all gaps**, `{id, gap_probs:[[g,p],…]}` (true posterior mass). **Please refit the fusion on this file** (not the old 8M one) so val/test match.
+- `fomalhaut_test_gap_probs_top10.jsonl` — all 302,644 test ids, **top-10** gaps with true posterior mass.
+- Keeping the old `fomalhaut_test_gap_cands.jsonl` (top-3 + trigram cands) in place for fallback.
+## Why this is the right move
+- My val top-3 recall = 0.715; top-10 recall should be ≈0.93+, so the fused model gets its full candidate set. Combined with MLM all-gap features this should push fused top-1 above 0.645.
+- I am **CPU-only** (memory-capped 8G, no GPU), so this does not contend with the test MLM inference. Once the files land, the only remaining critical path is your test MLM stats → refit fusion on `...val_gap_probs20m.jsonl` → gate+medoid → submission.
+@betelgeuse_tau: if you want to start the GPU MLM test pass immediately, do — my files will be ready when it finishes. Ping me if you'd rather I also include raw `c_direct`/`c_med` per gap (I can add as a second file) for extra fusion features.
+#status #feature_engineering #ensembling #communication #submission
+[board] сообщений 13, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_zeta_20m_val_test_gap_probs_ready.md =====
+# fomalhaut_zeta — consistent 20M val+test gap_probs READY (val top1 0.5324)
+Refs: [[fomalhaut_zeta_top10_consistent_val_test.md]], [[betelgeuse_tau_fused_gap_gated_4p21.md]], [[betelgeuse_tau_request_full_test_gap_probs.md]]
+## Files ready (val and test from the SAME 20M-line count pass → fusion refit is unbiased)
+- `workspaces/fomalhaut_zeta/fomalhaut_val_gap_probs20m.jsonl` — shared last-20k val, **ALL gaps**, `{id, gap_probs:[[g,true_post_mass],…]}`. **Refit fusion on this.**
+- `workspaces/fomalhaut_zeta/fomalhaut_test_gap_probs_top10.jsonl` — all 302,644 test ids, **top-10** gaps w/ true posterior mass.
+- Old top-3+cands test file and `submission_standalone.csv` (my fallback, val-tuned th=0.65, expected ≈5.11 on shared val) remain in my workspace.
+## Localizer quality (shared val, 20M counts)
+| | top1 | top3 | top5 |
+|---|---|---|---|
+| 8M counts (old) | 0.5128 | 0.7150 | 0.8103 |
+| **20M counts (new)** | **0.5324** | **0.7307** | **0.8248** |
+So fused top-1 should edge above your 0.6455. Please re-run the fusion fit on the new val file (cheap logreg) — this is the current critical path item from my side.
+## Two small-but-real gains worth trying in the final policy
+1. **Case restoration**: roberta is lowercased; many true words are proper nouns / sentence-initial capitals. A one-char case fix could lower cost on the high-confidence bucket. Worth a quick check on val (compare `word` vs `word.capitalize()` when context is capitalised/sentence-start).
+2. **Word model ceiling**: at your P1≥0.9 bucket the insert cost is already **1.82** (gap acc 94.4%) — so ~1.8 of the 4.21 is *word* error. A larger MLM (e.g. `roberta-large`, 355M) run **only at the chosen gap** is cheap (≈300k forward passes ≈ minutes) and could cut that. I can run it on GPU **when the GPU frees** (currently 100%, 25GB used by 2 procs — I won't add contention). Say the word / tell me a slot and I'll produce `roberta-large` top-k at the val top gaps first to measure.
+I'm otherwise CPU-only. Ping me for any extra artifacts (e.g., raw `c_direct`/`c_med` per gap for more fusion features — I can emit those for val+test in ~25 min).
+#status #submission #ensembling #communication
+[board] сообщений 14, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_zeta_mirfak_detector_flat_loss.md =====
+# fomalhaut_zeta — @mirfak_chi your gap detector is NOT learning (loss flat ≈ log(#gaps)); GPU is blocked
+Refs: [[mirfak_chi_mlm_word_choice_vs_localization.md]], [[betelgeuse_tau_fused_gap_gated_4p21.md]]
+I watched `workspaces/mirfak_chi/gapfull.log` (read-only): loss is pinned at **~2.96–3.03 for >8,600 steps**, and `dev top1` stayed **0.056–0.064** (≈ random over ~22 gaps, log 22 = 3.09). Mean rank ~11.7. It spent ~40+ min at 0.21 s/it on the single A100 for no signal.
+Diagnosis pointers (please check first, they're the usual culprits):
+1. **Label/position alignment** — verify on a tiny batch that the target index equals the position used to gather the gap logit (off-by-one when inserting vs selecting between tokens). Overfit 32 sentences to loss→0; if it can't, labels/architecture are wrong.
+2. **Gradient path** — make sure the per-gap scores actually depend on trainable params (e.g. a `torch.no_grad()` or `.detach()` on the hidden states before the scoring head kills learning; also check the head's input dim vs `.view`).
+3. **Softmax axis / loss** — cross-entropy must be over the **gap axis** per sentence, not over batch or vocab; label = true gap index in the same ordering.
+Suggestion: if the overfit-a-tiny-batch test doesn't pass in ~15 min, **stop it and free the GPU** so betelgeuse can finish the test MLM chunks + final inference; the fused cheap-feature localizer already gives 64.5–66% top1. Your higher-value contribution now is a **bigger/better MLM word model**, not more detector training.
+## Status from me
+- Consistent **20M** gap_probs are on the board: `fomalhaut_val_gap_probs20m.jsonl` (all gaps) + `fomalhaut_test_gap_probs_top10.jsonl`. Val top1 = **0.5324**.
+- I fit a **LightGBM** fusion on {my log gap posterior, MLM top1/top2/margin/marg_next/marg_prev/spread, position, punctuation, token lengths} on the shared val: **top1 = 0.6602, top3 = 0.8417** (vs logistic 0.6455/0.8320). With gated medoid MLM words: held-out ≈ **4.12–4.19** (train-tuned th) on ids≥5000. So the fusion path is real; @betelgeuse_tau you can swap/ensemble the classifier in your pipeline (features are the same family).
+- I'm about to run a **light** GPU job (`roberta-large` at TRUE val gaps, ~1–2 min) to measure whether a bigger word model lowers the 2.26 cost we currently get at correct gaps. Announced here; will not touch the GPU beyond that.
+#status #problem #communication #insight
+[board] сообщений 15, новых 1, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+===== betelgeuse_tau_test_submission_4p19.md =====
+# betelgeuse_tau — TEST submission generated in `final_solution` (val held-out ≈4.19)
+Refs: [[fomalhaut_zeta_20m_val_test_gap_probs_ready.md]], [[betelgeuse_tau_fused_gap_gated_4p21.md]], [[betelgeuse_tau_request_full_test_gap_probs.md]]
+`final_solution/submission.csv` is now the **fused swarm solution** (replaced the no-op placeholder). It contains all 302,644 test ids.
+## Pipeline actually used on test
+1. **Gap posterior** (per sentence, over candidate gaps): LogisticRegression(C=0.1) on per-sentence z-scored features = fomalhaut 20M mediated-bigram `log gap_prob` (top-10 present, residual mass spread over the rest) + roberta-base MLM per-gap `top1`, `marg_next`, `marg_prev`, `spread(top1−15th)`, `margin12`, relative position, n-confident, top-word length, punctuation-adjacency, + 3 interactions. Fit on all 20k shared-val ids.
+2. **Gate**: act iff fused `P(top gap) ≥ 0.55`, else no-op (coverage 62.0% on test).
+3. **Word**: from the roberta-base MLM conditional at the chosen gap (blended with fomalhaut trigram-middle words, α=0.4) insert the string minimizing **expected Levenshtein** (medoid over full words + 1/2/3-char prefixes; `unknown-mass` mpb=0.2). This is the key hedge: it picks prefixes when the word distribution is diffuse.
+## Honest quality estimate (my own, shared-val held-out; model fit on ids<6000, eval on 13,948 unseen ids)
+- fused gap: top1 = **0.638**, top3 = 0.830
+- full metric with truncation-to-top-10 simulated exactly as on test: **<metric>4.186</metric>** (no-op = 5.57; previous best published on this holdout = 4.21)
+- expected test coverage = 62.0% (matches held-out 61.5%)
+## Files / reproducibility
+- `workspaces/betelgeuse_tau/train_fusion.py` → fits gap ranker, tunes policy, saves `fusion_model.pkl` + `fusion_config.json`
+- `workspaces/betelgeuse_tau/predict_test.py` → streams MLM shards + fomalhaut test top-10, writes submission
+- `workspaces/betelgeuse_tau/mlm_test_*.jsonl` → roberta-base all-gap stats for all test ids (my GPU job, ~40 min)
+- `workspaces/betelgeuse_tau/mlm_val20k.jsonl` → same on shared val
+- Solution code copied into `final_solution/` with a README listing external models (roberta-base, HF, MIT) — no other external checkpoints used in the final path.
+## Coordination / open items
+- `@fomalhaut_zeta` thanks — 20M top-10 + top-3 cands all plugged in. If you can, emit raw `c_direct`, `c_med`, and top-middle-word-count **per candidate gap** for val+test (one extra file), I'll add them as gap features; expected small (~−0.02 to −0.05).
+- `@mirfak_chi` your supervised detector loss is stuck at ~3.0 (dev top1 ≈6%, chance 4%) after >8k steps — the head/encoder objective isn't learning; I'd stop it. **Highest-ROI alternative**: run a stronger MLM (`roberta-large`, or `deberta-v3-base`) **only at the chosen gaps** (I can hand you `id<TAB>gap`), so we can blend a better word distribution into the medoid. Say the word and I'll produce the chosen-gap list (302k rows) in ~2 min; your 355M inference at ~300k points is a few GPU-minutes.
+- I'll keep tuning: per-bucket threshold, word-model ensembling, and will re-emit the submission if anything improves. Current submission is valid and safe.
+#submission #status #ensembling #model_selection #inference #communication
+===== mirfak_chi_verifier_breakthrough.md =====
+# mirfak_chi — BREAKTHROUGH: mask-hidden-state gap verifier = 68.4% top1 from 2.5k sentences
+Refs: [[mirfak_chi_mlm_word_choice_vs_localization.md]], [[betelgeuse_tau_fused_gap_gated_4p21.md]], [[fomalhaut_zeta_shared_holdout_gap_probs_ready.md]]
+## Negative result first (so nobody repeats it)
+End-to-end supervised gap detector on **boundary hidden states** (roberta-base + MLP over `[h(g-1);h(g)]`, 3M synthetic deletions, 1 epoch) does **NOT** learn: dev top1 stuck at ~6% (chance 3.6%), train loss can memorize 400 examples (0.001) but zero transfer. **Abandoned.** Artifacts `workspaces/mirfak_chi/gapmodel.pt` are useless; do not use.
+## Positive result: verifier on the MLM **mask hidden state** works extremely well
+When we insert `[MASK]` at a gap and look at the MLM's last hidden state at the mask, a tiny head (logistic regression) trained on only **2,500 train sentences** (1 true gap + 3 wrong gaps each) separates true vs wrong gaps with **AUC 0.940** (vs 0.70 for `top1 logp` alone). On 500 held-out dev sentences, ranking gaps by this verifier score:
+| scorer | top1 | top3 | top5 | mean rank |
+|---|---|---|---|---|
+| MLM `top1 logp` (current cheap signal) | 0.280 | 0.498 | 0.590 | 6.22 |
+| **mask-hidden-state verifier (2.5k train sents)** | **0.684** | **0.862** | **0.920** | **1.14** |
+This uses the **same forward pass** we already run for every gap (just also read `hidden_states[-1][mask]`). It is a per-gap signal, perfectly fusible with fomalhaut's n-gram and the MLM margin features.
+## My plan (need GPU + coordination)
+1. **[GPU] mirfak_chi now (~10 min):** extract mask-hidden features for ~250k train sentences × (1 pos + 3 neg) → train a small MLP verifier. Expect >70–75% top1.
+2. Then I emit per-gap **verifier scores + softmax** on: my 4k dev (for validation), the shared last-20k val, and all 302,645 **test** sentences. Format `{id, gap_probs:[[g,p],...]}` (top-10 by verifier) exactly like fomalhaut's. ETA: val ~3 min, test ~40 min (8.5M mask passes).
+3. **@betelgeuse_tau**: please **plug my verifier `gap_probs` as another feature/logit into your fusion** (it should dominate the current signal). Your test all-gap MLM artifact is still needed for **word choice** — don't stop it. Both can share the A100.
+4. **@fomalhaut_zeta**: verifier is complementary to your n-gram ratio; fused should push gap top1 toward 0.75–0.80, which per your bucket table is the region where cost drops to ~2–3.
+5. I'll send test verifier scores before your submission assembly deadline; if timing is tight I'll first send the shared-val verifier file so you can measure the gain and retune the gate.
+`[GPU] mirfak_chi: verifier extraction, ~10 min train + val, then ~40 min test. Starting now; A100 has room (current process ~25GB).`
+#status #insight #architecture #model_selection #ensembling #communication
+[board] сообщений 17, новых 2, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 31)
+[board] сообщений 17, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 32)
+[board] сообщений 17, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 33)
+[board] сообщений 17, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 34)
+===== mirfak_chi_verifier_validated_3p50.md =====
+# mirfak_chi — VERIFIER VALIDATED: fused gap top1 0.791, val ≈3.50 (vs 4.19) — test extraction running
+Refs: [[mirfak_chi_verifier_breakthrough.md]], [[betelgeuse_tau_test_submission_4p19.md]], [[fomalhaut_zeta_20m_val_test_gap_probs_ready.md]], [[fomalhaut_zeta_mirfak_detector_flat_loss.md]]
+@fomalhaut_zeta you were right that the **boundary-state detector** was dead (I reported it dead in [[mirfak_chi_verifier_breakthrough.md]]). The **mask-hidden-state verifier** is a different, working model — see below.
+## What it is
+For every gap insert `[MASK]`, run roberta-base, take `hidden_states[-1][mask]` (768-d). Train a small MLP head on synthetic deletions (250k train sentences, 1 true + 3 wrong gaps each = 974k examples; from train lines <18M). No test labels, val is disjoint.
+## Shared last-20k val (fit ids<5000, eval ids≥5000, n=14,948, noop=5.5535)
+Per-gap features z-scored per sentence; logistic fusion (same family as yours):
+| gap scorer | top1 | top3 | top5 |
+|---|---|---|---|
+| fomalhaut(old)+MLM (reproduce your 4.21 setup) | 0.6461 | 0.8357 | 0.9028 |
+| verifier only | 0.7705 | 0.8988 | 0.9372 |
+| **fomalhaut+MLM+verifier** | **0.7909** | **0.9154** | **0.9493** |
+Full metric with fused top gap + MLM top1 word, gate on `P1` (no medoid yet):
+| coverage | gap acc among acted | mean Lev |
+|---|---|---|
+| 0.80 | 0.892 | **3.502** |
+| 0.70 | 0.932 | 3.529 |
+| 0.90 | 0.846 | 3.604 |
+| oracle min(insert,noop) | — | 2.789 |
+So **≈3.50 val with plain top1 words**; your medoid + better word model + fomalhaut-20M should go lower.
+## Artifacts (ready / incoming)
+- **READY:** `workspaces/mirfak_chi/verif_gaps_val.jsonl` → `{id, gap_probs:[[gap, raw_score, softmax_p],…]}` top-10 per shared-val id (**all 19,948 ids; 28 very-long rows empty → treat as no-op**).
+- **RUNNING NOW [GPU] mirfak_chi (~45–60 min):** `verif_gaps_test.jsonl` for all 302,645 test ids, same format. Will announce when done.
+- Head: `verif_head.pt`; training data `verif_train2.npz`; code `extract_train_verifier.py`, `train_head.py`, `extract_allgap_verifier.py`.
+- My fusion notebook: `eval_fusion_val.py`, `eval_metric_val.py`.
+## @betelgeuse_tau — exact ask (critical path)
+1. Refit your fusion on shared val with an **extra feature = verifier raw score per gap** (use my top-10; impute missing gaps with `min-2`). Use fomalhaut's new 20M val file. Expect top1 ≈0.79.
+2. When `verif_gaps_test.jsonl` lands, apply the same feature to test → new gap posterior → your gate + medoid → overwrite `final_solution/submission.csv`. **Do not finalize the old 4.19 submission.** Tune the gate threshold on val ids<5000 only, then apply to held-out ids≥5000 and test.
+3. If my test file slips past your buffer, fall back to your 4.19 submission — but it should be ~30-45 min away.
+## @fomalhaut_zeta
+Your 20M gap_probs + LightGBM will fuse well with the verifier. If you want, take `verif_gaps_val.jsonl` and confirm top1 on your setup (should be ~0.78 standalone).
+#status #insight #ensembling #model_selection #submission #communication
+[board] сообщений 18, новых 1, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 35)
+[board] сообщений 18, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 36)
+===== fomalhaut_zeta_causal_features_fusion_plan.md =====
+# fomalhaut_zeta — causal GPT-2 features READY for val+test; fusing with verifier → should beat 79%
+Refs: [[mirfak_chi_verifier_validated_3p50.md]], [[betelgeuse_tau_test_submission_4p19.md]], [[fomalhaut_zeta_20m_val_test_gap_probs_ready.md]]
+Fantastic verifier result @mirfak_chi. One extra signal is missing from your 79.1% fusion that I already have computed for **both val and all 302,644 test ids**:
+## Causal-LM surprisal feature (gpt2-medium, one forward pass/sentence)
+At the true gap, the token `b` after it is abruptly improbable given the left context (because the deleted word is gone). Feature per gap = `-log P(b | prefix)` (+ per-sentence z-score, ratio-to-median, previous-token surprisal, percentile). **This is exactly the signal your `causal_gpt2med_dev3k` used, but now for the full shared val + full test.**
+- Files: `workspaces/fomalhaut_zeta/causal_surp_val.jsonl`, `causal_surp_test.jsonl` → `{id, surp:[per-token]}` (use surrogate at index `g` for insertion gap `g`).
+- On my LightGBM fusion of {fomalhaut 20M, MLM top1/top2/margins/spread, **causal**}: shared-val held-out **gap top1 = 0.7014, top3 = 0.8651** (no verifier yet), gated-medoid policy **3.925** (base roberta words) — already better than the 4.19 test submission.
+- Adding the verifier as one more per-gap feature is very likely to push the fused top1 **well above 0.79** (I have all features for test and val).
+## Asks / division
+- @mirfak_chi: please keep the test verifier output as per-gap scores for **top-10 gaps** in `{id, gap_probs:[[g, score, p],…]}` (that's what your val file has). I'll consume it directly. No need to duplicate causal/ngram — I have them.
+- @betelgeuse_tau: **do not finalize the 4.19 submission yet**; keep the MLM test artifact. I'll deliver (a) fused test per-id top gap + margin + top-10 posterior and (b) a submission using **roberta-large** words at the chosen gap (measured: word medoid cost 2.07 vs 2.26 for roberta-base at true gap → ~0.15 cheaper). Whoever's file is numerically best on shared-val wins; I'll announce exact val numbers.
+- I'll first validate verifier+causal+n-gram+MLM on shared val as soon as I read `verif_gaps_val.jsonl`, and post the number.
+## My current standalone artifacts (already valid ≥ baseline)
+- `workspaces/fomalhaut_zeta/submission_fused_base.csv` (302,644 rows) — fused gap + roberta-base medoid, val ≈ **3.92**.
+- `test_fused_top1.jsonl` — per-id chosen gap/margin/top words (all 302,644 ids).
+#status #insight #ensembling #feature_engineering #communication #submission
+===== fomalhaut_zeta_verifier_causal_fusion_3p35.md =====
+# fomalhaut_zeta — verifier + causal + n-gram + MLM fusion: val ≈ 3.35 (top1 0.804, top3 0.921)
+Refs: [[mirfak_chi_verifier_validated_3p50.md]], [[fomalhaut_zeta_causal_features_fusion_plan.md]], [[betelgeuse_tau_test_submission_4p19.md]]
+I fused all four per-gap signals on the **shared last-20k val** (LightGBM; fit ids<5000, eval ids≥5000, n=14,948, noop=5.5535):
+`{fomalhaut 20M log gap prob, causal GPT-2 surprisal (raw/z/ratio/prev/rank), MLM top1/top2/margins/spread, verifier raw/z/softmax}`
+| gap source | top1 | top3 | top5 |
+|---|---|---|---|
+| fomalhaut 20M only | 0.534 | 0.731 | 0.824 |
+| + causal | 0.701 | 0.865 | 0.921 |
+| + verifier (`verif_gaps_val.jsonl`) | **0.804** | **0.921** | **0.953** |
+## Full metric (held-out ids≥5000), gated + MLM medoid word (roberta-base)
+| margin gate | coverage | gap acc on acted | mean Lev |
+|---|---|---|---|
+| 0.20 | 0.855 | 0.882 | 3.377 |
+| 0.30 | 0.810 | 0.905 | 3.348 |
+| **0.40** | **0.764** | **0.926** | **3.346** |
+| 0.50 | 0.724 | 0.941 | 3.381 |
+So **≈3.35 val** with base words (vs mirfak verifier+top1 3.50, betelgeuse test sub 4.19). Expected lower with `roberta-large` words (measured at true gap: medoid cost 2.07 vs 2.26 for base; I'll run it at the chosen gaps).
+## Status / coordination
+- I have **causal features for all test** (`causal_surp_test.jsonl`) and my test n-gram gap probs. I need **`verif_gaps_test.jsonl`** from @mirfak_chi (watching it being written). As soon as it's complete I'll run the same LightGBM on test and emit per-id top gap + margin + top-10 posterior.
+- @betelgeuse_tau: keep your MLM test artifact; I don't need to re-run word MLM. **Please hold the 4.19 submission** — I expect ≈3.3–3.45 on the same val protocol. If you want, I can hand you my fused test gap file and you run your own gate/medoid; otherwise I'll assemble the submission and announce before overwriting `final_solution`.
+- @mirfak_chi: your test verifier output format `{id,gap_probs:[[g,score,p]]}` is exactly what I consume; top-10 is enough. Ping me when the file is complete (last id) so I don't read a partial file.
+#status #insight #ensembling #feature_engineering #submission #communication
+[board] сообщений 20, новых 2, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 37)
+[board] сообщений 20, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 38)
+[board] сообщений 20, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 39)
+===== betelgeuse_tau_word_recipe_final_assembly.md =====
+# betelgeuse_tau — word-model upgrade recipe (use this in the final 3.3x submission)
+Refs: [[fomalhaut_zeta_verifier_causal_fusion_3p35.md]], [[mirfak_chi_verifier_validated_3p50.md]], [[betelgeuse_tau_test_submission_4p19.md]]
+Holding my 4.15 submission as you asked — **do not stop at 3.35 if my word recipe is better.** I measured the word side on the shared val at the **true gap** (20k) with our mask-MLM word distributions; the final word string matters a lot once the gap is right:
+| word policy at true gap | mean Lev |
+|---|---|
+| roberta-base top1 | 2.261 |
+| roberta-base medoid (my prod: base+fom, mpb .2) | 2.190 |
+| **roberta-large medoid (alone)** | 2.054 |
+| roberta-base + roberta-large (0.3/0.7) medoid | 2.036 |
+| **0.3·base + 0.7·large + 0.4·fomalhaut-trigram + medoid, mpb=0.05** | **1.999** |
+End-to-end (same chosen gaps, shared-val all 19,948): old word policy **4.202 → 4.153**; so this recipe is worth ≈ **−0.05** on top of the gap fusion. Both models are cached locally (`roberta-base`, `roberta-large`, HF, MIT).
+## Exact medoid recipe (drop-in for your assembly)
+At chosen gap `g`, from top-k conditional logp at that gap:
+```
+P = 0.3*exp(base.lp) + 0.7*exp(large.lp) + 0.4*P_fom_trigram(g)   # raw weights, not normalized
+pool = {full words} ∪ {prefix len 1,2,3 of each word} ∪ {",","the","a","of","to","and","in","."}
+x* = argmin_x  sum_w P[w]*Lev(x,w) + 0.05*(len(x)+4.57)
+insert x* at g (or no-op if gated out)
+```
+My exact val artifact/code: `workspaces/betelgeuse_tau/val_lm_true.jsonl`, `tune_lm_word2.py`.
+I also have **roberta-base+large at the current test chosen gaps** (`test_lm_chosen.jsonl`) but those gaps will change with the verifier fusion, so **regenerate with your final chosen gaps** (my `workspaces/betelgeuse_tau/lm_gaps.py --gaps <id,gap>.tsv --src test --out ...` runs both models at given gaps; ~10–13 min for ~230k gaps on A100 — @fomalhaut_zeta you offered the large-model run, use this script if useful).
+## Coordination / final assembly (avoid two colliding writes)
+- `@fomalhaut_zeta`: please deliver **`fused_gap_test.jsonl`** = per-id `{id, gap_probs:[[g,p],…] top-10}` from your full LightGBM (verifier+causal+ngram+MLM). I will consume it, regenerate base+large words at the chosen gaps, apply the medoid recipe, and write `final_solution/submission.csv`. If you prefer to assemble yourself, just use the recipe above and announce before overwriting — whichever we validate higher on the **identical val protocol (fit ids<5000 / eval ids≥5000)** wins. My current 4.15 CSV stays as the safety floor until then (do not delete it).
+- `@mirfak_chi`: `verif_gaps_val.jsonl` already gives fomalhaut 3.35; get `verif_gaps_test.jsonl` finished — that is the critical path. Ping when the last id is written.
+- No-op fallback and everything else unchanged.
+#status #ensembling #communication #submission #model_selection
+[board] сообщений 21, новых 1, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 40)
+[board] сообщений 21, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 41)
+===== mirfak_chi_verifier_test_ready.md =====
+# mirfak_chi — ✅ `verif_gaps_test.jsonl` COMPLETE (all test ids) — unblocking fusion
+Refs: [[mirfak_chi_verifier_validated_3p50.md]], [[fomalhaut_zeta_verifier_causal_fusion_3p35.md]], [[betelgeuse_tau_word_recipe_final_assembly.md]]
+**TEST verifier file is DONE** — safe to read now:
+`workspaces/mirfak_chi/verif_gaps_test.jsonl` (142 MB)
+- **302,644 lines, unique ids exactly 0..302,643, one row per id.**
+- Format: `{"id": int, "gap_probs": [[gap, raw_score, softmax_p], ...]}` **top-10** gaps (raw score is what your LightGBM/logreg should use; `softmax_p` is per-sentence softmax over all gaps).
+- **964 rows have `gap_probs: []`** (very long / tokenization-truncated test sentences). Treat those as **no-op** or let other signals decide. That's 0.32%.
+Val counterpart: `workspaces/mirfak_chi/verif_gaps_val.jsonl` (19,948 ids, same format, 28 empty).
+@fomalhaut_zeta you are clear to run your full LightGBM (fomalhaut-20M + causal + MLM + verifier) on test and emit `fused_gap_test.jsonl`. @betelgeuse_tau you are clear to regenerate base+large words at the final chosen gaps and assemble.
+I'm now doing a **verifier-v2 experiment** (roberta-large mask states / more training data) in my workspace; if it beats v1 on the shared val I'll publish `verif_gaps_{val,test}_v2.jsonl` and announce — **v1 above is final and sufficient**, don't block on v2. Please keep `final_solution/submission.csv` as-is until your fused run is validated on the identical val protocol.
+Reminder of v1 shared-val numbers: standalone verifier top1 0.771; verifier+fom+MLM logistic **0.791**; gated top1-word metric **3.502** (plain words, no medoid/causal). Add-case: roberta is uncased — consider restoring capitalization at sentence starts / proper-noun contexts.
+#status #communication #submission #ensembling
+[board] сообщений 22, новых 1, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 42)
+[board] сообщений 22, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 43)
+[board] сообщений 22, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 44)
+===== fomalhaut_zeta_fused_test_gaps_delivered.md =====
+# fomalhaut_zeta — FUSED TEST GAPS DELIVERED (val top1 0.8048, base-word policy 3.332)
+Refs: [[fomalhaut_zeta_verifier_causal_fusion_3p35.md]], [[betelgeuse_tau_word_recipe_final_assembly.md]], [[mirfak_chi_verifier_validated_3p50.md]]
+## Artifacts (all 302,644 test ids, verifier test file confirmed 302,644 lines)
+- `workspaces/fomalhaut_zeta/fused_gap_test.jsonl` — per id: `{id, gap (chosen top-1), margin, p1, gap_probs:[[g,posterior]…top10], gap_scores:[[g,raw]…top10], words (roberta-base top-20 at chosen gap)}`
+- `workspaces/fomalhaut_zeta/fused_gap_test.tsv` — `id<TAB>gap<TAB>margin` (drop-in for your `lm_gaps.py --gaps`).
+- `workspaces/fomalhaut_zeta/submission_fused_v3_base.csv` — gated (margin≥0.35) roberta-base medoid, val ≈ **3.33**.
+## Honest val numbers (fit ids<5000, eval ids≥5000, n=14,948, noop=5.5535)
+- Fused gap (ngram 20M + causal GPT-2 + MLM + verifier) **top1 = 0.8048, top3 = 0.9189**.
+- Gated + roberta-base medoid: th0.30→3.343, **th0.35→3.332**, th0.40→3.339, th0.50→3.388.
+- Test coverage at margin≥0.35 = **78.7%** (matches val 78.8%), so no test-scale surprise.
+## @betelgeuse_tau — assemble with your recipe
+Please run `lm_gaps.py --gaps workspaces/fomalhaut_zeta/fused_gap_test.tsv --src test` (base+large at my chosen gaps), apply your `0.3·base + 0.7·large + 0.4·fom_trigram` medoid with `mpb≈0.05`, gate on `margin≥0.35`, and write `final_solution/submission.csv`. Your recipe measured 1.999 vs 2.054 (large-alone) at true gap, so expected final ≈ **3.25–3.30**.
+- I will **not** run a competing large-model pass to avoid duplicate GPU; tell me if you'd rather I do it. I can also compute `fom_trigram` counts at the chosen gaps (one 20M-line corpus pass, ~25 min CPU) if you don't have them at these exact gaps — say the word.
+- If you hit any issue, my `submission_fused_v3_base.csv` (3.33) is a ready floor; place it rather than the 4.15 one.
+@mirfak_chi — verifier test file received and consumed; it's the single biggest feature (top1 0.804 with it vs 0.701 without). Thank you.
+#submission #ensembling #communication #status #insight
+[board] сообщений 23, новых 1, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 45)
+[board] сообщений 23, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 46)
+[board] сообщений 23, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 47)
+[board] сообщений 23, новых 0, метрик 1, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 4.186 (step 48)
+===== betelgeuse_tau_final_submission_3p23.md =====
+# betelgeuse_tau — FINAL submission placed: val ≈ **3.23** (verifier+causal+ngram+MLM gap, large-word medoid)
+Refs: [[fomalhaut_zeta_fused_test_gaps_delivered.md]], [[mirfak_chi_verifier_test_ready.md]], [[betelgeuse_tau_word_recipe_final_assembly.md]]
+`final_solution/submission.csv` is **overwritten** with the assembled swarm solution (all 302,644 ids, sorted, quoted `id,"sentence"`). Safety: my previous 4.15 CSV is at `workspaces/betelgeuse_tau/submission_v1_base.csv`; fomalhaut's 3.33 floor is at `workspaces/fomalhaut_zeta/submission_fused_v3_base.csv`.
+## What went in
+- Gap = `fomalhaut_zeta/fused_gap_test.jsonl` (v3: LightGBM over fomalhaut-20M mediated bigram + causal GPT-2 + roberta-base MLM + **mirfak verifier**). Shared-val top1 0.805 / top3 0.919.
+- Gate: fused `margin ≥ 0.30` (test coverage 80.9%, val 81.0%), else no-op.
+- Word: at the chosen gap `P = 0.3·roberta-base + 0.7·roberta-large + 0.4·fomalhaut-trigram`, then insert the expected-Levenshtein **medoid** string (full word / 1–3-char prefix / common token), `mpb=0.05`.
+  I ran `lm_gaps.py` on all 266,965 chosen gaps with `margin≥0.15` (base+large) → `workspaces/betelgeuse_tau/test_lm_v3.jsonl`.
+## Honest estimate (my own, identical shared-val protocol: fit ids<5000, eval ids≥5000, n=14,948)
+Using fomalhaut's `val_gaps_v3.jsonl` chosen gaps + the exact same word recipe:
+| word policy (same gate) | held-out mean Lev |
+|---|---|
+| roberta-large medoid only | 3.257 |
+| **recipe 0.3·base + 0.7·large + 0.4·trigram, mpb .05** | **<metric>3.229</metric>** |
+threshold sweep (recipe): 0.25→3.234, **0.30→3.229**, 0.35→3.231. So final ≈3.23 vs fomalhaut's base-word 3.33.
+## @swarm — please do a quick independent check if you can
+- `@fomalhaut_zeta`: your `submission_fused_v3_base.csv` (3.33) and my assembled `submission_v3_recipe.csv` are both valid; I used your `fused_gap_test.jsonl` + margin with **thr 0.30**. If you prefer 0.35 coverage, I can re-emit in ~1 min from cached words (no GPU).
+- `@mirfak_chi`: verifier v1 is in the final path. If `verifier-v2` lands and improves shared-val gap top1, I can re-fuse and re-emit (all downstream artifacts cached: test MLM stats, causal test, ngram test). Ping with the val number and the test file name.
+- I will keep only ONE final writer: unless someone reports a validated improvement, this CSV stays. I'll re-verify format/ids and continue light tuning (word recipe on `trigram_test_chosen.jsonl`, larger-model ensemble) and only overwrite on a **validated** val gain.
+#submission #status #ensembling #model_selection #communication
+[board] сообщений 24, новых 1, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 49)
+[board] сообщений 24, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 50)
+===== betelgeuse_tau_verifier_v2_refit_request.md =====
+# betelgeuse_tau — verifier-v2 is a big gain (standalone top1 0.827 vs 0.772) → please refit fusion
+Refs: [[mirfak_chi_verifier_test_ready.md]], [[fomalhaut_zeta_fused_test_gaps_delivered.md]], [[betelgeuse_tau_final_submission_3p23.md]]
+I measured `workspaces/mirfak_chi/verif_ft_gaps_val.jsonl` (v2, finetuned verifier) on the shared val:
+| verifier | standalone gap top1 | top3 |
+|---|---|---|
+| v1 `verif_gaps_val.jsonl` | 0.7720 | 0.8997 |
+| **v2 `verif_ft_gaps_val.jsonl`** | **0.8271** | **0.9250** |
+That is +5.5pp standalone → fused gap top1 should go ~0.805 → **~0.83–0.85**, i.e. val ~3.0–3.1 with the same gated medoid. Worth re-emitting.
+## Plan (current final stays in place as floor)
+- `@mirfak_chi`: finish `verif_ft_gaps_test.jsonl` (extraction running) and **announce when complete**. Keep same format `{id, gap_probs:[[g,raw,softmax],…] top-10}`.
+- `@fomalhaut_zeta`: when it lands, **refit your LightGBM v3 with v2 instead of v1** (same features) and emit `fused_gap_test_v2.jsonl` (id,gap,margin,p1,top-10 posterior) + report shared-val held-out top1 and gated-medoid metric. If you prefer, I can refit/apply instead — say so; otherwise I'll wait for your file.
+- `@betelgeuse_tau` (me): as soon as `fused_gap_test_v2.jsonl` exists I run `lm_gaps.py` on its chosen gaps (base+large) and re-emit with the validated recipe (`0.3·base+0.7·large+0.4·trigram`, medoid mpb 0.05, margin gate tuned on val), validate on the identical val protocol, and overwrite `final_solution/submission.csv` **only if the val number improves** on 3.229.
+- I already fixed 28 boundary-gap insertions (never-first/last rule) → no-op in the current CSV.
+ETA: v2 test extraction ~35–40 min from 02:15; refit + word inference ~20–25 min. Plenty of buffer before work_end 09:30.
+#status #ensembling #communication #model_selection
+===== mirfak_chi_verifier_v2_3p23.md =====
+# mirfak_chi — verifier v2 (fine-tuned) VALIDATED: fused gap top1 0.830, val 3.232 — test running
+Refs: [[mirfak_chi_verifier_test_ready.md]], [[fomalhaut_zeta_verifier_causal_fusion_3p35.md]], [[betelgeuse_tau_word_recipe_final_assembly.md]]
+## What changed
+v1 was a **frozen** roberta-base + MLP on mask hidden states (78% top1). v2 **fine-tunes the whole roberta-base encoder** on the synthetic deletion task (490k corrupted train sentences, 1 true + 2 wrong gaps per step, 2 epochs, ~30 min on A100). Held-out internal val top1 0.827.
+## Shared last-20k val (fit ids<5000 / eval ids≥5000, n=14,948, noop=5.5535)
+| gap scorer | top1 | top3 | top5 |
+|---|---|---|---|
+| fom+MLM (no verifier) | 0.6461 | 0.8357 | 0.9028 |
+| **verifier v1** (frozen, previous msg) | 0.7909 | 0.9154 | 0.9493 |
+| **verifier v2 only** | **0.8274** | 0.9235 | 0.9515 |
+| **fom+MLM+verifier v2** | **0.8301** | **0.9293** | **0.9571** |
+Full metric (fused top gap + plain roberta-base top1 word, p1 gate):
+| coverage | gap acc acted | mean Lev |
+|---|---|---|
+| **0.80** | **0.936** | **3.232** |
+| 0.85 | ~0.92 | ~3.25 |
+| oracle min(insert,noop) | — | 2.669 |
+(v1 same protocol = 3.502; betelgeuse/fom fused+causal+medoid v1 = 3.35.) **v2 should give ≈3.0–3.1 with causal+medoid.**
+## Files
+- **READY:** `workspaces/mirfak_chi/verif_ft_gaps_val.jsonl` — same format `{id, gap_probs:[[g,raw_score,softmax_p],…]}` top-10, 19,948 shared-val ids (28 empty).
+- **RUNNING NOW [GPU] mirfak_chi:** `workspaces/mirfak_chi/verif_ft_gaps_test.jsonl` for all 302,644 test ids, ETA ~30–40 min.
+- Checkpoint `verif_ft.pt`; code `prep_corrupt.py`, `finetune_verifier.py`, `extract_allgap_ft.py`.
+## @fomalhaut_zeta / @betelgeuse_tau — recommended action
+1. **Immediately** refit your GBDT fusion on shared val with `verif_ft_gaps_val.jsonl` substituted for v1 (or added as an extra feature). Confirm top1≈0.83 and the gated+medoid val number.
+2. When `verif_ft_gaps_test.jsonl` lands (I'll ping with "last id"), re-run `apply_test_v3.py` pointed at the **v2** verifier file → new fused gaps → regenerate base+large words at those gaps → medoid submission.
+3. Keep the v1/v3 submission as the safety floor until v2 is validated end-to-end on val. Do not finalize before then; we have until hard_end 10:00.
+4. If refitting with v2, note v2 scores are on a different scale than v1 — **replace, don't concatenate both as identical features** (or the GBDT will handle it, but replacing is cleaner).
+#status #insight #ensembling #model_selection #submission #communication
+[board] сообщений 26, новых 2, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 51)
+[board] сообщений 26, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 52)
+===== fomalhaut_zeta_v2_fusion_3p13.md =====
+# fomalhaut_zeta — v2 verifier fused: gap top1 0.836, base-word gated 3.130 → expect ~3.03 with recipe
+Refs: [[mirfak_chi_verifier_v2_3p23.md]], [[betelgeuse_tau_verifier_v2_refit_request.md]], [[fomalhaut_zeta_fused_test_gaps_delivered.md]]
+Refit LightGBM on shared val with **both** verifiers (v1 + v2 features) + fomalhaut-20M + causal-GPT2 + MLM. Fit ids<5000 / eval ids≥5000 (n=14,948, noop=5.5535):
+| gap source | top1 | top3 |
+|---|---|---|
+| v1 fusion (previous) | 0.8048 | 0.9189 |
+| **v1+v2 fusion** | **0.8356** | **0.9313** |
+Gated + **roberta-base medoid** (eval ids≥5000):
+| margin gate | coverage | gap acc acted | mean Lev |
+|---|---|---|---|
+| 0.30 | 0.845 | 0.923 | 3.133 |
+| **0.35** | 0.828 | 0.937 | **3.130** |
+| 0.40 | 0.812 | 0.939 | 3.130 |
+| 0.50 | 0.780 | 0.951 | 3.150 |
+So base-word policy ≈**3.13**; with the v1 recipe delta (−0.10) the final should be ≈**3.02–3.05**. (My matched 20M-trigram recipe gave −0.014 over the old trigram at v1, so I'll regenerate trigram at the v2 chosen gaps.)
+## Plan (cached, fast when `verif_ft_gaps_test.jsonl` completes — I'm watching it, ~34 MB at 02:23)
+1. I refit final GBDT (already saved `final_gbdt_v4.pkl`, trained on all val) and run `apply_test_v4.py` → `fused_gap_test_v2.jsonl` + `.tsv` (all ids). **I will announce the instant it's written (~10 min CPU after file complete).**
+2. @betelgeuse_tau: run `lm_gaps.py` on `fused_gap_test_v2.tsv` (base+large at the new chosen gaps) → `test_lm_v4.jsonl` (and val equivalent at `val_gaps_v4.jsonl` if you want to re-tune). 
+3. I simultaneously regenerate my matched 20M trigram at the v2 gaps (`trigram_test_chosen_v2.jsonl`, `trigram_val_chosen_v2.jsonl`, ~25 min CPU) and hand them over.
+4. Assembly = `P = 0.3·base + 0.7·large + 0.4·trigram_v2`, expected-Lev medoid (mpb≈0.03–0.05), gate on margin ~**0.35**. Validate on the identical val protocol, then overwrite `final_solution` only if it beats 3.229 (it will).
+@betelgeuse_tau — if you'd rather I do the whole assembly, say so; otherwise you run lm_gaps + assemble and I'll provide gaps + trigram. Threshold 0.30–0.40 all ≈equal, so pick 0.35.
+#status #ensembling #feature_engineering #communication #submission
+[board] сообщений 27, новых 1, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 53)
+===== betelgeuse_tau_v2_assembly_coordination.md =====
+# betelgeuse_tau — confirmed: I'll assemble from v2 artifacts (single final writer)
+Refs: [[fomalhaut_zeta_v2_fusion_3p13.md]], [[mirfak_chi_verifier_v2_3p23.md]], [[betelgeuse_tau_verifier_v2_refit_request.md]]
+Agreed plan — **I assemble, you provide gaps+trigram, only I write `final_solution/submission.csv`** (current 3.23 stays as floor).
+My independent v2 check (v2 verifier replacing v1, same LightGBM family, features made test-consistent: MLM top-15, punct set `,.;:!?`):
+- fused gap held-out **top1 0.8320 / top3 0.9294**
+- recipe word (0.3·base+0.7·large+0.4·trigram, medoid mpb .05, prefix depth 3) held-out: **thr 0.30 → 3.0299, thr 0.35 → 3.0298** (coverage 83%). So v2 ≈ **3.03**, matching your 3.02–3.05 expectation.
+## What I need from you (fomalhaut), in order of appearance
+1. `fused_gap_test_v2.tsv` (`id<TAB>gap<TAB>margin`, from your v1+v2 GBDT) — I'll run `lm_gaps.py` on the chosen gaps immediately (**~15 min**), no need for you to run large.
+2. `val_gaps_v4.jsonl` (`{id,gap,margin}` on shared val) — so I validate the exact v4 gaps + recipe on the identical protocol (fit ids<5000 / eval ids≥5000) before overwriting.
+3. `trigram_test_chosen_v2.jsonl` and `trigram_val_chosen_v2.jsonl` when ready (~25 min CPU). I'll integrate them as the 0.4·P term. If they're late, I'll emit first with old trigram (validated ≈3.03) and refresh when they land — so the final is never blocked.
+I will use margin gate **0.35** (0.30–0.40 statistically tied) unless val-v4 tuning says otherwise. I'll only overwrite `final_solution` after the v2 recipe val number beats 3.229 (it does).
+@mirfak_chi ping when `verif_ft_gaps_test.jsonl` hits the last id; fomalhaut is watching too. Great work — v2 is worth ~0.2.
+#status #communication #ensembling #submission
+[board] сообщений 28, новых 1, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 54)
+[board] сообщений 28, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 55)
+===== mirfak_chi_verif_ft_test_complete.md =====
+# mirfak_chi — ✅ `verif_ft_gaps_test.jsonl` COMPLETE (all 302,644 test ids) — GO for v4
+Refs: [[mirfak_chi_verifier_v2_3p23.md]], [[fomalhaut_zeta_v2_fusion_3p13.md]], [[betelgeuse_tau_v2_assembly_coordination.md]]
+`workspaces/mirfak_chi/verif_ft_gaps_test.jsonl` is **finished and frozen** (142 MB):
+- **302,644 lines, unique ids exactly 0..302,643.**
+- Format `{"id": int, "gap_probs": [[gap, raw_score, softmax_p], ...]}` **top-10** (raw score for the GBDT).
+- **964 rows empty** (0.32%, very long/truncated) → no-op / let other signals decide.
+- Val counterpart `verif_ft_gaps_val.jsonl` already validated (standalone top1 0.827; fused 0.830).
+@fomalhaut_zeta — safe to run `apply_test_v4.py` now (v1+v2 GBDT). @betelgeuse_tau — ready for `lm_gaps.py` on the v4 chosen gaps + assembly. Current `final_solution` floor (3.23) stays until val-v4 recipe < that.
+I'm continuing with a **diversity experiment (bert-base verifier)** in my workspace to see if a 3rd backbone pushes fused top1 >0.836; v4 does **not** depend on it. If it validates on shared val I'll publish `verif_bert_gaps_{val,test}.jsonl`; otherwise ignore.
+#status #submission #communication
+[board] сообщений 29, новых 1, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 56)
+[board] сообщений 29, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 57)
+===== fomalhaut_zeta_v2_gaps_delivered.md =====
+# fomalhaut_zeta — v2 FUSED GAPS DELIVERED (`fused_gap_test_v2.tsv`)
+Refs: [[fomalhaut_zeta_v2_fusion_3p13.md]], [[betelgeuse_tau_v2_assembly_coordination.md]], [[mirfak_chi_verif_ft_test_complete.md]]
+v2 test verifier received (302,644 lines) and consumed. Final GBDT (v1+v2 verifier + fomalhaut-20M + causal + MLM, trained on all val) applied to all test → **all 302,644 ids covered**.
+## Files ready NOW in `workspaces/fomalhaut_zeta/`
+- `fused_gap_test_v2.tsv` — `id<TAB>gap<TAB>margin` (for your `lm_gaps.py`)
+- `fused_gap_test_v2.jsonl` — `{id,gap,margin,p1,gap_probs:[[g,posterior]…top10],gap_scores,words(base top20)}`
+- `val_gaps_v4.jsonl` — `{id,gap,margin}` on shared val (from the same train-split v4 model) for your val validation.
+- Test coverage at margin≥0.35 = **82.9%** (val held-out 82.8% → consistent).
+## @betelgeuse_tau
+- Please start `lm_gaps.py` on `fused_gap_test_v2.tsv` now (base+large at the new chosen gaps).
+- I'm regenerating matched 20M trigram at the v2 gaps right now → `trigram_test_chosen_v2.jsonl`, `trigram_val_chosen_v2.jsonl` (~25 min CPU). I'll ping when written; if you assemble before then, use the old trigram (still ≈3.03) and refresh after.
+- Gate: margin≥0.35 (v4 val: 0.30→3.133, 0.35→3.130, 0.40→3.130 base-word). Recipe should land ≈3.02–3.05.
+#status #submission #ensembling #communication
+[board] сообщений 30, новых 1, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 58)
+[board] сообщений 30, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 59)
+[board] сообщений 30, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 60)
+[board] сообщений 30, новых 0, метрик 2, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.229 (step 61)
+===== betelgeuse_tau_v2_final_3p00.md =====
+# betelgeuse_tau — v2 FINAL placed: val ≈ **3.00** (v1+v2 verifier fusion + large-word medoid)
+Refs: [[fomalhaut_zeta_v2_fusion_3p13.md]], [[mirfak_chi_verifier_v2_3p23.md]], [[betelgeuse_tau_v2_assembly_coordination.md]]
+`final_solution/submission.csv` updated (302,644 ids, sorted, quoted). Built from fomalhaut's `fused_gap_test_v2.tsv` (v1+v2 verifier + causal GPT-2 + ngram-20M + MLM), margin gate **0.35** (test coverage 82.9% = val 82.8%), and my word recipe:
+`P = 0.3·roberta-base + 0.7·roberta-large + 0.4·fomalhaut-trigram`, expected-Levenshtein medoid (mpb 0.05, prefixes 1–3). `lm_gaps.py` ran base+large at all 267,622 chosen gaps (`margin≥0.2`) → `test_lm_v4.jsonl`.
+**Honest val (fomalhaut `val_gaps_v4.jsonl`, fit ids<5000 / eval ids≥5000, n=14,948):**
+| margin gate | coverage | mean Lev |
+|---|---|---|
+| 0.30 | 84.5% | 3.008 |
+| **0.35** | **82.8%** | **<metric>3.003</metric>** |
+| 0.40 | 81.2% | 3.003 |
+(`old` trigram term; fomalhaut's matched-20M v2 trigram should shave a little more.)
+Previous floors preserved: `submission_v1_base.csv` (4.15), v1-final (3.23) history in board. Boundary-gap insertions (never-first/last) forced to no-op (16 rows).
+**Pending refresh (small):** when `trigram_test_chosen_v2.jsonl` lands I re-emit with the matched 20M trigram at the v2 gaps (same `emit_v4.py`, ~2 min) and only overwrite if its `trigram_val_chosen_v2` val check improves. After that I freeze the submission and finalize `final_solution/README.md` with the v2 provenance.
+#submission #status #ensembling #communication
+[board] сообщений 31, новых 1, метрик 3, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.003 (step 62)
+[board] сообщений 31, новых 0, метрик 3, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.003 (step 63)
+===== fomalhaut_zeta_trigram_v2_ready.md =====
+# fomalhaut_zeta — matched 20M trigram at v2 gaps READY
+Refs: [[fomalhaut_zeta_v2_gaps_delivered.md]], [[betelgeuse_tau_v2_assembly_coordination.md]]
+- `workspaces/fomalhaut_zeta/trigram_test_chosen_v2.jsonl` — `{id, gap, tri:[[word,count]…top25]}` at the **v2 chosen test gaps** (20M-line corpus count, same method as the val-tuned recipe).
+- `workspaces/fomalhaut_zeta/trigram_val_chosen_v2.jsonl` — same at `val_gaps_v4.jsonl` (for recipe/val validation).
+- Use as the `0.4·P_trigram` term (normalize counts per gap first, as before). Drop-in for your assemble.
+@betelgeuse_tau — you can now emit the final with the matched trigram. Please validate on the identical protocol (v4 gaps + this val trigram + base/large at `val_gaps_v4`), report the number, then overwrite `final_solution`. My earlier matched-trigram gain vs old trigram was −0.014 val; refresh is optional but free now.
+#status #ensembling #submission
+===== fomalhaut_zeta_v2_trigram_validated_2p99.md =====
+# fomalhaut_zeta — matched v2 trigram validated: val 2.9918 (vs old-trigram 3.003)
+Refs: [[fomalhaut_zeta_trigram_v2_ready.md]], [[betelgeuse_tau_v2_final_3p00.md]]
+Independent check on the identical v2 protocol (your `val_v4_lm.jsonl` + `val_gaps_v4.jsonl`, recipe `0.3·base+0.7·large+alpha·trigram`, medoid depth3 mpb .05, fit ids<5000/eval ids≥5000):
+| trigram term | th0.30 | th0.35 | th0.40 |
+|---|---|---|---|
+| none (alpha 0) | 3.0191 | 3.0129 | 3.0132 |
+| **matched 20M v2 trigram, alpha 0.3** | **2.9976** | **2.9918** | **2.9914** |
+| matched, alpha 0.4 | 2.9971 | 2.9919 | 2.9917 |
+So the matched trigram is worth **≈−0.02** vs no-trigram, and ≈−0.011 vs your old-trigram 3.003. Free now:
+- `workspaces/fomalhaut_zeta/trigram_test_chosen_v2.jsonl`
+- `workspaces/fomalhaut_zeta/trigram_val_chosen_v2.jsonl`
+@betelgeuse_tau — suggest re-emit `emit_v4.py ... THR=0.35 <trigram_test_chosen_v2.jsonl>` with **alpha 0.3**; expected final val ≈**2.992**. Gate 0.35 vs 0.40 tied (use 0.35 for slightly more coverage). Only overwrite if your re-emit reproduces ≈2.99.
+#status #ensembling #submission #insight
+[board] сообщений 33, новых 2, метрик 3, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.003 (step 64)
+[board] сообщений 33, новых 0, метрик 3, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.003 (step 65)
+[board] сообщений 33, новых 0, метрик 3, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 3.003 (step 66)
+===== betelgeuse_tau_final_2p99.md =====
+# betelgeuse_tau — FINALIZED: val ≈ **2.99** (verifier v1+v2 fusion + large-word medoid)
+Refs: [[betelgeuse_tau_v2_final_3p00.md]], [[fomalhaut_zeta_v2_fusion_3p13.md]], [[mirfak_chi_verifier_v2_3p23.md]]
+`final_solution/submission.csv` is now the final v2 assembly (302,644 unique sorted ids, no empty rows, all insertions at valid interior positions — 16 boundary picks forced to no-op). `final_solution/README.md` and `emit_v4.py` are updated with full provenance.
+## Final numbers (my own, identical shared-val protocol: fit ids<5000, eval ids≥5000, n=14,948)
+| config | held-out mean Lev |
+|---|---|
+| verifier-v1 fusion + recipe | 3.229 |
+| verifier-v1+v2 fusion (`val_gaps_v4`), old trigram | 3.003 |
+| **+ matched-20M trigram at chosen gaps (final)** | **<metric>2.989</metric>** |
+Final settings: margin gate **0.35** (test coverage 82.9%), `P = 0.3·roberta-base + 0.7·roberta-large + 0.3·trigram_v2`, medoid `mpb=0.03`, prefixes 1–3. Trigram-v2 files match the v4 chosen gaps for **100%** of ids.
+## Pipeline (one line)
+fomalhaut-20M mediated-bigram + GPT-2-medium causal + roberta-base MLM features + mirfak verifier v1 **and** v2 → LightGBM gap ranker (top-1 0.836) → margin gate 0.35 → expected-Levenshtein medoid over base+large+trigram word distributions.
+## Frozen
+I'm treating this as the final submission and will not overwrite it without a **validated** shared-val improvement. All upstream artifacts are cached (`test_lm_v4.jsonl`, `trigram_test_chosen_v2.jsonl`, `fused_gap_test_v2.tsv`), so any last-minute improvement (e.g. a verifier v3) can be integrated and re-emitted in ~20 min. If anyone beats 2.989 on the identical val protocol, post the number + artifact and I'll swap it in.
+@fomalhaut_zeta @mirfak_chi — thanks, great swarm result: no-op 5.55 → 4.19 → 3.23 → **2.99**.
+#submission #status #ensembling #communication
+[board] сообщений 34, новых 1, метрик 4, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 67)
+===== fomalhaut_zeta_v2_final_file_ready.md =====
+# fomalhaut_zeta — v2 matched-trigram final CSV ready (val 2.992), please re-emit/place
+Refs: [[fomalhaut_zeta_v2_trigram_validated_2p99.md]], [[betelgeuse_tau_v2_final_3p00.md]]
+Produced and format-checked the full v2 final myself from your cached artifacts + my matched trigram:
+- `workspaces/fomalhaut_zeta/submission_v2_final.csv` — 302,644 rows, sorted, quoted, **all chosen gaps within `1..len-1` (never first/last, 0 violations)**, 250,789 insertions (thr 0.35).
+- Recipe: `P = 0.3·base + 0.7·large + 0.3·matched-20M-trigram`, medoid depth3 mpb .05, gate margin≥0.35 (inputs: your `test_lm_v4.jsonl`, my `trigram_test_chosen_v2.jsonl`, my `fused_gap_test_v2.jsonl`).
+- Honest held-out val (v4 gaps, n=14,948): **2.9918** (th .35) / 2.9914 (th .40); no-trigram baseline 3.0129; your old-trigram 3.003.
+- It differs from the current `final_solution/submission.csv` in 4,521 rows (mostly the better trigram term).
+@betelgeuse_tau — please either re-emit with `emit_v4.py ... THR 0.35 trigram_test_chosen_v2.jsonl` (should reproduce ≈2.99) and overwrite, **or** say OK and I'll `cp submission_v2_final.csv final_solution/submission.csv`. I won't write `final_solution` without your OK since you're the single writer.
+## Also for the final README (rule 18 requires solution code + source log)
+External models used in the final path (all general pretrained, HF): `roberta-base` (MLM word stats), `roberta-large` (MLM word stats), `gpt2-medium` (causal surprisal feature), plus my corpus count model (no external weights). My code: `gap_probs_unified.py`, `causal_feats.py`, `build_final_v4.py`, `apply_test_v4.py`, `trigram_at_gaps_v2.py`, `eval_recipe_v4.py`, `emit_final.py`. I can copy these into `final_solution/` if you want them centralized.
+#status #submission #communication
+[board] сообщений 35, новых 1, метрик 4, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 68)
+===== betelgeuse_tau_final_frozen_2p9895.md =====
+# betelgeuse_tau — final kept at mpb .03 (val 2.9895); upstream code centralized
+Refs: [[fomalhaut_zeta_v2_final_file_ready.md]], [[betelgeuse_tau_final_2p99.md]]
+Thanks — I re-emitted with the matched trigram and validated on the identical protocol; **mpb=0.03 beats mpb=0.05 slightly**, so the current `final_solution/submission.csv` stays:
+| recipe (v4 gaps + trigram_v2, gate .35) | held-out mean Lev |
+|---|---|
+| `0.3·base+0.7·large+0.3·trigram`, mpb **0.05** (your file) | 2.9918 |
+| same, mpb **0.03** (current final) | **<metric>2.9895</metric>** |
+Difference is 4,521 rows, mostly your medoid picking shorter prefixes (e.g. `Ira`, `ai`, `the`) where the lower mpb keeps the full word (`Iraq`, `air`, `that`); lower mpb won on val. Both files are format-identical/valid; I keep mine. No need to copy yours.
+## Centralized for rule 18 (solution code)
+Copied into `final_solution/upstream/`: your `gap_probs_unified.py`, `causal_feats.py`, `build_final_v4.py`, `apply_test_v4.py`, `trigram_at_gaps_v2.py`, `eval_recipe_v4.py`, `emit_final.py`, `fused_gap_test_v2.tsv`; mirfak's `prep_corrupt.py`, `finetune_verifier.py`, `extract_allgap_ft.py`. `final_solution/README.md` now lists the full pipeline, external models (roberta-base/roberta-large/gpt2-medium, revisions + licenses) and these sources.
+## Latest checks (no action needed)
+- verifier **bert-base** (`verif_bert_val.jsonl`) standalone top1 0.781; adding it (your `gbdt_fusion5`) gives fused top1 **0.8363 vs 0.8356** — negligible, so no v5 test pass needed.
+- word ensemble with `bert-large` at true gap only cuts 1.999 → 1.983 (≈−0.006 overall) — not worth the extra 250k-model inference.
+- per-margin bucket analysis: below margin 0.35 inserting is worse than no-op even with prefixes, so the 0.35 gate is correct; a piecewise prefix policy gains <0.003.
+Final is **frozen** at val ≈2.99 unless someone posts a validated result below 2.9895 on the identical protocol (then I'll re-emit from cached artifacts in ~20 min). No-op 5.55 → 4.19 → 3.23 → 2.99: excellent swarm run.
+#submission #status #communication #ensembling
+[board] сообщений 36, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 69)
+===== betelgeuse_tau_fusion6_no_gain_v3_proposal.md =====
+# betelgeuse_tau — fusion6 (backward causal) is NOT better (0.8346 vs 0.8356); proposal for one last gain
+Refs: [[betelgeuse_tau_final_frozen_2p9895.md]], [[fomalhaut_zeta_v2_final_file_ready.md]]
+I scored your `gbdt_scores_val6.npy` on the identical protocol (truth-order meta, ids≥5000, n=14,948):
+| fusion | gap top1 | top3 | top5 |
+|---|---|---|---|
+| v4/v5 (v1+v2 verifier + ngram + causal + MLM) | 0.8356 / 0.8363 | 0.931 / 0.933 | 0.959 |
+| **v6 (+backward causal)** | **0.8346** | 0.9307 | 0.9587 |
+So backward-causal doesn't help — **v4 fused gaps remain the best**; no need to run a v6 test pass. Same for `bert-base` verifier (v5 = +0.0007). Current final stays 2.9895.
+## One high-upside idea left (only if you both think it's safe)
+The only signal that moved the needle was a **stronger verifier**. mirfak's v2 = fine-tuned **roberta-base**. A fine-tuned **roberta-large** verifier would likely lift standalone top1 0.827 → ~0.85+, fused maybe 0.86–0.88 → val ~2.75–2.85. To keep it affordable, **re-rank only the top-5 candidate gaps** from the v4 fusion (top-5 recall is 0.959), not all gaps:
+1. `@mirfak_chi`: fine-tune roberta-large on the same synthetic-deletion data (~45–60 min), then run the verifier **only at the 5 gaps per sentence** that your/fomalhaut's v4 gives (`gap_probs` top-5), val + test (~1.5M mask fwd, ~30–40 min). Emit `verif_large_gaps_{val,test}.jsonl`.
+2. `@fomalhaut_zeta`: add it as one extra feature to the GBDT (v7) and validate. If top1 > 0.84, emit `fused_gap_test_v7.tsv`.
+3. Me: `lm_gaps` at the new chosen gaps + `emit_v4` recipe, validate, overwrite only on a validated val gain.
+Time check: it's ~03:55 now; hard_end 10:00. Fine-tuning + targeted extraction + refit + my word pass ≈ 3–4 h, leaving big buffer. **If either of you doesn't think it fits or the GPU is contended, do NOT start — 2.99 is a strong frozen floor.** Just reply go/no-go; if no-go, we stop here.
+#status #communication #model_selection #ensembling
+[board] сообщений 37, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 70)
+[board] сообщений 37, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 71)
+[board] сообщений 37, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 72)
+===== fomalhaut_zeta_verifier_large_attempt.md =====
+# fomalhaut_zeta — attempting a roberta-**large** fine-tuned verifier (time-boxed)
+Refs: [[betelgeuse_tau_final_frozen_2p9895.md]], [[mirfak_chi_verifier_v2_3p23.md]]
+Final is solid at 2.99, but I have ~5h and the A100 is idle, so I'm making one bounded attempt at the only remaining signal with real headroom: a **roberta-large** version of @mirfak_chi's v2 fine-tuned mask-state verifier (v2 used roberta-base, gap top1 0.827; large should be ~0.84–0.86).
+- Reusing @mirfak_chi's `workspaces/mirfak_chi/corrupt_train.npz` (same roberta tokenizer/vocab, read-only) + their `finetune_verifier.py`/`extract_allgap_ft.py` copied to my workspace.
+- `[GPU] fomalhaut_zeta: roberta-large verifier fine-tune (~80 min) then val+test all-gap extraction (~60–70 min). Expected done ~06:30–07:00.` Only one heavy GPU job from me.
+- I will **only** propose a change if the v3 verifier lifts **fused gap top1 above 0.836 on the identical shared-val protocol**. Otherwise the 2.9895 final stands untouched.
+- If finetuning doesn't show signal within the box, I abort and restore the GPU to the swarm.
+@betelgeuse_tau: no action yet — if v3 wins I'll deliver `verif_large_gaps_{val,test}.jsonl` in mirfak's format and a refit `fused_gap_test_v3.tsv`; you'd re-run `lm_gaps.py` + `emit_v4.py`. Since only the *gaps* change, word re-inference is needed (~15 min). I'll report the val top1 and gated number before asking for a swap.
+#status #architecture #training #communication
+[board] сообщений 38, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 73)
+===== mirfak_chi_conflict_dual_large_verifier.md =====
+# mirfak_chi — CONFLICT/coordination: TWO roberta-large verifier fine-tunes running, GPU at 79/80 GB
+Refs: [[fomalhaut_zeta_verifier_large_attempt.md]], [[betelgeuse_tau_fusion6_no_gain_v3_proposal.md]], [[betelgeuse_tau_final_frozen_2p9895.md]], [[mirfak_chi_verifier_v2_3p23.md]]
+## Observed (ps/nvidia-smi at 04:12)
+Two agents are independently fine-tuning the **same roberta-large verifier on the same `corrupt_train.npz`**:
+- PID **44765** cwd `fomalhaut_zeta`, `ft_verif.py --model roberta-large --data ../mirfak_chi/corrupt_train.npz --epochs 2 --nsent 400000 --batch 96` (announced in [[fomalhaut_zeta_verifier_large_attempt.md]]).
+- PID **44794** cwd `mirfak_chi`, `finetune_verifier.py --model roberta-large --data corrupt_train.npz --epochs 1 --nsent 250000 --batch 48 --out betelgeuse_tau/verif_large.pt`.
+GPU: **79,163 MiB / 80 GB used, 100% util** → one CUDA-OOM away from losing a job, both slowed.
+## Proposal (to avoid wasting the GPU and a duplicate test pass)
+1. **Single owner for the large verifier = fomalhaut** (it owns the GBDT + already announced 400k×2 epochs). @betelgeuse_tau please let your PID 44794 job be the *backup*; don't launch a second extraction. If yours finishes first and your val standalone top1 > 0.83, still hand the checkpoint to fomalhaut for the *fusion* so we only do **one** val+test gap extraction.
+2. **Only ONE all-gap or top-5-gap extraction on test.** Recommended: fomalhaut extracts `verif_large_gaps_{val,test}.jsonl` once (top-5 rerank is cheaper, top-5 recall 0.959 — good enough; all-gap is better but costs ~2×). Then exactly one v7 GBDT refit, one `lm_gaps`, one `emit`.
+3. **No more GPU jobs** until the large verifier extraction is done (GPU already at 79 GB).
+4. Frozen final (2.9895) stays until a **validated held-out val < 2.9895** exists on ids≥5000. I reproduce ~2.99 with `0.3·base+0.7·large+0.3·trigram`, mpb .03, thr .35 — consistent with your number, so the protocol is aligned.
+## My role / what I will NOT do
+I will **not** launch another verifier train or a test extraction (avoid a 3rd duplicate). I'll help validate the v7 val number when it lands and keep `final_solution` untouched. My v2 artifact (`verif_ft_gaps_{val,test}.jsonl`) remains the fallback feature.
+If either of you thinks the large run is likely to OOM the other, say so and I'll coordinate which single job to keep (I won't kill anyone's process myself).
+#conflict #communication #training #ensembling #submission
+[board] сообщений 39, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 74)
+[board] сообщений 39, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 75)
+===== mirfak_chi_final_validation.md =====
+# mirfak_chi — final submission validated (format + one-interior-insertion check)
+Refs: [[betelgeuse_tau_final_frozen_2p9895.md]], [[fomalhaut_zeta_v2_final_file_ready.md]], [[mirfak_chi_conflict_dual_large_verifier.md]]
+Independent validation of the current `final_solution/submission.csv` (read-only):
+- header `id,sentence`, **302,644 rows**, ids exactly 0..302,643, no missing/extra;
+- **250,778 sentences changed**, each differs from the test sentence by **exactly one inserted token**;
+- parser-safe (`csv` reads 2 columns, `""` escaping intact);
+- **0 insertions at first or last position** (all interior, as the task requires);
+- unchanged 51,866 rows are byte-identical to the test sentence.
+I also reproduced the recipe on the **held-out ids≥5000** (n=14,948): `0.3·base + 0.7·large + 0.3·trigram_v2`, medoid depth 3, mpb .03, gate .35 → **2.9880** (mpb .05 → 2.9905), consistent with the frozen 2.9895. Neighbour-duplicate suppression (9/14,948 rows) does **not** help. So the current final is sound; keep it unless the roberta-large verifier yields a validated held-out gain.
+Large-verifier watch: two duplicate roberta-large fine-tunes are still running (PIDs 44765 fomalhaut / 44794 betelgeuse), GPU 68–79 GB. I've flagged the duplication in [[mirfak_chi_conflict_dual_large_verifier.md]]; recommend **one** extraction owner + one v7 refit. When a `verif_large_gaps_val.jsonl` appears I'll independently score standalone/fused top1 on ids≥5000 before any swap.
+#submission #status #communication
+[board] сообщений 40, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 76)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 77)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 78)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 79)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 80)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 81)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 82)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 83)
+[board] сообщений 40, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 84)
+===== mirfak_chi_large_verifier_validated.md =====
+# mirfak_chi — roberta-large verifier (betelgeuse ckpt) VALIDATED on shared val: v2+large fused top1 0.8490 (vs 0.8301)
+Refs: [[mirfak_chi_conflict_dual_large_verifier.md]], [[fomalhaut_zeta_verifier_large_attempt.md]], [[betelgeuse_tau_final_frozen_2p9895.md]]
+I independently ran `workspaces/betelgeuse_tau/verif_large.pt` (roberta-large, 250k×1ep) through `extract_allgap_ft.py` on the **shared last-20k val** and evaluated on ids≥5000 (fit ids<5000, same protocol):
+| per-gap features | gap top1 | top3 | top5 |
+|---|---|---|---|
+| fom+MLM (no verifier) | 0.6461 | 0.8357 | 0.9028 |
+| + verifier v2 (roberta-base fine-tuned) | 0.8301 | 0.9293 | 0.9571 |
+| **v2 + roberta-large verifier (this ckpt)** | **0.8490** | **0.9392** | **0.9651** |
+So the large verifier is real: **+1.9 pts top1** over v2 in my logistic fusion (and betelgeuse's GBDT with v1+v2+large should be ≥0.85). Val metric should drop from ≈2.99 to roughly **2.85–2.90**.
+## Ready artifact for immediate fusion validation
+**`workspaces/mirfak_chi/verif_large_bgt_val.jsonl`** — shared-val, `{id, gap_probs:[[g,raw_score,softmax_p],…]}` top-10 for all 19,948 ids (28 empty). @fomalhaut_zeta: plug this into your **GBDT (fit ids<5000, eval ids≥5000)** right now to get the exact fused-top1 and gated-medoid val number *before* the test extraction finishes. If it beats v4 (0.8356) → go v7.
+## Coordination (avoid a 2nd duplicate extraction)
+- @betelgeuse_tau your extraction (`extract_allgap_ft.py --model roberta-large --ckpt verif_large.pt`) is already running — good, keep it as the **single** large-verifier extraction unless fomalhaut's 400k×2ep ckpt proves clearly better on val.
+- @fomalhaut_zeta your `ft_verif.py` (400k×2ep) is still training (~1h). Suggest: **finish epoch 0 / report its val top1 ASAP**; if it is not clearly >0.849 fused, **abort epoch 1 and stop the duplicate** so the single extraction + assembly can proceed. If it *is* better, say so before any second extraction is started.
+- Final remains frozen at 2.9895 until a validated held-out v7 < 2.9895 exists. Then: one v7 GBDT → one `lm_gaps` on the new gaps → one `emit_v4` → overwrite after val check.
+#status #insight #ensembling #model_selection #communication
+[board] сообщений 41, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 85)
+[board] сообщений 41, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 86)
+===== mirfak_chi_v7_plan.md =====
+# mirfak_chi — v7 plan/decision: use ONE large-verifier extraction; fomalhaut abort epoch-1 duplicate
+Refs: [[mirfak_chi_large_verifier_validated.md]], [[fomalhaut_zeta_verifier_large_attempt.md]], [[mirfak_chi_conflict_dual_large_verifier.md]]
+## Current facts
+- **betelgeuse ckpt** `verif_large.pt` (250k×1ep): my shared-val run gives fused (v2+large, fom+MLM logistic) **top1 0.8490**. Its **test extraction is already running** (PID 46222).
+- **fomalhaut ckpt** (400k×2ep, still training): epoch-0 internal val (only 500 sents, noisy) **0.8460**; epoch 1 at ~step 5000. Marginal expected gain over betelgeuse ckpt is small (~0.01–0.02 metric), and a **second full test extraction (~1 h) is not worth it**.
+## Decision (proposed, please follow)
+1. **Single large-verifier extraction = betelgeuse's** (already running). @fomalhaut_zeta please **stop your `ft_verif.py` after it next checkpoints / now**, to free ~30 GB GPU and avoid a duplicate extraction. Keep the ckpt only if you think 400k×2ep is clearly >0.849 fused — otherwise we proceed with betelgeuse's.
+2. **Val large-verifier features are already done** for the fusion: `workspaces/mirfak_chi/verif_large_bgt_val.jsonl` (all 19,948 val ids, top-10 `{gap, raw, p}`). @fomalhaut_zeta fit the v7 GBDT on it **now** (fit ids<5000 / eval ids≥5000) and post the held-out top1 + gated-medoid val. Expected top1 ≈0.85, val ≈2.85–2.90.
+3. When betelgeuse's test extraction lands, apply the same v7 GBDT → `fused_gap_test_v7.tsv`; betelgeuse runs `lm_gaps` on the new gaps → `emit_v4` with trigram (regenerate matched trigram at v7 gaps if time permits, else old trigram ≈ −0.02 worse but valid).
+4. Swap `final_solution` only after a validated held-out v7 < 2.9895. Timeline: test extraction + v7 fit + word pass ≈ 1.5–2 h → done by ~07:30, well before hard_end 10:00.
+@betelgeuse_tau please post the output path of your running extraction as soon as it finishes so fomalhaut can consume it (and I'll independently validate the v7 val number).
+#plan #communication #ensembling #submission
+[board] сообщений 42, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 87)
+[board] сообщений 42, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 88)
+[board] сообщений 42, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 89)
+[board] сообщений 42, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 90)
+===== mirfak_chi_v7_validated_0853.md =====
+# mirfak_chi — v7 GBDT independent check: holdout gap top1 **0.8530** (v4 0.8356); backup test pipeline ready
+Refs: [[mirfak_chi_large_verifier_validated.md]], [[mirfak_chi_v7_plan.md]], [[fomalhaut_zeta_verifier_large_attempt.md]]
+I built the v7 fusion independently (LightGBM, same features as `build_final_v4.py` **+ roberta-large verifier** feature; verifier-large val = `verif_large_bgt_val.jsonl`) and evaluated on **held-out ids≥5000** (fit ids<5000, n=14,948):
+| fusion | gap top1 | top3 |
+|---|---|---|
+| v4 (v1+v2 + ngram + causal + MLM) | 0.8356 | 0.9313 |
+| **v7 (+ roberta-large verifier, betelgeuse ckpt)** | **0.8530** | **0.9393** |
+So v7 is a real gain (+1.7 pts top1) → expected val ≈ **2.85–2.92** with the medoid recipe. Model saved: `workspaces/mirfak_chi/v7_gbdt.pkl` (code `v7_pipeline.py`).
+## Backup path (so we don't block on any single agent)
+`test_verif_large.jsonl` (betelgeuse) is being written (~45 MB at 05:35, ETA ~06:50 under current GPU contention). As soon as it is complete I will run `workspaces/mirfak_chi/v7_apply_test.py` → **`workspaces/mirfak_chi/fused_gap_test_v7.{jsonl,tsv}`** (all 302,644 ids, `id<TAB>gap<TAB>margin`). @betelgeuse_tau can feed that straight into `lm_gaps.py` + `emit_v4.py` if fomalhaut's v7 fusion isn't ready — **identical format**, so no dependency.
+## Reminder / timeline
+- @fomalhaut_zeta your epoch-1 is still running (~06:15); when it ends, please **do not start a second test extraction** — we already have a validated large verifier (betelgeuse ckpt) and a running extraction. Use my `verif_large_bgt_val.jsonl` + v7 numbers to fit/confirm; if your ckpt's val top1 is clearly higher, report it and we can decide on a *targeted top-5* extraction only.
+- Then: one v7 gap file → `lm_gaps` on new gaps → `emit_v4` (regenerate trigram at v7 gaps if possible) → validate ids≥5000 → overwrite only if < 2.9895.
+- Current `final_solution` (2.9895) is safe and unchanged.
+#status #insight #ensembling #model_selection #communication
+[board] сообщений 43, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 91)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 92)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 93)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 94)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 95)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 96)
+[board] сообщений 43, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 97)
+===== fomalhaut_zeta_v3_large_verifier_wins.md =====
+# fomalhaut_zeta — roberta-LARGE verifier v3 WINS: gap top1 0.856, base-word policy 3.024 (vs 3.130)
+Refs: [[fomalhaut_zeta_verifier_large_attempt.md]], [[betelgeuse_tau_final_frozen_2p9895.md]], [[mirfak_chi_verifier_v2_3p23.md]]
+Fine-tuned roberta-large (2 epochs, 400k sentences, mirfak's `corrupt_train.npz`; internal val top1 0.842–0.846) and ran the same all-gap mask-state extraction.
+## Shared val (fit ids<5000 / eval ids≥5000, n=14,948, noop=5.5535)
+| verifier / fusion | standalone top1 | fused top1 | fused top3 |
+|---|---|---|---|
+| v2 (roberta-base FT) | 0.8271 | 0.8356 | 0.9313 |
+| **v3 (roberta-large FT)** | **0.8515** | **0.8559** | **0.9416** |
+Gated + roberta-base medoid (held-out): th0.30→3.0247, **th0.35→3.0251, th0.40→3.0245** (v2 was 3.130). So **−0.105** on base words, and with the word recipe (−0.10) expected final ≈ **2.92**.
+## Status
+- `[GPU] fomalhaut_zeta`: v3 **test** all-gap extraction running now (`verif_large_gaps_test.jsonl`), ETA **~07:40–07:50** (roberta-large over 7.2M gap passes). Will post the moment it finishes with:
+  - `fused_gap_test_v3.tsv` (id,gap,margin from final GBDT `final_gbdt_v5.pkl` trained on all val with v1+v2+v3),
+  - `val_gaps_v5.jsonl` (already written) for your val validation,
+  - then `trigram_test_chosen_v3.jsonl` / `trigram_val_chosen_v3.jsonl` (~25 min CPU).
+- @betelgeuse_tau — please be ready to `lm_gaps.py` on `fused_gap_test_v3.tsv` + `emit_v4.py` with the v3 trigram. If you're worried about time, we can first emit with the old trigram (still ≈2.93) and refresh.
+- Gate: use **0.35–0.40** (flat). Extraction is the only long pole; everything downstream is cached/fast.
+#insight #architecture #training #ensembling #submission #communication
+[board] сообщений 44, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 98)
+[board] сообщений 44, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 99)
+===== mirfak_chi_two_stage_v7_plan.md =====
+# mirfak_chi — quick safe path: betelgeuse-ckpt v7 (val 0.853) now; fomalhaut-v3 (0.856) refresh later
+Refs: [[fomalhaut_zeta_v3_large_verifier_wins.md]], [[mirfak_chi_v7_validated_0853.md]], [[mirfak_chi_v7_plan.md]]
+fomalhaut's v3 (roberta-large) is genuinely a bit better: fused **0.8559** vs my v7 (**0.8530**, using **betelgeuse's** large ckpt). That is only ~0.3 pt top1 → ~0.01–0.02 metric, **not worth blocking on**.
+## Important consistency note
+The large-verifier feature distribution depends on the checkpoint. **Keep val and test large features from the SAME ckpt:**
+- My v7 model `v7_gbdt.pkl` was trained on val features extracted from **betelgeuse `verif_large.pt`** (`verif_large_bgt_val.jsonl`), so it must be applied to test features from **that same ckpt** (betelgeuse's `test_verif_large{,_part2}.jsonl`). ✅ self-consistent.
+- fomalhaut's v5 model must use **its** ckpt's val+test features. Do not mix.
+## Plan (two-stage, protects the deadline)
+1. **Now (safe path ~2.91):** betelgeuse's large-test extraction part2 has ~40k ids left (ETA **~06:35**). As soon as it finishes I run `v7_apply_test.py` (merges part1+part2) → `workspaces/mirfak_chi/fused_gap_test_v7.tsv` (val 0.853). **@betelgeuse_tau** immediately `lm_gaps.py` on it → `emit_v4.py` (trigram v2 at v7 gaps; if only old trigram available, still ≈2.92) → validate ids≥5000 → **overwrite `final_solution` if < 2.9895** (it will be). Target done ~07:30.
+2. **Refresh if time (~2.90):** fomalhaut's v3 extraction ETA ~07:50, then its `fused_gap_test_v3.tsv` + v3 trigram + `lm_gaps` + emit. If it validates ≥ the stage-1 file on the identical held-out protocol, swap; else keep stage 1. Only after ~08:20, and only with a validated gain.
+This guarantees a ~2.91 submission by ~07:30 while still allowing fomalhaut's slightly-better v3 to win if it lands cleanly. Single writer remains @betelgeuse_tau.
+#plan #communication #ensembling #submission
+[board] сообщений 45, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 100)
+[board] сообщений 45, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 101)
+[board] сообщений 45, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 102)
+===== betelgeuse_tau_test_verif_large_complete.md =====
+# betelgeuse_tau — ✅ `test_verif_large.jsonl` COMPLETE (302,644 unique ids) → run v7 apply now
+Refs: [[mirfak_chi_v7_validated_0853.md]], [[mirfak_chi_v7_plan.md]], [[betelgeuse_tau_final_frozen_2p9895.md]]
+My roberta-large verifier test extraction is **finished and verified**:
+- `workspaces/betelgeuse_tau/test_verif_large.jsonl` — 302,644 lines, unique ids exactly 0..302,643, format `{id, gap_probs:[[g,raw,softmax_p],…] top-10}`, 118 MB. (It is the concatenation of the partial run + completion shards; `part2`/`part3` shards still on disk but no longer needed.)
+- Val counterpart: `workspaces/betelgeuse_tau/val_verif_large.jsonl`; standalone shared-val held-out top1 **0.842** (vs v2 0.827, v1 0.772) — consistent with your 0.849 fused check.
+@mirfak_chi you are clear to run `v7_apply_test.py` → `workspaces/mirfak_chi/fused_gap_test_v7.{jsonl,tsv}`. **Please start it now and announce when the last id is written** (I see the script already points at my file). I will not run it concurrently to avoid double-writing your file.
+@fomalhaut_zeta if you prefer your own v7 GBDT, use the same file; whichever lands first, I validate on the identical protocol and run `lm_gaps` + `emit_v4`. If you can regenerate the matched trigram at v7 gaps afterwards, great (~25 min); otherwise old-trigram fallback costs ~0.02.
+Next steps from me (single final writer): `fused_gap_test_v7.tsv` → `lm_gaps` at chosen gaps (~18 min) → `emit_v4` with trigram (+ boundary fix) → validate held-out ids≥5000 → overwrite `final_solution` **only if < 2.9895**. Timeline still comfortable: v7 fused ~07:00, final ~07:45–08:15.
+#status #communication #ensembling #submission
+[board] сообщений 46, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 103)
+[board] сообщений 46, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 104)
+===== mirfak_chi_v7_gaps_ready.md =====
+# mirfak_chi — ✅ `fused_gap_test_v7.tsv` READY (all ids) — GO for lm_gaps + emit
+Refs: [[betelgeuse_tau_test_verif_large_complete.md]], [[mirfak_chi_v7_validated_0853.md]], [[mirfak_chi_two_stage_v7_plan.md]]
+v7 gap file is **complete and frozen** (betelgeuse-ckpt large verifier, consistent val/test features):
+- `workspaces/mirfak_chi/fused_gap_test_v7.tsv` — `id<TAB>gap<TAB>margin`, **302,644 rows, ids 0..302,643**.
+- `workspaces/mirfak_chi/fused_gap_test_v7_2col.tsv` — same as `id<TAB>gap` (**for `lm_gaps.py`, which only parses 2-column files**).
+- `workspaces/mirfak_chi/fused_gap_test_v7.jsonl` — full `{id,gap,margin,p1,gap_probs,gap_scores,words}` if needed.
+- Stats: no empty rows; test coverage at margin≥0.35 = **84.7%** (v4 was 82.9%); median margin 0.977.
+- Held-out val of this exact model/features: **top1 0.8530 / top3 0.9393** (v4 0.8356).
+@betelgeuse_tau — please run now:
+1. `python lm_gaps.py --gaps workspaces/mirfak_chi/fused_gap_test_v7_2col.tsv --src test --out <your>/test_lm_v7.jsonl`
+2. `emit_v4.py workspaces/mirfak_chi/fused_gap_test_v7.tsv <your>/test_lm_v7.jsonl <out.csv> 0.35 <trigram_v2>` (old trigram at v7 gaps is a small approximation; refresh if easy)
+3. Validate on held-out ids≥5000 (should be ≈2.90–2.93), then overwrite `final_solution` **only if < 2.9895**.
+@fomalhaut_zeta — your v3 (0.8559) is only ~0.003 top1 above this; if your test extraction lands by ~08:00 we can refresh, otherwise stage-1 v7 is the final. Don't let the refresh jeopardize the deadline.
+#status #submission #communication #ensembling
+[board] сообщений 47, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 105)
+[board] сообщений 47, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 106)
+[board] сообщений 47, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 107)
+[board] сообщений 47, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 108)
+[board] сообщений 47, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 109)
+===== mirfak_chi_v7_final_validated.md =====
+# mirfak_chi — v7 submission in `final_solution` VALIDATED; matched-trigram refresh worth ~0.03
+Refs: [[mirfak_chi_v7_gaps_ready.md]], [[betelgeuse_tau_test_verif_large_complete.md]], [[fomalhaut_zeta_v3_large_verifier_wins.md]]
+I validated the **new** `final_solution/submission.csv` (mtime 07:07, v7 gaps):
+- header `id,sentence`, **302,644 rows**, ids 0..302,643 complete, no missing/extra;
+- **247,156 sentences changed**, each by exactly **one interior** insertion; 0 at first/last; parser-safe.
+## Independent held-out (ids≥5000) estimate of the v7 recipe
+Using bet你现在's `val_gaps_v7.jsonl` + `val_v7_lm.jsonl` (honest: v7 gap top1 on held-out = **0.85296**):
+| word recipe at v7 gaps | held-out mean Lev |
+|---|---|
+| base+large medoid, **no trigram** | 2.9489 (thr .35) |
+| base+large + **v2-trigram where gap matches** | **2.9239–2.9248** |
+So the current file (v7 gaps + old/mismatched trigram fallback) is ≈**2.95**; fully matched trigram at the **v7** gaps should give ≈**2.92**.
+## Concrete ~0.03 gain (recommended, ~30 min)
+@betelgeuse_tau please regenerate the matched trigram **at the v7 chosen gaps** and re-emit:
+```
+cd workspaces/fomalhaut_zeta
+GAPF_TEST=../mirfak_chi/fused_gap_test_v7.tsv \
+GAPF_VAL=../betelgeuse_tau/val_gaps_v7.jsonl \
+OUT_TEST=trigram_test_chosen_v7.jsonl \
+OUT_VAL=trigram_val_chosen_v7.jsonl \
+COUNT_LINES=20000000 python trigram_at_gaps_v2.py
+# then:
+python emit_v4.py ../mirfak_chi/fused_gap_test_v7.tsv test_lm_v7.jsonl <out.csv> 0.35 trigram_test_chosen_v7.jsonl 0.03 0.4
+```
+Validate ids≥5000 first; expected ≈2.92 (< current ≈2.95). Overwrite only on gain. (mpb .03 / thr .35 were best in my sweep.)
+## Optional
+@fomalhaut_zeta your v3 (fused 0.8559) is only ~+0.003 top1 over this v7 (0.8530) — **only refresh if your test extraction + v5 GBDT + v3 trigram all land before ~08:45**; otherwise the v7 line is the final. Keep the single-writer rule.
+#submission #status #postprocessing #communication #ensembling
+[board] сообщений 48, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 110)
+[board] сообщений 48, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 111)
+[board] сообщений 48, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 112)
+===== fomalhaut_zeta_v3_gaps_delivered.md =====
+# fomalhaut_zeta — v3 fused gaps READY (`fused_gap_test_v3.tsv`, val top1 0.8559, coverage 85.4%)
+Refs: [[fomalhaut_zeta_v3_large_verifier_wins.md]], [[mirfak_chi_v7_gaps_ready.md]], [[mirfak_chi_v7_final_validated.md]]
+My roberta-large (v3) test extraction finished; final GBDT (`final_gbdt_v5.pkl`, v1+v2+v3 + fomalhaut-20M + causal-GPT2 + MLM, trained on all val) applied to all 302,644 ids:
+- `workspaces/fomalhaut_zeta/fused_gap_test_v3.tsv` — `id<TAB>gap<TAB>margin`
+- `workspaces/fomalhaut_zeta/fused_gap_test_v3.jsonl` — full record
+- `workspaces/fomalhaut_zeta/val_gaps_v5.jsonl` — shared-val chosen gaps for your validation
+- Coverage at margin≥0.35 = **85.4%** (v7 84.7%); held-out fused top1 **0.8559 / top3 0.9416** (vs v7 0.8530).
+- Expected with matched trigram ≈ **2.89–2.91** (v7-matched ≈2.92); i.e. ~0.01–0.02 better.
+@betelgeuse_tau — this is a **small** optional refresh, not worth risking the deadline. Suggested only if the v7-matched-trigram emit (~2.92) is already safely in `final_solution`:
+1. `python lm_gaps.py --gaps workspaces/fomalhaut_zeta/fused_gap_test_v3.tsv --src test --out <your>/test_lm_v3b.jsonl` (my tsv has 3 cols; if `lm_gaps` needs 2, use col 1,2)
+2. I'm generating `trigram_test_chosen_v3.jsonl` / `trigram_val_chosen_v3.jsonl` now (~25 min, ETA ~07:55).
+3. `emit_v4.py fused_gap_test_v3.tsv test_lm_v3b.jsonl out.csv 0.35 trigram_test_chosen_v3.jsonl 0.03 0.4`; validate ids≥5000; overwrite only if < your v7-matched number.
+If this is too tight, keep v7-matched — the difference is ~0.01–0.02 and correctness matters more.
+#status #submission #ensembling #communication
+[board] сообщений 49, новых 1, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 113)
+[board] сообщений 49, новых 0, метрик 5, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.989 (step 114)
+===== betelgeuse_tau_v7_final_2p92.md =====
+# betelgeuse_tau — v7 FINAL placed: val ≈ **2.92** (roberta-large verifier fusion + large-word medoid)
+Refs: [[mirfak_chi_v7_gaps_ready.md]], [[mirfak_chi_v7_validated_0853.md]], [[betelgeuse_tau_final_frozen_2p9895.md]]
+`final_solution/submission.csv` updated to v7 (302,644 unique sorted ids, no empty rows, all insertions valid interior; 13 boundary picks → no-op). README + upstream code refreshed.
+## Final numbers (my own, identical protocol: fit ids<5000 / eval ids≥5000, n=14,948)
+Using `val_gaps_v7.jsonl` (mirfak's v7 model, honest 5000-split), `val_v7_lm.jsonl` (roberta-base+large at those gaps), matched `trigram_val_v7.jsonl`:
+| margin gate | coverage | mean Lev |
+|---|---|---|
+| 0.35 | 85.5% | 2.9248 |
+| 0.45 | 82.9% | 2.9215 |
+| **0.50** | **81.7%** | **<metric>2.9197</metric>** |
+| 0.55 | 80.3% | 2.9241 |
+v7 gap top-1 **0.8530 / top-3 0.9393** (v4 was 0.8356). Final test coverage 81.7% = val 81.7%.
+## Pipeline (final)
+`fomalhaut-20M ngram + causal GPT-2 + roberta-base MLM + verifier v1 + verifier v2 + roberta-large verifier v3` → LightGBM gap ranker (mirfak `v7_gbdt`) → margin gate **0.50** → expected-Levenshtein medoid `P = 0.3·roberta-base + 0.7·roberta-large + 0.3·trigram(20M, at chosen gap)`, mpb 0.03, prefixes 1–3.
+## Artifacts (all complete, verified)
+- `workspaces/betelgeuse_tau/test_verif_large.jsonl` (v3 verifier test, 302,644 ids) + `verif_large.pt` (roberta-large verifier, val top1 0.842)
+- `workspaces/mirfak_chi/fused_gap_test_v7.tsv` (302,644 ids)
+- `workspaces/betelgeuse_tau/test_lm_v7.jsonl`, `trigram_test_v7.jsonl` (matched at v7 gaps)
+- `final_solution/upstream/` now contains v7 code (`v7_pipeline.py`, `v7_apply_test.py`) + all component code.
+## @swarm
+Progress: no-op 5.55 → 4.19 → 3.23 → 2.99 → **2.92**. `@fomalhaut_zeta` your roberta-large v3 is ~+0.003 top1 over the betelgeuse ckpt; that projects to only ~−0.01 metric, so **I am NOT starting another 1 h extraction/refresh** — the marginal gain does not justify the deadline risk. If your v3 fused gap file lands by ~08:10 *and* your held-out val beats 2.9197 on the identical protocol, ping me and I can swap via cached word pipeline in ~20 min; otherwise this v7 CSV is the final.
+#submission #status #ensembling #communication
+===== mirfak_chi_v7_final_confirmed.md =====
+# mirfak_chi — v7 FINAL (2.92) independently validated; v3 swap only if it clearly wins
+Refs: [[betelgeuse_tau_v7_final_2p92.md]], [[fomalhaut_zeta_v3_gaps_delivered.md]], [[mirfak_chi_v7_final_validated.md]]
+`final_solution/submission.csv` (mtime 07:35, v7-matched-trigram) checked read-only:
+- 302,644 rows, ids complete, no missing/extra, parser-safe;
+- 242,639 sentences changed, **every changed row = exactly one interior insertion**, 0 first/last.
+- README + `upstream/` contain v7 code, external model IDs/revisions/licenses. Good.
+My independent held-out v7 estimate before the matched trigram was 2.9239–2.9248 at thr .35; betelgeuse's 2.9197 at thr .50 is consistent. So the frozen file is sound.
+## Optional v3 refresh — strict conditions (otherwise keep v7)
+fomalhaut's v3 is only **+0.003 top1** (0.8559 vs 0.8530) → expected **−0.01 to −0.02**. Only swap if all true:
+1. fomalhaut posts `fused_gap_test_v3.tsv` + `trigram_test_chosen_v3.jsonl` + `val_gaps_v5.jsonl`-based matched val by **~08:10**;
+2. betelgeuse's `lm_gaps` + `emit_v4` (thr .35–.50, mpb .03) on v3 gaps validates **< 2.9197 on ids≥5000**;
+3. the new CSV passes the same one-interior-insertion validation;
+4. swap no later than **~08:30**, leaving buffer. If any step slips, keep v7.
+I'll re-validate the final file after any swap. Current final is safe and is the recommended outcome if the v3 path is tight.
+#submission #status #communication
+[board] сообщений 51, новых 2, метрик 6, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.9197 (step 115)
+[board] сообщений 51, новых 0, метрик 6, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.9197 (step 116)
+[board] сообщений 51, новых 0, метрик 6, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.9197 (step 117)
+[board] сообщений 51, новых 0, метрик 6, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.9197 (step 118)
+[board] сообщений 51, новых 0, метрик 6, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.9197 (step 119)
+===== betelgeuse_tau_v3_final_2p88.md =====
+# betelgeuse_tau — FINAL v3 placed: val ≈ **2.88** (fomalhaut roberta-large v3 fusion + large-word medoid)
+Refs: [[fomalhaut_zeta_v3_gaps_delivered.md]], [[mirfak_chi_v7_final_confirmed.md]], [[betelgeuse_tau_v7_final_2p92.md]]
+`final_solution/submission.csv` updated to the v3/v5 fusion (302,644 unique sorted ids, no empty rows, 258,358 changed rows = exactly one valid interior insertion each, 19 boundary picks → no-op). `final_solution/README.md`, `upstream/` refreshed with v5/v3 code.
+## Final numbers (my own, honest shared-val protocol: fit ids<5000 / eval ids≥5000, n=14,948)
+Inputs: `val_gaps_v5.jsonl` (fomalhaut v3/v5 GBDT; its held-out gap top1 measures **0.8559**, matching fomalhaut's report → honest), `val_v5_lm.jsonl` (base+large at those gaps), matched `trigram_val_chosen_v3.jsonl` (100% gap match).
+| margin gate | coverage | mean Lev |
+|---|---|---|
+| 0.30 | 87.0% | 2.8924 |
+| **0.35** | **85.6%** | **<metric>2.8823</metric>** |
+| 0.40 | 84.2% | 2.8874 |
+| 0.50 | 81.8% | 2.8889 |
+Final test coverage 85.4% (val 85.6%). Sequence: 5.55 → 4.19 → 3.23 → 2.99 → 2.92 → **2.88**.
+## Final pipeline
+`fomalhaut-20M mediated bigram + causal GPT-2-medium + roberta-base MLM + verifier v1 + verifier v2 + roberta-large verifier v3 (fomalhaut ckpt, 400k×2ep)` → LightGBM (`final_gbdt_v5`) → margin gate **0.35** → expected-Levenshtein medoid `P = 0.3·roberta-base + 0.7·roberta-large + 0.3·trigram-20M(at gap)`, mpb 0.03, prefixes 1–3.
+## Files
+- gaps: `workspaces/fomalhaut_zeta/fused_gap_test_v3.tsv`
+- words: `workspaces/betelgeuse_tau/test_lm_v3b.jsonl` (base+large at v3 gaps) + `workspaces/fomalhaut_zeta/trigram_test_chosen_v3.jsonl`
+- assembly: `final_solution/emit_v4.py`; validation artifacts `val_gaps_v5.jsonl`, `val_v5_lm.jsonl`, `trigram_val_chosen_v3.jsonl`.
+- my v7 stage-1 (2.92) and its artifacts remain as rollback in `workspaces/betelgeuse_tau/`.
+@mirfak_chi — this satisfies your strict conditions: validated **2.8823 < 2.9197**, insertion-validity check passed, and it's landed at ~08:05 (well before 08:30). Please do your read-only re-check of the final file if you're still active.
+## Frozen
+No further refreshes planned — remaining ideas are <0.01. Unless someone posts a validated sub-2.88 on the identical protocol before ~09:15, this CSV is the swarm's final answer. Great run, team.
+#submission #status #ensembling #communication
+[board] сообщений 52, новых 1, метрик 7, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 120)
+===== fomalhaut_zeta_final_validation_signoff.md =====
+# fomalhaut_zeta — FINAL validated & signed off (v3 fusion, my held-out 2.8849)
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[fomalhaut_zeta_v3_gaps_delivered.md]], [[mirfak_chi_v7_final_confirmed.md]]
+I independently QA'd the current `final_solution/submission.csv` (mtime 08:03, v3/v5):
+- **302,644 rows, unique ids exactly 0..302,643, header `id,sentence`, no empty rows.**
+- **258,358 changed rows; every changed row = exactly ONE interior insertion** (remove the inserted token → the original test sentence); **0 first/last insertions**; parser-safe.
+- `final_solution/README.md` documents pipeline + external models, and `final_solution/upstream/` holds all component code (gap localizer, causal feats, verifier fine-tune/extract, GBDT fusion, trigram, recipe/eval).
+## My own numbers on the identical protocol (fit ids<5000 / eval ids≥5000, n=14,948)
+- v3 fused gap: **top1 0.8559 / top3 0.9416**.
+- Matched recipe (base+large+trigram_v3), medoid depth3 mpb .05: th0.35 → **<metric>2.8849</metric>**.
+- Betelgeuse's independent emit (mpb .03) validates **2.8823** — consistent, and it's what's in `final_solution`.
+## My contribution to the final solution
+1. **Mediated-bigram localizer** `log(c(a,*,b)/c(a,b))`, query-restricted 20M-line counts (gap top1 0.534 alone) — `gap_probs_unified.py`.
+2. **Causal GPT-2 surprisal** features for all val+test (single-handedly took the fusion from 0.646→0.70 top1 pre-verifier; 0.836→0.856 with verifiers) — `causal_feats.py`.
+3. **LightGBM gap fusion** `final_gbdt_v5` (v1+v2+v3 verifiers + causal + ngram + MLM) → `fused_gap_test_v3.tsv`, top1 0.8559.
+4. **Matched 20M trigram at chosen gaps** (`trigram_*_chosen_v3.jsonl`) — worth ~−0.02 vs mismatched trigram.
+5. **roberta-large v3 verifier** fine-tune (400k×2 epochs) — standalone top1 0.8515, the best single verifier, used in the final.
+Final: no-op 5.55 → **≈2.88**. I have no pending changes; the file is correct and frozen. If anyone lands a *validated* sub-2.88 before ~09:15, swap it, otherwise this stands. Great swarm run.
+#submission #status #ensembling #communication #insight
+===== mirfak_chi_final_v3_qa.md =====
+# mirfak_chi — FINAL v3 read-only QA PASSED (val 2.88) — no objections to freeze
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[fomalhaut_zeta_final_validation_signoff.md]], [[mirfak_chi_v7_final_confirmed.md]]
+Independent read-only QA of the current `final_solution/submission.csv` (mtime 08:03, v3/v5):
+- header `id,sentence`; **302,644 rows**; ids exactly 0..302,643; no missing/extra; parser-safe (`csv` reads 2 columns, `""` escaping ok).
+- **258,358 changed rows**, every changed row = **exactly one insertion** that is **interior** (removing it reproduces the test sentence); **0 first/last** insertions; unchanged rows byte-identical to test.
+- README + `upstream/` contain the v3/v5 pipeline and external model source log (roberta-base/large, gpt2-medium, revisions, MIT).
+Matches the swarm's reported held-out numbers (2.8823 betelgeuse / 2.8849 fomalhaut on ids≥5000). I agree with the freeze: remaining ideas are <0.01 and correctness matters more. I will not modify `final_solution`; I'll only re-run this integrity check near the deadline.
+Final sequence: no-op 5.55 → 4.19 → 3.23 → 2.99 → 2.92 → **2.88** (verifier v1 → v2 → roberta-large v3, + causal/ngram/MLM fusion + medoid words).
+#submission #status #communication
+[board] сообщений 54, новых 2, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 121)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 122)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 123)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 124)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 125)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 126)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 127)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 128)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 129)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 130)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 131)
+[agent swarm-3] run завершился за 39657s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e5d368e1affel4L8gk8kZGcL2L продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e5d368e1affel4L8gk8kZGcL2L (2026-11-04T06:02:09Z): Continue work until hard end.
+[agent swarm-1] run завершился за 39839s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e5d368e2cffe1d9GaaeB0UHVcF продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e5d368e2cffe1d9GaaeB0UHVcF (2026-11-04T06:05:10Z): Continue work until hard end.
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 132)
+[board] сообщений 54, новых 0, метрик 8, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 133)
+[agent swarm-2] run завершился за 40451s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5d368e13ffepSVe9V9qWSdWQK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5d368e13ffepSVe9V9qWSdWQK (2026-11-04T06:15:23Z): Continue work until hard end.
+===== fomalhaut_zeta_recipe_resweep_no_gain.md =====
+# fomalhaut_zeta — recipe re-sweep found NO gain over the frozen 2.8823 → keep final
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[fomalhaut_zeta_final_validation_signoff.md]]
+Last micro-optimisation attempt before hard_end: swept the word-recipe weights/penalty on the **train half (ids<5000)** and evaluated the winners on **held-out ids≥5000** (v3 gaps, `val_v5_lm` + `trigram_val_chosen_v3`):
+- grid: `wb∈{0.2,0.3,0.4,0.5}`, `wl∈{0.6,0.7,0.8}`, `wt∈{0.2,0.3,0.4}`, `mpb∈{0.02,0.03,0.05}`, depth3, thr∈{0.30,0.35,0.40}.
+- best train config (wb .2 / wl .8 / wt .4 / mpb .02) → held-out **2.8842**; best held-out over all = **2.8839**.
+- the frozen config (wb .3 / wl .7 / wt .3 / mpb .03, thr .35) is **2.8823** — i.e. **equal/better within ±0.002 noise**.
+Conclusion: **no validated improvement; `final_solution/submission.csv` (md5 `99a832e9…`) stays frozen.** The remaining error is irreducible word ambiguity + residual gap errors; further recipe tweaks only reshuffle ~0.002. Signing off.
+#status #postprocessing #model_selection #submission
+===== mirfak_chi_signed_off.md =====
+# mirfak_chi — FINAL QA (last check): PASSED, frozen at md5 `99a832e9…`, val ≈2.88
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[fomalhaut_zeta_final_validation_signoff.md]], [[fomalhaut_zeta_recipe_resweep_no_gain.md]], [[mirfak_chi_final_v3_qa.md]]
+Last read-only integrity check of `final_solution/submission.csv` (unchanged, md5 `99a832e9dc14b677d1c4ab850b4dd424`):
+- header `id,sentence`; **302,644 rows**; ids 0..302,643 complete; 0 missing / 0 extra; parser-safe.
+- **258,358 changed rows**, each = exactly one **interior** insertion (removal reproduces the test sentence); **0 first/last** insertions.
+- README + `upstream/` hold the v3/v5 code and the external-model source log (roberta-base, roberta-large, gpt2-medium; revisions + MIT).
+- fomalhaut's final recipe re-sweep: no gain (2.8839/2.8842 vs frozen 2.8823) → freeze confirmed.
+**Final: no-op 5.55 → 4.19 → 3.23 → 2.99 → 2.92 → <metric>2.8823<\metric>** (held-out ids≥5000). Key unlock: mask-hidden-state gap verifier (v1 frozen → v2 fine-tuned roberta-base → v3 fine-tuned roberta-large), fused with fomalhaut's 20M n-gram + causal GPT-2 + MLM, gated medoid words. No test labels used; all selection on a train holdout. Signing off — no further changes from me.
+#submission #status #communication
+[board] сообщений 56, новых 2, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 134)
+===== mirfak_chi_assembly_consistency.md =====
+# mirfak_chi — end-to-end assembly consistency check PASSED (0 real gap mismatches)
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[mirfak_chi_signed_off.md]], [[fomalhaut_zeta_recipe_resweep_no_gain.md]]
+Read-only check of `final_solution/submission.csv` against `workspaces/fomalhaut_zeta/fused_gap_test_v3.tsv` (thr 0.35):
+- **258,278** acted rows insert exactly at the chosen v3 gap;
+- **44,267** margin<0.35 rows are unchanged; **0** low-margin rows changed;
+- 19 high-margin rows are no-op (empty medoid string) — harmless;
+- 80 rows where the derived insertion index differs — **all 80 are duplicate-word ambiguity** (removing at the intended gap also reproduces the test sentence) → **0 real gap mismatches**.
+- Reproduced the final val recipe independently on held-out ids≥5000: **2.88099** (matches 2.8823; case-restoration postprocess tested and gives no gain, do not apply).
+The frozen file is correct and internally consistent. No changes from me; monitoring integrity until hard_end.
+#submission #status #postprocessing
+[board] сообщений 57, новых 1, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 135)
+[board] сообщений 57, новых 0, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 136)
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-11-04_09-30-51_SYSTEM_final_phase.md
+===== 2026-11-04_09-30-51_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 09:30)
+До жёсткого стопа 30 минут (hard_end: 2026-11-04T10:00:32+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-11-04T10:00:32+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 58, новых 1, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 137)
+[board] сообщений 58, новых 0, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 138)
+===== mirfak_chi_final_phase_confirmation.md =====
+# mirfak_chi — FINAL PHASE confirmation: submission ready & validated
+Refs: [[betelgeuse_tau_v3_final_2p88.md]], [[fomalhaut_zeta_final_validation_signoff.md]], [[mirfak_chi_assembly_consistency.md]]
+Per the SYSTEM final-phase notice: no new experiments are running from me.
+`final_solution/submission.csv` (frozen):
+- md5 **`99a832e9dc14b677d1c4ab850b4dd424`**, 302,645 lines (header + 302,644 rows).
+- ids exactly 0..302,643, no missing/extra; header `id,sentence`; parser-safe.
+- every changed row (258,358) = exactly one **interior** insertion; assembly consistent with v3 chosen gaps (0 real mismatches).
+- held-out estimate ids≥5000: **2.88** (independently reproduced 2.88099; no-op 5.55).
+- `final_solution/README.md` + `upstream/` contain the pipeline and external-model source/revision/license log.
+Confirmed final. Do not overwrite unless a validated sub-2.88 exists (none does).
+#submission #status #communication
+[board] сообщений 59, новых 1, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 139)
+[board] сообщений 59, новых 0, метрик 9, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 140)
+[agent swarm-3] run завершился за 2899s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e5d368e1affel4L8gk8kZGcL2L продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e5d368e1affel4L8gk8kZGcL2L (2026-11-04T06:50:28Z): Continue work until hard end.
+===== betelgeuse_tau_final_phase_confirmation.md =====
+# betelgeuse_tau — FINAL PHASE confirmation: submission compiled & validated
+Refs: [[2026-11-04_09-30-51_SYSTEM_final_phase.md]], [[betelgeuse_tau_v3_final_2p88.md]], [[mirfak_chi_final_phase_confirmation.md]], [[fomalhaut_zeta_final_validation_signoff.md]]
+Per the SYSTEM final-phase notice: **no new experiments running**; final solution is compiled.
+`final_solution/submission.csv` (frozen, single-writer = betelgeuse_tau):
+- md5 **`99a832e9dc14b677d1c4ab850b4dd424`**, 302,645 lines = header + **302,644 rows**.
+- ids exactly 0..302,643; header `id,sentence`; parser-safe; no empty rows.
+- **258,358 changed rows**, each = exactly one **interior** insertion (0 first/last, 0 invalid); unchanged rows byte-identical to test.
+- Held-out estimate (ids≥5000, fit<5000): **<metric>2.8823</metric>** (no-op 5.55); independently reproduced by mirfak (2.88099) and fomalhaut (2.8849).
+- `final_solution/README.md` documents the full pipeline + external-model source/revision/license log; `final_solution/upstream/` contains all component code (n-gram localizer, causal features, verifier fine-tune/extract, GBDT fusion, trigram, medoid recipe, assembly).
+- Submission was produced by `emit_v4.py` from `fused_gap_test_v3.tsv` + base/large words + matched trigram_v3, gate 0.35.
+No further changes; this is the swarm's final answer. Confirmed.
+#submission #status #communication
+===== fomalhaut_zeta_final_confirmation.md =====
+# fomalhaut_zeta — FINAL confirmation (hard-end): frozen, md5 `99a832e9…`, val ≈2.88
+Refs: [[betelgeuse_tau_final_phase_confirmation.md]], [[mirfak_chi_final_phase_confirmation.md]], [[fomalhaut_zeta_final_validation_signoff.md]]
+Confirmed, no experiments running. `final_solution/submission.csv` md5 `99a832e9dc14b677d1c4ab850b4dd424`, 302,644 rows + header, ids 0..302,643 complete, 258,358 single-interior insertions (0 boundary), parser-safe. Held-out ids≥5000: **2.8823** (reproduced 2.88099 / 2.8849). README + `upstream/` complete. This is the swarm's final answer. Great run.
+#status #submission #communication
+[board] сообщений 61, новых 2, метрик 10, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 141)
+[board] сообщений 61, новых 0, метрик 10, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 142)
+[agent swarm-1] run завершился за 3130s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e5d368e2cffe1d9GaaeB0UHVcF продолжена: Continue work until hard end.
+[agent swarm-2] run завершился за 2518s — перезапуск (пауза 15s)
+[agent swarm-1] resume session ses_e5d368e2cffe1d9GaaeB0UHVcF (2026-11-04T06:57:20Z): Continue work until hard end.
+[agent swarm-2] сессия ses_e5d368e13ffepSVe9V9qWSdWQK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5d368e13ffepSVe9V9qWSdWQK (2026-11-04T06:57:22Z): Continue work until hard end.
+[agent swarm-3] run завершился за 496s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e5d368e1affel4L8gk8kZGcL2L продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e5d368e1affel4L8gk8kZGcL2L (2026-11-04T06:58:44Z): Continue work until hard end.
+[agent swarm-2] run завершился за 165s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5d368e13ffepSVe9V9qWSdWQK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5d368e13ffepSVe9V9qWSdWQK (2026-11-04T07:00:06Z): Continue work until hard end.
+[agent swarm-2] run завершился за 22s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5d368e13ffepSVe9V9qWSdWQK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5d368e13ffepSVe9V9qWSdWQK (2026-11-04T07:00:28Z): Continue work until hard end.
+[agent swarm-1] run завершился за 199s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e5d368e2cffe1d9GaaeB0UHVcF продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e5d368e2cffe1d9GaaeB0UHVcF (2026-11-04T07:00:40Z): Continue work until hard end.
+[agent swarm-2] run завершился за 24s — перезапуск (пауза 30s)
+[agent swarm-2] сессия ses_e5d368e13ffepSVe9V9qWSdWQK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5d368e13ffepSVe9V9qWSdWQK (2026-11-04T07:00:52Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 61, новых 0, метрик 10, метрика задачи: levenshtein-distance (low)
+[board] artifact uploaded: analysis/
+[board] metric: levenshtein-distance = 2.8823 (step 0)
+[mtime] saved 66 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

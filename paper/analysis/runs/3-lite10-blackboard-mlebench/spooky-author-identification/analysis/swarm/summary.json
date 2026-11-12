@@ -1,0 +1,301 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/spooky-author-identification",
+  "label": "spooky-author-identification",
+  "metric": "multi-class-log-loss",
+  "is_lower_better": true,
+  "final_score": 0.17278,
+  "thresholds": {
+    "gold": 0.16506,
+    "silver": 0.26996,
+    "bronze": 0.29381,
+    "median": 0.418785
+  },
+  "messages": {
+    "agent": 58,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 11,
+    "without_metric": 14,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 58,
+    "edges": 53,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 8,
+    "mean_depth_all": 2.206896551724138,
+    "mean_depth_linked": 3.4594594594594597,
+    "longest_path": [
+      "aldebaran_xi_FINAL_frozen.md",
+      "achernar_kappa_dapt_result_freeze_rec.md",
+      "achernar_kappa_verification_report.md",
+      "pollux_upsilon_cand5_freeze_plan.md",
+      "pollux_upsilon_stack_01935.md",
+      "aldebaran_xi_partial_oof_guard.md",
+      "achernar_kappa_status_bertlarge.md",
+      "pollux_upsilon_dbv3l_landed.md",
+      "aldebaran_xi_stack_02163.md"
+    ],
+    "max_indegree": 5,
+    "hubs": [
+      {
+        "name": "aldebaran_xi_role_and_baseline.md",
+        "agent": "aldebaran",
+        "in_degree": 5,
+        "depth": 2,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-30T19:53:14+03:00"
+      },
+      {
+        "name": "achernar_kappa_final_verification_PASS.md",
+        "agent": "achernar",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T06:23:29+03:00"
+      },
+      {
+        "name": "aldebaran_xi_final_stability.md",
+        "agent": "aldebaran",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T07:13:01+03:00"
+      },
+      {
+        "name": "achernar_kappa_verification_report.md",
+        "agent": "achernar",
+        "in_degree": 3,
+        "depth": 6,
+        "tags": [
+          "ensembling",
+          "insight",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T05:03:08+03:00"
+      },
+      {
+        "name": "aldebaran_xi_intro.md",
+        "agent": "aldebaran",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-30T19:52:13+03:00"
+      },
+      {
+        "name": "aldebaran_xi_classical_results.md",
+        "agent": "aldebaran",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-30T20:08:27+03:00"
+      },
+      {
+        "name": "aldebaran_xi_stack_02163.md",
+        "agent": "aldebaran",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-30T21:47:37+03:00"
+      }
+    ],
+    "submission_count": 36,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      6,
+      7,
+      7,
+      7,
+      8
+    ],
+    "final_submission": {
+      "name": "aldebaran_xi_HARDEND_CONFIRM.md",
+      "time": "2026-10-31T07:43:10+03:00",
+      "depth": 1,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 24,
+      "mean": 0.010586666666666666,
+      "median": 0.0,
+      "positive": 0.4583333333333333,
+      "max": 0.13069999999999998
+    },
+    "transitive": {
+      "n": 27,
+      "mean": 0.007971481481481482,
+      "median": 0.0,
+      "positive": 0.48148148148148145,
+      "max": 0.13069999999999998
+    },
+    "prev_linked": {
+      "n": 27,
+      "mean": -0.0016381481481481447,
+      "median": -6.999999999998674e-05,
+      "positive": 0.37037037037037035,
+      "max": 0.06559999999999999
+    },
+    "prev_unlinked": {
+      "n": 16,
+      "mean": -0.016516875000000004,
+      "median": -6.999999999998674e-05,
+      "positive": 0.4375,
+      "max": 0.018799999999999983
+    },
+    "perm_prev": {
+      "diff": 0.014878726851851858,
+      "p": 0.24137586241375864
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 8,
+      "direct": {
+        "events": 8,
+        "adopted": 5,
+        "rate": 0.625,
+        "median_msgs": 1,
+        "mean_msgs": 1.8,
+        "median_seconds": 937.0
+      },
+      "transitive": {
+        "events": 8,
+        "adopted": 5,
+        "rate": 0.625,
+        "median_msgs": 1,
+        "mean_msgs": 1.8,
+        "median_seconds": 937.0
+      }
+    },
+    "broad": {
+      "n_events": 16,
+      "direct": {
+        "events": 16,
+        "adopted": 9,
+        "rate": 0.5625,
+        "median_msgs": 1,
+        "mean_msgs": 1.7777777777777777,
+        "median_seconds": 762.0
+      },
+      "transitive": {
+        "events": 16,
+        "adopted": 9,
+        "rate": 0.5625,
+        "median_msgs": 1,
+        "mean_msgs": 1.7777777777777777,
+        "median_seconds": 762.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 18,
+      "direct": {
+        "events": 18,
+        "adopted": 10,
+        "rate": 0.5555555555555556,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.6,
+        "median_seconds": 710.0
+      },
+      "transitive": {
+        "events": 18,
+        "adopted": 10,
+        "rate": 0.5555555555555556,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.6,
+        "median_seconds": 710.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 1,
+      "rate": 0.5,
+      "median_msgs": 3,
+      "median_seconds": 3731.0,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 2,
+      "rate": 1.0,
+      "median_msgs": 4.0,
+      "median_seconds": 4640.0,
+      "different_author": 2
+    },
+    "problem_authors": {
+      "achernar": 1,
+      "aldebaran": 1
+    },
+    "recovery_authors": {
+      "pollux": 1
+    }
+  }
+}

@@ -1,0 +1,10 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+canopus_pi_v1_results.md,canopus,2026-10-31T08:47:07+03:00,0.7591,feature_engineering insight,alkaid_psi_cnn_v2_oof.md,1,297.0,alkaid_psi_cnn_v2_oof.md,1,297.0
+canopus_pi_v2_ensemble.md,canopus,2026-10-31T09:11:22+03:00,0.7705,feature_engineering submission,alkaid_psi_temporal_tta_and_ground.md,1,200.0,alkaid_psi_temporal_tta_and_ground.md,1,200.0
+alkaid_psi_ground_cnn_blend_0762.md,alkaid,2026-10-31T09:53:35+03:00,0.7621,insight,capella_pi_stack_v2_result.md,1,760.0,capella_pi_stack_v2_result.md,1,760.0
+capella_pi_stack_v2_result.md,capella,2026-10-31T10:06:15+03:00,0.7751,insight,alkaid_psi_blend3v2_0779.md,3,1679.0,alkaid_psi_blend3v2_0779.md,3,1679.0
+alkaid_psi_blend3_0768.md,alkaid,2026-10-31T10:07:11+03:00,0.7685,insight,capella_pi_re_blend3_stack_v2.md,1,127.0,capella_pi_re_blend3_stack_v2.md,1,127.0
+alkaid_psi_blend3v2_0779.md,alkaid,2026-10-31T10:34:14+03:00,0.7791,insight,canopus_pi_ground_gru_v2.md,3,3318.0,canopus_pi_ground_gru_v2.md,3,3318.0
+canopus_pi_gru_breakthrough.md,canopus,2026-10-31T11:00:29+03:00,0.7766,insight submission,alkaid_psi_07837_and_next.md,2,1817.0,alkaid_psi_07837_and_next.md,2,1817.0
+alkaid_psi_final_solution.md,alkaid,2026-10-31T17:26:02+03:00,0.786,insight submission,canopus_pi_late_ground_v6.md,2,4338.0,canopus_pi_late_ground_v6.md,2,4338.0
+alkaid_psi_embed_gbdt_negative.md,alkaid,2026-10-31T18:42:17+03:00,0.786,insight,capella_pi_end_of_run_qa.md,1,257.0,capella_pi_end_of_run_qa.md,1,257.0

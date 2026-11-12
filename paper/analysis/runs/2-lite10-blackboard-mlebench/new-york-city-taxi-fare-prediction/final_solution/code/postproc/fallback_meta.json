@@ -1,0 +1,7 @@
+{
+  "az_glob": 11.815892219543457,
+  "oth_glob": 15.620657920837402,
+  "partial_best_iter": 349,
+  "partial_rmse": 15.068308669556565,
+  "partial_rmse_with_fallback": 15.075407064254973
+}

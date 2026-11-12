@@ -1,0 +1,1225 @@
+{
+  "created_at": "2026-10-21T15:26:50.688818+00:00",
+  "model": "deepseek-flash",
+  "vocabulary": {
+    "version": 2,
+    "purpose": "Post-hoc LLM coding of blackboard messages; not a replacement for the agent-facing 22-tag list.",
+    "base_tags": [
+      "data_preprocessing",
+      "data_pipeline",
+      "feature_engineering",
+      "augmentation",
+      "architecture",
+      "loss",
+      "regularization",
+      "optimization",
+      "training",
+      "ensembling",
+      "model_selection",
+      "postprocessing",
+      "inference",
+      "plan",
+      "communication",
+      "submission",
+      "status",
+      "conflict",
+      "problem",
+      "bug",
+      "insight",
+      "other"
+    ],
+    "specific_tags": [
+      {
+        "tag": "fold_protocol",
+        "parent": "data_pipeline",
+        "definition": "Publishing or enforcing a canonical CV split: fold count, seed, row order, class order, and shared fold files."
+      },
+      {
+        "tag": "artifact_io",
+        "parent": "data_pipeline",
+        "definition": "Saving, naming, validating, or exchanging OOF/test probability arrays, shapes, row order, caches, and artifact indexes."
+      },
+      {
+        "tag": "leakage_control",
+        "parent": "data_pipeline",
+        "definition": "Preventing leakage between base models, meta-models, folds, and submissions; nested or honest validation of stacking."
+      },
+      {
+        "tag": "text_vectorization",
+        "parent": "feature_engineering",
+        "definition": "TF-IDF, count vectorizers, word/char n-gram construction, vocabulary limits, and sublinear scaling."
+      },
+      {
+        "tag": "stylometric_features",
+        "parent": "feature_engineering",
+        "definition": "Handcrafted text statistics such as length, punctuation, casing, stopword counts, and other stylometric signals."
+      },
+      {
+        "tag": "pseudo_labeling",
+        "parent": "augmentation",
+        "definition": "Per-fold teacher/student self-training, confident test soft labels, and semi-supervised expansion."
+      },
+      {
+        "tag": "transformer_finetuning",
+        "parent": "training",
+        "definition": "Fine-tuning pretrained language models such as BERT, RoBERTa, DeBERTa, XLNet, ELECTRA, ERNIE, MPNet, BART, or DistilBERT."
+      },
+      {
+        "tag": "classical_linear_model",
+        "parent": "training",
+        "definition": "Training TF-IDF/linear/NB baselines such as LogisticRegression, SVM, NB-SVM, ComplementNB, SGD, or Ridge."
+      },
+      {
+        "tag": "tree_model",
+        "parent": "training",
+        "definition": "Training gradient-boosted or tree models such as LightGBM, XGBoost, CatBoost, or RandomForest."
+      },
+      {
+        "tag": "backbone_selection",
+        "parent": "architecture",
+        "definition": "Choosing a model family, scale, or pretrained checkpoint for diversity or expected gain."
+      },
+      {
+        "tag": "adversarial_training",
+        "parent": "regularization",
+        "definition": "Fast Gradient Method, AWP, or related embedding-perturbation training used as regularization."
+      },
+      {
+        "tag": "seed_averaging",
+        "parent": "training",
+        "definition": "Running the same configuration with multiple random seeds and averaging predictions."
+      },
+      {
+        "tag": "checkpoint_averaging",
+        "parent": "training",
+        "definition": "Averaging predictions across epochs or selecting/averaging best checkpoints within a fold."
+      },
+      {
+        "tag": "hyperparameter_tuning",
+        "parent": "optimization",
+        "definition": "Tuning learning rate, batch size, epochs, weight decay, or other optimization hyperparameters."
+      },
+      {
+        "tag": "cross_validation",
+        "parent": "model_selection",
+        "definition": "Running or reporting k-fold cross-validation and OOF scores."
+      },
+      {
+        "tag": "nested_validation",
+        "parent": "model_selection",
+        "definition": "Nested CV, fold-wise weight fitting, or explicit control of stacking/selection optimism."
+      },
+      {
+        "tag": "base_model_diversity",
+        "parent": "model_selection",
+        "definition": "Analyzing error decorrelation and prioritizing genuinely different model families, scales, or feature spaces."
+      },
+      {
+        "tag": "blending",
+        "parent": "ensembling",
+        "definition": "Arithmetic, geometric, rank, or greedy weighted averaging of predictions without a trained meta-learner."
+      },
+      {
+        "tag": "stacking",
+        "parent": "ensembling",
+        "definition": "Training a meta-learner on concatenated OOF probabilities or log-probabilities."
+      },
+      {
+        "tag": "meta_feature_stacking",
+        "parent": "ensembling",
+        "definition": "Stacking with handcrafted meta-features in addition to base-model probabilities."
+      },
+      {
+        "tag": "weight_optimization",
+        "parent": "ensembling",
+        "definition": "Fitting blend or stack weights, including greedy search, constrained optimization, and nested weight selection."
+      },
+      {
+        "tag": "calibration",
+        "parent": "postprocessing",
+        "definition": "Temperature scaling, probability calibration, or normalization before blending/submission."
+      },
+      {
+        "tag": "submission_validation",
+        "parent": "submission",
+        "definition": "Verifying submission ids, row count, class order, probability sums, absence of NaN, and file format."
+      },
+      {
+        "tag": "error_analysis",
+        "parent": "insight",
+        "definition": "Per-class errors, confusion patterns, residual analysis, or diagnosis of where the model fails."
+      },
+      {
+        "tag": "negative_result",
+        "parent": "problem",
+        "definition": "A weak model, failed feature family, or negative ablation that should stop or redirect work."
+      },
+      {
+        "tag": "role_negotiation",
+        "parent": "plan",
+        "definition": "Claiming lanes, proposing a division of labor, or negotiating who does what."
+      },
+      {
+        "tag": "gpu_scheduling",
+        "parent": "communication",
+        "definition": "Claiming GPU lanes, posting lock/release signals, and managing compute contention."
+      },
+      {
+        "tag": "ownership_handoff",
+        "parent": "communication",
+        "definition": "Transferring or protecting ownership of final_solution, shared scripts, or submission writes."
+      },
+      {
+        "tag": "conflict_resolution",
+        "parent": "conflict",
+        "definition": "Resolving disagreements, write races, duplicated work, or ownership conflicts."
+      },
+      {
+        "tag": "code_release",
+        "parent": "submission",
+        "definition": "Packaging final code, README, reproduction scripts, and artifact indexes."
+      }
+    ],
+    "role_layer": [
+      {
+        "tag": "role_integrator",
+        "definition": "Owns blending/stacking, combines peer artifacts, and drives the final submission."
+      },
+      {
+        "tag": "role_base_model_producer",
+        "definition": "Produces diverse base models (transformer, classical, tree) that others can stack."
+      },
+      {
+        "tag": "role_training_technique_specialist",
+        "definition": "Develops and transfers training techniques such as FGM, pseudo-labeling, seed averaging, or checkpoint averaging."
+      },
+      {
+        "tag": "role_validation_owner",
+        "definition": "Owns fold protocol, nested validation, leakage control, and score integrity."
+      },
+      {
+        "tag": "role_coordinator",
+        "definition": "Coordinates lanes, compute, ownership, deadlines, and handoffs."
+      },
+      {
+        "tag": "role_analyst",
+        "definition": "Produces error analysis, negative results, and insight that redirect the swarm."
+      },
+      {
+        "tag": "role_releaser",
+        "definition": "Owns submission validation, final verification, and code release."
+      }
+    ],
+    "rules": [
+      "Assign 1-4 specific tags per message.",
+      "Prefer the most specific applicable tag; add the parent base tag only if the message also covers the general category beyond the specific tag.",
+      "Use role_* tags only when the message's primary contribution is that role, not merely because the author has that role.",
+      "Do not infer tags from the agent identity; use the message content.",
+      "Use other only when no tag fits.",
+      "For analysis, roll specific tags up to parents; role tags form a separate layer and are not mixed into SI/JSD."
+    ]
+  },
+  "annotations": [
+    {
+      "id": "deneb_upsilon_intro_plan.md",
+      "agent": "deneb",
+      "tags": [
+        "fold_protocol",
+        "role_negotiation"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.84,
+      "evidence": "Proposed division of labor",
+      "title": "denebupsilon — Intro & Plan"
+    },
+    {
+      "id": "rigel_xi_intro_and_plan.md",
+      "agent": "rigel",
+      "tags": [
+        "role_negotiation",
+        "fold_protocol",
+        "artifact_io"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.86,
+      "evidence": "Proposed role split (to avoid duplication) ... Fixed 5-fold StratifiedKFold, seed=42",
+      "title": "rigelxi — intro & proposal"
+    },
+    {
+      "id": "arcturus_alpha_intro_and_plan.md",
+      "agent": "arcturus",
+      "tags": [
+        "role_negotiation",
+        "fold_protocol",
+        "artifact_io",
+        "gpu_scheduling"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.9,
+      "evidence": "Proposed division of labor (please ack / adjust)",
+      "title": "arcturusalpha — intro & plan"
+    },
+    {
+      "id": "rigel_xi_ref_baseline_tfidf_lr.md",
+      "agent": "rigel",
+      "tags": [
+        "classical_linear_model",
+        "fold_protocol",
+        "artifact_io"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "TF-IDF (1-2) + Char WB TF-IDF (2-5), sublinear, min_df=2; LogisticRegression",
+      "title": "rigelxi — reference baseline: TF-IDF + LogisticRegression"
+    },
+    {
+      "id": "rigel_xi_coordination_gpu_lanes.md",
+      "agent": "rigel",
+      "tags": [
+        "gpu_scheduling",
+        "role_negotiation",
+        "base_model_diversity"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.96,
+      "evidence": "Proposed lanes (reply to claim/adjust)",
+      "title": "rigelxi — coordination: distinct lanes + single-GPU lock"
+    },
+    {
+      "id": "deneb_upsilon_status_baseline.md",
+      "agent": "deneb",
+      "tags": [
+        "fold_protocol",
+        "artifact_io",
+        "classical_linear_model",
+        "cross_validation"
+      ],
+      "role": "role_validation_owner",
+      "confidence": 0.6,
+      "evidence": "## Canonical CV split READY ... **Please train/validate on these exact folds**",
+      "title": "denebupsilon — Status: canonical folds + TF-IDF baseline"
+    },
+    {
+      "id": "deneb_upsilon_coordination_roberta.md",
+      "agent": "deneb",
+      "tags": [
+        "gpu_scheduling",
+        "role_negotiation",
+        "fold_protocol",
+        "backbone_selection"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.9,
+      "evidence": "Agreed on the lanes",
+      "title": "denebupsilon — coordination: claiming roberta-base lane, GPU note"
+    },
+    {
+      "id": "arcturus_alpha_status_baseline.md",
+      "agent": "arcturus",
+      "tags": [
+        "classical_linear_model",
+        "cross_validation",
+        "fold_protocol",
+        "gpu_scheduling"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "I take the **classical lane**",
+      "title": "arcturusalpha — Status: baseline suite + lane ack"
+    },
+    {
+      "id": "rigel_xi_insight_ensemble_big_gain.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "artifact_io",
+        "base_model_diversity",
+        "calibration"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.94,
+      "evidence": "probability averaging gives a massive LL drop",
+      "title": "rigelxi — INSIGHT: single models plateau ~0.38, but blending gives huge gain"
+    },
+    {
+      "id": "deneb_upsilon_status_models.md",
+      "agent": "deneb",
+      "tags": [
+        "cross_validation",
+        "negative_result",
+        "base_model_diversity",
+        "classical_linear_model"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.88,
+      "evidence": "I'll maximize diversity of OOF matrices",
+      "title": "denebupsilon — Status: classical + roberta results, plan"
+    },
+    {
+      "id": "rigel_xi_blend_v1_stack_0274.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "blending",
+        "artifact_io",
+        "base_model_diversity"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "LR-stacker (nested CV) ... selected",
+      "title": "rigelxi — Blend v1: stacking OOF <metric>0.27436<\\metric>"
+    },
+    {
+      "id": "rigel_xi_bert_full_5fold.md",
+      "agent": "rigel",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "cross_validation",
+        "calibration"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.88,
+      "evidence": "epoch-averaged predictions are clearly better than single best epoch",
+      "title": "rigelxi — bert-base-uncased full 5-fold OOF"
+    },
+    {
+      "id": "deneb_upsilon_blend_result.md",
+      "agent": "deneb",
+      "tags": [
+        "blending",
+        "weight_optimization",
+        "checkpoint_averaging",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.94,
+      "evidence": "optimizes weights on log-probabilities (geometric mean)",
+      "title": "denebupsilon — independent blend check + epoch-averaging insight"
+    },
+    {
+      "id": "rigel_xi_provisional_submission.md",
+      "agent": "rigel",
+      "tags": [
+        "submission_validation",
+        "ownership_handoff",
+        "code_release"
+      ],
+      "role": "role_releaser",
+      "confidence": 0.9,
+      "evidence": "placed the current best ensemble as a provisional valid submission",
+      "title": "rigelxi — provisional submission placed (safety net)"
+    },
+    {
+      "id": "deneb_upsilon_roberta_full_5fold.md",
+      "agent": "deneb",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "blending",
+        "base_model_diversity"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.88,
+      "evidence": "Blend refresh (my geometric blender",
+      "title": "denebupsilon — roberta-base full 5-fold OOF (+ blend refresh)"
+    },
+    {
+      "id": "rigel_xi_blend_v2_stack_0261.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "submission_validation",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.97,
+      "evidence": "LR-stacker (nested CV) <metric>0.26093</metric>",
+      "title": "rigelxi — Blend v2: stack OOF <metric>0.26093<\\metric> (roberta+electra added)"
+    },
+    {
+      "id": "deneb_upsilon_lgbm_stacker_0252.md",
+      "agent": "deneb",
+      "tags": [
+        "meta_feature_stacking",
+        "stylometric_features",
+        "tree_model",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "nonlinear stacking + text features gains ~0.009",
+      "title": "denebupsilon — LightGBM stacker OOF <metric>0.25231<\\metric> (nonlinear + handcrafted feats)"
+    },
+    {
+      "id": "rigel_xi_blend_v3_lgbm_0255.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "submission_validation",
+        "base_model_diversity"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.95,
+      "evidence": "LightGBM stackers (nested CV on canonical folds) ... stack_lgbm (selected)",
+      "title": "rigelxi — Blend v3: LightGBM-stacker OOF <metric>0.25538<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combined_stack_0251.md",
+      "agent": "deneb",
+      "tags": [
+        "blending",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "arithmetic 0.3·LR + 0.7·LGBM → <metric>0.25145</metric> (best)",
+      "title": "denebupsilon — combined LR+LGBM stacker OOF <metric>0.25145<\\metric>"
+    },
+    {
+      "id": "rigel_xi_warning_dont_stack_blends.md",
+      "agent": "rigel",
+      "tags": [
+        "leakage_control",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.97,
+      "evidence": "circular/leaky ... keep such names for meta output",
+      "title": "rigelxi — ⚠️ convention: keep BLEND outputs separate from BASE OOF"
+    },
+    {
+      "id": "rigel_xi_agree_unified_stacker.md",
+      "agent": "rigel",
+      "tags": [
+        "meta_feature_stacking",
+        "nested_validation",
+        "ownership_handoff",
+        "weight_optimization"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.95,
+      "evidence": "I keep owning `final_solution/`",
+      "title": "rigelxi → denebupsilon: agree — unified stacker, I'll own finalsolution"
+    },
+    {
+      "id": "deneb_upsilon_stack2_02434.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "seed_averaging",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.95,
+      "evidence": "LGBM seed-avg (3 seeds...)/MLP seed-avg/0.5·LGBM + 0.5·MLP; combine2.py optimally mixes; I'll update final_solution/",
+      "title": "denebupsilon — stronger stackers: LGBM+MLP seed-avg, combined OOF <metric>0.24345<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v6_handfeat_0244.md",
+      "agent": "rigel",
+      "tags": [
+        "meta_feature_stacking",
+        "weight_optimization",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "handcrafted meta-features + LR/LGBM combo",
+      "title": "rigelxi — Blend v6: handcrafted meta-features + LR/LGBM combo OOF <metric>0.24432<\\metric>"
+    },
+    {
+      "id": "rigel_xi_final_ownership_and_gpu.md",
+      "agent": "rigel",
+      "tags": [
+        "ownership_handoff",
+        "gpu_scheduling",
+        "base_model_diversity",
+        "nested_validation"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.9,
+      "evidence": "Rule: max 1-2 heavy jobs at a time. This is slowing everyone ~4x",
+      "title": "rigelxi — finalsolution ownership + GPU contention (please read)"
+    },
+    {
+      "id": "deneb_upsilon_gpu_ack_plan.md",
+      "agent": "deneb",
+      "tags": [
+        "gpu_scheduling",
+        "ownership_handoff",
+        "base_model_diversity",
+        "role_negotiation"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.82,
+      "evidence": "Agreed: 1 GPU job per agent.",
+      "title": "denebupsilon — ack GPU etiquette + plan"
+    },
+    {
+      "id": "arcturus_alpha_models_test_preds_ready.md",
+      "agent": "arcturus",
+      "tags": [
+        "artifact_io",
+        "classical_linear_model",
+        "text_vectorization",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.96,
+      "evidence": "matching `oof_<name>.npy`",
+      "title": "arcturusalpha — 10 classical models with OOF and test preds (blocker fixed)"
+    },
+    {
+      "id": "rigel_xi_blend_v7_0229.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "meta_feature_stacking",
+        "weight_optimization",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.88,
+      "evidence": "meta-features = concatenated probabilities + log-probabilities of all 25 base OOF + handcrafted text feats",
+      "title": "rigelxi — Blend v7: log-prob meta-features OOF <metric>0.22947<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_crosscheck.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "base_model_diversity",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.9,
+      "evidence": "honest nested-weight OOF (fit on 4 folds, eval on 5th): 0.22774",
+      "title": "denebupsilon — cross-check: combining my stack2 + rigel blend → OOF <metric>0.22774<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_v2_0218.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "nested_validation",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.93,
+      "evidence": "honest nested-weight OOF <metric>0.21828<\\metric>",
+      "title": "denebupsilon — updated stack/combine after new base models → OOF <metric>0.21828<\\metric>"
+    },
+    {
+      "id": "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "agent": "arcturus",
+      "tags": [
+        "negative_result",
+        "base_model_diversity",
+        "pseudo_labeling",
+        "gpu_scheduling"
+      ],
+      "role": "role_analyst",
+      "confidence": 0.76,
+      "evidence": "Tree models on TF-IDF are much worse than linear; I won't publish these as stack inputs.",
+      "title": "arcturusalpha — LGBM negative result + proposal to add a distinct large transformer"
+    },
+    {
+      "id": "rigel_xi_blend_v8_0218.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "blending",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.95,
+      "evidence": "comb 0.5·stack_lr + 0.5·stack_lgbm_sa (selected) ... submission.csv updated, format verified",
+      "title": "rigelxi — Blend v8: 34 base models OOF <metric>0.21800<\\metric>"
+    },
+    {
+      "id": "rigel_xi_gpu_lanes_and_meta.md",
+      "agent": "rigel",
+      "tags": [
+        "leakage_control",
+        "blending",
+        "gpu_scheduling",
+        "stacking"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.86,
+      "evidence": "average my final ensemble with your `stack2_lgbm`/`stack2_mlp` at fixed weights",
+      "title": "rigelxi — GPU lanes + stacking plan (reply to arcturus & deneb)"
+    },
+    {
+      "id": "deneb_upsilon_bertcased_full.md",
+      "agent": "deneb",
+      "tags": [
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io",
+        "weight_optimization"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.86,
+      "evidence": "best single transformer in the pool",
+      "title": "denebupsilon — bert-base-cased full 5-fold (best single transformer) + combine update"
+    },
+    {
+      "id": "deneb_upsilon_combine_v3_seedavg.md",
+      "agent": "deneb",
+      "tags": [
+        "leakage_control",
+        "seed_averaging",
+        "transformer_finetuning",
+        "gpu_scheduling"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.8,
+      "evidence": "my meta-stack adds nothing beyond your final",
+      "title": "denebupsilon — combine cross-check matches your final; now seed-averaging bert-cased"
+    },
+    {
+      "id": "rigel_xi_status_v9b_deberta_large.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "transformer_finetuning",
+        "gpu_scheduling",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.86,
+      "evidence": "Blend v9b ... final_solution/submission.csv updated ... deberta-v3-large ... next GPU job",
+      "title": "rigelxi — Blend v9b <metric>0.21716<\\metric>; deberta-v3-large running (strong!)"
+    },
+    {
+      "id": "deneb_upsilon_seedavg_bertcased.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "artifact_io",
+        "role_negotiation"
+      ],
+      "role": "role_training_technique_specialist",
+      "confidence": 0.9,
+      "evidence": "seed-averaging pays off much more than expected",
+      "title": "denebupsilon — seed-averaging works big: bert-cased 2-seed OOF <metric>0.33442<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_ack_v9b_lanes.md",
+      "agent": "deneb",
+      "tags": [
+        "role_negotiation",
+        "gpu_scheduling",
+        "seed_averaging"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.9,
+      "evidence": "Proposed non-overlapping plan",
+      "title": "denebupsilon — ack v9b + lane plan (roberta-large is yours)"
+    },
+    {
+      "id": "rigel_xi_ack_seedavg_plan.md",
+      "agent": "rigel",
+      "tags": [
+        "seed_averaging",
+        "role_negotiation",
+        "gpu_scheduling",
+        "artifact_io"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.86,
+      "evidence": "I'll do the large seed-avg; you do base-size.",
+      "title": "rigelxi — ack seed-avg (big lever) + lane plan"
+    },
+    {
+      "id": "deneb_upsilon_bertcased_seedavg_final.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "artifact_io"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.88,
+      "evidence": "please add `bertcased_seedavg` to the pool",
+      "title": "denebupsilon — bert-base-cased 3-seed average OOF <metric>0.32697<\\metric> (READY)"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_base_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "transformer_finetuning",
+        "artifact_io",
+        "cross_validation",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.92,
+      "evidence": "Architecture-diversity lane landed ... XLNet ... OOF ... useful stack input",
+      "title": "arcturusalpha — xlnet-base-cased 5-fold done: OOF <metric>0.40018</metric> (avg 0.39979)"
+    },
+    {
+      "id": "rigel_xi_blend_v10_0206.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "stacking",
+        "weight_optimization",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "comb 0.65·stack_lr + 0.35·stack_mlp_sa (selected) — 0.20601",
+      "title": "rigelxi — Blend v10: deberta-v3-large lands → OOF <metric>0.20601<\\metric>"
+    },
+    {
+      "id": "rigel_xi_approve_xlnet_large.md",
+      "agent": "rigel",
+      "tags": [
+        "backbone_selection",
+        "pseudo_labeling",
+        "fold_protocol",
+        "base_model_diversity"
+      ],
+      "role": "role_coordinator",
+      "confidence": 0.82,
+      "evidence": "Go with `xlnet-large-cased` (default)",
+      "title": "rigelxi — approve xlnet-large-cased + pseudo-labeling"
+    },
+    {
+      "id": "deneb_upsilon_stack2_0211.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "negative_result",
+        "seed_averaging"
+      ],
+      "role": "role_analyst",
+      "confidence": 0.92,
+      "evidence": "my meta-stack is subsumed",
+      "title": "denebupsilon — stack2 drops to 0.21157 after seed-avg + new models; your final 0.20460 leads"
+    },
+    {
+      "id": "deneb_upsilon_dbv3base_seedavg.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "artifact_io",
+        "backbone_selection",
+        "gpu_scheduling"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "New strong base: `dbv3base_seedavg`",
+      "title": "denebupsilon — deberta-v3-base 3-seed average OOF <metric>0.33854<\\metric> + claiming electra-large"
+    },
+    {
+      "id": "arcturus_alpha_pseudo_label_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "pseudo_labeling",
+        "leakage_control",
+        "artifact_io",
+        "base_model_diversity"
+      ],
+      "role": "role_training_technique_specialist",
+      "confidence": 0.9,
+      "evidence": "Teacher never sees fold f, so no leakage into OOF.",
+      "title": "arcturusalpha — pseudo-labeling works: case3 LR 0.36707 → <metric>0.36117</metric> (honest per-fold)"
+    },
+    {
+      "id": "deneb_upsilon_switch_mpnet.md",
+      "agent": "deneb",
+      "tags": [
+        "negative_result",
+        "backbone_selection",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "switched to microsoft/mpnet-base ... for architecture diversity",
+      "title": "denebupsilon — lane update: electra-large too weak/slow → switching to mpnet-base"
+    },
+    {
+      "id": "rigel_xi_deberta_large_seedavg.md",
+      "agent": "rigel",
+      "tags": [
+        "seed_averaging",
+        "transformer_finetuning",
+        "artifact_io",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "arithmetic seed-avg (`deberta_large_sa`)",
+      "title": "rigelxi — seed-averaged deberta-v3-large: base OOF <metric>0.29612<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_v4_0200.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "nested_validation",
+        "base_model_diversity"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "honest nested-weight OOF <metric>0.20046<\\metric>",
+      "title": "denebupsilon — combine now <metric>0.20046<\\metric> (nested); your final is stale vs new bases"
+    },
+    {
+      "id": "rigel_xi_blend_v11_0202.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "blending",
+        "nested_validation",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "comb 0.5·stack_lr + 0.5·stack_lgbm_sa",
+      "title": "rigelxi — Blend v11: OOF <metric>0.20240<\\metric> (nested-honest 0.20268)"
+    },
+    {
+      "id": "deneb_upsilon_ernie_bertlarge.md",
+      "agent": "deneb",
+      "tags": [
+        "artifact_io",
+        "backbone_selection",
+        "base_model_diversity",
+        "gpu_scheduling"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "Claim `bert-large-cased`",
+      "title": "denebupsilon — ernie published; claiming bert-large-cased (case + large)"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.94,
+      "evidence": "Architecture-decorrelated from BERT/DeBERTa/RoBERTa → good stack input",
+      "title": "arcturusalpha — xlnet-large-cased 5-fold: OOF <metric>0.34548</metric> (epavg) / 0.35235 (best)"
+    },
+    {
+      "id": "rigel_xi_blend_v12_0202.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "blending",
+        "weight_optimization",
+        "base_model_diversity"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "comb 0.65·stack_lr + 0.35·stack_lgbm",
+      "title": "rigelxi — Blend v12: <metric>0.20164<\\metric> (nested 0.20212) — stack saturating"
+    },
+    {
+      "id": "deneb_upsilon_bert_large_cased_bart.md",
+      "agent": "deneb",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "cross_validation",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "epoch-avg, 3 ep ... good diversity for the final stack",
+      "title": "denebupsilon — bert-large-cased published (0.345 epavg); now bart-base"
+    },
+    {
+      "id": "deneb_upsilon_fgm_breakthrough.md",
+      "agent": "deneb",
+      "tags": [
+        "adversarial_training",
+        "cross_validation",
+        "artifact_io"
+      ],
+      "role": "role_training_technique_specialist",
+      "confidence": 0.95,
+      "evidence": "adding **FGM** ... dramatically reduces the overfitting",
+      "title": "denebupsilon — ⚡ FGM adversarial training is a BIG lever (fold0 0.375 → 0.309)"
+    },
+    {
+      "id": "rigel_xi_fgm_adopted_deberta.md",
+      "agent": "rigel",
+      "tags": [
+        "adversarial_training",
+        "transformer_finetuning",
+        "role_negotiation",
+        "backbone_selection"
+      ],
+      "role": "role_training_technique_specialist",
+      "confidence": 0.86,
+      "evidence": "I implemented FGM ... and killed my non-FGM queue to prioritize it",
+      "title": "rigelxi — adopting FGM; running deberta-v3 (base+large) with FGM"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_seedavg.md",
+      "agent": "arcturus",
+      "tags": [
+        "transformer_finetuning",
+        "seed_averaging",
+        "artifact_io",
+        "base_model_diversity"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.96,
+      "evidence": "Added 2nd seed of `xlnet-large-cased`.",
+      "title": "arcturusalpha — xlnet-large seed-avg (2 seeds) OOF <metric>0.33275</metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v13_0200.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "weight_optimization",
+        "negative_result",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "Best: `comb 0.65·stack_lr + 0.35·stack_mlp_sa` = **<metric>0.20035<\\metric>**",
+      "title": "rigelxi — Blend v13: <metric>0.20035<\\metric> (nested 0.20067)"
+    },
+    {
+      "id": "deneb_upsilon_fgm_bertcased_full.md",
+      "agent": "deneb",
+      "tags": [
+        "adversarial_training",
+        "cross_validation",
+        "artifact_io",
+        "seed_averaging"
+      ],
+      "role": "role_training_technique_specialist",
+      "confidence": 0.93,
+      "evidence": "FGM confirmed on full 5-fold ... FGM ≈ −0.05",
+      "title": "denebupsilon — FGM bert-base-cased full 5-fold OOF <metric>0.31787<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_fgm_01936.md",
+      "agent": "deneb",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "weight_optimization",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.9,
+      "evidence": "recommend the final include my `stack2_*` as meta-inputs",
+      "title": "denebupsilon — FGM lifts my stack2 to 0.19977; combine w/ yours → nested <metric>0.19364<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v14_0194.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "stacking",
+        "nested_validation",
+        "artifact_io"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "comb 0.6·stack_lr + 0.4·stack_mlp_sa",
+      "title": "rigelxi — Blend v14: FGM bases fold in → <metric>0.19417<\\metric> (nested 0.19438)"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_01907.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "stacking",
+        "nested_validation",
+        "ownership_handoff"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.88,
+      "evidence": "honest nested <metric>0.19070<\\metric>",
+      "title": "denebupsilon — FGM seed-avg + combine → nested <metric>0.19070<\\metric>"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_fgm.md",
+      "agent": "arcturus",
+      "tags": [
+        "adversarial_training",
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.92,
+      "evidence": "Applied deneb's FGM breakthrough to my large lane",
+      "title": "arcturusalpha — ⚡ FGM on xlnet-large: OOF <metric>0.31641</metric> (huge gain, XLNet family)"
+    },
+    {
+      "id": "rigel_xi_blend_v16_0188.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "stacking",
+        "weight_optimization",
+        "checkpoint_averaging"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.96,
+      "evidence": "Meta-combine with deneb `stack2_*`: nested 0.18660",
+      "title": "rigelxi — Blend v16: <metric>0.18812<\\metric> (nested 0.18836); meta-combine 0.18660"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg3_01856.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "stacking",
+        "base_model_diversity",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.9,
+      "evidence": "honest nested <metric>0.18562</metric>",
+      "title": "denebupsilon — 3-seed FGM bert-cased + combine → nested <metric>0.18562<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_best_0299.md",
+      "agent": "deneb",
+      "tags": [
+        "seed_averaging",
+        "checkpoint_averaging",
+        "adversarial_training",
+        "artifact_io"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.92,
+      "evidence": "seed-averaging FGM best-epoch preds ≫ epoch-avg ... best single base yet ... Please fold fgm_bertcased_seedavg_best into the pool.",
+      "title": "denebupsilon — FGM bert-cased best-epoch seed-avg OOF <metric>0.29914<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v17_0185.md",
+      "agent": "rigel",
+      "tags": [
+        "blending",
+        "stacking",
+        "nested_validation",
+        "submission_validation"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "shipping it as `final_solution/submission.csv`",
+      "title": "rigelxi — Blend v17 + meta-combine: nested <metric>0.18532<\\metric> (current final)"
+    },
+    {
+      "id": "deneb_upsilon_final_bases_0518.md",
+      "agent": "deneb",
+      "tags": [
+        "artifact_io",
+        "nested_validation",
+        "ownership_handoff",
+        "submission_validation"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.9,
+      "evidence": "All my base OOF/test artifacts are final.",
+      "title": "denebupsilon — final bases published; combine tied with your v17 (nested 0.18527)"
+    },
+    {
+      "id": "arcturus_alpha_fgm_seedavg_final.md",
+      "agent": "arcturus",
+      "tags": [
+        "seed_averaging",
+        "adversarial_training",
+        "transformer_finetuning",
+        "artifact_io"
+      ],
+      "role": "role_base_model_producer",
+      "confidence": 0.92,
+      "evidence": "Please add `xlnet_large_fgm_seedavg` to the pool",
+      "title": "arcturusalpha — FGM XLNet-large 2-seed avg OOF <metric>0.29918</metric> (top-tier base) + artifact index"
+    },
+    {
+      "id": "rigel_xi_FINAL_submission.md",
+      "agent": "rigel",
+      "tags": [
+        "submission_validation",
+        "code_release",
+        "stacking",
+        "blending"
+      ],
+      "role": "role_releaser",
+      "confidence": 0.95,
+      "evidence": "FINAL submission placed ... Format verified ... Code + README",
+      "title": "rigelxi — ✅ FINAL submission placed: OOF <metric>0.18463<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_final_verify.md",
+      "agent": "deneb",
+      "tags": [
+        "submission_validation",
+        "code_release",
+        "fold_protocol"
+      ],
+      "role": "role_releaser",
+      "confidence": 0.96,
+      "evidence": "Verified `final_solution/submission.csv` ... Added `final_solution/code_deneb_upsilon/` ... `shared_folds.csv` (canonical folds)",
+      "title": "denebupsilon — ✅ independent verification of FINAL submission + added my code"
+    },
+    {
+      "id": "arcturus_alpha_final_code_added.md",
+      "agent": "arcturus",
+      "tags": [
+        "code_release",
+        "submission_validation"
+      ],
+      "role": "role_releaser",
+      "confidence": 0.96,
+      "evidence": "format-verified",
+      "title": "arcturusalpha — code added to finalsolution/codearcturusalpha/ (additive)"
+    },
+    {
+      "id": "deneb_upsilon_closing.md",
+      "agent": "deneb",
+      "tags": [
+        "submission_validation",
+        "fold_protocol",
+        "adversarial_training",
+        "stacking"
+      ],
+      "role": "role_releaser",
+      "confidence": 0.8,
+      "evidence": "Final `final_solution/submission.csv` intact & verified",
+      "title": "denebupsilon — closing status"
+    },
+    {
+      "id": "rigel_xi_FINAL_submission_v19.md",
+      "agent": "rigel",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "submission_validation",
+        "code_release"
+      ],
+      "role": "role_integrator",
+      "confidence": 0.92,
+      "evidence": "Meta-combine final (shipped): nested 0.18448",
+      "title": "rigelxi — FINAL v19 (includes arcturus xlnetlargefgmseedavg 0.299): nested <metric>0.18448<\\metric>"
+    }
+  ]
+}

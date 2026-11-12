@@ -1,0 +1,21 @@
+MLE-bench grade — Billion Word Imputation (`billion-word-imputation`)
+submission: sandbox/final_solution/submission.csv (md5 df03e1a4eac8a1a4e8855cb36f4dd662)
+metric: levenshtein-distance (lower is better)
+score: 3.05541
+thresholds: gold 5.37017 | silver 5.54372 | bronze 5.55209 | median 5.55211
+medals: gold=True silver=False bronze=False | above_median=True
+  official mle-bench grade: 3.0554100000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-11-03_05-11-39_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition billion-word-imputation)
+граф доски: 65 записей, 0 артефактов, 3 битых ссылок, 11 тегов, 317 связей (0 — входные, 264 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 65, новых 0, метрик 20, метрика задачи: levenshtein-distance (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

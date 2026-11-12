@@ -1,0 +1,311 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/stanford-covid-vaccine",
+  "label": "stanford-covid-vaccine",
+  "metric": "MCRMSE",
+  "is_lower_better": true,
+  "final_score": 0.21375,
+  "thresholds": {
+    "gold": 0.34728,
+    "silver": 0.35175,
+    "bronze": 0.3534,
+    "median": 0.363095
+  },
+  "messages": {
+    "agent": 45,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 4,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 2,
+    "without_metric": 16,
+    "system_links": 1
+  },
+  "graph": {
+    "nodes": 45,
+    "edges": 122,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 25,
+    "mean_depth_all": 12.155555555555555,
+    "mean_depth_linked": 13.023809523809524,
+    "longest_path": [
+      "mirfak_zeta_final_confirmed.md",
+      "mirfak_zeta_bugfix.md",
+      "vega_pi_watcher_bug.md",
+      "vega_pi_verification.md",
+      "vega_pi_final_status.md",
+      "fomalhaut_beta_final_status.md",
+      "mirfak_zeta_ack_stacker.md",
+      "vega_pi_k30_and_stacker.md",
+      "vega_pi_ew_pair_kfold.md",
+      "mirfak_zeta_kfold10_adopt.md",
+      "vega_pi_kfold10_finding.md",
+      "mirfak_zeta_blend_v5.md",
+      "fomalhaut_beta_negative_results.md",
+      "mirfak_zeta_blend_v4.md",
+      "mirfak_zeta_saturation_probes.md",
+      "mirfak_zeta_blend_v3.md",
+      "mirfak_zeta_blend_v2.md",
+      "fomalhaut_beta_blend_check.md",
+      "mirfak_zeta_blend_nnls.md",
+      "vega_pi_diverse_oofs.md",
+      "vega_pi_roles_ack.md",
+      "fomalhaut_beta_conflict_submission.md",
+      "vega_pi_oof_baseline.md",
+      "fomalhaut_beta_cv_protocol.md",
+      "mirfak_zeta_intro.md",
+      "fomalhaut_beta_intro.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "vega_pi_diverse_oofs.md",
+        "agent": "vega",
+        "in_degree": 7,
+        "depth": 6,
+        "tags": [
+          "ensembling",
+          "inference",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-15T04:03:15+03:00"
+      },
+      {
+        "name": "vega_pi_blend_and_insights.md",
+        "agent": "vega",
+        "in_degree": 7,
+        "depth": 8,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "regularization",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-15T05:11:07+03:00"
+      },
+      {
+        "name": "fomalhaut_beta_negative_results.md",
+        "agent": "fomalhaut",
+        "in_degree": 7,
+        "depth": 13,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "insight",
+          "status"
+        ],
+        "time": "2026-10-15T05:24:25+03:00"
+      },
+      {
+        "name": "mirfak_zeta_saturation_probes.md",
+        "agent": "mirfak",
+        "in_degree": 6,
+        "depth": 11,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "postprocessing"
+        ],
+        "time": "2026-10-15T04:52:12+03:00"
+      },
+      {
+        "name": "fomalhaut_beta_cv_protocol.md",
+        "agent": "fomalhaut",
+        "in_degree": 5,
+        "depth": 2,
+        "tags": [
+          "data_preprocessing",
+          "insight",
+          "plan",
+          "regularization"
+        ],
+        "time": "2026-10-15T03:33:34+03:00"
+      },
+      {
+        "name": "mirfak_zeta_watcher.md",
+        "agent": "mirfak",
+        "in_degree": 5,
+        "depth": 13,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-15T05:19:14+03:00"
+      },
+      {
+        "name": "vega_pi_kfold10_finding.md",
+        "agent": "vega",
+        "in_degree": 5,
+        "depth": 15,
+        "tags": [
+          "data_pipeline",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-15T06:25:57+03:00"
+      }
+    ],
+    "submission_count": 23,
+    "submission_depths": [
+      3,
+      4,
+      4,
+      6,
+      7,
+      8,
+      9,
+      12,
+      13,
+      14,
+      17,
+      18,
+      19,
+      20,
+      21,
+      21,
+      22,
+      23,
+      23,
+      24,
+      24,
+      24,
+      25
+    ],
+    "final_submission": {
+      "name": "mirfak_zeta_final_confirmed.md",
+      "time": "2026-10-15T15:06:01+03:00",
+      "depth": 25,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 24,
+      "mean": -0.0015199999999999994,
+      "median": 9.000000000000674e-05,
+      "positive": 0.625,
+      "max": 0.008599999999999997
+    },
+    "transitive": {
+      "n": 28,
+      "mean": -0.0010850000000000007,
+      "median": 0.0002500000000000002,
+      "positive": 0.6785714285714286,
+      "max": 0.008599999999999997
+    },
+    "prev_linked": {
+      "n": 28,
+      "mean": -0.0015114285714285722,
+      "median": 5.000000000000837e-05,
+      "positive": 0.5714285714285714,
+      "max": 0.008599999999999997
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 7,
+      "direct": {
+        "events": 7,
+        "adopted": 6,
+        "rate": 0.8571428571428571,
+        "median_msgs": 2.0,
+        "mean_msgs": 8.166666666666666,
+        "median_seconds": 1626.5
+      },
+      "transitive": {
+        "events": 7,
+        "adopted": 6,
+        "rate": 0.8571428571428571,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 735.5
+      }
+    },
+    "broad": {
+      "n_events": 16,
+      "direct": {
+        "events": 16,
+        "adopted": 13,
+        "rate": 0.8125,
+        "median_msgs": 1,
+        "mean_msgs": 4.846153846153846,
+        "median_seconds": 1840.0
+      },
+      "transitive": {
+        "events": 16,
+        "adopted": 15,
+        "rate": 0.9375,
+        "median_msgs": 2,
+        "mean_msgs": 1.8,
+        "median_seconds": 1840.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 17,
+      "direct": {
+        "events": 17,
+        "adopted": 12,
+        "rate": 0.7058823529411765,
+        "median_msgs": 2.5,
+        "mean_msgs": 5.5,
+        "median_seconds": 2755.0
+      },
+      "transitive": {
+        "events": 17,
+        "adopted": 14,
+        "rate": 0.8235294117647058,
+        "median_msgs": 3.0,
+        "mean_msgs": 2.642857142857143,
+        "median_seconds": 1717.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 4,
+    "direct": {
+      "events": 4,
+      "recovered": 2,
+      "rate": 0.5,
+      "median_msgs": 2.0,
+      "median_seconds": 1231.5,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 4,
+      "recovered": 3,
+      "rate": 0.75,
+      "median_msgs": 3,
+      "median_seconds": 1315.0,
+      "different_author": 2
+    },
+    "problem_authors": {
+      "fomalhaut": 1,
+      "vega": 2,
+      "mirfak": 1
+    },
+    "recovery_authors": {
+      "mirfak": 2
+    }
+  }
+}

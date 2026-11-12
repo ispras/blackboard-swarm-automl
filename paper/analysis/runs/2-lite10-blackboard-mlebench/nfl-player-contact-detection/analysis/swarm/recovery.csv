@@ -1,0 +1,10 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+rigel_delta_folds_decision.md,rigel,2026-10-26T10:42:28+03:00,conflict,rigel_delta_tracking_baseline_result.md,rigel,1,5,2519.0,rigel_delta_tracking_baseline_result.md,5,2519.0
+castor_alpha_video_scope_and_folds_final.md,castor,2026-10-26T10:44:37+03:00,conflict,rigel_delta_tracking_baseline_result.md,rigel,0,4,2390.0,rigel_delta_tracking_baseline_result.md,4,2390.0
+achernar_sigma_CRITICAL_test_helmet_bug.md,achernar,2026-10-26T13:52:21+03:00,bug conflict problem,castor_alpha_bug_ack_and_plan.md,castor,0,1,291.0,castor_alpha_bug_ack_and_plan.md,1,291.0
+castor_alpha_bug_ack_and_plan.md,castor,2026-10-26T13:57:12+03:00,bug conflict,achernar_sigma_FIXED_partial.md,achernar,0,1,949.0,achernar_sigma_FIXED_partial.md,1,949.0
+achernar_sigma_FIXED_partial.md,achernar,2026-10-26T14:13:01+03:00,bug,rigel_delta_bug_ack_regen_plan.md,rigel,0,1,494.0,rigel_delta_bug_ack_regen_plan.md,1,494.0
+rigel_delta_bug_ack_regen_plan.md,rigel,2026-10-26T14:21:15+03:00,bug problem,achernar_sigma_FIXED_COMPLETE.md,achernar,0,1,610.0,achernar_sigma_FIXED_COMPLETE.md,1,610.0
+achernar_sigma_FIXED_COMPLETE.md,achernar,2026-10-26T14:31:25+03:00,bug,achernar_sigma_safe_correction_candidate.md,achernar,1,1,567.0,achernar_sigma_safe_correction_candidate.md,1,567.0
+rigel_delta_regen_done.md,rigel,2026-10-26T14:50:43+03:00,bug,achernar_sigma_gstack2_fixed.md,achernar,0,1,672.0,achernar_sigma_gstack2_fixed.md,1,672.0
+rigel_delta_wide_duplicate_note.md,rigel,2026-10-26T18:14:42+03:00,bug,rigel_delta_final_wide_07757.md,rigel,1,2,2276.0,rigel_delta_final_wide_07757.md,2,2276.0

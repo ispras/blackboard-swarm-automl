@@ -1,0 +1,1341 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [267 kB]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [4412 B]
+Fetched 10.3 MB in 2s (4362 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 143.7 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Successfully installed setuptools-84.0.0
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.114-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.114 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.114-py3-none-any.whl (16.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 95.2 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.114->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.114->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.114->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.114 botocore-1.43.114 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.2 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/183k [00:00<?, ?File/s][A
+210kFile [00:00, 8.28MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-stanford-covid-vaccine' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/13.0M [00:00<?, ?B/s][A
+  2%|▏         | 256k/13.0M [00:00<00:15, 877kB/s][A
+ 25%|██▍       | 3.25M/13.0M [00:00<00:00, 10.6MB/s][A
+ 27%|██▋       | 3.50M/13.0M [00:00<00:00, 17.7MB/s][A
+100%|██████████| 13.0M/13.0M [00:00<00:00, 42.7MB/s][A
+100%|██████████| 13.0M/13.0M [00:00<00:00, 26.0MB/s]
+data ready: ['README.md', 'description.md', 'sample_submission.csv', 'test.json', 'train.json']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=vega_pi swarm-2=mirfak_zeta swarm-3=fomalhaut_beta
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== fomalhaut_beta_intro.md =====
+# fomalhaut_beta — intro & plan
+Hi swarm, I'm **fomalhaut_beta** (swarm-3). Task: OpenVaccine mRNA degradation, metric **MCRMSE** on `reactivity, deg_Mg_pH10, deg_Mg_50C` (per `TASK.md`; note `data/README.md` boilerplate says logloss — I trust `TASK.md`).
+## Data facts (verified)
+- train.json = 2160 RNA, test.json = 240 RNA, all `seq_length=107`, `seq_scored=68`. Files are **JSONL** (one JSON per line, not a JSON array).
+- Per-position features: `sequence` (4), `structure` (3), `predicted_loop_type` (7) -> 14-dim categorical.
+- Targets have heavy tails (min ~ -20..-44). Scored=3, submission needs all 5.
+- `SN_filter` available in train for filtering noisy samples.
+## My plan (subject to swarm agreement)
+1. Strong baseline: BiLSTM/GRU + categorical embeddings, train on all 5 targets, MCRMSE loss, 5-fold CV on `seq_scored=68` region. Target public-LB range ~0.34-0.38.
+2. Share OOF preds + test preds + validation MCRMSE for ensembling.
+## Proposed division of labor
+- **fomalhaut_beta (me)**: BiLSTM/GRU baseline + CV harness, produce reusable OOF/test arrays.
+- **vega_pi**: alternative architecture (e.g. Transformer/CNN) or feature engineering (pairing features).
+- **mirfak_zeta**: pseudo-labeling / augmentation / post-processing & ensemble.
+Please post your plans so we avoid duplicates. We should agree on a **common CV split** (e.g. fixed 5-fold seed) so our OOF ensembles are compatible.
+#plan #communication #data_pipeline
+===== vega_pi_intro_and_plan.md =====
+# vega_pi — Intro & Plan
+Hi swarm! I'm **vega_pi**. Senior DS focused on deep learning for RNA degradation.
+## Task understanding
+- OpenVaccine (`stanford-covid-vaccine`). Predict 5 targets but **only `reactivity`, `deg_Mg_pH10`, `deg_Mg_50C` are scored**.
+- Metric: **MCRMSE** (lower better). NOTE `data/README.md` wrongly says multi-class-log-loss — trust `TASK.md`.
+- Train 2160 x len107, scored positions = first 68. Test 240.
+- Env: 1x A100 80GB, 128 CPU, 503GB RAM. torch 2.2+cu121.
+## Proposed plan
+1. **Shared validation protocol** — holdout split (or 5-fold) carved from train, MCRMSE on 3 scored cols. To avoid leakage from near-duplicate sequences, propose `GroupKFold`-on-clusters later; start with a fixed 10% holdout for fast iteration.
+2. **Model A (vega_pi lead):** CNN + BiLSTM hybrid on (sequence, structure, predicted_loop_type) embeddings -> 5 outputs. Multi-seed ensemble.
+3. **Common baseline needed first:** publish a pure-sequence baseline `submission.csv` ASAP so we always have a valid artifact in `final_solution`. I can do this in ~20 min.
+4. Suggest division:
+   - one agent: feature engineering / extra features (thermodynamics, one-hot interactions)
+   - one agent: alternative arch (pure dilated CNN / transformer)
+   - one agent (me): CNN+BiLSTM + ensembling + fold-safe OOF for stacking
+5. Coordinate GPU: post before launching >2GB jobs.
+## Immediate next steps
+- Post baseline submission to `final_solution/` quickly.
+- Report holdout MCRMSE.
+Please reply with your agent id + intended role so we avoid duplicates. Link your messages here.
+#plan #communication #insight
+===== mirfak_zeta_intro.md =====
+# mirfak_zeta — intro & plan
+Hi swarm, I'm **mirfak_zeta** (swarm-1). Agree with [[fomalhaut_beta_intro.md]]: OpenVaccine mRNA degradation, metric **MCRMSE** on `reactivity, deg_Mg_pH10, deg_Mg_50C` (per `TASK.md`; `data/README.md` logloss line is boilerplate noise). Data is JSONL, train 2160 / test 240, len 107 / scored 68.
+## Agreed common CV split (please use this so OOFs are compatible)
+`sklearn.model_selection.KFold(n_splits=5, shuffle=True, random_state=42)` over train samples **in file order** (0..2159). Fold assignment is fully reproducible from that one line. I will save the indices to `blackboard/mirfak_zeta_cv_split.npy` and validate/early-stop ONLY inside the train part of each fold.
+## My plan (complementing, not duplicating)
+1. Provide the shared CV harness + a strong **CNN+BiGRU** model (one-hot seq/structure/looptype), MCRMSE loss, reverse-strand augmentation, multi-seed. Publish **OOF + test preds (.npy)** + val MCRMSE so we can ensemble.
+2. Then: ensembling across agents' OOFs + submission assembly.
+## Proposed division (from fomalhaut)
+- **fomalhaut_beta**: BiLSTM/GRU baseline + CV harness.
+- **vega_pi**: Transformer/CNN or pairing-feature engineering.
+- **mirfak_zeta (me)**: CNN+BiGRU strong model, augmentation, then **ensembling / final submission**.
+Metrics convention: wrap own MCRMSE as `<metric>x.xxxx<\metric>`. Let's all post OOF arrays + the exact fold split used.
+#plan #communication #data_pipeline
+===== mirfak_zeta_cv_baseline.md =====
+# mirfak_zeta — CV split + baseline result (CNN+BiGRU)
+## Shared CV split published
+`blackboard/mirfak_zeta_cv_split.npy` — `int` array len 2160, value = fold id (0..4), from
+`KFold(n_splits=5, shuffle=True, random_state=42)` over train.json **file order**. Please use it so OOFs ensemble cleanly.
+## Baseline (my model, code `workspaces/mirfak_zeta/train.py`)
+CNN stack (14 one-hot ch) + 2-layer BiGRU -> 5 targets x 107 pos, MCRMSE loss on first 68, reverse-strand aug.
+fold0 result (OOF saved):
+- scored-only 3 targets: `<metric>0.3802<\metric>` (on **SN_filter==1** subset, 68 scored pos)
+- all-5 targets: `0.3972`; all-5 w/ lower-lr longer: `0.4002`.
+## Insight: validate on the SN_filter==1 subset
+`test.json` is quality-filtered (the public-LB filters used signal/noise). CV over *all* train samples is dominated by noisy `SN_filter==0` rows and overstates error (mean-baseline: `all=0.79` vs `sn1=0.49`). **Report/compare on `SN_filter==1`** for signal that transfers to test. Kindly confirm you see the same.
+## Ask / next
+1. Others: confirm you'll adopt the shared split.
+2. I'm producing full 5-fold **OOF + test .npy** for my model to ensemble. Please save yours in the same shape: OOF `(n_val, 107, 5)` + `va_idx`, test `(240, 107, 5)` (+ your test id order = test.json order).
+#status #insight #model_selection #ensembling #data_pipeline
+[board] сообщений 4, новых 4, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== vega_pi_sn_filter_finding.md =====
+# vega_pi — Key finding: train on SN_filter==1 only (+ baseline)
+Agreeing with [[mirfak_zeta_cv_baseline.md]] and [[fomalhaut_beta_intro.md]]:
+- Metric = MCRMSE on 3 scored cols. Adopt shared split `[[mirfak_zeta_cv_split.npy]]` (KFold5 seed42, file order). ✅ I am using it.
+- Yes: validate/report on `SN_filter==1`.
+## 🔑 Finding: filter TRAINING rows to `SN_filter==1` (1349 rows)
+`test.json` was quality-filtered (min>-0.5, S/N>1). The `SN_filter==0` train rows have huge outliers (targets to ±44) and inject a lot of label noise. Training **only on the 1349 clean rows** is a large win.
+**Same shared split (fold0), my CNN+BiLSTM (`workspaces/vega_pi/cv_train.py`):**
+| training rows | fold0 MCRMSE (on SN=1 val) |
+|---|---|
+| all 2160 | ~0.58 (unfiltered-holdout run) |
+| **SN=1 only (1349)** | **<metric>0.2303<\metric>** |
+vs mirfak fold0 `<metric>0.3802<\metric>` trained on all rows. The gap is dominated by the noisy-label rows, not architecture.
+Reference datasets: mean-predictor on clean rows = 0.49; on all rows = 0.79.
+## My plan / role
+- **vega_pi**: CNN+BiLSTM (`cnn_lstm`) strong single model + multi-seed/arch **ensemble**; produce 5-fold **OOF (2160,107,5)** + test `(240,107,5)` npy aligned to shared split, on the SN=1 subset.
+- Suggest: mirfak = CNN+BiGRU; fomalhaut = BiLSTM/GRU; then we stack/average OOFs.
+**Ask:** everyone please re-run your models trained on SN=1-only and compare on the shared split. Then we ensemble OOFs.
+#insight #model_selection #data_pipeline #ensembling #training
+[board] сообщений 5, новых 1, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2303 (step 2)
+===== fomalhaut_beta_cv_protocol.md =====
+# fomalhaut_beta — CV protocol finding (IMPORTANT)
+## The problem
+Random 5-fold CV over ALL 2160 train rows is **dominated by noisy `SN_filter==0` samples**, which have huge target magnitudes (reactivity up to ±20, deg up to ±44). Their per-sample squared error can be >15, so a single fold can jump:
+- fold MCRMSE (all samples): `[0.263, 0.166, 1.007, 0.350, 0.723]`
+The official **test set is filtered** (min value > -0.5, mean signal/noise > 1.0), so this noise does NOT exist in scoring. Optimizing raw CV is misleading.
+## Experiments (fold 0 of `KFold(5, shuffle=True, random_state=42)`, file order)
+My BiLSTM baseline (`workspaces/fomalhaut_beta/train_v2.py`, 14 one-hot features, 2x256 BiLSTM, 5 heads, MSE):
+| train set | eval set | MCRMSE |
+|---|---|---|
+| all 2160 | all | 0.2627 |
+| all 2160 | SN_filter==1 only | 0.2548 |
+| **SN_filter==1 only** | **SN_filter==1 only** | **0.2437** |
+| SN_filter==1 only | all | 0.6541 |
+## Recommendation (swarm agreement proposal)
+1. **Evaluate/early-stop MCRMSE on the `SN_filter==1` subset only** — this mirrors the filtered test set.
+2. **Train on `SN_filter==1` rows only** (fold0: 0.2437 vs 0.2548 on clean eval).
+3. Keep `KFold(5, shuffle=True, random_state=42)` over **full file order** for OOF compatibility ([[mirfak_zeta_intro.md]]), but mask out `SN_filter==0` rows from scoring.
+## Artifacts
+- `workspaces/fomalhaut_beta/preds/A_clean_oof.npy` (fold0, clean-train, clean-eval).
+- Script: `train_v2.py` (`--sn_only 1 --eval_clean 1`).
+I'm now running full 5-fold with this protocol and will publish OOF+test arrays. **Please align your validation to clean-only.** @vega_pi @mirfak_zeta
+#data_preprocessing #insight #plan #regularization
+===== vega_pi_oof_baseline.md =====
+# vega_pi — 5-fold OOF baseline (CNN+BiLSTM, SN=1) + submission in final_solution
+Following [[vega_pi_sn_filter_finding.md]], [[fomalhaut_beta_cv_protocol.md]], [[mirfak_zeta_cv_baseline.md]].
+## Model
+`CNN+BiLSTM`: 14 one-hot ch -> stem conv(256,k5) -> 4 residual dilated conv blocks -> 2-layer BiLSTM(128) -> MLP(5). Trained on **SN_filter==1 only**, MSE masked to first 68 pos, OneCycle, early-stop on clean val. Code: `workspaces/vega_pi/cv_train.py`, model `workspaces/vega_pi/model.py`.
+## 5-fold results (shared split `[[mirfak_zeta_cv_split.npy]]`, eval on SN=1)
+| fold | MCRMSE |
+|---|---|
+| 0 | 0.2303 |
+| 1 | 0.2311 |
+| 2 | 0.2316 |
+| 3 | 0.2305 |
+| 4 | 0.2249 |
+| **OOF** | **<metric>0.2297<\metric>** |
+scored cols: reactivity 0.2135, deg_Mg_pH10 0.2576, deg_Mg_50C 0.2180. Very low fold variance.
+## Artifacts (test order = test.json order)
+- OOF `(2160,107,5)`: `workspaces/vega_pi/runs/sncv5_oof.npy` (+ `_oofmask.npy`)
+- TEST `(240,107,5)`: `workspaces/vega_pi/runs/sncv5_test.npy`
+- **Submission written to `final_solution/submission.csv`** (mean of 5 fold models) as a safe baseline for the swarm.
+## Notes / asks
+- My fold0 (0.230) vs fomalhaut fold0 (0.244) vs mirfak (0.380): the SN-filter is the dominant factor, then architecture/regularization.
+- @mirfak_zeta @fomalhaut_beta please publish your SN-filtered 5-fold OOF + test `(240,107,5)` so I can build a stacked/averaged ensemble. I'll do the ensemble + maintain `final_solution`.
+- I'll now explore augmentation (reverse-strand), architecture variants, and multi-seed averaging.
+#status #submission #ensembling #training #model_selection
+[board] сообщений 7, новых 2, метрик 2, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2297 (step 3)
+[board] сообщений 7, новых 0, метрик 2, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2297 (step 4)
+===== fomalhaut_beta_conflict_submission.md =====
+# fomalhaut_beta — CONFLICT notice: submission.csv overwrite (resolved)
+## What happened
+At 03:40 I wrote my baseline (`A_clean5_test.npy`, clean 5-fold) to `final_solution/submission.csv`, **overwriting vega_pi's better 0.2297 submission** written at 03:34. My mistake — I should have checked the board first. Apologies.
+## Resolution (done)
+I **restored** `final_solution/submission.csv` from `workspaces/vega_pi/runs/sncv5_test.npy` (vega's 5-fold CNN+BiLSTM, OOF=<metric>0.2297<\metric>). Current md5 `e6a31e3d394f50d023a83e898ec409db`.
+## Protocol proposal (to avoid repeats)
+- **vega_pi owns `final_solution/submission.csv`** (as they proposed in [[vega_pi_oof_baseline.md]]). Others must NOT write there; publish candidate arrays instead and ask vega to assemble.
+- Standard artifact shapes for ensembling:
+  - OOF `(2160, 107, 5)` — predictions for the val fold of each sample, `np.nan` for rows not in a fold's val set; valid on first 68 pos.
+  - TEST `(240, 107, 5)` in `test.json` id order.
+  - Use shared split `[[mirfak_zeta_cv_split.npy]]`.
+- Naming: `workspaces/<agent>/runs/<tag>_oof.npy`, `<tag>_test.npy`, `<tag>_meta.json` (contains clean OOF MCRMSE, per-fold, model desc).
+## My status
+My BiLSTM clean 5-fold OOF = `<metric>0.2402<\metric>` (`workspaces/fomalhaut_beta/preds/A_clean5_*`). Next: add pairing-distance features + multi-seed to add ensemble diversity, publish OOF/test.
+#conflict #communication #ensembling #submission
+[board] сообщений 8, новых 1, метрик 3, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2297 (step 5)
+===== fomalhaut_beta_role.md =====
+# fomalhaut_beta — role & next steps
+Following [[fomalhaut_beta_cv_protocol.md]], [[vega_pi_oof_baseline.md]], [[mirfak_zeta_cv_baseline.md]].
+## Quick experiments (fold0, shared split, clean eval)
+- BiLSTM 14 feat: 0.2437; **+pairing-distance feat: 0.2412**; loss weight on unscored cols w∈{0, 0.3, 1.0}: 0.2417 / 0.2412 / 0.2410 → auxiliary targets ≈ no effect. Architecture is the bottleneck (vega CNN+BiLSTM 0.230).
+## Proposed role split (please ack)
+- **vega_pi**: strong single model + owns `final_solution` + first-pass ensemble.
+- **mirfak_zeta**: CNN+BiGRU + augmentation.
+- **fomalhaut_beta (me)**: (1) publish multi-seed BiLSTM OOF/test for architectural diversity; (2) build an **OOF blend optimizer** (non-negative weighted average, per-target, fit on clean OOF) to combine all agents' arrays — this usually beats plain averaging. I'll publish weights + resulting candidate, and hand it to vega for `final_solution`.
+## Launching now
+3-seed × 5-fold BiLSTM (+pair feat), clean-train/clean-eval. Will publish `workspaces/fomalhaut_beta/preds/ms_*_oof.npy` `(2160,107,5)` and `ms_*_test.npy` `(240,107,5)` + `_meta.json`.
+@vega_pi @mirfak_zeta — please publish your OOF/test in the same shape so I can fit the blend.
+#plan #communication #ensembling #status
+===== mirfak_zeta_ensemble_result.md =====
+# mirfak_zeta — ENSEMBLE harness + result (SN1 OOF)
+Following [[mirfak_zeta_cv_baseline.md]], [[vega_pi_oof_baseline.md]], [[fomalhaut_beta_cv_protocol.md]].
+## Confirmed: test IS quality-filtered -> optimize SN1
+`TASK.md` says the 240 sequences in `test.json` are the **public test set, additionally filtered** (min>-0.5, S/N>1). So SS-filtered training/validation is exactly right. Good.
+## Ensembling harness (mine, reusable)
+`workspaces/mirfak_zeta/ensemble.py`: loads every agent's full 5-fold OOF `(2160,107,5)` on the shared split, scores on SN=1, runs **greedy forward selection with replacement** over `[0,107]` scored cols, then blends test preds with the learned weights.
+## Results (full 5-fold OOF, SN=1)
+| model | owner | SN1 MCRMSE |
+|---|---|---|
+| vega_sncv5 (CNN+BiLSTM) | vega_pi | 0.2297 |
+| mz_sn (CNN+BiGRU) | mirfak_zeta | 0.2383 |
+| fom_A (BiLSTM) | fomalhaut_beta | 0.2402 |
+| **greedy blend (1×mz + 2×vega + 1×fom)** | | **<metric>0.2211<\metric>** |
+Diversity gives ~4% over the best single model. Note `fomalhaut_beta/preds/pair0_oof.npy` and the `vega_pi/runs/A..F_oof.npy` are **fold0-only** (not usable for OOF ensembling).
+## Proposal (avoid file conflict)
+- **I (mirfak_zeta) own `final_solution/submission.csv` + ensembling** from now. @vega_pi please stop writing it (keep producing model OOF/test npy). I'll regenerate after every new full-5-fold OOF appears.
+- @fomalhaut_beta @vega_pi: keep publishing **full 5-fold** OOF+test `(240,107,5)`; I fold them in automatically. Diverse architectures/seeds help most now.
+#ensembling #submission #status #insight
+===== vega_pi_roles_ack.md =====
+# vega_pi — ack protocol + producing diverse 5-fold OOFs
+Agree with [[mirfak_zeta_ensemble_result.md]]:
+- ✅ **mirfak_zeta owns `final_solution/submission.csv`** + the blend harness. I will NOT write there; I'll only publish `(2160,107,5)` OOF + `(240,107,5)` test npy.
+- ✅ Shared split `[[mirfak_zeta_cv_split.npy]]`, SN=1 train/eval.
+- Thanks @fomalhaut_beta for restoring the submission ([[fomalhaut_beta_conflict_submission.md]]).
+## Extra confirmations from my sweeps (fold0, SN1)
+- Architectures are ~saturated: cnn_lstm 0.2303, cnn-only 0.2310, big cnn_lstm 0.2306, +pairing-feature 0.2305. Diversity >> single-model tuning.
+- **Adding SN=0 rows (even downweighted 0.05-0.2) HURTS** (0.252-0.255). Confirmed: SN=1 only.
+- Measurement noise floor (RMSE of provided error cols) ≈ 0.13-0.17, so ~0.22 is close-ish to the floor; expect small gains from here.
+## What I'm publishing next (full 5-fold, shared split, SN1)
+1. `vega_sncv5` (CNN+BiLSTM, done) — OOF 0.2297 ✅ already in `runs/`.
+2. `vega_cnn5` — CNN-only (different inductive bias).
+3. `vega_lstm_s1` — CNN+BiLSTM different seed.
+4. `vega_tf5` — small Transformer encoder (max diversity).
+Then possible **pseudo-labeling** study (own it if nobody else does).
+@mirfak_zeta — my fold0-only `A..F_oof.npy` can be ignored; only use `*5_*` full arrays.
+#status #ensembling #communication #plan
+===== mirfak_zeta_ownership_clarification.md =====
+# mirfak_zeta — ownership clarification (avoid duplicate ensembling)
+Three of us started converging on ensembling. Let's lock it to avoid duplicate work:
+- **`final_solution/submission.csv` + blend harness: mirfak_zeta** (vega_pi acked in [[vega_pi_roles_ack.md]]; thanks fomalhaut for the restore in [[fomalhaut_beta_conflict_submission.md]]).
+- **@fomalhaut_beta**: please DON'T duplicate the blend. Instead, do what only you have: **multi-seed BiLSTM + pairing-distance features** -> publish full 5-fold `ms_*_oof.npy` / `ms_*_test.npy` `(240,107,5)`. If your non-negative per-target optimizer finds better weights than my greedy, **publish the weight vector** and I'll fold the method in (I'll attribute it). But keep producing model arrays.
+- **@vega_pi**: keep the diverse architectures (cnn-only, lstm, transformer) + pseudo-labeling study; publish full 5-fold arrays.
+## My immediate plan
+1. Keep improving the blend: compare greedy (Caruana), non-negative least squares, and per-target weights; guard against OOF overfit.
+2. Add my own diverse models (CNN+BiGRU seeds + kernel variant) — currently training.
+3. Re-run blend + rewrite `final_solution/submission.csv` whenever new full-5-fold OOFs land.
+Current best blended OOF (SN1): `<metric>0.2211<\metric>` (see [[mirfak_zeta_ensemble_result.md]]).
+#communication #ensembling #plan #status
+[board] сообщений 12, новых 4, метрик 4, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2211 (step 6)
+[board] сообщений 12, новых 0, метрик 4, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2211 (step 7)
+[board] сообщений 12, новых 0, метрик 4, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2211 (step 8)
+===== vega_pi_diverse_oofs.md =====
+# vega_pi — 3 new full 5-fold OOFs + independent blend cross-check
+Following [[mirfak_zeta_ensemble_result.md]], [[vega_pi_roles_ack.md]].
+## Published full 5-fold OOF/test arrays (shared split, SN1, test.json order)
+| tag | model | OOF MCRMSE | files |
+|---|---|---|---|
+| `vega_sncv5` | CNN+BiLSTM seed42 | 0.2297 | `workspaces/vega_pi/runs/sncv5_{oof,test}.npy` |
+| `vega_cnn5` | CNN-only n8 | 0.2294 | `runs/vega_cnn5_*` |
+| `vega_lstm_s7` | CNN+BiLSTM seed7 | 0.2288 | `runs/vega_lstm_s7_*` |
+| `vega_tf5` | Transformer enc | 0.3408 | `runs/vega_tf5_*` |
+## Independent blender cross-check (`workspaces/vega_pi/blend.py`)
+Greedy forward selection w/ replacement, fit on SN1 OOF, **honest 5-fold CV of the blender**:
+- weights: `vega_sncv5 .167, vega_cnn5 .233, vega_lstm_s7 .233, vega_tf5 0, mz_sn_s0 .10, mz_sn_s1 .067, fom_A_clean5 .167, fom_b1 .033`
+- in-sample 0.2185, **honest CV `<metric>0.2185<\metric>` (std 0.003)** → matches mirfak's 0.2211.
+- Transformer gets 0 weight (weak, not diverse enough). Diversity comes from CNN/BiLSTM/GRU.
+## Note on fomalhaut arrays
+`fom_A_clean5`/`fom_b1` OOF are `(2160,68,5)` — I pad to 107. Fine for validation (scored=68).
+## Next (my lane): semi-supervised self-training
+I'll validate using SN=0 as "unlabeled" (train A on SN1 -> pseudo-label SN0 -> retrain B), measurable on OOF. If it works, apply the same to the 240 test sequences. Will report.
+#status #ensembling #submission #inference
+[board] сообщений 13, новых 1, метрик 4, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2211 (step 9)
+[board] сообщений 13, новых 0, метрик 4, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2211 (step 10)
+===== mirfak_zeta_blend_nnls.md =====
+# mirfak_zeta — improved blend (NNLS) + submission updated
+Following [[vega_pi_diverse_oofs.md]], [[fomalhaut_beta_role.md]].
+## Blend comparison (10 full-5-fold candidates, honest 5-fold CV of the blender on SN1)
+| method | CV-estimated MCRMSE |
+|---|---|
+| **NNLS (per-target positive weights)** | **<metric>0.2166<\metric>** |
+| greedy global (Caruana) | 0.2168 |
+| greedy per-target | 0.2168 |
+| plain mean | 0.2204 |
+In-sample NNLS = 0.2165 ≈ honest CV 0.2166 → **no blend overfitting**. All top methods are within ±0.001 (noise std ~0.003); NNLS chosen.
+Weights (rows=model, cols=reactivity/deg_Mg_pH10/deg_Mg_50C) are in `workspaces/mirfak_zeta/blend_meta.json`; blend test preds `workspaces/mirfak_zeta/blend_test.npy`. Biggest weights: vega_lstm_s7, vega_cnn5, vega_sncv5, fom_ms202; mz_sn_s0 modest; vega_tf5 ~0 (weak).
+## `final_solution/submission.csv` regenerated (mine, per [[mirfak_zeta_ownership_clarification.md]])
+md5 `2c83930a1e98cbca27af443d1cf09959`, 25680 rows. Unscored cols `deg_pH10/deg_50C` filled with scored analogues (not graded).
+## Insight: reverse-strand TTA HURTS
+My `mz_sn_s1`/`mz_k3` used reverse-strand TTA → OOF SN1 0.255 / 0.263 vs 0.238 without. The target profile is **not** reverse-invariant (5'/3' ends differ). Do NOT use TTA. (Augmentation during training is still fine/helpful.)
+#ensembling #submission #insight #postprocessing #status
+===== fomalhaut_beta_multiseed_and_blend.md =====
+# fomalhaut_beta — multi-seed BiLSTM arrays + blend method (honest CV 0.2175)
+Following [[fomalhaut_beta_role.md]], [[mirfak_zeta_ownership_clarification.md]], [[vega_pi_diverse_oofs.md]].
+## 1) Published full 5-fold arrays (shared split, SN1 train/eval, +pairing-distance feat)
+| tag | seed | clean OOF MCRMSE | files |
+|---|---|---|---|
+| fom_ms101 | 101 | 0.2414 | `workspaces/fomalhaut_beta/preds/ms101_{oof,test}.npy` |
+| fom_ms202 | 202 | 0.2403 | `preds/ms202_*` |
+| fom_ms303 | 303 | 0.2421 | `preds/ms303_*` |
+Shapes `(2160,107,5)` / `(240,107,5)`, test order = test.json. `_meta.json` alongside. (@mirfak_zeta these are the requested multi-seed arrays — please fold them in.)
+## 2) Blend method comparison (my `workspaces/fomalhaut_beta/blend_cv.py`)
+Inputs: `vega_{sncv5,cnn5,lstm_s7,tf5}`, `mz_{sn_s0,sn_s1,k3}`, `fom_ms{101,202,303}`. Fitting on 4/5 of clean rows, scoring on held-out 1/5 (honest 5-fold CV of the *blender*):
+| method | honest-CV MCRMSE |
+|---|---|
+| best single (vega_lstm_s7) | 0.2297 |
+| simple average | (computed) |
+| **greedy forward-selection** | **<metric>0.2175<\metric> ±0.0031** |
+| **NNLS per-target** | **<metric>0.2175<\metric> ±0.0031** |
+Greedy final weights: `vega_sncv5 .15, vega_cnn5 .20, vega_lstm_s7 .20, mz_s0 .05, mz_s1 .05, fom_ms101 .10, fom_ms202 .15, fom_ms303 .10`. Transformer `vega_tf5` gets 0.
+⚠️ NNLS on the **unscored** `deg_pH10/deg_50C` columns blows up (weights ~1e4 due to target scale); fit NNLS on the **3 scored columns only** and average the other two. Greedy avoids this.
+## 3) Candidate blend (for mirfak to place in final_solution)
+`preds/final_greedy_test.npy`, `preds/final_greedy_oof.npy`, weights in `preds/blend_methods.json`. @mirfak_zeta — feel free to use/adopt; I am NOT writing final_solution.
+## 4) Diversity note
+My seed-averaged BiLSTM alone (mean of ms101/202/303) already ≈ 0.232. The gain is mostly cross-architecture. Suggest everyone keep adding *diverse* full-5-fold models.
+#ensembling #model_selection #status #insight
+[board] сообщений 15, новых 2, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 11)
+[board] сообщений 15, новых 0, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 12)
+===== fomalhaut_beta_blend_check.md =====
+# fomalhaut_beta — blend cross-check + diverse-loss models
+Following [[mirfak_zeta_blend_nnls.md]], [[fomalhaut_beta_multiseed_and_blend.md]].
+## Independent confirmation of mirfak's blend
+My `blend_cv.py` (10 candidates incl. `fom_ms101/202/303`) gives honest blender-CV:
+- greedy 0.2175, NNLS 0.2175, plain-mean 0.2218, best single 0.2297. Agrees with mirfak @0.2166 (different clean-row split). ✅ Blend is not overfitting.
+- Attempted **per-loop-type NNLS** (weights per `predicted_loop_type`): 0.2176 → **no gain**, skip.
+- ⚠️ Caveat already known: NNLS on unscored `deg_pH10/deg_50C` explodes (~1e5) due to target scale; mirfak handles by filling unscored with scored analogues. Fine (unscored).
+## My next contribution (diverse-loss models)
+Blend is near saturation; the only lever left is *diversity*. I'll publish full-5-fold:
+1. `fom_ew*` — BiLSTM trained with **inverse-variance per-position error weighting** (uses the provided `*_error_*` columns; fold0 clean 0.2401 vs 0.2415 unweighted).
+2. `fom_huber*` — BiLSTM with **Huber loss** (robustness to label noise / distribution shift).
+Will publish `(2160,107,5)`/`(240,107,5)` + meta. @mirfak_zeta fold them in as they land.
+#ensembling #loss #training #status #insight
+[board] сообщений 16, новых 1, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 13)
+[board] сообщений 16, новых 0, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 14)
+[board] сообщений 16, новых 0, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 15)
+[board] сообщений 16, новых 0, метрик 6, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2166 (step 16)
+===== mirfak_zeta_blend_v2.md =====
+# mirfak_zeta — blend v2 (17 models) + request
+Following [[fomalhaut_beta_blend_check.md]], [[vega_pi_diverse_oofs.md]].
+## New full-5-fold candidates folded in
+- me: `mz_c` (aux-target clip) 0.2373, `mz_b` 0.2387, `mz_a` 0.2396 (no TTA).
+- vega: `vega_cnn_s202` 0.2291, `vega_lstm_s101` 0.2291, `vega_gru5` 0.2294 (see [[vega_pi_diverse_oofs.md]]).
+- fomalhaut: `fom_ew11` 0.2399 (see [[fomalhaut_beta_blend_check.md]]).
+## Blend v2 (honest 5-fold CV of the blender, SN1)
+`nnls_calib` = **<metric>0.2154<\metric>** (nnls 0.2155, greedy 0.2156, mean 0.2178). → `final_solution/submission.csv` updated; `blend_test.npy` / `blend_meta.json` refreshed.
+## Excluded (was mistakenly included earlier)
+`fom_huber0`, `fom_huberclip0` are **fold0-only** (`run_folds:1`) — not 5-fold; please publish the full 5-fold when done. Same for the fold0-only `vega A..F` and vega_tf5 gets ~0.
+## 🙏 Request to @vega_pi
+`workspaces/vega_pi/runs/self_w03_oof.npy` has a full 5-fold OOF (SN1 = **0.2281**, best-so-far single!) but **no matching `self_w03_test.npy`**, so I can't fold it into the submission blend. Please also dump the **test preds** `(240,107,5)` for the self-training model (and any other self-trained variants) — a genuine single-model improvement should lift the blend.
+#ensembling #status #communication #submission
+[board] сообщений 17, новых 1, метрик 7, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2154 (step 17)
+===== fomalhaut_beta_diverse_loss.md =====
+# fomalhaut_beta — diverse-loss BiLSTMs (published) + blend improves
+Following [[fomalhaut_beta_blend_check.md]], [[mirfak_zeta_blend_nnls.md]].
+## New full 5-fold arrays (shared split, SN1 train/eval)
+| tag | recipe | clean OOF MCRMSE | files |
+|---|---|---|---|
+| `fom_ew11` | BiLSTM, inverse-variance **error-weighted** loss, seed 11 | 0.2399 | `preds/ew11_{oof,test}.npy` |
+| `fom_ew22` | same, seed 22 | 0.2399 | `preds/ew22_*` |
+| `fom_hc33` | BiLSTM, **Huber(β=1)+target clip ±5**, seed 33 | **0.2374** | `preds/hc33_*` |
+Shapes `(2160,107,5)`/`(240,107,5)`, test.json order, meta in `preds/*_meta.json`.
+## Blend with 13 candidates (my `blend_cv.py`, honest blender-CV on SN1)
+| method | before (10 models) | now (13 models) |
+|---|---|---|
+| greedy | 0.2175 | **<metric>0.2167<\metric>** |
+| NNLS | 0.2175 | **<metric>0.2167<\metric>** |
+| plain mean | 0.2218 | 0.2205 |
+| per-loop NNLS | 0.2176 | 0.2169 |
+Updated candidate: `preds/final_nnls_test.npy` / `preds/final_greedy_test.npy`. @mirfak_zeta — re-run your NNLS with these three folded in; expect a small gain.
+#ensembling #loss #training #status
+[board] сообщений 18, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2154 (step 18)
+===== mirfak_zeta_blend_v3.md =====
+# mirfak_zeta — blend v3 (20 models) at 0.2149; self-test OOF incomplete
+Following [[fomalhaut_beta_diverse_loss.md]], [[vega_pi_diverse_oofs.md]], [[mirfak_zeta_blend_v2.md]].
+## Blend v3 (honest blender-CV on SN1)
+Folded in `fom_hc33` (0.2374), `fom_ew22` (0.2399), `fom_ew11`, vega `cnn_s202/lstm_s101/gru5`.
+`nnls_calib` = **<metric>0.2149<\metric>** (nnls 0.2151, greedy 0.2153, mean 0.2174). `final_solution/submission.csv` refreshed.
+## Blocker for self-training model
+`vega_pi/runs/self_test_w03_oof.npy` is **partial**: only 524/2160 rows filled (≈1 fold), so I cannot fit honest blend weights for it, even though `self_test_w03_test.npy` exists. Also `self_w03_oof.npy` is full (SN1 0.2281, best single) but has **no test file**.
+@vega_pi: please run the **full 5-fold** self-training (with test pseudo-labels) and publish both:
+- `self_test_w03_oof.npy` covering all 2160 rows (shared split)
+- `self_test_w03_test.npy`
+Then I'll fold it in. If it's genuinely <0.228 on OOF it should pull the blend below 0.214.
+#ensembling #status #communication
+===== mirfak_zeta_saturation_probes.md =====
+# mirfak_zeta — blend saturation probes (negative results)
+Following [[mirfak_zeta_blend_v3.md]].
+Blend is at **<metric>0.2149<\metric>** (NNLS on 19 full-5-fold models). I probed several ways to push further and they **do NOT help** — sharing so nobody wastes time:
+1. **LightGBM level-2 stacker** (base preds + loop-type + structure-paired + position + mean/std): OOF SN1 **0.2181** > NNLS 0.2149. Mix(GLM+NNLS) 0.2154. → nonlinear context stacking is *worse*; the linear NNLS already captures what's available.
+2. **Per-position affine/bias calibration** (Ridge per (target,position), honest CV): best 0.2625, much worse. Blend is already well-calibrated.
+3. **Clipping** predictions to [0,∞) / [-1,6] / [0,5]: identical to raw (0.2149). No effect.
+Conclusion: with the current base pool, the linear blend is essentially saturated; remaining gains must come from **new, diverse base models** (esp. semi-supervised). @vega_pi the full 5-fold self-training model is the most promising missing piece ([[mirfak_zeta_blend_v3.md]]).
+#ensembling #insight #model_selection #postprocessing
+[board] сообщений 20, новых 2, метрик 10, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2149 (step 19)
+[board] сообщений 20, новых 0, метрик 10, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2149 (step 20)
+[board] сообщений 20, новых 0, метрик 10, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2149 (step 21)
+[board] сообщений 20, новых 0, метрик 10, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2149 (step 22)
+[agent swarm-1] run завершился за 6761s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ec311f4c5ffeOZKyBJ3jdtEe6N продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ec311f4c5ffeOZKyBJ3jdtEe6N (2026-10-15T02:12:36Z): Continue work until hard end.
+===== vega_pi_blend_and_insights.md =====
+# vega_pi — blend2 (0.2157), self-training leakage warning, group-CV insight, no postproc
+Following [[vega_pi_diverse_oofs.md]], [[mirfak_zeta_blend_nnls.md]], [[fomalhaut_beta_multiseed_and_blend.md]].
+## New full-5-fold OOF/test arrays (shared split, SN1)
+`vega_gru5` 0.2294, `vega_cnn_s202` 0.2291, `vega_lstm_s101` 0.2291, `vega_extra5` 0.2287,
+`vega_big5` 0.2291, `vega_gru_s505` 0.2300, plus `vega_self_clean_w03` 0.2287.
+All in `workspaces/vega_pi/runs/<tag>_{oof,test}.npy`. @mirfak_zeta please fold in.
+## My independent blender (`workspaces/vega_pi/blend2.py`) with ALL agents' arrays
+greedy in-sample 0.21553, **honest blender-CV `<metric>0.2157<\metric>` (std 0.003)**. Consistent with mirfak/fomalhaut. Diversity is saturated: adding 6 more models only moved 0.2173→0.2157.
+## ⚠️ Leakage warning: blend pseudo-labels leak val labels
+If you pseudo-label the 240 **test** sequences using the **blend** and retrain, val MCRMSE "improves" a lot (0.230→0.222) **but it is leakage**: the blend's test preds come from models trained on the other folds (which include the val fold). Using **fold-consistent** pseudo-labels (model A trained only on the fold's train part) gives **no gain** (A 0.2289 → B 0.2287). Conclusion: **pseudo-labeling test is not worth it**; don't trust that apparent gain.
+## Post-processing: no gain
+On the blend OOF (honest 5-fold CV of the transform): global affine 0.2155, per-position affine 0.2159, clipping 0.2194 (all ≤ base 0.2155). **Skip post-processing.**
+## Group-CV insight (near-duplicate structure)
+Train `reactivity`/etc. sequences form huge families: leader-clustering at 50% identity → only **23 clusters**, max size 138. Random KFold leaks near-dups. Our fixed-split CNN+BiLSTM:
+| split | fold0 MCRMSE |
+|---|---|
+| random KFold (shared) | 0.2298 |
+| group split @60% identity | 0.2661 |
+| group split @70% identity | 0.2501 |
+Test→train max-identity mean **0.839** ≈ random-val→train **0.844** → the hidden test has the **same near-duplicate regime as random CV**, so random-CV is the right model-selection signal (group-CV is a pessimistic lower bound). Group fold files: `runs/grp60_folds.npy`, `runs/grp70_folds.npy`.
+## GNN diversity
+`runs/gnn_f0` (GCN over base-pair graph) = 0.354 alone (weak); diversity value ~0 like the transformer.
+#ensembling #insight #model_selection #regularization #status #submission
+===== mirfak_zeta_blend_v4.md =====
+# mirfak_zeta — blend v4 (24 models) at 0.2146; self-training marginal
+Following [[vega_pi_diverse_oofs.md]], [[fomalhaut_beta_diverse_loss.md]], [[mirfak_zeta_saturation_probes.md]].
+## New full-5-fold candidates folded in
+- vega: `self_clean_w03` (full self-training on test pseudo-labels) **0.2287**; `vega_extra5` 0.2287; `vega_big5` 0.2291; `vega_gru_s505` 0.2301.
+- fomalhaut: `fom_cnnA` 0.2381, `fom_hc33` 0.2374.
+## Blend v4 (honest blender-CV, SN1)
+`nnls_bag`/`nnls_calib` = **<metric>0.2146<\metric>**. `final_solution/submission.csv` refreshed (mine).
+## Key finding: self-training does NOT help much
+`self_clean_w03` (pseudo-labels from test) = **0.2287**, statistically identical to the best non-self model (`vega_extra5` 0.2287). → semi-supervised adds ~nothing here; the blend barely moves (0.2147→0.2146). We're near the noise floor (measurement-error floor ~0.15).
+## Status
+Ensemble member pool effectively saturated. I'll keep auto-folding any **new full-5-fold** arrays. Remaining useful additions: genuinely *new* inductive biases only. @vega_pi @fomalhaut_beta keep them coming; I'll re-blend + rewrite the submission each time.
+#ensembling #submission #status #insight
+[board] сообщений 22, новых 2, метрик 11, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2146 (step 23)
+===== fomalhaut_beta_cnn_models.md =====
+# fomalhaut_beta — CNN-inception+BiGRU models (new architecture, published)
+Following [[mirfak_zeta_blend_v4.md]], [[vega_pi_blend_and_insights.md]].
+## New full 5-fold arrays (shared split, SN1)
+| tag | model | clean OOF |
+|---|---|---|
+| `fom_cnnA` | multi-scale conv(3/5/7/9)+BiGRU, w128 h192, seed1 | 0.2381 |
+| `fom_cnnB` | same, w192 h256, seed2 | **0.2360** |
+Files `preds/cnn{A,B}_{oof,test}.npy`, `(2160,107,5)`/`(240,107,5)`, test.json order. @mirfak_zeta fold in `cnnB` (cnnA already appeared in your v4).
+## My independent blend (14 models) agrees
+greedy/NNLS honest blender-CV **0.2164** (was 0.2167 without the CNNs) → consistent with your 0.2146 on the full pool.
+## Agree on saturation
+I concur with [[mirfak_zeta_saturation_probes.md]] and [[vega_pi_blend_and_insights.md]]: linear blend saturated; self-training ~no gain; no post-processing. Remaining value = genuinely new inductive biases. I'll try a **structure-aware input representation** (pairing-partner base identity + pair distance + positions) next and publish if it adds anything.
+#ensembling #architecture #status
+===== mirfak_zeta_watcher.md =====
+# mirfak_zeta — auto-discovery + live re-blend watcher (submission at 0.2145)
+Following [[mirfak_zeta_blend_v4.md]], [[vega_pi_diverse_oofs.md]], [[fomalhaut_beta_diverse_loss.md]].
+## Auto-discovery of ensemble members
+`workspaces/mirfak_zeta/ensemble.py` now **auto-discovers** every agent's full-5-fold pair:
+- nested `workspaces/<agent>/runs/<tag>/{oof,test}.npy`
+- flat `workspaces/<agent>/{runs,preds}/<tag>_{oof,test}.npy`
+It validates shape `(2160,107,5)/(240,107,5)` and requires ≥1000 non-zero OOF rows (thus auto-excluding fold0-only files). **No need to register your models** — just publish `{oof,test}` and they're picked up.
+## Live watcher
+`workspaces/mirfak_zeta/watch_blend.py` (running in a memory-limited scope) polls for new/changed candidate arrays and, on change, re-runs the NNLS blend + rewrites `final_solution/submission.csv`. So whenever you publish a new full-5-fold model, the submission updates within ~2 min automatically.
+## Current state
+28 valid full-5-fold members. Blend (honest blender-CV, SN1) = **<metric>0.2145<\metric>**. New since v4: `fom_cnnB` 0.2360 (best fomalhaut yet), `fom_cnnA` 0.2381.
+Keep publishing diverse full-5-fold arrays; the ensemble will fold them in automatically. 🙏
+#ensembling #submission #status #communication #data_pipeline
+[board] сообщений 24, новых 2, метрик 12, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2145 (step 24)
+===== fomalhaut_beta_negative_results.md =====
+# fomalhaut_beta — negative results + independent 23-model blend cross-check
+Following [[mirfak_zeta_saturation_probes.md]], [[mirfak_zeta_blend_v4.md]], [[vega_pi_blend_and_insights.md]].
+## Negative results (don't duplicate)
+1. **Structure-aware input** (`+pairing-partner base identity`, 20-dim): CNN 0.2401 vs 0.2378 without; LSTM 0.2420 vs 0.2415 → **no gain** (fold0).
+2. **k-NN / sequence-similarity memory model** (k=8, top-identity neighbors among clean train, same-position transfer): clean OOF **0.330** — too weak to help. (`preds/knn_oof.npy`)
+3. **Dilated TCN (6 residual blocks, GRU head)**: fold0 **0.2429** → weaker than CNN-inception.
+4. **Error-weighted / Huber+clip** already published (`fom_ew*` 0.2399, `fom_hc33` 0.2374) — small single-model gain, mild ensemble value.
+## Independent blend over the full proper pool (23 full-5-fold models)
+My `blend_cv.py`, honest blender-CV on SN1 (5 clean-row folds):
+| method | MCRMSE |
+|---|---|
+| best single | 0.2296 |
+| plain mean | 0.2165 |
+| **greedy** | **<metric>0.2156<\metric>** |
+| **NNLS** | **<metric>0.2156<\metric>** |
+| per-loop NNLS | 0.2159 |
+Consistent with mirfak 0.2146 / vega 0.2157. Weights in `preds/blend_methods.json`. @mirfak_zeta cross-check if useful.
+## Conclusion
+Linearly saturated at ~0.215; new *linear* members add ≤0.0002. I agree no more tuning of this axis helps. I'll keep monitoring and only publish a new array if it's a genuinely new bias that beats ~0.235.
+#ensembling #insight #status #architecture
+[board] сообщений 25, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2145 (step 25)
+[board] сообщений 25, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2145 (step 26)
+[board] сообщений 25, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2145 (step 27)
+[board] сообщений 25, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2145 (step 28)
+===== mirfak_zeta_blend_v5.md =====
+# mirfak_zeta — blend v5 (31 models) at 0.2142; mixup negative
+Following [[mirfak_zeta_watcher.md]], [[vega_pi_blend_and_insights.md]], [[fomalhaut_beta_negative_results.md]].
+## Blend v5 (auto-discovered, honest blender-CV, SN1)
+31 valid full-5-fold members now. `nnls_bag` = **<metric>0.2142<\metric>**. New members: `fom_cnnB` 0.2360, `fom_cnnA` 0.2381, `fom_h1024`/`h768`, vega `CW_scored2/3`, `vega_extra5` 0.2287. Submission auto-refreshed by the watcher.
+## Agree with the swarm: saturated
+My extra probes all **negative** (not worth repeating):
+- **Input mixup** (β=0.2/0.4/1.0, one-hot feature+target mix): fold0 0.247/0.240/0.240 vs 0.2386 baseline → no gain.
+- GBM base model (window k-mer+structure, 0.2598) → 0 ensemble weight.
+- LightGBM stacking, per-position affine, clipping → worse/no-op ([[mirfak_zeta_saturation_probes.md]]).
+Consensus: linear blend saturated at ~0.214; residual gap to the measurement-noise floor (~0.15) needs genuinely new information, which isn't in `data/`. Random-KFold is the right selection signal (per [[vega_pi_blend_and_insights.md]] group-CV analysis).
+## Endgame plan
+I'll keep the watcher folding in any new full-5-fold arrays and keep `final_solution/submission.csv` current. Code + README are in `final_solution/code/`. If nothing new appears, the current 0.2142 blend stands as the swarm solution.
+#ensembling #submission #status #insight
+[board] сообщений 26, новых 1, метрик 14, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2142 (step 29)
+[board] сообщений 26, новых 0, метрик 14, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2142 (step 30)
+[board] сообщений 26, новых 0, метрик 14, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2142 (step 31)
+[board] сообщений 26, новых 0, метрик 14, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2142 (step 32)
+===== mirfak_zeta_blend_v6.md =====
+# mirfak_zeta — blend v6 (38 models) at 0.2129 — improving again
+Following [[vega_pi_blend_and_insights.md]], [[fomalhaut_beta_negative_results.md]], [[mirfak_zeta_blend_v5.md]].
+Watcher auto-folded in the newest batch. 38 valid full-5-fold members, blend `nnls_bag` = **<metric>0.2129<\metric>** (was 0.2142). Nice to see it still moving.
+## Strongest new singles
+- vega `k10_lstm` **0.2250**, `k10_extra` **0.2259** (large-kernel conv) — new best singles.
+- vega `asinh_*` family (asinh target transform) 0.2287–0.2320.
+- fomalhaut `w768a` 0.2339, `w768b` 0.2347.
+@vega_pi @fomalhaut_beta — whatever you changed for `k10` is a real gain; more seeds/variants of it will help the blend most. Everything is picked up automatically ([[mirfak_zeta_watcher.md]]).
+#ensembling #status #architecture #insight
+[board] сообщений 27, новых 1, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 33)
+[board] сообщений 27, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 34)
+[board] сообщений 27, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 35)
+[board] сообщений 27, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 36)
+===== vega_pi_kfold10_finding.md =====
+# vega_pi — 🔑 10-fold beats 5-fold (more train data per model): blend 0.2142
+Following [[mirfak_zeta_blend_v5.md]], [[fomalhaut_beta_negative_results.md]], [[vega_pi_blend_and_insights.md]].
+## Finding: use **10-fold** instead of 5-fold
+With `KFold(10, shuffle=True, random_state=42)` over file order (split `workspaces/vega_pi/runs/kfold10.npy`), each fold-model trains on **90%** of clean rows (vs 80%). Same model, same everything else:
+| model | 5-fold OOF | 10-fold OOF |
+|---|---|---|
+| CNN+BiLSTM, asinh0.5 | 0.2289 | **<metric>0.2250<\metric>** |
+| +pair feat | 0.2289 | 0.2259 |
+| CNN-only | 0.2294 | **0.2250** |
+| big CNN+BiLSTM | 0.2296 | 0.2255 |
+| big GRU | 0.2320 | 0.2272 |
+≈ **0.004 single-model gain**, fully validated on the same SN1 OOF (covers all rows). Also better test preds (each member sees 90% of data).
+Also confirmed: **asinh target transform** (`arcsinh(y/0.5)`, invert at inference) gives ~0.001 for CNN+BiLSTM (no gain for GRU).
+## Published 10-fold arrays (auto-discovered by mirfak's watcher)
+`vega_k10_lstm` 0.2250, `vega_k10_extra` 0.2259, `vega_k10_cnn` 0.2250, `vega_k10_big` 0.2255, `vega_k10_s54` 0.2254, `vega_k10_gru` 0.2272 — all `runs/vega_k10_*_{oof,test}.npy`, `(2160,107,5)`/`(240,107,5)`.
+## My blend (`blend2.py`, auto-discovery) after adding k10 members
+greedy honest blender-CV **`<metric>0.2142<\metric>`** (was 0.2153). The k10 members get the largest weights.
+## Ask 🙏
+@mirfak_zeta @fomalhaut_beta — **switch your full-CV to 10-fold** (or add 10-fold variants) and publish `{oof,test}` pairs; the OOF is fully valid for your NNLS/blend harness. This is the best remaining lever.
+#insight #model_selection #training #ensembling #data_pipeline #status
+[board] сообщений 28, новых 1, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 37)
+[board] сообщений 28, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 38)
+[board] сообщений 28, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2129 (step 39)
+===== mirfak_zeta_kfold10_adopt.md =====
+# mirfak_zeta — adopting 10-fold + asinh; blend now 0.2118
+Following [[vega_pi_kfold10_finding.md]], [[mirfak_zeta_blend_v6.md]].
+## Great finding @vega_pi
+10-fold (90% train per member) + asinh target transform are the best remaining levers. My watcher already auto-folded in your `k10_*` members: blend = **<metric>0.2118<\metric>** over **43** valid full-*k*-fold models (was 0.2129 → 0.2118 as the k10 batch landed).
+## My replication (fold0, SN1)
+| config | fold0 |
+|---|---|
+| 5-fold, no asinh | 0.2386 |
+| **5-fold + asinh(0.5)** | **0.2356** |
+| 10-fold + asinh(0.5) | 0.2384* |
+*10-fold fold0 has only ~135 clean val rows, so its folded metric is high-variance — the reliable comparison is full-OOF (vega's table). I trust vega's full-OOF result.
+## My contribution
+I added `--nfold` + `--asinh_s` to my harness and am running **2 diverse 10-fold members** (`mz_r10_a` default CNN+BiGRU, `mz_r10_b` k3/deep). They'll be auto-folded in. Shared 10-fold split saved at `blackboard/mirfak_zeta_cv_split10.npy` (KFold(10, shuffle, seed42), file order) if useful.
+**10-fold OOF works transparently in the blend harness** (no 5-fold assumption) — publish `{oof,test}` and it's picked up. @fomalhaut_beta if your CNN-inception goes 10-fold (0.236→~0.232) it will help the blend too.
+#data_pipeline #model_selection #training #ensembling #status
+[board] сообщений 29, новых 1, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 40)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 41)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 42)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 43)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 44)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 45)
+[board] сообщений 29, новых 0, метрик 17, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 46)
+===== fomalhaut_beta_wide_lstm.md =====
+# fomalhaut_beta — wide (768/896/1024) LSTMs, best variant error-weighted 0.2314
+Following [[mirfak_zeta_blend_v6.md]], [[mirfak_zeta_watcher.md]], [[fomalhaut_beta_negative_results.md]].
+## Key finding: capacity helps a lot for the plain BiLSTM
+My earlier 256-wide BiLSTM plateaued at ~0.240. Going **wider (768–1024)** + dropout 0.4 is a real single-model gain:
+| tag | config | clean OOF |
+|---|---|---|
+| `fom_w768a` / `fom_w768b` | BiLSTM h768 d0.4, seeds 1/2 | 0.2339 / 0.2347 |
+| `fom_w1024` | h1024 d0.5 | 0.2342 |
+| `fom_w896` | h896 d0.4 | 0.2353 |
+| `fom_hc768` | h768 d0.4 + Huber+clip | 0.2348 |
+| **`fom_ew768`** | **h768 d0.4 + inverse-variance error weighting** | **<metric>0.2314<\metric>** |
+| `fom_ew768b` | ew h768, seed 8 | 0.2320 |
+| `fom_ew896` | ew h896, seed 9 | 0.2328 |
+**Combining wide capacity + error-weighted loss is the best recipe I found** (0.2314, near vega's `k10` 0.2250). All are full 5-fold, `(2160,107,5)`/`(240,107,5)`, test.json order, in `preds/` — auto-picked by the [[mirfak_zeta_watcher.md]].
+@vega_pi — your large-kernel `k10` is the current ceiling; if you can add error-weighted / wider variants of it, likely the strongest lever left. @mirfak_zeta — these should already be folding in.
+#architecture #loss #ensembling #status #insight
+[board] сообщений 30, новых 1, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 47)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 48)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 49)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 50)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 51)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 52)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 53)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 54)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 55)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 56)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 57)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 58)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 59)
+[board] сообщений 30, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2118 (step 60)
+===== mirfak_zeta_blend_v7.md =====
+# mirfak_zeta — blend v7: 61 models, 0.2102
+Following [[fomalhaut_beta_wide_lstm.md]], [[vega_pi_kfold10_finding.md]], [[mirfak_zeta_kfold10_adopt.md]].
+Steady gains as 10-fold + wide + error-weighted members land. Blend `nnls_calib` = **<metric>0.2102<\metric>** over **61** valid full-*k*-fold members (was 0.2118 → 0.2106 → 0.2103 → 0.2102). Submission auto-refreshed by the watcher.
+## My 10-fold members (new)
+`mz_r10_d` (h384/deep, asinh0.5) **0.2314**, `mz_r10_a` **0.2328**, `mz_r10_c` 0.2344 — diverse CNN+BiGRU bias. More seeds queued.
+## Status
+Ensemble still creeping down as strong 10-fold members arrive. Keep them coming (`{oof,test}` pairs are auto-folded). I'll keep the submission current.
+#ensembling #status #submission
+[board] сообщений 31, новых 1, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 61)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 62)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 63)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 64)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 65)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 66)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 67)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 68)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 69)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 70)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 71)
+[board] сообщений 31, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 72)
+===== vega_pi_ew_pair_kfold.md =====
+# vega_pi — error-weighting + pair-aware + k-fold: new best singles (0.2235), blend 0.2123
+Following [[vega_pi_kfold10_finding.md]], [[mirfak_zeta_kfold10_adopt.md]], [[fomalhaut_beta_wide_lstm.md]].
+## Recipe: 10-fold + **inverse-variance error weighting** + **pair-aware** head
+- **Error weighting** (per-position weight `1/(mean_k err_k^2 + 0.05)` from the provided `*_error_*` cols) helps my CNN+BiLSTM at k10 (0.2250→0.2247) and much more combined with the **pair-aware head** (concat LSTM state of the base-pair partner, gated).
+- Best single so far: `vega_k10_ew_pair` **<metric>0.2235<\metric>** (seed87 variant 0.22351).
+New full-10-fold arrays (auto-discovered):
+`vega_k10_ew` 0.2247, `vega_k10_ew_pair` 0.2241, `vega_k10_ew_cnn` 0.2245, `vega_k10_ewp87` **0.2235**, `vega_k10_ewp88` 0.2240.
+20-fold: `vega_k20_pair` 0.2235, `vega_k20_lstm` 0.2249.
+## My blend (`blend2.py`) after k10-ew + k20 members
+honest blender-CV **`<metric>0.2123<\metric>`**.
+## Note
+asinh + error-weighting together is slightly worse than error-weighting alone for me → prefer `--ew`.
+Suggest @fomalhaut_beta apply ew to a **wide** BiLSTM at **k10**; @mirfak_zeta fold these in.
+#ensembling #loss #architecture #regularization #status #insight
+[board] сообщений 32, новых 1, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 73)
+[board] сообщений 32, новых 0, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 74)
+[board] сообщений 32, новых 0, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 75)
+[board] сообщений 32, новых 0, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 76)
+===== fomalhaut_beta_kfold10.md =====
+# fomalhaut_beta — 10-fold wide+error-weighted LSTMs + independent 101-member blend
+Following [[vega_pi_kfold10_finding.md]], [[mirfak_zeta_kfold10_adopt.md]], [[fomalhaut_beta_wide_lstm.md]].
+## Adopted 10-fold (thanks @vega_pi)
+Full-*k*-fold arrays, `(2160,107,5)`/`(240,107,5)`, in `preds/` (auto-discovered):
+| tag | config | clean OOF |
+|---|---|---|
+| `fom_ew768_k10` | BiLSTM h768 d0.4 + error-weight, 10-fold | 0.2315 |
+| `fom_ew768_k10b` | same, seed 2 | 0.2303 |
+| `fom_ew1024_k10` | h1024 d0.5 + error-weight, 10-fold | **0.2300** |
+| `fom_cnn_ew_k10` | multi-scale CNN + error-weight, 10-fold | 0.2348 |
+Plus earlier 5-fold wide family: `fom_ew768` 0.2314, `fom_ew896` 0.2328, `fom_ew1024` 0.2338, `fom_hc768` 0.2348, `fom_w768a/b` 0.2339/0.2347, `fom_w896` 0.2353.
+Note: `asinh(0.5)` gave **no gain** on my error-weighted wide LSTM (fold0 0.2397 vs 0.2393) — it's model-specific.
+## Independent auto-discovery blend (`blend_cv.py`, honest blender-CV, SN1)
+101 valid full-*k*-fold members discovered. **greedy = NNLS = <metric>0.2113<\metric>** (per-loop 0.2116). Best single now `vega_k10_ewp87` **0.2244** — nice, error-weighting propagated into vega's k10 👍.
+Pool is huge; NNLS still not overfitting (honest≈in-sample). @mirfak_zeta if your number diverges it's just the clean-row fold split.
+#ensembling #training #loss #status #insight
+[board] сообщений 33, новых 1, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 77)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 78)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 79)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 80)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 81)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 82)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 83)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 84)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 85)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 86)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 87)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 88)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 89)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 90)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 91)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 92)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 93)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 94)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 95)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 96)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 97)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 98)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 99)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 100)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 101)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 102)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 103)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 104)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 105)
+[board] сообщений 33, новых 0, метрик 21, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 106)
+===== vega_pi_k30_and_stacker.md =====
+# vega_pi — k=30 members, stacker check; safety note on unscored columns
+Following [[vega_pi_ew_pair_kfold.md]], [[fomalhaut_beta_kfold10.md]], [[mirfak_zeta_blend_v7.md]].
+## New best single: **k=30** (≈97% train per member)
+`vega_k30_ew_pair` **<metric>0.22196<\metric>** (merged from 3×10-fold partials of kfold30). In the pool.
+(k10 ew_pair 0.2235 → k20 0.2223 → k30 0.2220; diminishing.)
+## Stacker check (linear vs nonlinear) — I own this
+`workspaces/vega_pi/stack_gbm.py`: honest 5-fold-by-sample CV over 58 members.
+| meta-learner | CV MCRMSE |
+|---|---|
+| per-column **ridge** (linear) | **<metric>0.2116<\metric>** |
+| greedy (blend2) | 0.2119 |
+| per-column **LightGBM** (nonlinear) | 0.2132 |
+→ **linear solves it; nonlinear meta-models overfit.** Don't spend time on GBMs/MLPs/depth-2 stacking. (Agrees with [[fomalhaut_beta_negative_results.md]] per-loop.)
+## ⚠️ Safety note: unscored columns in `submission.csv`
+`final_solution/code/make_submission.py` fills `deg_pH10 := deg_Mg_pH10` and `deg_50C := deg_Mg_50C`. Per `TASK.md` only 3 cols are scored, so it's fine. **But if the grader ever scored all 5, that would be poor.** Cheap insurance: fill the unscored cols with the **plain member-average** of members' own `deg_pH10`/`deg_50C` predictions (our models predict all 5 well; just exclude those cols from NNLS fitting). @mirfak_zeta optional.
+#ensembling #model_selection #submission #status #insight
+[board] сообщений 34, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 107)
+[board] сообщений 34, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 108)
+[board] сообщений 34, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 109)
+[board] сообщений 34, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 110)
+[board] сообщений 34, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 111)
+[board] сообщений 34, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2102 (step 112)
+===== mirfak_zeta_ack_stacker.md =====
+# mirfak_zeta — ack stacker + unscored-col note; blend 0.2092 (95 members)
+Following [[vega_pi_k30_and_stacker.md]], [[fomalhaut_beta_kfold10.md]].
+- ✅ Confirmed independently: **nonlinear stacking does not help** (my LightGBM stacker OOF 0.2181 vs NNLS 0.2149; [[mirfak_zeta_saturation_probes.md]]). Linear it is.
+- ✅ k30 `vega_k30_ew_pair` 0.2220 folded in. Blend now **<metric>0.2092<\metric>** over 95 valid members (my clean-row split; fomalhaut's independent split 0.2113 — same story).
+- On unscored columns: `TASK.md` explicitly scores only `reactivity, deg_Mg_pH10, deg_Mg_50C`, so `deg_pH10/deg_50C` are informational. Keeping them as scored analogues is fine; I won't complicate the blend. (Our members' unscored outputs are mostly untrained since most run `--scored_only`, so a member-average wouldn't be better.)
+#ensembling #communication #status #submission
+[board] сообщений 35, новых 1, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 113)
+[board] сообщений 35, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 114)
+[board] сообщений 35, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 115)
+[board] сообщений 35, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 116)
+===== fomalhaut_beta_final_status.md =====
+# fomalhaut_beta — consolidated status & cross-check (final phase)
+Following [[mirfak_zeta_ack_stacker.md]], [[vega_pi_k30_and_stacker.md]], [[fomalhaut_beta_kfold10.md]].
+## My published artifacts (all full-*k*-fold `(2160,107,5)`/`(240,107,5)`, auto-folded)
+- **Wide+error-weighted BiLSTM, 10-fold** (my best family): `fom_ew768_k10` 0.2315, `_k10b` 0.2303, `_k10c` **0.2284**, `_k10_s12` 0.2290, `_k10_s13` 0.2298, `_k10_s15`, `_k10_s16` 0.2304, `fom_ew1024_k10` 0.2300, `_k10b` 0.2309.
+- 5-fold wide family: `fom_ew768` 0.2314, `fom_ew896` 0.2328, `fom_ew1024` 0.2338, `fom_hc768` 0.2348, `fom_w768a/b`, `fom_w896`.
+- Diverse: `fom_cnnA/B` (multi-scale CNN+BiGRU), `fom_hc33`, `fom_ew11/22`, `fom_ms101/202/303`, `fom_cnn_ew_k10`.
+- (Pair-aware head + my wide LSTM did **not** help: fold0 0.2322.)
+## Independent verification
+My `blend_cv.py` (auto-discovery) on the full pool: best single `vega_k30_ew_pair` 0.2228 (my split), greedy/NNLS ≈ 0.2113 (clean-row split differs from mirfak's 0.2092 — same story). Confirms the ~0.209–0.212 plateau and that a linear blend is not overfitting.
+## Consensus / conformance
+- ✅ Metric = **MCRMSE** on the 3 scored cols; unscored filled with analogues is safe ([[mirfak_zeta_ack_stacker.md]]).
+- ✅ `final_solution/submission.csv` verified: 25680 rows, `id_seqpos` exactly matches `sample_submission.csv` order, columns match, **no NaN**.
+- ✅ Linear ensemble only; no nonlinear stacking, no post-processing, no TTA — all independently confirmed negative by the swarm.
+- I will **not** write to `final_solution` (mirfak owns it). I'll keep publishing any new strong full-*k*-fold members until the end.
+#status #ensembling #submission #communication
+[board] сообщений 36, новых 1, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 117)
+[board] сообщений 36, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 118)
+[board] сообщений 36, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 119)
+[board] сообщений 36, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 120)
+[board] сообщений 36, новых 0, метрик 24, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2092 (step 121)
+===== mirfak_zeta_final_status.md =====
+# mirfak_zeta — final-phase status: 100 members, blend 0.2090
+Following [[fomalhaut_beta_final_status.md]], [[vega_pi_k30_and_stacker.md]].
+- Pool: **100** valid full-*k*-fold members (5/10/20/30-fold), all three agents.
+- Blend `nnls_calib` = **<metric>0.2090<\metric>** on SN=1 OOF (honest blender-CV ≈ same → no overfit).
+- `final_solution/submission.csv`: 25680 rows, `id_seqpos` matches `sample_submission.csv`, no NaN.
+- Code + README in `final_solution/code/`.
+- The live watcher keeps folding in any new members through the deadline.
+Consensus: linear blend saturated at ~0.209–0.211; random-KFold is the right selection signal;
+nonlinear stacking / post-processing / TTA / pseudo-labelling all negative. Anything new is
+auto-folded. Final submission is frozen from this pool.
+#submission #ensembling #status
+[board] сообщений 37, новых 1, метрик 25, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 122)
+===== vega_pi_final_status.md =====
+# vega_pi — final status & contribution summary
+Following [[vega_pi_k30_and_stacker.md]], [[mirfak_zeta_ack_stacker.md]], [[fomalhaut_beta_final_status.md]].
+## My key contributions to the swarm
+1. **Key finding [[vega_pi_sn_filter_finding.md]]**: train/eval on `SN_filter==1` only (huge).
+2. **Key finding [[vega_pi_kfold10_finding.md]]**: larger-k CV (10/20/30) — each member sees 90/95/97% of clean data; single-model 0.2289→0.2250→0.2223→**0.2220**. Adopted swarm-wide.
+3. **Error weighting + pair-aware head + asinh** recipes → new best singles.
+4. Model pool: CNN/CNN-BiLSTM/CNN-BiGRU/CNN-only/Transformer/GNN/pair-aware, many seeds, k∈{5,10,20,30}, ~40 full valid full-k-fold members (auto-folded).
+## Best singles (mine)
+| tag | k | OOF (SN1) |
+|---|---|---|
+| `vega_k30_ew_pair` | 30 | **<metric>0.22196<\metric>** |
+| `vega_k30_pair2/3` | 30 | 0.2221 |
+| `vega_k30_ewl` | 30 | 0.2229 |
+| `vega_k30_ewc` | 30 | 0.2236 |
+| `vega_k20_ew_pair` | 20 | 0.2223 |
+| `vega_k10_ewp87/97` | 10 | 0.2233 |
+## Consensus confirmed (all independently reproduced)
+- Metric MCRMSE on 3 cols; unscored filled with scored analogues is fine.
+- **Linear ensemble only** — nonlinear stacking worse (my ridge 0.2116 vs LGBM 0.2132; mirfak/fomalhaut agree).
+- **No post-processing** (affine/clip worse), **no TTA** (reverse-strand hurts), **no test pseudo-labeling** (leakage trap, [[vega_pi_blend_and_insights.md]]).
+- Random-KFold is the right selection signal (group-CV pessimistic); test→train near-duplicate regime matches random CV.
+- Plateau ≈ **0.209–0.212**; measurement-noise floor ≈ 0.15.
+## Status
+`final_solution/submission.csv` verified valid (25680 rows, sample order, no NaN internals), maintained by [[mirfak_zeta_watcher.md]]. My members keep landing in the blend. I'll keep monitoring/adding until hard_end.
+#status #ensembling #submission #insight #communication
+[board] сообщений 38, новых 1, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 123)
+[board] сообщений 38, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 124)
+===== vega_pi_verification.md =====
+# vega_pi — independent verification of the swarm blend (~0.2096) ✅
+Following [[mirfak_zeta_ack_stacker.md]], [[vega_pi_final_status.md]], [[fomalhaut_beta_final_status.md]].
+## Independent reconstruction (my `workspaces/vega_pi/blend2.py`, auto-discovery of ALL agents' full-k-fold members)
+- **102 valid members** discovered (vega + mirfak nested `runs/*/oof.npy` + fomalhaut `preds/*`).
+- Greedy forward-selection blender, honest 5-fold CV of the *blender* on SN=1:
+  - best single: `vega_k30_ew_pair` **0.22196**
+  - **greedy honest CV `<metric>0.2097<\metric>`** (in-sample 0.2093) → **matches mirfak's `nnls_calib` 0.20956** within noise.
+- `workspaces/vega_pi/runs/blend2_test.npy` = my independent blend test preds (greedy weights).
+Note: my `scipy.nnls` reimplementation was numerically unstable (ill-conditioned with ~100 collinear members); scipy `nnls` needs column normalization + ridge-regularized variants to be safe. **Greedy + per-column ridge both land at 0.2097–0.2116**, so the plateau is real.
+## Verdict
+The swarm solution ≈ **0.209–0.210 MCRMSE (SN1 OOF)** is reproduced independently. `final_solution/submission.csv` (mirfak-owned, watcher-maintained) is the agreed best. No further linear-blend gains expected; metric is bounded by measurement noise (~0.15).
+#ensembling #model_selection #submission #status #insight
+[board] сообщений 39, новых 1, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 125)
+[board] сообщений 39, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 126)
+[board] сообщений 39, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 127)
+[board] сообщений 39, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 128)
+[board] сообщений 39, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 129)
+[board] сообщений 39, новых 0, метрик 26, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.209 (step 130)
+[agent swarm-3] run завершился за 39437s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ec311f4caffe6AiywIaaSKtg20 продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ec311f4caffe6AiywIaaSKtg20 (2026-10-15T11:17:11Z): Continue work until hard end.
+===== fomalhaut_beta_closing.md =====
+# fomalhaut_beta — closing summary (final verified state)
+Following [[mirfak_zeta_final_status.md]], [[vega_pi_verification.md]], [[fomalhaut_beta_final_status.md]].
+## Final verified swarm solution
+- `final_solution/submission.csv`: 25680 rows, `id_seqpos` exactly matches `sample_submission.csv`, columns match, **no NaN / all finite**. Owned & maintained by mirfak's watcher.
+- Blend: `nnls_calib`, **102 members**, **OOF SN1 = <metric>0.20894<\metric>**, honest blender-CV ≈ 0.2095 (no overfit). Independently reproduced by vega (0.2097) and me (0.2113 on a different clean-row split).
+- Solution code + README in `final_solution/code/`.
+## My contributions (for the swarm record)
+1. **CV protocol** ([[fomalhaut_beta_cv_protocol.md]]): evaluate/early-stop on `SN_filter==1` only; test set is quality-filtered.
+2. **Blend-method cross-checks** ([[fomalhaut_beta_multiseed_and_blend.md]]): greedy ≡ per-target NNLS ≈ 0.2155 at 10–14 models; per-loop-type weights **no gain**; independent auto-discovery blender.
+3. **Model pool** (~25 full-*k*-fold members auto-folded): multi-seed BiLSTMs; **error-weighted** loss; **Huber+clip**; multi-scale CNN+BiGRU; and the strongest — **wide (768/1024) error-weighted BiLSTM at 10-fold** (`fom_ew768_k10*`, best single **<metric>0.2284<\metric>**, `fom_ew1024_k10` 0.2300). Wide capacity + inverse-variance error weighting was my reliable lever.
+4. **Negative results** shared to save others time ([[fomalhaut_beta_negative_results.md]]): structure/pairing-partner features, k-NN memory model, dilated TCN, pair-aware head on my wide LSTM, per-loop weights, asinh for my model — all no gain.
+## Consensus (all three agents)
+Linear ensemble only; random-KFold is the right signal; no nonlinear stacking / post-processing / TTA / test-pseudo-labeling; plateau ≈ **0.209–0.212**; measurement-noise floor ≈ 0.15. Nothing further expected to move the metric.
+#submission #ensembling #status #communication #insight
+[board] сообщений 40, новых 1, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 131)
+[board] сообщений 40, новых 0, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 132)
+===== vega_pi_watcher_bug.md =====
+# vega_pi — 🐞 BUG: watcher NNLS crashed (submission NOT updated since 14:16)
+Following [[vega_pi_verification.md]], [[mirfak_zeta_watcher.md]].
+## What happened
+`workspaces/mirfak_zeta/watch_blend.py` detected the new batch (~14:16) and ran `ensemble.py`, which **crashed** in the CV-estimate stage:
+```
+ensemble.py:153  W[:, j] += LinearRegression(positive=True, fit_intercept=False).fit(Xf, yf).coef_
+sklearn .../scipy/optimize/_nnls.py:93  raise RuntimeError("Maximum number of iterations reached.")
+```
+→ `cv_estimate -> fit_predict` (bootstrap NNLS) hit scipy's max-iterations. The exception aborts **before** `make_submission.py`, so `final_solution/submission.csv` was **not** overwritten (it is still the valid 14:16 / 102-member blend, OOF 0.20894 — I verified: 25680 rows, sample order, no NaN). ✅ No corruption.
+But the watcher will **not retry** until the next file change, so new members (`vega_k30_pair4` 0.2218 + fomalhaut's newest ~0.228) are stuck out of the blend.
+## Suggested fix (mirfak owns the file)
+- Wrap the bootstrap NNLS in try/except and **fall back to a normalized ridge / `nnls` with `maxiter`** (scipy `nnls` docstrings cap it), or just skip the failing bootstrap replicate (`maxiter`), or
+- use `scipy.optimize.lsq_linear(X, y, bounds=(0, inf))` (more robust), or
+- fall back to the **greedy** estimator when NNLS raises.
+Either way, keep `cv_estimate` from aborting the whole run.
+## Fallback if the watcher stays down near hard_end
+My independent greedy blend is in `workspaces/vega_pi/runs/blend2_test.npy` (weights in `runs/blend2_summary.json`), honest CV ~0.2097 on the full pool — a drop-in `(240,107,5)` test-pred array if needed.
+@mirfak_zeta — please patch `ensemble.py` when you can. #bug #conflict #ensembling #submission #status
+[board] сообщений 41, новых 1, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 133)
+[board] сообщений 41, новых 0, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 134)
+[board] сообщений 41, новых 0, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 135)
+[agent swarm-1] run завершился за 34250s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ec311f4c5ffeOZKyBJ3jdtEe6N продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ec311f4c5ffeOZKyBJ3jdtEe6N (2026-10-15T11:43:26Z): Continue work until hard end.
+[board] сообщений 41, новых 0, метрик 28, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20894 (step 136)
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-15_14-50-05_SYSTEM_final_phase.md
+===== mirfak_zeta_bugfix.md =====
+# mirfak_zeta — BUG FIXED: robust NNLS + watcher restarted
+Following [[vega_pi_watcher_bug.md]] (thanks for the precise diagnosis).
+## Fix in `ensemble.py`
+- Replaced the unstable `sklearn(nnls)` weighting with **`scipy.optimize.lsq_linear`** on **column-normalized** designs with a small **ridge** (`nnls_fit`, alpha=1e-3). No more "Maximum number of iterations reached."
+- `cv_estimate` now **try/excepts each method** (nan-safe) and the final full-fit **falls back to greedy** if needed — a single failing estimator can never abort the pipeline again.
+- Trimmed `METHODS` to `mean/greedy/nnls/nnls_calib` (bootstrap/per-target variants were always within noise) for speed.
+## Re-run + verified
+Full pool (all currently published members): `nnls_calib` honest CV **0.2095**, full-fit OOF **<metric>0.2089<\metric>**. `final_solution/submission.csv` rewritten (25680 rows, sample order, no NaN). Watcher restarted with the fixed code; it just picked up the newest batch (176 candidate files).
+#bug #ensembling #submission #status
+===== vega_pi_watcher_recovered.md =====
+# vega_pi — watcher recovered ✅ final submission = 105 members (OOF 0.20887)
+Following [[vega_pi_watcher_bug.md]].
+The `nnls` max-iter failure was **stochastic** (bootstrap NNLS): I nudged the watcher (updated one member file's mtime) and the re-blend **succeeded**. `final_solution/submission.csv` regenerated at 14:47:
+- method `nnls_calib`, **105 members**, **OOF SN1 `<metric>0.20887<\metric>`**, honest blender-CV 0.20947.
+- includes the latest strong members (`vega_k30_pair4` etc.).
+- verified: 25680 rows, `id_seqpos` matches `sample_submission.csv`, all values finite; code in `final_solution/code/`.
+The `ensemble.py` NNLS max-iter crash can still recur on future changes — recommend `try/except` + `lsq_linear`/greedy fallback if anyone adds members after this. Otherwise the solution is final.
+#submission #ensembling #bug #status
+===== 2026-10-15_14-50-05_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 14:50)
+До жёсткого стопа 30 минут (hard_end: 2026-10-15T15:19:43+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-15T15:19:43+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 44, новых 3, метрик 29, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2089 (step 137)
+[board] сообщений 44, новых 0, метрик 29, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2089 (step 138)
+===== fomalhaut_beta_work_complete.md =====
+# fomalhaut_beta — work complete / final freeze
+Following [[fomalhaut_beta_closing.md]], [[mirfak_zeta_final_status.md]], [[vega_pi_verification.md]].
+Last members landed and were auto-folded: `fom_ew768_k10_s21` 0.2295, `fom_hc768_k10` 0.2311 (plus `_s17/_s16/_s20` earlier).
+**Final frozen state:**
+- `final_solution/submission.csv` md5 `b7d569c60a2dfd23fb4a56749c91cc55` — verified: 25680 rows, columns = `sample_submission.csv`, `id_seqpos` order matches, all finite, no NaN.
+- Blend `nnls_calib`, **106 members**, OOF SN1 = **<metric>0.20886<\metric>** (honest blender-CV ≈ 0.2095).
+- Code + README in `final_solution/code/`.
+I stopped launching new training (anything started now would miss the freeze). No further changes needed from me; watcher owns the submission.
+#submission #status #communication
+[board] сообщений 45, новых 1, метрик 30, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20886 (step 139)
+[board] сообщений 45, новых 0, метрик 30, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20886 (step 140)
+[agent swarm-2] run завершился за 42375s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_ec311f4dcffe7Wpj8qowfdx0Or продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_ec311f4dcffe7Wpj8qowfdx0Or (2026-10-15T12:06:09Z): Continue work until hard end.
+===== mirfak_zeta_final_confirmed.md =====
+# mirfak_zeta — ✅ FINAL SUBMISSION CONFIRMED (freeze)
+Per `[[2026-10-15_14-50-05_SYSTEM_final_phase.md]]`. New experiments stopped; watcher frozen.
+## Final artifact
+- `final_solution/submission.csv` — md5 `b7d569c60a2dfd23fb4a56749c91cc55`
+- Verified: **25680 rows**, columns = `sample_submission.csv`, `id_seqpos` order matches exactly, **all finite, no NaN**.
+- Solution code + README: `final_solution/code/` (`train.py`, `run_cv.py`, `ensemble.py`, `make_submission.py`, `gbm_base.py`).
+## Method
+Linear ensemble (per-target NNLS + affine calibration, `nnls_calib`) over **106** auto-discovered full-*k*-fold members (5/10/20/30-fold) contributed by all three agents, trained/evaluated on `SN_filter==1`.
+**OOF MCRMSE (SN1) = <metric>0.20886<\metric>**; honest blender-CV 0.2095 (no overfit). Independently reproduced by vega_pi (0.2097) and fomalhaut_beta (0.2113 on a different clean-row split).
+## Traceability
+Base members: [[mirfak_zeta_kfold10_adopt.md]] (mine), [[vega_pi_k30_and_stacker.md]], [[fomalhaut_beta_final_status.md]]; protocols [[vega_pi_sn_filter_finding.md]], [[fomalhaut_beta_cv_protocol.md]]; blend method [[mirfak_zeta_blend_nnls.md]]; bug fix [[mirfak_zeta_bugfix.md]]; consensus negatives [[mirfak_zeta_saturation_probes.md]], [[vega_pi_blend_and_insights.md]], [[fomalhaut_beta_negative_results.md]].
+#submission #ensembling #status #communication
+[board] сообщений 46, новых 1, метрик 31, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20886 (step 141)
+[agent swarm-3] run завершился за 3290s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ec311f4caffe6AiywIaaSKtg20 продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ec311f4caffe6AiywIaaSKtg20 (2026-10-15T12:12:02Z): Continue work until hard end.
+[agent swarm-1] run завершился за 1868s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ec311f4c5ffeOZKyBJ3jdtEe6N продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ec311f4c5ffeOZKyBJ3jdtEe6N (2026-10-15T12:14:34Z): Continue work until hard end.
+[board] сообщений 46, новых 0, метрик 31, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20886 (step 142)
+[agent swarm-3] run завершился за 434s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ec311f4caffe6AiywIaaSKtg20 продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ec311f4caffe6AiywIaaSKtg20 (2026-10-15T12:19:16Z): Continue work until hard end.
+[agent swarm-1] run завершился за 304s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ec311f4c5ffeOZKyBJ3jdtEe6N продолжена: Continue work until hard end.
+[agent swarm-3] run завершился за 22s — перезапуск (пауза 15s)
+[agent swarm-1] resume session ses_ec311f4c5ffeOZKyBJ3jdtEe6N (2026-10-15T12:19:38Z): Continue work until hard end.
+[agent swarm-3] сессия ses_ec311f4caffe6AiywIaaSKtg20 продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ec311f4caffe6AiywIaaSKtg20 (2026-10-15T12:19:40Z): Continue work until hard end.
+[agent swarm-1] run завершился за 24s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ec311f4c5ffeOZKyBJ3jdtEe6N продолжена: Continue work until hard end.
+[agent swarm-3] run завершился за 24s — перезапуск (пауза 30s)
+[agent swarm-1] resume session ses_ec311f4c5ffeOZKyBJ3jdtEe6N (2026-10-15T12:20:02Z): Continue work until hard end.
+[agent swarm-3] сессия ses_ec311f4caffe6AiywIaaSKtg20 продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ec311f4caffe6AiywIaaSKtg20 (2026-10-15T12:20:04Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 46, новых 0, метрик 31, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20886 (step 0)
+[mtime] saved 53 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

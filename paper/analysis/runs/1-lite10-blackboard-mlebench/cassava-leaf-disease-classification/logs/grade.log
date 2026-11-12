@@ -1,0 +1,42 @@
+MLE-bench grade — Cassava Leaf Disease Classification (`cassava-leaf-disease-classification`)
+submission: sandbox/final_solution/submission.csv (md5 99d1022588ae09967f83057430e77f30)
+metric: accuracy (higher is better)
+score: 0.89873
+thresholds: gold 0.90130 | silver 0.89920 | bronze 0.89780 | median 0.89090
+medals: gold=False silver=False bronze=True | above_median=True
+  official mle-bench grade: 0.8987300000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-12_06-48-32_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition cassava-leaf-disease-classification)
+граф доски: 55 записей, 0 артефактов, 0 битых ссылок, 16 тегов, 324 связей (0 — входные, 234 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 55, новых 0, метрик 18, метрика задачи: accuracy (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv
+MLE-bench grade — Cassava Leaf Disease Classification (`cassava-leaf-disease-classification`)
+submission: sandbox/final_solution/submission.csv (md5 e32f8872453c714315ec0d346409a01d)
+metric: accuracy (higher is better)
+score: 0.90060
+thresholds: gold 0.90130 | silver 0.89920 | bronze 0.89780 | median 0.89090
+medals: gold=False silver=True bronze=False | above_median=True
+  official mle-bench grade: 0.9006000000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-16_19-13-59_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition cassava-leaf-disease-classification)
+граф доски: 63 записей, 0 артефактов, 0 битых ссылок, 19 тегов, 432 связей (0 — входные, 277 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 63, новых 0, метрик 32, метрика задачи: accuracy (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

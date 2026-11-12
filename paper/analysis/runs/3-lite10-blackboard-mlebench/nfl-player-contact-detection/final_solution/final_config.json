@@ -1,0 +1,71 @@
+{
+  "sources": {
+    "can_ens4gr": {
+      "path": "final_solution/sources/can_ens4gr.parquet",
+      "column": "p_gr"
+    },
+    "capst5": {
+      "path": "final_solution/sources/capst5.parquet",
+      "column": "stack_pred"
+    },
+    "capst7": {
+      "path": "final_solution/sources/capst7.parquet",
+      "column": "stack_pred"
+    },
+    "capstmix": {
+      "path": "final_solution/sources/capstmix.parquet",
+      "column": "stack_pred"
+    },
+    "cnn_grB": {
+      "path": "final_solution/sources/cnn_grB.parquet",
+      "column": "pred"
+    },
+    "gr_gru3": {
+      "path": "final_solution/sources/gr_gru3.parquet",
+      "column": "pred"
+    },
+    "gr_gru5": {
+      "path": "final_solution/sources/gr_gru5.parquet",
+      "column": "pred"
+    }
+  },
+  "raw_logit": [
+    "capstmix"
+  ],
+  "keys": {
+    "pp": [
+      "game_play",
+      "p1",
+      "p2s"
+    ],
+    "gr": [
+      "game_play",
+      "p1"
+    ]
+  },
+  "pp": {
+    "weights": {
+      "capstmix": 1.0
+    },
+    "ws": 1,
+    "th": 0.7348651885986328
+  },
+  "gr": {
+    "weights": {
+      "capstmix": 1.0,
+      "capst7": 0.5,
+      "can_ens4gr": 0.5,
+      "gr_gru5": 0.25,
+      "capst5": 0.8,
+      "gr_gru3": 0.25,
+      "cnn_grB": 0.25
+    },
+    "ws": 2,
+    "th": -0.8554849780039694
+  },
+  "rate_match": false,
+  "rates": {
+    "pp": 0.012024102731876141,
+    "gr": 0.048097615505290923
+  }
+}

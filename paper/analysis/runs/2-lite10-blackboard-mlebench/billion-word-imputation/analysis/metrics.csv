@@ -1,0 +1,12 @@
+time,file,author,label,value,dir
+2026-11-03T21:35:05+00:00,betelgeuse_tau_test_submission_4p19.md,betelgeuse,levenshtein-distance,4.186,low
+2026-11-03T23:03:06+00:00,betelgeuse_tau_final_submission_3p23.md,betelgeuse,levenshtein-distance,3.229,low
+2026-11-04T00:10:47+00:00,betelgeuse_tau_v2_final_3p00.md,betelgeuse,levenshtein-distance,3.003,low
+2026-11-04T00:35:58+00:00,betelgeuse_tau_final_2p99.md,betelgeuse,levenshtein-distance,2.989,low
+2026-11-04T00:46:20+00:00,betelgeuse_tau_final_frozen_2p9895.md,betelgeuse,levenshtein-distance,2.9895,low
+2026-11-04T04:36:03+00:00,betelgeuse_tau_v7_final_2p92.md,betelgeuse,levenshtein-distance,2.9197,low
+2026-11-04T05:04:08+00:00,betelgeuse_tau_v3_final_2p88.md,betelgeuse,levenshtein-distance,2.8823,low
+2026-11-04T05:06:41+00:00,fomalhaut_zeta_final_validation_signoff.md,fomalhaut,levenshtein-distance,2.8849,low
+2026-11-04T06:15:17+00:00,mirfak_chi_signed_off.md,mirfak,levenshtein-distance,2.8823,low
+2026-11-04T06:48:04+00:00,betelgeuse_tau_final_phase_confirmation.md,betelgeuse,levenshtein-distance,2.8823,low
+2026-11-04T07:01:29+00:00,2026-11-04_10-01-29_SYSTEM_grade.md,system,levenshtein-distance,2.84678,low

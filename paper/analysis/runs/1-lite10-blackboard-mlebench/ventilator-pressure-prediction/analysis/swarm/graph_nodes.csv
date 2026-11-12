@@ -1,0 +1,68 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+dubhe_phi_intro.md,dubhe,2026-11-02T17:09:50+03:00,communication plan status,1,0,0,0
+antares_nu_intro_plan.md,antares,2026-11-02T17:09:54+03:00,communication ensembling plan training,2,0,0,0
+sirius_tau_intro_plan.md,sirius,2026-11-02T17:10:39+03:00,communication feature_engineering plan status,0,2,1,0
+antares_nu_split_baseline.md,antares,2026-11-02T17:11:55+03:00,communication ensembling model_selection plan status training,2,0,0,0
+dubhe_phi_baseline_shared_cache.md,dubhe,2026-11-02T17:12:20+03:00,communication ensembling feature_engineering status training,2,1,1,0
+sirius_tau_cache_ready.md,sirius,2026-11-02T17:12:49+03:00,data_pipeline feature_engineering plan status,2,0,0,0
+sirius_tau_ensemble_protocol.md,sirius,2026-11-02T17:16:03+03:00,communication ensembling model_selection plan,4,2,2,0
+dubhe_phi_split_conflict_resolution.md,dubhe,2026-11-02T17:16:05+03:00,communication conflict ensembling model_selection,2,3,2,0
+antares_nu_agree_seed42_roles.md,antares,2026-11-02T17:22:15+03:00,communication ensembling model_selection plan training,1,2,3,0
+sirius_tau_val_format_agreed.md,sirius,2026-11-02T17:23:11+03:00,communication ensembling model_selection status,6,2,4,0
+antares_nu_status_gru_cache2.md,antares,2026-11-02T17:25:29+03:00,architecture ensembling status training,0,2,5,0
+dubhe_phi_data2_and_bug_note.md,dubhe,2026-11-02T17:36:36+03:00,architecture bug ensembling feature_engineering status training,0,1,5,0
+dubhe_phi_mae_ensemble_tips.md,dubhe,2026-11-02T17:42:03+03:00,communication ensembling model_selection postprocessing,3,2,5,0
+dubhe_phi_status_ep29.md,dubhe,2026-11-02T18:03:37+03:00,communication ensembling status training,1,2,6,0
+antares_nu_bilstm320_done.md,antares,2026-11-02T18:40:44+03:00,ensembling model_selection status submission,3,1,5,1
+sirius_tau_model1_done.md,sirius,2026-11-02T18:47:49+03:00,ensembling insight status training,1,2,6,0
+dubhe_phi_blend_check_2models.md,dubhe,2026-11-02T18:50:47+03:00,ensembling model_selection postprocessing status,0,2,6,0
+antares_nu_3models_published.md,antares,2026-11-02T19:02:32+03:00,ensembling model_selection status submission,2,1,6,1
+sirius_tau_blend3_status.md,sirius,2026-11-02T19:10:38+03:00,ensembling insight postprocessing status,0,2,7,0
+antares_nu_tcn_adds_to_blend.md,antares,2026-11-02T19:25:19+03:00,communication ensembling status submission,0,1,7,1
+sirius_tau_blend_status2.md,sirius,2026-11-02T19:43:24+03:00,ensembling status submission,0,1,7,1
+dubhe_phi_blstm512_done_blend017.md,dubhe,2026-11-02T19:44:26+03:00,ensembling model_selection status submission training,2,2,6,1
+sirius_tau_blend6_0170.md,sirius,2026-11-02T19:48:36+03:00,ensembling status submission,1,1,7,1
+antares_nu_plan_strong_members.md,antares,2026-11-02T19:50:56+03:00,ensembling plan status training,0,2,8,0
+dubhe_phi_blstm512_csv_published.md,dubhe,2026-11-02T19:56:32+03:00,communication ensembling status submission,0,1,7,1
+antares_nu_lstm448_done_blend01696.md,antares,2026-11-02T20:58:44+03:00,ensembling status submission training,1,0,0,1
+dubhe_phi_blend_diagnostics.md,dubhe,2026-11-02T21:26:46+03:00,ensembling insight model_selection postprocessing status,1,0,0,0
+dubhe_phi_timeline_finalization.md,dubhe,2026-11-02T22:31:04+03:00,communication ensembling plan status submission,1,1,1,1
+antares_nu_timeline_ack.md,antares,2026-11-02T22:32:10+03:00,communication plan status submission,1,1,2,1
+sirius_tau_blend12_01689.md,sirius,2026-11-02T22:45:01+03:00,ensembling insight model_selection status,0,0,0,0
+sirius_tau_timeline_plan.md,sirius,2026-11-02T23:35:03+03:00,communication ensembling plan status submission,0,1,1,1
+dubhe_phi_ft2_new_best_01678.md,dubhe,2026-11-02T23:36:32+03:00,ensembling insight optimization status training,3,0,0,0
+sirius_tau_blend14_01669.md,sirius,2026-11-02T23:56:06+03:00,ensembling status submission,0,2,3,1
+dubhe_phi_dropin_mapping.md,dubhe,2026-11-03T00:02:03+03:00,communication ensembling status submission,0,0,0,1
+antares_nu_final_members_01668.md,antares,2026-11-03T00:04:00+03:00,communication ensembling status submission,0,0,0,1
+antares_nu_refine_inflight.md,antares,2026-11-03T00:08:09+03:00,ensembling optimization status training,0,1,1,0
+dubhe_phi_ft3_01662.md,dubhe,2026-11-03T00:39:11+03:00,ensembling insight optimization status training,0,0,0,0
+sirius_tau_blend16_01645.md,sirius,2026-11-03T00:48:26+03:00,ensembling optimization status submission,0,0,0,1
+antares_nu_refined_members_016245.md,antares,2026-11-03T01:18:50+03:00,ensembling optimization status submission,0,1,1,1
+sirius_tau_blend20_01619.md,sirius,2026-11-03T01:22:57+03:00,ensembling optimization status submission,1,0,0,1
+dubhe_phi_ft4_01627_and_ft4full.md,dubhe,2026-11-03T01:28:18+03:00,ensembling optimization status submission,0,1,1,1
+dubhe_phi_ft4full_ready.md,dubhe,2026-11-03T01:49:33+03:00,communication ensembling status submission,0,0,0,1
+antares_nu_ft_full_dropin.md,antares,2026-11-03T01:52:08+03:00,ensembling status submission,1,0,0,1
+sirius_tau_final_blend_written.md,sirius,2026-11-03T01:54:37+03:00,ensembling status submission,1,0,0,1
+antares_nu_reminder_dropin_ft2.md,antares,2026-11-03T01:57:21+03:00,ensembling status submission,0,2,1,1
+dubhe_phi_final_blend_ready.md,dubhe,2026-11-03T02:03:56+03:00,communication ensembling status submission,0,0,0,1
+antares_nu_ft2_final.md,antares,2026-11-03T02:31:44+03:00,communication ensembling status submission,0,0,0,1
+dubhe_phi_ft5_new_best_01729.md,dubhe,2026-11-03T02:35:03+03:00,ensembling optimization status submission,0,0,0,1
+dubhe_phi_ft5full_ready.md,dubhe,2026-11-03T02:48:37+03:00,ensembling status submission,1,0,0,1
+dubhe_phi_qa_final_passed.md,dubhe,2026-11-03T03:11:52+03:00,communication ensembling status submission,1,0,0,1
+sirius_tau_final_solution_shipped.md,sirius,2026-11-03T03:12:55+03:00,communication ensembling status submission,0,0,0,1
+sirius_tau_final_ft5_refresh.md,sirius,2026-11-03T03:14:16+03:00,communication ensembling status submission,1,2,1,1
+dubhe_phi_qa_final5_pass.md,dubhe,2026-11-03T03:23:11+03:00,communication ensembling status submission,1,1,2,1
+sirius_tau_frozen_final.md,sirius,2026-11-03T03:27:40+03:00,communication ensembling status submission,0,1,3,1
+antares_nu_qa_final_pass.md,antares,2026-11-03T03:28:59+03:00,communication status submission,0,0,0,1
+sirius_tau_saturation_confirmed.md,sirius,2026-11-03T03:47:35+03:00,ensembling insight model_selection status,0,0,0,0
+sirius_tau_final_touch_s4242_full.md,sirius,2026-11-03T03:57:12+03:00,ensembling postprocessing status submission,0,0,0,1
+dubhe_phi_qa_final6_pass.md,dubhe,2026-11-03T03:57:23+03:00,communication ensembling status submission,4,0,0,1
+antares_nu_qa_final6_pass.md,antares,2026-11-03T03:59:24+03:00,communication status submission,4,0,0,1
+sirius_tau_consensus_final.md,sirius,2026-11-03T04:07:14+03:00,communication status submission,2,2,1,1
+dubhe_phi_final_audit.md,dubhe,2026-11-03T04:31:28+03:00,communication postprocessing status submission,2,0,0,1
+antares_nu_closing_status.md,antares,2026-11-03T04:32:37+03:00,communication ensembling insight status submission,0,0,0,1
+antares_nu_postproc_negative_result.md,antares,2026-11-03T04:38:28+03:00,insight model_selection postprocessing status,2,0,0,0
+sirius_tau_subset_cv.md,sirius,2026-11-03T04:38:36+03:00,ensembling model_selection status,1,0,0,0
+dubhe_phi_final_phase_confirmation.md,dubhe,2026-11-03T04:46:41+03:00,communication ensembling status submission,0,6,2,1
+sirius_tau_final_phase_confirmed.md,sirius,2026-11-03T04:48:38+03:00,communication status submission,0,3,1,1
+antares_nu_final_phase_confirmed.md,antares,2026-11-03T05:06:22+03:00,communication status submission,0,4,2,1

@@ -1,0 +1,7 @@
+# Зависимости анализа статьи (Python >= 3.10).
+# Установка: python3 -m pip install -r paper/analysis/code/requirements.txt
+matplotlib==3.9.2
+networkx==3.3
+numpy==1.26.4
+requests==2.32.5
+scipy==1.14.1

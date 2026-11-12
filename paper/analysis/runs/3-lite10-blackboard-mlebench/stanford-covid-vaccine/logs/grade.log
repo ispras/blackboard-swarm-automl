@@ -1,0 +1,21 @@
+MLE-bench grade — OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction (`stanford-covid-vaccine`)
+submission: sandbox/final_solution/submission.csv (md5 8a8b736494f36076419401a27cf50e1e)
+metric: multi-class-log-loss (lower is better)
+score: 0.21524
+thresholds: gold 0.34728 | silver 0.35175 | bronze 0.35340 | median 0.36310
+medals: gold=True silver=False bronze=False | above_median=True
+  official mle-bench grade: 0.2152400000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-11-01_08-01-20_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition stanford-covid-vaccine)
+граф доски: 62 записей, 0 артефактов, 1 битых ссылок, 17 тегов, 276 связей (0 — входные, 205 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 62, новых 0, метрик 61, метрика задачи: MCRMSE (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

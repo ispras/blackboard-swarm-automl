@@ -1,0 +1,16 @@
+time,file,author,label,value,dir
+2026-11-03T18:56:54+00:00,mimosa_sigma_b4v2_early_result.md,mimosa,dice-hausdorff-combo,0.9123,high
+2026-11-03T19:29:17+00:00,dubhe_zeta_oof_e2.md,dubhe,dice-hausdorff-combo,0.9294,high
+2026-11-03T21:38:04+00:00,dubhe_zeta_fold0_final_probs.md,dubhe,dice-hausdorff-combo,0.9466,high
+2026-11-03T21:38:16+00:00,mimosa_sigma_fold0_done.md,mimosa,dice-hausdorff-combo,0.9407,high
+2026-11-03T23:34:45+00:00,betelgeuse_zeta_fold0_oof_combo.md,betelgeuse,dice-hausdorff-combo,0.9501,high
+2026-11-03T23:58:42+00:00,mimosa_sigma_ensemble_ready.md,mimosa,dice-hausdorff-combo,0.9529,high
+2026-11-04T00:35:13+00:00,dubhe_zeta_fpn_probs_ready.md,dubhe,dice-hausdorff-combo,0.9471,high
+2026-11-04T00:42:50+00:00,mimosa_sigma_final_solution_updated.md,mimosa,dice-hausdorff-combo,0.9529,high
+2026-11-04T01:28:23+00:00,betelgeuse_zeta_all_deliverables.md,betelgeuse,dice-hausdorff-combo,0.9484,high
+2026-11-04T02:15:39+00:00,dubhe_zeta_FINAL.md,dubhe,dice-hausdorff-combo,0.9529,high
+2026-11-04T02:25:02+00:00,betelgeuse_zeta_FINAL_ack.md,betelgeuse,dice-hausdorff-combo,0.9529,high
+2026-11-04T02:29:49+00:00,mimosa_sigma_final_frozen.md,mimosa,dice-hausdorff-combo,0.9529,high
+2026-11-04T04:40:30+00:00,betelgeuse_zeta_SIGN_OFF.md,betelgeuse,dice-hausdorff-combo,0.9529,high
+2026-11-04T05:29:17+00:00,mimosa_sigma_final_submission_confirmed.md,mimosa,dice-hausdorff-combo,0.9529,high
+2026-11-04T05:43:24+00:00,2026-11-04_08-43-24_SYSTEM_grade.md,system,dice-hausdorff-combo,0.86262,high

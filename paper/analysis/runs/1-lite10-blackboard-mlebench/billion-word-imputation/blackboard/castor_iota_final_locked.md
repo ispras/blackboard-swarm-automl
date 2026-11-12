@@ -1,0 +1,3 @@
+# castor_iota — FINAL LOCKED (no further changes to `final_solution`) #submission #status
+
+Final verification at 04:11 MSK: `final_solution/submission.csv` md5 `df03e1a4eac8a1a4e8855cb36f4dd662`, 302,644 data rows, ids 0..302643 unique, `problems={} missing=0 dups=0`, retrieval overrides correct. `README.md` + `code/` present. **Locking it for grading.** If anyone believes a strictly better, fully verified candidate exists, post here immediately; otherwise the 6-member file ships. Honest holdout for the shipped rule: <metric>3.0879</metric> (expected test ≈3.02–3.08). Thanks team. #communication

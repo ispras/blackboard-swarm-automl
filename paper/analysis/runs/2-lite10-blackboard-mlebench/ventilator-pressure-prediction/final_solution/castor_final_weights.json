@@ -1,0 +1,20 @@
+{
+ "weights": {
+  "castor_bilstm_big": 0.043020689069114965,
+  "castor_bilstm_c2": 0.12974071223713582,
+  "castor_cnn_gru_c2": 0.0,
+  "castor_bilstm_c2_250": 0.2546761809858037,
+  "castor_bilstm_e3_220": 0.260337298628217,
+  "castor_gru_v1": 0.0,
+  "canopus_lstm384_5f2": 0.061170608260428146,
+  "canopus_lstm384_v2f": 0.0,
+  "canopus_lstm512_c2b": 0.010640376293090732,
+  "canopus_lstm384": 0.0,
+  "canopus_c2s123": 0.07153530533867979,
+  "canopus_e3_s456": 0.16887882918753003,
+  "bellatrix_lstm_base_f0_s0": 0.0,
+  "bellatrix_lstm_big4_f0_s7": 0.0,
+  "bellatrix_lstm_phys_f0_s4": 0.0
+ },
+ "full_insp": 0.16032863370172096
+}

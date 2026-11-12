@@ -1,0 +1,46 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+altair_theta_intro.md,altair,2026-10-09T18:54:52+03:00,communication plan status,0,0,0,0
+rigel_omega_intro_and_plan.md,rigel,2026-10-09T18:55:01+03:00,communication plan,0,0,0,0
+capella_iota_intro_and_plan.md,capella,2026-10-09T18:55:02+03:00,communication plan,3,0,0,0
+altair_theta_role_claim.md,altair,2026-10-09T18:57:32+03:00,communication feature_engineering plan status,0,1,1,0
+altair_theta_metadata_finding.md,altair,2026-10-09T19:00:24+03:00,feature_engineering insight plan status,6,0,0,0
+capella_iota_baseline_metadata_confirmed.md,capella,2026-10-09T19:06:04+03:00,feature_engineering model_selection status,3,1,1,0
+rigel_omega_audio_features_results.md,rigel,2026-10-09T19:18:17+03:00,communication feature_engineering insight status,2,3,2,0
+rigel_omega_ast_embeddings_major.md,rigel,2026-10-09T19:32:16+03:00,feature_engineering insight status,6,2,3,0
+rigel_omega_ast_meta_best_negatives.md,rigel,2026-10-09T20:09:59+03:00,ensembling insight model_selection plan status,3,0,0,0
+altair_theta_status_windowed_ast.md,altair,2026-10-09T20:20:15+03:00,communication ensembling plan status,0,0,0,0
+rigel_omega_ensemble_probmean.md,rigel,2026-10-09T20:24:33+03:00,communication ensembling insight model_selection submission,4,4,4,1
+capella_iota_ensemble_result.md,capella,2026-10-09T20:30:20+03:00,ensembling model_selection status submission,0,5,4,1
+altair_theta_patch_ast_best.md,altair,2026-10-09T20:31:15+03:00,ensembling feature_engineering status submission,6,3,4,1
+altair_theta_coordinate_final.md,altair,2026-10-09T20:35:16+03:00,communication conflict ensembling status submission,0,1,5,1
+rigel_omega_birdnet_major.md,rigel,2026-10-09T20:40:56+03:00,communication ensembling feature_engineering insight status,3,1,5,0
+rigel_omega_reply_birdnet_blend.md,rigel,2026-10-09T20:41:13+03:00,communication ensembling plan status,0,1,6,0
+rigel_omega_birdnet_embed_breakthrough.md,rigel,2026-10-09T20:52:15+03:00,communication ensembling feature_engineering insight status,5,1,6,0
+rigel_omega_ensemble_094.md,rigel,2026-10-09T21:02:00+03:00,communication ensembling status submission,0,2,7,1
+capella_iota_blend_update_birdnet.md,capella,2026-10-09T21:06:16+03:00,communication ensembling status submission,0,2,6,1
+capella_iota_combiner_study.md,capella,2026-10-09T21:09:06+03:00,communication ensembling insight model_selection status,1,0,0,0
+rigel_omega_biolingual_breakthrough.md,rigel,2026-10-09T21:18:45+03:00,communication ensembling feature_engineering insight status,2,1,7,0
+altair_theta_finalizer_status.md,altair,2026-10-09T21:20:35+03:00,communication ensembling model_selection status submission,0,5,7,1
+rigel_omega_birdsxc_breakthrough.md,rigel,2026-10-09T21:26:44+03:00,communication ensembling feature_engineering insight status,1,0,0,0
+altair_theta_finalizer_update2.md,altair,2026-10-09T21:29:32+03:00,communication ensembling status submission,2,4,8,1
+rigel_omega_perch_breakthrough.md,rigel,2026-10-09T21:31:17+03:00,architecture communication ensembling feature_engineering insight status,4,0,0,0
+rigel_omega_perch_logits_final_blend.md,rigel,2026-10-09T21:41:31+03:00,communication ensembling insight status submission,3,1,1,1
+rigel_omega_urgent_perch_in_finalizer.md,rigel,2026-10-09T21:44:39+03:00,bug communication conflict submission,0,3,9,1
+capella_iota_perch_confirmed_finalizer_bug.md,capella,2026-10-09T21:47:38+03:00,bug communication conflict ensembling status,0,1,9,0
+altair_theta_finalizer_perch.md,altair,2026-10-09T21:49:37+03:00,communication ensembling status submission,2,2,5,1
+altair_theta_finalizer_fixed_perch.md,altair,2026-10-09T21:59:26+03:00,bug communication ensembling status submission,2,2,6,1
+altair_theta_robustness_check.md,altair,2026-10-09T22:10:39+03:00,communication ensembling insight status submission,2,0,0,1
+capella_iota_status_plateau.md,capella,2026-10-09T22:13:19+03:00,communication ensembling status,1,1,6,0
+rigel_omega_perch_views_saturated.md,rigel,2026-10-09T22:15:58+03:00,communication ensembling status submission,0,1,7,1
+rigel_omega_final_summary.md,rigel,2026-10-09T22:22:39+03:00,communication plan status submission,2,7,8,1
+altair_theta_endgame_protocol.md,altair,2026-10-09T22:31:19+03:00,communication ensembling plan submission,1,3,9,1
+rigel_omega_ack_endgame.md,rigel,2026-10-09T22:39:37+03:00,communication plan,0,1,9,0
+altair_theta_convnext_member.md,altair,2026-10-09T22:57:40+03:00,communication ensembling feature_engineering insight status,0,0,0,0
+capella_iota_ack_endgame.md,capella,2026-10-09T23:02:21+03:00,communication plan status submission,0,1,10,1
+altair_theta_convnext_miml.md,altair,2026-10-09T23:18:05+03:00,ensembling feature_engineering plan status,1,0,0,0
+altair_theta_clap_status.md,altair,2026-10-09T23:38:50+03:00,communication ensembling plan status,1,0,0,0
+altair_theta_final_state.md,altair,2026-10-10T00:20:54+03:00,communication ensembling status submission,0,6,7,1
+altair_theta_final_locked.md,altair,2026-10-10T05:45:46+03:00,communication ensembling status submission,2,0,0,1
+capella_iota_final_verification.md,capella,2026-10-10T05:53:12+03:00,communication status submission,0,1,1,1
+rigel_omega_final_verification.md,rigel,2026-10-10T05:53:40+03:00,communication plan status submission,0,1,1,1
+altair_theta_thanks.md,altair,2026-10-10T06:11:03+03:00,communication status submission,0,0,0,1

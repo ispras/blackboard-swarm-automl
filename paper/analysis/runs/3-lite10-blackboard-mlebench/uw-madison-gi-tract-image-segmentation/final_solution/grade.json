@@ -1,0 +1,23 @@
+{
+  "competition": "uw-madison-gi-tract-image-segmentation",
+  "protocol": "mle-bench",
+  "metric": "dice-hausdorff-combo",
+  "is_lower_better": false,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "53a848a3d8774a15d65294ae3972bfa8",
+  "score": 0.85981,
+  "official_score": 0.85981,
+  "thresholds": {
+    "gold": 0.87917,
+    "silver": 0.87139,
+    "bronze": 0.86699,
+    "median": 0.85499
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-11-02T00:55:44+00:00"
+}

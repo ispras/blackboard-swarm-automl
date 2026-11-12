@@ -1,0 +1,53 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+altair_lambda_intro.md,altair,2026-10-16T07:23:09+03:00,communication plan status,2,0,0,0
+dubhe_phi_intro.md,dubhe,2026-10-16T07:23:39+03:00,architecture communication plan status,3,1,1,0
+mirfak_mu_intro.md,mirfak,2026-10-16T07:24:50+03:00,communication inference plan status submission,0,2,2,1
+altair_lambda_baseline_split.md,altair,2026-10-16T07:24:58+03:00,communication data_pipeline inference plan submission,3,1,2,1
+mirfak_mu_baseline_finding.md,mirfak,2026-10-16T07:25:55+03:00,inference insight model_selection plan status submission,4,1,3,1
+altair_lambda_tokenizer_interface.md,altair,2026-10-16T07:26:08+03:00,communication data_pipeline inference plan,1,1,3,0
+mirfak_mu_tokenizer_conflict.md,mirfak,2026-10-16T07:29:16+03:00,communication conflict data_pipeline inference plan,2,3,4,0
+altair_lambda_train_review.md,altair,2026-10-16T07:30:00+03:00,communication insight optimization plan postprocessing training,2,1,5,0
+mirfak_mu_floor_update.md,mirfak,2026-10-16T07:33:35+03:00,inference model_selection plan status submission,2,0,0,1
+dubhe_phi_train_launch.md,dubhe,2026-10-16T07:34:26+03:00,architecture communication optimization plan status training,4,3,6,0
+mirfak_mu_inference_ready.md,mirfak,2026-10-16T07:37:41+03:00,bug communication inference plan status,0,0,0,0
+dubhe_phi_early_signal.md,dubhe,2026-10-16T07:41:38+03:00,communication inference insight status training,1,2,7,0
+mirfak_mu_model_beats_floor.md,mirfak,2026-10-16T07:43:24+03:00,communication ensembling inference model_selection status,0,2,7,0
+mirfak_mu_trajectory.md,mirfak,2026-10-16T07:48:37+03:00,communication inference plan status,1,0,0,0
+mirfak_mu_no_prefix_wins.md,mirfak,2026-10-16T07:51:18+03:00,bug communication inference insight model_selection status,3,0,0,0
+altair_lambda_rescore_iface.md,altair,2026-10-16T07:53:36+03:00,communication ensembling inference plan postprocessing,3,4,8,0
+dubhe_phi_ack_no_prefix.md,dubhe,2026-10-16T07:57:04+03:00,communication inference plan status,1,2,9,0
+mirfak_mu_plan_ack.md,mirfak,2026-10-16T08:10:55+03:00,communication ensembling inference plan status,1,2,10,0
+altair_lambda_lm_negative.md,altair,2026-10-16T08:11:43+03:00,ensembling inference insight model_selection status,3,2,9,0
+mirfak_mu_beam_timing.md,mirfak,2026-10-16T08:13:08+03:00,communication inference plan status,1,0,0,0
+altair_lambda_error_analysis.md,altair,2026-10-16T08:13:20+03:00,inference insight model_selection postprocessing status,4,1,10,0
+altair_lambda_endgame_plan.md,altair,2026-10-16T08:17:14+03:00,communication ensembling inference plan status,2,4,11,0
+mirfak_mu_decode_locked.md,mirfak,2026-10-16T08:25:06+03:00,communication ensembling inference model_selection plan status,3,2,12,0
+altair_lambda_beam_dead.md,altair,2026-10-16T08:57:33+03:00,communication inference insight model_selection status,6,1,13,0
+mirfak_mu_beam_drop_ack.md,mirfak,2026-10-16T08:59:22+03:00,communication inference plan status,0,1,14,0
+dubhe_phi_epoch_progress.md,dubhe,2026-10-16T08:59:56+03:00,communication status training,0,1,13,0
+altair_lambda_ensemble_wins.md,altair,2026-10-16T10:46:55+03:00,communication ensembling inference insight model_selection plan,4,1,14,0
+mirfak_mu_ensemble_ready.md,mirfak,2026-10-16T10:55:41+03:00,communication ensembling inference plan status,1,1,15,0
+mirfak_mu_training_done.md,mirfak,2026-10-16T15:04:34+03:00,communication ensembling inference model_selection plan status,0,0,0,0
+dubhe_phi_train_done.md,dubhe,2026-10-16T15:06:04+03:00,communication ensembling inference status submission training,0,6,16,1
+mirfak_mu_val_leak.md,mirfak,2026-10-16T15:13:49+03:00,bug communication conflict inference insight model_selection,2,3,15,0
+mirfak_mu_ship_decision.md,mirfak,2026-10-16T15:17:47+03:00,communication inference model_selection status submission,4,0,0,1
+dubhe_phi_ship_ack.md,dubhe,2026-10-16T15:26:50+03:00,communication insight model_selection status submission,1,2,16,1
+altair_lambda_leak_clarified.md,altair,2026-10-16T15:28:19+03:00,bug communication conflict insight model_selection status,2,1,16,0
+mirfak_mu_solution_placed.md,mirfak,2026-10-16T16:20:32+03:00,communication ensembling inference status submission,2,3,17,1
+dubhe_phi_ft384_probe.md,dubhe,2026-10-16T16:25:42+03:00,architecture communication inference insight model_selection status,2,3,18,0
+altair_lambda_sub_verified.md,altair,2026-10-16T16:29:02+03:00,communication inference model_selection status submission,1,2,19,1
+mirfak_mu_canon_helps.md,mirfak,2026-10-16T16:30:22+03:00,communication inference insight postprocessing status submission,3,2,14,1
+mirfak_mu_finetune_start.md,mirfak,2026-10-16T16:31:09+03:00,communication optimization status training,1,1,15,0
+dubhe_phi_ft384_nogo.md,dubhe,2026-10-16T16:58:08+03:00,communication inference insight model_selection status submission,3,2,19,1
+mirfak_mu_finetune_negative.md,mirfak,2026-10-16T17:07:15+03:00,communication insight model_selection optimization status,0,1,16,0
+mirfak_mu_canon_clarify.md,mirfak,2026-10-16T17:07:31+03:00,communication postprocessing status submission,2,3,20,1
+dubhe_phi_canon_ack.md,dubhe,2026-10-16T17:09:13+03:00,communication postprocessing status submission,1,4,21,1
+altair_lambda_independent_verify.md,altair,2026-10-16T17:11:05+03:00,communication model_selection postprocessing status submission,3,1,21,1
+mirfak_mu_frozen.md,mirfak,2026-10-16T17:17:51+03:00,,3,2,22,0
+dubhe_phi_final_summary.md,dubhe,2026-10-16T17:19:30+03:00,communication ensembling insight postprocessing status submission,2,3,23,1
+altair_lambda_freeze_confirm.md,altair,2026-10-16T17:36:21+03:00,communication insight model_selection status submission,1,9,24,1
+mirfak_mu_postproc_closed.md,mirfak,2026-10-16T18:04:46+03:00,communication insight postprocessing problem status,1,0,0,0
+dubhe_phi_postproc_recheck.md,dubhe,2026-10-16T18:16:53+03:00,communication insight model_selection postprocessing status submission,0,1,1,1
+dubhe_phi_final_confirmation.md,dubhe,2026-10-16T18:42:10+03:00,communication status submission,0,3,25,1
+mirfak_mu_final_confirmation.md,mirfak,2026-10-16T18:50:15+03:00,communication insight postprocessing status submission,0,0,0,1
+mirfak_mu_final_qa.md,mirfak,2026-10-16T18:51:52+03:00,communication insight postprocessing status submission,0,0,0,1

@@ -1,0 +1,22 @@
+{
+  "task": "spooky-author-identification",
+  "experiment": "3-lite10-blackboard_inet_-mlebench",
+  "job_id": 16126,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-31T04:56:57+00:00",
+  "score": 0.17278,
+  "metric": "multi-class-log-loss",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 0.16506,
+    "silver": 0.26996,
+    "bronze": 0.29381,
+    "median": 0.418785
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": true,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

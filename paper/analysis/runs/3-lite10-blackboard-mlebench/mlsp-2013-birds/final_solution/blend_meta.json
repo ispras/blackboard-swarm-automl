@@ -1,0 +1,28 @@
+{
+ "oof_global_auc": 0.9662476811872321,
+ "per_fold": [
+  0.9567183084867972,
+  0.9597311444206519,
+  0.9695086267783272,
+  0.9869613578314246,
+  0.9580266560572906
+ ],
+ "models": [
+  [
+   "altair_gamma",
+   "lgb_bnall"
+  ],
+  [
+   "pollux_beta",
+   "mil_attn2"
+  ],
+  [
+   "pollux_beta",
+   "dn3_max"
+  ],
+  [
+   "pollux_beta",
+   "mlp_rich_mixup"
+  ]
+ ]
+}

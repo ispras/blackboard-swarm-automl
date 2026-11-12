@@ -1,0 +1,306 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/nfl-player-contact-detection",
+  "label": "nfl-player-contact-detection",
+  "metric": "matthews-correlation-coefficient",
+  "is_lower_better": false,
+  "final_score": 0.75805,
+  "thresholds": {
+    "gold": 0.78167,
+    "silver": 0.72203,
+    "bronze": 0.69652,
+    "median": 0.69139
+  },
+  "messages": {
+    "agent": 51,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 5,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 10,
+    "without_metric": 22,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 51,
+    "edges": 141,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 28,
+    "mean_depth_all": 14.450980392156863,
+    "mean_depth_linked": 15.354166666666666,
+    "longest_path": [
+      "alkaid_psi_final_confirmation.md",
+      "capella_pi_final_confirmation.md",
+      "capella_pi_mixv4_negative.md",
+      "canopus_pi_late_ground_v6.md",
+      "alkaid_psi_final_solution.md",
+      "canopus_pi_window_qa.md",
+      "canopus_pi_final_qa.md",
+      "capella_pi_mix_v3.md",
+      "capella_pi_mix_v2.md",
+      "alkaid_psi_final_schedule.md",
+      "capella_pi_final_ack.md",
+      "alkaid_psi_freeze_ack.md",
+      "canopus_pi_final_sources.md",
+      "capella_pi_mix_refresh.md",
+      "canopus_pi_gru_v2_and_ens_v4.md",
+      "canopus_pi_ground_gru_v2.md",
+      "alkaid_psi_blend3v2_0779.md",
+      "capella_pi_re_blend3_stack_v2.md",
+      "alkaid_psi_blend3_0768.md",
+      "alkaid_psi_ground_cnn_blend_0762.md",
+      "capella_pi_lgbm_v1_and_stack_plan.md",
+      "alkaid_psi_temporal_tta_and_ground.md",
+      "canopus_pi_v2_ensemble.md",
+      "alkaid_psi_cnn_v2_oof.md",
+      "canopus_pi_v1_results.md",
+      "capella_pi_ack_folds_roles.md",
+      "alkaid_psi_intro_video_plan.md",
+      "canopus_pi_ack_split.md",
+      "capella_pi_intro_plan.md"
+    ],
+    "max_indegree": 11,
+    "hubs": [
+      {
+        "name": "canopus_pi_v2_ensemble.md",
+        "agent": "canopus",
+        "in_degree": 11,
+        "depth": 6,
+        "tags": [
+          "ensembling",
+          "feature_engineering",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T09:11:22+03:00"
+      },
+      {
+        "name": "canopus_pi_final_qa.md",
+        "agent": "canopus",
+        "in_degree": 9,
+        "depth": 22,
+        "tags": [
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T16:34:08+03:00"
+      },
+      {
+        "name": "alkaid_psi_final_schedule.md",
+        "agent": "alkaid",
+        "in_degree": 8,
+        "depth": 19,
+        "tags": [
+          "communication",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T14:57:35+03:00"
+      },
+      {
+        "name": "alkaid_psi_07837_and_next.md",
+        "agent": "alkaid",
+        "in_degree": 6,
+        "depth": 13,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status"
+        ],
+        "time": "2026-10-31T11:30:46+03:00"
+      },
+      {
+        "name": "capella_pi_ack_folds_roles.md",
+        "agent": "capella",
+        "in_degree": 5,
+        "depth": 3,
+        "tags": [
+          "communication",
+          "ensembling",
+          "feature_engineering",
+          "model_selection"
+        ],
+        "time": "2026-10-31T08:06:16+03:00"
+      },
+      {
+        "name": "capella_pi_lgbm_v1_and_stack_plan.md",
+        "agent": "capella",
+        "in_degree": 5,
+        "depth": 8,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-10-31T09:35:29+03:00"
+      },
+      {
+        "name": "capella_pi_stack_mix_0784.md",
+        "agent": "capella",
+        "in_degree": 5,
+        "depth": 14,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T12:26:52+03:00"
+      }
+    ],
+    "submission_count": 24,
+    "submission_depths": [
+      6,
+      9,
+      10,
+      11,
+      13,
+      13,
+      14,
+      15,
+      16,
+      17,
+      17,
+      18,
+      18,
+      19,
+      20,
+      20,
+      21,
+      22,
+      24,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "final_submission": {
+      "name": "alkaid_psi_final_confirmation.md",
+      "time": "2026-10-31T19:52:19+03:00",
+      "depth": 28,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 26,
+      "mean": -0.011038461538461532,
+      "median": 0.0,
+      "positive": 0.34615384615384615,
+      "max": 0.011399999999999966
+    },
+    "transitive": {
+      "n": 27,
+      "mean": -0.01269259259259256,
+      "median": -0.006799999999999917,
+      "positive": 0.25925925925925924,
+      "max": 0.011399999999999966
+    },
+    "prev_linked": {
+      "n": 27,
+      "mean": -0.01358888888888886,
+      "median": -0.006799999999999917,
+      "positive": 0.2222222222222222,
+      "max": 0.011399999999999966
+    },
+    "prev_unlinked": {
+      "n": 1,
+      "mean": -0.006799999999999917,
+      "median": -0.006799999999999917,
+      "positive": 0.0,
+      "max": -0.006799999999999917
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 988.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 988.0
+      }
+    },
+    "broad": {
+      "n_events": 9,
+      "direct": {
+        "events": 9,
+        "adopted": 9,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.6666666666666667,
+        "median_seconds": 760.0
+      },
+      "transitive": {
+        "events": 9,
+        "adopted": 9,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.6666666666666667,
+        "median_seconds": 760.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 7,
+      "direct": {
+        "events": 7,
+        "adopted": 7,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.7142857142857142,
+        "median_seconds": 1679.0
+      },
+      "transitive": {
+        "events": 7,
+        "adopted": 7,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.7142857142857142,
+        "median_seconds": 1679.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 0,
+    "direct": {
+      "events": 0,
+      "recovered": 0,
+      "rate": null,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 0,
+      "recovered": 0,
+      "rate": null,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "problem_authors": {},
+    "recovery_authors": {}
+  }
+}

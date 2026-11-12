@@ -1,0 +1,316 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/bms-molecular-translation",
+  "label": "bms-molecular-translation",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "final_score": 2.4962,
+  "thresholds": {
+    "gold": 0.62,
+    "silver": 1.37,
+    "bronze": 1.99,
+    "median": 5.58
+  },
+  "messages": {
+    "agent": 52,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 1,
+    "without_metric": 26,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 52,
+    "edges": 91,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 25,
+    "mean_depth_all": 9.923076923076923,
+    "mean_depth_linked": 12.585365853658537,
+    "longest_path": [
+      "dubhe_phi_final_confirmation.md",
+      "altair_lambda_freeze_confirm.md",
+      "dubhe_phi_final_summary.md",
+      "mirfak_mu_frozen.md",
+      "dubhe_phi_canon_ack.md",
+      "mirfak_mu_canon_clarify.md",
+      "dubhe_phi_ft384_nogo.md",
+      "dubhe_phi_ft384_probe.md",
+      "mirfak_mu_solution_placed.md",
+      "dubhe_phi_ship_ack.md",
+      "mirfak_mu_val_leak.md",
+      "altair_lambda_ensemble_wins.md",
+      "altair_lambda_beam_dead.md",
+      "mirfak_mu_decode_locked.md",
+      "altair_lambda_endgame_plan.md",
+      "altair_lambda_error_analysis.md",
+      "altair_lambda_lm_negative.md",
+      "altair_lambda_rescore_iface.md",
+      "dubhe_phi_early_signal.md",
+      "dubhe_phi_train_launch.md",
+      "altair_lambda_train_review.md",
+      "mirfak_mu_tokenizer_conflict.md",
+      "altair_lambda_tokenizer_interface.md",
+      "altair_lambda_baseline_split.md",
+      "dubhe_phi_intro.md",
+      "altair_lambda_intro.md"
+    ],
+    "max_indegree": 6,
+    "hubs": [
+      {
+        "name": "altair_lambda_beam_dead.md",
+        "agent": "altair",
+        "in_degree": 6,
+        "depth": 13,
+        "tags": [
+          "communication",
+          "inference",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-16T08:57:33+03:00"
+      },
+      {
+        "name": "mirfak_mu_baseline_finding.md",
+        "agent": "mirfak",
+        "in_degree": 4,
+        "depth": 3,
+        "tags": [
+          "inference",
+          "insight",
+          "model_selection",
+          "plan",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-16T07:25:55+03:00"
+      },
+      {
+        "name": "dubhe_phi_train_launch.md",
+        "agent": "dubhe",
+        "in_degree": 4,
+        "depth": 6,
+        "tags": [
+          "architecture",
+          "communication",
+          "optimization",
+          "plan",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-16T07:34:26+03:00"
+      },
+      {
+        "name": "altair_lambda_error_analysis.md",
+        "agent": "altair",
+        "in_degree": 4,
+        "depth": 10,
+        "tags": [
+          "inference",
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-10-16T08:13:20+03:00"
+      },
+      {
+        "name": "altair_lambda_ensemble_wins.md",
+        "agent": "altair",
+        "in_degree": 4,
+        "depth": 14,
+        "tags": [
+          "communication",
+          "ensembling",
+          "inference",
+          "insight",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-16T10:46:55+03:00"
+      },
+      {
+        "name": "mirfak_mu_ship_decision.md",
+        "agent": "mirfak",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "inference",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-16T15:17:47+03:00"
+      },
+      {
+        "name": "dubhe_phi_intro.md",
+        "agent": "dubhe",
+        "in_degree": 3,
+        "depth": 1,
+        "tags": [
+          "architecture",
+          "communication",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-16T07:23:39+03:00"
+      }
+    ],
+    "submission_count": 20,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      2,
+      3,
+      14,
+      16,
+      16,
+      17,
+      19,
+      19,
+      20,
+      21,
+      21,
+      23,
+      24,
+      25
+    ],
+    "final_submission": {
+      "name": "mirfak_mu_final_qa.md",
+      "time": "2026-10-16T18:51:52+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 16,
+      "mean": 4.275250000000001,
+      "median": 0.023500000000000076,
+      "positive": 0.5625,
+      "max": 42.68000000000001
+    },
+    "transitive": {
+      "n": 18,
+      "mean": 2.9726666666666666,
+      "median": 0.11149999999999993,
+      "positive": 0.6111111111111112,
+      "max": 12.120000000000001
+    },
+    "prev_linked": {
+      "n": 19,
+      "mean": 1.3343684210526319,
+      "median": 0.0,
+      "positive": 0.47368421052631576,
+      "max": 12.120000000000001
+    },
+    "prev_unlinked": {
+      "n": 6,
+      "mean": 4.487833333333333,
+      "median": 1.9044999999999985,
+      "positive": 0.6666666666666666,
+      "max": 12.530000000000001
+    },
+    "perm_prev": {
+      "diff": -3.153464912280701,
+      "p": 0.23097690230976903
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 9,
+      "direct": {
+        "events": 9,
+        "adopted": 8,
+        "rate": 0.8888888888888888,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.625,
+        "median_seconds": 622.0
+      },
+      "transitive": {
+        "events": 9,
+        "adopted": 9,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 2.5555555555555554,
+        "median_seconds": 718.0
+      }
+    },
+    "broad": {
+      "n_events": 13,
+      "direct": {
+        "events": 13,
+        "adopted": 9,
+        "rate": 0.6923076923076923,
+        "median_msgs": 2,
+        "mean_msgs": 2.5555555555555554,
+        "median_seconds": 706.0
+      },
+      "transitive": {
+        "events": 13,
+        "adopted": 10,
+        "rate": 0.7692307692307693,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.5,
+        "median_seconds": 712.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 14,
+      "direct": {
+        "events": 14,
+        "adopted": 12,
+        "rate": 0.8571428571428571,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.9166666666666665,
+        "median_seconds": 534.5
+      },
+      "transitive": {
+        "events": 14,
+        "adopted": 13,
+        "rate": 0.9285714285714286,
+        "median_msgs": 2,
+        "mean_msgs": 2.8461538461538463,
+        "median_seconds": 543.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 6,
+    "direct": {
+      "events": 6,
+      "recovered": 5,
+      "rate": 0.8333333333333334,
+      "median_msgs": 1,
+      "median_seconds": 781.0,
+      "different_author": 5
+    },
+    "transitive": {
+      "events": 6,
+      "recovered": 5,
+      "rate": 0.8333333333333334,
+      "median_msgs": 1,
+      "median_seconds": 781.0,
+      "different_author": 5
+    },
+    "problem_authors": {
+      "mirfak": 5,
+      "altair": 1
+    },
+    "recovery_authors": {
+      "altair": 1,
+      "dubhe": 3,
+      "mirfak": 1
+    }
+  }
+}

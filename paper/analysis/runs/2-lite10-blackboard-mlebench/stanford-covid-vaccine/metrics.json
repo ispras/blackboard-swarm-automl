@@ -1,0 +1,23 @@
+{
+  "competition": "stanford-covid-vaccine",
+  "protocol": "mle-bench",
+  "metric": "MCRMSE",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "81a4105006365177f84d660b4e8eee5d",
+  "score": 0.20776,
+  "official_score": 0.20776,
+  "thresholds": {
+    "gold": 0.34728,
+    "silver": 0.35175,
+    "bronze": 0.3534,
+    "median": 0.363095
+  },
+  "flags": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-10-22T15:15:22+00:00"
+}

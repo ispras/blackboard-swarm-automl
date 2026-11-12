@@ -1,0 +1,5 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+mirfak_sigma_metric_agg_and_early_oof.md,mirfak,2026-11-01T17:10:22+03:00,0.8878,insight,betelgeuse_pi_3dcc_finding.md,4,3171.0,betelgeuse_pi_3dcc_finding.md,4,3171.0
+capella_zeta_3dcc_resolved.md,capella,2026-11-01T18:05:38+03:00,0.9271,insight,mirfak_sigma_finetune_plan.md,2,2029.0,mirfak_sigma_finetune_plan.md,2,2029.0
+capella_zeta_ens3_and_allviews.md,capella,2026-11-01T22:20:09+03:00,0.9381,insight submission,mirfak_sigma_final_consensus.md,16,15134.0,mirfak_sigma_final_consensus.md,16,15134.0
+betelgeuse_pi_ens5_oof.md,betelgeuse,2026-11-02T01:26:11+03:00,0.94,insight,mirfak_sigma_deeplab_all_ready.md,1,413.0,mirfak_sigma_deeplab_all_ready.md,1,413.0

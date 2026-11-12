@@ -1,0 +1,65 @@
+[
+ {
+  "name": "mit",
+  "val_probs": "preds/mitb3_f0_val_tta4_probs.npy",
+  "val_ids": "preds/mitb3_f0_val_tta4_ids.csv",
+  "test_probs": "preds/mitb3_f0_test_tta4_probs.npy",
+  "test_ids": "preds/mitb3_f0_test_tta4_ids.csv"
+ },
+ {
+  "name": "unetpp",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_test_ids.csv"
+ },
+ {
+  "name": "b4",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_test_ids.csv"
+ },
+ {
+  "name": "b4_5s",
+  "val_probs": "preds/b4_5s_val_tta4_probs.npy",
+  "val_ids": "preds/b4_5s_val_tta4_ids.csv",
+  "test_probs": "preds/b4_5s_test_tta4_probs.npy",
+  "test_ids": "preds/b4_5s_test_tta4_ids.csv"
+ },
+ {
+  "name": "deeplab",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/deeplab_b3_f0_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/deeplab_b3_f0_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/deeplab_b3_f0_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/deeplab_b3_f0_test_ids.csv"
+ },
+ {
+  "name": "b5",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b5_f0_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b5_f0_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b5_f0_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b5_f0_test_ids.csv"
+ },
+ {
+  "name": "mit_all",
+  "val_probs": "preds/mitb3_f0_val_tta4_probs.npy",
+  "val_ids": "preds/mitb3_f0_val_tta4_ids.csv",
+  "test_probs": "preds/mitb3_all_test_tta4_probs.npy",
+  "test_ids": "preds/mitb3_all_test_tta4_ids.csv"
+ },
+ {
+  "name": "unetpp_all",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_f0_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_all_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/mirfak_sigma/oof/unetpp_b3_all_test_ids.csv"
+ },
+ {
+  "name": "b4_all",
+  "val_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_val_probs.npy",
+  "val_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/final_b4_val_ids.csv",
+  "test_probs": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b4_all_test_probs.npy",
+  "test_ids": "/download_job_code/payload/sandbox/workspaces/betelgeuse_pi/out/b4_all_test_ids.csv"
+ }
+]

@@ -1,0 +1,23 @@
+{
+  "competition": "bms-molecular-translation",
+  "protocol": "mle-bench",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "b5b6a24cb5c29b4830a3f8e9a69a005f",
+  "score": 1.52309,
+  "official_score": 1.52309,
+  "thresholds": {
+    "gold": 0.62,
+    "silver": 1.37,
+    "bronze": 1.99,
+    "median": 5.58
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": true,
+    "above_median": true
+  },
+  "graded_at": "2026-10-22T13:57:24+00:00"
+}

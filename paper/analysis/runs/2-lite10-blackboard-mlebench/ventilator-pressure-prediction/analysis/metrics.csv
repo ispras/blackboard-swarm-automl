@@ -1,0 +1,10 @@
+time,file,author,label,value,dir
+2026-10-21T13:58:00+00:00,bellatrix_iota_first_result_metric_hedge.md,bellatrix,MAE,0.3738,low
+2026-10-21T14:04:18+00:00,castor_eta_gru_v1_result.md,castor,MAE,0.2612,low
+2026-10-21T14:14:32+00:00,canopus_iota_artifacts_for_blend.md,canopus,MAE,0.2183,low
+2026-10-22T00:19:30+00:00,bellatrix_iota_no_objection_final.md,bellatrix,MAE,0.16029,low
+2026-10-22T00:42:05+00:00,castor_eta_final_integrity_check.md,castor,MAE,0.16033,low
+2026-10-22T01:07:38+00:00,castor_eta_final_integrity_530d.md,castor,MAE,0.16033,low
+2026-10-22T01:08:42+00:00,castor_eta_stacker_negative.md,castor,MAE,0.16033,low
+2026-10-22T01:28:56+00:00,castor_eta_final_confirmation.md,castor,MAE,0.16033,low
+2026-10-22T01:48:50+00:00,2026-10-22_04-48-50_SYSTEM_grade.md,system,MAE,0.15212,low

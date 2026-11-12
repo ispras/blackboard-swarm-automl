@@ -1,0 +1,57 @@
+{
+  "members": [
+    "achernar_convnext",
+    "capella_swin",
+    "capella_swin_mix",
+    "capella_vit",
+    "capella_vit_mix",
+    "capella_beit_mix",
+    "capella_xcit_mix",
+    "arcturus_v2s_best",
+    "arcturus_v2m480",
+    "arcturus_cvnxb",
+    "arcturus_effb4"
+  ],
+  "n_members": 11,
+  "fold0_arith_acc_subset": 0.9012016021361816,
+  "fold0_members": [
+    "achernar_convnext",
+    "capella_swin",
+    "capella_swin_mix",
+    "capella_vit",
+    "capella_vit_mix",
+    "capella_beit_mix",
+    "capella_xcit_mix",
+    "arcturus_v2s_best",
+    "arcturus_v2m480",
+    "arcturus_cvnxb",
+    "arcturus_effb4"
+  ],
+  "single_achernar_convnext": 0.895060080106809,
+  "single_capella_swin": 0.891588785046729,
+  "single_capella_swin_mix": 0.8889185580774366,
+  "single_capella_vit": 0.8897196261682243,
+  "single_capella_vit_mix": 0.8942590120160213,
+  "single_capella_beit_mix": 0.8883845126835781,
+  "single_capella_xcit_mix": 0.8883845126835781,
+  "single_arcturus_v2s_best": 0.891588785046729,
+  "single_arcturus_v2m480": 0.8873164218958611,
+  "single_arcturus_cvnxb": 0.892656875834446,
+  "single_arcturus_effb4": 0.879305740987984,
+  "submission_md5": "e32f8872453c714315ec0d346409a01d",
+  "nan_fix": {
+    "issue": "arcturus_effb4 test_probs_2fold.npy had NaN (rows 1436,1897) -> final argmax returned 0 for those rows",
+    "fix": "filled NaN rows with per-image mean of the other 10 members; re-averaged (equal arithmetic)",
+    "labels_changed": 1,
+    "changed": [
+      {
+        "image_id": "2441927798.jpg",
+        "row": 1436,
+        "before": 0,
+        "after": 4
+      }
+    ],
+    "sanitized_member": "workspaces/capella_kappa/effb4_512/test_probs_nanfixed.npy",
+    "applied_by": "capella_kappa"
+  }
+}

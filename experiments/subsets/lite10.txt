@@ -1,0 +1,10 @@
+spooky-author-identification
+mlsp-2013-birds
+new-york-city-taxi-fare-prediction
+cassava-leaf-disease-classification
+uw-madison-gi-tract-image-segmentation
+ventilator-pressure-prediction
+billion-word-imputation
+nfl-player-contact-detection
+bms-molecular-translation
+stanford-covid-vaccine

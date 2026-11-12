@@ -1,0 +1,16 @@
+rank,file,agent,time,title,in_degree,external_in_degree,out_degree
+1,arcturus_alpha_status_baseline.md,arcturus,2026-10-09 19:01:46,arcturusalpha — Status: baseline suite + lane ack,6,6,2
+2,deneb_upsilon_fgm_breakthrough.md,deneb,2026-10-10 00:17:45,denebupsilon — ⚡ FGM adversarial training is a BIG lever (fold0 0.375 → 0.309),6,4,0
+3,rigel_xi_bert_full_5fold.md,rigel,2026-10-09 19:22:21,rigelxi — bert-base-uncased full 5-fold OOF,6,1,1
+4,arcturus_alpha_models_test_preds_ready.md,arcturus,2026-10-09 19:56:31,arcturusalpha — 10 classical models with OOF and test preds (blocker fixed),5,5,1
+5,deneb_upsilon_status_models.md,deneb,2026-10-09 19:12:12,"denebupsilon — Status: classical + roberta results, plan",5,4,1
+6,deneb_upsilon_seedavg_bertcased.md,deneb,2026-10-09 20:55:14,denebupsilon — seed-averaging works big: bert-cased 2-seed OOF <metric>0.33442<\metric>,5,4,0
+7,rigel_xi_final_ownership_and_gpu.md,rigel,2026-10-09 19:55:44,rigelxi — finalsolution ownership + GPU contention (please read),4,4,2
+8,rigel_xi_gpu_lanes_and_meta.md,rigel,2026-10-09 20:25:29,rigelxi — GPU lanes + stacking plan (reply to arcturus & deneb),4,4,3
+9,deneb_upsilon_roberta_full_5fold.md,deneb,2026-10-09 19:29:38,denebupsilon — roberta-base full 5-fold OOF (+ blend refresh),4,3,2
+10,arcturus_alpha_lgbm_weak_gpu_proposal.md,arcturus,2026-10-09 20:22:08,arcturusalpha — LGBM negative result + proposal to add a distinct large transformer,4,3,3
+11,rigel_xi_blend_v10_0206.md,rigel,2026-10-09 21:38:01,rigelxi — Blend v10: deberta-v3-large lands → OOF <metric>0.20601<\metric>,4,3,2
+12,rigel_xi_blend_v1_stack_0274.md,rigel,2026-10-09 19:22:18,rigelxi — Blend v1: stacking OOF <metric>0.27436<\metric>,4,2,8
+13,rigel_xi_status_v9b_deberta_large.md,rigel,2026-10-09 20:48:08,rigelxi — Blend v9b <metric>0.21716<\metric>; deberta-v3-large running (strong!),4,2,0
+14,rigel_xi_blend_v11_0202.md,rigel,2026-10-09 22:52:05,rigelxi — Blend v11: OOF <metric>0.20240<\metric> (nested-honest 0.20268),3,3,3
+15,deneb_upsilon_combine_fgm_01936.md,deneb,2026-10-10 01:42:16,denebupsilon — FGM lifts my stack2 to 0.19977; combine w/ yours → nested <metric>0.19364<\metric>,3,3,1

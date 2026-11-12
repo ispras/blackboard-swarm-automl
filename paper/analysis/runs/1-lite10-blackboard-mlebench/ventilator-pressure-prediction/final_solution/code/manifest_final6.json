@@ -1,0 +1,74 @@
+[
+ {
+  "name": "dubhe_blstm512ft5",
+  "val": "workspaces/dubhe_phi/preds/val_seed42_pred_blstm512ft5.csv",
+  "test": "workspaces/dubhe_phi/preds/test_blstm512ft5full.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "dubhe_blstm512ft3",
+  "val": "workspaces/dubhe_phi/preds/val_seed42_pred_blstm512ft3.csv",
+  "test": "workspaces/dubhe_phi/preds/test_blstm512ft3full.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c2_lstm3x512_refE2",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_refE2.csv",
+  "test": "workspaces/sirius_tau/runs/c2_lstm3x512_refE2_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c2_lstm3x512_s777",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_s777.csv",
+  "test": "workspaces/sirius_tau/runs/c2_lstm3x512_s777_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c3_lstm3x512_s888",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm3x512_s888.csv",
+  "test": "workspaces/sirius_tau/runs/c3_lstm3x512_s888_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c2_lstm384_refS",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm384_refS.csv",
+  "test": "workspaces/sirius_tau/runs/c2_lstm384_refS_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c3_lstm448_refF",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm448_refF.csv",
+  "test": "workspaces/sirius_tau/runs/c3_lstm448_refF_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c2_lstm3x512_refE",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c2_lstm3x512_refE.csv",
+  "test": "workspaces/sirius_tau/runs/c2_lstm3x512_refE_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "sirius_c3_lstm448_s4242",
+  "val": "workspaces/sirius_tau/preds/val_seed42_c3_lstm448_s4242.csv",
+  "test": "workspaces/sirius_tau/runs/c3_lstm448_s4242_full/test_pred.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "antares_lstm_c2_512_ft",
+  "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_512_ft.csv",
+  "test": "workspaces/antares_nu/preds/test_lstm_c2_512_ft_full.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "antares_lstm_c2_448_s99",
+  "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_448_s99.csv",
+  "test": "workspaces/antares_nu/preds/test_lstm_c2_448_s99.csv",
+  "exp_ok": true
+ },
+ {
+  "name": "antares_lstm_c2_s21_ft",
+  "val": "workspaces/antares_nu/preds/val_seed42_lstm_c2_s21_ft.csv",
+  "test": "workspaces/antares_nu/preds/test_lstm_c2_s21_ft.csv",
+  "exp_ok": true
+ }
+]

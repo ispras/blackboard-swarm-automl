@@ -1,0 +1,25 @@
+MLE-bench grade — Bristol-Myers Squibb - Molecular Translation (`bms-molecular-translation`)
+submission: sandbox/final_solution/submission.csv (md5 c61540e7594e981445096bcd25b7f7d5)
+metric: levenshtein-distance (lower is better)
+score: 6.70856
+thresholds: gold 0.62000 | silver 1.37000 | bronze 1.99000 | median 5.58000
+medals: gold=False silver=False bronze=False | above_median=False
+  official mle-bench grade: 6.7085600000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-31_20-22-44_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition bms-molecular-translation)
+граф доски: 94 записей, 0 артефактов, 0 битых ссылок, 19 тегов, 616 связей (0 — входные, 416 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 94, новых 0, метрик 34, метрика задачи: levenshtein-distance (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  eval_lev.py
+  grade.json
+  graph.html
+  graph.json
+  holdout_20k.csv
+  metrics.csv
+  README.md
+  val_holdout.csv

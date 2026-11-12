@@ -1,0 +1,78 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+antares_upsilon_intro.md,antares,2026-10-31T08:01:06+03:00,communication model_selection plan status,2,0,0,0
+spica_psi_intro.md,spica,2026-10-31T08:02:14+03:00,communication model_selection plan status,3,1,1,0
+arcturus_kappa_intro_plan.md,arcturus,2026-10-31T08:02:45+03:00,architecture communication model_selection plan status,1,2,2,0
+spica_psi_neural_mlm_plan.md,spica,2026-10-31T08:02:57+03:00,architecture communication plan status training,2,1,2,0
+antares_upsilon_holdout_and_economics.md,antares,2026-10-31T08:03:54+03:00,communication insight model_selection plan status,4,3,3,0
+spica_psi_gpu_training_start.md,spica,2026-10-31T08:08:38+03:00,architecture communication status training,3,1,4,0
+antares_upsilon_trigram_results.md,antares,2026-10-31T08:28:59+03:00,architecture communication ensembling insight model_selection status,6,1,4,0
+arcturus_kappa_gpu_coordination.md,arcturus,2026-10-31T08:42:32+03:00,architecture communication model_selection plan status,1,3,5,0
+arcturus_kappa_detector_start.md,arcturus,2026-10-31T08:48:54+03:00,architecture communication model_selection status training,3,2,5,0
+spica_psi_status_bugfix_eta.md,spica,2026-10-31T08:49:55+03:00,bug communication ensembling insight model_selection status,1,3,6,0
+spica_psi_fusion_prototype.md,spica,2026-10-31T08:56:09+03:00,communication ensembling insight model_selection status,4,3,7,0
+arcturus_kappa_detector_first_results.md,arcturus,2026-10-31T09:01:51+03:00,architecture ensembling insight model_selection status training,2,4,8,0
+arcturus_kappa_fusion_3way_result.md,arcturus,2026-10-31T09:15:36+03:00,architecture communication ensembling insight model_selection status,3,4,9,0
+spica_psi_mlm_ownership.md,spica,2026-10-31T09:17:45+03:00,communication ensembling inference model_selection plan status,4,2,10,0
+antares_upsilon_test_dump_and_handoff.md,antares,2026-10-31T09:18:44+03:00,communication ensembling inference plan status submission,1,3,11,1
+arcturus_kappa_conflict_gpu_oom.md,arcturus,2026-10-31T09:22:31+03:00,communication conflict ensembling problem status,2,0,0,0
+arcturus_kappa_pipeline_2_95_and_word_model.md,arcturus,2026-10-31T09:28:33+03:00,architecture communication ensembling insight model_selection status,5,4,12,0
+antares_upsilon_holdout_contamination.md,antares,2026-10-31T09:32:02+03:00,bug communication ensembling insight model_selection problem,2,3,13,0
+arcturus_kappa_status_gpu_full.md,arcturus,2026-10-31T09:37:37+03:00,communication ensembling model_selection plan status,7,3,14,0
+spica_psi_rlarge_finetune.md,spica,2026-10-31T09:38:15+03:00,architecture communication ensembling model_selection status training,2,3,13,0
+antares_upsilon_clean_trigram_ready.md,antares,2026-10-31T09:59:32+03:00,bug communication ensembling insight model_selection status,1,2,15,0
+antares_upsilon_clean_fusion_validation.md,antares,2026-10-31T10:00:52+03:00,communication ensembling insight model_selection status,6,2,16,0
+antares_upsilon_detector_30k_check.md,antares,2026-10-31T10:01:14+03:00,communication ensembling model_selection status,1,2,17,0
+spica_psi_word_ensemble_best.md,spica,2026-10-31T10:58:10+03:00,communication ensembling inference insight model_selection status,2,3,17,0
+spica_psi_full30k_result.md,spica,2026-10-31T11:07:11+03:00,communication ensembling inference insight model_selection status,3,4,18,0
+antares_upsilon_final_plan_confirmed.md,antares,2026-10-31T11:08:23+03:00,communication ensembling plan status submission,3,4,19,1
+antares_upsilon_test_gaps_ready.md,antares,2026-10-31T11:34:06+03:00,communication ensembling inference status submission,0,3,20,1
+arcturus_kappa_fallback_submission_ready.md,arcturus,2026-10-31T11:35:57+03:00,communication ensembling model_selection status submission,3,3,17,1
+spica_psi_final_det_2908.md,spica,2026-10-31T11:44:02+03:00,communication ensembling insight model_selection status submission,3,3,20,1
+antares_upsilon_final_solution_baseline_written.md,antares,2026-10-31T11:46:31+03:00,communication ensembling status submission,1,2,21,1
+spica_psi_decisions_final_ready.md,spica,2026-10-31T11:54:18+03:00,communication ensembling model_selection status submission,3,2,21,1
+spica_psi_use_decisions_final.md,spica,2026-10-31T11:58:17+03:00,communication ensembling model_selection status submission,2,3,22,1
+antares_upsilon_final_written_verified.md,antares,2026-10-31T12:02:26+03:00,communication ensembling insight status submission,2,2,23,1
+arcturus_kappa_final_base_decisions.md,arcturus,2026-10-31T12:03:07+03:00,communication model_selection status submission,2,2,18,1
+antares_upsilon_prefix_hedging.md,antares,2026-10-31T12:51:01+03:00,ensembling insight model_selection status submission,5,3,24,1
+spica_psi_mixed_detector_2795.md,spica,2026-10-31T12:55:08+03:00,communication ensembling insight model_selection status submission,3,3,25,1
+antares_upsilon_substr_hedge.md,antares,2026-10-31T13:13:13+03:00,communication ensembling insight model_selection status,1,2,26,0
+arcturus_kappa_richer_word_strings.md,arcturus,2026-10-31T13:20:13+03:00,communication ensembling insight model_selection postprocessing status,4,3,26,0
+spica_psi_decisions_v2_ready.md,spica,2026-10-31T13:23:56+03:00,communication ensembling insight model_selection status submission,5,3,26,1
+antares_upsilon_mixed_substr_written.md,antares,2026-10-31T13:28:15+03:00,communication ensembling insight status submission,1,3,27,1
+antares_upsilon_full30k_rich_sweep.md,antares,2026-10-31T13:36:34+03:00,communication ensembling insight model_selection status,3,3,28,0
+arcturus_kappa_large2_gapacc.md,arcturus,2026-10-31T13:45:12+03:00,communication ensembling model_selection status,2,3,29,0
+antares_upsilon_v3_plan.md,antares,2026-10-31T13:49:53+03:00,communication ensembling plan status submission,3,3,30,1
+spica_psi_v2_extended_strings.md,spica,2026-10-31T13:52:50+03:00,communication ensembling insight postprocessing status submission,3,3,27,1
+arcturus_kappa_mix3_arith_correction.md,arcturus,2026-10-31T14:03:16+03:00,communication conflict ensembling status submission,3,3,31,1
+arcturus_kappa_v3_independent_repro.md,arcturus,2026-10-31T14:25:12+03:00,communication ensembling insight model_selection status,4,3,32,0
+antares_upsilon_v3_written.md,antares,2026-10-31T14:33:53+03:00,communication ensembling insight status submission,6,3,33,1
+spica_psi_v3_ready_2762.md,spica,2026-10-31T14:38:55+03:00,communication ensembling insight postprocessing status submission,2,3,32,1
+arcturus_kappa_large3_stop_v4.md,arcturus,2026-10-31T15:11:24+03:00,communication ensembling model_selection status,0,2,34,0
+arcturus_kappa_gate_v3b_extra.md,arcturus,2026-10-31T15:18:45+03:00,communication ensembling model_selection postprocessing status submission,2,2,34,1
+antares_upsilon_v3b_check.md,antares,2026-10-31T15:21:55+03:00,communication model_selection postprocessing status,1,2,35,0
+arcturus_kappa_v3b_merged_ready.md,arcturus,2026-10-31T15:23:21+03:00,communication ensembling postprocessing status submission,4,2,35,1
+arcturus_kappa_v3b_cw_definition.md,arcturus,2026-10-31T15:26:56+03:00,communication model_selection postprocessing status,5,2,36,0
+arcturus_kappa_negative_results_and_audit.md,arcturus,2026-10-31T15:33:13+03:00,communication ensembling insight model_selection postprocessing status submission,4,3,37,1
+antares_upsilon_v3b_written.md,antares,2026-10-31T15:35:24+03:00,communication ensembling model_selection status submission,4,3,37,1
+antares_upsilon_v3b_adopted.md,antares,2026-10-31T15:45:56+03:00,communication postprocessing status submission,1,3,38,1
+arcturus_kappa_word_model_exhausted.md,arcturus,2026-10-31T15:48:52+03:00,communication ensembling insight model_selection status submission,2,2,38,1
+arcturus_kappa_code_completeness.md,arcturus,2026-10-31T15:49:11+03:00,communication status submission,0,2,39,1
+spica_psi_albert_word_model.md,spica,2026-10-31T15:54:39+03:00,communication ensembling insight model_selection postprocessing status,3,4,38,0
+antares_upsilon_FINAL.md,antares,2026-10-31T16:00:10+03:00,communication ensembling insight model_selection status submission,2,4,38,1
+arcturus_kappa_v4_independent_confirm.md,arcturus,2026-10-31T16:10:52+03:00,communication ensembling model_selection status submission,3,3,39,1
+antares_upsilon_v4_adopting.md,antares,2026-10-31T16:25:28+03:00,communication ensembling insight status submission,3,3,40,1
+arcturus_kappa_v4_decisions_ready.md,arcturus,2026-10-31T16:31:34+03:00,communication ensembling status submission,1,2,41,1
+spica_psi_v4_ready.md,spica,2026-10-31T16:46:02+03:00,communication ensembling model_selection postprocessing status submission,4,3,39,1
+arcturus_kappa_v4_crosscheck.md,arcturus,2026-10-31T16:46:52+03:00,communication ensembling status submission,1,3,42,1
+antares_upsilon_v4_FINAL.md,antares,2026-10-31T16:48:00+03:00,communication ensembling insight model_selection status submission,3,4,43,1
+arcturus_kappa_v4_audit_PASS.md,arcturus,2026-10-31T16:57:13+03:00,communication insight status submission,1,1,44,1
+spica_psi_final_audit.md,spica,2026-10-31T17:08:05+03:00,communication ensembling insight model_selection status submission,0,3,45,1
+arcturus_kappa_5th_model_no_gain.md,arcturus,2026-10-31T17:09:07+03:00,communication ensembling model_selection status,0,2,44,0
+antares_upsilon_FREEZE_CONFIRMED.md,antares,2026-10-31T18:43:57+03:00,communication ensembling insight model_selection status submission,5,0,0,1
+arcturus_kappa_FINAL_audit_confirmed.md,arcturus,2026-10-31T18:49:35+03:00,communication ensembling insight model_selection status submission,2,1,1,1
+antares_upsilon_last_hour_no_gain.md,antares,2026-10-31T19:17:15+03:00,communication insight status submission,0,2,2,1
+arcturus_kappa_v4_weights_optimal.md,arcturus,2026-10-31T19:22:17+03:00,communication model_selection status submission,1,1,1,1
+arcturus_kappa_v4_error_decomp.md,arcturus,2026-10-31T19:26:58+03:00,insight model_selection postprocessing status,0,2,2,0
+antares_upsilon_FINAL_PHASE_CONFIRM.md,antares,2026-10-31T19:32:31+03:00,communication status submission,2,2,2,1
+arcturus_kappa_FINAL_PHASE_CONFIRM.md,arcturus,2026-10-31T19:52:14+03:00,communication status submission,1,1,3,1
+spica_psi_FINAL_PHASE_CONFIRM.md,spica,2026-10-31T19:56:54+03:00,communication status submission,0,2,4,1

@@ -1,0 +1,22 @@
+{
+  "task": "ventilator-pressure-prediction",
+  "experiment": "2-lite10-blackboard-mlebench",
+  "job_id": 15707,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-22T01:48:50+00:00",
+  "score": 0.15212,
+  "metric": "MAE",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 0.1119,
+    "silver": 0.1338,
+    "bronze": 0.1364,
+    "median": 0.1638
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

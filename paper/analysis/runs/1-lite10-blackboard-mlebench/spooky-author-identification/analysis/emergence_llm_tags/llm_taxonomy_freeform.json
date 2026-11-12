@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-10-21T13:20:47.072265+00:00",
+  "model": "deepseek-flash",
+  "n_messages": 73,
+  "tags": [
+    {
+      "tag": "shared_cv_fold_contract",
+      "definition": "Publishing and enforcing a canonical StratifiedKFold split, seed, row order, and class order so all agents produce comparable leak-free OOF predictions."
+    },
+    {
+      "tag": "oof_test_probability_artifacts",
+      "definition": "Saving and exchanging out-of-fold and test probability arrays as .npy files with fixed shapes, row order, and class order for downstream stacking."
+    },
+    {
+      "tag": "base_vs_meta_artifact_hygiene",
+      "definition": "Naming and filtering blend, stack, ensemble, meta, and submission outputs so they are not accidentally ingested as base-model OOF features and cause circular leakage."
+    },
+    {
+      "tag": "gpu_lane_claiming",
+      "definition": "Coordinating non-overlapping GPU model lanes by claiming specific architectures, posting lock/release signals, and limiting concurrent heavy fine-tuning jobs."
+    },
+    {
+      "tag": "classical_linear_nb_baselines",
+      "definition": "Building TF-IDF word/char n-gram features with LogisticRegression, NB-SVM, ComplementNB, SGD, SVM, and related linear/NB baselines including case and feature-space searches."
+    },
+    {
+      "tag": "transformer_finetuning_recipes",
+      "definition": "Fine-tuning pretrained language models such as BERT, RoBERTa, DeBERTa, XLNet, ELECTRA, ERNIE, MPNet, BART, DistilBERT, and ALBERT with specified epochs, learning rates, sequence lengths, precision, and regularization."
+    },
+    {
+      "tag": "epoch_averaging_and_best_epoch",
+      "definition": "Comparing per-fold best-epoch selection against averaging predictions across multiple epochs, including late-epoch averaging for adversarially trained models."
+    },
+    {
+      "tag": "seed_averaging",
+      "definition": "Running the same architecture with multiple random seeds and averaging their predictions to reduce transformer seed variance and improve a single base model's OOF score."
+    },
+    {
+      "tag": "fgm_adversarial_training",
+      "definition": "Adding Fast Gradient Method embedding perturbation with a second backward pass during transformer fine-tuning to reduce overfitting and improve validation log loss."
+    },
+    {
+      "tag": "pseudo_labeling_per_fold",
+      "definition": "Using a per-fold teacher that never sees the validation fold to generate confident test-set soft labels for student-model self-training without OOF leakage."
+    },
+    {
+      "tag": "probability_calibration",
+      "definition": "Applying temperature scaling or related calibration to base-model probabilities before blending or stacking so overconfident models are weighted fairly."
+    },
+    {
+      "tag": "stacker_meta_features",
+      "definition": "Training meta-learners on concatenated base probabilities/log-probabilities plus handcrafted stylometric text features using LR, MLP, or LightGBM stackers."
+    },
+    {
+      "tag": "blend_weight_and_nested_validation",
+      "definition": "Fitting arithmetic, geometric, greedy, or meta-combine weights and checking them with nested or honest fold-wise validation to quantify and control stacking optimism."
+    },
+    {
+      "tag": "final_solution_ownership_verification",
+      "definition": "Coordinating a single writer for final_solution, preventing write races, verifying submission ids/format/probability sums, and packaging reproducible code and README artifacts."
+    },
+    {
+      "tag": "base_model_diversity_strategy",
+      "definition": "Analyzing decorrelated errors across model families and prioritizing new architectures, scales, and genuinely diverse base models over repeated stacker tweaks."
+    },
+    {
+      "tag": "negative_result_and_roi_stopping",
+      "definition": "Reporting weak models or failed feature families and stopping GPU jobs whose expected score gain is poor relative to their compute cost."
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 31367,
+    "completion_tokens": 3041,
+    "total_tokens": 34408,
+    "prompt_tokens_details": {
+      "cached_tokens": 31232
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 2329
+    },
+    "prompt_cache_hit_tokens": 31232,
+    "prompt_cache_miss_tokens": 135
+  },
+  "response_id": "07e565c3-38a6-4624-ba3e-8466d76c3869"
+}

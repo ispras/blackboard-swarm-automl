@@ -1,0 +1,5 @@
+  0%|          | 0.00/4.17M [00:00<?, ?File/s] 35%|███▍      | 1.45M/4.17M [00:00<00:00, 15.2MFile/s]4.31MFile [00:00, 25.6MFile/s]                         
+артефакты: /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/artifacts/15390
+mtime: восстановлено 53 файлов из /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/.mtime.tsv
+смерджено: sandbox/ (blackboard/, final_solution/, workspaces/, analysis/) + costs/
+analysis: sandbox/analysis/ (граф, metrics.csv, grade.json, COSTS.md)

@@ -1,0 +1,54 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+castor_eta_intro_and_plan.md,castor,2026-10-21T16:43:54+03:00,communication plan status,0,0,0,0
+canopus_iota_intro_and_plan.md,canopus,2026-10-21T16:43:55+03:00,communication data_pipeline model_selection plan,0,0,0,0
+bellatrix_iota_intro.md,bellatrix,2026-10-21T16:44:03+03:00,architecture communication feature_engineering plan,0,0,0,0
+bellatrix_iota_reply_plan.md,bellatrix,2026-10-21T16:44:12+03:00,communication data_pipeline ensembling plan,1,0,0,0
+canopus_iota_reply_roles.md,canopus,2026-10-21T16:44:27+03:00,communication data_pipeline model_selection plan,1,0,0,0
+canopus_iota_shared_cache_ready.md,canopus,2026-10-21T16:45:28+03:00,communication data_pipeline status,0,0,0,0
+bellatrix_iota_status_cache.md,bellatrix,2026-10-21T16:46:28+03:00,communication data_pipeline model_selection status,1,0,0,0
+castor_eta_cache_and_first_run.md,castor,2026-10-21T16:47:52+03:00,architecture communication ensembling feature_engineering status,1,2,1,0
+canopus_iota_metric_and_status.md,canopus,2026-10-21T16:50:17+03:00,communication ensembling model_selection status,3,2,2,0
+bellatrix_iota_first_result_metric_hedge.md,bellatrix,2026-10-21T16:58:00+03:00,communication insight loss model_selection status,4,1,3,0
+castor_eta_gru_v1_result.md,castor,2026-10-21T17:04:18+03:00,communication ensembling insight status training,3,2,4,0
+bellatrix_iota_conformer_blend.md,bellatrix,2026-10-21T17:08:39+03:00,communication ensembling model_selection status,2,2,5,0
+canopus_iota_first_lstm_result.md,canopus,2026-10-21T17:09:09+03:00,architecture ensembling insight status training,2,1,4,0
+castor_eta_safety_submission.md,castor,2026-10-21T17:10:21+03:00,communication ensembling status submission,1,3,5,1
+canopus_iota_artifacts_for_blend.md,canopus,2026-10-21T17:14:32+03:00,communication ensembling status submission,0,2,6,1
+castor_eta_cache2_and_models.md,castor,2026-10-21T17:16:24+03:00,architecture communication feature_engineering insight status training,2,0,0,0
+canopus_iota_group_finding.md,canopus,2026-10-21T17:26:58+03:00,architecture communication insight model_selection status,1,3,6,0
+bellatrix_iota_group_confirmed_pipeline.md,bellatrix,2026-10-21T17:29:15+03:00,communication ensembling feature_engineering model_selection status,0,1,7,0
+bellatrix_iota_canopus_bug_blendstatus.md,bellatrix,2026-10-21T18:01:27+03:00,bug communication ensembling model_selection status,1,0,0,0
+canopus_iota_bugfixed_relaunch.md,canopus,2026-10-21T18:03:05+03:00,bug communication ensembling status,1,1,1,0
+castor_eta_bilstm_big_result.md,castor,2026-10-21T18:12:22+03:00,architecture communication ensembling insight status submission training,2,2,5,1
+canopus_iota_5f2_blend.md,canopus,2026-10-21T19:06:38+03:00,communication ensembling insight status training,0,1,6,0
+castor_eta_bilstm_c2_result.md,castor,2026-10-21T19:15:37+03:00,communication ensembling insight status submission training,0,3,6,1
+castor_eta_m3_all_status.md,castor,2026-10-21T20:33:50+03:00,communication ensembling model_selection status submission training,2,0,0,1
+canopus_iota_blend_saturation_plan.md,canopus,2026-10-21T21:33:35+03:00,communication ensembling model_selection status submission,2,1,1,1
+castor_eta_truncation_negative_and_final_plan.md,castor,2026-10-21T22:15:27+03:00,communication ensembling insight status submission training,1,0,0,1
+bellatrix_iota_final_blend_written.md,bellatrix,2026-10-21T22:17:02+03:00,communication ensembling model_selection status submission,1,1,2,1
+castor_eta_final_runs_eta.md,castor,2026-10-21T22:33:14+03:00,communication ensembling status submission training,0,1,3,1
+bellatrix_iota_refresh2.md,bellatrix,2026-10-21T22:43:24+03:00,communication ensembling status submission,0,3,2,1
+canopus_iota_5f2_done_heavytail.md,canopus,2026-10-21T22:43:35+03:00,communication ensembling insight model_selection status submission,1,0,0,1
+castor_eta_ema_features.md,castor,2026-10-21T22:55:10+03:00,architecture communication feature_engineering insight status training,2,1,1,0
+castor_eta_all2_done_ema_promising.md,castor,2026-10-22T00:00:28+03:00,communication ensembling feature_engineering status,1,1,2,0
+castor_eta_new_best_blend_01612.md,castor,2026-10-22T01:27:53+03:00,communication ensembling feature_engineering insight status submission,2,1,2,1
+canopus_iota_blend_0161.md,canopus,2026-10-22T01:30:15+03:00,communication ensembling insight status submission,3,1,3,1
+bellatrix_iota_refresh3.md,bellatrix,2026-10-22T01:54:30+03:00,communication ensembling model_selection status submission,1,2,4,1
+castor_eta_final_refresh_01609.md,castor,2026-10-22T02:01:28+03:00,communication ensembling insight status submission,1,1,4,1
+canopus_iota_e3seed_01606.md,canopus,2026-10-22T02:15:57+03:00,communication ensembling status submission training,2,1,5,1
+castor_eta_final_01603.md,castor,2026-10-22T02:16:08+03:00,communication ensembling insight status submission,2,0,0,1
+castor_eta_final2_e3all.md,castor,2026-10-22T02:46:33+03:00,communication status submission,2,1,6,1
+castor_eta_final_provenance.md,castor,2026-10-22T03:11:48+03:00,communication ensembling submission,0,5,6,1
+canopus_iota_3rdseed_016029.md,canopus,2026-10-22T03:12:44+03:00,communication ensembling status submission,3,1,7,1
+bellatrix_iota_no_objection_final.md,bellatrix,2026-10-22T03:19:30+03:00,communication ensembling model_selection status submission,2,1,8,1
+canopus_iota_final_submission.md,canopus,2026-10-22T03:25:00+03:00,communication ensembling status submission,2,3,9,1
+bellatrix_iota_final_verified.md,bellatrix,2026-10-22T03:27:50+03:00,communication ensembling model_selection status submission,2,1,10,1
+canopus_iota_confirmed_final.md,canopus,2026-10-22T03:40:18+03:00,communication status submission,0,1,11,1
+castor_eta_final_integrity_check.md,castor,2026-10-22T03:42:05+03:00,communication ensembling status submission,0,2,11,1
+canopus_iota_final_twin_refresh.md,canopus,2026-10-22T04:04:53+03:00,communication ensembling status submission,1,2,9,1
+canopus_iota_distributional_sanity.md,canopus,2026-10-22T04:05:14+03:00,communication insight status submission,1,1,10,1
+bellatrix_iota_final_refresh_16models.md,bellatrix,2026-10-22T04:07:13+03:00,communication ensembling model_selection status submission,3,1,8,1
+castor_eta_final_integrity_530d.md,castor,2026-10-22T04:07:38+03:00,communication ensembling status submission,0,2,11,1
+castor_eta_stacker_negative.md,castor,2026-10-22T04:08:42+03:00,ensembling insight model_selection status,0,0,0,0
+castor_eta_final_confirmation.md,castor,2026-10-22T04:28:56+03:00,communication status submission,0,1,9,1
+canopus_iota_final_confirmation.md,canopus,2026-10-22T04:30:35+03:00,communication status submission,0,1,9,1

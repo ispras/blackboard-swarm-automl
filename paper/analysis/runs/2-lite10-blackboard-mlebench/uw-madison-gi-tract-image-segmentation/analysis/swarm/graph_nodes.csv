@@ -1,0 +1,48 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+dubhe_zeta_intro_plan.md,dubhe,2026-11-03T20:42:16+03:00,communication plan status,1,0,0,0
+mimosa_sigma_intro_plan.md,mimosa,2026-11-03T20:42:23+03:00,communication data_pipeline plan,1,0,0,0
+betelgeuse_zeta_intro_plan.md,betelgeuse,2026-11-03T20:42:36+03:00,communication data_pipeline model_selection plan,2,1,1,0
+mimosa_sigma_role_claim.md,mimosa,2026-11-03T20:42:39+03:00,communication plan,2,0,0,0
+dubhe_zeta_coordination.md,dubhe,2026-11-03T20:43:08+03:00,communication ensembling inference plan,2,3,2,0
+betelgeuse_zeta_status_1.md,betelgeuse,2026-11-03T20:43:40+03:00,communication data_pipeline model_selection status,2,2,3,0
+mimosa_sigma_cache_metric_ready.md,mimosa,2026-11-03T20:46:03+03:00,communication data_pipeline status training,4,3,4,0
+dubhe_zeta_status_2.md,dubhe,2026-11-03T21:00:19+03:00,communication inference status submission,3,2,5,1
+betelgeuse_zeta_status_2.md,betelgeuse,2026-11-03T21:01:26+03:00,communication ensembling problem status training,3,2,6,0
+dubhe_zeta_bug_mimosa_valgt.md,dubhe,2026-11-03T21:03:38+03:00,bug communication model_selection problem,1,2,7,0
+mimosa_sigma_bugfix_status.md,mimosa,2026-11-03T21:14:19+03:00,bug communication ensembling model_selection status,1,3,7,0
+dubhe_zeta_URGENT_rle_order_bug.md,dubhe,2026-11-03T21:38:06+03:00,bug conflict data_pipeline data_preprocessing problem,5,0,0,0
+mimosa_sigma_rle_confirmed.md,mimosa,2026-11-03T21:40:24+03:00,bug communication data_preprocessing status,3,0,0,0
+dubhe_zeta_ping_betelgeuse.md,dubhe,2026-11-03T21:48:14+03:00,bug communication problem,1,2,1,0
+dubhe_zeta_status_3.md,dubhe,2026-11-03T21:56:39+03:00,communication ensembling status submission,0,2,2,1
+mimosa_sigma_b4v2_early_result.md,mimosa,2026-11-03T21:56:54+03:00,ensembling insight model_selection postprocessing status,2,4,7,0
+betelgeuse_zeta_decode_bug_fixed.md,betelgeuse,2026-11-03T22:02:43+03:00,bug communication data_preprocessing insight status,4,2,8,0
+dubhe_zeta_oof_e2.md,dubhe,2026-11-03T22:29:17+03:00,ensembling model_selection postprocessing status submission,2,3,9,1
+betelgeuse_zeta_confirm_alldata.md,betelgeuse,2026-11-03T22:37:29+03:00,communication ensembling plan status training,1,3,10,0
+dubhe_zeta_alldata_efficiency_timeline.md,dubhe,2026-11-03T22:38:20+03:00,communication ensembling plan submission training,3,0,0,1
+mimosa_sigma_ack_timeline.md,mimosa,2026-11-03T22:45:00+03:00,communication ensembling plan status,5,2,11,0
+betelgeuse_zeta_ack_finetune_timeline.md,betelgeuse,2026-11-03T23:19:46+03:00,communication ensembling plan status,2,2,12,0
+dubhe_zeta_fold0_final_probs.md,dubhe,2026-11-04T00:38:04+03:00,ensembling inference status submission,2,3,13,1
+mimosa_sigma_fold0_done.md,mimosa,2026-11-04T00:38:16+03:00,ensembling model_selection status submission,4,2,13,1
+dubhe_zeta_alldata_probs_ready.md,dubhe,2026-11-04T01:31:04+03:00,ensembling inference status submission,2,2,14,1
+betelgeuse_zeta_fold0_probs_ready.md,betelgeuse,2026-11-04T01:40:06+03:00,ensembling model_selection status submission,3,3,12,1
+dubhe_zeta_fourth_model.md,dubhe,2026-11-04T01:57:21+03:00,architecture communication ensembling status,4,3,15,0
+betelgeuse_zeta_alldata_probs_ready.md,betelgeuse,2026-11-04T02:02:05+03:00,ensembling status submission training,2,2,13,1
+betelgeuse_zeta_b4_fold0_change.md,betelgeuse,2026-11-04T02:22:32+03:00,communication ensembling model_selection status,1,2,16,0
+betelgeuse_zeta_fold0_oof_combo.md,betelgeuse,2026-11-04T02:34:45+03:00,ensembling insight model_selection postprocessing status,3,3,14,0
+mimosa_sigma_ensemble_ready.md,mimosa,2026-11-04T02:58:42+03:00,ensembling model_selection status submission,7,3,15,1
+dubhe_zeta_final_copied.md,dubhe,2026-11-04T03:06:17+03:00,ensembling status submission,0,2,16,1
+dubhe_zeta_fpn_probs_ready.md,dubhe,2026-11-04T03:35:13+03:00,ensembling model_selection status,1,2,16,0
+mimosa_sigma_final_solution_updated.md,mimosa,2026-11-04T03:42:50+03:00,ensembling postprocessing status submission,5,3,16,1
+betelgeuse_zeta_b4_probs_ready.md,betelgeuse,2026-11-04T04:04:01+03:00,communication ensembling model_selection status,2,3,17,0
+dubhe_zeta_standby_decision.md,dubhe,2026-11-04T04:17:37+03:00,communication ensembling status submission,3,3,18,1
+betelgeuse_zeta_all_deliverables.md,betelgeuse,2026-11-04T04:28:23+03:00,communication ensembling model_selection status submission,1,3,18,1
+betelgeuse_zeta_final_verify.md,betelgeuse,2026-11-04T04:29:09+03:00,communication ensembling status submission,3,3,19,1
+dubhe_zeta_FINAL.md,dubhe,2026-11-04T05:15:39+03:00,ensembling insight status submission,2,4,20,1
+betelgeuse_zeta_FINAL_ack.md,betelgeuse,2026-11-04T05:25:02+03:00,communication ensembling status submission,2,3,21,1
+mimosa_sigma_final_frozen.md,mimosa,2026-11-04T05:29:49+03:00,communication ensembling status submission,6,7,20,1
+betelgeuse_zeta_postproc_check.md,betelgeuse,2026-11-04T06:07:43+03:00,insight model_selection postprocessing status,2,3,22,0
+dubhe_zeta_final_verify_0716.md,dubhe,2026-11-04T07:16:26+03:00,communication status submission,3,2,23,1
+betelgeuse_zeta_SIGN_OFF.md,betelgeuse,2026-11-04T07:40:30+03:00,communication status submission,1,3,24,1
+dubhe_zeta_full_qa_pass.md,dubhe,2026-11-04T07:52:14+03:00,insight status submission,1,3,25,1
+betelgeuse_zeta_blend_fn_check.md,betelgeuse,2026-11-04T08:10:37+03:00,ensembling insight model_selection postprocessing status,1,3,24,0
+mimosa_sigma_final_submission_confirmed.md,mimosa,2026-11-04T08:29:17+03:00,communication status submission,0,3,26,1

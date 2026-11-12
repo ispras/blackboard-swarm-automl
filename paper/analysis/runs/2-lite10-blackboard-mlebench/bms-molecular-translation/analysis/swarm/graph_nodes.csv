@@ -1,0 +1,98 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+altair_theta_intro_plan.md,altair,2026-10-22T05:12:19+03:00,communication plan status,1,0,0,0
+regulus_iota_intro_plan.md,regulus,2026-10-22T05:12:32+03:00,communication insight plan status,1,0,0,0
+regulus_omega_intro_and_plan.md,regulus,2026-10-22T05:13:35+03:00,communication plan status,0,0,0,0
+regulus_iota_scratch_seq2seq_start.md,regulus,2026-10-22T05:17:50+03:00,communication plan status training,3,0,0,0
+regulus_omega_molscribe_zeroshot_and_finetune_plan.md,regulus,2026-10-22T05:20:08+03:00,architecture communication insight model_selection status training,6,2,1,0
+altair_theta_molscribe_letterbox_fix.md,altair,2026-10-22T05:39:29+03:00,communication data_preprocessing inference insight postprocessing status,5,2,2,0
+regulus_iota_smiles_target_insight.md,regulus,2026-10-22T05:43:47+03:00,architecture communication data_pipeline insight status training,7,3,3,0
+altair_theta_throughput_and_scheduling.md,altair,2026-10-22T05:59:01+03:00,communication conflict inference plan status,3,3,4,0
+regulus_iota_scratch_2k_lev37.md,regulus,2026-10-22T06:10:13+03:00,communication ensembling insight status training,6,2,4,0
+regulus_omega_smiles_finetune_early.md,regulus,2026-10-22T06:14:28+03:00,architecture communication ensembling optimization status training,4,3,4,0
+altair_theta_revised_swarm_plan.md,altair,2026-10-22T06:15:42+03:00,communication ensembling inference model_selection plan status,3,4,5,0
+altair_theta_iota_ckpt_benchmark.md,altair,2026-10-22T06:17:07+03:00,bug communication inference plan problem status,2,3,6,0
+altair_theta_horse_race_contract.md,altair,2026-10-22T06:17:43+03:00,communication ensembling inference model_selection plan status,4,4,7,0
+regulus_omega_inference_scheduling_reply.md,regulus,2026-10-22T06:24:41+03:00,communication inference model_selection plan status,0,3,5,0
+regulus_omega_agree_0930_contract.md,regulus,2026-10-22T06:27:32+03:00,communication ensembling model_selection plan status,1,4,8,0
+regulus_iota_critical_predict_bug_fix.md,regulus,2026-10-22T06:29:57+03:00,bug communication inference insight problem,4,2,5,0
+regulus_iota_plan_primary_scratch.md,regulus,2026-10-22T06:31:38+03:00,communication inference insight model_selection plan status,3,3,6,0
+regulus_iota_agree_horse_race.md,regulus,2026-10-22T06:31:54+03:00,bug communication model_selection plan status,2,3,8,0
+altair_theta_tta_and_endgame.md,altair,2026-10-22T06:38:53+03:00,augmentation communication ensembling inference model_selection plan status,2,3,8,0
+regulus_iota_6k_lev12_confirm_endgame.md,regulus,2026-10-22T06:41:36+03:00,communication ensembling model_selection plan status,1,3,9,0
+altair_theta_schedule_confirmed.md,altair,2026-10-22T06:41:56+03:00,bug communication inference model_selection plan status,5,3,9,0
+regulus_iota_cascade_analysis.md,regulus,2026-10-22T06:43:32+03:00,communication ensembling inference insight model_selection plan,6,3,10,0
+regulus_omega_step1000_lev25.md,regulus,2026-10-22T06:44:18+03:00,communication insight model_selection status training,3,4,9,0
+regulus_iota_8k_lev10.md,regulus,2026-10-22T06:56:19+03:00,communication ensembling model_selection status,1,3,11,0
+altair_theta_cascade_fusion_measured.md,altair,2026-10-22T07:05:59+03:00,communication ensembling inference model_selection plan status,4,4,12,0
+altair_theta_iota_fallback_conf_bug.md,altair,2026-10-22T07:06:32+03:00,bug communication ensembling inference problem status,3,2,13,0
+regulus_omega_step2000_lev14_9.md,regulus,2026-10-22T07:08:00+03:00,communication ensembling inference insight model_selection status,3,3,11,0
+regulus_iota_ack_fix_and_vote_rule.md,regulus,2026-10-22T07:09:21+03:00,communication ensembling model_selection plan status,0,3,14,0
+regulus_iota_learned_reranker.md,regulus,2026-10-22T07:11:11+03:00,communication ensembling inference insight model_selection plan,5,4,14,0
+regulus_omega_step3000_lev10_6.md,regulus,2026-10-22T07:24:54+03:00,communication ensembling inference insight model_selection status,5,3,12,0
+regulus_iota_12k_lev6_4.md,regulus,2026-10-22T07:26:48+03:00,communication ensembling model_selection plan status,4,4,15,0
+altair_theta_three_source_endgame.md,altair,2026-10-22T07:38:52+03:00,communication ensembling inference plan status,3,4,16,0
+altair_theta_ms_val3000_ready.md,altair,2026-10-22T07:49:04+03:00,communication ensembling inference status,4,2,17,0
+altair_theta_primary_pass_owner.md,altair,2026-10-22T07:49:14+03:00,communication inference plan status submission,4,2,17,1
+regulus_iota_agree_altair_primary.md,regulus,2026-10-22T08:03:23+03:00,communication inference plan status,3,3,18,0
+regulus_iota_reranker_2048_lev3_23.md,regulus,2026-10-22T08:04:38+03:00,communication ensembling model_selection status,2,3,18,0
+altair_theta_assembly_ownership.md,altair,2026-10-22T08:24:50+03:00,communication inference plan submission,2,3,19,1
+regulus_iota_lr_decay_polish.md,regulus,2026-10-22T08:46:38+03:00,communication plan status training,1,3,19,0
+regulus_iota_polish_24000_lev2_76.md,regulus,2026-10-22T09:06:47+03:00,ensembling insight status training,2,3,20,0
+regulus_iota_fusion_at_polish.md,regulus,2026-10-22T09:08:29+03:00,ensembling inference plan status,1,4,21,0
+regulus_omega_final_val_6_54_fullpass.md,regulus,2026-10-22T10:16:50+03:00,communication ensembling inference insight model_selection status,3,3,22,0
+regulus_iota_FINAL_ckpt_val.md,regulus,2026-10-22T10:17:16+03:00,communication ensembling inference model_selection status submission,4,3,21,1
+regulus_iota_final_rule_route3pct.md,regulus,2026-10-22T10:17:37+03:00,ensembling inference model_selection plan status,2,2,22,0
+regulus_omega_negative_fusion_result.md,regulus,2026-10-22T10:19:42+03:00,communication ensembling inference insight model_selection status,2,4,23,0
+altair_theta_primary_running_900ips.md,altair,2026-10-22T10:22:39+03:00,communication ensembling inference plan status,2,2,23,0
+altair_theta_gpu_free_omega_go.md,altair,2026-10-22T10:35:23+03:00,communication ensembling inference status,1,2,24,0
+altair_theta_primary_done_safety.md,altair,2026-10-22T10:38:25+03:00,communication ensembling inference status submission,2,2,25,1
+regulus_iota_pass_validated_routed_ids.md,regulus,2026-10-22T10:40:17+03:00,communication ensembling inference plan status submission,5,3,24,1
+regulus_iota_gpu_and_phase3_plan.md,regulus,2026-10-22T10:41:48+03:00,communication ensembling model_selection plan status,2,2,26,0
+regulus_iota_ms_running_candidate.md,regulus,2026-10-22T10:49:00+03:00,communication ensembling inference status submission,2,2,26,1
+regulus_omega_phaseC_negative_and_verify.md,regulus,2026-10-22T10:49:38+03:00,communication insight model_selection status submission,2,3,27,1
+regulus_omega_more_negatives_and_verify_ready.md,regulus,2026-10-22T10:52:13+03:00,communication data_preprocessing inference insight status submission,4,2,28,1
+altair_theta_medoid_plan.md,altair,2026-10-22T10:53:27+03:00,communication ensembling inference model_selection plan status,5,4,29,0
+altair_theta_safety_updated_163.md,altair,2026-10-22T10:53:44+03:00,communication ensembling status submission,1,2,29,1
+regulus_iota_confirm_phase3_medoid.md,regulus,2026-10-22T11:04:55+03:00,communication ensembling plan status,4,3,30,0
+regulus_omega_routed_preds_ready.md,regulus,2026-10-22T11:19:57+03:00,communication ensembling inference status,8,2,30,0
+regulus_omega_warn_ms_stuck.md,regulus,2026-10-22T11:38:40+03:00,bug communication inference problem status,0,2,31,0
+altair_theta_ms_hang_killed_phase3_go.md,altair,2026-10-22T11:41:17+03:00,bug communication conflict ensembling plan problem status,2,3,31,0
+altair_theta_ms_robust_rerun.md,altair,2026-10-22T11:42:28+03:00,bug communication ensembling inference status submission,2,2,32,1
+regulus_omega_medoid_check.md,regulus,2026-10-22T11:42:29+03:00,communication ensembling insight model_selection status,2,3,32,0
+regulus_iota_solution_code_and_phase3_ready.md,regulus,2026-10-22T11:43:08+03:00,communication plan status submission,1,2,33,1
+altair_theta_medoid_ms_candidate.md,altair,2026-10-22T12:11:21+03:00,communication ensembling metric status submission,7,3,33,1
+regulus_omega_final_verified.md,regulus,2026-10-22T12:14:33+03:00,communication ensembling model_selection status submission,5,3,34,1
+altair_theta_phase3_adopted.md,altair,2026-10-22T12:27:42+03:00,communication ensembling inference model_selection status submission,4,3,35,1
+regulus_iota_phase3_adopted.md,regulus,2026-10-22T12:28:14+03:00,communication ensembling inference model_selection status,4,2,34,0
+regulus_omega_phase3_f8_routing.md,regulus,2026-10-22T12:35:15+03:00,communication ensembling insight model_selection plan,1,3,36,0
+altair_theta_p3_routed_ids.md,altair,2026-10-22T12:58:49+03:00,communication ensembling inference plan status,3,3,36,0
+regulus_iota_phase3_test_ready_delta.md,regulus,2026-10-22T13:02:55+03:00,communication ensembling inference status,2,3,35,0
+regulus_omega_f8_preds_ready.md,regulus,2026-10-22T13:09:47+03:00,communication ensembling inference status,4,4,37,0
+regulus_omega_p3_routed_ready.md,regulus,2026-10-22T13:10:05+03:00,communication ensembling inference status,0,3,38,0
+regulus_iota_f5_candidate_f8_plan.md,regulus,2026-10-22T13:12:58+03:00,communication ensembling inference status submission,2,3,38,1
+regulus_omega_p3_candidate_verified.md,regulus,2026-10-22T13:23:10+03:00,communication ensembling model_selection status submission,2,2,39,1
+regulus_iota_f8_candidate_ready.md,regulus,2026-10-22T13:26:53+03:00,communication ensembling status submission,5,3,40,1
+regulus_omega_final_swap_f8_better.md,regulus,2026-10-22T13:36:02+03:00,communication conflict ensembling model_selection submission,2,3,41,1
+regulus_iota_confirm_swap_f8.md,regulus,2026-10-22T13:38:14+03:00,communication conflict ensembling submission,1,2,42,1
+altair_theta_p3f8_candidate.md,altair,2026-10-22T13:39:41+03:00,communication ensembling inference model_selection status submission,3,4,37,1
+regulus_omega_remove_last_use_iota_f8.md,regulus,2026-10-22T13:41:26+03:00,communication conflict ensembling model_selection submission,3,3,43,1
+regulus_iota_final_swap_action.md,regulus,2026-10-22T13:53:32+03:00,communication conflict ensembling submission,1,3,44,1
+altair_theta_final_p3f8_ms.md,altair,2026-10-22T14:00:30+03:00,communication ensembling metric status submission,3,3,38,1
+regulus_iota_phase4_pass_started.md,regulus,2026-10-22T14:08:35+03:00,communication ensembling status submission,2,3,45,1
+regulus_omega_p4_medoid_not_better.md,regulus,2026-10-22T14:09:29+03:00,communication conflict ensembling model_selection submission,5,3,46,1
+altair_theta_safety_125.md,altair,2026-10-22T14:10:55+03:00,communication model_selection status submission,3,3,47,1
+regulus_iota_final_freeze_and_code.md,regulus,2026-10-22T14:19:28+03:00,communication ensembling status submission,2,3,48,1
+regulus_iota_code_doc_fix.md,regulus,2026-10-22T14:29:49+03:00,communication status submission,2,2,49,1
+altair_theta_FINAL_solution.md,altair,2026-10-22T14:31:32+03:00,communication ensembling metric status submission,6,5,50,1
+regulus_omega_final_verification_passed.md,regulus,2026-10-22T14:45:03+03:00,communication ensembling status submission,5,3,51,1
+regulus_iota_final_robustness_check.md,regulus,2026-10-22T14:50:52+03:00,communication ensembling model_selection status,3,3,52,0
+regulus_iota_final_signoff.md,regulus,2026-10-22T15:51:16+03:00,communication ensembling insight model_selection status submission,4,6,53,1
+altair_theta_final_signoff.md,altair,2026-10-22T15:51:55+03:00,communication metric status submission,0,3,54,1
+altair_theta_last_hour_checks.md,altair,2026-10-22T15:52:54+03:00,communication ensembling model_selection status submission,1,3,53,1
+regulus_omega_frozen_final_check.md,regulus,2026-10-22T16:15:31+03:00,communication status submission,2,0,0,1
+regulus_omega_final_qa_inchi_parse.md,regulus,2026-10-22T16:16:46+03:00,communication postprocessing status submission,0,2,54,1
+regulus_iota_last_negative_tta.md,regulus,2026-10-22T16:18:17+03:00,augmentation ensembling insight model_selection status,1,2,54,0
+regulus_iota_last_negative_tta2.md,regulus,2026-10-22T16:21:03+03:00,augmentation ensembling insight status,1,2,55,0
+altair_theta_FINAL_CONFIRMATION.md,altair,2026-10-22T16:26:31+03:00,communication metric status submission,2,3,56,1
+regulus_omega_FINAL_CONFIRMATION.md,regulus,2026-10-22T16:40:18+03:00,communication status submission,1,2,57,1
+regulus_iota_hard_end_confirmation.md,regulus,2026-10-22T16:49:26+03:00,communication status submission,0,3,58,1

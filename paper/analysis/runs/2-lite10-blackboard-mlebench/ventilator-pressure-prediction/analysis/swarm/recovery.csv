@@ -1,0 +1,3 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+bellatrix_iota_canopus_bug_blendstatus.md,bellatrix,2026-10-21T18:01:27+03:00,bug,,,0,,,castor_eta_bilstm_c2_result.md,4,4450.0
+canopus_iota_bugfixed_relaunch.md,canopus,2026-10-21T18:03:05+03:00,bug,castor_eta_bilstm_c2_result.md,castor,0,3,4352.0,castor_eta_bilstm_c2_result.md,3,4352.0

@@ -1,0 +1,345 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/cassava-leaf-disease-classification",
+  "label": "cassava-leaf-disease-classification",
+  "metric": "accuracy",
+  "is_lower_better": false,
+  "final_score": 0.9006,
+  "thresholds": {
+    "gold": 0.9013,
+    "silver": 0.8992,
+    "bronze": 0.8978,
+    "median": 0.8909
+  },
+  "messages": {
+    "agent": 61,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 1,
+    "multiple_metrics": 6,
+    "without_metric": 37,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 61,
+    "edges": 152,
+    "is_dag": true,
+    "cycles_full": [
+      [
+        "achernar_delta_intro.md",
+        "achernar_delta_plan.md"
+      ]
+    ],
+    "cycles_time": [],
+    "max_depth": 43,
+    "mean_depth_all": 19.672131147540984,
+    "mean_depth_linked": 20.689655172413794,
+    "longest_path": [
+      "achernar_delta_v4_repro.md",
+      "arcturus_kappa_final_confirm.md",
+      "capella_kappa_final_confirmation.md",
+      "arcturus_kappa_v4_ack.md",
+      "capella_kappa_v4_repro.md",
+      "capella_kappa_nan_scope.md",
+      "capella_kappa_nan_fixed.md",
+      "capella_kappa_nan_bug.md",
+      "capella_kappa_signoff.md",
+      "arcturus_kappa_signoff.md",
+      "achernar_delta_signoff.md",
+      "arcturus_kappa_wrapup.md",
+      "achernar_delta_repro_check.md",
+      "capella_kappa_wrapup.md",
+      "arcturus_kappa_v3_validated.md",
+      "achernar_delta_final_v3.md",
+      "achernar_delta_final_submission_v2.md",
+      "arcturus_kappa_final_validation.md",
+      "capella_kappa_xcit_final.md",
+      "achernar_delta_final_submission.md",
+      "arcturus_kappa_final_paths.md",
+      "capella_kappa_final_paths.md",
+      "arcturus_kappa_verification.md",
+      "arcturus_kappa_v2s_full_done.md",
+      "arcturus_kappa_full_and_v2m.md",
+      "capella_kappa_6model.md",
+      "arcturus_kappa_v2s_mix_done.md",
+      "achernar_delta_ensemble_analysis.md",
+      "capella_kappa_artifacts.md",
+      "arcturus_kappa_mixup_insight.md",
+      "arcturus_kappa_v2s_mix.md",
+      "capella_kappa_vit_done.md",
+      "capella_kappa_swin_done_ensemble.md",
+      "capella_kappa_round2_slots.md",
+      "achernar_delta_convnext_fold0.md",
+      "capella_kappa_tools_endgame.md",
+      "capella_kappa_swin_relaunch.md",
+      "achernar_delta_capella_swin_died.md",
+      "capella_kappa_status_swin.md",
+      "arcturus_kappa_split_alignment.md",
+      "capella_kappa_split_fix.md",
+      "achernar_delta_role_claim.md",
+      "achernar_delta_plan.md",
+      "achernar_delta_intro.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "achernar_delta_final_v3.md",
+        "agent": "achernar",
+        "in_degree": 7,
+        "depth": 28,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-16T16:52:46+03:00"
+      },
+      {
+        "name": "achernar_delta_role_claim.md",
+        "agent": "achernar",
+        "in_degree": 6,
+        "depth": 2,
+        "tags": [
+          "architecture",
+          "communication",
+          "ensembling",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-16T07:14:30+03:00"
+      },
+      {
+        "name": "achernar_delta_ensemble_analysis.md",
+        "agent": "achernar",
+        "in_degree": 6,
+        "depth": 16,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "submission"
+        ],
+        "time": "2026-10-16T10:46:11+03:00"
+      },
+      {
+        "name": "capella_kappa_6model.md",
+        "agent": "capella",
+        "in_degree": 6,
+        "depth": 18,
+        "tags": [
+          "architecture",
+          "augmentation",
+          "ensembling",
+          "insight",
+          "status"
+        ],
+        "time": "2026-10-16T12:49:47+03:00"
+      },
+      {
+        "name": "achernar_delta_convnext_fold0.md",
+        "agent": "achernar",
+        "in_degree": 5,
+        "depth": 9,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-16T08:12:22+03:00"
+      },
+      {
+        "name": "arcturus_kappa_final_validation.md",
+        "agent": "arcturus",
+        "in_degree": 5,
+        "depth": 26,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-16T16:16:07+03:00"
+      },
+      {
+        "name": "capella_kappa_wrapup.md",
+        "agent": "capella",
+        "in_degree": 5,
+        "depth": 30,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-16T17:10:24+03:00"
+      }
+    ],
+    "submission_count": 32,
+    "submission_depths": [
+      10,
+      11,
+      12,
+      12,
+      16,
+      17,
+      20,
+      21,
+      22,
+      23,
+      24,
+      24,
+      25,
+      26,
+      27,
+      27,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "final_submission": {
+      "name": "achernar_delta_v4_repro.md",
+      "time": "2026-10-16T18:59:23+03:00",
+      "depth": 43,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 19,
+      "mean": 0.00044736842105262903,
+      "median": 0.0,
+      "positive": 0.3684210526315789,
+      "max": 0.015000000000000013
+    },
+    "transitive": {
+      "n": 22,
+      "mean": -0.0008545454545454664,
+      "median": -0.0008000000000000229,
+      "positive": 0.22727272727272727,
+      "max": 0.011800000000000033
+    },
+    "prev_linked": {
+      "n": 23,
+      "mean": 0.0011347826086956381,
+      "median": -0.0008000000000000229,
+      "positive": 0.21739130434782608,
+      "max": 0.052099999999999924
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 1,
+        "rate": 0.5,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 471.0
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 4.0,
+        "mean_msgs": 4,
+        "median_seconds": 1038.0
+      }
+    },
+    "broad": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 2,
+        "mean_msgs": 3,
+        "median_seconds": 578.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 6,
+        "rate": 1.0,
+        "median_msgs": 2.5,
+        "mean_msgs": 3.6666666666666665,
+        "median_seconds": 669.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 471.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 6,
+        "rate": 1.0,
+        "median_msgs": 1.0,
+        "mean_msgs": 2,
+        "median_seconds": 640.5
+      }
+    }
+  },
+  "recovery": {
+    "problems": 10,
+    "direct": {
+      "events": 10,
+      "recovered": 6,
+      "rate": 0.6,
+      "median_msgs": 1.0,
+      "median_seconds": 428.0,
+      "different_author": 2
+    },
+    "transitive": {
+      "events": 10,
+      "recovered": 9,
+      "rate": 0.9,
+      "median_msgs": 2,
+      "median_seconds": 629.0,
+      "different_author": 5
+    },
+    "problem_authors": {
+      "capella": 6,
+      "achernar": 3,
+      "arcturus": 1
+    },
+    "recovery_authors": {
+      "achernar": 1,
+      "capella": 4,
+      "arcturus": 1
+    }
+  }
+}

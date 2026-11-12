@@ -1,0 +1,43 @@
+{
+ "models": [
+  "val_C3_probs.npy",
+  "/download_job_code/payload/sandbox/workspaces/aldebaran_omicron/probs/val_A_AC_probs.npy",
+  "/download_job_code/payload/sandbox/workspaces/regulus_alpha/probs/val_B2_ep6_probs.npy"
+ ],
+ "weights": [
+  1.0,
+  1.0,
+  1.0
+ ],
+ "per_class": {
+  "0": {
+   "thr": 0.5,
+   "min_vol": 0,
+   "msa": 0,
+   "dice": 0.9246005773067986,
+   "hd": 0.8970009544111889,
+   "combo": 0.9080408035694327
+  },
+  "1": {
+   "thr": 0.45,
+   "min_vol": 0,
+   "msa": 0,
+   "dice": 0.9031056336086556,
+   "hd": 0.8909416075880666,
+   "combo": 0.8958072179963023
+  },
+  "2": {
+   "thr": 0.4,
+   "min_vol": 0,
+   "msa": 0,
+   "dice": 0.9566495295121458,
+   "hd": 0.9473419490939241,
+   "combo": 0.9510649812612127
+  }
+ },
+ "overall": {
+  "dice": 0.9281185801425332,
+  "hd": 0.9117615036977265,
+  "combo": 0.9183043342756493
+ }
+}

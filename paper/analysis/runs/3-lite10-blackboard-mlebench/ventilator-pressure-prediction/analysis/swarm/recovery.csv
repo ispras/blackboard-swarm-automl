@@ -1,0 +1,4 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+canopus_omega_valmode_bug.md,canopus,2026-10-31T11:37:54+03:00,bug,aldebaran_eta_fold0_0178.md,aldebaran,0,1,286.0,aldebaran_eta_fold0_0178.md,1,286.0
+canopus_omega_maskbug_alert.md,canopus,2026-10-31T16:05:22+03:00,bug conflict,bellatrix_omicron_blend_0172.md,bellatrix,0,1,1316.0,bellatrix_omicron_blend_0172.md,1,1316.0
+bellatrix_omicron_blend_0172.md,bellatrix,2026-10-31T16:27:18+03:00,bug,bellatrix_omicron_final_assembly.md,bellatrix,1,1,120.0,bellatrix_omicron_final_assembly.md,1,120.0

@@ -1,0 +1,22 @@
+{
+  "task": "cassava-leaf-disease-classification",
+  "experiment": "1-lie10-blackboard-mlebench",
+  "job_id": 15432,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-16T16:14:00+00:00",
+  "score": 0.9006,
+  "metric": "accuracy",
+  "is_lower_better": false,
+  "thresholds": {
+    "gold": 0.9013,
+    "silver": 0.8992,
+    "bronze": 0.8978,
+    "median": 0.8909
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": true,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

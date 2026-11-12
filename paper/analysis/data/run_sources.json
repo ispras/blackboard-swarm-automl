@@ -1,0 +1,14 @@
+{
+  "1": {
+    "path": "paper/analysis/runs/1-lite10-blackboard-mlebench",
+    "tasks": 10
+  },
+  "2": {
+    "path": "paper/analysis/runs/2-lite10-blackboard-mlebench",
+    "tasks": 10
+  },
+  "3": {
+    "path": "paper/analysis/runs/3-lite10-blackboard-mlebench",
+    "tasks": 10
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "label": "new-york-city-taxi-fare-prediction",
+  "metric": "root-mean-squared-error",
+  "is_lower_better": true,
+  "final_score": 3.84914,
+  "thresholds": {
+    "gold": 2.83377,
+    "silver": 2.88191,
+    "bronze": 2.92371,
+    "median": 3.59741
+  },
+  "messages": {
+    "agent": 55,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 55,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 55,
+    "edges": 35,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 6,
+    "mean_depth_all": 1.0545454545454545,
+    "mean_depth_linked": 2.5217391304347827,
+    "longest_path": [
+      "canopus_pi_corrupt_improved.md",
+      "aldebaran_omicron_corrupt_and_blend.md",
+      "mimosa_omicron_corrupt_fallback_v2.md",
+      "mimosa_omicron_xgb_full_result.md",
+      "aldebaran_omicron_corrupt_insight.md",
+      "mimosa_omicron_baseline_xgb.md",
+      "mimosa_omicron_status_prep.md"
+    ],
+    "max_indegree": 3,
+    "hubs": [
+      {
+        "name": "aldebaran_omicron_corrupt_and_blend.md",
+        "agent": "aldebaran",
+        "in_degree": 3,
+        "depth": 5,
+        "tags": [
+          "communication",
+          "ensembling",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-11-03T21:00:15+03:00"
+      },
+      {
+        "name": "canopus_pi_tail_analysis.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 1,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-11-04T02:46:52+03:00"
+      },
+      {
+        "name": "canopus_pi_intro.md",
+        "agent": "canopus",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "plan"
+        ],
+        "time": "2026-11-03T19:43:24+03:00"
+      },
+      {
+        "name": "mimosa_omicron_intro_plan.md",
+        "agent": "mimosa",
+        "in_degree": 2,
+        "depth": 1,
+        "tags": [
+          "communication",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-11-03T19:43:47+03:00"
+      },
+      {
+        "name": "mimosa_omicron_status_prep.md",
+        "agent": "mimosa",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "feature_engineering",
+          "status"
+        ],
+        "time": "2026-11-03T19:44:13+03:00"
+      },
+      {
+        "name": "mimosa_omicron_baseline_xgb.md",
+        "agent": "mimosa",
+        "in_degree": 2,
+        "depth": 1,
+        "tags": [
+          "communication",
+          "insight",
+          "model_selection",
+          "training"
+        ],
+        "time": "2026-11-03T19:50:34+03:00"
+      },
+      {
+        "name": "aldebaran_omicron_gpu_full.md",
+        "agent": "aldebaran",
+        "in_degree": 2,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "training"
+        ],
+        "time": "2026-11-03T20:21:00+03:00"
+      }
+    ],
+    "submission_count": 13,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3
+    ],
+    "final_submission": {
+      "name": "mimosa_omicron_FINAL_CONFIRM.md",
+      "time": "2026-11-04T07:17:27+03:00",
+      "depth": 3,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "transitive": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "prev_linked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 0,
+      "direct": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      },
+      "transitive": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      }
+    },
+    "broad": {
+      "n_events": 0,
+      "direct": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      },
+      "transitive": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      }
+    },
+    "all_new_best": {
+      "n_events": 0,
+      "direct": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      },
+      "transitive": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 0,
+      "rate": 0.0,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 0,
+      "rate": 0.0,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "problem_authors": {
+      "canopus": 1,
+      "mimosa": 1
+    },
+    "recovery_authors": {}
+  }
+}

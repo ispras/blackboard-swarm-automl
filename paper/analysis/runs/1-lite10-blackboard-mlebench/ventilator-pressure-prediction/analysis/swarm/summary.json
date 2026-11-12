@@ -1,0 +1,306 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "label": "ventilator-pressure-prediction",
+  "metric": "MAE",
+  "is_lower_better": true,
+  "final_score": 0.15964,
+  "thresholds": {
+    "gold": 0.1119,
+    "silver": 0.1338,
+    "bronze": 0.1364,
+    "median": 0.1638
+  },
+  "messages": {
+    "agent": 67,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 10,
+    "without_metric": 30,
+    "system_links": 3
+  },
+  "graph": {
+    "nodes": 67,
+    "edges": 64,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 8,
+    "mean_depth_all": 1.9253731343283582,
+    "mean_depth_linked": 3.5833333333333335,
+    "longest_path": [
+      "antares_nu_plan_strong_members.md",
+      "sirius_tau_blend6_0170.md",
+      "dubhe_phi_status_ep29.md",
+      "dubhe_phi_mae_ensemble_tips.md",
+      "sirius_tau_val_format_agreed.md",
+      "antares_nu_agree_seed42_roles.md",
+      "dubhe_phi_split_conflict_resolution.md",
+      "dubhe_phi_baseline_shared_cache.md",
+      "antares_nu_intro_plan.md"
+    ],
+    "max_indegree": 6,
+    "hubs": [
+      {
+        "name": "sirius_tau_val_format_agreed.md",
+        "agent": "sirius",
+        "in_degree": 6,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-11-02T17:23:11+03:00"
+      },
+      {
+        "name": "sirius_tau_ensemble_protocol.md",
+        "agent": "sirius",
+        "in_degree": 4,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-11-02T17:16:03+03:00"
+      },
+      {
+        "name": "dubhe_phi_qa_final6_pass.md",
+        "agent": "dubhe",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-03T03:57:23+03:00"
+      },
+      {
+        "name": "antares_nu_qa_final6_pass.md",
+        "agent": "antares",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-03T03:59:24+03:00"
+      },
+      {
+        "name": "dubhe_phi_mae_ensemble_tips.md",
+        "agent": "dubhe",
+        "in_degree": 3,
+        "depth": 5,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "postprocessing"
+        ],
+        "time": "2026-11-02T17:42:03+03:00"
+      },
+      {
+        "name": "antares_nu_bilstm320_done.md",
+        "agent": "antares",
+        "in_degree": 3,
+        "depth": 5,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-02T18:40:44+03:00"
+      },
+      {
+        "name": "dubhe_phi_ft2_new_best_01678.md",
+        "agent": "dubhe",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "insight",
+          "optimization",
+          "status",
+          "training"
+        ],
+        "time": "2026-11-02T23:36:32+03:00"
+      }
+    ],
+    "submission_count": 41,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      5,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7
+    ],
+    "final_submission": {
+      "name": "antares_nu_final_phase_confirmed.md",
+      "time": "2026-11-03T05:06:22+03:00",
+      "depth": 2,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 16,
+      "mean": 0.12938937499999997,
+      "median": 0.021080000000000015,
+      "positive": 0.75,
+      "max": 0.7979999999999999
+    },
+    "transitive": {
+      "n": 19,
+      "mean": 0.1256857894736842,
+      "median": 0.03570000000000001,
+      "positive": 0.7368421052631579,
+      "max": 0.7474999999999999
+    },
+    "prev_linked": {
+      "n": 22,
+      "mean": 0.056140454545454535,
+      "median": 0.00021999999999999797,
+      "positive": 0.5454545454545454,
+      "max": 0.7474999999999999
+    },
+    "prev_unlinked": {
+      "n": 14,
+      "mean": -0.002457142857142856,
+      "median": 0.0003049999999999997,
+      "positive": 0.6428571428571429,
+      "max": 0.001700000000000007
+    },
+    "perm_prev": {
+      "diff": 0.058597597402597394,
+      "p": 0.280971902809719
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 2,
+        "rate": 0.3333333333333333,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 698.5
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 2,
+        "rate": 0.3333333333333333,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 698.5
+      }
+    },
+    "broad": {
+      "n_events": 7,
+      "direct": {
+        "events": 7,
+        "adopted": 2,
+        "rate": 0.2857142857142857,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 698.5
+      },
+      "transitive": {
+        "events": 7,
+        "adopted": 2,
+        "rate": 0.2857142857142857,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 698.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 22,
+      "direct": {
+        "events": 22,
+        "adopted": 11,
+        "rate": 0.5,
+        "median_msgs": 2,
+        "mean_msgs": 2.1818181818181817,
+        "median_seconds": 390.0
+      },
+      "transitive": {
+        "events": 22,
+        "adopted": 11,
+        "rate": 0.5,
+        "median_msgs": 2,
+        "mean_msgs": 2.1818181818181817,
+        "median_seconds": 390.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 0,
+      "rate": 0.0,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 1,
+      "rate": 0.5,
+      "median_msgs": 7,
+      "median_seconds": 5079.0,
+      "different_author": 1
+    },
+    "problem_authors": {
+      "dubhe": 2
+    },
+    "recovery_authors": {}
+  }
+}

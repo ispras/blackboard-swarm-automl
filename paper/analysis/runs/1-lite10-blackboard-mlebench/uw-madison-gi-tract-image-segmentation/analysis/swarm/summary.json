@@ -1,0 +1,316 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
+  "label": "uw-madison-gi-tract-image-segmentation",
+  "metric": "dice-hausdorff-combo",
+  "is_lower_better": false,
+  "final_score": 0.86185,
+  "thresholds": {
+    "gold": 0.87917,
+    "silver": 0.87139,
+    "bronze": 0.86699,
+    "median": 0.85499
+  },
+  "messages": {
+    "agent": 68,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 53,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 68,
+    "edges": 103,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 11,
+    "mean_depth_all": 3.1470588235294117,
+    "mean_depth_linked": 4.28,
+    "longest_path": [
+      "aldebaran_omicron_final_signoff.md",
+      "aldebaran_omicron_AC_probs_ready.md",
+      "regulus_alpha_postproc_v2b.md",
+      "canopus_phi_interim_fused_B6.md",
+      "regulus_alpha_probs_ep6.md",
+      "regulus_alpha_postproc_v1.md",
+      "aldebaran_omicron_postproc_insight.md",
+      "regulus_alpha_status_metric.md",
+      "regulus_alpha_cache_and_gpu.md",
+      "aldebaran_omicron_modelA_start.md",
+      "canopus_phi_roles_proposal.md",
+      "aldebaran_omicron_intro.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "aldebaran_omicron_encoding_algebra.md",
+        "agent": "aldebaran",
+        "in_degree": 7,
+        "depth": 1,
+        "tags": [
+          "bug",
+          "communication",
+          "conflict",
+          "data_preprocessing",
+          "ensembling",
+          "insight",
+          "submission"
+        ],
+        "time": "2026-11-02T20:23:36+03:00"
+      },
+      {
+        "name": "regulus_alpha_zsmooth_confirmed.md",
+        "agent": "regulus",
+        "in_degree": 6,
+        "depth": 1,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "metric",
+          "postprocessing",
+          "submission"
+        ],
+        "time": "2026-11-03T00:08:02+03:00"
+      },
+      {
+        "name": "canopus_phi_D_protocol.md",
+        "agent": "canopus",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "status"
+        ],
+        "time": "2026-11-03T00:54:15+03:00"
+      },
+      {
+        "name": "canopus_phi_cache_ready.md",
+        "agent": "canopus",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "status"
+        ],
+        "time": "2026-11-02T17:17:05+03:00"
+      },
+      {
+        "name": "canopus_phi_CRITICAL_rle_order_bug.md",
+        "agent": "canopus",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "bug",
+          "communication",
+          "conflict",
+          "data_preprocessing",
+          "insight",
+          "status"
+        ],
+        "time": "2026-11-02T20:13:42+03:00"
+      },
+      {
+        "name": "regulus_alpha_confirm_rle_C.md",
+        "agent": "regulus",
+        "in_degree": 4,
+        "depth": 1,
+        "tags": [
+          "bug",
+          "communication",
+          "conflict",
+          "data_preprocessing",
+          "gpu",
+          "insight",
+          "status"
+        ],
+        "time": "2026-11-02T20:25:21+03:00"
+      },
+      {
+        "name": "regulus_alpha_postproc_v2b.md",
+        "agent": "regulus",
+        "in_degree": 4,
+        "depth": 9,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "metric",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-11-02T22:02:54+03:00"
+      }
+    ],
+    "submission_count": 31,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      6,
+      6,
+      7,
+      8,
+      10,
+      10,
+      10,
+      10,
+      11,
+      11
+    ],
+    "final_submission": {
+      "name": "canopus_phi_FINAL_CONFIRM.md",
+      "time": "2026-11-03T04:54:32+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 6,
+      "mean": 0.04371666666666668,
+      "median": 0.0,
+      "positive": 0.3333333333333333,
+      "max": 0.25250000000000006
+    },
+    "transitive": {
+      "n": 8,
+      "mean": 0.0687375,
+      "median": 0.0,
+      "positive": 0.375,
+      "max": 0.28759999999999997
+    },
+    "prev_linked": {
+      "n": 10,
+      "mean": 0.02405999999999998,
+      "median": -0.0035000000000000586,
+      "positive": 0.3,
+      "max": 0.28490000000000004
+    },
+    "prev_unlinked": {
+      "n": 4,
+      "mean": -0.005825000000000052,
+      "median": -0.005600000000000049,
+      "positive": 0.0,
+      "max": -0.0035000000000000586
+    },
+    "perm_prev": {
+      "diff": 0.029885000000000033,
+      "p": 0.5427457254274572
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 1,
+      "direct": {
+        "events": 1,
+        "adopted": 0,
+        "rate": 0.0,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      },
+      "transitive": {
+        "events": 1,
+        "adopted": 1,
+        "rate": 1.0,
+        "median_msgs": 10,
+        "mean_msgs": 10,
+        "median_seconds": 4787.0
+      }
+    },
+    "broad": {
+      "n_events": 5,
+      "direct": {
+        "events": 5,
+        "adopted": 2,
+        "rate": 0.4,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 3077.0
+      },
+      "transitive": {
+        "events": 5,
+        "adopted": 3,
+        "rate": 0.6,
+        "median_msgs": 2,
+        "mean_msgs": 4.333333333333333,
+        "median_seconds": 4787.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 1,
+        "rate": 0.25,
+        "median_msgs": 2,
+        "mean_msgs": 2,
+        "median_seconds": 1733.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 2,
+        "rate": 0.5,
+        "median_msgs": 6.0,
+        "mean_msgs": 6,
+        "median_seconds": 3260.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 14,
+    "direct": {
+      "events": 14,
+      "recovered": 9,
+      "rate": 0.6428571428571429,
+      "median_msgs": 2,
+      "median_seconds": 594.0,
+      "different_author": 5
+    },
+    "transitive": {
+      "events": 14,
+      "recovered": 9,
+      "rate": 0.6428571428571429,
+      "median_msgs": 2,
+      "median_seconds": 594.0,
+      "different_author": 5
+    },
+    "problem_authors": {
+      "aldebaran": 5,
+      "regulus": 6,
+      "canopus": 3
+    },
+    "recovery_authors": {
+      "regulus": 4,
+      "aldebaran": 4,
+      "canopus": 1
+    }
+  }
+}

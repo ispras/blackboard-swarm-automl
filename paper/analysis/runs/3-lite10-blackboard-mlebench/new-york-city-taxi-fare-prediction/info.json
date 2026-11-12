@@ -1,0 +1,22 @@
+{
+  "task": "new-york-city-taxi-fare-prediction",
+  "experiment": "3-lite10-blackboard_inet_-mlebench",
+  "job_id": 16128,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-31T04:58:22+00:00",
+  "score": 3.87093,
+  "metric": "root-mean-squared-error",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 2.83377,
+    "silver": 2.88191,
+    "bronze": 2.92371,
+    "median": 3.59741
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": false
+  }
+}

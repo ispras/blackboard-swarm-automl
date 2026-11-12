@@ -1,0 +1,321 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/spooky-author-identification",
+  "label": "spooky-author-identification",
+  "metric": "multi-class-log-loss",
+  "is_lower_better": true,
+  "final_score": 0.17353,
+  "thresholds": {
+    "gold": 0.16506,
+    "silver": 0.26996,
+    "bronze": 0.29381,
+    "median": 0.418785
+  },
+  "messages": {
+    "agent": 75,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 28,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 75,
+    "edges": 98,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 15,
+    "mean_depth_all": 5.746666666666667,
+    "mean_depth_linked": 8.62,
+    "longest_path": [
+      "bellatrix_tau_final_timeline_0196.md",
+      "mirfak_pi_final_meta_0198.md",
+      "bellatrix_tau_3way_01992.md",
+      "bellatrix_tau_lrhgb_01996.md",
+      "canopus_kappa_meta_blend_confirmed.md",
+      "bellatrix_tau_refresh_02035.md",
+      "canopus_kappa_stack_0206.md",
+      "mirfak_pi_electra_fail_xlnet.md",
+      "mirfak_pi_dbl5_in_stack.md",
+      "bellatrix_tau_transformer_breaks_stack.md",
+      "bellatrix_tau_nested_stack_result.md",
+      "bellatrix_tau_independent_stack_check.md",
+      "canopus_kappa_interim_stack.md",
+      "mirfak_pi_transformer_findings.md",
+      "canopus_kappa_status2.md",
+      "bellatrix_tau_stacking_insight.md"
+    ],
+    "max_indegree": 5,
+    "hubs": [
+      {
+        "name": "bellatrix_tau_transformer_breaks_stack.md",
+        "agent": "bellatrix",
+        "in_degree": 5,
+        "depth": 6,
+        "tags": [
+          "bug",
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "problem",
+          "submission"
+        ],
+        "time": "2026-10-20T17:00:43+03:00"
+      },
+      {
+        "name": "canopus_kappa_intro.md",
+        "agent": "canopus",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "plan"
+        ],
+        "time": "2026-10-20T15:01:54+03:00"
+      },
+      {
+        "name": "bellatrix_tau_stacking_insight.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-10-20T15:25:25+03:00"
+      },
+      {
+        "name": "bellatrix_tau_independent_stack_check.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 4,
+        "tags": [
+          "bug",
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-10-20T16:25:52+03:00"
+      },
+      {
+        "name": "bellatrix_tau_nested_stack_result.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 5,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-20T16:40:03+03:00"
+      },
+      {
+        "name": "mirfak_pi_dbl5_in_stack.md",
+        "agent": "mirfak",
+        "in_degree": 3,
+        "depth": 7,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-20T17:29:09+03:00"
+      },
+      {
+        "name": "canopus_kappa_stack_0206.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 9,
+        "tags": [
+          "architecture",
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-20T19:24:40+03:00"
+      }
+    ],
+    "submission_count": 39,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      6,
+      7,
+      8,
+      9,
+      9,
+      10,
+      10,
+      10,
+      11,
+      11,
+      12,
+      12,
+      12,
+      12,
+      12,
+      12,
+      13,
+      13,
+      13,
+      13,
+      13,
+      14,
+      14,
+      14,
+      14,
+      15,
+      15
+    ],
+    "final_submission": {
+      "name": "canopus_kappa_hardend_ready.md",
+      "time": "2026-10-21T02:55:53+03:00",
+      "depth": 14,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 29,
+      "mean": 0.006163103448275863,
+      "median": 0.0008599999999999997,
+      "positive": 0.6896551724137931,
+      "max": 0.11301999999999998
+    },
+    "transitive": {
+      "n": 32,
+      "mean": 0.0023856250000000015,
+      "median": 0.0004299999999999998,
+      "positive": 0.625,
+      "max": 0.041610000000000036
+    },
+    "prev_linked": {
+      "n": 33,
+      "mean": -0.0038778787878787895,
+      "median": -0.00020000000000000573,
+      "positive": 0.42424242424242425,
+      "max": 0.041610000000000036
+    },
+    "prev_unlinked": {
+      "n": 13,
+      "mean": -0.020363846153846153,
+      "median": -0.002370000000000011,
+      "positive": 0.15384615384615385,
+      "max": 0.06788999999999995
+    },
+    "perm_prev": {
+      "diff": 0.016485967365967365,
+      "p": 0.13108689131086892
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 10,
+      "direct": {
+        "events": 10,
+        "adopted": 6,
+        "rate": 0.6,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.6666666666666667,
+        "median_seconds": 1091.0
+      },
+      "transitive": {
+        "events": 10,
+        "adopted": 7,
+        "rate": 0.7,
+        "median_msgs": 2,
+        "mean_msgs": 1.7142857142857142,
+        "median_seconds": 1401.0
+      }
+    },
+    "broad": {
+      "n_events": 21,
+      "direct": {
+        "events": 21,
+        "adopted": 11,
+        "rate": 0.5238095238095238,
+        "median_msgs": 2,
+        "mean_msgs": 1.9090909090909092,
+        "median_seconds": 1098.0
+      },
+      "transitive": {
+        "events": 21,
+        "adopted": 16,
+        "rate": 0.7619047619047619,
+        "median_msgs": 2.0,
+        "mean_msgs": 3.125,
+        "median_seconds": 1676.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 17,
+      "direct": {
+        "events": 17,
+        "adopted": 11,
+        "rate": 0.6470588235294118,
+        "median_msgs": 2,
+        "mean_msgs": 1.9090909090909092,
+        "median_seconds": 863.0
+      },
+      "transitive": {
+        "events": 17,
+        "adopted": 12,
+        "rate": 0.7058823529411765,
+        "median_msgs": 2.0,
+        "mean_msgs": 1.9166666666666667,
+        "median_seconds": 1132.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 13,
+    "direct": {
+      "events": 13,
+      "recovered": 7,
+      "rate": 0.5384615384615384,
+      "median_msgs": 2,
+      "median_seconds": 1557.0,
+      "different_author": 4
+    },
+    "transitive": {
+      "events": 13,
+      "recovered": 9,
+      "rate": 0.6923076923076923,
+      "median_msgs": 2,
+      "median_seconds": 1723.0,
+      "different_author": 6
+    },
+    "problem_authors": {
+      "mirfak": 7,
+      "canopus": 3,
+      "bellatrix": 3
+    },
+    "recovery_authors": {
+      "bellatrix": 2,
+      "canopus": 2,
+      "mirfak": 3
+    }
+  }
+}

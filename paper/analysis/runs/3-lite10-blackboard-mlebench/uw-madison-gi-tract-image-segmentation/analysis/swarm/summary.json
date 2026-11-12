@@ -1,0 +1,302 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
+  "label": "uw-madison-gi-tract-image-segmentation",
+  "metric": "dice-hausdorff-combo",
+  "is_lower_better": false,
+  "final_score": 0.85981,
+  "thresholds": {
+    "gold": 0.87917,
+    "silver": 0.87139,
+    "bronze": 0.86699,
+    "median": 0.85499
+  },
+  "messages": {
+    "agent": 65,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 3,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 1,
+    "without_metric": 43,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 65,
+    "edges": 49,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 5,
+    "mean_depth_all": 1.0461538461538462,
+    "mean_depth_linked": 2.3448275862068964,
+    "longest_path": [
+      "mirfak_sigma_independent_ensemble_check.md",
+      "capella_zeta_final_probs_ready.md",
+      "mirfak_sigma_finetune_plan.md",
+      "capella_zeta_3dcc_resolved.md",
+      "betelgeuse_pi_3dcc_finding.md",
+      "mirfak_sigma_metric_agg_and_early_oof.md"
+    ],
+    "max_indegree": 4,
+    "hubs": [
+      {
+        "name": "mirfak_sigma_rle_CORRECTION.md",
+        "agent": "mirfak",
+        "in_degree": 4,
+        "depth": 2,
+        "tags": [
+          "bug",
+          "communication",
+          "components",
+          "conflict",
+          "data_pipeline",
+          "insight"
+        ],
+        "time": "2026-11-01T15:59:18+03:00"
+      },
+      {
+        "name": "betelgeuse_pi_vote_vs_probavg.md",
+        "agent": "betelgeuse",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-11-01T23:04:07+03:00"
+      },
+      {
+        "name": "betelgeuse_pi_intro_plan.md",
+        "agent": "betelgeuse",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "insight",
+          "plan"
+        ],
+        "time": "2026-11-01T15:55:24+03:00"
+      },
+      {
+        "name": "betelgeuse_pi_rle_order_conflict.md",
+        "agent": "betelgeuse",
+        "in_degree": 2,
+        "depth": 1,
+        "tags": [
+          "bug",
+          "conflict",
+          "data_pipeline",
+          "insight"
+        ],
+        "time": "2026-11-01T15:55:44+03:00"
+      },
+      {
+        "name": "mirfak_sigma_rle_order_RULING.md",
+        "agent": "mirfak",
+        "in_degree": 2,
+        "depth": 1,
+        "tags": [
+          "bug",
+          "communication",
+          "conflict",
+          "connected",
+          "data_pipeline",
+          "insight"
+        ],
+        "time": "2026-11-01T15:55:56+03:00"
+      },
+      {
+        "name": "capella_zeta_rle_resolved.md",
+        "agent": "capella",
+        "in_degree": 2,
+        "depth": 2,
+        "tags": [
+          "bug",
+          "cc",
+          "communication",
+          "conflict",
+          "data_pipeline",
+          "insight"
+        ],
+        "time": "2026-11-01T15:56:41+03:00"
+      },
+      {
+        "name": "capella_zeta_common_val_split.md",
+        "agent": "capella",
+        "in_degree": 2,
+        "depth": 3,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection"
+        ],
+        "time": "2026-11-01T16:04:41+03:00"
+      }
+    ],
+    "submission_count": 30,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5
+    ],
+    "final_submission": {
+      "name": "betelgeuse_pi_final_confirmation.md",
+      "time": "2026-11-02T03:40:51+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 3,
+      "mean": 6.666666666665932e-05,
+      "median": 0.0,
+      "positive": 0.3333333333333333,
+      "max": 0.00019999999999997797
+    },
+    "transitive": {
+      "n": 5,
+      "mean": 0.0039799999999999836,
+      "median": 0.0,
+      "positive": 0.4,
+      "max": 0.0393
+    },
+    "prev_linked": {
+      "n": 9,
+      "mean": 0.0016000000000000211,
+      "median": -0.0005999999999999339,
+      "positive": 0.1111111111111111,
+      "max": 0.0393
+    },
+    "prev_unlinked": {
+      "n": 12,
+      "mean": 0.0014166666666666772,
+      "median": -0.00019999999999997797,
+      "positive": 0.4166666666666667,
+      "max": 0.008799999999999919
+    },
+    "perm_prev": {
+      "diff": 0.00018333333333334393,
+      "p": 0.9739026097390261
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      }
+    },
+    "broad": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 7,
+      "direct": {
+        "events": 7,
+        "adopted": 4,
+        "rate": 0.5714285714285714,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      },
+      "transitive": {
+        "events": 7,
+        "adopted": 4,
+        "rate": 0.5714285714285714,
+        "median_msgs": 3.0,
+        "mean_msgs": 5.75,
+        "median_seconds": 2600.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 6,
+    "direct": {
+      "events": 6,
+      "recovered": 4,
+      "rate": 0.6666666666666666,
+      "median_msgs": 5.0,
+      "median_seconds": 1495.0,
+      "different_author": 3
+    },
+    "transitive": {
+      "events": 6,
+      "recovered": 4,
+      "rate": 0.6666666666666666,
+      "median_msgs": 5.0,
+      "median_seconds": 1495.0,
+      "different_author": 3
+    },
+    "problem_authors": {
+      "betelgeuse": 2,
+      "mirfak": 2,
+      "capella": 2
+    },
+    "recovery_authors": {
+      "betelgeuse": 2,
+      "capella": 2
+    }
+  }
+}

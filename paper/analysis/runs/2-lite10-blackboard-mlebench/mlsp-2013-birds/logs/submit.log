@@ -1,0 +1,66 @@
+[2026-10-20 13:01:58,163] [data.py:213] Downloading the dataset for `mlsp-2013-birds` to `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds`...
+Warning: Looks like you're using an outdated API Version, please consider updating (server 2.2.2 / client 1.6.17)
+Downloading mlsp-2013-birds.zip to /home/travvy/.cache/mle-bench/data/mlsp-2013-birds
+  0%|          | 0.00/557M [00:00<?, ?B/s]  0%|          | 1.00M/557M [00:00<06:53, 1.41MB/s]  0%|          | 2.00M/557M [00:00<03:31, 2.75MB/s]  1%|          | 4.00M/557M [00:00<01:40, 5.78MB/s]  1%|▏         | 7.00M/557M [00:01<00:53, 10.8MB/s]  2%|▏         | 11.0M/557M [00:01<00:35, 16.3MB/s]  3%|▎         | 14.0M/557M [00:01<00:29, 19.2MB/s]  3%|▎         | 17.0M/557M [00:01<00:29, 19.0MB/s]  4%|▎         | 20.0M/557M [00:01<00:28, 19.8MB/s]  4%|▍         | 23.0M/557M [00:01<00:25, 21.7MB/s]  5%|▍         | 26.0M/557M [00:01<00:23, 23.3MB/s]  5%|▌         | 29.0M/557M [00:02<00:22, 24.7MB/s]  6%|▌         | 32.0M/557M [00:02<00:21, 25.5MB/s]  6%|▋         | 35.0M/557M [00:02<00:20, 26.2MB/s]  7%|▋         | 39.0M/557M [00:02<00:19, 28.4MB/s]  8%|▊         | 43.0M/557M [00:02<00:25, 21.3MB/s]  8%|▊         | 46.0M/557M [00:02<00:23, 22.7MB/s]  9%|▉         | 50.0M/557M [00:02<00:20, 25.5MB/s] 10%|▉         | 54.0M/557M [00:03<00:19, 27.7MB/s] 10%|█         | 58.0M/557M [00:03<00:17, 29.3MB/s] 11%|█         | 61.0M/557M [00:03<00:18, 28.9MB/s] 12%|█▏        | 65.0M/557M [00:03<00:17, 30.1MB/s] 12%|█▏        | 69.0M/557M [00:03<00:16, 31.2MB/s] 13%|█▎        | 73.0M/557M [00:03<00:15, 31.9MB/s] 14%|█▍        | 77.0M/557M [00:03<00:15, 32.0MB/s] 15%|█▍        | 81.0M/557M [00:03<00:15, 32.5MB/s] 15%|█▌        | 85.0M/557M [00:04<00:15, 32.8MB/s] 16%|█▌        | 89.0M/557M [00:04<00:14, 33.0MB/s] 17%|█▋        | 93.0M/557M [00:04<00:14, 33.1MB/s] 17%|█▋        | 97.0M/557M [00:04<00:14, 33.3MB/s] 18%|█▊        | 101M/557M [00:04<00:14, 33.3MB/s]  19%|█▉        | 105M/557M [00:04<00:16, 28.3MB/s] 20%|█▉        | 109M/557M [00:04<00:15, 29.7MB/s] 20%|██        | 113M/557M [00:04<00:15, 30.7MB/s] 21%|██        | 117M/557M [00:05<00:14, 31.4MB/s] 22%|██▏       | 121M/557M [00:05<00:14, 31.9MB/s] 22%|██▏       | 125M/557M [00:05<00:13, 32.4MB/s] 23%|██▎       | 129M/557M [00:05<00:13, 32.6MB/s] 24%|██▍       | 133M/557M [00:05<00:13, 32.9MB/s] 25%|██▍       | 137M/557M [00:05<00:13, 33.0MB/s] 25%|██▌       | 141M/557M [00:05<00:13, 31.3MB/s] 26%|██▌       | 145M/557M [00:06<00:15, 28.7MB/s] 27%|██▋       | 149M/557M [00:06<00:14, 30.0MB/s] 27%|██▋       | 153M/557M [00:06<00:13, 30.7MB/s] 28%|██▊       | 156M/557M [00:06<00:13, 30.2MB/s] 29%|██▊       | 160M/557M [00:06<00:13, 31.2MB/s] 29%|██▉       | 163M/557M [00:06<00:18, 22.2MB/s] 30%|██▉       | 166M/557M [00:06<00:17, 23.5MB/s] 30%|███       | 169M/557M [00:07<00:20, 19.8MB/s] 31%|███       | 172M/557M [00:07<00:18, 21.5MB/s] 32%|███▏      | 176M/557M [00:07<00:16, 24.5MB/s] 32%|███▏      | 180M/557M [00:07<00:14, 27.0MB/s] 33%|███▎      | 183M/557M [00:07<00:14, 27.2MB/s] 34%|███▎      | 187M/557M [00:07<00:13, 29.0MB/s] 34%|███▍      | 191M/557M [00:07<00:12, 30.3MB/s] 35%|███▍      | 194M/557M [00:07<00:12, 29.6MB/s] 36%|███▌      | 198M/557M [00:08<00:12, 30.8MB/s] 36%|███▋      | 202M/557M [00:08<00:11, 31.6MB/s] 37%|███▋      | 206M/557M [00:08<00:11, 32.1MB/s] 38%|███▊      | 210M/557M [00:08<00:11, 32.6MB/s] 38%|███▊      | 214M/557M [00:08<00:10, 32.8MB/s] 39%|███▉      | 218M/557M [00:08<00:10, 33.1MB/s] 40%|███▉      | 222M/557M [00:08<00:10, 33.2MB/s] 41%|████      | 226M/557M [00:08<00:10, 33.3MB/s] 41%|████▏     | 230M/557M [00:09<00:11, 29.6MB/s] 42%|████▏     | 234M/557M [00:09<00:11, 30.6MB/s] 43%|████▎     | 237M/557M [00:09<00:11, 29.9MB/s] 43%|████▎     | 241M/557M [00:09<00:10, 30.9MB/s] 44%|████▍     | 245M/557M [00:09<00:10, 29.9MB/s] 45%|████▍     | 249M/557M [00:09<00:10, 30.9MB/s] 45%|████▌     | 252M/557M [00:09<00:11, 28.8MB/s] 46%|████▌     | 255M/557M [00:10<00:11, 28.2MB/s] 46%|████▋     | 258M/557M [00:10<00:11, 27.2MB/s] 47%|████▋     | 261M/557M [00:10<00:11, 27.3MB/s] 48%|████▊     | 265M/557M [00:10<00:10, 29.2MB/s] 48%|████▊     | 269M/557M [00:10<00:09, 30.5MB/s] 49%|████▉     | 272M/557M [00:10<00:10, 29.6MB/s] 50%|████▉     | 276M/557M [00:10<00:09, 30.8MB/s] 50%|█████     | 280M/557M [00:10<00:09, 31.7MB/s] 51%|█████     | 284M/557M [00:11<00:08, 32.1MB/s] 52%|█████▏    | 288M/557M [00:11<00:08, 32.6MB/s] 52%|█████▏    | 292M/557M [00:11<00:08, 32.9MB/s] 53%|█████▎    | 296M/557M [00:11<00:08, 33.1MB/s] 54%|█████▍    | 300M/557M [00:11<00:10, 25.9MB/s] 54%|█████▍    | 303M/557M [00:11<00:10, 25.5MB/s] 55%|█████▍    | 306M/557M [00:11<00:10, 25.9MB/s] 55%|█████▌    | 309M/557M [00:11<00:09, 26.4MB/s] 56%|█████▌    | 313M/557M [00:12<00:08, 28.5MB/s] 57%|█████▋    | 317M/557M [00:12<00:08, 29.8MB/s] 57%|█████▋    | 320M/557M [00:12<00:08, 29.4MB/s] 58%|█████▊    | 323M/557M [00:12<00:09, 25.7MB/s] 59%|█████▊    | 326M/557M [00:12<00:09, 26.2MB/s] 59%|█████▉    | 329M/557M [00:12<00:09, 26.5MB/s] 60%|█████▉    | 332M/557M [00:13<00:16, 14.7MB/s] 60%|██████    | 335M/557M [00:13<00:13, 16.9MB/s] 61%|██████    | 338M/557M [00:13<00:12, 19.1MB/s] 61%|██████▏   | 342M/557M [00:13<00:10, 22.5MB/s] 62%|██████▏   | 345M/557M [00:13<00:09, 23.8MB/s] 63%|██████▎   | 349M/557M [00:13<00:08, 26.5MB/s] 63%|██████▎   | 353M/557M [00:13<00:07, 28.5MB/s] 64%|██████▍   | 356M/557M [00:14<00:07, 28.2MB/s] 65%|██████▍   | 360M/557M [00:14<00:06, 29.8MB/s] 65%|██████▌   | 364M/557M [00:14<00:06, 30.9MB/s] 66%|██████▌   | 368M/557M [00:14<00:06, 31.7MB/s] 67%|██████▋   | 372M/557M [00:14<00:06, 32.2MB/s] 67%|██████▋   | 376M/557M [00:14<00:05, 32.6MB/s] 68%|██████▊   | 380M/557M [00:14<00:06, 30.1MB/s] 69%|██████▉   | 384M/557M [00:14<00:05, 31.0MB/s] 70%|██████▉   | 388M/557M [00:15<00:05, 31.7MB/s] 70%|███████   | 392M/557M [00:15<00:06, 26.5MB/s] 71%|███████   | 395M/557M [00:15<00:06, 25.2MB/s] 71%|███████▏  | 398M/557M [00:15<00:07, 22.7MB/s] 72%|███████▏  | 401M/557M [00:15<00:06, 23.9MB/s] 73%|███████▎  | 404M/557M [00:15<00:06, 24.8MB/s] 73%|███████▎  | 408M/557M [00:15<00:05, 27.3MB/s] 74%|███████▍  | 411M/557M [00:16<00:05, 27.3MB/s] 74%|███████▍  | 415M/557M [00:16<00:05, 29.2MB/s] 75%|███████▌  | 419M/557M [00:16<00:04, 30.5MB/s] 76%|███████▌  | 422M/557M [00:16<00:04, 29.7MB/s] 76%|███████▋  | 426M/557M [00:16<00:04, 30.9MB/s] 77%|███████▋  | 430M/557M [00:16<00:04, 31.7MB/s] 78%|███████▊  | 434M/557M [00:16<00:04, 32.2MB/s] 79%|███████▊  | 438M/557M [00:16<00:03, 32.6MB/s] 79%|███████▉  | 442M/557M [00:17<00:03, 32.8MB/s] 80%|████████  | 446M/557M [00:17<00:03, 32.9MB/s] 81%|████████  | 450M/557M [00:17<00:03, 31.6MB/s] 81%|████████▏ | 454M/557M [00:17<00:03, 33.7MB/s] 82%|████████▏ | 458M/557M [00:17<00:03, 32.4MB/s] 83%|████████▎ | 462M/557M [00:17<00:02, 33.4MB/s] 84%|████████▎ | 466M/557M [00:17<00:03, 28.5MB/s] 84%|████████▍ | 470M/557M [00:18<00:03, 29.9MB/s] 85%|████████▌ | 474M/557M [00:18<00:02, 30.9MB/s] 86%|████████▌ | 478M/557M [00:18<00:02, 31.6MB/s] 87%|████████▋ | 482M/557M [00:18<00:02, 32.1MB/s] 87%|████████▋ | 486M/557M [00:18<00:02, 32.6MB/s] 88%|████████▊ | 490M/557M [00:18<00:02, 32.7MB/s] 89%|████████▊ | 494M/557M [00:18<00:02, 33.0MB/s] 89%|████████▉ | 498M/557M [00:18<00:01, 33.1MB/s] 90%|█████████ | 502M/557M [00:19<00:01, 33.2MB/s] 91%|█████████ | 506M/557M [00:19<00:01, 33.3MB/s] 92%|█████████▏| 510M/557M [00:19<00:01, 28.2MB/s] 92%|█████████▏| 514M/557M [00:19<00:01, 29.6MB/s] 93%|█████████▎| 518M/557M [00:19<00:01, 30.6MB/s] 94%|█████████▎| 522M/557M [00:19<00:01, 31.4MB/s] 94%|█████████▍| 526M/557M [00:19<00:01, 31.9MB/s] 95%|█████████▌| 530M/557M [00:19<00:00, 32.3MB/s] 96%|█████████▌| 534M/557M [00:20<00:00, 32.7MB/s] 97%|█████████▋| 538M/557M [00:20<00:00, 32.9MB/s] 97%|█████████▋| 542M/557M [00:20<00:00, 32.9MB/s] 98%|█████████▊| 546M/557M [00:20<00:00, 33.0MB/s] 99%|█████████▊| 550M/557M [00:20<00:00, 33.2MB/s] 99%|█████████▉| 554M/557M [00:20<00:00, 26.9MB/s]100%|█████████▉| 557M/557M [00:20<00:00, 26.7MB/s]100%|██████████| 557M/557M [00:20<00:00, 27.9MB/s]
+[2026-10-20 13:02:20,230] [data.py:67] Generating checksum for `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/mlsp-2013-birds.zip`...
+[2026-10-20 13:02:20,975] [data.py:80] Checksum for `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/mlsp-2013-birds.zip` matches the expected checksum.
+[2026-10-20 13:02:20,975] [data.py:83] Extracting `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/mlsp-2013-birds.zip` to `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/raw`...
+[2026-10-20 13:02:21,681] [data.py:85] Extracted `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/mlsp-2013-birds.zip` to `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds/raw` successfully.
+[2026-10-20 13:02:21,682] [data.py:168] Public directory is empty.
+[2026-10-20 13:02:21,682] [data.py:96] Preparing the dataset using `prepare` from `../../Desktop/mle-bench/mlebench/competitions/mlsp-2013-birds/prepare.py`...
+[2026-10-20 13:02:26,915] [data.py:107] Data for competition `mlsp-2013-birds` prepared successfully.
+[2026-10-20 13:02:26,916] [data.py:113] Generating checksums for files in `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds`...
+[2026-10-20 13:02:26,917] [data.py:141] Checksums for files in `/home/travvy/.cache/mle-bench/data/mlsp-2013-birds` match the expected checksums.
+[2026-10-20 13:02:26,918] [data.py:144] Removing the raw data directory for `mlsp-2013-birds`...
+
+== задача: MLSP 2013 Bird Classification Challenge (`mlsp-2013-birds`)
+==> /home/travvy/.pyenv/versions/mle-bench/bin/python -c from mlebench.cli import main; main() prepare -c mlsp-2013-birds --data-dir /home/travvy/.cache/mle-bench/data
+== prepared: /home/travvy/.cache/mle-bench/data/mlsp-2013-birds/prepared (mlebench-prepare)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/mlsp-2013-birds/answers.csv ← /home/travvy/.cache/mle-bench/data/mlsp-2013-birds/prepared/private/answers.csv
+  written private/competitions/mlsp-2013-birds/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (15.1 KiB) md5 004e8a10105cb0993f50606bbbdbfd68
+  installed data/essential_data/ (каталог)
+  installed data/sample_submission.csv (9.0 KiB) md5 6c0430ab5959d2e718911c3bd7a26a2f
+  installed data/supplemental_data/ (каталог)
+  written TASK.md (только description)
+  written data/README.md
+
+задача: MLSP 2013 Bird Classification Challenge (`mlsp-2013-birds`)
+  метрика: `auc-roc` (больше — лучше)
+  - пороги (81 команд в лидерборде):
+  - gold 0.93527
+  - silver 0.90038
+  - bronze 0.87372
+  - median 0.86572
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  mlsp-2013-birds
+sandbox/data:     634M (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (634MB) едут через бакет 'mlebench-mlsp-2013-birds' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-mlsp-2013-birds' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (204K)
+image:        swarm-mlm
+job:          mlsp-2013-birds
+/home/travvy/Desktop/sisyphus-blackboard-experiment/.venv-mlm/lib/python3.12/site-packages/ML_management/mlmanagement/git_info.py:93: UserWarning: Repo sisyphus-blackboard-experiment have changes.
+  warnings.warn(f"Repo {repo_name} have changes.")
+  0%|          | 0.00/185k [00:00<?, ?File/s]220kFile [00:00, 577kFile/s]                 
+{"job_id": "15660", "job_name": "mlsp-2013-birds", "status": "PLANNED"}
+
+Job запущен в MLM: mlsp-2013-birds (id 15660)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

@@ -1,0 +1,2 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+bellatrix_tau_baseline_swin.md,bellatrix,2026-10-20T17:57:06+03:00,problem,bellatrix_tau_swin_final.md,bellatrix,1,7,8792.0,bellatrix_tau_swin_final.md,7,8792.0

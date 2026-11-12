@@ -1,0 +1,11 @@
+task,short,medal,score,webfetch_calls,webfetch_ok,webfetch_fail,webfetch_unique_urls,websearch_calls,probe_blocks,direct_downloads,pip_installs,urllib_blocks,weight_downloads,weight_gb,internet_any
+billion-word-imputation,billion-word,gold,3.05541,0,0,0,0,0,3,0,0,1,4,26.961,True
+bms-molecular-translation,bms-mol,above_median,2.4962,0,0,0,0,0,3,0,1,0,1,0.021,True
+cassava-leaf-disease-classification,cassava,silver,0.9006,0,0,0,0,0,3,0,0,0,13,2.629,True
+mlsp-2013-birds,mlsp-birds,gold,0.98116,0,0,0,0,0,3,0,0,14,6,1.448,True
+nfl-player-contact-detection,nfl-contact,silver,0.73885,0,0,0,0,0,0,0,0,0,0,0.0,False
+spooky-author-identification,spooky,gold,0.16381,0,0,0,0,0,4,1,0,0,10,6.977,True
+stanford-covid-vaccine,stanford-covid,gold,0.21375,0,0,0,0,0,0,0,0,0,0,0.0,False
+new-york-city-taxi-fare-prediction,taxi,below_median,3.84914,0,0,0,0,0,0,0,0,0,0,0.0,False
+uw-madison-gi-tract-image-segmentation,uw-gi,above_median,0.86185,0,0,0,0,0,0,0,0,0,2,0.208,True
+ventilator-pressure-prediction,ventilator,above_median,0.15964,0,0,0,0,0,0,0,0,0,0,0.0,False

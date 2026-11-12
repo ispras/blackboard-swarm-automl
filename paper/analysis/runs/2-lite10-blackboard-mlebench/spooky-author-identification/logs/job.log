@@ -1,0 +1,1503 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [269 kB]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [4412 B]
+Fetched 10.3 MB in 2s (4780 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.0-py3-none-any.whl (875 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 875.8/875.8 kB 145.7 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Successfully installed setuptools-84.2.0
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.115-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.115 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.115-py3-none-any.whl (16.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 206.5 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.115 botocore-1.43.115 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/176k [00:00<?, ?File/s][A
+210kFile [00:00, 11.3MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-spooky-author-identification' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/3.19M [00:00<?, ?B/s][A
+  8%|▊         | 256k/3.19M [00:00<00:01, 2.07MB/s][A
+100%|██████████| 3.19M/3.19M [00:00<00:00, 20.1MB/s]
+data ready: ['README.md', 'description.md', 'sample_submission.csv', 'test.csv', 'train.csv']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=bellatrix_tau swarm-2=canopus_kappa swarm-3=mirfak_pi
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_hello.md =====
+# Hello from bellatrix_tau
+Hi swarm! I'm bellatrix_tau (swarm-1). I'll focus on **strong tabular/text baselines + ensembling**.
+Plan I propose (please claim parts):
+- **A (me)**: TF-IDF (word 1-2 + char 2-5) -> Multinomial NB / LogisticRegression / LinearSVC-calibrated, 5-fold CV, OOF generation. Establish solid baseline ~0.30-0.35 logloss.
+- **B (canopus_kappa)**: pretrained transformer fine-tune (e.g. `distilbert-base-uncased` / `roberta-base`) on CPU/GPU if available; OOF + test probs.
+- **C (mirfak_pi)**: feature engineering / alternative models (LightGBM on char/word features, NB-SVM, embeddings). OOF + test probs.
+Key protocol for ensembling: everyone saves **OOF probabilities on a fixed shared split** and **test probabilities** as `.npy` in their workspace + a message with path + CV logloss. Use `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` on `data/train.csv` row order so OOFs are aligned.
+Let me know if you agree and what you take. I'll post my baseline OOF shortly. #plan #communication #ensembling
+===== mirfak_pi_intro_plan.md =====
+# mirfak_pi — intro & plan
+Hi swarm! I'm **mirfak_pi**. Task: Spooky Author ID (3-class, multi-class log loss, lower is better).
+Data: 17,621 train / 1,958 test. Env: `sis-black` (sklearn 1.5.1, LGBM, XGB, CatBoost, **torch 2.2 + transformers 4.44, A100 80GB** available). Internet works.
+## My plan (propose division of labor)
+I'll own the **transformer track** (most likely best single model):
+1. Stratified holdout (10%, seed 42) → `workspaces/mirfak_pi/holdout_idx.npy` — I'll publish the indices so EVERYONE can compare on the same split.
+2. Fine-tune strong pretrained LM(s) on GPU (deberta-v3-base / roberta-base / electra), 5-fold OOF + test preds.
+3. Publish OOF + test probability files for ensembling.
+## Proposal for others (avoid duplication, diversity wins)
+- **Agent A**: classic TF-IDF (word 1-2 + char 2-5) + LogisticRegression / NB-SVM / SGD → OOF + test probs. Fast, strong baseline (~0.30-0.33).
+- **Agent B**: gradient boosting on handcrafted features (text stats, POS, punctuation, stopwords) + stacked TF-IDF-SVD; or a second LM family (distilbert/bert-base).
+- **Ensemble owner**: whoever has the OOF files — combine via logistic/weighted blend on the shared holdout.
+**Everyone: save OOF (train-order) and test probs as .npy/.csv in your workspace and post paths on the board.** Use the SAME holdout so we can blend fairly. I'll publish holdout indices shortly.
+## Coordination on GPU
+Only 1 A100 shared by 3 agents. Heavy GPU jobs must be coordinated here. I'll run one fine-tuning job at a time and announce it. Say here if you also plan GPU work.
+Tags: #plan #communication #status
+===== canopus_kappa_intro.md =====
+# canopus_kappa — intro & proposal
+Hi swarm, I'm **canopus_kappa** (swarm-2). Task: Spooky Author Identification, 3-class logloss, 17,621 train / 1,958 test. A100 80GB + torch/transformers available, HF internet OK.
+## Proposal: one shared validation protocol (important for ensembling)
+To make our OOF predictions comparable/blendable, everyone should use the **same folds**:
+- `sklearn.model_selection.StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` on `data/train.csv` in original row order, target = author.
+- Report **OOF multi-class logloss** on all 17,621 rows (never test).
+- Save artifacts in your workspace: `oof_<name>.npy` (17621x3, columns EAP,HPL,MWS), `test_<name>.npy` (1958x3), plus a short md with the CV score.
+- Publish path + CV score + link on blackboard. I'll build the final blend/stack from everyone's OOF.
+## My planned contribution
+1. Strong TF-IDF (word 1-2 + char 2-5) linear models: LogisticRegression, NB-SVM, SGD, calibrated LinearSVC — solid ~0.30-0.35 OOF.
+2. Transformer fine-tune (DeBERTa-v3 / RoBERTa) on GPU, 5-fold, ~0.28-0.32.
+3. Final weighted/stacked blend in `final_solution/` with code.
+## Ask
+- Reply with your role + which families you take so we don't duplicate. Suggested split: bellatrix = classic ML features (+NB/SVM/LGBM on handcrafted); mirfak = transformer A (e.g. DeBERTa/Electra) — I take TF-IDF linear + transformer B + final blend. Anyone can propose better.
+- Use tag `#plan` `#communication`.
+<metric>baseline pending<\metric>
+===== mirfak_pi_holdout.md =====
+# Shared validation split (use this for all comparisons)
+Stratified 10% holdout from `data/train.csv`, `random_state=42`, stratify=author.
+- Validation indices (into train.csv row order): `blackboard/mirfak_pi_holdout_val_idx.npy` (1763 rows)
+- Train indices: `workspaces/mirfak_pi/holdout_train_idx.npy` (15858 rows)
+- Val class counts: EAP 709, MWS 546, HPL 508
+```python
+import numpy as np, pandas as pd
+tr = pd.read_csv('data/train.csv')
+va_idx = np.load('blackboard/mirfak_pi_holdout_val_idx.npy')
+Xva, yva = tr.iloc[va_idx]['text'], tr.iloc[va_idx]['author']
+```
+Please report your log-loss on exactly this split so we can compare/ensemble fairly.
+For final models you may of course retrain on 100% train; but for blend weights use this split.
+Reference: [[mirfak_pi_intro_plan.md]]
+Tags: #data_pipeline #model_selection #communication
+===== mirfak_pi_agree_roles.md =====
+# Agree: 5-fold protocol, roles & GPU coordination
+Agree with [[canopus_kappa_intro.md]] and [[bellatrix_tau_hello.md]]: **primary protocol = StratifiedKFold(5, shuffle=True, random_state=42) on train.csv row order**. Report OOF logloss on all 17,621 rows; save `oof_<name>.npy` (17621x3, cols EAP,HPL,MWS) + `test_<name>.npy` (1958x3) in your workspace.
+My 10% holdout ([[mirfak_pi_holdout.md]]) is now just an optional quick-check; **5-fold OOF is the source of truth**.
+## Roles (accepted)
+- **mirfak_pi (me)**: transformer track A — DeBERTa-v3-base + RoBERTa/Electra, 5-fold OOF+test, publish .npy.
+- **canopus_kappa**: TF-IDF linear family + transformer B + final blend.
+- **bellatrix_tau**: classic ML (NB/SVM/LGBM) + handcrafted text features.
+## GPU coordination (1x A100)
+I'm starting **deberta-v3-base 5-fold** now. @canopus_kappa if you also fine-tune, run at most one job each; A100 80GB fits ~2 small jobs. Announce your start here to avoid OOM. Keep `OMP_NUM_THREADS<=4`, use `systemd-run --scope -p MemoryMax=8G`.
+## Safety net
+I'll also produce a quick TF-IDF+LogReg submission in `final_solution/` early so we always have a valid file; it will be replaced by the best blended solution at the end.
+Tags: #plan #communication #training #ensembling
+===== canopus_kappa_status1.md =====
+# Quick status: baseline linear family started
+Following [[canopus_kappa_intro.md]], [[mirfak_pi_agree_roles.md]], [[bellatrix_tau_hello.md]].
+I confirm: 5-fold `StratifiedKFold(5, shuffle=True, random_state=42)` on train.csv row order is the source of truth. My first TF-IDF(word1-2)+TF-IDF(char_wb2-5) + LogReg(C=10) OOF = **0.3737** (not great, tuning now). NB/SGD variants were badly calibrated and discarded.
+@bellatrix_tau heads-up: I'm also doing the TF-IDF linear family as agreed in my intro (word+char, LogReg/NB-SVM tuning) — but you proposed the same. To avoid duplication: **you take handcrafted features + LGBM/XGB + NB/SVM variants**, I'll focus on (a) tuned strong TF-IDF LogReg char/word models and (b) a second transformer + final blend. If you already have a stronger linear baseline, publish it and I'll drop mine.
+@mirfak_pi I will **not** start GPU work until your DeBERTa run is done — ping the board when GPU frees up. I'll queue a `microsoft/deberta-v3-small` or `roberta-base` 5-fold after you.
+Artifacts so far in `workspaces/canopus_kappa/`: `oof_*.npy`, `test_*.npy` (logreg 0.3737, cnb 0.4513).
+<metric>0.3737<\metric>
+Tags: #status #communication #model_selection #ensembling
+===== bellatrix_tau_baseline1.md =====
+# TF-IDF baseline results (5-fold, seed42, shared folds)
+Following the shared protocol [[canopus_kappa_intro.md]] [[mirfak_pi_agree_roles.md]].
+OOF multi-class logloss on all 17,621 rows (fold_id saved at `workspaces/bellatrix_tau/fold_id.npy`):
+| model | OOF logloss |
+|---|---|
+| MultinomialNB word1-2 a=0.1 | 0.40381 |
+| MultinomialNB char_wb2-5 a=0.1 | 0.43006 |
+| ComplementNB word | 0.54609 |
+| LogReg word C=10 | 0.44823 |
+| LogReg char C=10 | 0.42519 |
+| **LogReg word+char C=10** | **0.38280** |
+| Calibrated LinearSVC word+char C=0.5 | 0.39192 |
+Artifacts: `workspaces/bellatrix_tau/{oof,test}_<model>.npy`, 17621x3 / 1958x3, cols = EAP,HPL,MWS.
+@canopus_kappa your LogReg 0.3737 is better — keep the TF-IDF linear lane, I'll not duplicate. I'm moving to my lane: **NB-SVM, handcrafted features + LGBM/XGB, and blend-weight optimization**. I'll also publish an optimized weighted blend of all OOFs as a fallback.
+`folds.npy`/`fold_id.npy` ready if anyone wants identical folds.
+<metric>0.38280<\metric>
+Tags: #status #model_selection #feature_engineering #ensembling
+[board] сообщений 7, новых 7, метрик 2, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.3737 (step 1)
+===== mirfak_pi_status1.md =====
+# Status: DeBERTa-v3 5-fold running; quick TF-IDF safety submission live
+- Safety submission: TF-IDF word(1,2)+char_wb(2,5) + LogReg C=5, 5-fold OOF = **0.3835**, `final_solution/submission.csv` is currently this (will be replaced).
+- **Running now**: `microsoft/deberta-v3-base`, 5-fold StratifiedKFold(5,seed42), maxlen=128, bs=64, lr=2e-5, 4 epochs, bf16, best-epoch early stop. ~105s/epoch → ETA ~35-40 min for 5 folds. Log: `workspaces/mirfak_pi/log_deberta_base.txt`.
+- GPU: 1 job, ~16GB used. @canopus_kappa GPU will be free after this; you can start a small model, but tell me before so we don't exceed memory.
+Will publish `oof_deberta_base.npy` / `test_deberta_base.npy` + OOF score when done.
+Tags: #status #training #communication #submission
+[board] сообщений 8, новых 1, метрик 2, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.3737 (step 2)
+[board] сообщений 8, новых 0, метрик 2, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.3737 (step 3)
+[board] сообщений 8, новых 0, метрик 2, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.3737 (step 4)
+===== canopus_kappa_gpu_plan.md =====
+# GPU plan: I start roberta-base 5-fold now (2nd GPU job, ~5GB)
+@mirfak_pi your DeBERTa is at ~4.8GB / 43% util — A100 has plenty. I'm launching **roberta-base 5-fold** (`maxlen=160, bs=32, lr=2e-5, 4 epochs`, best-epoch by val logloss) as the diverse 2nd transformer. That's 2 GPU jobs total; I'll keep it to one. Script: `workspaces/canopus_kappa/train_transformer.py`.
+Linear status: tuned word(1,2)+char_wb(2,5) TF-IDF + LogReg C=10 stays at **0.3738** OOF (word-only C=30 0.4168, char-only C=10 0.4135, 50/50 blend 0.3813). Next: proper NB-SVM.
+@bellatrix_tau if your linear/NB-SVM is better than 0.3738, publish it — no need to duplicate. I'll keep only the best linear artifacts for blending.
+<metric>0.37381<\metric>
+Tags: #status #training #communication #architecture
+===== bellatrix_tau_stacking_insight.md =====
+# Insight: stack on LOG-probs, not weighted prob blend (0.345 -> 0.306)
+Big finding on my own 18 OOF models (all 5-fold, shared `fold_id` seed42):
+- Simple optimized **weighted average of probabilities** (Nelder-Mead): nested OOF = **0.3446**
+- **LogisticRegression stack on log-probs** of the same models: nested OOF = **0.30581** (C=3, multinomial, meta-CV by the same 5 folds).
+- LR stack on raw probs is worse (0.3186). Temperature scaling each model helps, but the log-stack subsumes it.
+My strongest singles: LogReg word+char C=30 = 0.3817, SGD-log = 0.3903, calib LinearSVC = 0.3919, MNB word = 0.3977. LGBM/XGB on handcrafted+SVD = 0.585 (weak alone but maybe useful diversity).
+Artifacts: `workspaces/bellatrix_tau/oof_stack.npy`, `test_stack.npy`, `stack_eval.py`, `stack_results.json`. The script auto-globs `oof_*.npy`/`test_*.npy` in my folder — easy to point at a combined pool.
+**Recommendation for the final ensemble:** combine ALL agents' OOFs (TF-IDF linear + NB + GBM + DeBERTa/RoBERTa) in a log-prob LR stack, tune C by meta-CV on the shared folds. That should beat any prob-average blend by ~0.03-0.04.
+@canopus_kappa @mirfak_pi: put your `oof_*.npy`/`test_*.npy` on the board and I can run the cross-agent stack on the shared folds. I'm happy to own the stacking step (or hand the script over). Note single-model temperature scaling also improves scores (e.g. lr_both 0.3828->0.3769, MNB word 0.4038->0.3811) — good for reporting.
+<metric>0.30581<\metric>
+Tags: #ensembling #model_selection #insight #communication
+[board] сообщений 10, новых 2, метрик 4, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 5)
+===== canopus_kappa_status2.md =====
+# NB-SVM results + I take bigger transformer (deberta-v3-large)
+Following [[bellatrix_tau_stacking_insight.md]] — great finding, log-prob LR stacking is the way. I'll feed my best OOFs to your stack; please keep owning the cross-agent stack.
+My NB-SVM (binary features, one-vs-rest LogReg on NB log-ratio-scaled features):
+- word(1,2) min_df=2, a=1, C=1.0 → OOF **0.40102**; C=0.5 → 0.41041; C=3 → 0.41320. Worse than plain word+char LogReg C=10 (**0.37381**). So my best linear remains `oof_wc_md2_C10.npy`.
+## Transformer reality check
+I reproduced mirfak's finding: plain roberta-base converges to ~0.38-0.42 val (overfits after ep1-2) — transformers are NOT trivially better than the linear stack here. So instead of duplicating roberta/deberta-base, I'm testing **`microsoft/deberta-v3-large`** (fold0, lr 1e-5, bs 16, label smoothing 0.1) as the diverse big model. If fold0 val beats ~0.35 I'll run full 5-fold OOF and publish.
+@mirfak_pi you keep deberta-v3-base/roberta 5-fold. @bellatrix_tau keep stacking + handcrafted/GBM diversity.
+Files (mine): `workspaces/canopus_kappa/oof_wc_md2_C10.npy` + `test_wc_md2_C10.npy` (0.37381), `oof_nbsvm_word_a1.0_C1.0.npy` (0.40102).
+<metric>0.37381<\metric>
+Tags: #status #model_selection #ensembling #communication #insight
+[board] сообщений 11, новых 1, метрик 5, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 6)
+[board] сообщений 11, новых 0, метрик 5, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 7)
+===== canopus_kappa_large_finding.md =====
+# Big finding: deberta-v3-large fold0 = 0.3247 (much better than base) + all-workspace log-stack 0.2899
+## Transformer scale matters
+On the **same shared fold0** (StratifiedKFold seed42):
+| model / recipe | fold0 val logloss |
+|---|---|
+| roberta-base lr1e-5 (mirfak) | 0.41294 |
+| roberta-base lr2e-5 (mirfak) | 0.38062 |
+| deberta-v3-base lr1e-5 (mirfak) | 0.36965 |
+| deberta-v3-base + LLRD 0.9 + ls0.05 (mine) | 0.36074 |
+| **deberta-v3-large lr1e-5 bs16 ls0.1 (mine)** | **0.32474** (ep1) |
+So **`microsoft/deberta-v3-large`** is the clear winner; base-size is plateauing ~0.36. I'm running full **5-fold deberta-v3-large** next (~60-75 min) and will publish `oof_dbl5.npy`/`test_dbl5.npy`.
+@mirfak_pi suggest you stop base-size sweeps and either (a) full 5-fold deberta-base quickly for diversity, or (b) run a *different* large model (roberta-large / electra) so we get 2 large-model OOFs. Don't duplicate my dbl5.
+## Stacking cross-check (all workspaces)
+My independent log-prob LR stack over **every** `oof_*.npy` currently on disk (bellatrix + mirfak + mine) = **0.28990** with C=10 (raw-prob stack 0.30219). Note this pool includes my correlated tuning variants, so it's optimistic for model selection, but confirms the ceiling is lower than linear-only 0.3058. DeBERTa-large OOF should push it further (~0.27-0.28).
+@bellatrix_tau please re-run your stack once `oof_dbl5.npy` and mirfak's transformer OOFs land. I'll also run an independent check; we compare and take the better/agreed stacking recipe.
+<metric>0.32474<\metric>
+Tags: #architecture #model_selection #ensembling #insight #communication
+[board] сообщений 12, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 8)
+===== mirfak_pi_transformer_findings.md =====
+# Transformer tuning findings (fold0, shared folds) — label smoothing + 3 epochs win
+All single-fold experiments, shared `StratifiedKFold(5, seed=42)` fold0, metric = val logloss:
+| model | cfg | best val |
+|---|---|---|
+| deberta-v3-base | lr2e-5 bs64 ep4 (no LS) | 0.3624 |
+| deberta-v3-base | lr1e-5 bs32 ep4 (no LS) | 0.3697 |
+| deberta-v3-base | lr2e-5 bs32 **ep3 LS0.1** | **0.3532** |
+| deberta-v3-base | lr2e-5 bs32 ep2 LS0.1 | 0.3939 |
+| roberta-base | lr1e-5/2e-5 ep4 (no LS) | 0.381/0.413 |
+| **deberta-v3-large** (canopus) | lr1e-5 bs16 ep3 LS0.1 | **0.3247** |
+Key insights:
+1. Base transformers overfit after epoch 1-2 without label smoothing. **Label smoothing 0.1 + exactly 3 epochs (cosine to 0)** is clearly better.
+2. **Model size matters a lot**: deberta-v3-large 0.325 vs base 0.353 on same fold (see [[canopus_kappa_status2.md]]).
+3. So transformers *do* beat linear singles (~0.374) once properly regularized — valuable diversity for bellatrix's log-prob stack [[bellatrix_tau_stacking_insight.md]].
+## My next runs
+- Full 5-fold **deberta-v3-base, lr2e-5 bs32 ep3 LS0.1** → publish `oof_deberta_base_ls.npy`.
+- Then a **large model of a different family** (electra-large or roberta-large) for diversity, coordinated with canopus.
+@canopus_kappa great deberta-large result — you keep the large lane, please run the full 5-fold! I'll avoid duplicating deberta-large and use roberta-large/electra-large instead. GPU currently has room (~heaviest so far ~30GB); ping me before starting your 5-fold so we don't collide.
+Tags: #insight #architecture #regularization #training #model_selection #communication
+[board] сообщений 13, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 9)
+===== canopus_kappa_coordination_final.md =====
+# Coordination: final_solution ownership + running dbl5
+Agree with [[mirfak_pi_transformer_findings.md]]: I'm running **full 5-fold deberta-v3-large** now (`tag=dbl5`, lr1e-5, bs16, ep2, LS0.1, maxlen128), ETA ~45 min, ~15-20GB GPU. @mirfak_pi keep your deberta-base 5-fold + roberta/electra-large; two jobs fit fine.
+## Who writes `final_solution/`
+To obey "don't modify the same file simultaneously", propose:
+- **I (canopus_kappa)** own `final_solution/` (submission.csv + solution code + README), since it was my role in [[canopus_kappa_intro.md]].
+- **bellatrix_tau** owns the cross-agent **stacking recipe** and publishes `stack_results.json` + the exact chosen model list/C + meta-OOF score. I will run the same recipe (independent check) and write the final file.
+- **mirfak_pi** publishes transformer OOFs only.
+If bellatrix prefers to write it, say so and I'll stand down — but only ONE writer. I'll snapshot `final_solution/submission.csv` from the best available stack as soon as dbl5 lands (replacing the current safety submission).
+## Current best stack (pre-large)
+All-workspace log-prob LR stack = **0.28990** (C=10). Once dbl5 + mirfak's transformer OOFs are in, we re-stack.
+Tags: #plan #communication #ensembling #submission
+[board] сообщений 14, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 10)
+===== canopus_kappa_status3.md =====
+# Status: dbl5 restarted with ep3 schedule; BiLSTM+GloVe diversity model done (0.4293)
+- **deberta-v3-large full 5-fold restarted** with `epochs=3` (the fold0 test showed 3-epoch schedule → ep1 val **0.3247**; the 2-epoch schedule is worse 0.3475). ETA ~50-60 min. This is the main transformer OOF.
+- Also running a **side experiment fold0: dbl, epochs=4** to check if a longer schedule improves further.
+- **BiLSTM+GloVe 5-fold** (word-level, GloVe-100d, 2-layer BiLSTM, max+mean pool, frozen init/finetuned): OOF **0.42925**. Weak alone but different inductive bias — may add tiny stack diversity. Files: `oof_bilstm_glove.npy`, `test_bilstm_glove.npy`. Reference: [[canopus_kappa_status2.md]].
+@bellatrix_tau / @mirfak_pi: nothing needed from you yet; keep your lanes. Will ping when `oof_dbl5.npy` is final.
+Tags: #status #training #architecture #communication
+[board] сообщений 15, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 11)
+===== mirfak_pi_gpu_tip.md =====
+# Heads-up: your `dbl5` job looks dead (stalled at model load, no process)
+@canopus_kappa: `workspaces/canopus_kappa/log_dbl5.txt` last line is the model-load warning at 15:55 and there is **no `train_lm`/`train_transformer` process** now — dbl5 died (likely killed when the launching shell/tool call ended). Re-launch with full detach so it survives:
+```bash
+setsid nohup systemd-run --user --scope --collect -q \
+  -p MemoryHigh=14G -p MemoryMax=16G -p MemorySwapMax=0 \
+  bash -lc 'cd .../workspaces/canopus_kappa && pyenv shell sis-black && \
+  export TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=4 && \
+  python train_transformer.py ... > log_dbl5.txt 2>&1' </dev/null >/dev/null 2>&1 & disown
+```
+(`setsid` + `</dev/null` is what makes it survive; otherwise the tool's timeout kills the whole process group.)
+Otherwise your deberta-v3-large fold0 result (0.3247) is the best single so far — please rerun it 5-fold, it's the biggest lever for the stack.
+I now run **deberta-v3-base 5-fold (ep3, LS0.1)** and next a **roberta-large fold0 probe** (different family than deberta-large → diversity). GPU currently ~23GB used by me, room for your large job.
+Tags: #communication #problem #training #status
+[board] сообщений 16, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 12)
+[board] сообщений 16, новых 0, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 13)
+===== canopus_kappa_re_dbl5.md =====
+# Re: dbl5 is ALIVE (not dead) — please keep 1 GPU job while it runs
+@mirfak_pi thanks for the detach tip (same method I use: `setsid nohup systemd-run --scope ... </dev/null >/dev/null 2>&1 &`). `dbl5` **is running** now: fold0 ep1 val=0.32461 (log `workspaces/canopus_kappa/log_dbl5.txt`). Your check at 15:57 caught it between process spawn windows.
+Important: while dbl5 + your jobs ran together, fold time inflated from 553s → 730s (and your db5 fold1 ep0 took 1013s). **Please keep only 1 GPU job at a time until dbl5 finishes** (~30-40 min more). I killed my side experiment and will run nothing else on GPU until dbl5 is done. After that I'll do a 2nd seed of dbl-large, then hand OOF to the stack.
+Your plan (deberta-base 5-fold now, then roberta-large probe) is good. I will NOT touch roberta-large.
+Tags: #communication #training #status #problem
+[board] сообщений 17, новых 1, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 14)
+[board] сообщений 17, новых 0, метрик 6, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.30581 (step 15)
+===== canopus_kappa_interim_stack.md =====
+# Interim final submission updated + cross-stack finding (CV 0.2642)
+I updated `final_solution/submission.csv` (still interim) from a 2-level log-prob LR stack. It now includes **level-1 stacks as features**:
+- bellatrix `stack` (0.30581), `optblend`, mirfak `mystack` (0.29208) + all 50 base OOFs.
+- Meta: multinomial LR on log-probs, C=3, 5-fold meta-CV = **0.26420** (vs 0.26625 without level-1 stacks, vs 0.287 bellatrix crossstack-only).
+- Code: `workspaces/canopus_kappa/make_submission.py`; selected list: `chosen_stack.json`.
+@bellatrix_tau please sanity-check this independently — I'm slightly worried the gain from stacking on your `stack`/mirfak `mystack` is optimistic (level-1 OOFs come from the same fold split). If your independent estimate says otherwise, publish and we'll switch. Also your `oof_crossstack` (0.2872) appeared after my collection, so the next refresh will include it.
+Status dbl5: fold0 best 0.32461, fold1 ep0 already 0.32431 → ETA ~35-45 min, then I run seed #2. This will drop the stack further.
+Reference: [[bellatrix_tau_stacking_insight.md]], [[mirfak_pi_transformer_findings.md]], [[canopus_kappa_large_finding.md]].
+<metric>0.26420<\metric>
+Tags: #ensembling #submission #model_selection #communication #status
+[board] сообщений 18, новых 1, метрик 7, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 16)
+===== bellatrix_tau_independent_stack_check.md =====
+# Independent stack check: base-only honest CV = 0.28684; level-1 features are optimistic
+@canopus_kappa re [[canopus_kappa_interim_stack.md]] — checked your `make_submission.py`. Two notes:
+1. **Bug in `run(include_stacks)`:** `include_stacks=False` only drops tags exactly `stack`/`optblend`. It still includes `mirfak_pi/mystack` (a level-1 stack), so your "without level-1" 0.26625 is not base-only.
+2. My **base-only** log-prob LR stack (all workspaces, level-1 stacks excluded, near-duplicates deduped at corr>0.997, C tuned by the same 5-fold meta-CV) = **0.28684** (C=0.2, 45 models). Adding a level-1 stack as a feature drops CV to ~0.26, but part of that is stacking-on-stacking optimism (level-1 OOFs already saw other folds' labels through base models).
+So the safe expectation is ~0.286 base-only; with real transformer OOFs (dbl5 etc.) expect ~0.27. The final choice between with/without level-1 should be made on a **nested** estimate, not a single CV.
+## Proposal (robust final)
+Average (in logit space) 2-3 stack variants instead of picking the single best CV:
+- S1: base-only, low C (0.2-0.5)
+- S2: base + level-1 stacks, C=3
+- S3: simple per-family average of the top-1 model per family (linear / NB / bilstm / transformer)
+Pick weights only if nested CV clearly separates them; otherwise equal-weight logit average is safest against selection overfit.
+Artifacts: `workspaces/bellatrix_tau/{oof,test}_crossstack.npy`, `crossstack_results.json` (CV 0.28684, kept model list). I'll refresh when dbl5/deberta-base OOFs land, then hand you the recipe. **You remain the only writer of `final_solution/`.** Also: I see `dbl5_partial` in your folder — make sure it never enters the stack (zeros for non-fold0 rows).
+<metric>0.28684<\metric>
+Tags: #ensembling #model_selection #insight #communication #bug
+===== canopus_kappa_re_stackcheck.md =====
+# Re: independent stack check — agreed, will average variants
+Good catch on the `run(include_stacks)` bug: `include_stacks=False` indeed still kept `mirfak_pi/mystack`. Correcting the labels:
+- base-only (no `stack`, `optblend`, `mystack`, `crossstack`): my rerun gives ~**0.286-0.295** depending on C / dedup — matches your 0.28684.
+- +level-1 stacks: 0.2642 (may be mildly optimistic from level-1 hyperparam selection on the same OOF, but note each level-1 OOF row *is* produced without that row's label; the main risk is the shared test-pred calibration mismatch).
+Your proposal is good and I'll implement exactly that for the final: **equal-weight logit average of S1 (base-only, low C), S2 (base+level-1, C=3), S3 (best-per-family average)**, instead of cherry-picking the best CV. I'll only up-weight a variant if an outer-fold check separates it clearly.
+`dbl5_partial` is explicitly excluded in `make_submission.py` (`tag == 'dbl5_partial'`), so it cannot enter. I'll keep `final_solution/` as sole writer and refresh after dbl5 + your/deberta-base OOFs land. Please refresh `crossstack` then.
+dbl5 progress: fold1 ep1 val=**0.29815** (best single so far). ETA ~25-30 min.
+<metric>0.28684<\metric>
+Tags: #ensembling #model_selection #communication #status
+[board] сообщений 20, новых 2, метрик 9, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 17)
+[board] сообщений 20, новых 0, метрик 9, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 18)
+[board] сообщений 20, новых 0, метрик 9, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 19)
+===== bellatrix_tau_nested_stack_result.md =====
+# Nested-CV verdict: level-1 stack features DO help (0.2874 -> 0.2696)
+Following [[bellatrix_tau_independent_stack_check.md]] and [[canopus_kappa_re_stackcheck.md]].
+I ran a **nested** evaluation (outer = shared 5 folds; inside each outer-train I select C by an inner 4-fold CV, then predict the held-out outer fold). Base OOFs fixed, dedup corr>0.997, models with OOF>0.75 dropped:
+| pool | CV | nested CV | chosen C (outer folds) |
+|---|---|---|---|
+| base only (45 models) | 0.28694 (C=0.1) | **0.28744** | 0.1,0.1,0.3,0.1,0.3 |
+| base + L1 features (`bellatrix/stack`, `mirfak/mystack`) (47) | 0.26964 (C=3) | **0.26964** | 3,3,3,3,3 |
+So the level-1 gain is **real, not just selection optimism** — nested C selection is stable at 3. The residual caveat is only the usual stacking cross-fold leak through base models. Conclusion: use both variants and average, as agreed.
+Extra diverse base models I added (all weak alone, for stack diversity): mlp_svd 0.682, nystroem_rbf 0.636, knn_svd 0.849 (knn will be filtered), lr_char_c30 0.425, sgd_char_log 0.423, svc_word_cal 0.454, mnb_char_a03 0.425, lr_binary_both 0.461, bnb_word 0.844 (filtered).
+Next: refresh everything when `dbl5` / `oof_deberta_base_ls` land, then run S1+S2 logit-average. I'll publish the exact candidate csv path in my workspace for you to copy/verify.
+<metric>0.26964<\metric>
+Tags: #ensembling #model_selection #insight #status
+[board] сообщений 21, новых 1, метрик 10, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 20)
+===== mirfak_pi_db5_done.md =====
+# DeBERTa-v3-base 5-fold OOF published (0.35472) + roberta-large 5-fold started
+## Artifacts (5-fold, shared folds seed42)
+- `workspaces/mirfak_pi/oof_deberta_base_ls.npy` (17621x3, cols EAP,HPL,MWS), `test_deberta_base_ls.npy`
+- Recipe: `microsoft/deberta-v3-base`, lr2e-5, bs32, **3 epochs, label-smoothing 0.1**, maxlen128, best-epoch by fold val.
+- Fold scores: 0.35377 / 0.34597 / 0.36778 / 0.35587 / 0.35021 → **OOF = 0.35472** <metric>0.35472<\metric>
+  (fold2 shows epoch choice varies: best ep1 vs ep2 — per-fold early stop needed.)
+## Now running: roberta-large 5-fold (my one GPU job)
+`roberta-large`, lr1e-5, bs16, 3 epochs, LS0.1, maxlen128, **snapshot/tail-epoch averaging** per fold (selects best subset of epoch predictions on fold val). ETA ~60-90 min if GPU shared, less if alone. No deberta-large duplication (canopus owns it). Will publish `oof_roberta_large_snap.npy`.
+## Independent cross-agent stack check (before transformers)
+My own nested stack (LR on log-probs, meta-CV on the same 5 folds) over all current `oof_*.npy` from bellatrix+canopus+me (40 models, excluding derived `stack/optblend/dbl5_partial`):
+- **log-prob LR C=0.1 → 0.29208**; raw-prob LR best 0.29883.
+Matches canopus's ~0.29. Once `oof_dbl5` + `oof_roberta_large_snap` land, expect ~0.27-0.28. Script: `workspaces/mirfak_pi/mystack.py`.
+Tags: #training #status #ensembling #model_selection #communication
+[board] сообщений 22, новых 1, метрик 11, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 21)
+[board] сообщений 22, новых 0, метрик 11, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 22)
+[board] сообщений 22, новых 0, метрик 11, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2642 (step 23)
+===== mirfak_pi_plan_next.md =====
+# Plan after roberta-large: need one more diverse large model? + robust final stack
+Status: roberta-large 5-fold running (fold0 ep1 val 0.3638 — clearly weaker than deberta-large 0.3246, but different family → stack diversity). ETA ~80 min.
+## Proposal for GPU after it finishes
+Candidates (pick ONE, whoever is free):
+1. **Second seed / snapshot of deberta-v3-large** — strongest single (~0.32), but correlated with canopus's dbl5.
+2. **`google/electra-large-discriminator`** 5-fold — different pretraining objective, likely ~0.33-0.35, most *diverse* large model.
+3. **10-fold deberta-v3-large** — cleaner OOF, but 2x GPU time.
+@canopus_kappa: you planned a 2nd dbl seed — you take (1) if you want. Then **I'll take (2) electra-large** for maximal diversity, unless you prefer it.
+@bellatrix_tau: your nested result [[bellatrix_tau_nested_stack_result.md]] (0.2696 with L1 stack features) is the best so far — excellent. Please include my new OOFs when ready. I can independently reproduce the final stack and verify your candidate CSV before canopus writes `final_solution/submission.csv`.
+Also note: for final safety we should pick the candidate with the **best nested** score, not the best non-nested (avoid meta-overfit). Agree?
+Tags: #plan #communication #ensembling #model_selection #architecture
+===== bellatrix_tau_transformer_breaks_stack.md =====
+# IMPORTANT: `dbl5_partial` in globs gives fake-low CV; honest base-only stack now 0.2324 with deberta-base
+Follow-up to [[bellatrix_tau_nested_stack_result.md]] and [[bellatrix_tau_independent_stack_check.md]].
+## 1) Pollution warning
+`workspaces/canopus_kappa/oof_dbl5_partial.npy` has non-zero predictions only for fold0 rows and zeros elsewhere (individual "logloss" 0.63). Any globber that does `if name not in {'dbl5_partial'}` (exact match) or `startswith('partial')` will still include it, and stacking it produces **fake 0.22 CV**. Always filter with a **substring** check: `if any(e in name for e in ['partial','stack','blend','candidate','nested'])`. I fixed my scripts.
+## 2) Honest results (shared fold_id, no level-1 / no partial)
+| pool | 5-fold CV |
+|---|---|
+| 52 base models, **no transformer** | 0.2873 |
+| + `mirfak/deberta_base_ls` (single 0.3547) | **0.2324** (nested = 0.2324, C≈0.05-0.1) |
+So one genuinely-different transformer cuts ~0.055 off the stack — dbl5 (single folds ~0.30) should be a big win.
+## 3) Level-1 stack features no longer help
+Nested evaluation with L1 features recomputed inside each outer-train fold (leak-free):
+- S1 base-only: **0.23240**
+- S2 base + L1 stack: **0.23856** (worse)
+The non-nested S2 CV of 0.1998 is optimistic (level-1 OOFs of meta-train rows saw the outer fold through base models). **Recommendation: final = base-only log-prob LR stack, C≈0.1, dedup corr>0.998, drop models with OOF>0.75, and NEVER include `*partial*` files.**
+## 4) Candidate
+`workspaces/bellatrix_tau/meta_candidate_submission.csv` (1958x4, columns id,EAP,HPL,MWS) = S1 stack, CV **0.2324**. Scripts: `make_final_candidate.py`, `nested_s2.py`. @canopus_kappa feel free to copy/compare; you stay the only writer of `final_solution/`. Refresh after `dbl5` lands — I'll rerun and report.
+<metric>0.23240<\metric>
+Tags: #ensembling #model_selection #insight #bug #problem #submission #communication
+===== bellatrix_tau_re_plan_next.md =====
+# Agree: choose by nested, and base-only is currently the honest winner
+@mirfak_pi re [[mirfak_pi_plan_next.md]] — yes, pick by **nested** score, not non-nested. New result [[bellatrix_tau_transformer_breaks_stack.md]]:
+- with your `deberta_base_ls` (0.3547), the honest **base-only** log-prob LR stack = **0.2324** (nested identical).
+- adding level-1 stack features is now **worse** (nested 0.2386). So the final recipe is simply: base-only stack, C≈0.1, dedup corr 0.998, drop OOF>0.75, substring-exclude `partial/stack/blend/candidate/nested/meta_`.
+Your `deberta_base_ls` alone bought ~0.055 stack gain — thanks. `roberta-large` + canopus `dbl5` + your planned `electra-large` should push us under 0.21. Please publish each OOF + individual score when ready; I'll refresh the candidate + nested number.
+Plan: canopus takes 2nd dbl-large seed, you take electra-large, I keep stacking/verification + candidate CSV. Also note: please **substring-filter** derived files in your globbers (`dbl5_partial` bit me and gives fake 0.22). Reference: [[bellatrix_tau_independent_stack_check.md]].
+Tags: #ensembling #communication #model_selection #plan
+[board] сообщений 25, новых 3, метрик 12, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 24)
+[board] сообщений 25, новых 0, метрик 12, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 25)
+[board] сообщений 25, новых 0, метрик 12, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 26)
+[board] сообщений 25, новых 0, метрик 12, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 27)
+[board] сообщений 25, новых 0, метрик 12, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 28)
+===== canopus_kappa_dbl5_done.md =====
+# DeBERTa-v3-large 5-fold OOF published: 0.31727
+## Artifacts
+- `workspaces/canopus_kappa/oof_dbl5.npy`, `test_dbl5.npy` (17621x3 / 1958x3, shared folds seed42)
+- Recipe: `microsoft/deberta-v3-large`, lr1e-5, bs16, **3 epochs** (best epoch always ep1 → essentially fixed-epoch, no per-fold epoch-selection leak), label smoothing 0.1, maxlen128.
+- Fold scores: 0.32461 / 0.29815 / 0.33287 / 0.30936 / 0.32134 → **OOF 0.31727** <metric>0.31727<\metric>
+This is a genuinely different signal from the linear family (best linear single 0.37381). Now running **2nd seed** `dbl5_s2` (seed 2024) for variance reduction, ETA ~50-90 min (shared GPU with mirfak's roberta-large).
+## IMPORTANT leakage note on `mystack`/snapshot OOF
+@mirfak_pi I read `train_lm_snap.py`: `best_combo` searches **all 2^E-1 epoch-combinations and picks the min val-loss on the same fold**. That biases the OOF (and any stack CV that uses it) optimistically — it is not a fair OOF for stacking, even though it's fine for test predictions. `dbl5` avoids this because ep1 is best on all 5 folds, but snap OOFs (deberta_base_ls, planned roberta_large_snap) are optimistic. Suggest for stacking we also publish a **fixed-epoch** OOF (e.g., always last epoch or always ep1) — @bellatrix_tau please note when interpreting 0.2324.
+@bellatrix_tau I'm refreshing the base-only stack with dbl5 now (substring filters for `partial/stack/blend`, no `*partial*`). Will report the honest number.
+Tags: #architecture #training #ensembling #insight #bug #communication #submission
+[board] сообщений 26, новых 1, метрик 13, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2324 (step 29)
+===== mirfak_pi_dbl5_in_stack.md =====
+# dbl5 in my stack -> 0.2112; launching electra-large 5-fold
+Using canopus's new `oof_dbl5.npy` (OOF **0.31727**, see [[canopus_kappa_re_dbl5.md]] / [[canopus_kappa_status3.md]]) in my independent log-prob LR stack over all base OOFs (substring-filtered: no partial/stack/blend/meta):
+| stack | CV (5-fold, base-only) |
+|---|---|
+| before dbl5 (my earlier run) | 0.29208 |
+| **+ dbl5** | **0.21125** (log-prob, C=0.1) <metric>0.21125<\metric> |
+Confirms bellatrix's finding [[bellatrix_tau_transformer_breaks_stack.md]]: **one genuinely different strong transformer is worth ~0.06-0.08** on the stack. So more diverse transformers are the highest-value work.
+## Running now
+- `roberta-large` 5-fold snapshot (fold0 0.3619, fold1 ~0.356 so far) — weaker but different family.
+- **`google/electra-large-discriminator` 5-fold launched now** (lr1e-5, bs16, ep3, LS0.1, snapshot). Different pretraining objective → max diversity.
+- GPU: 3 jobs (me roberta-large + electra-large, canopus dbl5_s2) ~50GB/80GB, OK.
+@bellatrix_tau please refresh candidate when `oof_roberta_large_snap` + `oof_electra_large_snap` land. @canopus_kappa we'll have 3 large transformer families (deberta, roberta, electra) → strong stack.
+Tags: #ensembling #status #model_selection #training #communication
+===== canopus_kappa_stack_verified.md =====
+# Why the stack is so low: OOF accuracy is 89% already; base-only stack 0.2107 (my independent run)
+Sanity-checked the surprising CV drop. It's **not a bug**:
+- `dbl5` OOF: logloss 0.31727, **accuracy 89.25%**; `logreg` OOF: 0.37370, accuracy 85.59%.
+- Simple 2-model LR stack (log-probs): **0.2430-0.2448**, stable across meta-CV seeds (0,1,7,42). Simple prob-average of the same 2: 0.285 → so the transformer+linear are highly complementary, not a leak.
+- My base-only full stack (54 deduped models, substring-filtered, C=0.1): **0.21066**. Matches mirfak's 0.21125 and bellatrix's ~0.21 with dbl5. Confirms [[mirfak_pi_dbl5_in_stack.md]].
+- S2 (base+L1) non-nested 0.1949 is likely optimistic; bellatrix's nested test [[bellatrix_tau_transformer_breaks_stack.md]] says base-only wins → **final will be base-only S1** (possibly averaged with S3 family-average), not L1.
+Reminder: MLE-bench's test (1,958) is a re-split from the same pool, so OOF CV should transfer better than the original Kaggle LB. Accuracy of ~93% ⇒ logloss ~0.20 is plausible.
+Running: `dbl5_s2` (seed 2024, same recipe). After it + mirfak's roberta/electra-large land: refresh base-only stack, rerun nested check, write final. @bellatrix_tau please refresh your candidate then.
+<metric>0.21066<\metric>
+Tags: #ensembling #model_selection #insight #status #communication
+[board] сообщений 28, новых 2, метрик 15, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 30)
+===== bellatrix_tau_dbl5_stack_0211.md =====
+# dbl5 landed: honest base-only stack = 0.21101 (candidate refreshed)
+Following [[canopus_kappa_re_stackcheck.md]], [[mirfak_pi_db5_done.md]], my [[bellatrix_tau_transformer_breaks_stack.md]].
+`canopus_kappa/oof_dbl5.npy` (OOF 0.31727) + `mirfak_pi/oof_deberta_base_ls.npy` (0.35472) are in. Honest **nested** check (leak-free L1 recomputation inside each outer-train fold):
+| variant | nested OOF logloss |
+|---|---|
+| **S1 base-only log-prob LR stack** | **0.21101** |
+| S2 base + level-1(linear) | 0.21779 |
+| S_tf base + level-1(transformer) | 0.21729 |
+(For reference, non-nested S1 CV = 0.21123; L1_all alone = 0.21072; S2 non-nested 0.1835 is NOT trustworthy — level-1 optimism.)
+**Conclusion: final = S1 base-only stack, C≈0.05-0.1.** Do NOT add level-1 features. Recipe in `workspaces/bellatrix_tau/make_final_candidate.py`; candidate CSV refreshed at `workspaces/bellatrix_tau/meta_candidate_submission.csv` (CV 0.21123).
+@canopus_kappa please refresh `final_solution/submission.csv` from the base-only stack (exclude any `*partial*`, level-1 stacks) when you get a chance — that's a big improvement over 0.264. I'll rerun again after roberta-large / electra-large / your 2nd dbl seed land; expect <0.20.
+<metric>0.21101<\metric>
+Tags: #ensembling #submission #status #model_selection #communication
+[board] сообщений 29, новых 1, метрик 16, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 31)
+===== mirfak_pi_stack_variants.md =====
+# Independent nested check confirms 0.211; testing family-averaged & temperature variants
+My nested script (`workspaces/mirfak_pi/stack_v2.py`, 53 deduped base models, substring-filtered, nested C-selection inside each outer fold):
+- **NESTED = 0.21096**, chosen C = [0.1,0.1,0.1,0.2,0.1] (see raw: `log_stackv2.txt`). Matches [[bellatrix_tau_dbl5_stack_0211.md]] 0.21101 and [[canopus_kappa_stack_verified.md]] 0.21066. Good — three independent implementations agree.
+- Artifacts: `workspaces/mirfak_pi/{oof,test}_stackv2.npy`, `sub_stackv2.csv`.
+Now testing robustness variants (CPU): (a) family-average log-probs then LR stack (fewer meta-features → less meta-overfit), (b) global temperature on final stack, (c) averaging C in {0.05,0.1,0.2}. I'll report if any beats S1 on nested.
+Still running: roberta-large (fold2/5) + electra-large (fold0). Will publish both OOFs.
+Tags: #ensembling #status #model_selection #communication
+[board] сообщений 30, новых 1, метрик 16, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 32)
+===== canopus_kappa_submission_s1.md =====
+# `final_solution/submission.csv` refreshed → base-only S1 stack (CV 0.21066)
+Per consensus ([[bellatrix_tau_dbl5_stack_0211.md]], [[mirfak_pi_stack_variants.md]], [[canopus_kappa_stack_verified.md]]):
+- Recipe: **S1 = base-only**, substring-filtered (`partial/stack/blend/candidate/nested/meta_`), dedup corr>0.998, drop OOF>0.75, multinomial LR on log-probs, **C=0.1**.
+- n=54 models, meta-CV **0.21066**; nested agreement across 3 independent implementations (0.21066 / 0.21096 / 0.21101).
+- S2 (base+L1) non-nested 0.184 is rejected per nested checks. S1+S3 family-average (0.2199) not better → S1 only.
+- Code/recipe: `workspaces/canopus_kappa/make_final.py`, `final_recipe.json`. This is now the live submission.
+Will rerun automatically after `dbl5_s2`, `roberta_large_snap`, `electra_large_snap` land. ETA: dbl5_s2 ~60 min, mirfak models ~40-60 min under 3-way GPU sharing.
+<metric>0.21066<\metric>
+Tags: #ensembling #submission #status #communication
+[board] сообщений 31, новых 1, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 33)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 34)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 35)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 36)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 37)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 38)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 39)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 40)
+[board] сообщений 31, новых 0, метрик 17, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21066 (step 41)
+===== bellatrix_tau_stack_logprob_plus_prob.md =====
+# Small free gain: stack on [log-probs, raw-probs] (0.2107 -> 0.2092)
+Following [[canopus_kappa_submission_s1.md]], [[mirfak_pi_stack_variants.md]].
+Tested meta-feature variants on the current 54-model pool (same 5-fold, C tuned):
+| meta features | CV (seed42) | repeated-CV mean (seeds 0,1,7,42,123) |
+|---|---|---|
+| log-probs (current S1) | 0.21072 (C=0.1) | 0.20813 |
+| **log-probs + raw probs** | **0.20919 (C=0.2)** | **0.20594 (C=0.2)** |
+| log-probs + squares | no gain / slow | - |
+| MLP meta / LGBM meta | 0.2245 / 0.2180 | - |
+The `[log p, p]` concat is consistently ~0.002-0.003 better across meta-CV seeds (each seed improves). Cheap and safe. Candidate refreshed: `workspaces/bellatrix_tau/meta_candidate_submission.csv`, CV **0.20919**, recipe in `make_final_candidate.py`.
+@canopus_kappa suggest adding this to the live S1 (concat raw probs to the log-prob meta matrix, C≈0.2). I'll re-verify after `dbl5_s2` / `roberta_large_snap` land. Electra-large fold0 val ~1.09 looks broken (discriminator/lr mismatch) — probably drop it unless it recovers.
+<metric>0.20919<\metric>
+Tags: #ensembling #insight #model_selection #submission #communication
+[board] сообщений 32, новых 1, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 42)
+[board] сообщений 32, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 43)
+===== canopus_kappa_electra_warning.md =====
+# Heads-up: electra-large fold1 collapsed to random (val 1.088)
+@mirfak_pi your `log_el5.txt`: fold1 ep0 train=1.0872 val=1.08886, ep1 train=1.0912 val=1.08790 → the model is outputting ~uniform (3-class CE ≈ 1.0986). Fold0 was fine (SNAP val 0.36255). Likely a bad init / lr instability at fold1. Suggest **abort & restart electra-large** with `lr=5e-6`, warmup 0.1, grad-clip 1.0 (you already clip), maybe bs16. Otherwise the OOF will be garbage and hurt/force-dropping that model.
+I'm re-running nothing new on GPU; my `dbl5_s2` is on fold3/5 (so far 0.355/0.309/0.298 — competitive). `roberta_large` is on fold3/5. After all land, I'll refresh the S1 base-only stack + `final_solution`.
+Current live submission = S1 base-only, CV 0.21066 ([[canopus_kappa_submission_s1.md]]). Postprocessing check: temperature T=1.05 and prior-matching give only ~0.00005 gain → stack is already well calibrated, no postprocess needed.
+Tags: #problem #bug #training #communication #status
+===== mirfak_pi_electra_fail_xlnet.md =====
+# electra-large unstable (fold1 stuck at loss 1.09) -> killed; running xlnet-large-cased instead
+Follow-up to [[mirfak_pi_dbl5_in_stack.md]].
+- `google/electra-large-discriminator` fold0 was OK (SNAP 0.3626) but **fold1 never learned**: train/val loss stayed at **1.088/1.088** for 2 epochs (random). Known ELECTRA-large instability → I killed it rather than burn 2h. No `oof_electra_large_snap.npy` will be produced.
+- Now running **`xlnet-large-cased`** 5-fold (lr1e-5, bs16, ep3, LS0.1, snapshot averaging). Cased + autoregressive-permutation pretraining = genuinely different family → good stack diversity. ETA ~60-75 min.
+`roberta-large` nearly done: folds 0-3 = 0.3619 / 0.3536 / 0.3676 / 0.3422 → OOF ~0.356. Will publish `oof_roberta_large_snap.npy` shortly.
+Learning: don't spend GPU on ELECTRA-large for this task. @canopus_kappa your `dbl5_s2` (fold0 0.355, fold1 0.309, fold2 0.298) is the strongest addition — finish it, then we re-stack.
+Tags: #insight #problem #training #architecture #communication
+[board] сообщений 34, новых 2, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 44)
+[board] сообщений 34, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 45)
+[board] сообщений 34, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 46)
+[board] сообщений 34, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 47)
+[board] сообщений 34, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 48)
+[board] сообщений 34, новых 0, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 49)
+===== canopus_kappa_dbl5_s2_done.md =====
+# dbl5_s2 (2nd seed) published: OOF 0.31880
+- `workspaces/canopus_kappa/oof_dbl5_s2.npy` / `test_dbl5_s2.npy` (same folds, same recipe as [[canopus_kappa_dbl5_done.md]], seed=2024).
+- Folds: 0.35511 / 0.30910 / 0.29835 / 0.31268 / 0.31874 → **OOF 0.31880** <metric>0.31880<\metric>
+- Seed averaging: dbl5 (0.31727) + dbl5_s2 (0.31880) probability average should give a small gain vs each; both are valuable stack members because fold-level errors differ.
+Next: refresh S1 base-only stack with dbl5 + dbl5_s2 + deberta_base_ls + roberta_large (when it lands), then final refresh after xlnet-large. Will report the new CV and update `final_solution/submission.csv`.
+Tags: #architecture #training #status #ensembling #communication
+[board] сообщений 35, новых 1, метрик 19, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 50)
+[board] сообщений 35, новых 0, метрик 19, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 51)
+[board] сообщений 35, новых 0, метрик 19, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20919 (step 52)
+===== canopus_kappa_stack_0206.md =====
+# Stack refreshed with dbl5_s2 + roberta_large: S1 CV 0.20578; adding bert-base for diversity
+`final_solution/submission.csv` refreshed (base-only S1, C=0.05, n=56, substring-filtered):
+- **S1 CV = 0.20578** (was 0.21066) — dbl5_s2 (0.31880, [[canopus_kappa_dbl5_s2_done.md]]) + roberta_large_snap (0.35690, [[mirfak_pi_electra_fail_xlnet.md]]) added.
+- S2 (base+L1) non-nested 0.180 rejected per nested checks. Temp/prior postprocessing ≈ no gain.
+Now running **bert-base-uncased 5-fold** (fixed schedule, ep3, LS0.1; tag `bert5`) as a genuinely different pretraining/tokenizer family — cheap, ~20-30 min shared GPU. Will publish and refresh. @mirfak_pi xlnet-large still pending; ping when `oof_xlnet_large_snap.npy` is out.
+Files: `workspaces/canopus_kappa/oof_bert5.npy` (when done), `final_recipe.json`.
+<metric>0.20578<\metric>
+Tags: #ensembling #submission #status #architecture #communication
+[board] сообщений 36, новых 1, метрик 20, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20578 (step 53)
+===== mirfak_pi_0206.md =====
+# Stack now 0.2064 with roberta-large + dbl5_s2
+Artifacts landed:
+- `workspaces/mirfak_pi/oof_roberta_large_snap.npy` — roberta-large 5-fold, snapshot-averaged epochs, **OOF 0.35690** (folds 0.3619/0.3536/0.3676/0.3422/0.3593).
+- `workspaces/canopus_kappa/oof_dbl5_s2.npy` — deberta-large seed2, **OOF 0.31880**.
+My base-only log-prob LR stack over everything (substring-filtered, 58 models):
+- before: 0.21125 → **+ roberta-large + dbl5_s2 = 0.20639** (C=0.03) <metric>0.20639<\metric>
+Still running: `xlnet-large-cased` 5-fold (fold0 snap 0.3943 — weak single, but a cased/autoregressive family for diversity). ETA ~1h, then I'll publish `oof_xlnet_large_snap.npy` and re-run.
+@bellatrix_tau @canopus_kappa please refresh the candidate after xlnet lands. After that I plan a 3rd deberta-large seed (snapshot) as the last GPU run unless someone proposes better.
+Tags: #ensembling #status #model_selection #communication
+[board] сообщений 37, новых 1, метрик 21, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20578 (step 54)
+===== bellatrix_tau_aug_refresh_0204.md =====
+# Refresh with dbl5_s2 + roberta_large: candidate CV 0.20416
+Following [[canopus_kappa_dbl5_s2_done.md]], [[mirfak_pi_dbl5_in_stack.md]], [[bellatrix_tau_stack_logprob_plus_prob.md]].
+Current base pool: 56 deduped models, 4 transformer OOFs (`dbl5` 0.3173, `dbl5_s2` 0.3188, `deberta_base_ls` 0.3547, `roberta_large_snap` 0.3569).
+| meta | CV (shared folds) |
+|---|---|
+| log-probs only, C=0.1 | 0.20602 |
+| **log-probs + raw probs, C=0.1** | **0.20416** |
+| nested S1 log-probs (leak-free C selection) | 0.20618 (matches) |
+So the log+prob trick is stable and worth ~0.002. `meta_candidate_submission.csv` refreshed (CV 0.20416). Repeated-CV over 4 meta seeds: 0.2042/0.2017/0.2000/0.2007 → the 0.204 is conservative.
+@canopus_kappa please add `hstack([log p, p])` to the live S1 meta matrix (C=0.1) when you do the next refresh. Still running: xlnet-large (fold0 0.394, weak but different family) — will refresh once `oof_xlnet_large_snap` lands. ETA for my next refresh after that.
+<metric>0.20416<\metric>
+Tags: #ensembling #status #submission #insight #communication
+[board] сообщений 38, новых 1, метрик 22, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20416 (step 55)
+===== bellatrix_tau_final_code_and_logprob.md =====
+# Reminder: `final_solution/` needs solution CODE too + log+prob meta tweak
+Two coordination points (refs [[canopus_kappa_stack_0206.md]], [[bellatrix_tau_stack_logprob_plus_prob.md]], [[mirfak_pi_0206.md]]):
+1. **Rule 18 requires solution code inside `final_solution/`**, not only `submission.csv`. @canopus_kappa as the sole writer please add the final script + a short recipe (copy from `workspaces/canopus_kappa/make_final.py`). I also prepared a clean recipe: `workspaces/bellatrix_tau/SOLUTION_README.md` + `make_final_candidate.py` (CV **0.20416** with log+prob).
+2. **Free ~0.0016**: use meta features `hstack([log p, p])` instead of log-probs only, C=0.1. Current live S1 (log-only) = 0.20578; my log+prob candidate = **0.20416** on the same 56-model pool, and repeated meta-CV over 4 seeds is better on every seed. Please fold this into the next refresh (after bert5/xlnet). I'll re-verify the final submission against my candidate when everything lands (corr/argmax/format check).
+Also: mirfak plans a 3rd dbl-large seed after xlnet; I will **not** start a duplicate GPU job. If GPU frees and you want one more *different family*, I can run `facebook/bart-large` or `albert-xxlarge-v2` 5-fold (say the word; otherwise I keep stacking/verification).
+<metric>0.20416<\metric>
+Tags: #submission #ensembling #communication #plan #status
+[board] сообщений 39, новых 1, метрик 23, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20416 (step 56)
+[board] сообщений 39, новых 0, метрик 23, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20416 (step 57)
+[board] сообщений 39, новых 0, метрик 23, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20416 (step 58)
+[board] сообщений 39, новых 0, метрик 23, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20416 (step 59)
+===== bellatrix_tau_refresh_02035.md =====
+# Refresh with bert5: candidate CV 0.20347 (log+prob); nested S1 0.20515
+Following [[canopus_kappa_stack_0206.md]] and [[mirfak_pi_0206.md]]. Added `bert5` (OOF 0.36584) → 57 deduped models, 5 transformer families.
+- **S1 log+prob, C=0.1: 0.20347** (live S1 log-only equivalent 0.20500 here)
+- nested leak-free S1 (log-probs, C selected inside outer): 0.20515 → consistent, no leak.
+- S2 level-1 still worse (0.21311). Candidate refreshed: `workspaces/bellatrix_tau/meta_candidate_submission.csv`.
+Still pending: xlnet-large (fold2, weak ~0.39) + canopus' electra5. I'll do one final refresh + format check after they land.
+<metric>0.20347<\metric>
+Tags: #ensembling #status #submission #communication
+[board] сообщений 40, новых 1, метрик 24, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20347 (step 60)
+===== mirfak_pi_meta_blend.md =====
+# Meta-model finding: LR + HistGradientBoosting blend beats pure LR (0.2050 -> 0.2021)
+On the same filtered/deduped base-OOF pool (56 models, shared folds), meta-CV:
+| meta-model on log-probs | CV |
+|---|---|
+| multinomial LR (C=0.05) | 0.20502 |
+| HistGradientBoosting (lr .03, 15 leaves, 200 it) | 0.20971 |
+| **0.6*LR + 0.4*HGB** | **0.20212** <metric>0.20212<\metric> |
+Blend is flat over w∈[0.4,0.7] (0.2021-0.2029), so not a knife-edge selection. Nonlinear meta-model catches interactions the linear stack misses.
+**Candidate**: `workspaces/mirfak_pi/sub_meta_blend.csv`, OOF vectors `oof_meta_blend.npy` (CV 0.20212), script `meta_v2.py`.
+@canopus_kappa @bellatrix_tau: suggest comparing this with the pure-LR S1 candidate on **nested** meta-CV before writing final. If it holds up, averaging the two submissions (LR-stack + LR/HGB-blend) is a safe middle ground.
+Still waiting on `xlnet_large_snap` (fold0 0.394, fold1 0.369; ~30 min) — will re-run this blend with it included, then report final numbers. After that: last GPU run = 3rd deberta-large seed (snapshot), unless someone objects.
+Tags: #ensembling #insight #model_selection #communication
+[board] сообщений 41, новых 1, метрик 25, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20212 (step 61)
+[board] сообщений 41, новых 0, метрик 25, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20212 (step 62)
+[board] сообщений 41, новых 0, метрик 25, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20212 (step 63)
+===== mirfak_pi_nested_meta_verified.md =====
+# NESTED verification: LR+HGB meta blend is real (0.20389 -> 0.20107)
+Following [[mirfak_pi_meta_blend.md]]. Proper nested evaluation (outer = shared 5 folds; inside each outer-train I fit LR & HGB OOF by inner 4-fold and pick blend weight w there; then predict outer fold):
+| meta-model (same 57 filtered/deduped base OOFs) | NESTED logloss |
+|---|---|
+| pure multinomial LR (C=0.05) | 0.20389 |
+| **w*LR + (1-w)*HGB**, w picked inner (0.6-0.7 all folds) | **0.20107** <metric>0.20107<\metric> |
+So the gain is **not** meta-selection optimism. Final recipe suggestion: **fit LR(C=.05) and HGB(lr=.03,15 leaves,200 it) on all OOF, blend w=0.65 LR + 0.35 HGB**.
+Artifacts: `workspaces/mirfak_pi/sub_meta_blend.csv` (CV 0.20212), scripts `meta_v2.py`, `nested_meta.py`, `nested_meta.json`.
+This is better than the current pure-LR S1 (nested 0.2107 earlier, now ~0.2039 with roberta-large+dbl5_s2 added). @canopus_kappa @bellatrix_tau: please validate/refresh candidate with this blend (or average both submissions for safety).
+xlnet-large 5-fold on fold3/4 now. After it lands I'll produce the final blend number with xlnet included.
+Tags: #ensembling #insight #model_selection #communication
+[board] сообщений 42, новых 1, метрик 26, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20107 (step 64)
+[board] сообщений 42, новых 0, метрик 26, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20107 (step 65)
+[board] сообщений 42, новых 0, метрик 26, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20107 (step 66)
+===== canopus_kappa_meta_blend_confirmed.md =====
+# Confirmed: LR+HGB meta blend helps (my pool 0.20172 → 0.19951); electra5 added
+Following [[mirfak_pi_nested_meta_verified.md]], [[bellatrix_tau_refresh_02035.md]].
+Independent reproduction on my pool (55 deduped base models incl. `bert5` 0.36584 and new `electra5` 0.44010):
+- meta features `hstack([log p, p])`, multinomial LR C=0.1 → **0.20172**
+- HistGradientBoosting (lr.03, 15 leaves, 200 it, l2=1.0) alone → 0.20996
+- **0.7·LR + 0.3·HGB → 0.19951**; weight selected inside each outer fold gives the same 0.19951 → real, not selection optimism.
+- Repeated meta-CV over seeds 0/1/7 with pure LR: 0.19925/0.19795/0.19846.
+`electra5` (electra-base, weak single 0.440) still improved the stack 0.20288→0.20172 — weak-but-different models still pay off. `final_solution` still points at the last pure-LR refresh; I'll switch it to the LR+HGB blend after xlnet-large lands. @mirfak_pi / @bellatrix_tau agreed: keep pure-LR candidate around as fallback, and I'll verify format + corr against yours.
+<metric>0.19951<\metric>
+Tags: #ensembling #insight #model_selection #status #communication
+[board] сообщений 43, новых 1, метрик 27, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 67)
+[board] сообщений 43, новых 0, метрик 27, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 68)
+[board] сообщений 43, новых 0, метрик 27, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 69)
+[board] сообщений 43, новых 0, метрик 27, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 70)
+===== bellatrix_tau_lrhgb_01996.md =====
+# Verified: LR+HGB meta on [log p, p] -> nested 0.19971; candidate ready
+Combining [[canopus_kappa_meta_blend_confirmed.md]] + [[mirfak_pi_nested_meta_verified.md]] + my log+prob feature [[bellatrix_tau_refresh_02035.md]], on the full pool incl. **xlnet_large_snap** (0.3767) and `electra5`/`bert5` (59 deduped models):
+- pure LR on `[log p, p]`: 0.20239 (5-fold)
+- **0.6-0.65·LR(C=.1) + 0.35-0.4·HGB(lr=.03,15 leaves,200 it)** on `[log p, p]`: nested **0.19971** (w chosen inside every outer fold = 0.6 on all folds; fixed w=0.65 gives 0.19964).
+- No selection optimism: nested == fixed.
+Candidate: `workspaces/bellatrix_tau/meta_lrhgb_submission.csv` (1958x4, sums to 1), OOF/test meta vectors in `meta_lrhgb_*.npy`, script `meta_lrhgb.py`, nested/fixed numbers in `meta_lrhgb_results.json`.
+@canopus_kappa this is the best verified recipe I have — please use it (or reproduce exactly: dedup 0.998, drop OOF>0.75, substring-filter, features `hstack([log p,p])`, LR C=.1 + HGB, blend w=.65). I'll do a final refresh after mirfak's 3rd dbl seed and will verify the live `final_solution/submission.csv` (format + corr/argmax against this) at the end.
+<metric>0.19971<\metric>
+Tags: #ensembling #insight #model_selection #submission #communication
+[board] сообщений 44, новых 1, метрик 28, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 71)
+===== mirfak_pi_xlnet_logprob_aug.md =====
+# xlnet landed (0.3767); meta features log+prob -> 0.19995; token-masking aug looks strong
+1. **`oof_xlnet_large_snap.npy`** published — xlnet-large-cased 5-fold OOF **0.37671** (folds 0.394/0.369/0.371/0.373/0.376). Weak but adds diversity. Stack CV went 0.20212 -> 0.20099 with it.
+2. **Meta features matter**: `hstack([log p, p])` beats log-only.
+| features | LR | best blend w·LR+(1-w)·HGB |
+|---|---|---|
+| log p | 0.20403 | 0.20099 (w=.6) |
+| **log p + p** | 0.20255 | **0.19995 (w=.7)** |
+| p only | 0.21724 | 0.20700 |
+Matches canopus [[canopus_kappa_meta_blend_confirmed.md]] (0.19951). Use **log+prob features, LR C=0.1 + HGB(lr.03,15,200), w=0.7/0.3**.
+3. **Token-masking augmentation is promising**: currently training `deberta-v3-large` 5-fold with random token masking p=0.1 during training (same recipe lr1e-5 bs16 ep3 LS0.1, snapshot averaging). **fold0 val = 0.31082** — better than dbl5 seed1 (0.3246) and seed2 (0.3551) on the same fold!
+   Tag `dbl_aug_snap`, ETA ~22:20. This should be a strong *and* diverse addition (different data view). If fold0 holds, consider a 2nd aug seed later.
+@canopus_kappa @bellatrix_tau: refresh candidate with log+prob LR/HGB blend when `dbl_aug_snap` lands; I'll post the final blend numbers. I can also hand over `sub_meta_blend.csv` but canopus stays the single writer of `final_solution/`.
+Tags: #feature_engineering #augmentation #architecture #ensembling #status #communication
+[board] сообщений 45, новых 1, метрик 28, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 72)
+[board] сообщений 45, новых 0, метрик 28, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 73)
+[board] сообщений 45, новых 0, метрик 28, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19951 (step 74)
+===== bellatrix_tau_3way_01992.md =====
+# 3-way meta (LR+HGB+XGB) nested 0.19924 — small step over LR+HGB
+Following [[bellatrix_tau_lrhgb_01996.md]], [[canopus_kappa_meta_blend_confirmed.md]], [[mirfak_pi_nested_meta_verified.md]].
+Nested meta-blend (weights selected by inner CV inside every outer fold; outer = shared 5 folds), features `[log p, p]`, 59 deduped base models incl. xlnet/bert5/electra5:
+| meta | nested |
+|---|---|
+| LR + HGB (w=0.65/0.35) | 0.19971 |
+| **LR + HGB + XGB, w≈(0.6, 0.24, 0.16)** | **0.19924** |
+Chosen inner weights stable: LR 0.6 every fold; HGB 0.2-0.3; XGB 0.1-0.2. Gain is small but consistent (XGB captures a bit more nonlinearity than HGB). Candidate: `workspaces/bellatrix_tau/meta_3way_submission.csv`, script `meta_nested_blend.py`, details `meta_3way_results.json`.
+@canopus_kappa if you prefer a simpler final, LR+HGB is essentially equivalent; if you have time, use the 3-way. I see you and mirfak are now running **augmented** deberta-large — great, I'll rerun this exact nested 3-way after `dbl_aug_snap`/`dbl_aug2` land and send the final candidate. No GPU job from me (I stay on stacking/verification).
+<metric>0.19924<\metric>
+Tags: #ensembling #insight #model_selection #submission #status #communication
+[board] сообщений 46, новых 1, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 75)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 76)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 77)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 78)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 79)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 80)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 81)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 82)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 83)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 84)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 85)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 86)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 87)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 88)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 89)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 90)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 91)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 92)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 93)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 94)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 95)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 96)
+[board] сообщений 46, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 97)
+===== mirfak_pi_aug_best_single.md =====
+# BEST SINGLE: token-masking augmented deberta-large OOF 0.30676 (beats dbl5 0.31727)
+`oof_dbl_aug_snap.npy` / `test_dbl_aug_snap.npy` published. Recipe: `microsoft/deberta-v3-large`, lr1e-5, bs16, **3 epochs, LS0.1, random token-masking p=0.1 during training**, maxlen128, snapshot (tail-subset) epoch averaging.
+Fold scores: 0.31082 / 0.29361 / 0.29975 / 0.31635 / 0.31325 → **OOF 0.30676** <metric>0.30676<\metric>
+This is the strongest single model so far (dbl5 0.31727, dbl5_s2 0.31880, deberta-base 0.35472, roberta-large 0.35690, xlnet-large 0.37671). Token masking = cheap, effective regularizer/augmentation for this task.
+## Also launched: 2nd aug seed
+`dbl_aug2_snap` (seed 777, tokmask 0.15, maxlen 96, bs20) for a different data view → ~00:45-01:00. **If it does not finish by ~01:10 I'll ignore it** and we finalize with what we have; it never blocks the final stack.
+## Action
+@canopus_kappa @bellatrix_tau: **refresh the final candidate NOW** including `oof_dbl_aug_snap` (use log+prob features, LR C=.1 + HGB, w≈.7/.3, or your 3-way). This is likely a sizeable drop. I'll re-run my `final_meta.py` and post the exact number + candidate path within ~15 min.
+Tags: #augmentation #architecture #insight #status #communication #ensembling
+[board] сообщений 47, новых 1, метрик 30, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19924 (step 98)
+===== mirfak_pi_final_meta_0198.md =====
+# Final meta with dbl_aug_snap: 3-way (LR+HGB+XGB) CV 0.19838
+Pool now 61 filtered/deduped base OOFs — includes `mi:dbl_aug_snap` (0.30676), canopus's `ca:dbl_aug2`, `ca:bert_aug`, dbl5/dbl5_s2, roberta-large, xlnet-large, etc.
+Features `[log p, p]`; fixed weights **LR(C=.1) 0.60 + HGB 0.24 + XGB 0.16** (bellatrix's stable nested weights [[bellatrix_tau_3way_01992.md]]):
+| meta | CV |
+|---|---|
+| LR alone | 0.20196 |
+| HGB alone | 0.20757 |
+| XGB alone | 0.20353 |
+| **3-way fixed** | **0.19838** <metric>0.19838<\metric> |
+Candidate CSV: `workspaces/mirfak_pi/sub_final_meta.csv` (+ `test_final_meta.npy`, `oof_final_meta.npy`, script `final_meta.py`).
+(Weight-optimized on OOF gives 0.19809 but weights look unstable — hgb≈0.03 — so I recommend the **fixed** 0.60/0.24/0.16.)
+@canopus_kappa @bellatrix_tau: please refresh `final_solution/submission.csv` from this (or your equivalent 3-way) — current live submission (20:51) predates dbl_aug+winning blends. I'll re-run once `dbl_aug2_snap` lands (~00:45) and post the last number. We should agree the **final writer time**: canopus writes at ~01:15, I verify format, done well before hard_end.
+Tags: #ensembling #submission #status #communication
+[board] сообщений 48, новых 1, метрик 31, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19838 (step 99)
+[board] сообщений 48, новых 0, метрик 31, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19838 (step 100)
+[board] сообщений 48, новых 0, метрик 31, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19838 (step 101)
+[board] сообщений 48, новых 0, метрик 31, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19838 (step 102)
+===== bellatrix_tau_dblaug_0196.md =====
+# dbl_aug_snap lands -> honest stack ~0.1962; pure LR now wins (nonlinear meta gain gone)
+Following [[mirfak_pi_xlnet_logprob_aug.md]] and my [[bellatrix_tau_3way_01992.md]].
+`oof_dbl_aug_snap.npy` OOF **0.30676** (best single!) is a big add. Current pool: 63 deduped base models, 10 transformer OOFs.
+| meta (5-fold, `[log p, p]`, fixed C) | CV |
+|---|---|
+| **pure LR C=0.1** | **0.1962-0.1967** |
+| 0.9·LR + 0.1·XGB | 0.19589 |
+| 0.7·LR + 0.3·HGB | 0.19637 |
+| nested weight-selection 3-way | 0.19708 |
+With the stronger augmented transformer, HGB/XGB add ≈nothing (differences <0.0005 = noise), and nested weight selection is now slightly *worse* than pure LR. **Recommendation: final = pure LR on `[log p, p]`, C=0.1** (simplest + honest). If you prefer a nonlinear hedge, 0.9 LR + 0.1 XGB is equivalent.
+Candidates refreshed: `workspaces/bellatrix_tau/meta_candidate_submission.csv` (pure LR, **0.19674**), `meta_3way_submission.csv` (3-way, 0.19708). Corr with live `final_solution/submission.csv` = 0.9999. @canopus_kappa please sync live final to whichever you trust (pool refreshed with dbl_aug). If `dbl_aug3` lands by ~00:30 I'll do one last refresh; after that I freeze and verify the live file.
+<metric>0.19674<\metric>
+Tags: #ensembling #insight #model_selection #submission #status #communication
+===== mirfak_pi_warning_level1_leak.md =====
+# IMPORTANT: `mirfak_pi:final_meta` in the candidate pool is double-stacking (optimistic CV)
+@bellatrix_tau your `candidate_results.json` / `meta_3way_results.json` model lists contain **`mirfak_pi:final_meta`** (and `meta_3way_results.json` nested=0.19708 also uses it as a static file). That file (`workspaces/mirfak_pi/oof_final_meta.npy`) is a **derived level-1 stack output**, not a base model.
+Why its CV is optimistic: for a row in outer fold k, its `final_meta` feature came from a meta-model trained on folds != k. When you then train a new meta-model on folds != k, those training rows' `final_meta` features were produced by models that **did** see fold-k labels. So information from fold k leaks into its own prediction. This is exactly the effect you flagged earlier in [[bellatrix_tau_transformer_breaks_stack.md]] / [[bellatrix_tau_nested_stack_result.md]].
+**Honest base-only numbers on the current pool (my `final_meta.py`, which substring-excludes meta/stack/blend/candidate/nested/partial):**
+| meta on base-only, features [log p, p] | 5-fold CV |
+|---|---|
+| pure LR C=0.1 | 0.20196 |
+| HGB | 0.20757 |
+| XGB | 0.20353 |
+| **fixed 0.60 LR + 0.24 HGB + 0.16 XGB** | **0.19838** |
+So the realistic level is ~0.198, not 0.196. **Recommendation: final = base-only (exclude `*final_meta*`, `*meta_*`, `*stack*`, `*blend*`, `*candidate*`, `*nested*`, `*partial*`), 3-way fixed weights.** My candidate: `workspaces/mirfak_pi/sub_final_meta.csv` (base-only, CV 0.19838).
+Practically the candidates correlate **0.999** with the live submission, so the difference in predictions is tiny — but let's not select the final by a leaked CV. @canopus_kappa please confirm the live file's pool is base-only. @bellatrix_tau can you re-run your candidate with `final_meta` excluded? If you want to keep a level-1 hedge, it must be *recomputed inside each outer fold*.
+Tags: #bug #problem #ensembling #model_selection #communication #conflict
+[board] сообщений 50, новых 2, метрик 32, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19674 (step 103)
+===== bellatrix_tau_final_timeline_0196.md =====
+# Latest numbers + final timeline: pure LR 0.19616; canopus writes 01:15, I verify
+Refs: [[mirfak_pi_final_meta_0198.md]], [[mirfak_pi_aug_best_single.md]], [[canopus_kappa_stack_0206.md]].
+With `dbl_aug_snap` (0.30676), `dbl_aug2` (0.31143), `dbl_aug3` (0.31183) added, my pool = **64 deduped base models** (all agents, substring-filtered, OOF<=0.75, corr<=0.998). Meta features `[log p, p]`:
+| meta | 5-fold CV |
+|---|---|
+| **pure LR C=0.1** | **0.19616** |
+| LR+HGB 0.9/0.1 | 0.19592 |
+| LR+XGB 0.9/0.1 | 0.19589 |
+| 3-way 0.6/0.24/0.16 | 0.19702 |
+Differences among the top 4 are <0.0005 (noise). Recommendation: **pure LR** (simplest, no meta-selection risk). Note my pool is larger/more diverse than the 61-model pool in [[mirfak_pi_final_meta_0198.md]] (which reports LR 0.20196) — weak-but-different models (lgbm/xgb/nystroem/bilstm/etc.) still matter; that explains the gap.
+Candidate files (recomputed 23:40): `workspaces/bellatrix_tau/meta_candidate_submission.csv` (pure LR, CV **0.19626**), `meta_3way_submission.csv` (CV 0.19708), `meta_nested_blend.py`, `make_final_candidate.py`, `SOLUTION_README.md`.
+**Timeline agreed:** mirfak's 2nd aug seed lands ~00:45; I do the last refresh + numeric report ~01:00. @canopus_kappa writes `final_solution/submission.csv` **~01:15** from the best verified candidate (pure LR is my recommendation; 3-way is within noise); @mirfak_pi and I verify format/ids/corr right after. Freeze by 01:45, ~75 min before hard_end.
+<metric>0.19626<\metric>
+Tags: #ensembling #plan #submission #communication #status
+[board] сообщений 51, новых 1, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 104)
+[board] сообщений 51, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 105)
+[board] сообщений 51, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 106)
+[board] сообщений 51, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 107)
+[board] сообщений 51, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 108)
+[board] сообщений 51, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 109)
+===== mirfak_pi_honest_final.md =====
+# CORRECTED honest CV ~0.1985; leak quantified; final candidate ready
+Follow-up to [[mirfak_pi_warning_level1_leak.md]]. I found the exact mechanism: my derived file is named `final_meta`, and the common filter `'meta_'` does **not** match `"final_meta"` (no trailing underscore) — so it silently entered pools. Including `mirfak_pi:final_meta` as a "base" model improves meta-CV by **~0.005 purely via double-stacking leak**.
+## Honest base-only numbers (63 deduped base OOFs, EXCLUDE any name containing meta/final/stack/blend/candidate/nested/partial/opt; features [log p, p])
+| meta | 5-fold CV |
+|---|---|
+| pure LR C=0.05 | 0.20126 |
+| XGB | 0.20298 |
+| HGB | 0.20790 |
+| **fixed 0.60 LR + 0.24 HGB + 0.16 XGB** | **0.19850** <metric>0.19850<\metric> |
+| 0.5·LR + 0.5·3way | 0.19911 |
+So bellatrix's 0.1962 / canopus's 0.1965 are optimistic by ~0.002-0.005 because of the level-1 file. The true level is **~0.198**.
+## Final candidate
+`workspaces/mirfak_pi/sub_final_honest_3way.csv` (CV **0.19850**), `sub_final_honest_lr3mix.csv` (0.19911) as a smoother alternative. Both built by `final_honest.py` from base-only OOFs.
+- Correlation with the live `final_solution/submission.csv` = **0.9995**, argmax agreement 99.2%. So practically identical — no panic, but the final should use the honest pool.
+@canopus_kappa: please sync `final_solution/submission.csv` to `sub_final_honest_3way.csv` (or your own base-only equivalent) and add `train_lm_aug.py` + `final_honest.py` to `final_solution/solution/` so the code matches the submission. @bellatrix_tau please re-verify with `final_meta`/`meta` substring excluded.
+I'll independently verify the live file's format/rows after you update.
+Tags: #ensembling #bug #model_selection #submission #communication
+[board] сообщений 52, новых 1, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 110)
+[board] сообщений 52, новых 0, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 111)
+[board] сообщений 52, новых 0, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 112)
+[board] сообщений 52, новых 0, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 113)
+===== mirfak_pi_urgent_leak_canopus.md =====
+# URGENT @canopus_kappa: your `final_tune.py` pool is contaminated -> 0.165 CV is fake
+Your `final_tune.json` shows LR C=1.0 -> **0.1652** (nested 0.1654, n=65). **That is a double-stacking leak, not a real gain.** Do NOT write the final from it.
+Cause: `final_tune.py` filter is `DER=('partial','stack','blend','candidate','nested','meta_')`. The string **`"meta_"` does NOT match `"final_meta"`** (no trailing underscore) nor `"final_lr"`. So your pool includes my derived level-1 files:
+- `workspaces/mirfak_pi/oof_final_meta.npy` (0.196)
+- `workspaces/mirfak_pi/oof_final_lr.npy` (0.201)
+That's exactly n=65 = 63 honest bases + 2 derived. A high-C LR (C=1.0) then memorises their cross-fold leak.
+Proof: on the **same 63 base-only OOFs** (drop any name containing `meta`, `final`, `stack`, `blend`, `candidate`, `nested`, `partial`, `opt`):
+| meta | CV |
+|---|---|
+| LR C=0.05 | 0.20126 |
+| LR C=0.1 | 0.20169 |
+| XGB | 0.20298 |
+| 3-way 0.60/0.24/0.16 | **0.19850** |
+Removing just `final_meta` moves pure-LR CV from 0.1965 -> 0.2013 (Δ=0.005). There is no legitimate path to 0.165.
+## Fix (one line)
+```python
+DER=('partial','stack','blend','candidate','nested','meta','final','opt','l1','cross')
+```
+(add bare `'meta'` and `'final'`, not `'meta_'`). @bellatrix_tau already updated: their `EXCL` now includes `'meta','final'`.
+## Use instead
+`workspaces/mirfak_pi/sub_final_honest_3way.csv` — base-only, CV **0.19850**; script `final_honest.py`, model list in `final_honest_results.json` (63 models, verified none contain meta/final/stack/blend).
+Corr with current live submission = 0.9995 (argmax 99.2%), so the live file is not badly wrong — but the last write must use the honest pool.
+Please re-run your `final_tune.py` after the filter fix; expect ~0.198-0.201, and ignore anything at 0.165.
+Tags: #bug #problem #conflict #ensembling #submission #communication
+[board] сообщений 53, новых 1, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 114)
+[board] сообщений 53, новых 0, метрик 34, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 115)
+===== bellatrix_tau_honest_corrected_0198.md =====
+# CORRECTED (thanks mirfak): `final_meta` leak was in my pool too -> honest 3-way 0.19828
+I confirm [[mirfak_pi_warning_level1_leak.md]] / [[mirfak_pi_honest_final.md]]: my filter had `meta_` but not `final_meta`, so `mirfak_pi:final_meta` was silently included in my 0.1962 candidates. Fixed the filter to substring-exclude **`meta`,`final`,`stack`,`blend`,`candidate`,`nested`,`partial`,`lr3mix`,`lrhgb`,`3way`**.
+Honest base-only pool (64 deduped models, includes `dbl_aug_snap` 0.30676, `dbl_aug2` 0.31143, `dbl_aug3` 0.31183, `deberta_base_aug` 0.35477; 12 transformer OOFs):
+| meta on `[log p, p]` | 5-fold CV |
+|---|---|
+| pure LR C=0.1 | 0.20157 |
+| HGB | 0.20873 |
+| XGB | 0.20588 |
+| **3-way 0.60 LR + 0.20 HGB + 0.20 XGB** | **0.19804** |
+| nested weight-selection 3-way (w≈0.58/0.22/0.20) | **0.19828** |
+So honest level ≈ **0.1980-0.1983**, matching mirfak's 0.1985. My earlier 0.1962 was the leak.
+**Final candidate (honest):** `workspaces/bellatrix_tau/meta_3way_submission.csv` (script `meta_nested_blend.py`, weights from nested = 0.58/0.22/0.20, nested CV 0.19828). Pure-LR fallback: `meta_candidate_submission.csv` (0.20160). @canopus_kappa please sync live `final_solution/submission.csv` to the honest 3-way; @mirfak_pi please verify. I'll re-run once `dbl_aug2_snap` lands (~00:45-01:00) and post whether it improves 0.1980.
+<metric>0.19828<\metric>
+Tags: #ensembling #bug #insight #model_selection #submission #communication
+[board] сообщений 54, новых 1, метрик 35, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 116)
+[board] сообщений 54, новых 0, метрик 35, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 117)
+[board] сообщений 54, новых 0, метрик 35, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 118)
+===== mirfak_pi_final_candidate_ready.md =====
+# FINAL honest candidate ready: CV 0.19839 (base-only 3-way, 63 models)
+Following the leak fix [[mirfak_pi_urgent_leak_canopus.md]] and [[bellatrix_tau_honest_corrected_0198.md]].
+`workspaces/mirfak_pi/sub_FINAL_honest.csv` — verified: 1958 rows, columns id,EAP,HPL,MWS, ids in test order, all finite, rows sum to 1.
+Recipe (`build_FINAL.py`, `FINAL_results.json`): 63 deduped **base-only** OOFs (no meta/final/stack/blend/candidate/nested/partial/opt), features `[log p, p]`,
+**0.60·LR(C=.05) + 0.20·HGB + 0.20·XGB**, 5-fold CV **0.19839** <metric>0.19839<\metric>
+(individual: LR 0.20126, HGB 0.20790, XGB 0.20298; 4-way MLP does NOT help.)
+Consistent across the swarm now: mirfak 0.19839, bellatrix 0.19804-0.19828, canopus honest re-run in progress.
+@canopus_kappa **please copy `sub_FINAL_honest.csv` (or your honest equivalent) to `final_solution/submission.csv` at your 01:15 write**, and add `train_lm_aug.py` + `build_FINAL.py` to `final_solution/solution/`.
+If the live file is not updated by **01:25**, I'll copy `sub_FINAL_honest.csv` myself as the safety fallback (single write, no conflict).
+Tags: #submission #ensembling #status #communication #plan
+[board] сообщений 55, новых 1, метрик 36, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 119)
+===== canopus_kappa_final_submission.md =====
+# FINAL: `final_solution/submission.csv` written from honest base-only 3-way stack (CV 0.19863)
+Thanks @mirfak_pi for catching the `final_meta`/`final_lr` double-stacking leak — my earlier 0.165 CV was fake. Fixed filter: exclude any name containing `partial/stack/blend/candidate/nested/meta/final/opt` (bare substrings, not `meta_`). Reproduced honest numbers, then wrote the final.
+## Final recipe (honest)
+- Base pool: **64 deduped base models** (OOF<=0.75, corr<=0.998), 12 transformer OOFs. Best singles: `dbl_aug_snap` 0.30676, `dbl_aug2` 0.31143, `dbl_aug3` 0.31183, `dbl5` 0.31727, `dbl5_s2` 0.31880, `deberta_base`/`roberta_large` ~0.355, `bert5` 0.3658, `electra5` 0.4401, best linear 0.3737, BiLSTM 0.4293.
+- Meta features `[log p, p]`; **0.6·LR(C=0.1) + 0.2·HGB + 0.2·XGB**.
+- Honest 5-fold CV of blend: **`0.19863`** <metric>0.19863<\metric> (LR 0.20156, HGB 0.20873, XGB 0.20965). Meta-seed (42/0/1/7) robustness checked earlier; recipe sits at the ~0.197–0.199 plateau.
+## Verification
+- `submission.csv`: 1,958 rows, columns `id,EAP,HPL,MWS`, ids == `data/test.csv` order, no NaN, rows sum to 1, min 3.8e-4.
+- corr vs `bellatrix_tau/meta_3way_submission.csv` = **0.999798** (argmax agree 99.44%), vs `mirfak_pi/sub_final_honest_3way.csv` = **0.999737** (99.44%). So all three honest implementations agree; no conflict.
+- `final_solution/README.md` added; `final_solution/solution/` contains code + `base_oof.npz`/`base_test.npz` + `reproduce_submission.py` (reproduces this exact csv, OOF 0.198629). Tested: ids equal, row sums 1.
+Files: `workspaces/canopus_kappa/final_recipe.json`, `final_oof.npy`, `final_test.npy`, `write_final_3way.py`.
+I keep the live file frozen unless a new **legit base** OOF lands before ~02:15 (e.g. `dbl_aug2_snap`); if so I refresh and re-post. Please don't write `final_solution/` from other agents (single-writer rule).
+Tags: #submission #ensembling #model_selection #communication #status
+[board] сообщений 56, новых 1, метрик 37, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 120)
+[board] сообщений 56, новых 0, метрик 37, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 121)
+===== bellatrix_tau_final_verified.md =====
+# Verified final: honest base-only 3-way, CV 0.1986-0.1980; reproduce script matches exactly
+Following [[canopus_kappa_final_submission.md]], [[mirfak_pi_final_candidate_ready.md]], my [[bellatrix_tau_honest_corrected_0198.md]].
+Independent checks on the live `final_solution/submission.csv` (mtime 01:08):
+- 1,958 rows, columns `id,EAP,HPL,MWS`, ids == `data/test.csv` order, no NaN, rows sum to 1, all in [3.8e-4, 0.99923].
+- `final_solution/solution/submission_reproduced.csv` vs live file: **max abs diff = 0.0** (exact reproduction).
+- corr vs my honest `meta_3way_submission.csv` = 0.99980 (argmax 99.44%); vs mirfak `sub_FINAL_honest.csv` = ~0.9997. No conflict.
+Honest pool (case-insensitive exclusion of meta/final/stack/blend/candidate/nested/partial/opt/honest; 64 deduped base OOFs):
+| meta (5-fold) | CV |
+|---|---|
+| pure LR `[log p,p]` C=0.1 | 0.20157 |
+| 0.6 LR + 0.2 HGB + 0.2 XGB, **prob-space** (live) | 0.19824 |
+| same, **log-space** | 0.19804 |
+| canopus' XGB depth3/200 config (live CV) | 0.19863 |
+Log-space blending is ~0.0002 better (noise) — **not worth changing the frozen file**. Big thanks to @mirfak_pi for catching the `final_meta` leak; the live submission is honest base-only.
+Canopus is running `roberta-base` + augmentation as the last base model; if it lands before 02:15 canopus refreshes, else we freeze at ~0.198. I'll verify the final file once more at the end (~02:30).
+<metric>0.19824<\metric>
+Tags: #submission #ensembling #status #communication
+===== mirfak_pi_case_sensitivity_caution.md =====
+# Caution: substring filters are CASE-SENSITIVE — I just removed `oof_FINAL_honest.npy`
+While testing an extra idea I got a suspicious LR CV of **0.19393** (vs honest 0.20126). Cause: I had saved my own derived stack as `oof_FINAL_honest.npy` (uppercase), and lowercase substring filters (`'final' in name`) **do not match uppercase `FINAL`**. It silently entered the pool -> same double-stacking leak as before, ~0.007 fake gain.
+Action taken: **deleted `workspaces/mirfak_pi/oof_FINAL_honest.npy`** (candidate CSV `sub_FINAL_honest.csv` and `FINAL_results.json` remain; OOF is reproducible via `build_FINAL.py`).
+Verified the **live `final_solution/submission.csv` is clean**: canopus's `final_recipe.json` model list (n=64) contains **no** derived names, and my `FINAL_results.json` (n=63) likewise. Both give honest CV 0.1984-0.1986.
+Also tested: adding text length/punctuation features to the meta does **not** help (contaminated run: 0.19393 -> 0.19410; same direction expected honest). So no change to the recipe.
+**Rule of thumb for any final refresh:** normalize names to lowercase before substring checks, and/or use an explicit allowlist of base `oof_<name>.npy` files. If you see CV < 0.197, suspect a leak.
+Tags: #bug #problem #insight #ensembling #communication
+[board] сообщений 58, новых 2, метрик 38, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 122)
+[board] сообщений 58, новых 0, метрик 38, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 123)
+[board] сообщений 58, новых 0, метрик 38, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 124)
+===== mirfak_pi_verify_file_removed.md =====
+# Removed another accidental derived file: `oof_verify_allowlist.npy` (naming hygiene)
+I keep tripping on my own derived-file names. Just removed `workspaces/mirfak_pi/oof_verify_allowlist.npy` (a level-1 stack, OOF 0.1984) because its name had no filtered substring, so it entered recent pools and produced a fake pure-LR CV of **0.1939** again.
+**For any final refresh, use an ALLOWLIST or lowercase-normalized exclusion.** My folder now contains ONLY these base OOFs (safe to include):
+`oof_dbl_aug_snap` (0.30676), `oof_deberta_base_aug` (0.35477), `oof_deberta_base_ls` (0.35472), `oof_roberta_large_snap` (0.35690), `oof_xlnet_large_snap` (0.37671), `oof_tfidf_lr` (0.38353).
+Everything else in `workspaces/mirfak_pi/` is DERIVED (meta/stack/final/lr/…): do not use as base.
+Noticed canopus's new base `oof_rb_aug` (01:21) — legit, include it. @canopus_kappa if you refresh at ~02:15, recompute with the lowercase filter; the live honest number should stay ~0.198, **not** 0.193.
+Tags: #bug #problem #ensembling #communication #submission
+[board] сообщений 59, новых 1, метрик 38, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 125)
+===== mirfak_pi_final_verification.md =====
+# Final verification (frozen): live submission is honest, CV ~0.1987
+Re-ran the honest base-only 3-way from scratch with a **safety rule: skip any OOF file whose individual logloss < 0.25** (derived level-1 files are always <0.25, real base models >=0.30). Lowercase-normalized name exclusions.
+- Base pool now **71 models -> 69 after dedup** (canopus added new bases incl. `rb_aug`).
+- Individual: LR 0.20228, HGB 0.20834, XGB 0.20274.
+- **3-way 0.60/0.20/0.20 CV = 0.19867** <metric>0.19867<\metric>
+- corr with live `final_solution/submission.csv` = **0.99950**, argmax agreement **99.39%**.
+Combined with canopus's independent honest run (0.19863, corr 0.99980 vs bellatrix) and bellatrix's nested 0.19828, the swarm has 3 agreeing honest implementations at **~0.198-0.199**. The live file is valid: 1,958 rows, ids in test order, finite, rows sum to 1.
+**No further writes needed** unless someone lands a genuinely new base model by ~02:10; then refresh with the <0.25-logLoss guard. I'm freezing my side; will do a last integrity check of the live file at ~02:15.
+Tags: #submission #ensembling #model_selection #status #communication
+===== mirfak_pi_solution_code_request.md =====
+# Small request to the final writer (@canopus_kappa): add the augmentation training script
+`final_solution/README.md` + `solution/` are good (reproduce_submission.py + base_oof.npz makes the final CSV exactly reproducible). One gap for full reproducibility of the strongest base models (`dbl_aug*`, OOF 0.311-0.307): the **token-masking augmentation** used during DeBERTa-large fine-tuning lives only in my workspace.
+Please copy (new file, no overwrite): `workspaces/mirfak_pi/train_lm_aug.py` -> `final_solution/solution/train_lm_aug.py`.
+It is generic HF fine-tuning with `--ls` label smoothing + `--tokmask` (random token masking p during training) + per-fold snapshot epoch averaging; that's exactly how `dbl_aug_snap` was produced (`deberta-v3-large, lr1e-5, bs16, 3 epochs, LS0.1, tokmask 0.1, maxlen128`).
+If you prefer not to touch `final_solution/` again, say so — it's a nice-to-have, the current code already reproduces `submission.csv`.
+Tags: #submission #communication #augmentation
+[board] сообщений 61, новых 2, метрик 39, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 126)
+===== bellatrix_tau_freeze_recommendation.md =====
+# Freeze recommendation: live final is honest & verified; `rb_aug` adds nothing
+Status check 01:42 (refs [[canopus_kappa_final_submission.md]], [[bellatrix_tau_final_verified.md]], [[mirfak_pi_final_candidate_ready.md]]):
+- Live `final_solution/submission.csv` (01:11) = honest base-only 3-way, verified: exact reproduction (max abs diff 0.0), ids/order/sums OK, corr 0.9998 with both mirfak's and my honest candidates.
+- New `canopus_kappa:rb_aug` (roberta-base + aug, OOF **0.38381**) landed at 01:21. I re-ran the honest pool with it: pure-LR CV 0.20189 vs 0.20160 without → **no improvement** (within noise; it is weak and largely redundant with roberta-large/bert aug). Not worth re-freezing the submission for it.
+**Recommendation: freeze `final_solution/submission.csv` as-is (honest CV ≈ 0.1980-0.1986).** If anyone does refresh, please (a) keep base-only filtering case-insensitive (`final` must catch `FINAL_honest` too), and (b) notify so mirfak/me re-verify. I will do a last format/reproduction check at ~02:30 and then stop.
+<metric>0.19824<\metric>
+Tags: #submission #status #communication #plan
+===== canopus_kappa_final_verified.md =====
+# Final frozen submission verified — diagnostics (OOF acc 92.49%, logloss 0.19863)
+Live `final_solution/submission.csv` (single writer: canopus_kappa) is **frozen** and independently verified by @bellatrix_tau ([[bellatrix_tau_final_verified.md]]): exact reproduction diff 0.0, corr 0.9998 vs her candidate, 0.9998 vs mirfak.
+## Final honest diagnostics (base-only 3-way meta)
+- OOF logloss **0.19863**, **accuracy 92.49%**
+- per-class logloss: EAP 0.1946, HPL 0.1856, **MWS 0.2160** (hardest)
+- confusion (rows=true EAP/HPL/MWS): [[6564,171,355],[251,4723,100],[376,70,5011]]
+- test mean prediction [0.4132, 0.2841, 0.3027] vs train prior [0.4024, 0.2880, 0.3097] — well matched
+- recipe verified: model list == clean base pool (n=64), no derived/`FINAL`/`meta`/`stack`/`partial` names (case-insensitive check).
+## Last experiments (not adopted)
+- Added `rb_aug` (roberta-base + token-mask aug, OOF 0.38381): 3-way CV 0.19858 vs 0.19863 → within noise, not worth changing the frozen file.
+- Blending with bellatrix/mirfak honest stackers: best 0.19811 (Δ≈0.0002) → not worth it.
+- One transient 0.195 CV was caused by `oof_FINAL_honest.npy` existing in the pool; it is now excluded by lowercase substring filters and deleted by mirfak. Our written file was produced before it appeared and the recipe is clean.
+Files: `final_solution/submission.csv`, `README.md`, `solution/` (code + `base_oof.npz`/`base_test.npz` + `reproduce_submission.py`). Hard_end buffer intact; no further writes planned unless a genuine new **base** model appears.
+<metric>0.19863<\metric>
+Tags: #submission #status #ensembling #insight #communication
+[board] сообщений 63, новых 2, метрик 41, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 127)
+[board] сообщений 63, новых 0, метрик 41, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 128)
+===== mirfak_pi_closing_summary.md =====
+# mirfak_pi — closing summary (final state verified)
+## Final artifact
+`final_solution/submission.csv` (written by canopus_kappa, 01:11) — **honest base-only 3-way stack**, CV **0.19863** (canopus) / **0.19839** (mirfak) / **0.19828 nested** (bellatrix). Verified now:
+- 1,958 rows, `id,EAP,HPL,MWS`, ids == `data/test.csv` order, all finite, rows sum to 1
+- identical to `solution/submission_reproduced.csv` (self-contained reproduction from `base_oof.npz`/`base_test.npz`)
+- corr 0.9995 with my independent 69-model honest rebuild (argmax 99.4%)
+## My contributions
+1. **Transformer track**: `deberta_base_ls` 0.35472, `roberta_large_snap` 0.35690, `xlnet_large_snap` 0.37671, `deberta_base_aug` 0.35477.
+2. **Best single model**: `dbl_aug_snap` = deberta-v3-large + **token-masking augmentation** (p=0.1) + label smoothing + per-fold snapshot averaging → **OOF 0.30676** (swarm best). Scripts in `final_solution/solution/teammate_mirfak_*`.
+3. **Leak discovery**: caught double-stacking via level-1 files (`final_meta`, and later case-sensitive name `FINAL_honest` / `verify_allowlist`) that produced fake CVs of 0.165-0.194. Proposed the **lowercase substring filter + <0.25 individual-logLoss guard** now used for the final.
+4. **Meta-model validation**: log+prob features; LR/HGB/XGB blend; nested verification that the nonlinear gain is real; showed per-model temperature, length features, MLP 4-way and prior correction do **not** help.
+## Final honest numbers
+- Level-1 best singles: dbl_aug 0.3068-0.3118, dbl5 0.3173, deberta-base 0.3547, roberta-large 0.3569, bert5 0.3658, xlnet 0.3767, TF-IDF linear 0.3737, BiLSTM 0.4293.
+- Level-2: 0.60·LR(C=.05-.1) + 0.20·HGB + 0.20·XGB on `[log p, p]` → **<metric>0.19839<\metric>** (final honest estimate 0.1984-0.1987).
+Swarm was efficient: 3 independent stack implementations agree within 0.0005. Final is frozen; no further writes from me.
+Tags: #status #submission #ensembling #insight #communication
+[board] сообщений 64, новых 1, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 129)
+[board] сообщений 64, новых 0, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 130)
+[board] сообщений 64, новых 0, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 131)
+[board] сообщений 64, новых 0, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 132)
+[agent swarm-3] run завершился за 39992s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ea6cfefd6ffeU9FZMStQeEv0Tw продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ea6cfefd6ffeU9FZMStQeEv0Tw (2026-10-20T23:07:55Z): Continue work until hard end.
+===== mirfak_pi_frozen_md5.md =====
+# Frozen: final integrity check PASSED (02:07) — do not modify
+Agree with [[canopus_kappa_final_verified.md]] and [[bellatrix_tau_freeze_recommendation.md]]. Final check of `final_solution/submission.csv`:
+- 1,958 rows, columns `id,EAP,HPL,MWS`, ids == `data/test.csv` order and == sample set
+- finite, rows sum to 1, min 3.79e-4 / max 0.99923
+- **md5 = `10aa1c7da7be8cbc6206691313a67156`**
+- `final_solution/solution/` present with `reproduce_submission.py` + `base_oof.npz`/`base_test.npz` and all agents' training scripts (incl. `teammate_mirfak_train_lm_aug.py`).
+- Honest CV: **0.1984-0.1987** (three independent implementations agree).
+No further writes from me. Good luck — this was a clean swarm run. #submission #status #communication
+[board] сообщений 65, новых 1, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 133)
+[board] сообщений 65, новых 0, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 134)
+[agent swarm-2] run завершился за 40634s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_ea6cfeff0ffeW4fwzxyfDwyAxB продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_ea6cfeff0ffeW4fwzxyfDwyAxB (2026-10-20T23:18:38Z): Continue work until hard end.
+[agent swarm-1] run завершился за 40686s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ea6cfefcaffexP399IRWnRadu8 продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ea6cfefcaffexP399IRWnRadu8 (2026-10-20T23:19:29Z): Continue work until hard end.
+===== canopus_kappa_final_freeze_confirmed.md =====
+# FINAL FREEZE CONFIRMED (02:18) — md5 match, everything verified
+Confirming [[mirfak_pi_frozen_md5.md]]: live `final_solution/submission.csv` md5 = **`10aa1c7da7be8cbc6206691313a67156`** (identical). Final integrity asserted programmatically just now:
+- 1,958 rows, columns `id,EAP,HPL,MWS`, ids == `data/test.csv` order, finite, strictly positive, rows sum to 1 (min 3.79e-4, max 0.99923).
+- Self-contained reproduction present and exact; base-only pool (n=64) verified with case-insensitive derived-name filter.
+- Honest CV: **0.1984–0.1987** (canopus 0.19863, mirfak 0.19839, bellatrix nested 0.19828). OOF accuracy 92.49%.
+No further writes. Solution code + README + reproducible artifacts are in `final_solution/`. Great teamwork — the leak audit and independent stack replications were the key to a trustworthy result.
+<metric>0.19863<\metric>
+Tags: #submission #status #communication
+===== bellatrix_tau_final_confirmation.md =====
+# Final confirmation from bellatrix_tau — md5 match, frozen
+I independently re-verified the frozen file (see [[canopus_kappa_final_freeze_confirmed.md]], [[mirfak_pi_frozen_md5.md]]):
+- `md5(final_solution/submission.csv) = 10aa1c7da7be8cbc6206691313a67156` (matches all three).
+- 1,958 rows, `id,EAP,HPL,MWS`, ids == `data/test.csv` order, all finite, rows sum to 1, min 3.79e-4 / max 0.99923.
+- `solution/submission_reproduced.csv` matches live submission with **max abs diff 0.0**; README + solution code present.
+- Honest base-only pool (case-insensitive derived-name filter): nested 3-way **0.19828**; live blend CV 0.19863.
+No further writes from me. Final answer: base-only log-prob + raw-prob 3-way stack (LR + HGB + XGB) over 64 diverse base models including token-masking-augmented DeBERTa-v3-large.
+<metric>0.19828<\metric>
+Tags: #submission #status #communication
+[board] сообщений 67, новых 2, метрик 44, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 135)
+===== mirfak_pi_last_experiments.md =====
+# Last micro-experiments (all negative) — final stays frozen
+Before hard_end, three more honest checks on the 69-model base-only pool (features `[log p, p]`, 3-way 0.60/0.20/0.20):
+| variant | CV |
+|---|---|
+| baseline 3-way | **0.19867** |
+| bagged meta (3 fits, 90% subsample per fold) | 0.19869 |
+| per-model temperature pre-scaling | 0.2038 log-only baseline, no gain |
+| 4-way + MLP | 0.19847 (noise) |
+Also confirmed **no train/test distribution shift**: train words/sentence 26.68 vs test 27.16, median 23 vs 23.5, chars 148.8 vs 151.8; 0 exact duplicate texts between train and test.
+Conclusion: the ensemble is at its plateau (~0.198-0.199 honest CV). `final_solution/submission.csv` remains **frozen** (md5 `10aa1c7da7be8cbc6206691313a67156`, CV 0.19863). Final integrity re-checked at 02:25: 1958 rows, ids in test order, finite, rows sum to 1. Nothing further will be written.
+Tags: #status #model_selection #ensembling #insight #communication
+[board] сообщений 68, новых 1, метрик 44, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 136)
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-21_02-31-33_SYSTEM_final_phase.md
+===== canopus_kappa_logspace_update.md =====
+# FINAL UPDATE (02:40): switched 3-way blend to LOG space → CV 0.19812, md5 `41975db1e010610f10ed3e4b19ffe953`
+Continuing until hard_end; found one more consistent, leak-free improvement on the **same frozen 64 base OOFs** (no new model, no pool change):
+- Probability-space blend (previous frozen): 0.19863
+- **Log-space (geometric) blend, same weights 0.6/0.2/0.2: `0.19812`**
+- Log-space is better on **all 5 folds**: 0.20806/0.18556/0.20512/0.19513/0.19671 vs 0.20880/0.18633/0.20545/0.19534/0.19722.
+- Confirms bellatrix's independent log-space finding ([[bellatrix_tau_final_verified.md]], 0.19804 vs 0.19824).
+## Updated artifacts
+- `final_solution/submission.csv` — **new md5 `41975db1e010610f10ed3e4b19ffe953`** (1958x4, ids in test order, rows sum to 1, min 5.2e-6, max 0.99998).
+- `final_solution/solution/reproduce_submission.py` updated to log-space; rerun reproduces this exact csv (OOF 0.1981186, max abs diff 0.0).
+- `final_solution/solution/final_recipe.json` updated (`blend_space: log`, cv 0.19812).
+- **Backup of the old verified prob-space file:** `workspaces/canopus_kappa/submission_probspace_backup.csv` (md5 `10aa1c7d...`); revert is one `cp` if anyone objects.
+Risk check: argmax predictions are **identical** to the previous file (agreement 100%, corr 0.999953); only calibration sharpened. corr with bellatrix honest candidate 0.99985 (argmax 99.44%), mirfak 0.99973 (99.49%). Independent re-verification welcome; otherwise this is the final file.
+Tags: #submission #ensembling #insight #status #communication
+===== 2026-10-21_02-31-33_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 02:31)
+До жёсткого стопа 30 минут (hard_end: 2026-10-21T03:01:13+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-21T03:01:13+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 70, новых 2, метрик 44, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 137)
+===== bellatrix_tau_final_logspace_verified.md =====
+# Verified new final (log-space merge) — md5 `41975db1e010610f10ed3e4b19ffe953`
+Confirming [[canopus_kappa_logspace_update.md]] and the final-phase instruction: no new experiments from me.
+Independent verification of the live `final_solution/submission.csv` (02:26):
+- md5 `41975db1e010610f10ed3e4b19ffe953`, 1,958 rows, `id,EAP,HPL,MWS`, ids == `data/test.csv` order, all finite, rows sum to 1, min 5.17e-6 / max 0.99998.
+- corr 0.99985 with my honest log-space candidate (argmax 99.44%); corr 0.99973 with mirfak's.
+- `solution/submission_reproduced.csv` now equals the live CSV exactly (corr 1.0, same argmax); README + code + `reproduce_submission.py` present.
+- Honest CV: canopus 0.19812 (log-space, all 5 folds better), mirfak 0.19839, bellatrix nested 0.19828. Argmax identical to the previously verified prob-space file, so this is a safe calibration improvement.
+Final solution = base-only 3-way stack (0.6 LR + 0.2 HGB + 0.2 XGB) in log space over 64 deduped diverse base OOFs (token-masking-augmented DeBERTa-v3-large + seed variants + base/large transformers + TF-IDF/NB/SVM/BiLSTM/GBM). Frozen; no further writes.
+<metric>0.19812<\metric>
+Tags: #submission #status #communication #ensembling
+===== mirfak_pi_logspace_verified.md =====
+# Independent verification of the NEW final: log-space blend is legit (md5 `41975db1...`)
+@canopus_kappa's 02:26 update [[canopus_kappa_logspace_update.md]] is **independently confirmed**. Note: bellatrix's freeze message references the *old* md5 `10aa1c7d...`; the live file is now `41975db1e010610f10ed3e4b19ffe953`.
+## Checks on `final_solution/submission.csv` (02:26)
+- md5 = `41975db1e010610f10ed3e4b19ffe953`; 1958 rows; `id,EAP,HPL,MWS`; ids == test order and == sample set; finite; rows sum to 1; min 5.2e-6 / max 0.99998.
+- vs old prob-space backup: corr **0.999953**, **argmax 100% identical** (only calibration changed).
+- `solution/submission_reproduced.csv` matches live with **max abs diff 0.0**.
+## Is log-space actually better? Yes (my independent fit, 69-model honest base pool)
+| blend (same weights 0.6/0.20/0.20) | 5-fold CV |
+|---|---|
+| prob-space arithmetic | 0.198673 |
+| **log-space (weighted geometric mean)** | **0.198384** |
+Per fold: 0.20944/0.18514/0.20612/0.19544/0.19579 (log) vs 0.20986/0.18564/0.20604/0.19572/0.19610 (prob) — better on 4/5 folds. Consistent with canopus (0.19812) and bellatrix (0.19804).
+**Verdict: keep the new file.** It is a genuine, leak-free, same-pool calibration improvement with identical decisions. No revert needed. Final honest CV ≈ **0.1980-0.1984**.
+Tags: #submission #ensembling #insight #model_selection #status #communication
+===== mirfak_pi_e2e_reproduction_ok.md =====
+# End-to-end reproduction PASSED in a clean temp dir (OOF 0.19811857, diff 0.0)
+Copied `solution/{reproduce_submission.py,base_oof.npz,base_test.npz,final_recipe.json}` to a clean directory (only the data path absolutized), ran it with `pyenv shell sis-black`:
+- printed **OOF logloss: 0.1981185733** (matches canopus's claimed 0.1981186)
+- `submission_reproduced.csv` vs live `final_solution/submission.csv`: **max abs diff 0.0**, ids equal, argmax equal.
+So the frozen file `md5 41975db1e010610f10ed3e4b19ffe953` is fully reproducible from the committed solution code + base predictions. Nothing else needed. Final honest CV **0.19812** (log-space 3-way, 64 base models), ~92.5% OOF accuracy.
+Tags: #submission #status #ensembling #insight #communication
+[board] сообщений 73, новых 3, метрик 45, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 138)
+[board] сообщений 73, новых 0, метрик 45, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 139)
+[board] сообщений 73, новых 0, метрик 45, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 140)
+[board] сообщений 73, новых 0, метрик 45, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 141)
+[agent swarm-1] run завершился за 2074s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ea6cfefcaffexP399IRWnRadu8 продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ea6cfefcaffexP399IRWnRadu8 (2026-10-20T23:54:04Z): Continue work until hard end.
+[agent swarm-3] run завершился за 2810s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ea6cfefd6ffeU9FZMStQeEv0Tw продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ea6cfefd6ffeU9FZMStQeEv0Tw (2026-10-20T23:54:46Z): Continue work until hard end.
+[agent swarm-2] run завершился за 2250s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_ea6cfeff0ffeW4fwzxyfDwyAxB продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_ea6cfeff0ffeW4fwzxyfDwyAxB (2026-10-20T23:56:07Z): Continue work until hard end.
+===== bellatrix_tau_last_integrity_check.md =====
+# Last integrity check (02:54) — PASSED, frozen for hard_end
+`final_solution/submission.csv`: md5 **`41975db1e010610f10ed3e4b19ffe953`** (unchanged since 02:26).
+1,958 rows, ids == test order, all finite, rows sum to 1, min 5.17e-6 / max 0.99998, mean [0.4137, 0.2836, 0.3026].
+`solution/` contains README, training scripts, base OOF/test npz and `reproduce_submission.py` reproducing the file exactly.
+Final honest CV ≈ **0.19812** (log-space 3-way stack). No further writes. Ready for the official evaluation.
+<metric>0.19812<\metric>
+Tags: #submission #status #communication
+===== mirfak_pi_final_ack.md =====
+# Ack: all three agents confirm same frozen file — stopping
+Confirmed at 02:54: `final_solution/submission.csv` md5 **`41975db1e010610f10ed3e4b19ffe953`** (unchanged since 02:26), 1958x4, ids/order/sums valid, reproducible end-to-end (OOF **0.19812**).
+Agreement: mirfak ([[mirfak_pi_e2e_reproduction_ok.md]]) = bellatrix ([[bellatrix_tau_last_integrity_check.md]]) = canopus ([[canopus_kappa_logspace_update.md]]).
+No further writes. Ready for `bin/grade.sh`. #submission #status #communication
+===== canopus_kappa_hardend_ready.md =====
+# 02:56 hard-end ready — FINAL frozen, triple-verified, reproducible
+Final integrity re-check at 02:55:
+- `final_solution/submission.csv` md5 **`41975db1e010610f10ed3e4b19ffe953`** (unchanged), 1,958 data rows + header.
+- `cmp` vs `solution/submission_reproduced.csv` → **exact match** (reproducible from `base_oof.npz`/`base_test.npz` + `reproduce_submission.py`).
+- Independently verified by @bellatrix_tau and @mirfak_pi ([[bellatrix_tau_final_logspace_verified.md]], [[mirfak_pi_e2e_reproduction_ok.md]]).
+- Honest CV: 0.19812 (canopus) / 0.19838 (mirfak) / 0.19828 nested (bellatrix); OOF accuracy 92.5%.
+No further writes. Ready for automatic grading.
+<metric>0.19812<\metric>
+Tags: #submission #status #communication
+[board] сообщений 76, новых 3, метрик 47, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 142)
+[agent swarm-1] run завершился за 376s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ea6cfefcaffexP399IRWnRadu8 продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ea6cfefcaffexP399IRWnRadu8 (2026-10-21T00:00:19Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 76, новых 0, метрик 47, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19626 (step 0)
+[mtime] saved 82 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

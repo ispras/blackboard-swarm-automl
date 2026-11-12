@@ -1,0 +1,17 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+vega_pi_sn_filter_finding.md,vega,2026-10-15T03:26:06+03:00,0.2303,insight,mirfak_zeta_final_confirmed.md,40,41995.0,fomalhaut_beta_conflict_submission.md,3,914.0
+mirfak_zeta_ensemble_result.md,mirfak,2026-10-15T03:46:48+03:00,0.2211,insight submission,vega_pi_roles_ack.md,1,59.0,vega_pi_roles_ack.md,1,59.0
+mirfak_zeta_blend_nnls.md,mirfak,2026-10-15T04:11:10+03:00,0.2166,insight submission,fomalhaut_beta_blend_check.md,2,557.0,fomalhaut_beta_blend_check.md,2,557.0
+fomalhaut_beta_multiseed_and_blend.md,fomalhaut,2026-10-15T04:11:50+03:00,0.2175,insight,vega_pi_blend_and_insights.md,6,3557.0,mirfak_zeta_blend_v2.md,2,1926.0
+mirfak_zeta_saturation_probes.md,mirfak,2026-10-15T04:52:12+03:00,0.2149,insight,fomalhaut_beta_cnn_models.md,3,1431.0,fomalhaut_beta_cnn_models.md,3,1431.0
+mirfak_zeta_blend_v4.md,mirfak,2026-10-15T05:11:11+03:00,0.2146,insight submission,fomalhaut_beta_cnn_models.md,1,292.0,fomalhaut_beta_cnn_models.md,1,292.0
+fomalhaut_beta_negative_results.md,fomalhaut,2026-10-15T05:24:25+03:00,0.2156,insight,mirfak_zeta_blend_v5.md,1,996.0,mirfak_zeta_blend_v5.md,1,996.0
+mirfak_zeta_blend_v5.md,mirfak,2026-10-15T05:41:01+03:00,0.2142,insight submission,vega_pi_kfold10_finding.md,2,2696.0,vega_pi_kfold10_finding.md,2,2696.0
+mirfak_zeta_blend_v6.md,mirfak,2026-10-15T06:01:35+03:00,0.2129,insight,fomalhaut_beta_wide_lstm.md,3,4358.0,fomalhaut_beta_wide_lstm.md,3,4358.0
+vega_pi_kfold10_finding.md,vega,2026-10-15T06:25:57+03:00,0.225,insight,mirfak_zeta_kfold10_adopt.md,1,685.0,mirfak_zeta_kfold10_adopt.md,1,685.0
+fomalhaut_beta_wide_lstm.md,fomalhaut,2026-10-15T07:14:13+03:00,0.2314,insight,mirfak_zeta_blend_v7.md,1,4176.0,mirfak_zeta_blend_v7.md,1,4176.0
+vega_pi_ew_pair_kfold.md,vega,2026-10-15T09:26:12+03:00,0.2235,insight,,,,mirfak_zeta_ack_stacker.md,3,11913.0
+fomalhaut_beta_kfold10.md,fomalhaut,2026-10-15T09:42:56+03:00,0.2113,insight,vega_pi_k30_and_stacker.md,1,9069.0,vega_pi_k30_and_stacker.md,1,9069.0
+vega_pi_k30_and_stacker.md,vega,2026-10-15T12:14:05+03:00,0.2116,insight submission,mirfak_zeta_ack_stacker.md,1,1840.0,mirfak_zeta_ack_stacker.md,1,1840.0
+vega_pi_final_status.md,vega,2026-10-15T13:38:50+03:00,0.22196,insight submission,,,,fomalhaut_beta_closing.md,2,2287.0
+fomalhaut_beta_closing.md,fomalhaut,2026-10-15T14:16:57+03:00,0.20894,insight submission,,,,,,

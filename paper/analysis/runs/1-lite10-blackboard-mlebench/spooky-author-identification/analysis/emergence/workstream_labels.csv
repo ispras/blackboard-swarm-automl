@@ -1,0 +1,74 @@
+file,workstream,note
+deneb_upsilon_intro_plan.md,coordination,intro and lane proposal
+rigel_xi_intro_and_plan.md,coordination,intro and lane proposal
+arcturus_alpha_intro_and_plan.md,coordination,intro and lane proposal
+rigel_xi_ref_baseline_tfidf_lr.md,classical,TF-IDF linear baseline
+deneb_upsilon_status_baseline.md,classical,canonical folds plus TF-IDF baseline
+arcturus_alpha_status_baseline.md,classical,classical baseline suite and lane ack
+rigel_xi_coordination_gpu_lanes.md,coordination,GPU lanes and single-GPU lock
+deneb_upsilon_coordination_roberta.md,coordination,roberta lane claim and GPU note
+rigel_xi_insight_ensemble_big_gain.md,ensemble,insight that blending gives the main gain
+deneb_upsilon_status_models.md,classical,classical and roberta results
+rigel_xi_blend_v1_stack_0274.md,ensemble,first blend
+rigel_xi_bert_full_5fold.md,transformer,bert-base 5-fold
+deneb_upsilon_blend_result.md,ensemble,independent blend check
+rigel_xi_provisional_submission.md,submission,safety-net submission
+deneb_upsilon_roberta_full_5fold.md,transformer,roberta-base 5-fold
+rigel_xi_blend_v2_stack_0261.md,ensemble,blend v2
+deneb_upsilon_lgbm_stacker_0252.md,ensemble,LightGBM stacker
+rigel_xi_blend_v3_lgbm_0255.md,ensemble,blend with LightGBM stacker
+deneb_upsilon_combined_stack_0251.md,ensemble,combined LR and LGBM stacker
+rigel_xi_warning_dont_stack_blends.md,ensemble,convention warning about blend outputs
+rigel_xi_agree_unified_stacker.md,coordination,agreement on unified stacker and ownership
+deneb_upsilon_stack2_02434.md,ensemble,stack2 with seed averaging and MLP
+rigel_xi_blend_v6_handfeat_0244.md,ensemble,blend with handcrafted meta-features
+rigel_xi_final_ownership_and_gpu.md,coordination,final-solution ownership and GPU contention
+deneb_upsilon_gpu_ack_plan.md,coordination,GPU etiquette ack
+arcturus_alpha_models_test_preds_ready.md,classical,ten classical models with OOF and test predictions
+rigel_xi_blend_v7_0229.md,ensemble,blend with log-probability meta-features
+deneb_upsilon_combine_crosscheck.md,ensemble,cross-check of combined stack
+deneb_upsilon_combine_v2_0218.md,ensemble,combine v2
+arcturus_alpha_lgbm_weak_gpu_proposal.md,negative,negative LightGBM result and request for a large transformer lane
+rigel_xi_blend_v8_0218.md,ensemble,blend with 34 base models
+rigel_xi_gpu_lanes_and_meta.md,coordination,GPU lanes and stacking plan
+deneb_upsilon_bertcased_full.md,transformer,bert-base-cased 5-fold
+deneb_upsilon_combine_v3_seedavg.md,ensemble,combine after seed averaging
+rigel_xi_status_v9b_deberta_large.md,ensemble,blend v9b status
+deneb_upsilon_seedavg_bertcased.md,training_tech,seed averaging of bert-cased
+deneb_upsilon_ack_v9b_lanes.md,coordination,ack of v9b and lane plan
+rigel_xi_ack_seedavg_plan.md,coordination,ack of seed averaging and lane plan
+deneb_upsilon_bertcased_seedavg_final.md,training_tech,bert-cased seed average ready
+arcturus_alpha_xlnet_base_result.md,transformer,xlnet-base 5-fold
+rigel_xi_blend_v10_0206.md,ensemble,blend v10 after deberta
+rigel_xi_approve_xlnet_large.md,coordination,approval of xlnet-large and pseudo-labeling
+deneb_upsilon_stack2_0211.md,ensemble,stack2 update
+deneb_upsilon_dbv3base_seedavg.md,training_tech,deberta-v3-base seed average
+arcturus_alpha_pseudo_label_result.md,training_tech,pseudo-labeling gain
+deneb_upsilon_switch_mpnet.md,transformer,lane switch to mpnet
+rigel_xi_deberta_large_seedavg.md,training_tech,deberta-v3-large seed average
+deneb_upsilon_combine_v4_0200.md,ensemble,combine v4
+rigel_xi_blend_v11_0202.md,ensemble,blend v11
+deneb_upsilon_ernie_bertlarge.md,transformer,ernie and bert-large results
+arcturus_alpha_xlnet_large_result.md,transformer,xlnet-large 5-fold
+rigel_xi_blend_v12_0202.md,ensemble,blend v12
+deneb_upsilon_bert_large_cased_bart.md,transformer,bert-large-cased and bart-base
+deneb_upsilon_fgm_breakthrough.md,training_tech,FGM breakthrough
+rigel_xi_fgm_adopted_deberta.md,training_tech,adopting FGM for deberta
+arcturus_alpha_xlnet_large_seedavg.md,training_tech,xlnet-large seed average
+rigel_xi_blend_v13_0200.md,ensemble,blend v13
+deneb_upsilon_fgm_bertcased_full.md,training_tech,FGM bert-base-cased 5-fold
+deneb_upsilon_combine_fgm_01936.md,ensemble,combine after FGM bases
+rigel_xi_blend_v14_0194.md,ensemble,blend v14 after FGM
+deneb_upsilon_fgm_seedavg_01907.md,ensemble,FGM seed average plus combine
+arcturus_alpha_xlnet_large_fgm.md,training_tech,FGM on xlnet-large
+rigel_xi_blend_v16_0188.md,ensemble,blend v16
+deneb_upsilon_fgm_seedavg3_01856.md,ensemble,three-seed FGM plus combine
+deneb_upsilon_fgm_seedavg_best_0299.md,training_tech,best-epoch FGM seed average
+rigel_xi_blend_v17_0185.md,ensemble,blend v17 and meta-combine
+deneb_upsilon_final_bases_0518.md,ensemble,final base pool and combine
+arcturus_alpha_fgm_seedavg_final.md,training_tech,FGM xlnet-large seed average and artifact index
+rigel_xi_FINAL_submission.md,submission,final submission placed
+deneb_upsilon_final_verify.md,submission,independent verification of final submission
+arcturus_alpha_final_code_added.md,submission,final code release
+deneb_upsilon_closing.md,submission,closing status
+rigel_xi_FINAL_submission_v19.md,submission,final v19 submission

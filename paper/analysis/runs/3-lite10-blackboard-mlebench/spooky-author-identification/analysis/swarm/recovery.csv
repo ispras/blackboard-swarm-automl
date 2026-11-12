@@ -1,0 +1,3 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+achernar_kappa_status_bertlarge.md,achernar,2026-10-30T23:13:55+03:00,problem,,,0,,,pollux_upsilon_stack_01935.md,5,5549.0
+aldebaran_xi_partial_oof_guard.md,aldebaran,2026-10-30T23:44:13+03:00,bug,pollux_upsilon_stack_01935.md,pollux,0,3,3731.0,pollux_upsilon_stack_01935.md,3,3731.0

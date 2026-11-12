@@ -1,0 +1,302 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "label": "ventilator-pressure-prediction",
+  "metric": "MAE",
+  "is_lower_better": true,
+  "final_score": 0.1609,
+  "thresholds": {
+    "gold": 0.1119,
+    "silver": 0.1338,
+    "bronze": 0.1364,
+    "median": 0.1638
+  },
+  "messages": {
+    "agent": 39,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 17,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 39,
+    "edges": 62,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 19,
+    "mean_depth_all": 6.794871794871795,
+    "mean_depth_linked": 7.794117647058823,
+    "longest_path": [
+      "canopus_omega_FINAL_confirmation.md",
+      "canopus_omega_repro_verified.md",
+      "canopus_omega_robustness_final.md",
+      "aldebaran_eta_postproc_negative.md",
+      "bellatrix_omicron_freeze_final.md",
+      "aldebaran_eta_verify_freeze.md",
+      "canopus_omega_freeze_confirmation.md",
+      "bellatrix_omicron_final_submission.md",
+      "canopus_omega_verify_01718.md",
+      "bellatrix_omicron_final_blend_01718.md",
+      "aldebaran_eta_5fold_01784.md",
+      "bellatrix_omicron_final_assembly.md",
+      "bellatrix_omicron_blend_0172.md",
+      "canopus_omega_plan_blend_division.md",
+      "bellatrix_omicron_leader_0162.md",
+      "aldebaran_eta_fold0_0178.md",
+      "canopus_omega_fold0_result.md",
+      "canopus_omega_shared_split.md",
+      "bellatrix_omicron_intro.md",
+      "canopus_omega_hello.md"
+    ],
+    "max_indegree": 4,
+    "hubs": [
+      {
+        "name": "aldebaran_eta_split_decision.md",
+        "agent": "aldebaran",
+        "in_degree": 4,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-31T08:00:58+03:00"
+      },
+      {
+        "name": "aldebaran_eta_fold0_0178.md",
+        "agent": "aldebaran",
+        "in_degree": 4,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-31T11:42:40+03:00"
+      },
+      {
+        "name": "canopus_omega_shared_split.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-31T07:59:10+03:00"
+      },
+      {
+        "name": "bellatrix_omicron_overfit_insight.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "insight",
+          "model_selection",
+          "regularization",
+          "training"
+        ],
+        "time": "2026-10-31T09:47:42+03:00"
+      },
+      {
+        "name": "canopus_omega_fold0_result.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 3,
+        "tags": [
+          "communication",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-31T09:50:44+03:00"
+      },
+      {
+        "name": "bellatrix_omicron_leader_0162.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 5,
+        "tags": [
+          "architecture",
+          "communication",
+          "feature_engineering",
+          "insight",
+          "loss",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-31T12:25:47+03:00"
+      },
+      {
+        "name": "canopus_omega_plan_blend_division.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 6,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-31T12:38:52+03:00"
+      }
+    ],
+    "submission_count": 17,
+    "submission_depths": [
+      0,
+      0,
+      7,
+      8,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      19
+    ],
+    "final_submission": {
+      "name": "bellatrix_omicron_FINAL_confirmation.md",
+      "time": "2026-10-31T19:51:41+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 14,
+      "mean": 0.007479999999999999,
+      "median": 0.0034150000000000014,
+      "positive": 0.5714285714285714,
+      "max": 0.09862999999999997
+    },
+    "transitive": {
+      "n": 18,
+      "mean": -0.004562777777777786,
+      "median": -0.00939000000000001,
+      "positive": 0.2222222222222222,
+      "max": 0.09862999999999997
+    },
+    "prev_linked": {
+      "n": 18,
+      "mean": -0.010557777777777784,
+      "median": -0.00939000000000001,
+      "positive": 0.2222222222222222,
+      "max": 0.03341999999999998
+    },
+    "prev_unlinked": {
+      "n": 3,
+      "mean": 0.009169999999999992,
+      "median": -0.00939000000000001,
+      "positive": 0.3333333333333333,
+      "max": 0.06520999999999999
+    },
+    "perm_prev": {
+      "diff": -0.019727777777777775,
+      "p": 0.2588741125887411
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 2308.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 2308.0
+      }
+    },
+    "broad": {
+      "n_events": 12,
+      "direct": {
+        "events": 12,
+        "adopted": 10,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.7,
+        "median_seconds": 2046.5
+      },
+      "transitive": {
+        "events": 12,
+        "adopted": 11,
+        "rate": 0.9166666666666666,
+        "median_msgs": 1,
+        "mean_msgs": 1.7272727272727273,
+        "median_seconds": 2254.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 2308.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 2308.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 3,
+    "direct": {
+      "events": 3,
+      "recovered": 3,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 286.0,
+      "different_author": 2
+    },
+    "transitive": {
+      "events": 3,
+      "recovered": 3,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 286.0,
+      "different_author": 2
+    },
+    "problem_authors": {
+      "canopus": 2,
+      "bellatrix": 1
+    },
+    "recovery_authors": {
+      "aldebaran": 1,
+      "bellatrix": 2
+    }
+  }
+}

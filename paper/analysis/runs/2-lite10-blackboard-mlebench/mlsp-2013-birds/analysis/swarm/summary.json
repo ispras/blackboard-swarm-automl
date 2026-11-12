@@ -1,0 +1,318 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/mlsp-2013-birds",
+  "label": "mlsp-2013-birds",
+  "metric": "auc-roc",
+  "is_lower_better": false,
+  "final_score": 0.98362,
+  "thresholds": {
+    "gold": 0.93527,
+    "silver": 0.90038,
+    "bronze": 0.87372,
+    "median": 0.86572
+  },
+  "messages": {
+    "agent": 50,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 2,
+    "without_metric": 21,
+    "system_links": 3
+  },
+  "graph": {
+    "nodes": 50,
+    "edges": 92,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 29,
+    "mean_depth_all": 12.28,
+    "mean_depth_linked": 13.644444444444444,
+    "longest_path": [
+      "arcturus_kappa_final_confirmed.md",
+      "alderamin_phi_final_submission_confirmed.md",
+      "arcturus_kappa_prehardend_final.md",
+      "alderamin_phi_prehardend_final_check.md",
+      "arcturus_kappa_dnclip_endorsed.md",
+      "castor_rho_swarm_final_dnclip.md",
+      "alderamin_phi_dnclip_installed_audit.md",
+      "castor_rho_dnclip_applied.md",
+      "alderamin_phi_dnclip_go.md",
+      "castor_rho_update_intent.md",
+      "castor_rho_dnclip_correction.md",
+      "castor_rho_dnclip_confirmed.md",
+      "arcturus_kappa_consensus.md",
+      "castor_rho_final_validation.md",
+      "arcturus_kappa_denoise_gain.md",
+      "arcturus_kappa_final_validation.md",
+      "arcturus_kappa_mlp_all_final.md",
+      "arcturus_kappa_bn3_final.md",
+      "castor_rho_bn3_final_weights.md",
+      "castor_rho_birdnet3_breakthrough.md",
+      "arcturus_kappa_final_updated.md",
+      "alderamin_phi_components_published.md",
+      "castor_rho_blend_and_probes.md",
+      "arcturus_kappa_group_prior_fusion.md",
+      "castor_rho_prior_and_artifacts.md",
+      "arcturus_kappa_ensemble_insight.md",
+      "castor_rho_birdnet_zeroshot.md",
+      "castor_rho_shared_cv_and_birdnet.md",
+      "arcturus_kappa_intro_and_plan.md",
+      "castor_rho_intro_and_plan.md"
+    ],
+    "max_indegree": 5,
+    "hubs": [
+      {
+        "name": "castor_rho_birdnet_zeroshot.md",
+        "agent": "castor",
+        "in_degree": 5,
+        "depth": 3,
+        "tags": [
+          "feature_engineering",
+          "inference",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-20T15:08:04+03:00"
+      },
+      {
+        "name": "alderamin_phi_prehardend_final_check.md",
+        "agent": "alderamin",
+        "in_degree": 5,
+        "depth": 26,
+        "tags": [
+          "communication",
+          "status",
+          "submission",
+          "validation"
+        ],
+        "time": "2026-10-21T01:43:20+03:00"
+      },
+      {
+        "name": "castor_rho_intro_and_plan.md",
+        "agent": "castor",
+        "in_degree": 4,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "feature_engineering",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-20T15:03:25+03:00"
+      },
+      {
+        "name": "castor_rho_shared_cv_and_birdnet.md",
+        "agent": "castor",
+        "in_degree": 4,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "feature_engineering",
+          "model_selection",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-20T15:04:33+03:00"
+      },
+      {
+        "name": "castor_rho_bn3_final_weights.md",
+        "agent": "castor",
+        "in_degree": 4,
+        "depth": 11,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-20T16:07:51+03:00"
+      },
+      {
+        "name": "arcturus_kappa_status2.md",
+        "agent": "arcturus",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "plan",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-10-20T15:25:17+03:00"
+      },
+      {
+        "name": "castor_rho_perch_breakthrough.md",
+        "agent": "castor",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "feature_engineering",
+          "inference",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-20T15:42:21+03:00"
+      }
+    ],
+    "submission_count": 27,
+    "submission_depths": [
+      2,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      14,
+      15,
+      16,
+      17,
+      17,
+      18,
+      19,
+      20,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      27,
+      28,
+      28,
+      29
+    ],
+    "final_submission": {
+      "name": "castor_rho_final_confirmed.md",
+      "time": "2026-10-21T02:58:38+03:00",
+      "depth": 28,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 23,
+      "mean": 0.0037913043478260892,
+      "median": 0.0004999999999999449,
+      "positive": 0.5652173913043478,
+      "max": 0.032199999999999895
+    },
+    "transitive": {
+      "n": 25,
+      "mean": 0.0029159999999999985,
+      "median": -0.0006000000000000449,
+      "positive": 0.4,
+      "max": 0.032199999999999895
+    },
+    "prev_linked": {
+      "n": 25,
+      "mean": 0.0007159999999999966,
+      "median": -0.0006000000000000449,
+      "positive": 0.36,
+      "max": 0.032199999999999895
+    },
+    "prev_unlinked": {
+      "n": 3,
+      "mean": -0.031633333333333326,
+      "median": 0.0020000000000000018,
+      "positive": 0.6666666666666666,
+      "max": 0.02959999999999996
+    },
+    "perm_prev": {
+      "diff": 0.03234933333333332,
+      "p": 0.0999900009999
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 9,
+      "direct": {
+        "events": 9,
+        "adopted": 6,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.3333333333333333,
+        "median_seconds": 159.0
+      },
+      "transitive": {
+        "events": 9,
+        "adopted": 9,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 2.111111111111111,
+        "median_seconds": 345.0
+      }
+    },
+    "broad": {
+      "n_events": 15,
+      "direct": {
+        "events": 15,
+        "adopted": 9,
+        "rate": 0.6,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 159.0
+      },
+      "transitive": {
+        "events": 15,
+        "adopted": 14,
+        "rate": 0.9333333333333333,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.5714285714285716,
+        "median_seconds": 518.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 12,
+      "direct": {
+        "events": 12,
+        "adopted": 8,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.375,
+        "median_seconds": 240.5
+      },
+      "transitive": {
+        "events": 12,
+        "adopted": 11,
+        "rate": 0.9166666666666666,
+        "median_msgs": 1,
+        "mean_msgs": 2,
+        "median_seconds": 345.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 0,
+    "direct": {
+      "events": 0,
+      "recovered": 0,
+      "rate": null,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 0,
+      "recovered": 0,
+      "rate": null,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "problem_authors": {},
+    "recovery_authors": {}
+  }
+}

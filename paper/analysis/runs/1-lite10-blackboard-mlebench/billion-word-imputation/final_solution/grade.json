@@ -1,0 +1,23 @@
+{
+  "competition": "billion-word-imputation",
+  "protocol": "mle-bench",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "df03e1a4eac8a1a4e8855cb36f4dd662",
+  "score": 3.05541,
+  "official_score": 3.05541,
+  "thresholds": {
+    "gold": 5.37017,
+    "silver": 5.54372,
+    "bronze": 5.55209,
+    "median": 5.55211
+  },
+  "flags": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-11-03T02:11:39+00:00"
+}

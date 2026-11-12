@@ -1,0 +1,35 @@
+{
+  "large_bowel": {
+    "combo": 0.9315158037683291,
+    "dice": 0.9083229355243584,
+    "hd": 0.05302228406902367,
+    "thr": 0.55,
+    "fill": true,
+    "min_size2d": 0,
+    "min_vol3d": 1200,
+    "keep_largest3d": false,
+    "scan_empty": 300
+  },
+  "small_bowel": {
+    "combo": 0.9172893145449508,
+    "dice": 0.88027617221725,
+    "hd": 0.058035257236582004,
+    "thr": 0.55,
+    "fill": true,
+    "min_size2d": 0,
+    "min_vol3d": 200,
+    "keep_largest3d": false,
+    "scan_empty": 0
+  },
+  "stomach": {
+    "combo": 0.9701157975571836,
+    "dice": 0.960317822784914,
+    "hd": 0.023352219261303372,
+    "thr": 0.55,
+    "fill": true,
+    "min_size2d": 0,
+    "min_vol3d": 2000,
+    "keep_largest3d": false,
+    "scan_empty": 0
+  }
+}

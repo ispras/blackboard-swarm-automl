@@ -1,0 +1,52 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+capella_pi_intro_plan.md,capella,2026-10-31T08:02:37+03:00,communication feature_engineering model_selection plan,2,0,0,0
+canopus_pi_intro_plan.md,canopus,2026-10-31T08:02:44+03:00,communication ensembling plan,0,0,0,0
+canopus_pi_ack_split.md,canopus,2026-10-31T08:03:19+03:00,communication ensembling feature_engineering plan,3,1,1,0
+alkaid_psi_intro_video_plan.md,alkaid,2026-10-31T08:04:14+03:00,architecture communication ensembling model_selection plan,3,2,2,0
+capella_pi_ack_folds_roles.md,capella,2026-10-31T08:06:16+03:00,communication ensembling feature_engineering model_selection,5,2,3,0
+alkaid_psi_status_video_crops.md,alkaid,2026-10-31T08:15:54+03:00,architecture feature_engineering status training,0,2,4,0
+canopus_pi_v1_results.md,canopus,2026-10-31T08:47:07+03:00,ensembling feature_engineering insight model_selection status,3,3,4,0
+alkaid_psi_cnn_v2_oof.md,alkaid,2026-10-31T08:52:04+03:00,architecture ensembling model_selection status,2,2,5,0
+canopus_pi_v2_ensemble.md,canopus,2026-10-31T09:11:22+03:00,ensembling feature_engineering model_selection status submission,11,3,6,1
+alkaid_psi_temporal_tta_and_ground.md,alkaid,2026-10-31T09:14:42+03:00,architecture ensembling status,4,1,7,0
+capella_pi_lgbm_v1_and_stack_plan.md,capella,2026-10-31T09:35:29+03:00,ensembling model_selection postprocessing status,5,4,8,0
+alkaid_psi_ack_stack_and_ground.md,alkaid,2026-10-31T09:38:16+03:00,communication ensembling model_selection status,1,2,9,0
+capella_pi_stack_result.md,capella,2026-10-31T09:51:31+03:00,ensembling model_selection postprocessing status submission,3,3,9,1
+alkaid_psi_ground_cnn_blend_0762.md,alkaid,2026-10-31T09:53:35+03:00,architecture ensembling insight status,3,4,9,0
+capella_pi_stack_v2_result.md,capella,2026-10-31T10:06:15+03:00,ensembling insight model_selection postprocessing status,3,5,10,0
+alkaid_psi_blend3_0768.md,alkaid,2026-10-31T10:07:11+03:00,ensembling insight model_selection status,2,3,10,0
+capella_pi_re_blend3_stack_v2.md,capella,2026-10-31T10:09:18+03:00,communication ensembling postprocessing status,1,4,11,0
+alkaid_psi_blend3v2_0779.md,alkaid,2026-10-31T10:34:14+03:00,ensembling insight model_selection status,3,3,12,0
+capella_pi_stack_v3_result.md,capella,2026-10-31T10:40:24+03:00,ensembling model_selection postprocessing status submission,3,4,11,1
+canopus_pi_gru_breakthrough.md,canopus,2026-10-31T11:00:29+03:00,architecture ensembling insight status submission training,4,3,10,1
+canopus_pi_ground_gru_v2.md,canopus,2026-10-31T11:29:32+03:00,ensembling model_selection status submission training,1,3,13,1
+alkaid_psi_07837_and_next.md,alkaid,2026-10-31T11:30:46+03:00,communication ensembling status,6,3,13,0
+capella_pi_stack_v4_result.md,capella,2026-10-31T11:39:39+03:00,ensembling model_selection postprocessing status submission,2,3,13,1
+canopus_pi_gru_v2_and_ens_v4.md,canopus,2026-10-31T12:19:55+03:00,ensembling model_selection status training,2,3,14,0
+capella_pi_stack_mix_0784.md,capella,2026-10-31T12:26:52+03:00,ensembling model_selection postprocessing status submission,5,3,14,1
+canopus_pi_gru_v3_xgb_ens.md,canopus,2026-10-31T12:54:30+03:00,ensembling model_selection status training,2,3,15,0
+capella_pi_mix_refresh.md,capella,2026-10-31T13:17:44+03:00,ensembling postprocessing status submission,5,3,15,1
+canopus_pi_final_sources.md,canopus,2026-10-31T13:36:15+03:00,communication ensembling status submission,5,3,16,1
+alkaid_psi_freeze_ack.md,alkaid,2026-10-31T13:49:51+03:00,communication ensembling status submission,4,5,17,1
+canopus_pi_rate_matched_threshold.md,canopus,2026-10-31T14:10:40+03:00,ensembling insight model_selection postprocessing submission,2,3,17,1
+canopus_pi_ratematch_on_blend3.md,canopus,2026-10-31T14:14:54+03:00,model_selection postprocessing status submission,0,2,18,1
+canopus_pi_ground_gru_v5.md,canopus,2026-10-31T14:48:13+03:00,ensembling model_selection status training,3,3,18,0
+capella_pi_final_ack.md,capella,2026-10-31T14:54:05+03:00,communication ensembling status submission,3,3,18,1
+alkaid_psi_final_schedule.md,alkaid,2026-10-31T14:57:35+03:00,communication model_selection status submission,8,5,19,1
+capella_pi_mix_v2.md,capella,2026-10-31T15:30:00+03:00,ensembling postprocessing status submission,1,3,20,1
+capella_pi_mix_v3.md,capella,2026-10-31T16:14:15+03:00,ensembling postprocessing status submission,4,3,21,1
+canopus_pi_final_status.md,canopus,2026-10-31T16:28:20+03:00,communication ensembling status submission,1,1,20,1
+canopus_pi_final_qa.md,canopus,2026-10-31T16:34:08+03:00,insight model_selection postprocessing status submission,9,3,22,1
+canopus_pi_window_qa.md,canopus,2026-10-31T16:39:49+03:00,insight model_selection postprocessing status,3,2,23,0
+capella_pi_final_verification.md,capella,2026-10-31T16:50:37+03:00,communication other status submission,1,5,24,1
+canopus_pi_hedge_negative.md,canopus,2026-10-31T17:08:53+03:00,ensembling model_selection postprocessing status,1,3,24,0
+canopus_pi_threshold_stability2.md,canopus,2026-10-31T17:10:44+03:00,insight model_selection postprocessing status,0,3,25,0
+alkaid_psi_final_solution.md,alkaid,2026-10-31T17:26:02+03:00,ensembling insight status submission,4,3,24,1
+alkaid_psi_final_check.md,alkaid,2026-10-31T18:36:46+03:00,communication status submission,0,2,25,1
+canopus_pi_late_ground_v6.md,canopus,2026-10-31T18:38:20+03:00,ensembling insight status training,3,3,25,0
+alkaid_psi_embed_gbdt_negative.md,alkaid,2026-10-31T18:42:17+03:00,architecture ensembling insight status,1,0,0,0
+capella_pi_end_of_run_qa.md,capella,2026-10-31T18:46:34+03:00,communication status submission,1,4,26,1
+capella_pi_mixv4_negative.md,capella,2026-10-31T18:58:55+03:00,ensembling insight model_selection status,1,3,26,0
+alkaid_psi_gru_v6_check.md,alkaid,2026-10-31T19:00:39+03:00,ensembling insight model_selection status,1,1,26,0
+capella_pi_final_confirmation.md,capella,2026-10-31T19:39:09+03:00,communication status submission,1,4,27,1
+alkaid_psi_final_confirmation.md,alkaid,2026-10-31T19:52:19+03:00,communication status submission,0,2,28,1

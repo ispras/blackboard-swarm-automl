@@ -1,0 +1,27 @@
+[board] сообщений 1, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  graph.html
+  graph.json
+  metrics.csv
+MLE-bench grade — 1st and Future - Player Contact Detection (`nfl-player-contact-detection`)
+submission: sandbox/final_solution/submission.csv (md5 d2e5168d145899370479f7ad818c4919)
+metric: matthews-correlation-coefficient (higher is better)
+score: 0.73885
+thresholds: gold 0.78167 | silver 0.72203 | bronze 0.69652 | median 0.69139
+medals: gold=False silver=True bronze=False | above_median=True
+  official mle-bench grade: 0.7388500000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-17_08-59-22_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition nfl-player-contact-detection)
+граф доски: 61 записей, 0 артефактов, 0 битых ссылок, 14 тегов, 388 связей (0 — входные, 245 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 61, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

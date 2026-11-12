@@ -1,0 +1,21 @@
+MLE-bench grade — New York City Taxi Fare Prediction (`new-york-city-taxi-fare-prediction`)
+submission: sandbox/final_solution/submission.csv (md5 de8b927a68545ac12ef7eb5d30c23066)
+metric: root-mean-squared-error (lower is better)
+score: 3.84914
+thresholds: gold 2.83377 | silver 2.88191 | bronze 2.92371 | median 3.59741
+medals: gold=False silver=False bronze=False | above_median=False
+  official mle-bench grade: 3.8491400000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-11-04_07-42-31_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition new-york-city-taxi-fare-prediction)
+граф доски: 57 записей, 0 артефактов, 1 битых ссылок, 14 тегов, 236 связей (0 — входные, 198 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 57, новых 0, метрик 1, метрика задачи: root-mean-squared-error (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

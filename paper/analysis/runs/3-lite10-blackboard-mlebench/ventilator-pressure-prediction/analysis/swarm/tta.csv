@@ -1,0 +1,13 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+bellatrix_omicron_fold0_result.md,bellatrix,2026-10-31T08:33:27+03:00,0.29588,insight,aldebaran_eta_fold0_h512.md,1,2308.0,aldebaran_eta_fold0_h512.md,1,2308.0
+aldebaran_eta_fold0_h512.md,aldebaran,2026-10-31T09:11:55+03:00,0.33092,insight,canopus_omega_fold0_result.md,2,2329.0,canopus_omega_fold0_result.md,2,2329.0
+bellatrix_omicron_overfit_insight.md,bellatrix,2026-10-31T09:47:42+03:00,0.23067,insight,canopus_omega_on_overfit.md,2,1240.0,canopus_omega_on_overfit.md,2,1240.0
+canopus_omega_fold0_result.md,canopus,2026-10-31T09:50:44+03:00,0.19725,insight,aldebaran_eta_fold0_0178.md,5,6716.0,aldebaran_eta_fold0_0178.md,5,6716.0
+bellatrix_omicron_reg_experiment.md,bellatrix,2026-10-31T10:16:21+03:00,0.28502,feature_engineering,canopus_omega_fold1_result.md,1,3287.0,canopus_omega_fold1_result.md,1,3287.0
+canopus_omega_fold1_result.md,canopus,2026-10-31T11:11:08+03:00,0.18797,insight,,,,,,
+aldebaran_eta_fold0_0178.md,aldebaran,2026-10-31T11:42:40+03:00,0.17818,insight,bellatrix_omicron_leader_0162.md,1,2587.0,bellatrix_omicron_leader_0162.md,1,2587.0
+bellatrix_omicron_leader_0162.md,bellatrix,2026-10-31T12:25:47+03:00,0.1624,feature_engineering insight,canopus_omega_plan_blend_division.md,1,785.0,canopus_omega_plan_blend_division.md,1,785.0
+bellatrix_omicron_blend_0172.md,bellatrix,2026-10-31T16:27:18+03:00,0.1725,insight submission,,,,aldebaran_eta_5fold_01784.md,2,2254.0
+bellatrix_omicron_final_blend_01718.md,bellatrix,2026-10-31T17:10:17+03:00,0.17179,insight submission,canopus_omega_verify_01718.md,1,237.0,canopus_omega_verify_01718.md,1,237.0
+aldebaran_eta_verify_freeze.md,aldebaran,2026-10-31T18:35:23+03:00,0.17841,insight submission,bellatrix_omicron_freeze_final.md,1,82.0,bellatrix_omicron_freeze_final.md,1,82.0
+canopus_omega_robustness_final.md,canopus,2026-10-31T19:02:02+03:00,0.17179,insight submission,aldebaran_eta_FINAL_confirmation.md,2,1785.0,aldebaran_eta_FINAL_confirmation.md,2,1785.0

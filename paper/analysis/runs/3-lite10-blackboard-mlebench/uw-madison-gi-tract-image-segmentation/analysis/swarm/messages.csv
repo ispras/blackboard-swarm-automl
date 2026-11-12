@@ -1,0 +1,68 @@
+name,agent,kind,time,tags,metric_values,metric_best,links,links_time_ok
+capella_zeta_intro_plan.md,capella,agent,2026-11-01T15:54:58+03:00,communication plan status,,,,
+mirfak_sigma_intro_plan.md,mirfak,agent,2026-11-01T15:55:06+03:00,communication plan status,,,,
+betelgeuse_pi_intro_plan.md,betelgeuse,agent,2026-11-01T15:55:24+03:00,communication data_pipeline insight plan,,,,
+capella_zeta_role_metric_postproc.md,capella,agent,2026-11-01T15:55:31+03:00,communication model_selection plan postprocessing submission,,,,
+betelgeuse_pi_rle_order_conflict.md,betelgeuse,agent,2026-11-01T15:55:44+03:00,bug conflict data_pipeline insight,,,betelgeuse_pi_intro_plan.md,betelgeuse_pi_intro_plan.md
+mirfak_sigma_rle_order_RULING.md,mirfak,agent,2026-11-01T15:55:56+03:00,bug communication conflict connected data_pipeline insight,,,betelgeuse_pi_intro_plan.md capella_zeta_intro_plan.md,betelgeuse_pi_intro_plan.md capella_zeta_intro_plan.md
+capella_zeta_rle_confirmed_roles.md,capella,agent,2026-11-01T15:56:11+03:00,communication data_pipeline ensembling insight postprocessing submission,,,betelgeuse_pi_intro_plan.md,betelgeuse_pi_intro_plan.md
+capella_zeta_rle_resolved.md,capella,agent,2026-11-01T15:56:41+03:00,bug cc communication conflict data_pipeline insight,,,mirfak_sigma_rle_order_RULING.md,mirfak_sigma_rle_order_RULING.md
+betelgeuse_pi_role_start.md,betelgeuse,agent,2026-11-01T15:59:13+03:00,data_pipeline status training,,,mirfak_sigma_intro_plan.md capella_zeta_role_metric_postproc.md betelgeuse_pi_rle_order_conflict.md,mirfak_sigma_intro_plan.md capella_zeta_role_metric_postproc.md betelgeuse_pi_rle_order_conflict.md
+mirfak_sigma_rle_CORRECTION.md,mirfak,agent,2026-11-01T15:59:18+03:00,bug communication components conflict data_pipeline insight,,,mirfak_sigma_rle_order_RULING.md,mirfak_sigma_rle_order_RULING.md
+capella_zeta_training_mitb3.md,capella,agent,2026-11-01T16:00:29+03:00,architecture communication ensembling status training,,,capella_zeta_rle_confirmed_roles.md mirfak_sigma_rle_CORRECTION.md capella_zeta_rle_resolved.md,capella_zeta_rle_confirmed_roles.md mirfak_sigma_rle_CORRECTION.md capella_zeta_rle_resolved.md
+mirfak_sigma_cache_ready.md,mirfak,agent,2026-11-01T16:02:53+03:00,communication data_pipeline status,,,,
+capella_zeta_common_val_split.md,capella,agent,2026-11-01T16:04:41+03:00,communication ensembling model_selection,,,mirfak_sigma_cache_ready.md betelgeuse_pi_role_start.md,mirfak_sigma_cache_ready.md betelgeuse_pi_role_start.md
+mirfak_sigma_start_training_f0.md,mirfak,agent,2026-11-01T16:06:58+03:00,architecture communication ensembling status training,,,capella_zeta_common_val_split.md mirfak_sigma_rle_CORRECTION.md capella_zeta_rle_resolved.md,capella_zeta_common_val_split.md mirfak_sigma_rle_CORRECTION.md capella_zeta_rle_resolved.md
+betelgeuse_pi_split_confirmed.md,betelgeuse,agent,2026-11-01T16:08:49+03:00,communication ensembling status training,,,capella_zeta_common_val_split.md,capella_zeta_common_val_split.md
+mirfak_sigma_status_metric_question.md,mirfak,agent,2026-11-01T16:27:07+03:00,communication model_selection status training,,,,
+capella_zeta_metric_answer_postproc.md,capella,agent,2026-11-01T16:37:52+03:00,communication ensembling model_selection postprocessing status,0.8808,0.8808,mirfak_sigma_status_metric_question.md,mirfak_sigma_status_metric_question.md
+betelgeuse_pi_bug_utils_metric_forder.md,betelgeuse,agent,2026-11-01T16:39:06+03:00,bug communication data_pipeline submission,,,betelgeuse_pi_rle_order_conflict.md mirfak_sigma_rle_CORRECTION.md,betelgeuse_pi_rle_order_conflict.md mirfak_sigma_rle_CORRECTION.md
+capella_zeta_tta_fix_submission.md,capella,agent,2026-11-01T16:49:08+03:00,bug communication ensembling postprocessing status submission,,,betelgeuse_pi_bug_utils_metric_forder.md,betelgeuse_pi_bug_utils_metric_forder.md
+betelgeuse_pi_tta_and_deliverables.md,betelgeuse,agent,2026-11-01T17:00:48+03:00,communication ensembling postprocessing status,,,,
+mirfak_sigma_metric_agg_and_early_oof.md,mirfak,agent,2026-11-01T17:10:22+03:00,ensembling insight model_selection postprocessing status,0.8878,0.8878,,
+mirfak_sigma_safety_sub_validated.md,mirfak,agent,2026-11-01T17:27:35+03:00,communication status submission tokens,,,,
+mirfak_sigma_postproc_findings.md,mirfak,agent,2026-11-01T17:40:13+03:00,communication insight model_selection postprocessing,,,,
+betelgeuse_pi_intermediate_probs.md,betelgeuse,agent,2026-11-01T17:50:53+03:00,ensembling inference postprocessing status,,,,
+betelgeuse_pi_3dcc_finding.md,betelgeuse,agent,2026-11-01T18:03:13+03:00,communication ensembling insight postprocessing,,,mirfak_sigma_metric_agg_and_early_oof.md,mirfak_sigma_metric_agg_and_early_oof.md
+capella_zeta_3dcc_resolved.md,capella,agent,2026-11-01T18:05:38+03:00,communication ensembling insight postprocessing status,0.9271 0.9031,0.9271,betelgeuse_pi_3dcc_finding.md mirfak_sigma_postproc_findings.md,betelgeuse_pi_3dcc_finding.md mirfak_sigma_postproc_findings.md
+betelgeuse_pi_finetune_plan.md,betelgeuse,agent,2026-11-01T18:28:41+03:00,communication ensembling plan training,,,,
+mirfak_sigma_finetune_plan.md,mirfak,agent,2026-11-01T18:39:27+03:00,communication ensembling plan status training,,,betelgeuse_pi_finetune_plan.md capella_zeta_3dcc_resolved.md betelgeuse_pi_3dcc_finding.md,betelgeuse_pi_finetune_plan.md capella_zeta_3dcc_resolved.md betelgeuse_pi_3dcc_finding.md
+capella_zeta_final_probs_ready.md,capella,agent,2026-11-01T19:25:27+03:00,communication ensembling inference status,0.9075,0.9075,betelgeuse_pi_finetune_plan.md mirfak_sigma_finetune_plan.md,betelgeuse_pi_finetune_plan.md mirfak_sigma_finetune_plan.md
+capella_zeta_safety_upgraded.md,capella,agent,2026-11-01T19:41:10+03:00,communication ensembling status submission,0.9359,0.9359,,
+mirfak_sigma_final_probs_ready.md,mirfak,agent,2026-11-01T20:52:14+03:00,communication ensembling inference status submission,,,,
+mirfak_sigma_independent_ensemble_check.md,mirfak,agent,2026-11-01T21:09:20+03:00,communication ensembling insight model_selection,,,capella_zeta_final_probs_ready.md,capella_zeta_final_probs_ready.md
+capella_zeta_ens2_live.md,capella,agent,2026-11-01T21:09:56+03:00,communication ensembling postprocessing status submission,0.9376,0.9376,,
+betelgeuse_pi_final_probs_ready.md,betelgeuse,agent,2026-11-01T21:24:17+03:00,ensembling inference status submission,,,,
+betelgeuse_pi_final_b4_combo.md,betelgeuse,agent,2026-11-01T21:38:05+03:00,ensembling inference postprocessing status,0.9349,0.9349,betelgeuse_pi_final_probs_ready.md,betelgeuse_pi_final_probs_ready.md
+mirfak_sigma_3model_independent.md,mirfak,agent,2026-11-01T21:41:15+03:00,communication ensembling insight postprocessing,,,,
+mirfak_sigma_4th_model.md,mirfak,agent,2026-11-01T21:55:19+03:00,architecture communication ensembling status training,,,,
+mirfak_sigma_crosscheck_3model_sub.md,mirfak,agent,2026-11-01T21:59:42+03:00,communication ensembling insight submission,,,,
+capella_zeta_ens3_and_allviews.md,capella,agent,2026-11-01T22:20:09+03:00,communication ensembling insight postprocessing status submission,0.9381,0.9381,,
+capella_zeta_ens6_shipped.md,capella,agent,2026-11-01T22:32:36+03:00,communication ensembling status submission,0.9381,0.9381,,
+mirfak_sigma_deeplab_progress.md,mirfak,agent,2026-11-01T22:35:01+03:00,architecture communication ensembling status training,,,capella_zeta_ens6_shipped.md,capella_zeta_ens6_shipped.md
+betelgeuse_pi_vote_vs_probavg.md,betelgeuse,agent,2026-11-01T23:04:07+03:00,communication ensembling insight model_selection,,,,
+mirfak_sigma_deeplab_final_adds_gain.md,mirfak,agent,2026-11-02T00:40:48+03:00,architecture communication ensembling status submission,,,,
+mirfak_sigma_two_extra_jobs.md,mirfak,agent,2026-11-02T00:41:29+03:00,communication ensembling plan status training,,,,
+betelgeuse_pi_b5_final.md,betelgeuse,agent,2026-11-02T00:46:33+03:00,ensembling inference model_selection status,0.9374,0.9374,,
+mirfak_sigma_5model_oof.md,mirfak,agent,2026-11-02T01:14:48+03:00,communication ensembling insight model_selection,,,betelgeuse_pi_b5_final.md,betelgeuse_pi_b5_final.md
+betelgeuse_pi_ens5_oof.md,betelgeuse,agent,2026-11-02T01:26:11+03:00,ensembling inference insight status,0.94,0.94,,
+mirfak_sigma_deeplab_all_ready.md,mirfak,agent,2026-11-02T01:33:04+03:00,communication ensembling status submission,,,betelgeuse_pi_ens5_oof.md mirfak_sigma_5model_oof.md,betelgeuse_pi_ens5_oof.md mirfak_sigma_5model_oof.md
+capella_zeta_finalA_shipped.md,capella,agent,2026-11-02T01:35:44+03:00,communication ensembling status submission,0.9394,0.9394,betelgeuse_pi_vote_vs_probavg.md,betelgeuse_pi_vote_vs_probavg.md
+betelgeuse_pi_finalA_verified.md,betelgeuse,agent,2026-11-02T01:39:11+03:00,communication ensembling status submission,0.94,0.94,betelgeuse_pi_vote_vs_probavg.md,betelgeuse_pi_vote_vs_probavg.md
+capella_zeta_finalB_shipped.md,capella,agent,2026-11-02T01:52:06+03:00,communication ensembling status submission,0.9394,0.9394,,
+mirfak_sigma_b_dump_and_verify.md,mirfak,agent,2026-11-02T02:14:34+03:00,communication ensembling status submission,,,capella_zeta_finalA_shipped.md betelgeuse_pi_finalA_verified.md betelgeuse_pi_vote_vs_probavg.md,capella_zeta_finalA_shipped.md betelgeuse_pi_finalA_verified.md betelgeuse_pi_vote_vs_probavg.md
+betelgeuse_pi_finalB_verified.md,betelgeuse,agent,2026-11-02T02:20:14+03:00,communication status submission,,,,
+capella_zeta_final_decision.md,capella,agent,2026-11-02T02:28:31+03:00,communication ensembling status submission,0.9394,0.9394,betelgeuse_pi_vote_vs_probavg.md,betelgeuse_pi_vote_vs_probavg.md
+mirfak_sigma_final_consensus.md,mirfak,agent,2026-11-02T02:32:23+03:00,communication ensembling status submission,0.9394,0.9394,capella_zeta_final_decision.md mirfak_sigma_deeplab_final_adds_gain.md capella_zeta_ens3_and_allviews.md mirfak_sigma_rle_CORRECTION.md mirfak_sigma_postproc_findings.md,capella_zeta_final_decision.md mirfak_sigma_deeplab_final_adds_gain.md capella_zeta_ens3_and_allviews.md mirfak_sigma_rle_CORRECTION.md mirfak_sigma_postproc_findings.md
+capella_zeta_final_refined_shipped.md,capella,agent,2026-11-02T02:48:10+03:00,communication ensembling postprocessing status submission,0.9396,0.9396,,
+capella_zeta_finalC_note.md,capella,agent,2026-11-02T02:55:23+03:00,communication postprocessing status submission,0.9396,0.9396,mirfak_sigma_final_consensus.md,mirfak_sigma_final_consensus.md
+betelgeuse_pi_finalC_verified.md,betelgeuse,agent,2026-11-02T02:56:15+03:00,communication status submission,0.9396,0.9396,,
+mirfak_sigma_finalC_verified.md,mirfak,agent,2026-11-02T02:56:46+03:00,communication status submission,0.9396,0.9396,capella_zeta_finalC_note.md,capella_zeta_finalC_note.md
+betelgeuse_pi_dist_filter_negative.md,betelgeuse,agent,2026-11-02T03:13:09+03:00,communication insight postprocessing status,,,,
+mirfak_sigma_finalC_area_audit.md,mirfak,agent,2026-11-02T03:15:43+03:00,insight postprocessing status submission,,,,
+betelgeuse_pi_final_audit_calibration.md,betelgeuse,agent,2026-11-02T03:21:30+03:00,communication insight postprocessing status submission,,,,
+2026-11-02_03-22-07_SYSTEM_final_phase.md,system,system,2026-11-02T03:22:07+03:00,,,,,
+capella_zeta_final_confirmed.md,capella,agent,2026-11-02T03:25:46+03:00,communication status submission,0.9396,0.9396,,
+capella_zeta_final_audit.md,capella,agent,2026-11-02T03:26:08+03:00,communication postprocessing status submission,,,,
+betelgeuse_pi_final_confirmation.md,betelgeuse,agent,2026-11-02T03:40:51+03:00,communication status submission,0.9396,0.9396,,
+2026-11-02_03-55-44_SYSTEM_grade.md,system,system,2026-11-05T16:13:56+03:00,,0.85981,0.85981,,

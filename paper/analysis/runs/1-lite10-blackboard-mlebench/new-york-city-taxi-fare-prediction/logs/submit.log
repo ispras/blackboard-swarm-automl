@@ -1,0 +1,50 @@
+== задача: New York City Taxi Fare Prediction (`new-york-city-taxi-fare-prediction`)
+== prepared: /home/travvy/.cache/mle-bench/data/new-york-city-taxi-fare-prediction/prepared (cache:/home/travvy/.cache/mle-bench/data)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/new-york-city-taxi-fare-prediction/answers.csv ← /home/travvy/.cache/mle-bench/data/new-york-city-taxi-fare-prediction/prepared/private/test.csv
+  written private/competitions/new-york-city-taxi-fare-prediction/meta.json
+== установка public-данных в sandbox/data
+  installed data/GCP-Coupons-Instructions.rtf (486.0 B) md5 1288171978f34b8be331a5e80e3af48a
+  installed data/labels.csv (5.3 GiB) md5 b1aa60e8d6ca817c18b23bd00e4a2500
+  installed data/sample_submission.csv (335.7 KiB) md5 10c791174db974943c1c80f38fc86391
+  installed data/test.csv (946.2 KiB) md5 a7b9d9b7208e9b7cff6891cfd56a0053
+  installed data/description.md
+  written TASK.md (только description)
+  written data/README.md
+
+задача: New York City Taxi Fare Prediction (`new-york-city-taxi-fare-prediction`)
+  метрика: `root-mean-squared-error` (меньше — лучше)
+  - пороги (1485 команд в лидерборде):
+  - gold 2.83377
+  - silver 2.88191
+  - bronze 2.92371
+  - median 3.59741
+  train: data/labels.csv
+  test:  data/test.csv
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  new-york-city-taxi-fare-prediction
+sandbox/data:     5,3G (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (5402MB) едут через бакет 'mlebench-new-york-city-taxi-far-cb196287' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-new-york-city-taxi-far-cb196287' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (200K)
+image:        swarm-mlm
+job:          new-york-city-taxi-fare-prediction
+{"job_id": "16217", "job_name": "new-york-city-taxi-fare-prediction", "status": "PLANNED"}
+
+Job запущен в MLM: new-york-city-taxi-fare-prediction (id 16217)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

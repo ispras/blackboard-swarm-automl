@@ -1,0 +1,363 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/bms-molecular-translation",
+  "label": "bms-molecular-translation",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "final_score": 1.52309,
+  "thresholds": {
+    "gold": 0.62,
+    "silver": 1.37,
+    "bronze": 1.99,
+    "median": 5.58
+  },
+  "messages": {
+    "agent": 97,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 8,
+    "without_metric": 41,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 97,
+    "edges": 267,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 58,
+    "mean_depth_all": 25.876288659793815,
+    "mean_depth_linked": 27.282608695652176,
+    "longest_path": [
+      "regulus_iota_hard_end_confirmation.md",
+      "regulus_omega_FINAL_CONFIRMATION.md",
+      "altair_theta_FINAL_CONFIRMATION.md",
+      "regulus_iota_last_negative_tta2.md",
+      "regulus_iota_last_negative_tta.md",
+      "regulus_iota_final_signoff.md",
+      "regulus_iota_final_robustness_check.md",
+      "regulus_omega_final_verification_passed.md",
+      "altair_theta_FINAL_solution.md",
+      "regulus_iota_code_doc_fix.md",
+      "regulus_iota_final_freeze_and_code.md",
+      "altair_theta_safety_125.md",
+      "regulus_omega_p4_medoid_not_better.md",
+      "regulus_iota_phase4_pass_started.md",
+      "regulus_iota_final_swap_action.md",
+      "regulus_omega_remove_last_use_iota_f8.md",
+      "regulus_iota_confirm_swap_f8.md",
+      "regulus_omega_final_swap_f8_better.md",
+      "regulus_iota_f8_candidate_ready.md",
+      "regulus_omega_p3_candidate_verified.md",
+      "regulus_iota_f5_candidate_f8_plan.md",
+      "regulus_omega_f8_preds_ready.md",
+      "regulus_omega_phase3_f8_routing.md",
+      "altair_theta_phase3_adopted.md",
+      "regulus_omega_final_verified.md",
+      "altair_theta_medoid_ms_candidate.md",
+      "altair_theta_ms_robust_rerun.md",
+      "altair_theta_ms_hang_killed_phase3_go.md",
+      "regulus_iota_confirm_phase3_medoid.md",
+      "altair_theta_safety_updated_163.md",
+      "regulus_omega_more_negatives_and_verify_ready.md",
+      "regulus_omega_phaseC_negative_and_verify.md",
+      "regulus_iota_gpu_and_phase3_plan.md",
+      "altair_theta_primary_done_safety.md",
+      "altair_theta_gpu_free_omega_go.md",
+      "altair_theta_primary_running_900ips.md",
+      "regulus_omega_final_val_6_54_fullpass.md",
+      "regulus_iota_fusion_at_polish.md",
+      "regulus_iota_polish_24000_lev2_76.md",
+      "regulus_iota_lr_decay_polish.md",
+      "regulus_iota_agree_altair_primary.md",
+      "altair_theta_primary_pass_owner.md",
+      "altair_theta_three_source_endgame.md",
+      "regulus_iota_12k_lev6_4.md",
+      "regulus_iota_learned_reranker.md",
+      "altair_theta_iota_fallback_conf_bug.md",
+      "altair_theta_cascade_fusion_measured.md",
+      "regulus_iota_8k_lev10.md",
+      "regulus_iota_cascade_analysis.md",
+      "regulus_iota_6k_lev12_confirm_endgame.md",
+      "regulus_iota_agree_horse_race.md",
+      "altair_theta_horse_race_contract.md",
+      "altair_theta_iota_ckpt_benchmark.md",
+      "altair_theta_revised_swarm_plan.md",
+      "regulus_iota_scratch_2k_lev37.md",
+      "regulus_iota_smiles_target_insight.md",
+      "altair_theta_molscribe_letterbox_fix.md",
+      "regulus_omega_molscribe_zeroshot_and_finetune_plan.md",
+      "regulus_iota_scratch_seq2seq_start.md"
+    ],
+    "max_indegree": 8,
+    "hubs": [
+      {
+        "name": "regulus_omega_routed_preds_ready.md",
+        "agent": "regulus",
+        "in_degree": 8,
+        "depth": 30,
+        "tags": [
+          "communication",
+          "ensembling",
+          "inference",
+          "status"
+        ],
+        "time": "2026-10-22T11:19:57+03:00"
+      },
+      {
+        "name": "regulus_iota_smiles_target_insight.md",
+        "agent": "regulus",
+        "in_degree": 7,
+        "depth": 3,
+        "tags": [
+          "architecture",
+          "communication",
+          "data_pipeline",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-22T05:43:47+03:00"
+      },
+      {
+        "name": "altair_theta_medoid_ms_candidate.md",
+        "agent": "altair",
+        "in_degree": 7,
+        "depth": 33,
+        "tags": [
+          "communication",
+          "ensembling",
+          "metric",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-22T12:11:21+03:00"
+      },
+      {
+        "name": "regulus_omega_molscribe_zeroshot_and_finetune_plan.md",
+        "agent": "regulus",
+        "in_degree": 6,
+        "depth": 1,
+        "tags": [
+          "architecture",
+          "communication",
+          "insight",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-22T05:20:08+03:00"
+      },
+      {
+        "name": "regulus_iota_scratch_2k_lev37.md",
+        "agent": "regulus",
+        "in_degree": 6,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-22T06:10:13+03:00"
+      },
+      {
+        "name": "regulus_iota_cascade_analysis.md",
+        "agent": "regulus",
+        "in_degree": 6,
+        "depth": 10,
+        "tags": [
+          "communication",
+          "ensembling",
+          "inference",
+          "insight",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-22T06:43:32+03:00"
+      },
+      {
+        "name": "altair_theta_FINAL_solution.md",
+        "agent": "altair",
+        "in_degree": 6,
+        "depth": 50,
+        "tags": [
+          "communication",
+          "ensembling",
+          "metric",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-22T14:31:32+03:00"
+      }
+    ],
+    "submission_count": 38,
+    "submission_depths": [
+      0,
+      17,
+      19,
+      21,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      32,
+      33,
+      33,
+      34,
+      35,
+      37,
+      38,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      53,
+      53,
+      54,
+      54,
+      56,
+      57,
+      58
+    ],
+    "final_submission": {
+      "name": "regulus_iota_hard_end_confirmation.md",
+      "time": "2026-10-22T16:49:26+03:00",
+      "depth": 58,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 52,
+      "mean": 1.3607692307692307,
+      "median": 0.0,
+      "positive": 0.4230769230769231,
+      "max": 34.63
+    },
+    "transitive": {
+      "n": 54,
+      "mean": 0.20093888888888886,
+      "median": 0.0,
+      "positive": 0.3148148148148148,
+      "max": 25.85
+    },
+    "prev_linked": {
+      "n": 54,
+      "mean": -0.6286648148148148,
+      "median": 0.0,
+      "positive": 0.2777777777777778,
+      "max": 25.85
+    },
+    "prev_unlinked": {
+      "n": 1,
+      "mean": 0.0,
+      "median": 0.0,
+      "positive": 0.0,
+      "max": 0.0
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 5,
+        "rate": 0.8333333333333334,
+        "median_msgs": 3,
+        "mean_msgs": 2.6,
+        "median_seconds": 1161.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 6,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 3.1666666666666665,
+        "median_seconds": 1254.0
+      }
+    },
+    "broad": {
+      "n_events": 17,
+      "direct": {
+        "events": 17,
+        "adopted": 11,
+        "rate": 0.6470588235294118,
+        "median_msgs": 2,
+        "mean_msgs": 2.1818181818181817,
+        "median_seconds": 618.0
+      },
+      "transitive": {
+        "events": 17,
+        "adopted": 17,
+        "rate": 1.0,
+        "median_msgs": 3,
+        "mean_msgs": 3.8823529411764706,
+        "median_seconds": 1161.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 16,
+      "direct": {
+        "events": 16,
+        "adopted": 8,
+        "rate": 0.5,
+        "median_msgs": 2.5,
+        "mean_msgs": 2.25,
+        "median_seconds": 889.5
+      },
+      "transitive": {
+        "events": 16,
+        "adopted": 15,
+        "rate": 0.9375,
+        "median_msgs": 3,
+        "mean_msgs": 4.4,
+        "median_seconds": 1347.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 14,
+    "direct": {
+      "events": 14,
+      "recovered": 11,
+      "rate": 0.7857142857142857,
+      "median_msgs": 2,
+      "median_seconds": 192.0,
+      "different_author": 5
+    },
+    "transitive": {
+      "events": 14,
+      "recovered": 13,
+      "rate": 0.9285714285714286,
+      "median_msgs": 2,
+      "median_seconds": 279.0,
+      "different_author": 7
+    },
+    "problem_authors": {
+      "altair": 6,
+      "regulus": 8
+    },
+    "recovery_authors": {
+      "regulus": 9,
+      "altair": 2
+    }
+  }
+}

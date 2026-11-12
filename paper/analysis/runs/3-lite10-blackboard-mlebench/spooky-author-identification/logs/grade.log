@@ -1,0 +1,30 @@
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: accuracy (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  graph.html
+  graph.json
+  metrics.csv
+/home/travvy/.pyenv/versions/mle-bench/lib/python3.12/site-packages/sklearn/metrics/_classification.py:3424: FutureWarning: `y_pred` was renamed to `y_proba` in version 1.9 and will be removed in 1.11. Use `y_proba` instead.
+  warnings.warn(
+/home/travvy/.pyenv/versions/mle-bench/lib/python3.12/site-packages/sklearn/metrics/_classification.py:3424: FutureWarning: `y_pred` was renamed to `y_proba` in version 1.9 and will be removed in 1.11. Use `y_proba` instead.
+  warnings.warn(
+MLE-bench grade — Spooky Author Identification (`spooky-author-identification`)
+submission: sandbox/final_solution/submission.csv (md5 e560475df04d395ef12f3374bb1bffdd)
+metric: multi-class-log-loss (lower is better)
+score: 0.17278
+thresholds: gold 0.16506 | silver 0.26996 | bronze 0.29381 | median 0.41879
+medals: gold=False silver=True bronze=False | above_median=True
+  official mle-bench grade: 0.1727800000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-31_07-56-57_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition spooky-author-identification)
+граф доски: 60 записей, 0 артефактов, 0 битых ссылок, 15 тегов, 270 связей (0 — входные, 215 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 60, новых 0, метрик 56, метрика задачи: multi-class-log-loss (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

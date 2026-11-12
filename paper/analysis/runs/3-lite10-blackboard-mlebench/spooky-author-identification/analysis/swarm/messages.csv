@@ -1,0 +1,61 @@
+name,agent,kind,time,tags,metric_values,metric_best,links,links_time_ok
+aldebaran_xi_intro.md,aldebaran,agent,2026-10-30T19:52:13+03:00,communication plan status,,,,
+achernar_kappa_intro_and_plan.md,achernar,agent,2026-10-30T19:52:16+03:00,communication ensembling model_selection plan,,,,
+pollux_upsilon_intro_plan.md,pollux,agent,2026-10-30T19:52:26+03:00,communication plan status,,,,
+achernar_kappa_role_classical.md,achernar,agent,2026-10-30T19:52:47+03:00,communication ensembling feature_engineering model_selection plan,,,pollux_upsilon_intro_plan.md aldebaran_xi_intro.md,pollux_upsilon_intro_plan.md aldebaran_xi_intro.md
+pollux_upsilon_division_resolved.md,pollux,agent,2026-10-30T19:52:58+03:00,communication ensembling model_selection plan,,,achernar_kappa_intro_and_plan.md aldebaran_xi_intro.md,achernar_kappa_intro_and_plan.md aldebaran_xi_intro.md
+aldebaran_xi_role_and_baseline.md,aldebaran,agent,2026-10-30T19:53:14+03:00,ensembling model_selection status,0.3838,0.3838,pollux_upsilon_division_resolved.md achernar_kappa_role_classical.md,pollux_upsilon_division_resolved.md achernar_kappa_role_classical.md
+pollux_upsilon_final_owner.md,pollux,agent,2026-10-30T19:56:21+03:00,communication ensembling plan submission,,,aldebaran_xi_role_and_baseline.md,aldebaran_xi_role_and_baseline.md
+achernar_kappa_classical_results.md,achernar,agent,2026-10-30T20:07:43+03:00,ensembling feature_engineering model_selection status training,0.3977,0.3977,pollux_upsilon_final_owner.md aldebaran_xi_role_and_baseline.md,pollux_upsilon_final_owner.md aldebaran_xi_role_and_baseline.md
+aldebaran_xi_classical_results.md,aldebaran,agent,2026-10-30T20:08:27+03:00,ensembling model_selection status,0.3699,0.3699,,
+pollux_upsilon_transformer_results1.md,pollux,agent,2026-10-30T20:08:38+03:00,insight model_selection status training,0.3554,0.3554,aldebaran_xi_role_and_baseline.md achernar_kappa_classical_results.md,aldebaran_xi_role_and_baseline.md achernar_kappa_classical_results.md
+pollux_upsilon_roberta_ready.md,pollux,agent,2026-10-30T20:19:25+03:00,ensembling status submission,0.39703,0.39703,aldebaran_xi_classical_results.md,aldebaran_xi_classical_results.md
+achernar_kappa_probe_results.md,achernar,agent,2026-10-30T20:21:20+03:00,ensembling model_selection status training,0.4115,0.4115,pollux_upsilon_transformer_results1.md,pollux_upsilon_transformer_results1.md
+pollux_upsilon_blend_finding.md,pollux,agent,2026-10-30T20:23:12+03:00,ensembling insight model_selection status,0.2898,0.2898,aldebaran_xi_classical_results.md aldebaran_xi_role_and_baseline.md,aldebaran_xi_classical_results.md aldebaran_xi_role_and_baseline.md
+pollux_upsilon_probe2.md,pollux,agent,2026-10-30T20:48:34+03:00,model_selection status training,0.3554,0.3554,achernar_kappa_probe_results.md,achernar_kappa_probe_results.md
+pollux_upsilon_stacking_breakthrough.md,pollux,agent,2026-10-30T20:51:47+03:00,ensembling insight model_selection submission,0.2531,0.2531,aldebaran_xi_role_and_baseline.md,aldebaran_xi_role_and_baseline.md
+aldebaran_xi_stacking_confirmed.md,aldebaran,agent,2026-10-30T21:01:49+03:00,ensembling insight model_selection models status,0.2425,0.2425,pollux_upsilon_stacking_breakthrough.md,pollux_upsilon_stacking_breakthrough.md
+pollux_upsilon_stack_0224.md,pollux,agent,2026-10-30T21:13:10+03:00,ensembling insight status submission,0.2237,0.2237,,
+aldebaran_xi_first_submission.md,aldebaran,agent,2026-10-30T21:13:54+03:00,ensembling model_selection status submission,0.2196,0.2196,,
+aldebaran_xi_xlmr_run.md,aldebaran,agent,2026-10-30T21:15:12+03:00,architecture communication ensembling status,,,,
+pollux_upsilon_stack_size.md,pollux,agent,2026-10-30T21:26:27+03:00,ensembling insight status,0.22254,0.22254,aldebaran_xi_stacking_confirmed.md,aldebaran_xi_stacking_confirmed.md
+achernar_kappa_dv3b_s123_landed.md,achernar,agent,2026-10-30T21:42:51+03:00,ensembling model_selection status training,0.3557,0.3557,,
+aldebaran_xi_stack_02163.md,aldebaran,agent,2026-10-30T21:47:37+03:00,ensembling status submission,0.2163,0.2163,,
+pollux_upsilon_compliance_final.md,pollux,agent,2026-10-30T21:53:17+03:00,communication status submission,,,aldebaran_xi_stack_02163.md,aldebaran_xi_stack_02163.md
+aldebaran_xi_stack_02095.md,aldebaran,agent,2026-10-30T22:26:53+03:00,ensembling status submission,0.2095,0.2095,pollux_upsilon_compliance_final.md,pollux_upsilon_compliance_final.md
+aldebaran_xi_stack_01978.md,aldebaran,agent,2026-10-30T22:41:48+03:00,architecture ensembling status submission,0.31094 0.1978,0.1978,,
+pollux_upsilon_dbv3l_landed.md,pollux,agent,2026-10-30T23:05:39+03:00,ensembling insight status submission,0.31094 0.19862,0.19862,aldebaran_xi_stack_02163.md,aldebaran_xi_stack_02163.md
+achernar_kappa_status_bertlarge.md,achernar,agent,2026-10-30T23:13:55+03:00,ensembling problem status training,0.1978,0.1978,pollux_upsilon_dbv3l_landed.md aldebaran_xi_stack_01978.md,pollux_upsilon_dbv3l_landed.md aldebaran_xi_stack_01978.md
+pollux_upsilon_status_large.md,pollux,agent,2026-10-30T23:16:03+03:00,ensembling status training,,,achernar_kappa_status_bertlarge.md,achernar_kappa_status_bertlarge.md
+aldebaran_xi_partial_oof_guard.md,aldebaran,agent,2026-10-30T23:44:13+03:00,bug communication ensembling status,,,achernar_kappa_status_bertlarge.md,achernar_kappa_status_bertlarge.md
+pollux_upsilon_dbv3l_s7.md,pollux,agent,2026-10-30T23:56:54+03:00,ensembling status submission,0.3319 0.1991,0.1991,,
+aldebaran_xi_stack_01958.md,aldebaran,agent,2026-10-31T00:03:34+03:00,ensembling status submission,0.1958,0.1958,pollux_upsilon_dbv3l_s7.md,pollux_upsilon_dbv3l_s7.md
+pollux_upsilon_stack_01935.md,pollux,agent,2026-10-31T00:46:24+03:00,ensembling insight status submission,0.19348 0.19678,0.19348,aldebaran_xi_partial_oof_guard.md,aldebaran_xi_partial_oof_guard.md
+aldebaran_xi_stack_01903.md,aldebaran,agent,2026-10-31T01:02:01+03:00,ensembling insight status submission,0.30724 0.1902,0.1902,pollux_upsilon_stack_01935.md,pollux_upsilon_stack_01935.md
+aldebaran_xi_extra_seed1234.md,aldebaran,agent,2026-10-31T01:02:35+03:00,architecture ensembling status training,,,aldebaran_xi_stack_01903.md,aldebaran_xi_stack_01903.md
+aldebaran_xi_stack_01900.md,aldebaran,agent,2026-10-31T01:29:09+03:00,ensemble status submission,0.19,0.19,aldebaran_xi_partial_oof_guard.md,aldebaran_xi_partial_oof_guard.md
+pollux_upsilon_cand2_01923.md,pollux,agent,2026-10-31T01:35:32+03:00,ensembling status submission,0.337 0.19226,0.19226,,
+aldebaran_xi_stack_01891.md,aldebaran,agent,2026-10-31T02:57:27+03:00,ensembling status submission,0.30244 0.1891,0.1891,,
+pollux_upsilon_s1234_best.md,pollux,agent,2026-10-31T03:05:20+03:00,ensembling insight status submission,0.30244 0.19159,0.19159,,
+achernar_kappa_electralarge_landed.md,achernar,agent,2026-10-31T03:10:08+03:00,ensembling model_selection status training,0.36314,0.36314,,
+pollux_upsilon_cand5_freeze_plan.md,pollux,agent,2026-10-31T03:29:02+03:00,ensembling status submission,0.18962,0.18962,pollux_upsilon_stack_01935.md,pollux_upsilon_stack_01935.md
+aldebaran_xi_freeze_plan.md,aldebaran,agent,2026-10-31T05:01:38+03:00,ensembling plan status submission,0.1862,0.1862,,
+pollux_upsilon_final_analysis.md,pollux,agent,2026-10-31T05:02:52+03:00,ensembling insight model_selection status,0.1878,0.1878,aldebaran_xi_freeze_plan.md,aldebaran_xi_freeze_plan.md
+achernar_kappa_verification_report.md,achernar,agent,2026-10-31T05:03:08+03:00,ensembling insight postprocessing status submission,0.18615 0.18603,0.18603,pollux_upsilon_final_analysis.md pollux_upsilon_cand5_freeze_plan.md,pollux_upsilon_final_analysis.md pollux_upsilon_cand5_freeze_plan.md
+aldebaran_xi_elarge_fail_freeze.md,aldebaran,agent,2026-10-31T05:32:01+03:00,communication status submission,0.18615,0.18615,achernar_kappa_verification_report.md,achernar_kappa_verification_report.md
+achernar_kappa_dapt_result_freeze_rec.md,achernar,agent,2026-10-31T05:51:20+03:00,ensembling insight postprocessing status submission,0.36815 0.1861,0.1861,achernar_kappa_verification_report.md,achernar_kappa_verification_report.md
+achernar_kappa_confidence_check.md,achernar,agent,2026-10-31T05:51:45+03:00,insight postprocessing status submission,,,,
+pollux_upsilon_bertlargec_negative.md,pollux,agent,2026-10-31T06:12:43+03:00,ensembling insight model_selection status submission,0.37992 0.18703,0.18703,achernar_kappa_verification_report.md,achernar_kappa_verification_report.md
+aldebaran_xi_FINAL_frozen.md,aldebaran,agent,2026-10-31T06:15:26+03:00,communication ensembling status submission,0.1861,0.1861,achernar_kappa_dapt_result_freeze_rec.md,achernar_kappa_dapt_result_freeze_rec.md
+achernar_kappa_final_verification_PASS.md,achernar,agent,2026-10-31T06:23:29+03:00,communication ensembling postprocessing status submission,0.1861,0.1861,,
+pollux_upsilon_final_confirmation.md,pollux,agent,2026-10-31T06:24:43+03:00,communication ensembling status submission,0.1878,0.1878,,
+aldebaran_xi_freeze_confirmed.md,aldebaran,agent,2026-10-31T06:35:39+03:00,communication status submission,0.1861,0.1861,achernar_kappa_final_verification_PASS.md pollux_upsilon_final_confirmation.md,achernar_kappa_final_verification_PASS.md pollux_upsilon_final_confirmation.md
+pollux_upsilon_last_check.md,pollux,agent,2026-10-31T07:10:04+03:00,communication status submission,0.1878,0.1878,,
+aldebaran_xi_final_stability.md,aldebaran,agent,2026-10-31T07:13:01+03:00,ensembling status submission,0.1861,0.1861,,
+achernar_kappa_robustness_final.md,achernar,agent,2026-10-31T07:20:09+03:00,ensembling insight status submission,,,aldebaran_xi_final_stability.md achernar_kappa_final_verification_PASS.md,aldebaran_xi_final_stability.md achernar_kappa_final_verification_PASS.md
+pollux_upsilon_stacker_probe_final.md,pollux,agent,2026-10-31T07:20:46+03:00,ensembling insight status submission,0.18785,0.18785,aldebaran_xi_final_stability.md achernar_kappa_robustness_final.md,aldebaran_xi_final_stability.md achernar_kappa_robustness_final.md
+2026-10-31_07-21-53_SYSTEM_final_phase.md,system,system,2026-10-31T07:21:53+03:00,,,,,
+achernar_kappa_HARDEND_CONFIRM.md,achernar,agent,2026-10-31T07:40:16+03:00,communication status submission,0.1861,0.1861,achernar_kappa_final_verification_PASS.md achernar_kappa_robustness_final.md,achernar_kappa_final_verification_PASS.md achernar_kappa_robustness_final.md
+pollux_upsilon_HARDEND_CONFIRM.md,pollux,agent,2026-10-31T07:40:56+03:00,communication status submission,,,pollux_upsilon_stacker_probe_final.md achernar_kappa_final_verification_PASS.md aldebaran_xi_final_stability.md,pollux_upsilon_stacker_probe_final.md achernar_kappa_final_verification_PASS.md aldebaran_xi_final_stability.md
+aldebaran_xi_HARDEND_CONFIRM.md,aldebaran,agent,2026-10-31T07:43:10+03:00,communication status submission,0.1861,0.1861,achernar_kappa_final_verification_PASS.md pollux_upsilon_final_confirmation.md aldebaran_xi_final_stability.md,achernar_kappa_final_verification_PASS.md pollux_upsilon_final_confirmation.md aldebaran_xi_final_stability.md
+2026-10-31_07-56-57_SYSTEM_grade.md,system,system,2026-11-05T16:13:56+03:00,,0.17278,0.17278,,

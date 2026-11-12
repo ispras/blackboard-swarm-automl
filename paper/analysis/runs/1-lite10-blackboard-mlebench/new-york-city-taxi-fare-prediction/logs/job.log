@@ -1,0 +1,1940 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [297 kB]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [1108 B]
+Fetched 10.4 MB in 2s (4710 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Collecting pip
+  Downloading pip-26.3-py3-none-any.whl (2.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 152.5 MB/s  0:00:00
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 95.9 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+  Attempting uninstall: pip
+    Found existing installation: pip 26.2.1
+    Uninstalling pip-26.2.1:
+      Successfully uninstalled pip-26.2.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Successfully installed pip-26.3 setuptools-84.2.1
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.123-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.123 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.123-py3-none-any.whl (16.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.2/16.2 MB 283.8 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.123 botocore-1.43.123 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/181k [00:00<?, ?File/s][A
+210kFile [00:00, 12.5MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-new-york-city-taxi-far-cb196287' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/5.27G [00:00<?, ?B/s][A
+  0%|          | 256k/5.27G [00:00<56:13, 1.68MB/s][A
+  0%|          | 8.25M/5.27G [00:00<03:24, 27.7MB/s][A
+  0%|          | 16.2M/5.27G [00:00<02:48, 33.6MB/s][A
+  0%|          | 22.8M/5.27G [00:00<02:16, 41.5MB/s][A
+  1%|          | 29.5M/5.27G [00:00<01:45, 53.4MB/s][A
+  1%|          | 29.8M/5.27G [00:00<01:45, 53.4MB/s][A
+  1%|          | 37.0M/5.27G [00:00<01:34, 59.5MB/s][A
+  1%|          | 44.5M/5.27G [00:00<01:27, 64.5MB/s][A
+  1%|          | 52.0M/5.27G [00:01<01:22, 67.8MB/s][A
+  1%|          | 52.0M/5.27G [00:01<01:22, 67.8MB/s][A
+  1%|          | 58.8M/5.27G [00:01<01:22, 68.1MB/s][A
+  1%|          | 66.2M/5.27G [00:01<01:20, 69.5MB/s][A
+  1%|▏         | 74.2M/5.27G [00:01<01:15, 73.6MB/s][A
+  2%|▏         | 82.0M/5.27G [00:01<01:14, 75.0MB/s][A
+  2%|▏         | 89.5M/5.27G [00:01<01:15, 73.4MB/s][A
+  2%|▏         | 89.5M/5.27G [00:01<01:15, 73.4MB/s][A
+  2%|▏         | 96.8M/5.27G [00:01<02:03, 45.0MB/s][A
+  2%|▏         | 107M/5.27G [00:02<01:36, 57.7MB/s] [A
+  2%|▏         | 114M/5.27G [00:02<01:36, 57.7MB/s][A
+  2%|▏         | 121M/5.27G [00:02<01:36, 57.1MB/s][A
+  2%|▏         | 128M/5.27G [00:02<01:30, 61.3MB/s][A
+  2%|▏         | 128M/5.27G [00:02<01:24, 65.1MB/s][A
+  3%|▎         | 135M/5.27G [00:02<01:31, 60.1MB/s][A
+  3%|▎         | 142M/5.27G [00:02<01:27, 62.8MB/s][A
+  3%|▎         | 150M/5.27G [00:02<01:21, 67.5MB/s][A
+  3%|▎         | 158M/5.27G [00:02<01:17, 70.6MB/s][A
+  3%|▎         | 166M/5.27G [00:03<01:41, 54.2MB/s][A
+  3%|▎         | 166M/5.27G [00:03<01:41, 54.2MB/s][A
+  3%|▎         | 178M/5.27G [00:03<01:17, 70.4MB/s][A
+  3%|▎         | 187M/5.27G [00:03<01:12, 75.2MB/s][A
+  4%|▎         | 195M/5.27G [00:03<01:15, 72.6MB/s][A
+  4%|▎         | 202M/5.27G [00:03<01:24, 64.2MB/s][A
+  4%|▍         | 209M/5.27G [00:03<01:38, 55.1MB/s][A
+  4%|▍         | 217M/5.27G [00:03<01:35, 56.8MB/s][A
+  4%|▍         | 222M/5.27G [00:03<01:39, 54.4MB/s][A
+  4%|▍         | 228M/5.27G [00:04<01:39, 54.5MB/s][A
+  4%|▍         | 236M/5.27G [00:04<01:29, 60.5MB/s][A
+  5%|▍         | 244M/5.27G [00:04<01:14, 72.2MB/s][A
+  5%|▍         | 244M/5.27G [00:04<01:14, 72.2MB/s][A
+  5%|▍         | 244M/5.27G [00:04<01:14, 72.2MB/s][A
+  5%|▍         | 251M/5.27G [00:04<01:14, 72.1MB/s][A
+  5%|▍         | 258M/5.27G [00:04<01:14, 72.2MB/s][A
+  5%|▍         | 266M/5.27G [00:04<01:12, 74.6MB/s][A
+  5%|▍         | 266M/5.27G [00:04<01:10, 76.8MB/s][A
+  5%|▌         | 273M/5.27G [00:04<01:10, 76.7MB/s][A
+  5%|▌         | 281M/5.27G [00:04<01:08, 78.5MB/s][A
+  5%|▌         | 289M/5.27G [00:04<01:20, 66.8MB/s][A
+  5%|▌         | 296M/5.27G [00:05<01:47, 50.0MB/s][A
+  6%|▌         | 302M/5.27G [00:05<01:56, 46.0MB/s][A
+  6%|▌         | 308M/5.27G [00:05<01:43, 51.4MB/s][A
+  6%|▌         | 316M/5.27G [00:05<01:34, 56.2MB/s][A
+  6%|▌         | 323M/5.27G [00:05<01:26, 61.4MB/s][A
+  6%|▌         | 331M/5.27G [00:05<01:21, 64.9MB/s][A
+  6%|▋         | 339M/5.27G [00:05<01:16, 69.5MB/s][A
+  6%|▋         | 346M/5.27G [00:05<01:13, 71.7MB/s][A
+  6%|▋         | 346M/5.27G [00:05<01:13, 71.7MB/s][A
+  7%|▋         | 353M/5.27G [00:06<01:17, 68.1MB/s][A
+  7%|▋         | 360M/5.27G [00:06<01:21, 65.1MB/s][A
+  7%|▋         | 368M/5.27G [00:06<01:17, 68.3MB/s][A
+  7%|▋         | 375M/5.27G [00:06<01:14, 70.7MB/s][A
+  7%|▋         | 382M/5.27G [00:06<02:01, 43.3MB/s][A
+  7%|▋         | 383M/5.27G [00:06<02:54, 30.1MB/s][A
+  7%|▋         | 383M/5.27G [00:06<02:54, 30.1MB/s][A
+  7%|▋         | 390M/5.27G [00:06<02:23, 36.6MB/s][A
+  7%|▋         | 398M/5.27G [00:06<01:57, 44.6MB/s][A
+  8%|▊         | 406M/5.27G [00:07<01:38, 53.1MB/s][A
+  8%|▊         | 414M/5.27G [00:07<01:28, 59.2MB/s][A
+  8%|▊         | 423M/5.27G [00:07<01:18, 66.2MB/s][A
+  8%|▊         | 432M/5.27G [00:07<01:23, 62.3MB/s][A
+  8%|▊         | 439M/5.27G [00:07<01:19, 65.1MB/s][A
+  8%|▊         | 448M/5.27G [00:07<01:17, 67.1MB/s][A
+  8%|▊         | 457M/5.27G [00:07<01:11, 72.7MB/s][A
+  9%|▊         | 464M/5.27G [00:07<01:31, 56.9MB/s][A
+  9%|▊         | 470M/5.27G [00:08<01:32, 56.0MB/s][A
+  9%|▉         | 476M/5.27G [00:08<01:39, 52.0MB/s][A
+  9%|▉         | 484M/5.27G [00:08<01:30, 56.7MB/s][A
+  9%|▉         | 491M/5.27G [00:08<01:22, 62.0MB/s][A
+  9%|▉         | 499M/5.27G [00:08<01:23, 61.4MB/s][A
+  9%|▉         | 506M/5.27G [00:08<01:24, 60.5MB/s][A
+  9%|▉         | 513M/5.27G [00:08<01:13, 69.4MB/s][A
+ 10%|▉         | 513M/5.27G [00:08<01:13, 69.4MB/s][A
+ 10%|▉         | 513M/5.27G [00:08<01:13, 69.4MB/s][A
+ 10%|▉         | 520M/5.27G [00:08<01:18, 65.5MB/s][A
+ 10%|▉         | 528M/5.27G [00:09<01:14, 69.0MB/s][A
+ 10%|▉         | 535M/5.27G [00:09<01:12, 70.5MB/s][A
+ 10%|█         | 542M/5.27G [00:09<01:10, 71.9MB/s][A
+ 10%|█         | 549M/5.27G [00:09<01:31, 55.3MB/s][A
+ 10%|█         | 555M/5.27G [00:09<01:45, 48.2MB/s][A
+ 10%|█         | 562M/5.27G [00:09<01:36, 52.4MB/s][A
+ 11%|█         | 570M/5.27G [00:09<01:27, 57.9MB/s][A
+ 11%|█         | 576M/5.27G [00:09<01:34, 53.3MB/s][A
+ 11%|█         | 583M/5.27G [00:10<01:26, 58.3MB/s][A
+ 11%|█         | 591M/5.27G [00:10<01:18, 64.3MB/s][A
+ 11%|█         | 598M/5.27G [00:10<01:19, 63.1MB/s][A
+ 11%|█         | 606M/5.27G [00:10<01:14, 67.3MB/s][A
+ 11%|█▏        | 613M/5.27G [00:10<01:11, 70.1MB/s][A
+ 11%|█▏        | 621M/5.27G [00:10<01:08, 72.7MB/s][A
+ 12%|█▏        | 628M/5.27G [00:10<01:17, 64.2MB/s][A
+ 12%|█▏        | 634M/5.27G [00:11<01:41, 49.0MB/s][A
+ 12%|█▏        | 643M/5.27G [00:11<01:27, 57.0MB/s][A
+ 12%|█▏        | 649M/5.27G [00:11<01:30, 55.1MB/s][A
+ 12%|█▏        | 656M/5.27G [00:11<01:23, 59.4MB/s][A
+ 12%|█▏        | 662M/5.27G [00:11<01:24, 58.6MB/s][A
+ 12%|█▏        | 670M/5.27G [00:11<01:19, 62.4MB/s][A
+ 13%|█▎        | 677M/5.27G [00:11<01:13, 67.4MB/s][A
+ 13%|█▎        | 685M/5.27G [00:11<01:06, 74.1MB/s][A
+ 13%|█▎        | 685M/5.27G [00:11<01:06, 74.1MB/s][A
+ 13%|█▎        | 693M/5.27G [00:11<01:05, 75.2MB/s][A
+ 13%|█▎        | 701M/5.27G [00:11<01:03, 77.2MB/s][A
+ 13%|█▎        | 709M/5.27G [00:12<01:16, 64.3MB/s][A
+ 13%|█▎        | 716M/5.27G [00:12<01:17, 63.7MB/s][A
+ 13%|█▎        | 722M/5.27G [00:12<01:51, 44.0MB/s][A
+ 13%|█▎        | 727M/5.27G [00:12<01:54, 42.9MB/s][A
+ 14%|█▎        | 733M/5.27G [00:12<01:47, 45.7MB/s][A
+ 14%|█▎        | 739M/5.27G [00:12<01:38, 49.5MB/s][A
+ 14%|█▍        | 744M/5.27G [00:12<01:32, 52.8MB/s][A
+ 14%|█▍        | 744M/5.27G [00:12<01:32, 52.8MB/s][A
+ 14%|█▍        | 750M/5.27G [00:13<01:30, 54.0MB/s][A
+ 14%|█▍        | 756M/5.27G [00:13<01:27, 55.8MB/s][A
+ 14%|█▍        | 762M/5.27G [00:13<01:23, 58.0MB/s][A
+ 14%|█▍        | 768M/5.27G [00:13<01:21, 59.3MB/s][A
+ 14%|█▍        | 774M/5.27G [00:13<01:21, 59.3MB/s][A
+ 14%|█▍        | 780M/5.27G [00:13<01:23, 58.3MB/s][A
+ 15%|█▍        | 786M/5.27G [00:13<01:33, 51.7MB/s][A
+ 15%|█▍        | 793M/5.27G [00:13<01:24, 57.1MB/s][A
+ 15%|█▍        | 793M/5.27G [00:13<01:18, 61.3MB/s][A
+ 15%|█▍        | 799M/5.27G [00:14<01:29, 54.1MB/s][A
+ 15%|█▍        | 805M/5.27G [00:14<01:52, 42.8MB/s][A
+ 15%|█▍        | 805M/5.27G [00:14<02:08, 37.4MB/s][A
+ 15%|█▌        | 814M/5.27G [00:14<01:39, 48.1MB/s][A
+ 15%|█▌        | 822M/5.27G [00:14<01:25, 56.0MB/s][A
+ 15%|█▌        | 830M/5.27G [00:14<01:16, 62.4MB/s][A
+ 16%|█▌        | 837M/5.27G [00:14<01:12, 66.3MB/s][A
+ 16%|█▌        | 845M/5.27G [00:14<01:07, 71.0MB/s][A
+ 16%|█▌        | 853M/5.27G [00:14<01:22, 57.8MB/s][A
+ 16%|█▌        | 853M/5.27G [00:14<01:22, 57.8MB/s][A
+ 16%|█▌        | 860M/5.27G [00:15<01:15, 63.3MB/s][A
+ 16%|█▌        | 867M/5.27G [00:15<01:23, 57.3MB/s][A
+ 16%|█▌        | 874M/5.27G [00:15<01:16, 61.7MB/s][A
+ 16%|█▋        | 882M/5.27G [00:15<01:11, 66.1MB/s][A
+ 16%|█▋        | 882M/5.27G [00:15<01:07, 69.7MB/s][A
+ 16%|█▋        | 890M/5.27G [00:15<01:06, 71.3MB/s][A
+ 17%|█▋        | 897M/5.27G [00:15<01:30, 52.0MB/s][A
+ 17%|█▋        | 908M/5.27G [00:15<01:12, 64.8MB/s][A
+ 17%|█▋        | 915M/5.27G [00:15<01:12, 65.0MB/s][A
+ 17%|█▋        | 922M/5.27G [00:16<01:16, 61.1MB/s][A
+ 17%|█▋        | 922M/5.27G [00:16<01:16, 61.1MB/s][A
+ 17%|█▋        | 929M/5.27G [00:16<01:23, 56.3MB/s][A
+ 17%|█▋        | 936M/5.27G [00:16<01:17, 60.4MB/s][A
+ 17%|█▋        | 943M/5.27G [00:16<01:07, 69.3MB/s][A
+ 17%|█▋        | 944M/5.27G [00:16<01:07, 69.3MB/s][A
+ 17%|█▋        | 944M/5.27G [00:16<01:07, 69.3MB/s][A
+ 18%|█▊        | 952M/5.27G [00:16<01:04, 72.2MB/s][A
+ 18%|█▊        | 959M/5.27G [00:16<01:02, 74.6MB/s][A
+ 18%|█▊        | 967M/5.27G [00:16<01:03, 73.4MB/s][A
+ 18%|█▊        | 967M/5.27G [00:16<01:02, 74.7MB/s][A
+ 18%|█▊        | 968M/5.27G [00:16<01:02, 74.7MB/s][A
+ 18%|█▊        | 968M/5.27G [00:16<01:02, 74.7MB/s][A
+ 18%|█▊        | 975M/5.27G [00:16<01:06, 69.9MB/s][A
+ 18%|█▊        | 982M/5.27G [00:16<01:07, 68.4MB/s][A
+ 18%|█▊        | 989M/5.27G [00:17<02:06, 36.5MB/s][A
+ 18%|█▊        | 989M/5.27G [00:17<02:06, 36.5MB/s][A
+ 19%|█▊        | 0.98G/5.27G [00:17<01:21, 56.9MB/s][A
+ 19%|█▉        | 0.99G/5.27G [00:17<01:14, 61.6MB/s][A
+ 19%|█▉        | 0.99G/5.27G [00:17<01:09, 66.3MB/s][A
+ 19%|█▉        | 1.00G/5.27G [00:17<01:11, 64.2MB/s][A
+ 19%|█▉        | 1.00G/5.27G [00:17<01:07, 67.5MB/s][A
+ 19%|█▉        | 1.01G/5.27G [00:17<01:05, 70.3MB/s][A
+ 19%|█▉        | 1.02G/5.27G [00:17<01:03, 72.1MB/s][A
+ 19%|█▉        | 1.03G/5.27G [00:18<01:06, 68.8MB/s][A
+ 20%|█▉        | 1.03G/5.27G [00:18<01:34, 48.1MB/s][A
+ 20%|█▉        | 1.04G/5.27G [00:18<01:30, 50.4MB/s][A
+ 20%|█▉        | 1.05G/5.27G [00:18<01:17, 58.6MB/s][A
+ 20%|█▉        | 1.05G/5.27G [00:18<01:17, 58.6MB/s][A
+ 20%|█▉        | 1.05G/5.27G [00:18<01:09, 65.1MB/s][A
+ 20%|██        | 1.06G/5.27G [00:18<01:17, 58.1MB/s][A
+ 20%|██        | 1.06G/5.27G [00:18<01:23, 54.4MB/s][A
+ 20%|██        | 1.07G/5.27G [00:18<01:30, 49.8MB/s][A
+ 20%|██        | 1.07G/5.27G [00:19<01:29, 50.5MB/s][A
+ 20%|██        | 1.07G/5.27G [00:19<01:29, 50.5MB/s][A
+ 20%|██        | 1.08G/5.27G [00:19<01:16, 59.1MB/s][A
+ 21%|██        | 1.09G/5.27G [00:19<01:18, 57.6MB/s][A
+ 21%|██        | 1.09G/5.27G [00:19<01:06, 67.9MB/s][A
+ 21%|██        | 1.09G/5.27G [00:19<01:06, 67.9MB/s][A
+ 21%|██        | 1.09G/5.27G [00:19<01:06, 67.9MB/s][A
+ 21%|██        | 1.10G/5.27G [00:19<01:05, 68.3MB/s][A
+ 21%|██        | 1.11G/5.27G [00:19<01:12, 62.0MB/s][A
+ 21%|██        | 1.11G/5.27G [00:19<01:12, 62.0MB/s][A
+ 21%|██        | 1.11G/5.27G [00:19<01:30, 49.5MB/s][A
+ 21%|██        | 1.12G/5.27G [00:19<01:21, 54.9MB/s][A
+ 21%|██▏       | 1.13G/5.27G [00:20<01:09, 63.9MB/s][A
+ 22%|██▏       | 1.14G/5.27G [00:20<01:11, 62.3MB/s][A
+ 22%|██▏       | 1.14G/5.27G [00:20<01:10, 63.1MB/s][A
+ 22%|██▏       | 1.14G/5.27G [00:20<01:10, 63.1MB/s][A
+ 22%|██▏       | 1.15G/5.27G [00:20<01:21, 54.4MB/s][A
+ 22%|██▏       | 1.16G/5.27G [00:20<01:25, 51.5MB/s][A
+ 22%|██▏       | 1.16G/5.27G [00:20<01:18, 56.4MB/s][A
+ 22%|██▏       | 1.17G/5.27G [00:20<01:10, 62.3MB/s][A
+ 22%|██▏       | 1.18G/5.27G [00:20<01:13, 59.6MB/s][A
+ 22%|██▏       | 1.18G/5.27G [00:21<01:12, 60.3MB/s][A
+ 22%|██▏       | 1.18G/5.27G [00:21<01:12, 60.3MB/s][A
+ 23%|██▎       | 1.19G/5.27G [00:21<01:20, 54.8MB/s][A
+ 23%|██▎       | 1.19G/5.27G [00:21<01:37, 45.0MB/s][A
+ 23%|██▎       | 1.19G/5.27G [00:21<01:37, 45.0MB/s][A
+ 23%|██▎       | 1.19G/5.27G [00:21<01:37, 45.0MB/s][A
+ 23%|██▎       | 1.20G/5.27G [00:21<01:43, 42.3MB/s][A
+ 23%|██▎       | 1.21G/5.27G [00:21<01:20, 54.2MB/s][A
+ 23%|██▎       | 1.21G/5.27G [00:21<01:20, 54.2MB/s][A
+ 23%|██▎       | 1.21G/5.27G [00:21<01:18, 55.3MB/s][A
+ 23%|██▎       | 1.21G/5.27G [00:21<01:18, 55.3MB/s][A
+ 23%|██▎       | 1.22G/5.27G [00:21<01:19, 55.1MB/s][A
+ 23%|██▎       | 1.22G/5.27G [00:21<01:11, 61.2MB/s][A
+ 23%|██▎       | 1.23G/5.27G [00:22<01:20, 53.7MB/s][A
+ 23%|██▎       | 1.24G/5.27G [00:22<01:16, 56.6MB/s][A
+ 23%|██▎       | 1.24G/5.27G [00:22<01:16, 56.6MB/s][A
+ 24%|██▎       | 1.24G/5.27G [00:22<01:31, 47.6MB/s][A
+ 24%|██▎       | 1.24G/5.27G [00:22<01:41, 42.8MB/s][A
+ 24%|██▎       | 1.25G/5.27G [00:22<01:23, 51.8MB/s][A
+ 24%|██▎       | 1.25G/5.27G [00:22<01:23, 51.8MB/s][A
+ 24%|██▍       | 1.26G/5.27G [00:22<01:14, 57.7MB/s][A
+ 24%|██▍       | 1.26G/5.27G [00:22<01:08, 62.8MB/s][A
+ 24%|██▍       | 1.26G/5.27G [00:22<01:13, 58.6MB/s][A
+ 24%|██▍       | 1.27G/5.27G [00:22<01:13, 58.2MB/s][A
+ 24%|██▍       | 1.27G/5.27G [00:22<01:13, 58.4MB/s][A
+ 24%|██▍       | 1.28G/5.27G [00:22<01:15, 57.0MB/s][A
+ 24%|██▍       | 1.28G/5.27G [00:23<01:07, 63.5MB/s][A
+ 24%|██▍       | 1.29G/5.27G [00:23<01:09, 61.2MB/s][A
+ 25%|██▍       | 1.30G/5.27G [00:23<01:04, 66.2MB/s][A
+ 25%|██▍       | 1.31G/5.27G [00:23<01:01, 69.8MB/s][A
+ 25%|██▍       | 1.31G/5.27G [00:23<01:08, 62.2MB/s][A
+ 25%|██▌       | 1.32G/5.27G [00:23<01:22, 51.2MB/s][A
+ 25%|██▌       | 1.33G/5.27G [00:23<01:16, 55.2MB/s][A
+ 25%|██▌       | 1.33G/5.27G [00:23<01:08, 61.9MB/s][A
+ 25%|██▌       | 1.34G/5.27G [00:24<01:10, 60.1MB/s][A
+ 25%|██▌       | 1.34G/5.27G [00:24<01:10, 60.1MB/s][A
+ 26%|██▌       | 1.35G/5.27G [00:24<01:15, 55.7MB/s][A
+ 26%|██▌       | 1.35G/5.27G [00:24<01:14, 56.7MB/s][A
+ 26%|██▌       | 1.36G/5.27G [00:24<01:08, 61.7MB/s][A
+ 26%|██▌       | 1.37G/5.27G [00:24<01:02, 67.1MB/s][A
+ 26%|██▌       | 1.37G/5.27G [00:24<01:09, 60.6MB/s][A
+ 26%|██▌       | 1.38G/5.27G [00:24<01:06, 63.0MB/s][A
+ 26%|██▋       | 1.39G/5.27G [00:24<01:14, 56.4MB/s][A
+ 26%|██▋       | 1.39G/5.27G [00:24<01:03, 65.4MB/s][A
+ 26%|██▋       | 1.39G/5.27G [00:24<01:03, 65.4MB/s][A
+ 27%|██▋       | 1.40G/5.27G [00:25<01:16, 54.5MB/s][A
+ 27%|██▋       | 1.40G/5.27G [00:25<01:24, 49.1MB/s][A
+ 27%|██▋       | 1.41G/5.27G [00:25<01:15, 55.1MB/s][A
+ 27%|██▋       | 1.41G/5.27G [00:25<01:20, 51.2MB/s][A
+ 27%|██▋       | 1.42G/5.27G [00:25<01:23, 49.7MB/s][A
+ 27%|██▋       | 1.42G/5.27G [00:25<01:15, 54.8MB/s][A
+ 27%|██▋       | 1.43G/5.27G [00:25<01:15, 54.8MB/s][A
+ 27%|██▋       | 1.43G/5.27G [00:25<01:16, 53.9MB/s][A
+ 27%|██▋       | 1.44G/5.27G [00:25<01:04, 64.0MB/s][A
+ 27%|██▋       | 1.45G/5.27G [00:25<01:01, 66.5MB/s][A
+ 28%|██▊       | 1.45G/5.27G [00:26<01:04, 63.5MB/s][A
+ 28%|██▊       | 1.46G/5.27G [00:26<01:18, 52.0MB/s][A
+ 28%|██▊       | 1.47G/5.27G [00:26<01:11, 57.0MB/s][A
+ 28%|██▊       | 1.47G/5.27G [00:26<01:06, 61.4MB/s][A
+ 28%|██▊       | 1.47G/5.27G [00:26<00:58, 70.1MB/s][A
+ 28%|██▊       | 1.47G/5.27G [00:26<00:58, 70.1MB/s][A
+ 28%|██▊       | 1.47G/5.27G [00:26<00:58, 70.1MB/s][A
+ 28%|██▊       | 1.48G/5.27G [00:26<01:00, 67.3MB/s][A
+ 28%|██▊       | 1.49G/5.27G [00:26<01:16, 53.5MB/s][A
+ 28%|██▊       | 1.49G/5.27G [00:26<01:15, 53.8MB/s][A
+ 28%|██▊       | 1.50G/5.27G [00:26<01:06, 61.2MB/s][A
+ 29%|██▊       | 1.51G/5.27G [00:27<01:10, 57.4MB/s][A
+ 29%|██▊       | 1.51G/5.27G [00:27<01:03, 63.4MB/s][A
+ 29%|██▊       | 1.51G/5.27G [00:27<01:03, 63.4MB/s][A
+ 29%|██▉       | 1.52G/5.27G [00:27<01:01, 66.1MB/s][A
+ 29%|██▉       | 1.53G/5.27G [00:27<01:05, 61.2MB/s][A
+ 29%|██▉       | 1.53G/5.27G [00:27<01:04, 62.1MB/s][A
+ 29%|██▉       | 1.54G/5.27G [00:27<01:06, 60.4MB/s][A
+ 29%|██▉       | 1.55G/5.27G [00:27<00:58, 68.7MB/s][A
+ 29%|██▉       | 1.55G/5.27G [00:27<00:58, 68.2MB/s][A
+ 30%|██▉       | 1.56G/5.27G [00:27<00:52, 76.2MB/s][A
+ 30%|██▉       | 1.57G/5.27G [00:28<00:49, 80.1MB/s][A
+ 30%|██▉       | 1.58G/5.27G [00:28<00:54, 72.6MB/s][A
+ 30%|███       | 1.59G/5.27G [00:28<01:06, 59.3MB/s][A
+ 30%|███       | 1.59G/5.27G [00:28<01:13, 53.5MB/s][A
+ 30%|███       | 1.60G/5.27G [00:28<01:11, 55.3MB/s][A
+ 30%|███       | 1.61G/5.27G [00:28<01:10, 56.3MB/s][A
+ 30%|███       | 1.61G/5.27G [00:28<01:07, 58.6MB/s][A
+ 30%|███       | 1.61G/5.27G [00:28<01:07, 58.6MB/s][A
+ 31%|███       | 1.61G/5.27G [00:28<01:14, 52.6MB/s][A
+ 31%|███       | 1.62G/5.27G [00:29<01:07, 57.9MB/s][A
+ 31%|███       | 1.63G/5.27G [00:29<00:51, 75.5MB/s][A
+ 31%|███       | 1.63G/5.27G [00:29<00:51, 75.5MB/s][A
+ 31%|███       | 1.64G/5.27G [00:29<00:54, 71.4MB/s][A
+ 31%|███       | 1.64G/5.27G [00:29<00:53, 73.4MB/s][A
+ 31%|███▏      | 1.65G/5.27G [00:29<00:50, 77.8MB/s][A
+ 31%|███▏      | 1.66G/5.27G [00:29<00:56, 68.8MB/s][A
+ 32%|███▏      | 1.67G/5.27G [00:29<00:59, 65.4MB/s][A
+ 32%|███▏      | 1.67G/5.27G [00:29<01:19, 49.0MB/s][A
+ 32%|███▏      | 1.68G/5.27G [00:30<01:11, 54.2MB/s][A
+ 32%|███▏      | 1.69G/5.27G [00:30<01:03, 61.1MB/s][A
+ 32%|███▏      | 1.69G/5.27G [00:30<01:02, 61.7MB/s][A
+ 32%|███▏      | 1.70G/5.27G [00:30<00:58, 65.9MB/s][A
+ 32%|███▏      | 1.71G/5.27G [00:30<00:58, 65.6MB/s][A
+ 32%|███▏      | 1.71G/5.27G [00:30<00:58, 65.6MB/s][A
+ 33%|███▎      | 1.72G/5.27G [00:30<00:52, 72.8MB/s][A
+ 33%|███▎      | 1.72G/5.27G [00:30<00:50, 75.5MB/s][A
+ 33%|███▎      | 1.73G/5.27G [00:30<00:56, 67.2MB/s][A
+ 33%|███▎      | 1.74G/5.27G [00:30<00:58, 64.7MB/s][A
+ 33%|███▎      | 1.75G/5.27G [00:31<00:58, 64.4MB/s][A
+ 33%|███▎      | 1.75G/5.27G [00:31<01:15, 50.4MB/s][A
+ 33%|███▎      | 1.76G/5.27G [00:31<01:09, 54.5MB/s][A
+ 34%|███▎      | 1.77G/5.27G [00:31<01:01, 61.1MB/s][A
+ 34%|███▎      | 1.78G/5.27G [00:31<00:58, 64.3MB/s][A
+ 34%|███▍      | 1.78G/5.27G [00:31<00:56, 65.9MB/s][A
+ 34%|███▍      | 1.79G/5.27G [00:31<00:53, 69.8MB/s][A
+ 34%|███▍      | 1.79G/5.27G [00:31<00:48, 76.6MB/s][A
+ 34%|███▍      | 1.79G/5.27G [00:31<00:48, 76.6MB/s][A
+ 34%|███▍      | 1.80G/5.27G [00:31<00:47, 78.9MB/s][A
+ 34%|███▍      | 1.80G/5.27G [00:31<00:47, 78.9MB/s][A
+ 34%|███▍      | 1.81G/5.27G [00:32<00:59, 62.4MB/s][A
+ 34%|███▍      | 1.81G/5.27G [00:32<00:55, 66.5MB/s][A
+ 35%|███▍      | 1.82G/5.27G [00:32<00:53, 69.6MB/s][A
+ 35%|███▍      | 1.83G/5.27G [00:32<01:05, 56.8MB/s][A
+ 35%|███▍      | 1.84G/5.27G [00:32<00:56, 65.1MB/s][A
+ 35%|███▌      | 1.86G/5.27G [00:32<00:37, 97.7MB/s][A
+ 35%|███▌      | 1.87G/5.27G [00:32<00:36, 101MB/s] [A
+ 35%|███▌      | 1.87G/5.27G [00:32<00:36, 101MB/s][A
+ 36%|███▌      | 1.88G/5.27G [00:33<00:47, 76.8MB/s][A
+ 36%|███▌      | 1.88G/5.27G [00:33<00:47, 76.3MB/s][A
+ 36%|███▌      | 1.89G/5.27G [00:33<00:51, 69.9MB/s][A
+ 36%|███▌      | 1.89G/5.27G [00:33<00:51, 69.9MB/s][A
+ 36%|███▌      | 1.90G/5.27G [00:33<00:50, 71.8MB/s][A
+ 36%|███▌      | 1.91G/5.27G [00:33<00:54, 66.5MB/s][A
+ 36%|███▋      | 1.91G/5.27G [00:33<01:03, 57.1MB/s][A
+ 36%|███▋      | 1.92G/5.27G [00:33<00:57, 63.0MB/s][A
+ 37%|███▋      | 1.93G/5.27G [00:33<00:52, 68.0MB/s][A
+ 37%|███▋      | 1.94G/5.27G [00:34<00:53, 67.4MB/s][A
+ 37%|███▋      | 1.94G/5.27G [00:34<00:58, 61.6MB/s][A
+ 37%|███▋      | 1.95G/5.27G [00:34<00:52, 67.7MB/s][A
+ 37%|███▋      | 1.96G/5.27G [00:34<01:01, 57.5MB/s][A
+ 37%|███▋      | 1.97G/5.27G [00:34<00:54, 65.6MB/s][A
+ 37%|███▋      | 1.97G/5.27G [00:34<00:51, 68.9MB/s][A
+ 38%|███▊      | 1.98G/5.27G [00:34<00:54, 64.5MB/s][A
+ 38%|███▊      | 1.99G/5.27G [00:34<00:53, 65.7MB/s][A
+ 38%|███▊      | 1.99G/5.27G [00:35<00:55, 63.1MB/s][A
+ 38%|███▊      | 2.00G/5.27G [00:35<01:01, 56.7MB/s][A
+ 38%|███▊      | 2.01G/5.27G [00:35<00:57, 61.2MB/s][A
+ 38%|███▊      | 2.01G/5.27G [00:35<00:53, 65.3MB/s][A
+ 38%|███▊      | 2.02G/5.27G [00:35<00:47, 73.2MB/s][A
+ 38%|███▊      | 2.02G/5.27G [00:35<00:52, 66.0MB/s][A
+ 38%|███▊      | 2.02G/5.27G [00:35<00:52, 66.0MB/s][A
+ 39%|███▊      | 2.03G/5.27G [00:35<00:49, 70.1MB/s][A
+ 39%|███▊      | 2.04G/5.27G [00:35<00:46, 74.8MB/s][A
+ 39%|███▉      | 2.05G/5.27G [00:35<00:44, 77.3MB/s][A
+ 39%|███▉      | 2.05G/5.27G [00:36<01:08, 50.2MB/s][A
+ 39%|███▉      | 2.06G/5.27G [00:36<01:15, 45.6MB/s][A
+ 39%|███▉      | 2.07G/5.27G [00:36<01:16, 45.2MB/s][A
+ 39%|███▉      | 2.07G/5.27G [00:36<01:04, 53.6MB/s][A
+ 39%|███▉      | 2.08G/5.27G [00:36<01:06, 51.7MB/s][A
+ 40%|███▉      | 2.09G/5.27G [00:36<00:58, 58.0MB/s][A
+ 40%|███▉      | 2.09G/5.27G [00:36<00:57, 58.9MB/s][A
+ 40%|███▉      | 2.10G/5.27G [00:37<00:50, 66.9MB/s][A
+ 40%|███▉      | 2.10G/5.27G [00:37<00:50, 66.9MB/s][A
+ 40%|███▉      | 2.11G/5.27G [00:37<00:48, 70.1MB/s][A
+ 40%|████      | 2.12G/5.27G [00:37<00:42, 79.9MB/s][A
+ 40%|████      | 2.12G/5.27G [00:37<00:42, 79.9MB/s][A
+ 40%|████      | 2.12G/5.27G [00:37<00:43, 78.1MB/s][A
+ 40%|████      | 2.13G/5.27G [00:37<00:57, 59.1MB/s][A
+ 41%|████      | 2.14G/5.27G [00:37<01:13, 45.9MB/s][A
+ 41%|████      | 2.14G/5.27G [00:37<01:06, 50.7MB/s][A
+ 41%|████      | 2.15G/5.27G [00:38<01:05, 51.1MB/s][A
+ 41%|████      | 2.16G/5.27G [00:38<01:08, 48.5MB/s][A
+ 41%|████      | 2.16G/5.27G [00:38<00:53, 62.5MB/s][A
+ 41%|████      | 2.16G/5.27G [00:38<00:53, 62.5MB/s][A
+ 41%|████      | 2.16G/5.27G [00:38<00:53, 62.5MB/s][A
+ 41%|████      | 2.17G/5.27G [00:38<00:54, 61.3MB/s][A
+ 41%|████▏     | 2.18G/5.27G [00:38<00:50, 65.8MB/s][A
+ 41%|████▏     | 2.18G/5.27G [00:38<00:48, 68.7MB/s][A
+ 42%|████▏     | 2.19G/5.27G [00:38<00:47, 70.3MB/s][A
+ 42%|████▏     | 2.20G/5.27G [00:38<00:49, 66.1MB/s][A
+ 42%|████▏     | 2.20G/5.27G [00:38<00:49, 66.1MB/s][A
+ 42%|████▏     | 2.21G/5.27G [00:38<00:55, 58.9MB/s][A
+ 42%|████▏     | 2.21G/5.27G [00:39<01:09, 47.4MB/s][A
+ 42%|████▏     | 2.22G/5.27G [00:39<01:20, 40.7MB/s][A
+ 42%|████▏     | 2.22G/5.27G [00:39<01:20, 40.7MB/s][A
+ 42%|████▏     | 2.22G/5.27G [00:39<01:17, 42.4MB/s][A
+ 42%|████▏     | 2.22G/5.27G [00:39<01:13, 44.3MB/s][A
+ 42%|████▏     | 2.23G/5.27G [00:39<01:06, 49.4MB/s][A
+ 42%|████▏     | 2.23G/5.27G [00:39<01:10, 46.4MB/s][A
+ 42%|████▏     | 2.23G/5.27G [00:39<01:10, 46.4MB/s][A
+ 42%|████▏     | 2.24G/5.27G [00:39<01:03, 51.2MB/s][A
+ 43%|████▎     | 2.25G/5.27G [00:39<00:58, 55.3MB/s][A
+ 43%|████▎     | 2.25G/5.27G [00:39<00:55, 58.4MB/s][A
+ 43%|████▎     | 2.25G/5.27G [00:39<00:55, 58.4MB/s][A
+ 43%|████▎     | 2.26G/5.27G [00:40<00:53, 60.4MB/s][A
+ 43%|████▎     | 2.26G/5.27G [00:40<00:53, 60.4MB/s][A
+ 43%|████▎     | 2.27G/5.27G [00:40<00:50, 64.0MB/s][A
+ 43%|████▎     | 2.27G/5.27G [00:40<00:52, 60.8MB/s][A
+ 43%|████▎     | 2.28G/5.27G [00:40<00:49, 65.3MB/s][A
+ 43%|████▎     | 2.28G/5.27G [00:40<00:46, 68.9MB/s][A
+ 43%|████▎     | 2.29G/5.27G [00:40<00:44, 72.5MB/s][A
+ 44%|████▎     | 2.30G/5.27G [00:40<00:44, 71.4MB/s][A
+ 44%|████▎     | 2.30G/5.27G [00:40<01:16, 41.9MB/s][A
+ 44%|████▍     | 2.31G/5.27G [00:41<01:16, 41.6MB/s][A
+ 44%|████▍     | 2.32G/5.27G [00:41<01:07, 47.3MB/s][A
+ 44%|████▍     | 2.32G/5.27G [00:41<01:00, 52.4MB/s][A
+ 44%|████▍     | 2.33G/5.27G [00:41<00:50, 62.2MB/s][A
+ 44%|████▍     | 2.33G/5.27G [00:41<00:50, 62.2MB/s][A
+ 44%|████▍     | 2.34G/5.27G [00:41<00:47, 66.4MB/s][A
+ 44%|████▍     | 2.34G/5.27G [00:41<00:50, 61.9MB/s][A
+ 45%|████▍     | 2.35G/5.27G [00:41<00:53, 59.2MB/s][A
+ 45%|████▍     | 2.35G/5.27G [00:41<00:53, 59.2MB/s][A
+ 45%|████▍     | 2.36G/5.27G [00:41<00:50, 62.5MB/s][A
+ 45%|████▍     | 2.36G/5.27G [00:42<00:55, 56.2MB/s][A
+ 45%|████▍     | 2.37G/5.27G [00:42<00:53, 58.6MB/s][A
+ 45%|████▌     | 2.38G/5.27G [00:42<01:00, 51.7MB/s][A
+ 45%|████▌     | 2.38G/5.27G [00:42<01:02, 49.7MB/s][A
+ 45%|████▌     | 2.39G/5.27G [00:42<01:22, 37.7MB/s][A
+ 45%|████▌     | 2.39G/5.27G [00:42<01:04, 47.7MB/s][A
+ 45%|████▌     | 2.39G/5.27G [00:42<01:04, 47.7MB/s][A
+ 45%|████▌     | 2.40G/5.27G [00:42<00:55, 55.5MB/s][A
+ 46%|████▌     | 2.40G/5.27G [00:42<00:49, 62.0MB/s][A
+ 46%|████▌     | 2.41G/5.27G [00:43<00:47, 64.6MB/s][A
+ 46%|████▌     | 2.41G/5.27G [00:43<00:48, 63.0MB/s][A
+ 46%|████▌     | 2.42G/5.27G [00:43<00:46, 66.6MB/s][A
+ 46%|████▌     | 2.43G/5.27G [00:43<00:46, 65.5MB/s][A
+ 46%|████▌     | 2.43G/5.27G [00:43<00:45, 67.5MB/s][A
+ 46%|████▋     | 2.44G/5.27G [00:43<00:47, 64.5MB/s][A
+ 46%|████▋     | 2.45G/5.27G [00:43<00:44, 68.8MB/s][A
+ 47%|████▋     | 2.46G/5.27G [00:43<00:48, 63.0MB/s][A
+ 47%|████▋     | 2.46G/5.27G [00:43<00:53, 56.9MB/s][A
+ 47%|████▋     | 2.47G/5.27G [00:44<00:56, 53.4MB/s][A
+ 47%|████▋     | 2.47G/5.27G [00:44<00:56, 53.4MB/s][A
+ 47%|████▋     | 2.47G/5.27G [00:44<01:01, 48.8MB/s][A
+ 47%|████▋     | 2.48G/5.27G [00:44<01:03, 47.2MB/s][A
+ 47%|████▋     | 2.48G/5.27G [00:44<01:03, 47.2MB/s][A
+ 47%|████▋     | 2.49G/5.27G [00:44<00:58, 51.6MB/s][A
+ 47%|████▋     | 2.49G/5.27G [00:44<00:52, 56.8MB/s][A
+ 47%|████▋     | 2.50G/5.27G [00:44<00:48, 61.9MB/s][A
+ 48%|████▊     | 2.51G/5.27G [00:44<00:47, 62.8MB/s][A
+ 48%|████▊     | 2.51G/5.27G [00:44<00:40, 73.5MB/s][A
+ 48%|████▊     | 2.51G/5.27G [00:44<00:40, 73.5MB/s][A
+ 48%|████▊     | 2.52G/5.27G [00:45<00:43, 68.2MB/s][A
+ 48%|████▊     | 2.53G/5.27G [00:45<00:45, 64.6MB/s][A
+ 48%|████▊     | 2.53G/5.27G [00:45<00:51, 57.5MB/s][A
+ 48%|████▊     | 2.54G/5.27G [00:45<00:52, 55.5MB/s][A
+ 48%|████▊     | 2.55G/5.27G [00:45<00:46, 62.9MB/s][A
+ 48%|████▊     | 2.55G/5.27G [00:45<00:42, 69.2MB/s][A
+ 48%|████▊     | 2.56G/5.27G [00:45<00:51, 56.2MB/s][A
+ 49%|████▊     | 2.56G/5.27G [00:45<00:48, 59.5MB/s][A
+ 49%|████▊     | 2.57G/5.27G [00:45<00:48, 60.4MB/s][A
+ 49%|████▉     | 2.58G/5.27G [00:46<00:45, 64.0MB/s][A
+ 49%|████▉     | 2.58G/5.27G [00:46<00:45, 63.5MB/s][A
+ 49%|████▉     | 2.59G/5.27G [00:46<00:44, 64.1MB/s][A
+ 49%|████▉     | 2.60G/5.27G [00:46<00:47, 60.1MB/s][A
+ 49%|████▉     | 2.60G/5.27G [00:46<00:47, 60.1MB/s][A
+ 49%|████▉     | 2.61G/5.27G [00:46<00:43, 66.2MB/s][A
+ 50%|████▉     | 2.61G/5.27G [00:46<00:50, 57.1MB/s][A
+ 50%|████▉     | 2.62G/5.27G [00:46<00:51, 55.7MB/s][A
+ 50%|████▉     | 2.62G/5.27G [00:46<00:51, 54.8MB/s][A
+ 50%|████▉     | 2.62G/5.27G [00:46<00:51, 54.8MB/s][A
+ 50%|████▉     | 2.63G/5.27G [00:47<00:55, 51.2MB/s][A
+ 50%|█████     | 2.64G/5.27G [00:47<00:49, 57.0MB/s][A
+ 50%|█████     | 2.65G/5.27G [00:47<00:44, 63.2MB/s][A
+ 50%|█████     | 2.65G/5.27G [00:47<00:41, 68.2MB/s][A
+ 50%|█████     | 2.65G/5.27G [00:47<00:42, 66.7MB/s][A
+ 50%|█████     | 2.66G/5.27G [00:47<00:45, 62.2MB/s][A
+ 51%|█████     | 2.67G/5.27G [00:47<00:45, 61.1MB/s][A
+ 51%|█████     | 2.68G/5.27G [00:47<00:42, 65.2MB/s][A
+ 51%|█████     | 2.68G/5.27G [00:47<00:42, 65.7MB/s][A
+ 51%|█████     | 2.69G/5.27G [00:48<00:45, 61.5MB/s][A
+ 51%|█████     | 2.70G/5.27G [00:48<00:49, 56.1MB/s][A
+ 51%|█████     | 2.70G/5.27G [00:48<00:46, 59.5MB/s][A
+ 51%|█████▏    | 2.71G/5.27G [00:48<00:46, 59.8MB/s][A
+ 51%|█████▏    | 2.71G/5.27G [00:48<00:53, 51.8MB/s][A
+ 51%|█████▏    | 2.72G/5.27G [00:48<00:58, 47.3MB/s][A
+ 52%|█████▏    | 2.72G/5.27G [00:48<00:56, 48.4MB/s][A
+ 52%|█████▏    | 2.73G/5.27G [00:48<00:47, 57.5MB/s][A
+ 52%|█████▏    | 2.74G/5.27G [00:48<00:42, 64.0MB/s][A
+ 52%|█████▏    | 2.74G/5.27G [00:49<00:46, 58.9MB/s][A
+ 52%|█████▏    | 2.75G/5.27G [00:49<00:42, 63.8MB/s][A
+ 52%|█████▏    | 2.76G/5.27G [00:49<00:39, 67.7MB/s][A
+ 52%|█████▏    | 2.76G/5.27G [00:49<00:41, 65.2MB/s][A
+ 53%|█████▎    | 2.77G/5.27G [00:49<00:49, 54.5MB/s][A
+ 53%|█████▎    | 2.78G/5.27G [00:49<00:46, 57.6MB/s][A
+ 53%|█████▎    | 2.79G/5.27G [00:49<00:43, 61.3MB/s][A
+ 53%|█████▎    | 2.79G/5.27G [00:49<00:49, 54.3MB/s][A
+ 53%|█████▎    | 2.80G/5.27G [00:50<01:04, 40.9MB/s][A
+ 53%|█████▎    | 2.80G/5.27G [00:50<01:04, 40.9MB/s][A
+ 53%|█████▎    | 2.80G/5.27G [00:50<00:54, 48.9MB/s][A
+ 53%|█████▎    | 2.81G/5.27G [00:50<00:45, 57.8MB/s][A
+ 53%|█████▎    | 2.82G/5.27G [00:50<00:45, 57.8MB/s][A
+ 54%|█████▎    | 2.83G/5.27G [00:50<00:46, 56.1MB/s][A
+ 54%|█████▎    | 2.83G/5.27G [00:50<00:41, 62.5MB/s][A
+ 54%|█████▍    | 2.84G/5.27G [00:50<00:40, 64.0MB/s][A
+ 54%|█████▍    | 2.85G/5.27G [00:50<00:42, 61.4MB/s][A
+ 54%|█████▍    | 2.85G/5.27G [00:51<00:47, 54.8MB/s][A
+ 54%|█████▍    | 2.86G/5.27G [00:51<00:43, 59.7MB/s][A
+ 54%|█████▍    | 2.87G/5.27G [00:51<00:48, 53.5MB/s][A
+ 55%|█████▍    | 2.89G/5.27G [00:51<00:32, 79.9MB/s][A
+ 55%|█████▍    | 2.90G/5.27G [00:51<00:33, 76.9MB/s][A
+ 55%|█████▌    | 2.90G/5.27G [00:51<00:39, 64.6MB/s][A
+ 55%|█████▌    | 2.91G/5.27G [00:51<00:39, 63.8MB/s][A
+ 55%|█████▌    | 2.91G/5.27G [00:51<00:39, 63.8MB/s][A
+ 55%|█████▌    | 2.92G/5.27G [00:52<00:38, 65.9MB/s][A
+ 55%|█████▌    | 2.92G/5.27G [00:52<00:40, 62.6MB/s][A
+ 56%|█████▌    | 2.93G/5.27G [00:52<00:35, 70.7MB/s][A
+ 56%|█████▌    | 2.93G/5.27G [00:52<00:35, 70.7MB/s][A
+ 56%|█████▌    | 2.94G/5.27G [00:52<00:33, 75.0MB/s][A
+ 56%|█████▌    | 2.95G/5.27G [00:52<00:31, 79.1MB/s][A
+ 56%|█████▌    | 2.96G/5.27G [00:52<00:29, 83.0MB/s][A
+ 56%|█████▌    | 2.96G/5.27G [00:52<00:29, 83.0MB/s][A
+ 56%|█████▌    | 2.96G/5.27G [00:52<00:41, 60.1MB/s][A
+ 56%|█████▋    | 2.97G/5.27G [00:52<00:38, 64.9MB/s][A
+ 56%|█████▋    | 2.98G/5.27G [00:53<00:38, 64.1MB/s][A
+ 56%|█████▋    | 2.98G/5.27G [00:53<00:38, 63.9MB/s][A
+ 57%|█████▋    | 2.99G/5.27G [00:53<00:41, 58.7MB/s][A
+ 57%|█████▋    | 2.99G/5.27G [00:53<00:41, 58.7MB/s][A
+ 57%|█████▋    | 2.99G/5.27G [00:53<00:41, 59.3MB/s][A
+ 57%|█████▋    | 3.00G/5.27G [00:53<00:40, 60.0MB/s][A
+ 57%|█████▋    | 3.01G/5.27G [00:53<00:37, 64.2MB/s][A
+ 57%|█████▋    | 3.01G/5.27G [00:53<00:32, 75.4MB/s][A
+ 57%|█████▋    | 3.01G/5.27G [00:53<00:32, 75.4MB/s][A
+ 57%|█████▋    | 3.02G/5.27G [00:53<00:32, 75.6MB/s][A
+ 57%|█████▋    | 3.03G/5.27G [00:53<00:31, 76.2MB/s][A
+ 58%|█████▊    | 3.04G/5.27G [00:53<00:30, 78.4MB/s][A
+ 58%|█████▊    | 3.04G/5.27G [00:54<00:33, 71.4MB/s][A
+ 58%|█████▊    | 3.05G/5.27G [00:54<00:49, 48.7MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:48, 49.1MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:44, 54.1MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:44, 54.1MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:44, 54.1MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:44, 54.1MB/s][A
+ 58%|█████▊    | 3.06G/5.27G [00:54<00:45, 51.7MB/s][A
+ 58%|█████▊    | 3.07G/5.27G [00:54<00:49, 47.9MB/s][A
+ 58%|█████▊    | 3.08G/5.27G [00:54<00:43, 54.8MB/s][A
+ 58%|█████▊    | 3.08G/5.27G [00:54<00:36, 64.7MB/s][A
+ 58%|█████▊    | 3.08G/5.27G [00:54<00:32, 72.0MB/s][A
+ 58%|█████▊    | 3.08G/5.27G [00:54<00:32, 72.0MB/s][A
+ 58%|█████▊    | 3.08G/5.27G [00:54<00:32, 72.0MB/s][A
+ 59%|█████▊    | 3.09G/5.27G [00:54<00:32, 72.2MB/s][A
+ 59%|█████▊    | 3.09G/5.27G [00:54<00:32, 72.2MB/s][A
+ 59%|█████▊    | 3.10G/5.27G [00:55<00:31, 73.1MB/s][A
+ 59%|█████▉    | 3.11G/5.27G [00:55<00:30, 76.3MB/s][A
+ 59%|█████▉    | 3.11G/5.27G [00:55<00:29, 79.5MB/s][A
+ 59%|█████▉    | 3.12G/5.27G [00:55<00:32, 70.2MB/s][A
+ 59%|█████▉    | 3.13G/5.27G [00:55<00:36, 63.2MB/s][A
+ 59%|█████▉    | 3.14G/5.27G [00:55<00:41, 55.0MB/s][A
+ 60%|█████▉    | 3.14G/5.27G [00:55<00:48, 47.2MB/s][A
+ 60%|█████▉    | 3.15G/5.27G [00:56<00:40, 56.4MB/s][A
+ 60%|█████▉    | 3.16G/5.27G [00:56<00:35, 64.1MB/s][A
+ 60%|██████    | 3.17G/5.27G [00:56<00:30, 73.1MB/s][A
+ 60%|██████    | 3.17G/5.27G [00:56<00:30, 73.1MB/s][A
+ 60%|██████    | 3.17G/5.27G [00:56<00:30, 73.1MB/s][A
+ 60%|██████    | 3.17G/5.27G [00:56<00:30, 74.8MB/s][A
+ 60%|██████    | 3.17G/5.27G [00:56<00:30, 74.8MB/s][A
+ 60%|██████    | 3.18G/5.27G [00:56<00:29, 77.0MB/s][A
+ 60%|██████    | 3.18G/5.27G [00:56<00:29, 77.0MB/s][A
+ 60%|██████    | 3.19G/5.27G [00:56<00:28, 79.5MB/s][A
+ 61%|██████    | 3.20G/5.27G [00:56<00:37, 59.5MB/s][A
+ 61%|██████    | 3.20G/5.27G [00:56<00:54, 40.5MB/s][A
+ 61%|██████    | 3.20G/5.27G [00:56<00:54, 40.5MB/s][A
+ 61%|██████    | 3.20G/5.27G [00:56<00:54, 40.5MB/s][A
+ 61%|██████    | 3.20G/5.27G [00:56<00:54, 40.5MB/s][A
+ 61%|██████    | 3.21G/5.27G [00:57<00:49, 44.6MB/s][A
+ 61%|██████    | 3.22G/5.27G [00:57<00:42, 52.3MB/s][A
+ 61%|██████    | 3.22G/5.27G [00:57<00:43, 50.1MB/s][A
+ 61%|██████    | 3.23G/5.27G [00:57<00:36, 60.6MB/s][A
+ 61%|██████    | 3.23G/5.27G [00:57<00:36, 60.6MB/s][A
+ 61%|██████▏   | 3.24G/5.27G [00:57<00:33, 64.6MB/s][A
+ 62%|██████▏   | 3.25G/5.27G [00:57<00:30, 72.0MB/s][A
+ 62%|██████▏   | 3.25G/5.27G [00:57<00:40, 53.1MB/s][A
+ 62%|██████▏   | 3.25G/5.27G [00:57<00:40, 53.1MB/s][A
+ 62%|██████▏   | 3.25G/5.27G [00:57<00:40, 53.1MB/s][A
+ 62%|██████▏   | 3.26G/5.27G [00:57<00:39, 54.6MB/s][A
+ 62%|██████▏   | 3.27G/5.27G [00:58<00:41, 51.7MB/s][A
+ 62%|██████▏   | 3.27G/5.27G [00:58<00:37, 58.1MB/s][A
+ 62%|██████▏   | 3.28G/5.27G [00:58<00:44, 48.5MB/s][A
+ 62%|██████▏   | 3.29G/5.27G [00:58<00:37, 57.4MB/s][A
+ 62%|██████▏   | 3.29G/5.27G [00:58<00:36, 58.6MB/s][A
+ 63%|██████▎   | 3.30G/5.27G [00:58<00:32, 64.3MB/s][A
+ 63%|██████▎   | 3.31G/5.27G [00:58<00:30, 68.4MB/s][A
+ 63%|██████▎   | 3.32G/5.27G [00:58<00:28, 72.5MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:38, 53.8MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:38, 53.8MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:34, 59.6MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:32, 64.9MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:32, 64.9MB/s][A
+ 63%|██████▎   | 3.33G/5.27G [00:59<00:32, 64.9MB/s][A
+ 63%|██████▎   | 3.34G/5.27G [00:59<00:31, 66.2MB/s][A
+ 63%|██████▎   | 3.35G/5.27G [00:59<00:32, 64.3MB/s][A
+ 64%|██████▎   | 3.35G/5.27G [00:59<00:29, 68.8MB/s][A
+ 64%|██████▎   | 3.36G/5.27G [00:59<00:30, 68.1MB/s][A
+ 64%|██████▍   | 3.37G/5.27G [00:59<00:39, 51.6MB/s][A
+ 64%|██████▍   | 3.38G/5.27G [00:59<00:24, 81.4MB/s][A
+ 64%|██████▍   | 3.39G/5.27G [01:00<00:24, 82.2MB/s][A
+ 64%|██████▍   | 3.40G/5.27G [01:00<00:28, 71.1MB/s][A
+ 65%|██████▍   | 3.41G/5.27G [01:00<00:26, 75.1MB/s][A
+ 65%|██████▍   | 3.42G/5.27G [01:00<00:26, 76.6MB/s][A
+ 65%|██████▍   | 3.42G/5.27G [01:00<00:26, 76.6MB/s][A
+ 65%|██████▍   | 3.43G/5.27G [01:00<00:25, 76.8MB/s][A
+ 65%|██████▌   | 3.43G/5.27G [01:00<00:25, 78.9MB/s][A
+ 65%|██████▌   | 3.44G/5.27G [01:00<00:25, 78.3MB/s][A
+ 65%|██████▌   | 3.44G/5.27G [01:00<00:25, 78.3MB/s][A
+ 65%|██████▌   | 3.45G/5.27G [01:00<00:25, 78.3MB/s][A
+ 66%|██████▌   | 3.46G/5.27G [01:00<00:27, 70.4MB/s][A
+ 66%|██████▌   | 3.47G/5.27G [01:01<00:22, 85.1MB/s][A
+ 66%|██████▌   | 3.48G/5.27G [01:01<00:25, 75.5MB/s][A
+ 66%|██████▌   | 3.48G/5.27G [01:01<00:30, 62.2MB/s][A
+ 66%|██████▌   | 3.49G/5.27G [01:01<00:31, 61.7MB/s][A
+ 66%|██████▋   | 3.50G/5.27G [01:01<00:29, 65.5MB/s][A
+ 66%|██████▋   | 3.51G/5.27G [01:01<00:27, 69.4MB/s][A
+ 67%|██████▋   | 3.51G/5.27G [01:01<00:29, 65.1MB/s][A
+ 67%|██████▋   | 3.52G/5.27G [01:01<00:27, 67.5MB/s][A
+ 67%|██████▋   | 3.53G/5.27G [01:02<00:25, 73.4MB/s][A
+ 67%|██████▋   | 3.53G/5.27G [01:02<00:25, 73.4MB/s][A
+ 67%|██████▋   | 3.53G/5.27G [01:02<00:25, 73.4MB/s][A
+ 67%|██████▋   | 3.54G/5.27G [01:02<00:24, 74.8MB/s][A
+ 67%|██████▋   | 3.54G/5.27G [01:02<00:24, 74.8MB/s][A
+ 67%|██████▋   | 3.54G/5.27G [01:02<00:25, 71.6MB/s][A
+ 67%|██████▋   | 3.54G/5.27G [01:02<00:26, 70.0MB/s][A
+ 67%|██████▋   | 3.55G/5.27G [01:02<00:34, 53.0MB/s][A
+ 67%|██████▋   | 3.56G/5.27G [01:02<00:32, 56.6MB/s][A
+ 68%|██████▊   | 3.56G/5.27G [01:02<00:36, 50.8MB/s][A
+ 68%|██████▊   | 3.57G/5.27G [01:02<00:32, 55.7MB/s][A
+ 68%|██████▊   | 3.58G/5.27G [01:03<00:25, 71.9MB/s][A
+ 68%|██████▊   | 3.58G/5.27G [01:03<00:25, 71.9MB/s][A
+ 68%|██████▊   | 3.58G/5.27G [01:03<00:25, 71.9MB/s][A
+ 68%|██████▊   | 3.59G/5.27G [01:03<00:27, 66.2MB/s][A
+ 68%|██████▊   | 3.59G/5.27G [01:03<00:26, 68.7MB/s][A
+ 68%|██████▊   | 3.60G/5.27G [01:03<00:25, 70.2MB/s][A
+ 68%|██████▊   | 3.60G/5.27G [01:03<00:25, 70.2MB/s][A
+ 68%|██████▊   | 3.61G/5.27G [01:03<00:28, 63.6MB/s][A
+ 69%|██████▊   | 3.62G/5.27G [01:03<00:25, 69.0MB/s][A
+ 69%|██████▊   | 3.62G/5.27G [01:03<00:26, 65.8MB/s][A
+ 69%|██████▉   | 3.63G/5.27G [01:03<00:27, 63.2MB/s][A
+ 69%|██████▉   | 3.64G/5.27G [01:04<00:38, 46.1MB/s][A
+ 69%|██████▉   | 3.64G/5.27G [01:04<00:37, 46.6MB/s][A
+ 69%|██████▉   | 3.65G/5.27G [01:04<00:30, 57.5MB/s][A
+ 69%|██████▉   | 3.65G/5.27G [01:04<00:30, 57.5MB/s][A
+ 69%|██████▉   | 3.66G/5.27G [01:04<00:27, 63.6MB/s][A
+ 69%|██████▉   | 3.66G/5.27G [01:04<00:27, 62.8MB/s][A
+ 70%|██████▉   | 3.67G/5.27G [01:04<00:25, 67.9MB/s][A
+ 70%|██████▉   | 3.67G/5.27G [01:04<00:25, 67.9MB/s][A
+ 70%|██████▉   | 3.68G/5.27G [01:04<00:22, 75.3MB/s][A
+ 70%|██████▉   | 3.68G/5.27G [01:04<00:22, 75.3MB/s][A
+ 70%|██████▉   | 3.69G/5.27G [01:04<00:24, 70.3MB/s][A
+ 70%|███████   | 3.69G/5.27G [01:04<00:23, 72.3MB/s][A
+ 70%|███████   | 3.70G/5.27G [01:05<00:24, 68.6MB/s][A
+ 70%|███████   | 3.71G/5.27G [01:05<00:27, 62.2MB/s][A
+ 70%|███████   | 3.71G/5.27G [01:05<00:36, 46.5MB/s][A
+ 70%|███████   | 3.71G/5.27G [01:05<00:42, 39.3MB/s][A
+ 71%|███████   | 3.72G/5.27G [01:05<00:43, 38.8MB/s][A
+ 71%|███████   | 3.73G/5.27G [01:05<00:36, 45.9MB/s][A
+ 71%|███████   | 3.73G/5.27G [01:05<00:31, 52.1MB/s][A
+ 71%|███████   | 3.74G/5.27G [01:05<00:28, 58.4MB/s][A
+ 71%|███████   | 3.75G/5.27G [01:06<00:24, 66.4MB/s][A
+ 71%|███████▏  | 3.76G/5.27G [01:06<00:23, 70.6MB/s][A
+ 71%|███████▏  | 3.77G/5.27G [01:06<00:25, 63.9MB/s][A
+ 72%|███████▏  | 3.77G/5.27G [01:06<00:24, 66.2MB/s][A
+ 72%|███████▏  | 3.78G/5.27G [01:06<00:22, 70.6MB/s][A
+ 72%|███████▏  | 3.79G/5.27G [01:06<00:24, 64.9MB/s][A
+ 72%|███████▏  | 3.80G/5.27G [01:06<00:25, 63.1MB/s][A
+ 72%|███████▏  | 3.80G/5.27G [01:06<00:29, 53.4MB/s][A
+ 72%|███████▏  | 3.81G/5.27G [01:07<00:22, 71.3MB/s][A
+ 73%|███████▎  | 3.83G/5.27G [01:07<00:16, 93.4MB/s][A
+ 73%|███████▎  | 3.83G/5.27G [01:07<00:16, 93.4MB/s][A
+ 73%|███████▎  | 3.84G/5.27G [01:07<00:19, 79.9MB/s][A
+ 73%|███████▎  | 3.84G/5.27G [01:07<00:19, 78.8MB/s][A
+ 73%|███████▎  | 3.85G/5.27G [01:07<00:22, 68.7MB/s][A
+ 73%|███████▎  | 3.86G/5.27G [01:07<00:23, 65.6MB/s][A
+ 73%|███████▎  | 3.87G/5.27G [01:07<00:22, 68.6MB/s][A
+ 73%|███████▎  | 3.87G/5.27G [01:07<00:22, 68.6MB/s][A
+ 73%|███████▎  | 3.88G/5.27G [01:08<00:20, 73.9MB/s][A
+ 74%|███████▎  | 3.88G/5.27G [01:08<00:23, 63.4MB/s][A
+ 74%|███████▎  | 3.89G/5.27G [01:08<00:24, 61.8MB/s][A
+ 74%|███████▍  | 3.90G/5.27G [01:08<00:26, 56.7MB/s][A
+ 74%|███████▍  | 3.90G/5.27G [01:08<00:23, 63.8MB/s][A
+ 74%|███████▍  | 3.91G/5.27G [01:08<00:25, 58.2MB/s][A
+ 74%|███████▍  | 3.92G/5.27G [01:08<00:23, 62.8MB/s][A
+ 74%|███████▍  | 3.92G/5.27G [01:08<00:23, 61.3MB/s][A
+ 75%|███████▍  | 3.93G/5.27G [01:09<00:21, 67.1MB/s][A
+ 75%|███████▍  | 3.94G/5.27G [01:09<00:24, 59.6MB/s][A
+ 75%|███████▍  | 3.95G/5.27G [01:09<00:22, 63.2MB/s][A
+ 75%|███████▍  | 3.95G/5.27G [01:09<00:21, 66.4MB/s][A
+ 75%|███████▍  | 3.95G/5.27G [01:09<00:22, 63.1MB/s][A
+ 75%|███████▌  | 3.96G/5.27G [01:09<00:19, 72.1MB/s][A
+ 75%|███████▌  | 3.96G/5.27G [01:09<00:19, 72.1MB/s][A
+ 75%|███████▌  | 3.96G/5.27G [01:09<00:19, 72.1MB/s][A
+ 75%|███████▌  | 3.97G/5.27G [01:09<00:23, 59.7MB/s][A
+ 75%|███████▌  | 3.98G/5.27G [01:09<00:21, 66.2MB/s][A
+ 76%|███████▌  | 3.98G/5.27G [01:09<00:25, 53.9MB/s][A
+ 76%|███████▌  | 3.99G/5.27G [01:10<00:25, 53.6MB/s][A
+ 76%|███████▌  | 4.00G/5.27G [01:10<00:21, 63.7MB/s][A
+ 76%|███████▌  | 4.00G/5.27G [01:10<00:21, 63.7MB/s][A
+ 76%|███████▌  | 4.00G/5.27G [01:10<00:21, 62.4MB/s][A
+ 76%|███████▌  | 4.01G/5.27G [01:10<00:24, 56.5MB/s][A
+ 76%|███████▌  | 4.02G/5.27G [01:10<00:21, 61.7MB/s][A
+ 76%|███████▋  | 4.02G/5.27G [01:10<00:22, 60.4MB/s][A
+ 76%|███████▋  | 4.03G/5.27G [01:10<00:19, 67.2MB/s][A
+ 77%|███████▋  | 4.04G/5.27G [01:10<00:18, 73.1MB/s][A
+ 77%|███████▋  | 4.04G/5.27G [01:10<00:18, 73.1MB/s][A
+ 77%|███████▋  | 4.05G/5.27G [01:11<00:19, 68.3MB/s][A
+ 77%|███████▋  | 4.05G/5.27G [01:11<00:20, 64.1MB/s][A
+ 77%|███████▋  | 4.06G/5.27G [01:11<00:21, 60.0MB/s][A
+ 77%|███████▋  | 4.06G/5.27G [01:11<00:23, 55.4MB/s][A
+ 77%|███████▋  | 4.07G/5.27G [01:11<00:21, 60.7MB/s][A
+ 77%|███████▋  | 4.08G/5.27G [01:11<00:21, 59.9MB/s][A
+ 77%|███████▋  | 4.09G/5.27G [01:11<00:18, 69.0MB/s][A
+ 78%|███████▊  | 4.09G/5.27G [01:11<00:20, 60.7MB/s][A
+ 78%|███████▊  | 4.10G/5.27G [01:12<00:21, 58.8MB/s][A
+ 78%|███████▊  | 4.11G/5.27G [01:12<00:19, 65.6MB/s][A
+ 78%|███████▊  | 4.12G/5.27G [01:12<00:18, 65.7MB/s][A
+ 78%|███████▊  | 4.12G/5.27G [01:12<00:18, 65.7MB/s][A
+ 78%|███████▊  | 4.12G/5.27G [01:12<00:17, 70.3MB/s][A
+ 78%|███████▊  | 4.13G/5.27G [01:12<00:16, 72.7MB/s][A
+ 78%|███████▊  | 4.14G/5.27G [01:12<00:20, 60.8MB/s][A
+ 79%|███████▊  | 4.15G/5.27G [01:12<00:19, 62.3MB/s][A
+ 79%|███████▊  | 4.15G/5.27G [01:12<00:18, 65.9MB/s][A
+ 79%|███████▉  | 4.16G/5.27G [01:12<00:18, 64.2MB/s][A
+ 79%|███████▉  | 4.17G/5.27G [01:13<00:20, 58.2MB/s][A
+ 79%|███████▉  | 4.17G/5.27G [01:13<00:18, 64.0MB/s][A
+ 79%|███████▉  | 4.17G/5.27G [01:13<00:18, 64.0MB/s][A
+ 79%|███████▉  | 4.18G/5.27G [01:13<00:19, 60.5MB/s][A
+ 79%|███████▉  | 4.19G/5.27G [01:13<00:18, 63.8MB/s][A
+ 79%|███████▉  | 4.19G/5.27G [01:13<00:19, 61.0MB/s][A
+ 80%|███████▉  | 4.20G/5.27G [01:13<00:17, 67.5MB/s][A
+ 80%|███████▉  | 4.20G/5.27G [01:13<00:17, 67.5MB/s][A
+ 80%|███████▉  | 4.21G/5.27G [01:13<00:17, 64.7MB/s][A
+ 80%|███████▉  | 4.21G/5.27G [01:13<00:16, 68.1MB/s][A
+ 80%|████████  | 4.22G/5.27G [01:13<00:15, 71.5MB/s][A
+ 80%|████████  | 4.23G/5.27G [01:14<00:15, 72.6MB/s][A
+ 80%|████████  | 4.23G/5.27G [01:14<00:23, 47.6MB/s][A
+ 80%|████████  | 4.24G/5.27G [01:14<00:19, 57.4MB/s][A
+ 81%|████████  | 4.25G/5.27G [01:14<00:18, 60.3MB/s][A
+ 81%|████████  | 4.26G/5.27G [01:14<00:19, 57.3MB/s][A
+ 81%|████████  | 4.26G/5.27G [01:14<00:19, 57.3MB/s][A
+ 81%|████████  | 4.26G/5.27G [01:14<00:17, 61.2MB/s][A
+ 81%|████████  | 4.27G/5.27G [01:14<00:16, 66.9MB/s][A
+ 81%|████████  | 4.28G/5.27G [01:15<00:15, 67.6MB/s][A
+ 81%|████████▏ | 4.29G/5.27G [01:15<00:14, 71.2MB/s][A
+ 81%|████████▏ | 4.29G/5.27G [01:15<00:14, 73.1MB/s][A
+ 81%|████████▏ | 4.29G/5.27G [01:15<00:13, 76.9MB/s][A
+ 81%|████████▏ | 4.29G/5.27G [01:15<00:13, 76.9MB/s][A
+ 82%|████████▏ | 4.30G/5.27G [01:15<00:13, 79.5MB/s][A
+ 82%|████████▏ | 4.31G/5.27G [01:15<00:13, 79.5MB/s][A
+ 82%|████████▏ | 4.32G/5.27G [01:15<00:27, 37.3MB/s][A
+ 82%|████████▏ | 4.32G/5.27G [01:15<00:27, 37.3MB/s][A
+ 82%|████████▏ | 4.33G/5.27G [01:15<00:20, 49.4MB/s][A
+ 82%|████████▏ | 4.34G/5.27G [01:15<00:18, 53.9MB/s][A
+ 82%|████████▏ | 4.34G/5.27G [01:16<00:17, 58.2MB/s][A
+ 82%|████████▏ | 4.34G/5.27G [01:16<00:17, 58.2MB/s][A
+ 82%|████████▏ | 4.34G/5.27G [01:16<00:17, 58.2MB/s][A
+ 82%|████████▏ | 4.35G/5.27G [01:16<00:15, 63.9MB/s][A
+ 82%|████████▏ | 4.35G/5.27G [01:16<00:15, 63.9MB/s][A
+ 83%|████████▎ | 4.36G/5.27G [01:16<00:14, 68.4MB/s][A
+ 83%|████████▎ | 4.37G/5.27G [01:16<00:13, 72.8MB/s][A
+ 83%|████████▎ | 4.37G/5.27G [01:16<00:12, 75.8MB/s][A
+ 83%|████████▎ | 4.38G/5.27G [01:16<00:12, 76.8MB/s][A
+ 83%|████████▎ | 4.39G/5.27G [01:16<00:16, 58.1MB/s][A
+ 83%|████████▎ | 4.40G/5.27G [01:16<00:13, 71.6MB/s][A
+ 83%|████████▎ | 4.40G/5.27G [01:16<00:13, 71.6MB/s][A
+ 84%|████████▎ | 4.41G/5.27G [01:17<00:15, 60.4MB/s][A
+ 84%|████████▎ | 4.41G/5.27G [01:17<00:13, 66.8MB/s][A
+ 84%|████████▍ | 4.42G/5.27G [01:17<00:13, 68.3MB/s][A
+ 84%|████████▍ | 4.42G/5.27G [01:17<00:13, 69.8MB/s][A
+ 84%|████████▍ | 4.43G/5.27G [01:17<00:11, 78.2MB/s][A
+ 84%|████████▍ | 4.43G/5.27G [01:17<00:11, 78.2MB/s][A
+ 84%|████████▍ | 4.44G/5.27G [01:17<00:11, 76.6MB/s][A
+ 84%|████████▍ | 4.44G/5.27G [01:17<00:11, 78.1MB/s][A
+ 84%|████████▍ | 4.45G/5.27G [01:17<00:11, 78.1MB/s][A
+ 84%|████████▍ | 4.45G/5.27G [01:17<00:11, 79.4MB/s][A
+ 84%|████████▍ | 4.45G/5.27G [01:17<00:11, 79.4MB/s][A
+ 85%|████████▍ | 4.46G/5.27G [01:17<00:17, 49.7MB/s][A
+ 85%|████████▍ | 4.46G/5.27G [01:17<00:17, 49.7MB/s][A
+ 85%|████████▍ | 4.48G/5.27G [01:18<00:09, 87.8MB/s][A
+ 85%|████████▍ | 4.48G/5.27G [01:18<00:09, 87.8MB/s][A
+ 85%|████████▌ | 4.49G/5.27G [01:18<00:12, 69.5MB/s][A
+ 85%|████████▌ | 4.50G/5.27G [01:18<00:09, 85.9MB/s][A
+ 85%|████████▌ | 4.51G/5.27G [01:18<00:09, 85.8MB/s][A
+ 86%|████████▌ | 4.51G/5.27G [01:18<00:09, 86.6MB/s][A
+ 86%|████████▌ | 4.51G/5.27G [01:18<00:09, 86.6MB/s][A
+ 86%|████████▌ | 4.52G/5.27G [01:18<00:09, 83.8MB/s][A
+ 86%|████████▌ | 4.52G/5.27G [01:18<00:09, 81.2MB/s][A
+ 86%|████████▌ | 4.52G/5.27G [01:18<00:09, 81.2MB/s][A
+ 86%|████████▌ | 4.53G/5.27G [01:18<00:12, 64.9MB/s][A
+ 86%|████████▌ | 4.54G/5.27G [01:18<00:07, 99.8MB/s][A
+ 86%|████████▌ | 4.54G/5.27G [01:18<00:07, 99.8MB/s][A
+ 86%|████████▋ | 4.55G/5.27G [01:19<00:07, 109MB/s] [A
+ 87%|████████▋ | 4.57G/5.27G [01:19<00:09, 84.3MB/s][A
+ 87%|████████▋ | 4.57G/5.27G [01:19<00:10, 70.5MB/s][A
+ 87%|████████▋ | 4.58G/5.27G [01:19<00:11, 64.4MB/s][A
+ 87%|████████▋ | 4.60G/5.27G [01:19<00:09, 78.5MB/s][A
+ 87%|████████▋ | 4.60G/5.27G [01:19<00:10, 68.6MB/s][A
+ 87%|████████▋ | 4.61G/5.27G [01:20<00:08, 79.3MB/s][A
+ 88%|████████▊ | 4.62G/5.27G [01:20<00:08, 78.5MB/s][A
+ 88%|████████▊ | 4.63G/5.27G [01:20<00:08, 80.0MB/s][A
+ 88%|████████▊ | 4.64G/5.27G [01:20<00:09, 73.7MB/s][A
+ 88%|████████▊ | 4.65G/5.27G [01:20<00:09, 72.5MB/s][A
+ 88%|████████▊ | 4.65G/5.27G [01:20<00:10, 64.2MB/s][A
+ 88%|████████▊ | 4.66G/5.27G [01:20<00:09, 66.2MB/s][A
+ 88%|████████▊ | 4.67G/5.27G [01:20<00:10, 63.8MB/s][A
+ 89%|████████▊ | 4.67G/5.27G [01:21<00:12, 51.8MB/s][A
+ 89%|████████▊ | 4.67G/5.27G [01:21<00:12, 51.8MB/s][A
+ 89%|████████▊ | 4.68G/5.27G [01:21<00:11, 54.5MB/s][A
+ 89%|████████▉ | 4.69G/5.27G [01:21<00:13, 47.6MB/s][A
+ 89%|████████▉ | 4.69G/5.27G [01:21<00:11, 53.9MB/s][A
+ 89%|████████▉ | 4.70G/5.27G [01:21<00:10, 60.5MB/s][A
+ 89%|████████▉ | 4.71G/5.27G [01:21<00:10, 56.2MB/s][A
+ 89%|████████▉ | 4.71G/5.27G [01:21<00:09, 60.8MB/s][A
+ 90%|████████▉ | 4.72G/5.27G [01:21<00:09, 65.7MB/s][A
+ 90%|████████▉ | 4.73G/5.27G [01:22<00:11, 53.1MB/s][A
+ 90%|████████▉ | 4.73G/5.27G [01:22<00:11, 53.1MB/s][A
+ 90%|████████▉ | 4.73G/5.27G [01:22<00:11, 53.1MB/s][A
+ 90%|████████▉ | 4.74G/5.27G [01:22<00:10, 54.4MB/s][A
+ 90%|████████▉ | 4.74G/5.27G [01:22<00:10, 56.8MB/s][A
+ 90%|█████████ | 4.75G/5.27G [01:22<00:10, 55.2MB/s][A
+ 90%|█████████ | 4.76G/5.27G [01:22<00:09, 58.8MB/s][A
+ 90%|█████████ | 4.77G/5.27G [01:22<00:09, 58.4MB/s][A
+ 90%|█████████ | 4.77G/5.27G [01:22<00:09, 57.2MB/s][A
+ 91%|█████████ | 4.78G/5.27G [01:22<00:09, 55.5MB/s][A
+ 91%|█████████ | 4.78G/5.27G [01:22<00:09, 55.5MB/s][A
+ 91%|█████████ | 4.78G/5.27G [01:22<00:09, 55.5MB/s][A
+ 91%|█████████ | 4.78G/5.27G [01:23<00:10, 51.6MB/s][A
+ 91%|█████████ | 4.79G/5.27G [01:23<00:09, 57.2MB/s][A
+ 91%|█████████ | 4.80G/5.27G [01:23<00:07, 65.2MB/s][A
+ 91%|█████████ | 4.81G/5.27G [01:23<00:07, 71.7MB/s][A
+ 91%|█████████▏| 4.81G/5.27G [01:23<00:08, 60.0MB/s][A
+ 91%|█████████▏| 4.82G/5.27G [01:23<00:08, 58.2MB/s][A
+ 91%|█████████▏| 4.83G/5.27G [01:23<00:09, 52.5MB/s][A
+ 92%|█████████▏| 4.83G/5.27G [01:23<00:08, 57.4MB/s][A
+ 92%|█████████▏| 4.84G/5.27G [01:24<00:07, 64.7MB/s][A
+ 92%|█████████▏| 4.85G/5.27G [01:24<00:07, 61.8MB/s][A
+ 92%|█████████▏| 4.85G/5.27G [01:24<00:07, 56.7MB/s][A
+ 92%|█████████▏| 4.86G/5.27G [01:24<00:08, 52.5MB/s][A
+ 92%|█████████▏| 4.87G/5.27G [01:24<00:07, 61.4MB/s][A
+ 92%|█████████▏| 4.87G/5.27G [01:24<00:07, 61.4MB/s][A
+ 92%|█████████▏| 4.87G/5.27G [01:24<00:06, 66.4MB/s][A
+ 92%|█████████▏| 4.88G/5.27G [01:24<00:06, 66.4MB/s][A
+ 92%|█████████▏| 4.88G/5.27G [01:24<00:06, 66.4MB/s][A
+ 93%|█████████▎| 4.88G/5.27G [01:24<00:05, 72.0MB/s][A
+ 93%|█████████▎| 4.89G/5.27G [01:24<00:06, 62.1MB/s][A
+ 93%|█████████▎| 4.90G/5.27G [01:25<00:07, 55.2MB/s][A
+ 93%|█████████▎| 4.90G/5.27G [01:25<00:07, 54.3MB/s][A
+ 93%|█████████▎| 4.91G/5.27G [01:25<00:06, 61.0MB/s][A
+ 93%|█████████▎| 4.91G/5.27G [01:25<00:05, 66.6MB/s][A
+ 93%|█████████▎| 4.92G/5.27G [01:25<00:06, 61.3MB/s][A
+ 93%|█████████▎| 4.92G/5.27G [01:25<00:05, 66.6MB/s][A
+ 93%|█████████▎| 4.93G/5.27G [01:25<00:06, 54.5MB/s][A
+ 93%|█████████▎| 4.93G/5.27G [01:25<00:06, 54.5MB/s][A
+ 94%|█████████▎| 4.94G/5.27G [01:25<00:06, 58.9MB/s][A
+ 94%|█████████▍| 4.95G/5.27G [01:25<00:05, 63.7MB/s][A
+ 94%|█████████▍| 4.95G/5.27G [01:26<00:06, 56.9MB/s][A
+ 94%|█████████▍| 4.96G/5.27G [01:26<00:06, 48.9MB/s][A
+ 94%|█████████▍| 4.97G/5.27G [01:26<00:05, 56.1MB/s][A
+ 94%|█████████▍| 4.97G/5.27G [01:26<00:06, 53.4MB/s][A
+ 94%|█████████▍| 4.97G/5.27G [01:26<00:06, 53.4MB/s][A
+ 94%|█████████▍| 4.98G/5.27G [01:26<00:05, 53.6MB/s][A
+ 94%|█████████▍| 4.98G/5.27G [01:26<00:05, 54.8MB/s][A
+ 94%|█████████▍| 4.98G/5.27G [01:26<00:05, 54.8MB/s][A
+ 94%|█████████▍| 4.98G/5.27G [01:26<00:05, 54.8MB/s][A
+ 95%|█████████▍| 4.99G/5.27G [01:26<00:04, 62.1MB/s][A
+ 95%|█████████▍| 4.99G/5.27G [01:26<00:04, 62.1MB/s][A
+ 95%|█████████▍| 4.99G/5.27G [01:26<00:05, 58.7MB/s][A
+ 95%|█████████▍| 5.00G/5.27G [01:26<00:05, 58.7MB/s][A
+ 95%|█████████▍| 5.00G/5.27G [01:26<00:05, 58.7MB/s][A
+ 95%|█████████▍| 5.00G/5.27G [01:26<00:04, 61.7MB/s][A
+ 95%|█████████▍| 5.01G/5.27G [01:27<00:05, 53.5MB/s][A
+ 95%|█████████▌| 5.01G/5.27G [01:27<00:04, 64.0MB/s][A
+ 95%|█████████▌| 5.01G/5.27G [01:27<00:04, 64.0MB/s][A
+ 95%|█████████▌| 5.02G/5.27G [01:27<00:04, 60.0MB/s][A
+ 95%|█████████▌| 5.02G/5.27G [01:27<00:04, 60.0MB/s][A
+ 95%|█████████▌| 5.03G/5.27G [01:27<00:04, 63.5MB/s][A
+ 95%|█████████▌| 5.04G/5.27G [01:27<00:04, 54.5MB/s][A
+ 95%|█████████▌| 5.04G/5.27G [01:27<00:05, 49.9MB/s][A
+ 96%|█████████▌| 5.04G/5.27G [01:27<00:04, 54.0MB/s][A
+ 96%|█████████▌| 5.04G/5.27G [01:27<00:04, 57.9MB/s][A
+ 96%|█████████▌| 5.05G/5.27G [01:27<00:04, 55.6MB/s][A
+ 96%|█████████▌| 5.06G/5.27G [01:27<00:03, 62.6MB/s][A
+ 96%|█████████▌| 5.06G/5.27G [01:28<00:04, 56.5MB/s][A
+ 96%|█████████▌| 5.07G/5.27G [01:28<00:03, 57.6MB/s][A
+ 96%|█████████▋| 5.08G/5.27G [01:28<00:03, 66.6MB/s][A
+ 96%|█████████▋| 5.09G/5.27G [01:28<00:02, 74.2MB/s][A
+ 97%|█████████▋| 5.09G/5.27G [01:28<00:02, 67.6MB/s][A
+ 97%|█████████▋| 5.10G/5.27G [01:28<00:03, 58.7MB/s][A
+ 97%|█████████▋| 5.11G/5.27G [01:28<00:02, 67.0MB/s][A
+ 97%|█████████▋| 5.12G/5.27G [01:28<00:02, 63.1MB/s][A
+ 97%|█████████▋| 5.12G/5.27G [01:29<00:02, 67.4MB/s][A
+ 97%|█████████▋| 5.13G/5.27G [01:29<00:02, 54.7MB/s][A
+ 97%|█████████▋| 5.14G/5.27G [01:29<00:02, 58.2MB/s][A
+ 98%|█████████▊| 5.14G/5.27G [01:29<00:02, 65.2MB/s][A
+ 98%|█████████▊| 5.14G/5.27G [01:29<00:02, 65.2MB/s][A
+ 98%|█████████▊| 5.15G/5.27G [01:29<00:01, 68.3MB/s][A
+ 98%|█████████▊| 5.16G/5.27G [01:29<00:01, 73.0MB/s][A
+ 98%|█████████▊| 5.17G/5.27G [01:29<00:01, 74.2MB/s][A
+ 98%|█████████▊| 5.17G/5.27G [01:29<00:01, 56.6MB/s][A
+ 98%|█████████▊| 5.18G/5.27G [01:30<00:02, 49.6MB/s][A
+ 98%|█████████▊| 5.18G/5.27G [01:30<00:02, 43.8MB/s][A
+ 98%|█████████▊| 5.18G/5.27G [01:30<00:02, 43.8MB/s][A
+ 98%|█████████▊| 5.19G/5.27G [01:30<00:01, 49.1MB/s][A
+ 98%|█████████▊| 5.19G/5.27G [01:30<00:01, 55.8MB/s][A
+ 99%|█████████▊| 5.20G/5.27G [01:30<00:01, 45.4MB/s][A
+ 99%|█████████▊| 5.20G/5.27G [01:30<00:01, 45.4MB/s][A
+ 99%|█████████▊| 5.21G/5.27G [01:30<00:01, 49.6MB/s][A
+ 99%|█████████▉| 5.21G/5.27G [01:30<00:01, 53.7MB/s][A
+ 99%|█████████▉| 5.22G/5.27G [01:30<00:00, 59.3MB/s][A
+ 99%|█████████▉| 5.23G/5.27G [01:30<00:00, 63.9MB/s][A
+ 99%|█████████▉| 5.24G/5.27G [01:31<00:00, 69.3MB/s][A
+ 99%|█████████▉| 5.24G/5.27G [01:31<00:00, 72.9MB/s][A
+100%|█████████▉| 5.25G/5.27G [01:31<00:00, 76.6MB/s][A
+100%|█████████▉| 5.26G/5.27G [01:31<00:00, 56.8MB/s][A
+100%|█████████▉| 5.26G/5.27G [01:31<00:00, 48.4MB/s][A
+100%|█████████▉| 5.27G/5.27G [01:31<00:00, 49.6MB/s][A
+100%|██████████| 5.27G/5.27G [01:31<00:00, 61.7MB/s]
+data ready: ['GCP-Coupons-Instructions.rtf', 'README.md', 'description.md', 'labels.csv', 'sample_submission.csv', 'test.csv']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT_SWARM.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=canopus_pi swarm-2=mimosa_omicron swarm-3=aldebaran_omicron
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_intro.md =====
+# canopus_pi — intro & plan
+Hi swarm! I'm **canopus_pi** (swarm-1). Task: NYC taxi fare regression, RMSE (lower better). 55.4M train rows, 9,914 test rows.
+My proposed plan / roles:
+- **canopus_pi**: build a strong shared feature pipeline + LightGBM baseline, then scale up. I'll publish holdout RMSE and reusable feature-engineering code to `workspaces/canopus_pi/` and share paths.
+- Suggest **mimosa_omicron** focus on a complementary model family (CatBoost or XGBoost) or a deep / embedding approach, and **aldebaran_omicron** focus on spatial feature engineering (grid/cluster target-encoding, airport/toll detection, distance variants) + EDA/cleaning rules.
+Key facts I'll validate: cleaning (fare 0<y<=500, bbox NYC, passenger 0..8), holdout = random 1M from train (fixed seed). Features: haversine/manhattan/bearing, datetime (yr, mo, day, hour, dow), airport distances (JFK/LGA/EWR), coord deltas, spatial target encoding.
+Please reply with what you'll take so we don't duplicate. I'll post my first baseline RMSE soon. #plan #communication
+===== mimosa_omicron_intro_plan.md =====
+# mimosa_omicron — intro & role
+Hi swarm, I'm **mimosa_omicron** (swarm-2). Agreed with [[canopus_pi_intro.md]].
+**My role**: complementary boosting models + GPU neural net for ensemble diversity. I will:
+1. Build my own fast pandas/parquet pipeline (independently, as backup to canopus).
+2. Train **XGBoost (GPU hist)** and **LightGBM** variants; try a **PyTorch MLP/embedding** model on A100.
+3. Publish `holdout` predictions (npy/csv) + OOF so the swarm can blend.
+**CRITICAL — shared holdout so we can ensemble.** Proposal (deterministic, reproducible without sharing files):
+- holdout mask = `row_index % 100 == 0` where `row_index` is 0-based order in `data/labels.csv`.
+- => ~554k rows, train on the other 99%. Everyone uses the SAME rows.
+- I'll publish `workspaces/mimosa_omicron/holdout_idx.npy` (indices + keys) for convenience.
+- Test predictions are made on `data/test.csv` as-is.
+If canopus already fixed a random-1M-seed holdout, please publish exact `np.random` construction or the index file so I can match. Otherwise let's adopt modulo-100.
+**Compute note**: I'll run one heavy GPU/CPU job at a time. Plan: XGBoost GPU `hist` on ~55M x ~25 features, 8GB cgroup first, request more via board if needed. #plan #communication #model_selection
+===== aldebaran_omicron_intro_plan.md =====
+# aldebaran_omicron — intro & plan
+Hi swarm! I'm **aldebaran_omicron**. Senior DS, focused on strong tabular GBDT baseline + feature engineering for NYC taxi fare (RMSE).
+## My reading
+- Train: `data/labels.csv` = 55.4M rows, test = 9,914 rows. Test has bad coords too (lon up to +40, lat negative) → keep robust.
+- Train and test both span 2009-01..2015-06 → **random holdout** is the right validation (not time split).
+- Metric RMSE. Target ~2.8-3.1.
+## Plan (I'll own this, others can build on it)
+1. Chunked feature engineering over full 55M → parquet (`haversine`, deltas, bearing, datetime, airport/center distances).  #feature_engineering #data_pipeline
+2. Train LightGBM on a large subsample (memory-safe under 8G cgroup), random holdout ~1M rows for RMSE.
+3. Publish holdout RMSE + model/params on board; save OOF/test preds for ensembling.
+## Division of labor proposal (reply on board!)
+- **Agent A (me)**: full-data FE parquet + LightGBM baseline. Others can reuse my `/workspaces/aldebaran_omicron/features_train.parquet` **to avoid duplicate 55M parsing**.
+- **Agent B**: alternative model (XGBoost/CatBoost/NN) or stronger FE (OSRM-free road distance proxy, kNN target encoding on grid cells).
+- **Agent C**: target transform / outlier cleaning study + postprocessing (clip, calibration).
+- **Agent D**: ensembling owner (stack OOF preds once we have 2+ models).
+Please tell me your roles and avoid re-parsing the raw CSV if you can reuse my parquet. Post status here.
+#plan #communication
+===== mimosa_omicron_status_prep.md =====
+# mimosa_omicron — starting feature pipeline (status)
+Running `workspaces/mimosa_omicron/prep.py` now: chunked CSV -> parquet with cleaning + ~35 features.
+Cleaning: `2.5 <= fare <= 500`, all coords in `[-75.5,-72.5]x[39.5,42.0]`, `0 <= passenger <= 8`, `0 <= dist <= 300km` (drops (0,0) / corrupt GPS). Keeps `orig_idx` so the modulo-100 holdout is reproducible AFTER cleaning.
+Features: raw coords, dlat/dlon, abs deltas, haversine `dist`, manhattan-style `dist_man`, bearing, airport dists (JFK/LGA/EWR pickup+dropoff+min), midtown/lower-Manhattan dists, datetime (year, month, day, weekday, hour, minute, doy, week), hour sin/cos, weekend flag.
+Output: `workspaces/mimosa_omicron/feat/part_*.parquet`.
+**Holdout agreement reminder**: `orig_idx % 100 == 0` (~554k rows). Please use this for any blended/OOF predictions. #data_pipeline #feature_engineering #status #communication
+===== aldebaran_omicron_ack_holdout.md =====
+# aldebaran_omicron — ack + holdout + shared parquet
+Agree with [[mimosa_omicron_intro_plan]] on the **shared holdout**: `orig_idx % 100 == 0`, where `orig_idx` = 0-based row order in `data/labels.csv`. I will use exactly that for all my validation so our OOF/blends align.
+**Shared FE parquet (ready soon):** `workspaces/aldebaran_omicron/features_train.parquet`
+- All 55,413,942 rows, **original order preserved, no cleaning applied** (so `row_position == orig_idx`; just add `np.arange(n)` after loading if needed).
+- ~25 float32 cols: raw coords, deltas/abs deltas, haversine `dist`, bearing, dist to center/JFK/LGA/EWR (pickup) + center (dropoff), year/month/day/hour/minute/weekday/dayofyear/weekofyear, fare_amount, passenger_count.
+- `zstd` compressed, pyarrow-readable. **Please reuse it instead of re-parsing the 5.6GB CSV** — saves CPU and keeps one canonical feature set. It is fine to read it and add your own columns/filters.
+**Role split suggestion** (to reduce duplication with [[canopus_pi_intro]] who also planned FE+LGBM):
+- **me**: full-data parquet + tuned LightGBM (largest training subsample), publish holdout preds (`holdout_pred_aldebaran.npy`) + test preds.
+- **canopus_pi**: XGBoost/hist or a *different* LGBM feature recipe (so we get model diversity) — your FE is fine, but consider taking one model family I don't.
+- **mimosa_omicron**: XGBoost GPU + NN (already stated) → good diversity.
+- Later: 1-2 of us do a stacked blend on the shared holdout.
+I'll report holdout RMSE as `<metric>..<\metric>` and save prediction arrays in my workspace. #communication #model_selection
+[board] сообщений 5, новых 5, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_baseline_xgb.md =====
+# mimosa_omicron — first XGB baseline (GPU)
+Pipeline [[mimosa_omicron_status_prep.md]] done: **54,256,414** rows after cleaning (from 55,413,942).
+**XGBoost GPU hist baseline** on 20% random subsample (10.85M train / 108.8k holdout = `orig_idx%100==0`), 35 features, depth 9, 500 rounds:
+- holdout RMSE = `<metric>3.52986<\metric>` (best_iter=498, still improving).
+- Run: 45s on A100. Test preds ready next.
+**Important findings:**
+1. **Extreme fares dominate RMSE.** Only 0.027% of holdout has fare>100, but they add ~1.87 to MSE (RMSE 3.25 for y<=100 vs 3.53 for all). Test has only 9,914 rows => ~2-3 such rows; test RMSE is high-variance. Do NOT over-clean the target: predicting the conditional mean (incl. tail) is optimal for RMSE.
+2. **Test has 230/9914 (2.3%) rows with corrupt coords** (mostly exactly 0,0; some huge lon>40/lat<0). Our cleaning drops such rows from train, so model never sees them. Need a special handling: impute spatial features to train medians + flag, OR a separate non-spatial model. I will handle and validate by corrupting holdout rows. **This can move test RMSE by ~0.2**, important.
+Next: full 54M train with more rounds, then richer features (rotated coords, frequency/kNN spatial encoding) and a PyTorch MLP on A100 for ensemble. #model_selection #insight #training #communication
+===== canopus_pi_status1.md =====
+# canopus_pi — status: aligned holdout + TE features, first LGBM running
+**Holdout aligned** with [[mimosa_omicron_intro_plan]] / [[aldebaran_omicron_ack_holdout]]: I now carry `orig_idx` (0-based row order in `data/labels.csv`) through my prep, and validate on **`orig_idx % 100 == 0`** (~554k rows). My holdout preds will be saved as `(orig_idx, y, pred)` so we can blend by `orig_idx` regardless of cleaning differences.
+**My features** (19M-row random 35% subsample, cleaned: 2.5<=fare<=500, coords bbox, 0<=pax<=8):
+raw coords + deltas, haversine, manhattan, bearing(sin/cos), **Manhattan-grid-rotated coords (29°)** for pickup/dropoff, airport dists (JFK/LGA/EWR) pickup+dropoff, center dists, datetime (yr/mo/day/wd/hr/min/tod sin/cos/weekend), passenger.
+Plus **OOF 5-fold target encoding** (smoothed) for: 1km pickup cell, 1km dropoff cell, pickup cell^3, and OD-pair mean fare + log-counts.
+Training LGBM (num_leaves 127-255, ~8-12M rows) now; will post `<metric>..<\metric>` and holdout preds path. #status #feature_engineering #model_selection #communication
+[board] сообщений 7, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_parquet_ready.md =====
+# aldebaran_omicron — shared FE parquet READY
+`workspaces/aldebaran_omicron/features_train.parquet` is ready: **55,413,942 rows, 74 row groups, 2.7GB zstd**, original CSV row order preserved (so row position = `orig_idx`).
+Columns (all float32): `fare_amount, passenger_count, plat, plon, dlat, dlon, rlat, rlon, arlat, arlon, dist, dist_center_p, dist_jfk_p, dist_lga_p, dist_ewr_p, dist_center_d, bearing, year, month, day, hour, minute, weekday, dayofyear, weekofyear`.
+Read with `pyarrow.parquet.ParquetFile(...).iter_batches(batch_size=750_000)` to stay under the 8G cgroup (full table is ~5.5GB). **Please reuse instead of re-parsing labels.csv.** Add your own extra features on top.
+My cleaning/FE recipe (for reference): detect corrupt endpoints (outside lon[-75,-72] / lat[39,42]) → set all spatial features to NaN + `corrupt` flag; keep fare 2.5..500, passenger 0..8; LightGBM handles NaN natively so the model learns a fallback for the 230 corrupt test rows.  #data_pipeline #feature_engineering #insight
+Training LGBM now; will post `<metric>` soon.
+[board] сообщений 8, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 8, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_corrupt_insight.md =====
+# aldebaran_omicron — IMPORTANT: separate corrupt-coord handling (validates [[mimosa_omicron_baseline_xgb]])
+Confirmed empirically. Two experiments:
+1. LGBM on 16.5M rows, **corrupt rows kept with spatial=NaN**, evaluated on FULL `orig_idx%100==0` holdout: `<metric>4.4168<\metric>` (plateaued).
+2. Same features, corrupt rows **dropped**, 1.07M rows only, evaluated on valid-coord holdout only: `<metric>3.9425<\metric>`.
+So the NaN-in-main-model trick is harmful: NaN spatial rows get routed to high-fare leaves. **Correct recipe:**
+- Train/eval the main model ONLY on valid-coord rows (`lon∈[-75,-72], lat∈[39,42]`); validation RMSE must be reported on valid-coord holdout (this is the comparable number across agents).
+- Handle test corrupt rows (230/9914 = 2.3%) with a **separate fallback model** on non-spatial features (time + passenger + valid-endpoint center/airport distance, NaN if that endpoint is corrupt). Fallback RMSE on corrupt holdout ≈ std of fares (~9.7) → unavoidable MSE floor. Expected test RMSE ≈ sqrt(0.977·RMSE_valid² + 0.023·RMSE_fallback²).
+**Recommendation for the swarm:** report `<metric>` on the **valid-coord** holdout only, and state your fallback handling. Blending weights should be fit on valid-coord holdout rows. #insight #data_preprocessing #model_selection #communication
+[board] сообщений 9, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_xgb_full_result.md =====
+# mimosa_omicron — full-data XGB + TE result + test preds ready
+Agrees with [[aldebaran_omicron_corrupt_insight]]: I too train/evaluate **valid-coord only**, and use a **separate non-spatial fallback model** for the 230 corrupt test rows. My fallback holdout RMSE = 9.497 (≈ fare std; unavoidable ~2.07 MSE floor for 2.3% of test).
+## Model A: XGBoost GPU, full 54.26M valid rows (recommended comparable metric)
+- Features (54): raw coords, deltas/abs, haversine, manhattan, bearing, airport dists (JFK/LGA/EWR pickup+dropoff+sum+flags), midtown/lower dists, datetime, **45°-rotated coords**, pickup/dropoff **cell counts + route count**, and **OOF 5-fold smoothed target encodings** for pickup cell, dropoff cell, OD-route (0.01° grid; only 194k unique routes).
+- depth 10, eta .03, 4048 best iters, 54M rows, ~12 min on A100.
+- **valid-coord holdout RMSE = `<metric>3.35785<\metric>`** (baseline no-TE full-data XGB was 3.39224).
+- Expected actual test ≈ sqrt(0.977·3.358² + 0.023·9.497²) ≈ **3.62** (corrupt floor included).
+## Artifacts for blending / reuse (in `workspaces/mimosa_omicron/`)
+- OOF-aligned holdout: `holdout_pred_xgb2_full.npy`, `holdout_orig_xgb2_full.npy` (= orig_idx values, sorted ascending), `holdout_true_xgb2_full.npy`.
+- Holdout preds from other tags also follow same naming.
+- Test predictions (fallback applied, clipped [2.5,500]): `submission_xgb2_full.csv` — currently my best; safe as current swarm fallback.
+- Reusable code: `prep.py` (raw->features), `add_features.py` (v2 + rotated + counts), `te.py` (OOF TE + test maps), `predict.py`.
+**To blend**: load my `holdout_orig` + preds and align to your own `orig_idx` arrays. I'll write a blender script that takes any `(orig_idx, pred)` pairs.
+Next: PyTorch MLP/embedding net on A100 (diversity), plus XGB variants (different seeds/params/feature subsets) and a LightGBM-on-my-features for ensemble. #training #feature_engineering #ensembling #status #insight
+===== aldebaran_omicron_gpu_full.md =====
+# aldebaran_omicron — status + GPU/full-data plan (coordination)
+Great progress [[mimosa_omicron_baseline_xgb]] — your `xgb2_full` is strong (I recomputed your saved holdout: `<metric>3.3579<\metric>` on 542,686 rows, y≤100 `<metric>3.131<\metric>`). My best CPU LGBM on 13.4M rows (same holdout) is `<metric>3.876<\metric>`, so **data volume + full-data training is the main lever**, not features alone.
+**What I'm doing now** (to add a *different* full-data model for the blend):
+1. Building aligned TE/count features by reusing your `feat_v2` + `te_maps.npz` (thanks!). Fields: `te_pcell_oof, te_dcell_oof, te_route_oof, p/d/route counts`, aligned back to `orig_idx` (my parquet = original row order). Ref [[mimosa_omicron_status_prep.md]].
+2. Training a **full-data XGBoost GPU** on my feature set + those TE features (held-out `orig_idx%100==0`, valid coords only). This should land ~3.3-3.4 but with different hyperparams/features → good blend partner.
+3. Then a **CatBoost GPU** or a LightGBM-GPU full-data model for algorithm diversity, and I'll fit blend weights on our shared holdout.
+**GPU coordination:** A100 80GB is currently idle. I'll keep to **one GPU job at a time** (~15 min each). @mimosa_omicron if you need the GPU, say so on the board / or I'll pause. Memory: my full-data job needs ~12GB RAM; I'll scope it at MemoryMax=20G. Server has ~480GB free, only 3 agents — please reply here if you plan a >20G job simultaneously.
+**For the final blend**, please save holdout preds as `.npy` with the matching `orig_idx` array (mimosa already does this; canopus said it will). I'll align by `orig_idx` intersection and publish blend weights + the ensemble submission. #communication #ensembling #model_selection #training
+[board] сообщений 11, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_corrupt_fallback_v2.md =====
+# mimosa_omicron — CORRECTION: corrupt rows are heavier-tailed; trained corrupt-specific fallback
+Correction to my earlier estimate in [[mimosa_omicron_xgb_full_result]] (I assumed corrupt fares were typical). **They are NOT** — validated on all 1,152,694 valid-fare corrupt rows from the raw train CSV:
+- corrupt-coord rows: mean **12.19**, std **13.40**, MSE when predicting the mean = **179.6** (valid rows have only 0.03% fare>100; corrupt rows have **0.23%**, 8x more tail).
+- => the 230 corrupt test rows are a **large expected MSE floor** (~0.023·~210 ≈ 4.8 MSE), not 2.07. Honest expected test RMSE ≈ sqrt(0.977·3.358² + 0.023·14.5²) ≈ **3.98**.
+- Test corrupt breakdown: 230 total = 191 exact (0,0) both, 39 have exactly one valid endpoint (pickup-only 15 / dropoff-only 17 overlap), so partial spatial info exists for ~39.
+**Trained a corrupt-specific fallback** (`build_corrupt.py` -> `corrupt_feat.parquet`, `train_corrupt_fb.py`): XGB on non-spatial + valid-endpoint landmark distances/coords + which-endpoint-corrupt flags.
+- corrupt-holdout RMSE = `<metric>14.49340<\metric>` (vs const-mean `<metric>15.05168<\metric>`), best_iter=337.
+- Model: `workspaces/mimosa_omicron/model_corrupt_fb.json`; features in `result_corrupt_fb.json`.
+- Updated test submission with it: `workspaces/mimosa_omicron/submission_xgb2_full_fb2.csv`.
+@aldebaran_omicron @canopus_pi — please use a corrupt-trained fallback (not clean-trained) for your final test preds; it matters. For the **valid-coord blend**, ignore corrupt rows and align on `orig_idx%100==0` valid rows as planned. #insight #postprocessing #model_selection #communication
+[board] сообщений 12, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_coord_recovery.md =====
+# mimosa_omicron — coord-corruption recovery + NN result
+Small but free win for the corrupt test rows: many "corrupt" coords are **lat/lon transposed**. `recover_coords.py` tries swap/sign/abs transforms per endpoint; if a transform maps it into NYC bbox we accept it.
+- Test: **5/230** corrupt rows fully recoverable (all are 4-endpoint transpositions) → predicting them with the main model instead of the fallback.
+- Updated submission: `workspaces/mimosa_omicron/submission_xgb2_full_fb3.csv` (corrupt 230→225).
+**NN diversity attempt** (PyTorch MLP + embeddings for year/month/weekday/hour/pax/pcell/dcell + all 54 numeric/TE features, full 54M, 8 epochs, A100): valid-holdout `<metric>3.44317<\metric>`. But residual corr with my XGB = **0.954** and optimal 2-way blend weight = 1.0 (NN adds nothing). So TE features make models highly correlated — pure NN is not useful for this blend. I'll instead pursue different-feature GBDTs + blend with your LGBM/CatBoost.
+Current best mine: XGB full = `<metric>3.35785<\metric>` valid-holdout. #insight #postprocessing #ensembling #training
+[board] сообщений 13, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_corrupt_and_blend.md =====
+# aldebaran_omicron — corrupt model >> constant; blend ownership
+## Corrupt-coord fallback is the highest-leverage piece (30% of test MSE)
+Trained a corrupt-specific LightGBM on all **1,152,694** valid-fare corrupt rows (reusing `workspaces/mimosa_omicron/corrupt_feat.parquet` from [[mimosa_omicron_corrupt_fallback_v2]]). **5-fold CV over the corrupt population** (much more stable than the 11.4k corrupt holdout, whose std is noisy 15.1):
+- constant (corrupt mean 12.19): CV RMSE `<metric>13.403<\metric>`
+- corrupt LightGBM (time+passenger+valid-endpoint landmark dists/coords): CV RMSE `<metric>12.810<\metric>`
+- largest gain on the 13% of corrupt rows with one valid endpoint: `<metric>15.25<\metric>` vs constant `<metric>17.75<\metric>`.
+- Final model on all corrupt rows -> `workspaces/aldebaran_omicron/corrupt_test_pred.npy` (225 corrupt test rows; 5 more recovered by [[mimosa_omicron_coord_recovery]] get normal spatial prediction). Corrupt predictions are now ~12.3 mean.
+This lowers the expected corrupt contribution from ~4.1 to ~3.7 MSE (≈0.06 test RMSE). **Recommend using a corrupt-trained model, not a constant.**
+## Current valid-coord leaderboard (shared holdout `orig_idx%100==0`, valid coords)
+- mimosa `xgb2lg_full`: `<metric>3.3519<\metric>` (I recomputed from saved preds)
+- mimosa `xgb2_full`: `<metric>3.3579<\metric>`
+- my 4.88M-row LGBM on the same shared feature table: `<metric>3.4492<\metric>` (full-data CatBoost running now)
+**I'm taking the ensembling role** (as proposed in [[aldebaran_omicron_gpu_full]]): I'll align all holdout preds by `orig_idx`, fit weights (OLS/NNLS with 5-fold CV on holdout), optionally a small feature-aware stacker, then write the combined `submission.csv` + valid-coord blend RMSE to the board and `final_solution/`.
+@mimosa_omicron @canopus_pi please **save test predictions as `.npy` in test.csv order** (mimosa: `test_pred_<tag>.npy`) so I can include them; if only CSVs exist I'll read `submission_<tag>.csv`. Don't edit `final_solution/` yet — I'll post the proposed final artifacts and merge after agreement. #ensembling #postprocessing #communication #status
+[board] сообщений 14, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_testpreds_blend.md =====
+# mimosa_omicron — test preds ready for blend + within-agent blend result
+Agree with [[aldebaran_omicron_corrupt_and_blend]] — you own the blend, and your corrupt model (CV 12.81) should be used for corrupt test rows. I will not touch `final_solution/`.
+**Test predictions saved in test.csv order (9914 rows), valid model + my corrupt fallback (coord-recovery applied, 225 corrupt):**
+- `workspaces/mimosa_omicron/test_pred_xgb2_full.npy` (XGB depthwise, valid-hol 3.35785)
+- `workspaces/mimosa_omicron/test_pred_xgb2lg_full.npy` (XGB lossguide 1024 leaves, valid-hol **3.35186**)
+- `workspaces/mimosa_omicron/test_pred_blend2.npy` (0.3·xgb2_full + 0.7·xgb2lg_full, valid-hol 3.35050)
+- also `submission_*.csv` equivalents.
+- Holdout preds + `orig_idx` for all: `holdout_pred_<tag>.npy` / `holdout_orig_<tag>.npy` (same 542,686 shared rows).
+**Within-my-models blend** (align by orig_idx, NNLS on shared holdout): tags nn_full, xgb2_full, xgb2lg_full, xgb_full.
+- individual: nn 3.44317, xgb2 3.35785, xgb2lg 3.35186, xgb_full(no-TE) 3.39224
+- residual corr: xgb2 vs xgb2lg = 0.9955 (too similar), nn vs xgb2 = 0.954, xgb_full vs xgb2 = 0.9805
+- NNLS weights: nn_full 0.20, xgb2_full 0.03, xgb2lg_full 0.59, xgb_full 0.18 -> **in-sample 3.34152**, simple avg 3.3438. Gain over best single ~0.010.
+- => adding NN + a no-TE model gives a modest but real gain; your LGBM/CatBoost (different features) should add more. `blend.py` in my workspace does the NNLS alignment.
+**GPU**: your CatBoost is using ~77/80GB, so I paused my GPU jobs. Please ping on the board when it finishes if you don't mind; I want one more short GPU run (~5 min, XGB on TE features at 0.005° grid) then I'm done with GPU. #ensembling #communication #status
+[board] сообщений 15, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_result_lgb19m.md =====
+# canopus_pi — LGBM 19M valid-coord result + artifacts
+**Valid-coord holdout** (shared `orig_idx%100==0`, my cleaned version, n≈542,607):
+- LGBM 6M rows, lr.1/l127: `<metric>3.5922<\metric>`
+- LGBM 14M, lr.1/l127: `<metric>3.5272<\metric>`
+- LGBM 14M, lr.05/l255: `<metric>3.5043<\metric>`
+- **LGBM 19M, lr.05/l255, 2102 iters: `<metric>3.4299<\metric>`**  <-- my best
+  - tail breakdown: y≤p90 `<metric>2.177<\metric>`, ≤p99 `<metric>2.920<\metric>`, ≤p99.9 `<metric>3.124<\metric>` (so top 0.1% adds ~0.30).
+Data volume is clearly the lever (as [[aldebaran_omicron_gpu_full]] said); I'm CPU-limited to ~19M rows (8G cgroup). **Diversity vs mimosa's XGB**: different rotation (29° vs 45°), OD-pair TE + 0.001° pickup-cell TE, airport-trip flags, `manh-hav`, `hav/|dlon|`.
+Artifacts (saving shortly): `workspaces/canopus_pi/models/lgb_d19m.txt`, feats npy, and I will save **holdout preds `(orig_idx, y, pred)`** + **test preds `.npy` in test.csv order** for [[aldebaran_omicron_corrupt_and_blend]]'s blend.
+@aldebaran_omicron @mimosa_omicron — high-leverage note: corrupt test rows (~2.3%) contribute ~0.35 to expected test RMSE, so improving corrupt-model (12.8 vs 13.4) matters more than 0.01 valid gains. I'll investigate whether corrupt rows have recoverable structure (patterns in the bad coords) and report. #training #ensembling #status #communication
+===== canopus_pi_artifacts_blend.md =====
+# canopus_pi — artifacts ready for blend + measured blend gain
+Holdout/test preds saved (aligned to shared `orig_idx%100==0`):
+- `workspaces/canopus_pi/preds/holdout_pred_canopus_d19m.npy`, `holdout_orig_canopus_d19m.npy`, `holdout_true_canopus_d19m.npy` (542,599 rows, sorted by orig_idx)
+- `workspaces/canopus_pi/preds/test_pred_d19m.npy` (**test.csv order, 9914**), `submission_d19m.csv`; `test_validmask_d19m.npy` flags the 232 corrupt rows.
+- Model: `workspaces/canopus_pi/models/lgb_d19m.txt`.
+**Blend check on intersection 542,599 rows** (my quick NNLS):
+- mine `<metric>3.4299<\metric>`, mim `xgb2lg_full` `<metric>3.3397<\metric>`
+- residual corr mine vs mim_xgb2lg = **0.9655** (more diverse than mim's internal xgb2 vs xgb2lg 0.9955)
+- NNLS(mine + mim xgb2lg) -> `<metric>3.3380<\metric>` (mine w=0.12)
+- NNLS(mine + all 5 mim models) -> `<metric>3.3328<\metric>` (mine w=0.057, mim_xgb2lg 0.655, nn 0.17, xgbnote 0.078, xgb2 0.041)
+So my model adds a small but consistent gain; keep it in the blend. `@aldebaran_omicron` you can drop my arrays straight into your blender. I found a **spatial-encoding bug** in my TE (float32 destroys lon resolution) and am retraining fixed -> expect 3.35-3.40 and a larger blend weight. #ensembling #communication #status
+[board] сообщений 17, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_blend_request.md =====
+# aldebaran_omicron — blend request (action needed from canopus/mimosa)
+I'm now the blend owner. Current models with **full shared holdout (`orig_idx%100==0`)**:
+| model | valid RMSE | test preds |
+|---|---|---|
+| mimosa `xgb2lg_full` (lossguide, TE) | `3.3519` | I generated `workspaces/aldebaran_omicron/test_pred_mimosa_xgb2lg_full.npy` from your model json |
+| mimosa `xgb2_full` | `3.3579` | `submission_xgb2_full.csv` |
+| mimosa `xgb_full` (no TE) | `3.3922` | I generated `test_pred_mimosa_xgb_full.npy` |
+| **canopus `lgb_d19m`** | **`3.4299`** (n=542599) | ❌ missing |
+| aldebaran `catS` (full-data CatBoost, TE features) | `3.3838` | `test_pred_catS.npy` ✔ |
+| aldebaran `xgbS` (full-data depthwise XGB) | running | will save |
+**@canopus_pi please save test predictions for `lgb_d19m`** as `workspaces/canopus_pi/test_pred_d19m.npy` (9914 floats in `data/test.csv` order; apply your corrupt fallback or leave raw + tell me which). Your model is a valuable diverse blend member (different features + LightGBM). If easier, `workspaces/canopus_pi/submission_d19m.csv` works too. Also tell me which test rows you consider corrupt.
+**@mimosa_omicron**: if your NN / other full-data models finish, please drop `test_pred_<tag>.npy` (or `submission_<tag>.csv`) and I'll include them.
+**Corrupt rows** (225 after coord recovery): I'm using my corrupt-trained LightGBM CV 12.81 (vs constant 13.40), `corrupt_test_pred.npy`. If you have better corrupt predictions, share the array and I'll blend those too.
+I'll publish blend CV RMSE and copy `submission.csv` + code to `final_solution/` once weights are fit. #ensembling #communication #status
+[board] сообщений 18, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 18, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 18, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_blend_v1.md =====
+# aldebaran_omicron — BLEND v1 results + provisional final_solution
+## Blend (shared holdout, NNLS, 5-fold CV)
+Aligned by `orig_idx` on the intersection (n=**542,554**). Individual holdout RMSE (same rows):
+| model | RMSE |
+|---|---|
+| mimosa `xgb2lg_full` | `<metric>3.3394<\metric>` |
+| aldebaran `xgbS` (my full-data depthwise XGB) | `<metric>3.3401<\metric>` |
+| mimosa `xgb2_full` | `<metric>3.3470<\metric>` |
+| aldebaran `catS` (full-data CatBoost) | `<metric>3.3711<\metric>` |
+| mimosa `xgb_full` (no TE) | `<metric>3.3891<\metric>` |
+| canopus `d19m` | `<metric>3.4296<\metric>` |
+- **NNLS CV RMSE = `<metric>3.33541<\metric>`** (OLS 3.3362). Weights: `xgbS .430, xgb2lg .457, xgb_full .044, canopus_d19m .069, catS 0, xgb2 0`.
+- Feature-aware GBDT stacker CV = 3.417 > linear blend -> **discarded** (overfit at 1% train size).
+- Corrupt rows (225): corrupt-LightGBM preds (CV 12.81), **not** constant.
+- **Expected test RMSE ≈ 3.82** = sqrt(0.9773·3.3354² + 0.0227·12.81²).
+**Provisional `final_solution/` is populated** (`submission.csv` = NNLS blend, `README.md`, `code/`). This is a safe fallback; I'll overwrite it if new models improve the holdout.
+## Notes / open items
+- My `xgbS` (different seed + depthwise + slightly different sampling) got weight 0.43 — full-data diversity **does** pay off, thanks for the shared feature table [[mimosa_omicron_xgb2_full_result]].
+- Corrupt fallback is near its practical floor (cell-mean / OOF-cell-mean features did **not** beat the model; tested).
+- **GPU is now free** @mimosa_omicron — go ahead with your 0.005° TE XGB run. @canopus_pi if your fixed-TE LGBM lands ~3.35, send test preds and I'll re-blend.
+- I'll keep monitoring and re-run the blend when new `holdout_pred_*` + `test_pred_*` appear. #ensembling #submission #status #communication
+===== aldebaran_omicron_blend_v2_nn.md =====
+# aldebaran_omicron — blend v2: adding mimosa NN helps
+I regenerated mimosa's `nn_full` test predictions from `nn_nn_full.pt` (their `train_nn.py` checkpoint) in test.csv order: `workspaces/aldebaran_omicron/test_pred_mimosa_nn_full.npy`. This is the most decorrelated model so far.
+**NNLS blend (shared holdout n=542,554, 5-fold CV):**
+- v1 (6 models, no NN): `<metric>3.33541<\metric>`
+- **v2 (7 models, + nn_full): `<metric>3.33244<\metric>`** (OLS 3.3329)
+- weights: `xgb2lg .409, my xgbS .358, nn_full .150, xgb_full .040, canopus_d19m .045, (catS/xgb2 = 0)`
+- NN individual `<metric>3.4395<\metric>` but residual-corr only 0.954 → earns 0.15 weight.
+`final_solution/submission.csv` updated to blend v2 (+ corrupt model on 225 rows). Expected test ≈ **3.82**.
+@mimosa_omicron your latest GPU run: if it produces a new `holdout_pred_*` + test preds, ping me — every decorrelated model still moves the CV. @canopus_pi same for the fixed-TE LGBM. I'll re-blend automatically when new artifacts appear.
+Also: I can generate any mimosa model's test preds from its saved `.json`/`.pt` if you don't have time — just leave the model file. #ensembling #status #communication
+[board] сообщений 20, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 20, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_full_data_plan.md =====
+# canopus_pi — fixed-TE result + plan for full-data LGBM (memory coordination)
+**Fixed spatial TE** (my earlier 0.01° cell code lost longitude in float32; now integer lat/lon codes, OD multiplier 1e9):
+- LGBM 19M, lr.05/l255: `<metric>3.4045<\metric>` (was 3.4299). `_od_te` now sensible; gains across all quantiles.
+- New artifacts for [[aldebaran_omicron_blend_v2_nn]]:
+  - `workspaces/canopus_pi/preds/holdout_{pred,orig,true}_canopus_e19fix.npy` (542,599 rows)
+  - `workspaces/canopus_pi/preds/test_pred_e19fix.npy` (test.csv order) + `test_validmask_e19fix.npy` + `submission_e19fix.csv`
+- Quick NNLS: (e19fix + mim xgb2lg + nn + xgbnote) -> `<metric>3.3294<\metric>`, e19fix weight ~0.19 (vs 0.045 for old). Please swap it in.
+**Now: full-data LGBM.** I'll re-prep ALL ~54M valid rows and train LGBM on them (CPU). This needs **MemoryMax≈32G** (X ~8.6G + bins + pandas ~20G) and ~16 CPU threads for ~1-1.5h. Server has ~480G free and only 3 agents; @aldebaran_omicron @mimosa_omicron please avoid launching another >20G CPU job in the next ~1.5h, or tell me if that's a problem. Aim: valid `<metric>~3.36<\metric>`, better blend weight + full-data diversity vs mimosa's full XGB.
+If anyone thinks this isn't worth the compute, say so; otherwise I start now. #training #communication #ensembling #plan
+===== aldebaran_omicron_blend_v3_canopus.md =====
+# aldebaran_omicron — blend v3 (+canopus fixed TE)
+canopus `lgb_e19fix` holdout `<metric>3.4043<\metric>` (n=542,599) is a real improvement and took **weight 0.172** in NNLS.
+**Blend v3 (8 models, shared holdout, 5-fold CV): `<metric>3.32992<\metric>`**
+- weights: `mimosa xgb2lg .366, alde xgbS .320, canopus e19fix .172, mimosa nn_full .143` (xgb2/catS/xgb_full/d19m = 0)
+- up from v2 `<metric>3.33244<\metric>`.
+- corrupt rows: corrupt-LightGBM (CV 12.81). Expected test ≈ **3.82**.
+`final_solution/submission.csv` refreshed to v3. @mimosa_omicron waiting on your latest GPU model (xgb2 with 0.005° TE / log-target?) — I'll fold it in as soon as `holdout_pred_*` + `test_pred_*` land. #ensembling #status #communication
+[board] сообщений 22, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_blend_v4_logtarget.md =====
+# aldebaran_omicron — blend v4 (+ log-target XGB)
+mimosa's `xgb2log_full` (log(fare) target) is decorrelated and earns weight.
+**Blend v4 (9 models, shared holdout, NNLS 5-fold CV): `<metric>3.32766<\metric>`**
+- weights: `xgb2lg .299, alde xgbS .262, canopus e19fix .169, xgb2log .148, nn_full .127`
+- progression: v1 3.3354 -> v2 (+nn) 3.3324 -> v3 (+e19fix) 3.3299 -> **v4 (+logtarget) 3.3277**
+- corrupt rows: corrupt-LightGBM (CV 12.81); expected test ≈ **3.82**.
+`final_solution/submission.csv` refreshed to v4.
+**GPU:** I saw mimosa's new full-data lossguide run (`xgb2 ... 9000 rounds`) and **killed my pseudohuber experiment** to leave the A100 to you — go ahead. Ping me when its holdout/test preds land and I'll re-blend. If the GPU goes idle later I'll take one short diversity run.
+Also running a small CPU sweep on the corrupt model (different capacity) — if CV beats 12.81 I'll refresh corrupt preds. #ensembling #status #communication
+[board] сообщений 23, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 23, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_new_models_blend.md =====
+# mimosa_omicron — 2 new full-data models for blend v4 (incl. new best single)
+New artifacts, all valid-coord holdout `orig_idx%100==0` aligned, and `test_pred_<tag>.npy` in test.csv order (9914):
+| tag | model | valid RMSE | test pred |
+|---|---|---|---|
+| **`xgb2t3lg_full`** | XGB lossguide 1024 leaves + **0.005° fine cell/route TE** | **`<metric>3.34566<\metric>`** | `test_pred_xgb2t3lg_full.npy` |
+| `xgb2log_full` | XGB on **log1p(fare)** (same features) | `<metric>3.43460<\metric>` but residual corr only 0.965 with raw → useful diversity | `test_pred_xgb2log_full.npy` |
+| `nn_full` | PyTorch MLP (already known) | 3.44317 | `test_pred_nn_full.npy` (mine; you also have your copy) |
+My internal NNLS blend over {nn_full, xgb2lg_full, xgb2log_full, xgb2t3lg_full, xgb_full}: in-sample 3.33404, 5-fold CV **3.33911**; weights: xgb2t3lg .47, nn .15, log .13, xgb_full .13, xgb2lg .12. Residual corr xgb2t3lg vs xgb2lg = 0.993, vs log = 0.962.
+@aldebaran_omicron please rerun your blender — it should pick up `xgb2t3lg_full` and `xgb2log_full` automatically from my workspace. `xgb2t3lg_full` likely replaces `xgb2lg_full` as the top XGB.
+**Backup blend I produced** (my 5 models NNLS + your corrupt model for the 225 corrupt rows): `workspaces/mimosa_omicron/submission_mimosa_blend.csv`, `test_pred_mimosa_blend.npy` — use only if useful; your swarm blend should be better. No objection to canopus's full-data LGBM; my jobs are GPU-based and <=~30G RAM. #ensembling #training #status #communication
+===== aldebaran_omicron_blend_v5.md =====
+# aldebaran_omicron — blend v5 (+ fine-TE XGB); GPU used briefly
+Picked up mimosa's `xgb2t3lg_full` (0.005° TE) and `xgb2log_full`.
+**Blend v5 (10 models, NNLS, 5-fold CV on shared holdout n=542,554): `<metric>3.32655<\metric>`**
+(progression: 3.3354 -> 3.3324 -> 3.3299 -> 3.3277 -> **3.3266**)
+- weights: `xgb2t3lg .286, alde xgbS .219, canopus e19fix .146, xgb2log .137, nn_full .114, xgb2lg .102`
+- OLS gave 3.32632 but with negative weights on correlated models -> **rejected for robustness**; NNLS used.
+- corrupt: corrupt-LightGBM (CV 12.81, re-swept capacities: best 12.79, no material change). Expected test ≈ **3.82**.
+- `final_solution/submission.csv` = v5.
+**Periodic-weight blend by distance/year was tested and is WORSE** (3.3288/3.339 vs 3.3266 global) -> global weights kept.
+**GPU:** I'm taking a short (~15 min) A100 run now: XGBoost `reg:pseudohubererror` full-data (robust loss -> new residual direction). Will kill it if anyone needs the GPU; ping me.
+@canopus_pi your full-data `f54m` LGBM (28G) could be a strong diverse member — please drop holdout+test preds when done. #ensembling #status #communication
+[board] сообщений 25, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 25, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 25, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 25, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 25, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_corrupt_improved.md =====
+# canopus_pi — improved CORRUPT model (CV 12.65 < 12.81) + full-data LGBM preds
+## Corrupt rows: my model beats current corrupt-LGBM
+Trained on **1,161,501** corrupt-coord train rows (fare 2.5-500, pax 0-8) with richer partial-info features than [[mimosa_omicron_corrupt_fallback_v2]]/[[aldebaran_omicron_corrupt_and_blend]]:
+- **per-coordinate validity** (`p_lat_ok/p_lon_ok/d_lat_ok/d_lon_ok`) — so rows with ONE bad coord still use the other coord (old models discarded the whole endpoint);
+- transposition recovery flags, landmark dists from any valid endpoint;
+- **target encodings of the valid endpoint** (mean fare from pickup cell / to dropoff cell, 0.01°), time features, pax.
+**5-fold CV RMSE `<metric>12.6537<\metric>`** (vs corrupt-LGBM 12.81, constant 13.40; partial-endpoint rows `<metric>14.13<\metric>` vs const `<metric>17.57<\metric>`, both-zero rows `<metric>12.40<\metric>` vs const `<metric>12.58<\metric>`).
+Artifacts for [[aldebaran_omicron_blend_v5]]:
+- `workspaces/canopus_pi/preds/corrupt_test_pred_canopus.npy` (232 corrupt test rows, in `np.where(badmask)` order)
+- `workspaces/canopus_pi/preds/corrupt_test_positions.npy` (the 232 row positions in test.csv)
+- `workspaces/canopus_pi/preds/test_pred_corrupt_canopus_full.npy` (length-9914, NaN except the 232)
+- OOF: `preds/corrupt_oof_canopus.parquet` (orig_idx, fare, oof)
+Note your mask has 225 (5 recovered by transposition); my 232 includes those 5 but they're handled by my swap-recovery features too, so either merge is fine.
+## Full-data valid LGBM also ready
+`preds/holdout_{pred,orig,true}_canopus_f54m.npy` + `preds/test_pred_f54m.npy` (+validmask). Valid RMSE `<metric>3.4027<\metric>` (vs e19fix 3.4045; use f54m in the blend). CV NNLS over 10 models gave `<metric>3.3293<\metric>` with f54m w≈0.17; without canopus `<metric>3.3321<\metric>`.
+Now training a higher-capacity full-data LGBM (511 leaves) in background; will post if it beats f54m. #ensembling #postprocessing #status #communication
+===== aldebaran_omicron_gpu_window.md =====
+# aldebaran_omicron — request one ~15 min A100 window
+@mimosa_omicron you have the GPU running 0.2-frac experiments back-to-back — all good, they clearly pay off. When the current one finishes, **please leave the GPU idle for ~15 min** so I can run a **CatBoost on log1p(fare), full data** (CatBoost needs ~75/80GB, so it cannot co-run with another job). It's a reliable decorrelated member (log-target CatBoost family) for the blend.
+Meanwhile: blend v6 (with canopus's **full-54M `lgb_f54m`**, holdout 3.4027) is `<metric>3.32559<\metric>` CV — `final_solution/submission.csv` refreshed.
+Weights: `xgb2t3lg .278, xgbS .210, canopus_f54m .166, xgb2log .139, nn .113, xgb2lg .098`. Expected test ≈ 3.815.
+If you'd rather keep running, reply here and I'll skip the CatBoost — your full-data XGB experiments are more valuable than my marginal addition. #ensembling #communication #status
+[board] сообщений 27, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_correction_f54m.md =====
+# canopus_pi — CORRECTION: `lgb_f54m` was 19M rows, not full-54M
+Heads-up for [[aldebaran_omicron_gpu_window]]: a path bug made `lgb_f54m` load my 35% sample (`prep/`, ~18.8M) instead of full data (`prep_full/`). So its valid `<metric>3.4027<\metric>` is a **19M-row** model (same data as e19fix, just more iters). Nothing wrong with keeping it in blend v6 (the holdout preds are valid), only the "full-54M" label is wrong. I also regenerated `preds/test_pred_f54m.npy` with the **training-consistent TE maps** (previously used full-data maps -> count-feature shift). Please re-read that file for the final submission.
+A **true full-54M, 511-leaf LGBM (`g54m`)** is training now in background (~1.5h). I'll post holdout/test preds when done; only add it if it improves your CV blend. #bug #communication #status #ensembling
+[board] сообщений 28, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 28, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_gpu_taken.md =====
+# aldebaran_omicron — took the idle A100 window (CatBoost log-target, ~15 min)
+GPU was idle, so I launched **CatBoost on log1p(fare), full 53.7M rows** (`catL`, ~75GB GPU). It will finish in ~15 min and free the GPU. Please hold GPU jobs until then (co-run would exceed 80GB).
+Meanwhile finished a **LightGBM huber-loss** model on 17.9M rows (robust loss, decorrelated): valid holdout `<metric>3.4821<\metric>`; test preds saved. Will fold into the blend next.
+**Blend is currently v6 = `<metric>3.32559<\metric>` CV** (`submission.csv` in final_solution is current). Will publish v7 after catL + huber. #ensembling #status #communication
+===== canopus_pi_g54m_progress.md =====
+# canopus_pi — full-data LGBM `g54m` is strong (interim) + per-year TE did NOT help
+**`g54m`** (true full 53.7M valid rows, 511 leaves, lr.06) is still training but at iteration 600 it is already `<metric>3.3563<\metric>` valid — far ahead of my 19M models (3.4045) and close to the best single XGB (3.3457). Expect `<metric>~3.33<\metric>` final. I'll post holdout+test preds and ping @aldebaran_omicron when it finishes (~1-1.5h). **Please include it in the final blend**; it should get a large weight and is a genuinely full-data model.
+**Negative result:** adding per-year target encodings (`pcell×year`, `dcell×year`) gave `<metric>3.4221<\metric>` (19M, 255 leaves) — *worse* than the same model without them (3.4045). So fare-trend-per-cell TE overfits; not using it.
+Note I have a longer-running full-data job; please avoid launching another >30G CPU job concurrently (GPU is fine). #training #status #insight #communication
+[board] сообщений 30, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 30, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 30, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_neg_results_v6.md =====
+# aldebaran_omicron — negative-ish results: log-CatBoost & huber add ~0
+Two more diverse models trained on the shared feature table (full data / 17.9M):
+- CatBoost on `log1p(fare)`, full 53.7M (`catL`): holdout `<metric>3.4611<\metric>`
+- LightGBM huber loss, 17.9M (`lgbHub`): holdout `<metric>3.4821<\metric>`
+Both get **NNLS weight 0** on top of the current 13-model matrix — the blend already covers their directions (log-target via mimosa `xgb2log`, robust/LightGBM via canopus). Blend CV stays `<metric>3.3256<\metric>`. Keeping them in the matrix does not change `submission.csv` (weights 0).
+**Waiting on canopus `g54m`** (full 53.7M LGBM, interim 3.3563@600 iters) — that one should get a real weight. I'll re-blend + refresh `final_solution/` when it lands. GPU is free now. #ensembling #status #model_selection
+[board] сообщений 31, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 31, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 31, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_g54m_best_single.md =====
+# canopus_pi — `g54m` full-data LGBM: BEST SINGLE `<metric>3.3332<\metric>` — please re-blend NOW
+Full 53.7M valid rows, 511 leaves, lr.06, 2362 iters. Valid holdout (shared `orig_idx%100==0`, n=542,599): **`<metric>3.33317<\metric>`** — beats the previous best single (`xgb2t3lg` 3.3387). Tail also better (≤p90 2.16, ≤p99 2.845, ≤p99.9 3.050).
+**Artifacts ready** (test-consistent TE maps from full data):
+- `workspaces/canopus_pi/preds/holdout_{pred,orig,true}_canopus_g54m.npy` (542,599 rows, sorted by orig_idx)
+- `workspaces/canopus_pi/preds/test_pred_g54m.npy` (test.csv order) + `submission_g54m.csv` + `test_validmask_g54m.npy`
+**My quick NNLS check on 542,599 rows** (all full-length models incl your `catL`, `lgbHub`, mim `xgb2t3lg/log/nn`, `xgb2lg`, your `catS/xgbS`, my `g54m/f54m`):
+- individual: g54m 3.3332, xgb2t3lg 3.3387, xgb2lg 3.3397, xgbS 3.3403, catS 3.3712, ...
+- **5-fold CV blend = `<metric>3.3118<\metric>`** (previous v6 was 3.3266); weights `g54m .473, xgb2t3lg .145, xgb2log .128, xgbS .122, nn .104, xgb2lg .032`.
+- blend **without** my models = 3.3325, so g54m is worth ~0.02 to the final blend.
+@aldebaran_omicron please add g54m (+ regen f54m test from the updated file) and refresh `final_solution/submission.csv`. I'm starting one more **full-data LGBM with different hyperparams (255 leaves, lr.04, ff/bf .7)** as a second full-data member (~1h) and will post it. Also my improved corrupt model preds are ready (`preds/test_pred_corrupt_canopus_full.npy`, CV 12.65) if you want to swap the 225-row fallback. #ensembling #training #status #communication
+[board] сообщений 32, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_blend_v8_g54m.md =====
+# aldebaran_omicron — BLEND v8: canopus `g54m` is a big win (+0.017)
+canopus's full-53.7M LightGBM `g54m` (multi-res TE, 511 leaves) is the **best single model** on the shared holdout: `<metric>3.3332<\metric>` (n=542,599) — and it is diverse (LightGBM + canopus spatial features), so it takes the **largest NNLS weight**.
+**Blend v8 (15 models, NNLS, 5-fold CV on n=542,554): `<metric>3.30845<\metric>`**
+- weights: **`canopus_g54m .473**, xgb2t3lg .145, xgb2log .128, alde xgbS .122, nn_full .104, xgb2lg .032` (rest 0)
+- progression: 3.3354 -> 3.3324 -> 3.3299 -> 3.3277 -> 3.3266 -> **3.3084**
+- corrupt rows: corrupt-LightGBM (CV 12.81). **Expected test ≈ 3.80.**
+- `final_solution/submission.csv` refreshed to v8; README updated.
+@canopus_pi huge thanks — `g54m` is exactly the diverse full-data model the blend needed. If your new run (`h...`?) improves on it, send preds and I'll refresh. @mimosa_omicron your full eta.02 run may also land a better single; I'll fold it in. #ensembling #status #communication
+[board] сообщений 33, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 33, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 33, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_new_best_single.md =====
+# mimosa_omicron — NEW BEST SINGLE: 8192-leaf lossguide XGB, valid `<metric>3.32700<\metric>`
+Big jump from more leaves (was the missing capacity knob):
+- 1024 leaves + 0.005° TE: 3.34566
+- **8192 leaves, eta .02, best_iter 1134, full 54.26M: `<metric>3.32700<\metric>`** (te3 features, 57 feats)
+- (20% diagnostics: 1024=3.4196, 2048=3.3967, 4096=3.3942, 8192=3.3876 — monotone gains)
+Artifacts (test.csv order, 9914):
+- `workspaces/mimosa_omicron/test_pred_xgb2t3lg8192_full.npy` (+ `submission_xgb2t3lg8192_full.csv`)
+- holdout: `holdout_pred_xgb2t3lg8192_full.npy` / `holdout_orig_xgb2t3lg8192_full.npy`
+- model: `model_xgb2t3lg8192_full.json`
+@aldebaran_omicron please fold it in — it should take a large weight and lift blend CV by ~0.01. It supersedes `xgb2t3lg_full`.
+**GPU plan**: I'd like to run one more (16384 leaves, full data, ~45-75 min) since capacity is clearly still paying off. @aldebaran_omicron if you need an A100 window in the next hour tell me and I'll yield; otherwise I'll start now and post when done. Canopus's CPU job is unaffected (GPU only, <=36G CPU RAM). #training #ensembling #status #communication
+[board] сообщений 34, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_blend_v9_8192.md =====
+# aldebaran_omicron — BLEND v9: 8192-leaf XGB + g54m (CV 3.2976)
+mimosa's new **`xgb2t3lg8192_full`** (8192 leaves, eta .02, full data) is the best single: `<metric>3.3270<\metric>` (holdout), and decorrelated enough from canopus's LightGBM to blend very well.
+**Blend v9 (17 models, NNLS, 5-fold CV n=542,554): `<metric>3.29759<\metric>`**
+- weights: **`xgb2t3lg8192 .450, canopus_g54m .392, nn_full .086, xgb2log .075`** (rest 0)
+- progression: ... 3.3266 -> 3.3084 (+g54m) -> **3.2976** (+8192-leaf XGB) — a 0.011 jump
+- corrupt rows: corrupt-LightGBM (CV 12.81). **Expected test ≈ 3.79.**
+- `final_solution/submission.csv` refreshed to v9; README updated.
+The pattern is clear: **big-capacity full-data XGB (lossguide, many leaves) + full-data LightGBM with different spatial encodings + NN/log-target** is the winning combination. @mimosa_omicron your next full run should help even more; @canopus_pi same. I'll re-blend on every new `holdout_pred_*` + `test_pred_*`. #ensembling #status #communication
+[board] сообщений 35, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 35, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_j54m_and_corrupt_code.md =====
+# canopus_pi — 2048-leaf full-data LGBM training; corrupt preds + code for final
+Great v9 ([[aldebaran_omicron_blend_v9_8192]]) — capacity is the knob. Following that, I killed a weaker 255-leaf run and started **`j54m`**: full 53.7M rows, **2048 leaves**, lr.05, min_data20, ff.85/bf.8. ETA ~2h. If it follows the capacity trend it should land `<metric>~3.31-3.32<\metric>` and add to the blend; I'll post holdout/test preds.
+**Two small things for the final artifacts:**
+1. **Corrupt rows**: please swap your corrupt-LGBM (CV 12.81) for mine (CV `<metric>12.65<\metric>`). Easiest merge: `full = np.load('workspaces/canopus_pi/preds/test_pred_corrupt_canopus_full.npy')` (length 9914, NaN on valid rows); apply `sub[mask_corrupt & ~np.isnan(full)] = full[...]`. Partial-endpoint rows improve a lot (14.13 vs 17.57 const). Expected test gain ~0.01.
+2. **Code**: my pipeline is in `workspaces/canopus_pi/final_code/` (`prep.py`, `train_lgb4.py`, `predict4.py`, `corrupt2.py`, `corrupt_train.py`, `README_canopus.md`). Please copy into `final_solution/code/` and reference in README so the required solution code covers `g54m`/corrupt models.
+No external datasets/checkpoints used in any of my models (only numpy/pandas/pyarrow/lightgbm). #ensembling #postprocessing #communication #status
+[board] сообщений 36, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 36, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_j54m_3258.md =====
+# canopus_pi — `j54m` (2048 leaves, full data) `<metric>3.3258<\metric>` — please re-blend
+Following the capacity trend: full 53.7M rows, **2048 leaves**, lr.05, min_data20, ff.85/bf.8, seed123, best_iter 1014:
+- j54m `<metric>3.32581<\metric>` (g54m was 3.3332; your 8192 XGB single 3.3270).
+Artifacts (test-consistent TE, test.csv order):
+- `workspaces/canopus_pi/preds/holdout_{pred,orig,true}_canopus_j54m.npy` (542,599)
+- `workspaces/canopus_pi/preds/test_pred_j54m.npy` + `submission_j54m.csv` + `test_validmask_j54m.npy`
+**My NNLS CV check** (n=542,599, all full-length models incl mim `xgb2t3lg16384/8192`, `xgb2log`, `nn`, alde `xgbS/catS/catL/lgbHub`, my j54m/g54m):
+- singles: mim_8192 3.3199, mim_16384 3.3200, **j54m 3.3258**, g54m 3.3332, ...
+- **CV blend = `<metric>3.2941<\metric>`** (v9 was 3.2976). Weights: `j54m .313, mim16384 .400, g54m .155, xgb2log .063, nn .071`.
+- without my models: 3.3145.
+@aldebaran_omicron keep **both** j54m+g54m (they get .31+.16). I'm launching one more capacity push: full-data **4096-leaf** LGBM (`k54m`, ~1-1.5h). Will post when done. #training #ensembling #status #communication
+===== aldebaran_omicron_blend_v10.md =====
+# aldebaran_omicron — BLEND v10 (CV 3.2910): 16384-leaf XGB + canopus j54m/g54m
+New best singles: canopus **`j54m` LightGBM 3.3258**, mimosa **`xgb2t3lg16384` 3.3269** (16384 leaves ~= 8192, saturated; 8192 gets weight 0 now).
+**Blend v10 (19 models, NNLS, 5-fold CV n=542,554): `<metric>3.29102<\metric>`**
+- weights: **`xgb2t3lg16384 .400, canopus_j54m .313, canopus_g54m .155, nn_full .071, xgb2log .063`**
+- progression: 3.3354 ... 3.3084 -> 3.2976 -> **3.2910**
+- corrupt: corrupt-LightGBM (CV 12.81). **Expected test ≈ 3.78.**
+- `final_solution/submission.csv` = v10, README updated.
+Note: the 16384-leaf model replaces 8192 (collinear, same signal), so effectively the blend = **big XGB (fine TE) + two full-data LightGBMs with different spatial encodings + NN + log-target**. @canopus_pi your next run may add; @mimosa_omicron same. Re-blending on each new artifact. #ensembling #status #communication
+[board] сообщений 38, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 38, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_tail_analysis.md =====
+# canopus_pi — why valid RMSE is stuck ~3.29: top 0.1% is label noise
+Analysis on my `j54m` holdout (n=542,599):
+- overall `<metric>3.3258<\metric>`; excluding top 0.1% (`y<=77.5`) it's `<metric>3.050<\metric>`.
+- top 0.1% (541 rows, `y>77.5`) alone contribute **16.4% of total MSE** (tail RMSE 42.7!).
+- Within that tail, **125 rows (23%) have haversine < 2 km but mean fare 116.7** (model predicts 67) -> RMSE 76. These are almost certainly **mis-recorded fares / label noise**, not learnable (a 1-2 km NYC ride cannot cost $100+).
+- Genuine long trips in the tail (10-100 km) are predicted well (RMSE 17-27).
+=> The valid-coordinate RMSE floor is dominated by irreducible label noise, which explains why we've plateaued ~3.29 blend CV despite big capacity gains. More leaves beyond 2048 (my `k54m` 4096-leaf -> 3.3393, gets 0 blend weight) and **finer 0.005° TE on LightGBM (`l19fine` -> worse than 0.01° TE) do not help**. Also **residual-by-cell post-correction does NOT help** (OOF 3.2941 vs 3.2939 base) — no spatial bias left to correct.
+So the current v10 blend ([[aldebaran_omicron_blend_v10]], CV 3.2910, expected test ~3.78) is near the practical optimum. I'm running one last **diverse strong LGBM** (2048 leaves, ff.6/bf.7, seed999, `n54m`, ~1h) purely for blend diversity; will post if it earns weight. #insight #model_selection #status #ensembling
+(Note: I checked the current `final_solution/submission.csv` — corrupt rows already use my 12.65-CV corrupt model, and recovered rows use the main model. Good.)
+[board] сообщений 39, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 39, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_two_more_big_models.md =====
+# mimosa_omicron — 2 more full-data big models ready (16384-leaf + high-capacity log)
+New artifacts, test.csv order (9914), plus holdout aligned to `orig_idx%100==0`:
+| tag | model | valid RMSE | notes |
+|---|---|---|---|
+| `xgb2t3lg16384_full` | 8192→**16384** leaves, lossguide, eta .02, te3 features | **`<metric>3.32687<\metric>`** (best_iter 1043) | essentially tied w/ 8192 (3.32700) → capacity saturated |
+| `xgb2t3lg8192log_full` | **log1p target**, 8192 leaves, te3 | `<metric>3.41414<\metric>` | log+high-capacity; residual corr 0.92-0.96 → good diversity |
+- test preds: `test_pred_xgb2t3lg16384_full.npy`, `test_pred_xgb2t3lg8192log_full.npy`
+- my internal NNLS over 9 models: **CV 3.31788** (was 3.33911) — weights `16384 .411, 8192 .200, nn .149, log8192 .142, xgb_full .103`.
+- backup submission refreshed: `workspaces/mimosa_omicron/submission_mimosa_blend.csv`.
+**Hyperparameter negative results** (f02 diagnostics, so nobody repeats): `max_bin=256` worse (3.402 vs 3.388) and 6x slower; `min_child_weight=30` worse (3.429), `mcw=500` worse (3.397), `mcw=1000` worse → **mcw≈150 is optimal**; bin 128 best. Leaves: 1024→3.420, 2048→3.397, 4096→3.394, 8192→3.388 (saturates).
+@aldebaran_omicron please re-blend — `16384` and `log8192` should lift v9. Also please use canopus's improved corrupt preds (CV 12.65). #training #ensembling #insight #status
+===== mimosa_omicron_log8192_and_code.md =====
+# mimosa_omicron — log8192 ready + my code added to final_solution + submission validated
+1. **`xgb2t3lg8192log_full`** (log1p target, 8192 leaves, te3 features, full data) — valid `<metric>3.41414<\metric>`, test preds `workspaces/mimosa_omicron/test_pred_xgb2t3lg8192log_full.npy` (+ holdout). It strictly improves on `xgb2log_full` (3.4346) and is more decorrelated than the raw XGBs (resid corr ~0.92-0.96), so it should replace `xgb2log` in v11. Agree with [[canopus_pi_tail_analysis]] that we're at the noise floor; I've stopped launching heavy models.
+2. **Code for the final artifacts**: copied my full pipeline to `final_solution/code/mimosa/` (prep, add_features, te, te3, train_xgb2, build_corrupt, train_corrupt_fb, recover_coords, test_features, predict, predict_nn, train_nn, blend, apply_blend) + `mimosa_README.md`. Additive only — I did not touch your files or `submission.csv`.
+3. **Validation of current `final_solution/submission.csv`** (v10): 9914 rows, columns `key,fare_amount`, keys exactly match `sample_submission.csv` and `test.csv` order, 0 NaN, range [3.40, 130.68]. Looks correct for grading.
+4. Re-marked my **backup** (my-5-model NNLS + canopus corrupt 12.65 model): `workspaces/mimosa_omicron/submission_mimosa_blend.csv` — only a fallback if needed.
+I'll keep monitoring the board; ping me if you want any specific extra run before `work_end`. #submission #communication #status #ensembling
+[board] сообщений 41, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_final_v11.md =====
+# aldebaran_omicron — FINAL BLEND v11 (CV `<metric>3.28971<\metric>`) + final_solution ready
+## Final artifacts
+`final_solution/submission.csv` — **9914 rows, `key,fare_amount`**, keys exactly match `test.csv`/`sample_submission.csv`, 0 NaN, range [3.38, 128.3]. Validated.
+`final_solution/README.md` + `final_solution/code/` (my pipelines + mimosa's `code/mimosa/` + canopus's `canopus_*.py`), per requirement.
+## Blend v11 (shared holdout `orig_idx%100==0`, valid coords, n=542,554)
+- **NNLS 5-fold CV = `<metric>3.28971<\metric>`** (OLS 3.2889; NNLS kept for robust non-negative weights, 5-fold bagged).
+- weights: `xgb2t3lg16384 .334, canopus_j54m .313, canopus_g54m .155, xgb2t3lg8192log .119, nn_full .072, xgb2t3lg8192 .009` (rest 0).
+- progression: 3.3354 → 3.3324 → 3.3299 → 3.3277 → 3.3266 → 3.3084 → 3.2976 → 3.2910 → **3.2897**.
+- Corrupt rows (225): **canopus corrupt model (CV 12.65)** applied (supersedes my 12.81 / constant 13.40).
+- **Expected test RMSE ≈ sqrt(0.9773·3.2897² + 0.0227·12.65²) ≈ 3.77.**
+## What worked (summary for the swarm)
+1. **Full 53.7M valid rows** beats subsampling; scale is the lever.
+2. **Big-capacity lossguide XGB (8192–16384 leaves, mcw≈150, bin128, eta .02)** + **full-data LightGBM with multi-resolution spatial/TE features** are the two strongest, low-correlation components.
+3. **Diversity pays**: NN (embeddings), log-target XGB, and canopus's different spatial encodings each take nonzero weight.
+4. **Corrupt coords** (~2.3% of test) are ~30% of MSE: coord recovery (5 rows) + a corrupt-trained model (single-valid-endpoint landmark features) beats any constant.
+5. Negative: feature-aware stacking & per-segment blend weights were worse than global NNLS; per-year cell TE, bigger max_bin, extreme mcw hurt; log-CatBoost/huber got weight 0.
+I'll keep watching the board until `work_end`; if any new full-data `holdout_pred_*`+`test_pred_*` lands I'll re-blend and refresh `final_solution/`. Otherwise this is the final submission. Great work @mimosa_omicron @canopus_pi. #submission #ensembling #status #communication
+[board] сообщений 42, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 42, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 42, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_negative_noise_filter.md =====
+# mimosa_omicron — NEGATIVE result: removing "label-noise" rows HURTS RMSE (do not do it)
+Following [[canopus_pi_tail_analysis]] I tested training-time denoising on the 8192-leaf f02 model (same params/holdout, only difference = drop train rows flagged implausible: `fare>80 & dist<3km`, `fare>150 & dist<8km`, `fare<5 & dist>20km`).
+- baseline (no filter): f02 valid `<metric>3.38761<\metric>`
+- with noise filter: f02 valid `<metric>3.45751<\metric>` (**much worse**)
+Reason: the shared holdout (and the test set) contains the same label noise, and RMSE is minimised by the conditional mean *including* that noise. Dropping tail rows from train biases short-distance predictions down and increases test-set MSE. So keep the raw labels (clip to [2.5,500] only).
+Also `max_bin=256`, `mcw=30/500/1000` all worse; capacity saturates at 8192 leaves. I consider the valid-coordinate model at the practical ceiling (~3.29 blend CV). My final contributions are all saved; monitoring for re-blend. #insight #problem #training #communication
+[board] сообщений 43, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 43, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_rot29_best_single.md =====
+# mimosa_omicron — new best single: +29° rotated coords, 8192 leaves, valid `<metric>3.32263<\metric>`
+Added **29° rotated coordinate features** (alongside existing 45°) on top of the 8192-leaf + 0.005° TE recipe. Different axis alignment → slightly better and decorrelated.
+| tag | valid RMSE | test pred |
+|---|---|---|
+| **`xgb2t3lg8192rot29_full`** | **`<metric>3.32263<\metric>`** (best_iter 1054) | `test_pred_xgb2t3lg8192rot29_full.npy` |
+| `xgb2t3lg16384_full` (prev best) | 3.32687 | — |
+- holdout: `holdout_pred_xgb2t3lg8192rot29_full.npy` / `holdout_orig_...`
+- my NNLS over 10 models: **CV 3.31663** (was 3.31788); weight `rot29 .384, 16384 .261, log8192 .134, nn .138, xgb_full .087`.
+- backup refreshed: `workspaces/mimosa_omicron/submission_mimosa_blend.csv`.
+@aldebaran_omicron please add to the blend — should nudge v11 below 3.289. This is my last model; I'll just monitor now. #training #ensembling #status #communication
+[board] сообщений 44, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 44, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_final_v12.md =====
+# aldebaran_omicron — FINAL v12 (rot29 XGB joins): CV `<metric>3.28966<\metric>`
+mimosa's `xgb2t3lg8192rot29_full` is the **new best single** `<metric>3.3226<\metric>` (fine TE + 29° rotated coords). Re-blended.
+**Blend v12 (NNLS, 5-fold CV on shared holdout n=542,554): `<metric>3.28966<\metric>`** (v11 3.28971 — effectively tied; rot29 takes weight 0.159 and displaces some 16384-leaf weight).
+- weights: `canopus_j54m .307, xgb2t3lg16384 .213, xgb2t3lg8192rot29 .159, canopus_g54m .145, xgb2t3lg8192log .114, nn_full .066` (rest 0).
+- OLS CV 3.2876 but only with large negative weights (e.g. xgb2t3lg −0.45) -> **rejected** (instability risk on 9914 test rows). NNLS kept.
+- corrupt rows: canopus corrupt model (CV 12.65). **Expected test ≈ 3.77.**
+- **`final_solution/` finalized**: `submission.csv` (9914 rows, keys match, 0 NaN, range [3.36,130.2]), `README.md`, `code/` (all agents' pipelines included). Validated.
+We're at the noise floor now (mimosa & canopus both report the same). I'll leave this as the final submission unless something clearly better lands before `work_end`. #submission #ensembling #status #communication
+[board] сообщений 45, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 45, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 45, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 45, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 45, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_final_status.md =====
+# canopus_pi — final status: plateau reached; endorse v10 ensemble
+Ran two more diversity attempts — both add **zero** to the blend:
+- `n54m` (full data, 2048 leaves, ff.6/bf.7, seed999): valid `<metric>3.3393<\metric>`, NNLS weight 0.
+- `o54log` (full data, LightGBM on log1p(fare)): valid `<metric>3.4402<\metric>`, NNLS weight 0 (mimosa `xgb2log` already covers log-target direction).
+- also negative: 4096-leaf LGBM (`k54m` 3.3393, w0), fine-0.005° TE (`l19fine`, worse), residual-by-cell correction (no gain). Details [[canopus_pi_tail_analysis]].
+**Conclusion:** the valid-coordinate MSE is dominated by irreducible label noise (top 0.1% = 16% of MSE; 23% of those are sub-2km rides with $100+ fares), so ~3.294 blend CV / expected test ~3.78-3.79 is the practical floor. My contributions that are IN the current final blend: **`j54m` (w .313), `g54m` (w .155)**, plus my improved corrupt model (CV 12.65) already applied to the 225 corrupt test rows. Code in `final_solution/code/canopus_*`.
+I endorse `final_solution/submission.csv` (v10, [[aldebaran_omicron_blend_v10]]). I will keep monitoring the board and re-verify the submission stays valid until the deadline; ping me if any late model needs test preds. #submission #status #communication #ensembling
+[board] сообщений 46, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 46, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_last_model_rot29log.md =====
+# mimosa_omicron — last model: rot29 + log target, `<metric>3.40848<\metric>` (diverse)
+Final artifact before `work_end` (add to v13 if it helps):
+- `xgb2t3lg8192rot29log_full` — 8192-leaf lossguide, **29° rotated coords + log1p target** + fine TE. Valid `<metric>3.40848<\metric>` (vs log8192 3.41414).
+- test pred: `workspaces/mimosa_omicron/test_pred_xgb2t3lg8192rot29log_full.npy`; holdout `holdout_pred_xgb2t3lg8192rot29log_full.npy` + `holdout_orig_...`.
+- my NNLS over 11 models: **CV 3.31594** (was 3.31663); weights incl. `rot29 .350, 16384 .271, rot29log .158, nn .136, xgb_full .089`.
+- backup refreshed: `workspaces/mimosa_omicron/submission_mimosa_blend.csv`.
+@aldebaran_omicron — should give a tiny nudge; if your CV doesn't improve, keep v12. I'm done launching jobs and will only verify the final `final_solution/` from here. #training #ensembling #status #submission
+[board] сообщений 47, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 47, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== aldebaran_omicron_final_v13.md =====
+# aldebaran_omicron — FINAL v13 (last model folded in) — submission frozen
+mimosa's `xgb2t3lg8192rot29log_full` (log target + fine TE + 29° rot) landed just in time: holdout `<metric>3.4085<\metric>`, decorrelated -> weight 0.14.
+## FINAL BLEND v13 (NNLS, 5-fold CV, n=542,554 valid-coord rows)
+**CV = `<metric>3.28889<\metric>`**
+- weights: `canopus_j54m .307, mimosa_xgb2t3lg16384 .220, canopus_g54m .144, mimosa_xgb2t3lg8192rot29log .140, mimosa_xgb2t3lg8192rot29 .129, mimosa_nn_full .064` (all others 0).
+- corrupt rows (225): canopus corrupt model (CV 12.65).
+- **Expected test RMSE ≈ sqrt(0.9773·3.2889² + 0.0227·12.65²) ≈ 3.77.**
+- Full progression: 3.3354 → 3.3324 → 3.3299 → 3.3277 → 3.3266 → 3.3084 → 3.2976 → 3.2910 → 3.2897 → **3.2889**.
+## `final_solution/` (FROZEN)
+- `submission.csv`: 9914 rows, `key,fare_amount`, keys exactly match `sample_submission.csv`/`test.csv`, 0 NaN, range [3.36, 128.6].
+- `README.md`: full method, model table, weights, corrupt handling, provenance, external-source log (only local data + standard libraries; no pretrained checkpoints).
+- `code/`: all agents' pipelines (aldebaran + `code/mimosa/` + canopus `canopus_*.py`).
+This is my final submission unless the coordinator flags an issue. Thanks @mimosa_omicron and @canopus_pi — great collaborative run. #submission #ensembling #status
+[board] сообщений 48, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_final_validation.md =====
+# mimosa_omicron — final validation of frozen `final_solution/`
+Confirmed v13 is valid and complete:
+- `submission.csv`: 9914 rows, `key,fare_amount`, keys **exactly match** `sample_submission.csv`/`test.csv` order, **0 NaN**, range [3.3634, 128.6004], mean 11.472.
+- `README.md` present; `code/` present with `code/mimosa/` (16 files incl. `mimosa_README.md`, prep/FE/TE/train/predict/corrupt/blend).
+- Blend CV `<metric>3.28889<\metric>` (valid-coord holdout), corrupt rows via canopus 12.65-CV model, expected test ≈ 3.77.
+Agree with freezing v13. Nothing further from me unless the coordinator flags an issue. #submission #status #communication
+[board] сообщений 49, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== canopus_pi_final_consensus.md =====
+# canopus_pi — consensus on FINAL v13
+Verified `final_solution/submission.csv` (v13, [[aldebaran_omicron_final_v13]]): 9,914 rows, `key,fare_amount`, keys exactly match `sample_submission.csv` order, 0 NaN, range [3.363, 128.600], mean 11.472. `README.md` + `code/` (incl. `code/mimosa/` and my `canopus_*.py`) present. Corrupt 225 rows use my corrupt model (CV 12.65).
+**I agree with freezing v13.** Final swarm numbers: blend CV `<metric>3.28889<\metric>` on valid-coord holdout; expected test ≈ **3.77**. Contributors: canopus `j54m` (.307) + `g54m` (.144) LightGBMs, mimosa big XGBs+NN, aldebaran blend/blend-CV + full-data models. No external data or pretrained checkpoints used anywhere.
+Thanks @aldebaran_omicron @mimosa_omicron — great run. I'm standing by only for an integrity re-check; no further changes from me. #submission #status #communication #ensembling
+[board] сообщений 50, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[agent swarm-2] run завершился за 39955s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5db4f9a4ffeKaihgxfmgp0EaC продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5db4f9a4ffeKaihgxfmgp0EaC (2026-11-04T03:49:02Z): Continue work until hard end.
+===== mimosa_omicron_independent_blend_verification.md =====
+# mimosa_omicron — independent swarm-wide blend verification (v13 OK)
+I rebuilt the blend from ALL agents' holdout preds independently (`verify_swarm.py`, 23 models, common orig_idx n=542,599, reference y = canopus j54m true):
+- CV NNLS over all 23 (per-fold weights, honest OOF): **3.29258**
+- CV NNLS over only models with test preds: **3.29226** — matches v13's 3.2889 within ~0.003 (their 5-fold *bagged weights* vs my per-fold scoring; same model ranking, no issue for the frozen submission).
+- Greedy subset check: best 5 = `mim_rot29, can_j54m, mim_rot29log, can_g54m, mim_16384` -> CV **3.29055** (only ~0.002 better than the full set, i.e. model selection noise).
+- Canopus's unshipped `n54m/k54m/o54log` (holdout only, no test preds) did **not** enter the greedy set — no need to generate their test preds.
+- Per-model RMSEs confirm aldabaran's numbers (e.g. mim rot29 3.3154 on this intersection, j54m 3.3258, g54m 3.3332).
+Conclusion: **v13 is sound; keep it frozen.** No action needed. #ensembling #insight #submission #communication
+[board] сообщений 51, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 51, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 51, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[agent swarm-3] run завершился за 40877s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e5db4f99effeVxshY61MQw7bBd продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e5db4f99effeVxshY61MQw7bBd (2026-11-04T04:04:25Z): Continue work until hard end.
+[agent swarm-1] run завершился за 40989s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e5db4f9b4ffenPrw7sSkw302DM продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e5db4f9b4ffenPrw7sSkw302DM (2026-11-04T04:06:17Z): Continue work until hard end.
+===== aldebaran_omicron_calibration_negative.md =====
+# aldebaran_omicron — post-blend calibration tested: no gain, v13 stays frozen
+Quick check on the final blend OOF (n=542,554): post-hoc calibration does **not** help.
+- base NNLS blend `<metric>3.28889<\metric>`
+- linear recalibration 3.28886 (identity, gain ~0)
+- isotonic 3.29362 (worse — overfits)
+- clipping to [2.5,200] 3.29055 / [2.5,150] 3.30035 (worse; tail must stay uncapped for RMSE)
+So no change: `final_solution/submission.csv` remains **v13** (md5 `de8b927a68545ac12ef7eb5d30c23066`), blend CV `<metric>3.28889<\metric>`, expected test ≈ 3.77. Double-checked that the 5 coord-recovered test rows keep the main model and only the 225 truly-corrupt rows use the corrupt model. #postprocessing #ensembling #insight #status
+===== canopus_pi_integrity_check.md =====
+# canopus_pi — final integrity check (pre hard-end)
+`final_solution/submission.csv` md5 = `de8b927a68545ac12ef7eb5d30c23066` (matches [[aldebaran_omicron_calibration_negative]]).
+- 9,914 rows; **row order matches both `data/test.csv` and `sample_submission.csv`** (not just the key set).
+- 0 NaN, dtype float; range [3.363, 128.600], mean 11.472.
+- corrupt-row positions: 232 preds, mean 12.41, range [8.14, 52.93], no NaN (225 fallback + 7 main/recovered as designed).
+- `README.md` + 20 files in `code/` (all agents' pipelines incl. `canopus_*`).
+Agree this is final. No further changes from me. #submission #status #communication #ensembling
+[board] сообщений 53, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 53, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-11-04_07-11-45_SYSTEM_final_phase.md
+===== 2026-11-04_07-11-45_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 07:11)
+До жёсткого стопа 30 минут (hard_end: 2026-11-04T07:41:27+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-11-04T07:41:27+03:00 харнесс принудительно остановит все сессии.
+===== aldebaran_omicron_FINAL_CONFIRM.md =====
+# aldebaran_omicron — FINAL CONFIRMATION (no further changes)
+Per [[2026-11-04_07-11-45_SYSTEM_final_phase]]: experiments stopped; best agreed solution uploaded and frozen.
+**`final_solution/submission.csv`**
+- md5 `de8b927a68545ac12ef7eb5d30c23066`
+- 9,914 rows, columns `key,fare_amount`; row order matches `data/test.csv` / `sample_submission.csv`
+- 0 NaN, float dtype, range [3.363, 128.600], mean 11.472
+**Final blend v13**: 5-fold bagged NNLS over 6 weighted full-data models (canopus `j54m`/`g54m` LightGBMs, mimosa `xgb2t3lg16384`/`8192rot29`/`8192rot29log` XGBs, mimosa `nn_full`), valid-coord CV `<metric>3.28889<\metric>`, corrupt 225 rows via canopus corrupt model (CV 12.65). Expected test ≈ 3.77.
+`final_solution/` contains `submission.csv`, `README.md`, and `code/` (all agents' pipelines). Consensus confirmed by [[mimosa_omicron_final_validation]], [[canopus_pi_final_consensus]], [[canopus_pi_integrity_check]]. Done. #submission #status #communication
+[board] сообщений 55, новых 2, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+===== mimosa_omicron_FINAL_CONFIRM.md =====
+# mimosa_omicron — FINAL CONFIRMATION (experiments stopped)
+Per [[2026-11-04_07-11-45_SYSTEM_final_phase]]: no new experiments launched. Best agreed solution is uploaded and frozen per [[aldebaran_omicron_FINAL_CONFIRM]].
+**`final_solution/submission.csv`**
+- md5 `de8b927a68545ac12ef7eb5d30c23066`
+- 9,914 rows, `key,fare_amount`, order matches `data/test.csv`/`sample_submission.csv`, 0 NaN, range [3.363, 128.600], mean 11.472
+- `README.md` + `code/` (incl. `code/mimosa/`) present
+**Final blend v13**: valid-coord holdout CV `<metric>3.28889<\metric>`; corrupt 225 rows via canopus corrupt model (CV 12.65); expected test ≈ 3.77. Independently re-verified in [[mimosa_omicron_independent_blend_verification]]. Confirmed — done. #submission #status #communication
+[board] сообщений 56, новых 1, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 56, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 56, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 56, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[agent swarm-3] run завершился за 1986s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e5db4f99effeVxshY61MQw7bBd продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e5db4f99effeVxshY61MQw7bBd (2026-11-04T04:37:31Z): Continue work until hard end.
+[agent swarm-2] run завершился за 2920s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5db4f9a4ffeKaihgxfmgp0EaC продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5db4f9a4ffeKaihgxfmgp0EaC (2026-11-04T04:37:42Z): Continue work until hard end.
+[agent swarm-1] run завершился за 1947s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e5db4f9b4ffenPrw7sSkw302DM продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e5db4f9b4ffenPrw7sSkw302DM (2026-11-04T04:38:44Z): Continue work until hard end.
+[agent swarm-2] run завершился за 163s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e5db4f9a4ffeKaihgxfmgp0EaC продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e5db4f9a4ffeKaihgxfmgp0EaC (2026-11-04T04:40:26Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 56, новых 0, метрик 0, метрика задачи: root-mean-squared-error (low)
+[board] artifact uploaded: analysis/
+[mtime] saved 61 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

@@ -1,0 +1,68 @@
+[2026-10-21 14:34:16,124] [data.py:213] Downloading the dataset for `ventilator-pressure-prediction` to `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction`...
+Warning: Looks like you're using an outdated API Version, please consider updating (server 2.2.2 / client 1.6.17)
+Downloading ventilator-pressure-prediction.zip to /home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction
+  0%|          | 0.00/223M [00:00<?, ?B/s]  0%|          | 1.00M/223M [00:00<02:26, 1.59MB/s]  1%|          | 2.00M/223M [00:00<01:15, 3.07MB/s]  2%|▏         | 4.00M/223M [00:00<00:35, 6.47MB/s]  4%|▎         | 8.00M/223M [00:01<00:16, 13.7MB/s]  5%|▌         | 12.0M/223M [00:01<00:11, 19.3MB/s]  7%|▋         | 16.0M/223M [00:01<00:09, 23.6MB/s]  9%|▊         | 19.0M/223M [00:01<00:09, 22.6MB/s] 10%|█         | 23.0M/223M [00:01<00:08, 26.1MB/s] 12%|█▏        | 27.0M/223M [00:01<00:07, 29.1MB/s] 14%|█▍        | 31.0M/223M [00:01<00:06, 31.7MB/s] 16%|█▌        | 35.0M/223M [00:01<00:06, 30.9MB/s] 17%|█▋        | 39.0M/223M [00:01<00:05, 32.7MB/s] 19%|█▉        | 43.0M/223M [00:02<00:05, 34.2MB/s] 21%|██        | 47.0M/223M [00:02<00:05, 35.2MB/s] 23%|██▎       | 51.0M/223M [00:02<00:05, 35.9MB/s] 25%|██▍       | 55.0M/223M [00:02<00:05, 33.6MB/s] 26%|██▋       | 59.0M/223M [00:02<00:04, 34.7MB/s] 28%|██▊       | 63.0M/223M [00:02<00:04, 35.5MB/s] 30%|███       | 67.0M/223M [00:02<00:04, 36.1MB/s] 32%|███▏      | 71.0M/223M [00:02<00:04, 36.8MB/s] 34%|███▎      | 75.0M/223M [00:03<00:04, 37.0MB/s] 35%|███▌      | 79.0M/223M [00:03<00:04, 34.4MB/s] 37%|███▋      | 83.0M/223M [00:03<00:04, 35.3MB/s] 39%|███▉      | 87.0M/223M [00:03<00:03, 36.1MB/s] 41%|████      | 91.0M/223M [00:03<00:03, 36.5MB/s] 43%|████▎     | 95.0M/223M [00:03<00:03, 36.9MB/s] 44%|████▍     | 99.0M/223M [00:03<00:03, 34.1MB/s] 46%|████▌     | 103M/223M [00:03<00:03, 35.1MB/s]  48%|████▊     | 107M/223M [00:03<00:03, 35.9MB/s] 50%|████▉     | 111M/223M [00:04<00:03, 36.5MB/s] 52%|█████▏    | 115M/223M [00:04<00:03, 36.6MB/s] 53%|█████▎    | 119M/223M [00:04<00:02, 37.3MB/s] 55%|█████▌    | 123M/223M [00:04<00:03, 34.4MB/s] 57%|█████▋    | 127M/223M [00:04<00:02, 35.4MB/s] 59%|█████▊    | 131M/223M [00:04<00:02, 36.1MB/s] 61%|██████    | 135M/223M [00:04<00:02, 36.5MB/s] 62%|██████▏   | 139M/223M [00:04<00:02, 37.1MB/s] 64%|██████▍   | 143M/223M [00:05<00:02, 34.0MB/s] 66%|██████▌   | 147M/223M [00:05<00:02, 35.1MB/s] 68%|██████▊   | 151M/223M [00:05<00:02, 35.9MB/s] 69%|██████▉   | 155M/223M [00:05<00:01, 36.4MB/s] 71%|███████▏  | 159M/223M [00:05<00:01, 36.8MB/s] 73%|███████▎  | 163M/223M [00:05<00:01, 37.1MB/s] 75%|███████▍  | 167M/223M [00:05<00:01, 34.4MB/s] 77%|███████▋  | 171M/223M [00:05<00:01, 35.3MB/s] 78%|███████▊  | 175M/223M [00:05<00:01, 35.9MB/s] 80%|████████  | 179M/223M [00:06<00:01, 36.7MB/s] 82%|████████▏ | 183M/223M [00:06<00:01, 37.2MB/s] 84%|████████▍ | 187M/223M [00:06<00:01, 34.1MB/s] 86%|████████▌ | 191M/223M [00:06<00:00, 35.1MB/s] 87%|████████▋ | 195M/223M [00:06<00:00, 33.9MB/s] 89%|████████▉ | 199M/223M [00:06<00:00, 35.2MB/s] 91%|█████████ | 203M/223M [00:06<00:00, 36.1MB/s] 93%|█████████▎| 207M/223M [00:06<00:00, 35.2MB/s] 95%|█████████▍| 211M/223M [00:07<00:00, 36.1MB/s] 96%|█████████▋| 215M/223M [00:07<00:00, 36.5MB/s] 98%|█████████▊| 219M/223M [00:07<00:00, 37.0MB/s]100%|█████████▉| 223M/223M [00:07<00:00, 36.5MB/s]100%|██████████| 223M/223M [00:07<00:00, 31.8MB/s]
+[2026-10-21 14:34:24,511] [data.py:67] Generating checksum for `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/ventilator-pressure-prediction.zip`...
+[2026-10-21 14:34:24,807] [data.py:80] Checksum for `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/ventilator-pressure-prediction.zip` matches the expected checksum.
+[2026-10-21 14:34:24,807] [data.py:83] Extracting `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/ventilator-pressure-prediction.zip` to `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/raw`...
+[2026-10-21 14:34:26,867] [data.py:85] Extracted `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/ventilator-pressure-prediction.zip` to `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/raw` successfully.
+[2026-10-21 14:34:26,867] [data.py:168] Public directory is empty.
+[2026-10-21 14:34:26,867] [data.py:96] Preparing the dataset using `prepare` from `../../Desktop/mle-bench/mlebench/competitions/ventilator-pressure-prediction/prepare.py`...
+[2026-10-21 14:35:01,008] [data.py:107] Data for competition `ventilator-pressure-prediction` prepared successfully.
+[2026-10-21 14:35:01,009] [data.py:113] Generating checksums for files in `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction`...
+[2026-10-21 14:35:01,471] [data.py:141] Checksums for files in `/home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction` match the expected checksums.
+[2026-10-21 14:35:01,471] [data.py:144] Removing the raw data directory for `ventilator-pressure-prediction`...
+
+== задача: Google Brain - Ventilator Pressure Prediction (`ventilator-pressure-prediction`)
+==> /home/travvy/.pyenv/versions/mle-bench/bin/python -c from mlebench.cli import main; main() prepare -c ventilator-pressure-prediction --data-dir /home/travvy/.cache/mle-bench/data
+== prepared: /home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/prepared (mlebench-prepare)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/ventilator-pressure-prediction/answers.csv ← /home/travvy/.cache/mle-bench/data/ventilator-pressure-prediction/prepared/private/test.csv
+  written private/competitions/ventilator-pressure-prediction/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (5.7 KiB) md5 3fe7f22cc84d24cfb888abd6308114cd
+  installed data/sample_submission.csv (5.1 MiB) md5 6ab5162be2a03922cfc6068befc31c22
+  installed data/test.csv (24.4 MiB) md5 39c126e1ac7b2e6641ec54f698b1ebdf
+  installed data/train.csv (285.8 MiB) md5 4b0aaa1c637a452d5d1109aa585bca9f
+  written TASK.md (только description)
+  written data/README.md
+
+задача: Google Brain - Ventilator Pressure Prediction (`ventilator-pressure-prediction`)
+  метрика: `MAE` (меньше — лучше)
+  - пороги (2605 команд в лидерборде):
+  - gold 0.11190
+  - silver 0.13380
+  - bronze 0.13640
+  - median 0.16380
+  train: data/train.csv
+  test:  data/test.csv
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  ventilator-pressure-prediction
+sandbox/data:     316M (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (316MB) едут через бакет 'mlebench-ventilator-pressure-prediction' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-ventilator-pressure-prediction' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (196K)
+image:        swarm-mlm
+job:          ventilator-pressure-prediction
+/home/travvy/Desktop/sisyphus-blackboard-experiment/.venv-mlm/lib/python3.12/site-packages/ML_management/mlmanagement/git_info.py:93: UserWarning: Repo sisyphus-blackboard-experiment have changes.
+  warnings.warn(f"Repo {repo_name} have changes.")
+  0%|          | 0.00/176k [00:00<?, ?File/s]210kFile [00:00, 624kFile/s]                 
+{"job_id": "15707", "job_name": "ventilator-pressure-prediction", "status": "PLANNED"}
+
+Job запущен в MLM: ventilator-pressure-prediction (id 15707)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

@@ -1,0 +1,41 @@
+{
+  "combiner": "weighted_sum",
+  "postprocess": "postprocess_final.py",
+  "members": [
+    {
+      "name": "xgb_te_res_d15",
+      "file": "preds/xgb_te_res_d15_test.csv",
+      "weight": 0.2452000600719828
+    },
+    {
+      "name": "xgb_te2_d15",
+      "file": "preds/xgb_te2_d15_test.csv",
+      "weight": 0.2006452428116982
+    },
+    {
+      "name": "xgb_te",
+      "file": "preds/xgb_te_test.csv",
+      "weight": 0.1476129471446507
+    },
+    {
+      "name": "xgb_te3",
+      "file": "preds/xgb_te3_test.csv",
+      "weight": 0.1283329838060352
+    },
+    {
+      "name": "nn3",
+      "file": "preds/nn3_test.csv",
+      "weight": 0.1340678914678115
+    },
+    {
+      "name": "xgb_te2",
+      "file": "preds/xgb_te2_test.csv",
+      "weight": 0.10987557594940095
+    },
+    {
+      "name": "xgb_te_res",
+      "file": "preds/xgb_te_res_test.csv",
+      "weight": 0.03605151336552776
+    }
+  ]
+}

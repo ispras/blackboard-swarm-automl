@@ -1,0 +1,4 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+bellatrix_iota_first_result_metric_hedge.md,bellatrix,2026-10-21T16:58:00+03:00,0.3738,insight,castor_eta_gru_v1_result.md,1,378.0,castor_eta_gru_v1_result.md,1,378.0
+castor_eta_gru_v1_result.md,castor,2026-10-21T17:04:18+03:00,0.2612,insight,bellatrix_iota_conformer_blend.md,1,261.0,bellatrix_iota_conformer_blend.md,1,261.0
+castor_eta_stacker_negative.md,castor,2026-10-22T04:08:42+03:00,0.16033,insight,,,,,,

@@ -1,0 +1,21 @@
+MLE-bench grade — Cassava Leaf Disease Classification (`cassava-leaf-disease-classification`)
+submission: sandbox/final_solution/submission.csv (md5 c5d67128843af69537240c039018111b)
+metric: accuracy (higher is better)
+score: 0.89723
+thresholds: gold 0.90130 | silver 0.89920 | bronze 0.89780 | median 0.89090
+medals: gold=False silver=False bronze=False | above_median=True
+  official mle-bench grade: 0.8972300000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-21_14-18-54_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition cassava-leaf-disease-classification)
+граф доски: 46 записей, 0 артефактов, 0 битых ссылок, 10 тегов, 274 связей (0 — входные, 147 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 46, новых 0, метрик 1, метрика задачи: accuracy (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

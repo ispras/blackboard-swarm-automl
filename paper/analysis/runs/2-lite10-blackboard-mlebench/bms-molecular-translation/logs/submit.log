@@ -1,0 +1,50 @@
+== задача: Bristol-Myers Squibb - Molecular Translation (`bms-molecular-translation`)
+== prepared: /home/travvy/.cache/mle-bench/data/bms-molecular-translation/prepared (cache:/home/travvy/.cache/mle-bench/data)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/bms-molecular-translation/answers.csv ← /home/travvy/.cache/mle-bench/data/bms-molecular-translation/prepared/private/test.csv
+  written private/competitions/bms-molecular-translation/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (4.2 KiB) md5 df4960092a0bcf10eb57c3b7dbf41189
+  installed data/extra_approved_InChIs.csv (1.2 GiB) md5 24301ba135996bd369cc83740e01f8c8
+  installed data/sample_submission.csv (14.3 MiB) md5 fb64d50adadf358d780b001dc14daa47
+  installed data/test/ (каталог)
+  installed data/train/ (каталог)
+  installed data/train_labels.csv (262.6 MiB) md5 35513e9a1d7f42bfa97f93b0476abc4c
+  written TASK.md (только description)
+  written data/README.md
+
+задача: Bristol-Myers Squibb - Molecular Translation (`bms-molecular-translation`)
+  метрика: `levenshtein-distance` (меньше — лучше)
+  - пороги (875 команд в лидерборде):
+  - gold 0.62000
+  - silver 1.37000
+  - bronze 1.99000
+  - median 5.58000
+  train: data/extra_approved_InChIs.csv
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  bms-molecular-translation
+sandbox/data:     11G (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (11035MB) едут через бакет 'mlebench-bms-molecular-translation' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-bms-molecular-translation' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (196K)
+image:        swarm-mlm
+job:          bms-molecular-translation
+{"job_id": "15719", "job_name": "bms-molecular-translation", "status": "PLANNED"}
+
+Job запущен в MLM: bms-molecular-translation (id 15719)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

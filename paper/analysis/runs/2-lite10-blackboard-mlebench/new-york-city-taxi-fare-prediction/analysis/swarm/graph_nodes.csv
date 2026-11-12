@@ -1,0 +1,71 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+procyon_alpha_intro.md,procyon,2026-11-04T01:06:40+03:00,communication plan status,2,0,0,0
+deneb_phi_intro.md,deneb,2026-11-04T01:07:00+03:00,communication data_pipeline feature_engineering plan status,2,1,1,0
+dubhe_tau_intro_and_plan.md,dubhe,2026-11-04T01:07:05+03:00,communication data_pipeline plan status,1,1,1,0
+procyon_alpha_dedupe_plan.md,procyon,2026-11-04T01:08:08+03:00,communication data_pipeline feature_engineering plan status,2,2,2,0
+dubhe_tau_ack_gpu_lane.md,dubhe,2026-11-04T01:13:05+03:00,communication ensembling plan status,1,2,3,0
+deneb_phi_feature_store_ready.md,deneb,2026-11-04T01:17:30+03:00,communication data_pipeline feature_engineering plan status,4,2,4,0
+dubhe_tau_cache_ready_smoke.md,dubhe,2026-11-04T01:22:29+03:00,data_pipeline ensembling model_selection postprocessing status,1,1,5,0
+dubhe_tau_xgb20m_result_tail_insight.md,dubhe,2026-11-04T01:28:57+03:00,ensembling insight model_selection postprocessing status,1,1,6,0
+deneb_phi_lgb_baseline_and_fallback.md,deneb,2026-11-04T01:31:15+03:00,communication ensembling insight model_selection postprocessing status,5,2,7,0
+procyon_alpha_feature_store_ready.md,procyon,2026-11-04T01:31:34+03:00,ensembling feature_engineering insight model_selection status,1,0,0,0
+deneb_phi_status_concurrent_job.md,deneb,2026-11-04T01:37:36+03:00,communication ensembling postprocessing status,0,3,8,0
+dubhe_tau_full_xgb_result_improved_fallback.md,dubhe,2026-11-04T01:39:25+03:00,ensembling insight postprocessing status,0,1,8,0
+dubhe_tau_invalid_categories_refined.md,dubhe,2026-11-04T01:42:19+03:00,communication ensembling insight postprocessing,2,1,8,0
+procyon_alpha_fair_val_and_v2.md,procyon,2026-11-04T01:49:33+03:00,communication ensembling model_selection postprocessing status,1,2,9,0
+dubhe_tau_aug_result_postproc.md,dubhe,2026-11-04T01:54:19+03:00,ensembling model_selection postprocessing status,0,3,10,0
+deneb_phi_lgb_big_result.md,deneb,2026-11-04T01:59:39+03:00,communication ensembling model_selection postprocessing status,2,1,5,0
+dubhe_tau_gpu_ok_for_catboost.md,dubhe,2026-11-04T02:02:36+03:00,communication ensembling postprocessing status,0,1,6,0
+dubhe_tau_b512_best_trim_trap.md,dubhe,2026-11-04T02:14:02+03:00,ensembling insight model_selection postprocessing status,2,0,0,0
+dubhe_tau_blend_status_nn.md,dubhe,2026-11-04T02:16:57+03:00,ensembling model_selection postprocessing status,2,1,1,0
+deneb_phi_catboost_and_route_negative.md,deneb,2026-11-04T02:19:14+03:00,communication ensembling insight model_selection postprocessing status,3,3,6,0
+procyon_alpha_v2_full_running_blend.md,procyon,2026-11-04T02:23:51+03:00,communication ensembling model_selection plan status,5,0,0,0
+dubhe_tau_accept_blend_ownership.md,dubhe,2026-11-04T02:26:03+03:00,communication ensembling model_selection status,1,2,7,0
+deneb_phi_ack_blend_plan.md,deneb,2026-11-04T02:26:20+03:00,communication ensembling model_selection status,1,3,7,0
+deneb_phi_blend_verify_ridge.md,deneb,2026-11-04T02:45:24+03:00,communication ensembling model_selection postprocessing status,0,3,8,0
+deneb_phi_safety_blend_and_ridge_stability.md,deneb,2026-11-04T02:47:06+03:00,communication ensembling model_selection postprocessing status,1,0,0,0
+dubhe_tau_te_breakthrough_interim_sub.md,dubhe,2026-11-04T02:53:30+03:00,communication ensembling feature_engineering postprocessing status submission,4,2,7,1
+deneb_phi_lgb_te_and_blend_leaderboard.md,deneb,2026-11-04T03:22:05+03:00,communication ensembling model_selection status,1,2,8,0
+deneb_phi_xgb_te2_verified_best_blend.md,deneb,2026-11-04T03:23:11+03:00,communication ensembling model_selection postprocessing status,0,2,9,0
+deneb_phi_key_format_final_blend.md,deneb,2026-11-04T03:33:09+03:00,communication ensembling insight model_selection postprocessing submission,2,0,0,1
+deneb_phi_final_package_deployed.md,deneb,2026-11-04T03:34:11+03:00,communication ensembling postprocessing status submission,1,1,1,1
+dubhe_tau_key_mismatch_procyon.md,dubhe,2026-11-04T03:35:08+03:00,bug communication data_pipeline ensembling problem,1,0,0,0
+procyon_alpha_keyfix_canonical_te.md,procyon,2026-11-04T03:37:17+03:00,bug communication ensembling feature_engineering status,1,2,8,0
+deneb_phi_final_repro_exact.md,deneb,2026-11-04T03:41:00+03:00,communication ensembling status submission,0,0,0,1
+deneb_phi_stacking_negative.md,deneb,2026-11-04T03:44:38+03:00,communication ensembling insight model_selection,1,1,1,0
+dubhe_tau_status_final_stretch.md,dubhe,2026-11-04T03:49:33+03:00,communication ensembling model_selection postprocessing status,0,2,9,0
+deneb_phi_residual_te_insight.md,deneb,2026-11-04T03:51:10+03:00,communication ensembling feature_engineering insight status,2,2,8,0
+dubhe_tau_final_weights_res.md,dubhe,2026-11-04T04:24:59+03:00,communication ensembling feature_engineering postprocessing submission,3,1,9,1
+deneb_phi_package_synced_6member.md,deneb,2026-11-04T04:27:28+03:00,communication ensembling postprocessing status submission,1,2,10,1
+procyon_alpha_final_verification.md,procyon,2026-11-04T04:43:14+03:00,communication ensembling model_selection status submission verification,1,2,11,1
+procyon_alpha_extra_methods_negative.md,procyon,2026-11-04T04:44:17+03:00,communication ensembling insight model_selection status,2,2,12,0
+deneb_phi_lgb_v3te_excluded_seedbag.md,deneb,2026-11-04T04:45:50+03:00,communication ensembling model_selection status,1,2,13,0
+dubhe_tau_final_7member_d15.md,dubhe,2026-11-04T04:47:59+03:00,communication ensembling postprocessing status submission,1,0,0,1
+deneb_phi_seedbag_gpu_taken.md,deneb,2026-11-04T04:48:05+03:00,communication ensembling model_selection status,2,2,14,0
+dubhe_tau_gpu_shared_d15.md,dubhe,2026-11-04T04:50:13+03:00,communication ensembling status submission,0,2,15,1
+dubhe_tau_resd15_best8.md,dubhe,2026-11-04T05:11:54+03:00,communication ensembling postprocessing status submission,1,0,0,1
+procyon_alpha_full_holdout_verified_8member.md,procyon,2026-11-04T05:17:23+03:00,communication ensembling status submission verification,0,1,1,1
+dubhe_tau_definitive_final_8member.md,dubhe,2026-11-04T05:28:17+03:00,communication ensembling final postprocessing submission,2,0,0,1
+deneb_phi_seedbag_marginal_frozen.md,deneb,2026-11-04T05:29:58+03:00,communication ensembling insight model_selection status,0,1,15,0
+deneb_phi_package_synced_8member.md,deneb,2026-11-04T05:30:49+03:00,communication ensembling postprocessing status submission,1,1,1,1
+procyon_alpha_final_verification_passed.md,procyon,2026-11-04T05:35:30+03:00,communication ensembling status submission verification,0,2,2,1
+dubhe_tau_upgrade_nn2_7member.md,dubhe,2026-11-04T05:47:32+03:00,communication ensembling final model_selection submission,2,0,0,1
+deneb_phi_package_synced_7member.md,deneb,2026-11-04T05:52:07+03:00,communication ensembling final status submission,1,1,1,1
+dubhe_tau_7member_restored_confirmed.md,dubhe,2026-11-04T05:54:37+03:00,communication final submission verification,1,0,0,1
+procyon_alpha_reverified_7member_nn2.md,procyon,2026-11-04T06:04:28+03:00,communication ensembling status submission verification,0,3,2,1
+dubhe_tau_final_nn3.md,dubhe,2026-11-04T06:15:28+03:00,communication ensembling final model_selection submission,2,0,0,1
+deneb_phi_package_synced_nn3.md,deneb,2026-11-04T06:15:58+03:00,communication ensembling final status submission,3,1,1,1
+dubhe_tau_final_frozen_nn3.md,dubhe,2026-11-04T06:29:25+03:00,communication ensembling final status submission,1,0,0,1
+procyon_alpha_reverified_final_nn3.md,procyon,2026-11-04T06:33:09+03:00,communication ensembling final status submission verification,1,3,2,1
+dubhe_tau_nocoord_negative_final_stands.md,dubhe,2026-11-04T06:46:30+03:00,communication ensembling final insight status,0,0,0,0
+dubhe_tau_consensus_final.md,dubhe,2026-11-04T06:47:23+03:00,communication final status submission,2,2,3,1
+dubhe_tau_invalid_duplicate_negative.md,dubhe,2026-11-04T06:55:18+03:00,final insight model_selection postprocessing status,0,0,0,0
+dubhe_tau_te10fold_negative.md,dubhe,2026-11-04T07:27:29+03:00,feature_engineering final insight model_selection status,0,0,0,0
+dubhe_tau_foldsweep_negative.md,dubhe,2026-11-04T07:50:27+03:00,feature_engineering final insight model_selection status,0,0,0,0
+dubhe_tau_nn_route_negative.md,dubhe,2026-11-04T08:07:40+03:00,architecture ensembling final insight status,0,0,0,0
+procyon_alpha_final_signoff.md,procyon,2026-11-04T11:31:59+03:00,communication final status submission verification,2,1,4,1
+deneb_phi_final_compilation_complete.md,deneb,2026-11-04T11:48:38+03:00,communication ensembling final postprocessing status submission,1,3,5,1
+dubhe_tau_final_signoff.md,dubhe,2026-11-04T11:59:04+03:00,communication final status submission,0,2,6,1
+deneb_phi_final_submission_confirmed.md,deneb,2026-11-04T12:42:12+03:00,communication final status submission,0,0,0,1
+dubhe_tau_final_phase_confirmed.md,dubhe,2026-11-04T12:49:25+03:00,communication final status submission,0,0,0,1
+procyon_alpha_final_phase_confirmed.md,procyon,2026-11-04T12:50:54+03:00,communication final status submission,0,0,0,1

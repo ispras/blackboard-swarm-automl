@@ -1,0 +1,22 @@
+{
+  "task": "uw-madison-gi-tract-image-segmentation",
+  "experiment": "3-lite10-blackboard_inet_-mlebench",
+  "job_id": 16163,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-11-02T00:55:45+00:00",
+  "score": 0.85981,
+  "metric": "dice-hausdorff-combo",
+  "is_lower_better": false,
+  "thresholds": {
+    "gold": 0.87917,
+    "silver": 0.87139,
+    "bronze": 0.86699,
+    "median": 0.85499
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

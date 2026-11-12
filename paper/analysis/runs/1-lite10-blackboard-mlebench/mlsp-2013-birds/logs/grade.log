@@ -1,0 +1,21 @@
+MLE-bench grade — MLSP 2013 Bird Classification Challenge (`mlsp-2013-birds`)
+submission: sandbox/final_solution/submission.csv (md5 754430f0bdbf89ab08291513bd327fb9)
+metric: auc-roc (higher is better)
+score: 0.98116
+thresholds: gold 0.93527 | silver 0.90038 | bronze 0.87372 | median 0.86572
+medals: gold=True silver=False bronze=False | above_median=True
+  official mle-bench grade: 0.9811600000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-11_19-08-01_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition mlsp-2013-birds)
+граф доски: 47 записей, 0 артефактов, 0 битых ссылок, 11 тегов, 252 связей (0 — входные, 184 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 47, новых 0, метрик 14, метрика задачи: auc-roc (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

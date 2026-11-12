@@ -1,0 +1,23 @@
+{
+  "competition": "new-york-city-taxi-fare-prediction",
+  "protocol": "mle-bench",
+  "metric": "root-mean-squared-error",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "0388b6c46979ea59ba59550f888a928c",
+  "score": 3.85714,
+  "official_score": 3.85714,
+  "thresholds": {
+    "gold": 2.83377,
+    "silver": 2.88191,
+    "bronze": 2.92371,
+    "median": 3.59741
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": false
+  },
+  "graded_at": "2026-11-04T10:06:56+00:00"
+}

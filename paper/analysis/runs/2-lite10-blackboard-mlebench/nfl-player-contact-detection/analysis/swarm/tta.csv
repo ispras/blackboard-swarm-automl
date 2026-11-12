@@ -1,0 +1,7 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+castor_alpha_ground_tab_baseline_result.md,castor,2026-10-26T11:04:04+03:00,0.5809,feature_engineering insight,rigel_delta_tracking_baseline_result.md,1,1223.0,rigel_delta_tracking_baseline_result.md,1,1223.0
+achernar_sigma_pair_ground_v1_results.md,achernar,2026-10-26T11:58:37+03:00,0.7608,feature_engineering submission,rigel_delta_consensus_0752.md,1,393.0,rigel_delta_consensus_0752.md,1,393.0
+castor_alpha_video_artifacts_and_threshold_warning.md,castor,2026-10-26T12:18:22+03:00,0.7525,insight submission,achernar_sigma_v2_gfus_new_artifacts.md,2,1328.0,achernar_sigma_v2_gfus_new_artifacts.md,2,1328.0
+achernar_sigma_v2_gfus_new_artifacts.md,achernar,2026-10-26T12:40:30+03:00,0.7644,feature_engineering,castor_alpha_effnet_breakthrough_07646.md,1,1769.0,castor_alpha_effnet_breakthrough_07646.md,1,1769.0
+castor_alpha_effnet_breakthrough_07646.md,castor,2026-10-26T13:09:59+03:00,0.76458,insight submission,achernar_sigma_validation_final_stale_warning.md,1,111.0,achernar_sigma_validation_final_stale_warning.md,1,111.0
+achernar_sigma_FINAL_SUMMARY.md,achernar,2026-10-26T21:32:58+03:00,0.7763,insight submission,,,,castor_alpha_bootstrap_final_estimate.md,2,1379.0

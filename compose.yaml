@@ -1,0 +1,124 @@
+name: blackboard-sisyphus-experiment
+
+x-build: &build
+  context: .
+  dockerfile: docker/Dockerfile
+  args:
+    SWARM_UID: ${SWARM_UID:-1000}
+    SWARM_GID: ${SWARM_GID:-1000}
+    NODE_VERSION: ${NODE_VERSION:-20.17.0}
+    OPENCODE_VERSION: ${OPENCODE_VERSION:-1.18.34}
+    MLEBENCH_REF: ${MLEBENCH_REF:-507f92e1138bb6e40dac5c6ee7a6758e6424bf97}
+
+x-env: &env
+  SWARM_IN_CONTAINER: "1"
+  container: docker
+  HOME: /home/agent
+  XDG_DATA_HOME: /home/agent/.local/share
+  XDG_CACHE_HOME: /home/agent/.cache
+  PYTHONUNBUFFERED: "1"
+  TZ: ${SWARM_TZ:-UTC}
+  SWARM_AGENTS: ${SWARM_AGENTS:-3}
+  SWARM_HOURS: ${SWARM_HOURS:-12}
+  SWARM_MODEL: ${SWARM_MODEL:-deepseek/deepseek-flash}
+  SWARM_PROMPT: ${SWARM_PROMPT:-prompts/PROMPT_SWARM.md}
+  SWARM_PORT: ${SWARM_PORT:-4096}
+  SWARM_GPU_COUNT: ${SWARM_GPU_COUNT:-1}
+  SWARM_BOARD_INTERVAL: ${SWARM_BOARD_INTERVAL:-300}
+  SWARM_SERVER_ONLY: ${SWARM_SERVER_ONLY:-0}
+  OPENCODE_AUTH_JSON: ${OPENCODE_AUTH_JSON:-}
+  OPENCODE_CONFIG_JSON: ${OPENCODE_CONFIG_JSON:-}
+
+x-service: &service
+  environment:
+    <<: *env
+  user: "${SWARM_UID:-1000}:${SWARM_GID:-1000}"
+  working_dir: /workspace
+  init: true
+  restart: "no"
+
+services:
+  swarm:
+    <<: *service
+    image: ${SWARM_IMAGE:-blackboard-sisyphus-swarm:swarm}
+    build:
+      <<: *build
+      target: ${SWARM_TARGET:-swarm}
+    # The main swarm container runs systemd as PID 1 so that
+    # `systemd-run --user --scope` is a real command.
+    command: ["/sbin/init"]
+    user: "0:0"
+    init: false
+    privileged: true
+    cgroup: private
+    tmpfs:
+      - /run
+      - /run/lock
+    volumes:
+      - ./bin:/workspace/bin:ro
+      - ./prompts:/workspace/prompts:ro
+      - ./sandbox/data:/workspace/sandbox/data:ro
+      - ./sandbox/blackboard:/workspace/sandbox/blackboard
+      - ./sandbox/workspaces:/workspace/sandbox/workspaces
+      - ./sandbox/final_solution:/workspace/sandbox/final_solution
+      - ./sandbox/analysis:/workspace/sandbox/analysis
+      - ./sandbox/.prompts:/workspace/sandbox/.prompts:ro
+      - ./sandbox/TASK.md:/workspace/sandbox/TASK.md:ro
+      - ./costs:/workspace/costs
+      - ./.opencode:/home/agent/.local/share/opencode
+    mem_limit: ${SWARM_MEM_LIMIT:-96g}
+    cpus: ${SWARM_CPUS:-32}
+    shm_size: ${SWARM_SHM:-8g}
+    stop_signal: SIGRTMIN+3
+    stop_grace_period: 60s
+
+  tools:
+    <<: *service
+    image: ${SWARM_TOOLS_IMAGE:-blackboard-sisyphus-tools:tools}
+    build:
+      <<: *build
+      target: ${SWARM_TOOLS_TARGET:-tools}
+    command: ["sleep", "infinity"]
+    environment:
+      <<: *env
+      MLEBENCH_REPO: /opt/mle-bench
+      MLEBENCH_DATA_DIR: /workspace/.cache/mle-bench/data
+      KAGGLE_USERNAME: ${KAGGLE_USERNAME:-}
+      KAGGLE_KEY: ${KAGGLE_KEY:-}
+    volumes:
+      - ./bin:/workspace/bin:ro
+      - ./prompts:/workspace/prompts:ro
+      - ./examples:/workspace/examples:ro
+      - ./sandbox:/workspace/sandbox
+      - ./private:/workspace/private
+      - ./results:/workspace/results
+      - ./costs:/workspace/costs
+      - ./.cache:/workspace/.cache
+      - ./.kaggle:/home/agent/.kaggle:ro
+      - ./.opencode:/home/agent/.local/share/opencode
+    mem_limit: ${TOOLS_MEM_LIMIT:-8g}
+    cpus: ${TOOLS_CPUS:-4}
+
+  grader:
+    <<: *service
+    image: ${SWARM_TOOLS_IMAGE:-blackboard-sisyphus-tools:tools}
+    build:
+      <<: *build
+      target: ${SWARM_TOOLS_TARGET:-tools}
+    command: ["bash", "/workspace/bin/container/grade_watcher.sh"]
+    environment:
+      <<: *env
+      MLEBENCH_REPO: /opt/mle-bench
+      MLEBENCH_DATA_DIR: /workspace/.cache/mle-bench/data
+      SWARM_AUTO_SAVE: ${SWARM_AUTO_SAVE:-1}
+    volumes:
+      - ./bin:/workspace/bin:ro
+      - ./sandbox:/workspace/sandbox
+      - ./private:/workspace/private
+      - ./results:/workspace/results
+      - ./costs:/workspace/costs
+      - ./.cache:/workspace/.cache
+      - ./.opencode:/home/agent/.local/share/opencode
+    mem_limit: ${TOOLS_MEM_LIMIT:-8g}
+    cpus: ${TOOLS_CPUS:-4}
+    stop_grace_period: 30s

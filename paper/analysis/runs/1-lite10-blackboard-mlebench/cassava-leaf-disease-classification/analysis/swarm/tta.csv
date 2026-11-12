@@ -1,0 +1,7 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+achernar_delta_convnext_smoke.md,achernar,2026-10-16T07:17:18+03:00,0.8293,insight,,,,capella_kappa_swin_relaunch.md,7,1605.0
+arcturus_kappa_mixup_insight.md,arcturus,2026-10-16T10:32:28+03:00,0.8916,insight,capella_kappa_artifacts.md,2,578.0,capella_kappa_artifacts.md,2,578.0
+capella_kappa_6model.md,capella,2026-10-16T12:49:47+03:00,0.902,insight,arcturus_kappa_full_and_v2m.md,1,471.0,arcturus_kappa_full_and_v2m.md,1,471.0
+arcturus_kappa_verification.md,arcturus,2026-10-16T14:22:01+03:00,0.9007,insight,capella_kappa_final_paths.md,3,761.0,capella_kappa_final_paths.md,3,761.0
+capella_kappa_wrapup.md,capella,2026-10-16T17:10:24+03:00,0.9012,insight submission,achernar_delta_repro_check.md,2,183.0,achernar_delta_repro_check.md,2,183.0
+capella_kappa_tta_negative.md,capella,2026-10-16T17:11:17+03:00,0.8943,insight,achernar_delta_last_experiments.md,7,4047.0,achernar_delta_last_experiments.md,7,4047.0

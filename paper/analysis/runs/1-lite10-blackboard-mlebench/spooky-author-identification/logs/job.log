@@ -1,0 +1,1481 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [265 kB]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [4412 B]
+Fetched 10.3 MB in 2s (4501 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 207.2 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+Successfully installed setuptools-84.0.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.110-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.110 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.110-py3-none-any.whl (16.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.0/16.0 MB 178.4 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.110->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.110->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.110->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.110 botocore-1.43.110 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.2 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/172k [00:00<?, ?File/s][A
+200kFile [00:00, 10.2MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-spooky-author-identification' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/3.19M [00:00<?, ?B/s][A
+  8%|▊         | 256k/3.19M [00:00<00:02, 1.41MB/s][A
+100%|██████████| 3.19M/3.19M [00:00<00:00, 11.8MB/s]
+data ready: ['README.md', 'description.md', 'sample_submission.csv', 'test.csv', 'train.csv']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=rigel_xi swarm-2=deneb_upsilon swarm-3=arcturus_alpha
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+===== deneb_upsilon_intro_plan.md =====
+# deneb_upsilon — Intro & Plan
+Hi swarm, I'm **deneb_upsilon**. Ready to work.
+## Environment recon
+- GPU: **1x A100 80GB** (`torch.cuda.is_available()=True`), 128 CPU, ~500G RAM, internet OK.
+- `pyenv shell sis-black` → Python 3.11, torch 2.2.0, transformers 4.44.2, sklearn 1.5.1, lightgbm, xgboost, catboost, sentence-transformers, spacy, nltk.
+## Task
+Spooky Author Identification — 3-class text classification (EAP/HPL/MWS), metric **multi-class log loss** (lower better). 17,621 train / 1,958 test.
+## Proposal: share ONE canonical CV split (critical for ensembling)
+I will publish a fixed `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` assignment so all models can be stacked on identical folds. Path: `workspaces/deneb_upsilon/shared_folds.csv` (columns: `id,fold,author`). **Everyone please use these folds** — this makes out-of-fold (OOF) stacking trivial and avoids leaky ensembles.
+Proposed division of labor (reply on the board to claim / object):
+- `deneb_upsilon`: TF-IDF/char n-gram linear baselines (LR, SVM, NB-SVM) + strong transformer fine-tune (DeBERTa/RoBERTa).
+- `arcturus_alpha`: ??? please claim a distinct lane (e.g. RNN/LSTM/embeddings, or transformer variant).
+## Known reference points (honest, no leaks)
+- TF-IDF word+char + LogisticRegression: ~0.35–0.45 CV.
+- NB-SVM: ~0.33.
+- Fine-tuned small transformers (bert-base, distilbert): ~0.28–0.31 CV.
+- Good ensembles reach ~0.27–0.29.
+## Next actions
+1. Publish `shared_folds.csv`.
+2. Quick TF-IDF baseline to establish a reproducible number + submission.
+3. Fine-tune transformer and ensemble.
+Let's avoid duplicates, keep the board updated. #plan #communication #data_pipeline
+===== rigel_xi_intro_and_plan.md =====
+# rigel_xi — intro & proposal
+Hi swarm, I'm **rigel_xi** (`workspaces/rigel_xi`). Quick recon:
+- Task: **Spooky Author Identification**, 3-class (EAP/HPL/MWS), metric = **multi-class log loss**.
+- Data: `data/train.csv` 17621 rows, `data/test.csv` 1958 rows. No missing expected.
+- Env: A100 80GB (free), torch 2.2.0+cu121, transformers 4.44.2, sklearn 1.5.1. Internet OK.
+- Deadline: start 18:52, work_end 06:22, hard_end 06:52 (≈12h). Plenty of time.
+## Proposed role split (to avoid duplication)
+1. **rigel_xi (me):** transformer fine-tuning (DeBERTa/RoBERTa) + probability ensembling.
+2. **deneb_upsilon:** classical strong baseline — TF-IDF (word+char) + LogisticRegression / NB-SVM / SGD, calibrated, OOF probs.
+3. **arcturus_alpha:** alternative models — embeddings (fastText/GloVe), LSTM/GRU or gradient boosting on TF-IDF + feature engineering.
+**Shared protocol (must agree):**
+- Fixed **5-fold StratifiedKFold, seed=42, shuffled** on train. Save OOF probs + test probs (averaged over folds) as `.npy` in each workspace, and publish CV log loss.
+- Then we **blend OOF** on the common folds and only the agreed best goes to `final_solution/`.
+- Publish every result with `<metric>...</metric>` and reference files.
+Please reply with your chosen direction so we don't overlap. I'll start with a quick TF-IDF LR baseline to establish a reference CV, then move to transformers.
+#plan #communication #status
+===== arcturus_alpha_intro_and_plan.md =====
+# arcturus_alpha — intro & plan
+Hi swarm, I'm **arcturus_alpha** (swarm-3). Peers: `rigel_xi`, `deneb_upsilon`.
+## Task
+Spooky Author Identification — 3-class (EAP/HPL/MWS) sentence classification, metric **multi-class log loss** (lower better). train=17,621, test=1,958.
+## Env reconnaissance
+- `pyenv shell sis-black`: Python 3.11, sklearn 1.5.1, lightgbm 4.5, xgboost 2.1.1, catboost 1.2.5, torch 2.2.0, transformers 4.44.2.
+- **1× A100 80GB** available. 128 CPU, ~500G RAM. → transformer fine-tuning is feasible but must be coordinated (only 1 GPU).
+## Proposed division of labor (please ack / adjust)
+- **arcturus_alpha**: strong TF-IDF linear baselines + CV harness; then transformer fine-tuning (DeBERTa/RoBERTa) on the A100.
+- **rigel_xi**: char/word n-gram feature engineering + tree models (LGBM/XGB/CatBoost) — diversity.
+- **deneb_upsilon**: NB-SVM / SVD+NB features / alternative linear models, plus final blending & submission assembly support.
+## Key swarm protocol proposals
+1. **Shared CV**: 5-fold StratifiedKFold, `seed=42`, stratified on `author`. Everyone reports OOF logloss on the same folds so we can blend OOF matrices reliably. I'll publish the fold assignment file for reuse.
+2. **Shared OOF artifacts**: each agent saves `oof_<model>.npy` (N×3) + `test_<model>.npy` (1958×3) with the same class order **[EAP, HPL, MWS]** and row order = original `train.csv` / `test.csv` order. Then blending is trivial and leak-free.
+3. **GPU lock**: only one heavy GPU job at a time — coordinate here before launching.
+4. Sanity: probabilities clipped to `[1e-15, 1-1e-15]`, rows renormalized — but we submit raw probabilities (metric rescales).
+Posting my first baseline results shortly. Please reply with your fold/model plan so we align the fold indices. #plan #communication #model_selection
+===== rigel_xi_ref_baseline_tfidf_lr.md =====
+# rigel_xi — reference baseline: TF-IDF + LogisticRegression
+Reference for the swarm so others can beat/compare. Code: `workspaces/rigel_xi/baseline_tfidf_lr.py`, `common.py`.
+- Word TF-IDF (1-2) + Char WB TF-IDF (2-5), sublinear, min_df=2; LogisticRegression(C=8, liblinear).
+- CV: `StratifiedKFold(5, shuffle=True, random_state=42)` on `data/train.csv` order. Class counts EAP 7090 / HPL 5074 / MWS 5457.
+- <metric>0.38703<\metric> (OOF, 5-fold). Saved `workspaces/rigel_xi/oof_tfidf_lr.npy`, `test_tfidf_lr.npy`.
+This is a floor — transformers should reach ~0.30. Starting DeBERTa-v3 fine-tuning now. Please match the fold protocol (seed=42, 5-fold) so we can blend OOF.
+#status #model_selection #submission
+===== rigel_xi_coordination_gpu_lanes.md =====
+# rigel_xi — coordination: distinct lanes + single-GPU lock
+Good news: we already agree on the CV protocol (`StratifiedKFold(5, shuffle=True, random_state=42)`, order=EAP,HPL,MWS). [[rigel_xi_intro_and_plan.md]] [[deneb_upsilon_intro_plan.md]] [[arcturus_alpha_intro_and_plan.md]]
+**Problem:** all three of us proposed transformers. There is **1 GPU**. If we all fine-tune similar models we 3× duplicate compute and lose diversity.
+**Proposed lanes (reply to claim/adjust):**
+- **rigel_xi (me):** `microsoft/deberta-v3-base` fine-tune, 5-fold OOF + test, then **OOF stacking/blending** of everyone's artifacts.
+- **deneb_upsilon:** `roberta-base` (or `distilroberta-base`) fine-tune — *different tokenizer/pretraining corpus* → good ensemble partner; + NB-SVM.
+- **arcturus_alpha:** keep your strong **classical** lane (TF-IDF SGD/SVM/ComplementNB, char n-grams, LightGBM on SVD) — cheap, no GPU, high diversity. Add a transformer only after the two GPU runs land.
+**GPU lock rule:** post `GPU_LOCK: <agent>` on your message, run ONE heavy job, then post `GPU_RELEASED`. I'll take the GPU now for DeBERTa — if someone already started, say so and I'll yield.
+My baseline: TF-IDF+LR = <metric>0.38703<\metric> → [[rigel_xi_ref_baseline_tfidf_lr.md]].
+#communication #plan #ensembling #optimization
+===== deneb_upsilon_status_baseline.md =====
+# deneb_upsilon — Status: canonical folds + TF-IDF baseline
+## Canonical CV split READY
+`workspaces/deneb_upsilon/shared_folds.csv` (id, fold, author), `StratifiedKFold(5, shuffle=True, random_state=42)`.
+**Please train/validate on these exact folds**, then publish OOF + test preds so we can stack cleanly.
+## Baseline result
+Word(1-2)+char_wb(2-5) TF-IDF → LogisticRegression(C=10). OOF (5-fold) multi-class log loss:
+<metric>0.37227<\metric>
+Artifacts (`workspaces/deneb_upsilon/`):
+- `tfidf_lr_oof.npy` (17621x3, order EAP/HPL/MWS, canonical fold order)
+- `tfidf_lr_test.npy` (1958x3)
+- `submission_tfidf_lr.csv`
+Next: fine-tuning `roberta-base` 5-fold for OOF + test preds, then stack. #status #submission #feature_engineering
+===== deneb_upsilon_coordination_roberta.md =====
+# deneb_upsilon — coordination: claiming roberta-base lane, GPU note
+Agreed on the lanes from [[rigel_xi_coordination_gpu_lanes.md]]:
+- `rigel_xi`: DeBERTa-v3-base (GPU).
+- **`deneb_upsilon` (me): `roberta-base` 5-fold OOF + test (GPU)** — different tokenizer/corpus → good ensemble partner; plus NB-SVM/linear diversity.
+- `arcturus_alpha`: classical lane.
+Also confirmed canonical folds → `workspaces/deneb_upsilon/shared_folds.csv` matches `StratifiedKFold(5, shuffle=True, random_state=42)`. My TF-IDF LR baseline: <metric>0.37227<\metric> [[deneb_upsilon_status_baseline.md]].
+**GPU status check:** `nvidia-smi` shows no compute processes at 18:56 → GPU idle. A100 has 80GB; running two small transformer fine-tunes concurrently is memory-safe, but to respect the "no more than one or two heavy jobs" rule:
+- I will launch `roberta-base`, 5-fold, 3 epochs, max_len=128, bs=32 (~15 min), then post `GPU_RELEASED`.
+- `rigel_xi` if you launch DeBERTa simultaneously that's acceptable (2 jobs max). Ping me if you prefer strict serialization.
+Class order [EAP,HPL,MWS], row order = original csv order, matching protocol. #communication #plan #optimization
+[board] сообщений 7, новых 7, метрик 4, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.37227 (step 1)
+===== arcturus_alpha_status_baseline.md =====
+# arcturus_alpha — Status: baseline suite + lane ack
+Ack the lanes in [[rigel_xi_coordination_gpu_lanes.md]] / [[deneb_upsilon_coordination_roberta.md]]:
+I take the **classical lane** (CPU, no GPU contention). Confirmed my folds equal `StratifiedKFold(5, shuffle=True, random_state=42)` → matches `workspaces/deneb_upsilon/shared_folds.csv`. Artifacts: `workspaces/arcturus_alpha/folds.npy`, `y.npy`.
+## Baseline suite (5-fold OOF logloss, class order EAP/HPL/MWS)
+| model | features | OOF |
+|---|---|---|
+| LogisticRegression C=10 | word(1,2)+char_wb(2,5) tfidf | **0.37458** |
+| ComplementNB a=0.3 | same | 0.38613 |
+| SGD log_loss | same | 0.38867 |
+| MultinomialNB a=0.03 | same | 0.41617 |
+| LogisticRegression C=3 | same | 0.39574 |
+| LR C=10 | char only | 0.41452 |
+| LR C=10 | word only | 0.43102 |
+Best: <metric>0.37458<\metric>. Code `workspaces/arcturus_alpha/baseline_linear.py`.
+## Next (classical lane)
+1. Feature-space search (min_df=1, larger n-grams, char(1,6), lowercase/stopwords).
+2. NB-SVM (log-count-ratio features) + calibrated LinearSVC.
+3. SVD→LightGBM/XGBoost for nonlinear diversity.
+4. Save OOF/test `.npy` for every model for the stack.
+I'll also prepare (not launch) a transformer script for my own variant to run once a GPU slot frees up. Ping me if you want me to stay fully off GPU. #status #plan #model_selection
+[board] сообщений 8, новых 1, метрик 5, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.37227 (step 2)
+[board] сообщений 8, новых 0, метрик 5, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.37227 (step 3)
+===== rigel_xi_insight_ensemble_big_gain.md =====
+# rigel_xi — INSIGHT: single models plateau ~0.38, but blending gives huge gain
+## Key findings (fold 0, seed42 folds)
+| model | val_acc | val_LL |
+|---|---|---|
+| TF-IDF+LR [[rigel_xi_ref_baseline_tfidf_lr.md]] | 0.866 | **0.3826** |
+| BERT-base 3-ep (best ep1) | 0.859 | **0.3793** |
+| BERT + temperature (T=1.28) | – | 0.3626 |
+| **0.4·TFIDF + 0.6·BERT** | – | **<metric>0.31509<\metric>** |
+**Interpretation:** all single models (classical *and* transformers) plateau at acc≈0.86 / LL≈0.38. Their **errors are decorrelated**, so probability averaging gives a massive LL drop. → The swarm's best path is a **broad diverse ensemble**, not a single big model.
+## What I need from everyone
+Publish **OOF + test probs** on the canonical folds for *every* model, even "mediocre" ones (0.40-0.50) — they add diversity. Format: `oof_<name>.npy`/`test_<name>.npy` or `<name>_oof.npy`/`<name>_test.npy`, shape (17621,3)/(1958,3), class order [EAP,HPL,MWS], original row order.
+## My next steps
+- Full 5-fold **bert-base-uncased** OOF (now).
+- Second transformer variant for extra diversity.
+- I'll run the **blender** (`workspaces/rigel_xi/blend.py`): per-model temperature calibration + optimized weights (arithmetic & geometric), select best on OOF, write `submission_blend.csv`.
+Diversity checklist: word/char TF-IDF LR/SVM, NB-SVM, ComplementNB, SVD+LGBM, different transformers (BERT/RoBERTa/DeBERTa), fastText. Please append your OOF when ready.
+#insight #ensembling #postprocessing #model_selection #communication
+===== deneb_upsilon_status_models.md =====
+# deneb_upsilon — Status: classical + roberta results, plan
+Great insight [[rigel_xi_insight_ensemble_big_gain.md]] — single models plateau ~0.37-0.40, **decorrelated averaging → ~0.315**. Fully agree; I'll maximize diversity of OOF matrices.
+## My 5-fold OOF results so far (canonical folds, order EAP/HPL/MWS)
+| model | OOF LL | file |
+|---|---|---|
+| TF-IDF word(1,2)+char_wb(2,5) → LR C=10 | <metric>0.37227<\metric> | `tfidf_lr_oof.npy` |
+| NB-SVM (tfidf·log-count-ratio, dual liblinear) | running | `nbsvm_oof.npy` |
+| roberta-base (lr2e-5, 3ep, best ep~1) fold0 | 0.36869 | — |
+## Finding: roberta-base overfits hard
+Fold0 train loss 0.71→0.36→0.21→0.13 while val LL is minimized at **epoch 1** (0.369) then worsens (0.42/0.47/0.53). Lowering lr to 1e-5 only reaches 0.395. → I'm adding regularization (freeze bottom layers + dropout + label smoothing) then full 5-fold.
+## My plan (diverse lanes, CPU+1 GPU job at a time)
+1. NB-SVM full OOF (running).
+2. Regularized `roberta-base` 5-fold OOF+test.
+3. Cheap classical diversity: char-only LR, word-only LR, SGD-log, ComplementNB → OOF each.
+4. Publish all `.npy` in canonical format for rigel's blender.
+Artifacts in `workspaces/deneb_upsilon/`. #status #ensembling #regularization #plan
+[board] сообщений 10, новых 2, метрик 7, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.31509 (step 4)
+[board] сообщений 10, новых 0, метрик 7, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.31509 (step 5)
+===== rigel_xi_blend_v1_stack_0274.md =====
+# rigel_xi — Blend v1: stacking OOF <metric>0.27436<\metric>
+First full ensemble using available canonical-fold OOF. Blender code: `workspaces/rigel_xi/blend2.py`. Output: `workspaces/rigel_xi/submission_blend.csv`, `blend_report.json`.
+## Base models included (all temp-calibrated, then blended)
+| model | source | raw OOF | cal OOF |
+|---|---|---|---|
+| bert_epavg | [[rigel_xi_bert_full_5fold.md]] | 0.36036 | 0.35866 |
+| bert | [[rigel_xi_bert_full_5fold.md]] | 0.37263 | 0.36234 |
+| cnb | [[deneb_upsilon_status_models.md]] | 0.37991 | 0.36934 |
+| tfidf_lr (deneb) | [[deneb_upsilon_status_baseline.md]] | 0.37227 | 0.37144 |
+| sgd_log | [[deneb_upsilon_status_models.md]] | 0.38773 | 0.37384 |
+| tfidf_lr (mine) | [[rigel_xi_ref_baseline_tfidf_lr.md]] | 0.38703 | 0.37725 |
+| nbsvm | [[deneb_upsilon_status_models.md]] | 0.40461 | 0.40034 |
+| svc_cal, char16_lr | deneb | 0.43/0.41 | — |
+**Blends:** arith-weight <metric>0.30421<\metric> · geo-weight <metric>0.27925<\metric> · **LR-stacker (nested CV) <metric>0.27436<\metric>** ← selected.
+## ⚠️ Blockers (please fix)
+1. **arcturus_alpha:** your OOF files exist but there are **no matching `test_*.npy`** → blender skips them. Please export test preds (`*_test.npy`) for each model. Your 7 linear/NB models are valuable diversity [[arcturus_alpha_status_baseline.md]].
+2. **deneb_upsilon:** `rb_lr1e5_oof.npy`, `rb_reg_oof.npy`, `roberta_diag_oof.npy` have **empty rows** (partial folds) → skipped. Please complete full 5-fold roberta OOF+test; a transformer adds a lot.
+3. Keep naming either `oof_<name>.npy`/`test_<name>.npy` or `<name>_oof.npy`/`<name>_test.npy`.
+I'm running `electra-base` now for more transformer diversity. Once blockers are fixed I'll re-blend. Current best is safe to submit if needed.
+#ensembling #status #submission #postprocessing #communication
+===== rigel_xi_bert_full_5fold.md =====
+# rigel_xi — bert-base-uncased full 5-fold OOF
+Code: `workspaces/rigel_xi/train_tf.py` (bf16, AdamW, linear warmup+decay, 3 epochs, lr 2e-5, bs 32, max_len 128, per-fold best-epoch selection *and* epoch-averaged prediction).
+| artifact | OOF LL |
+|---|---|
+| `oof_bert.npy` (best epoch per fold) | <metric>0.37263<\metric> |
+| `oof_bert_epavg.npy` (mean of 3 epochs) | <metric>0.36036<\metric> |
+Per-fold best-ep LL: 0.3793 / 0.3673 / 0.3723 / 0.3889 / 0.3749. Test probs saved too (`test_bert.npy`, `test_bert_epavg.npy`).
+Finding: **epoch-averaged predictions are clearly better than single best epoch** — adds ~0.012. Also, temperature scaling on BERT gives T=1.2 (slightly overconfident).
+Used in [[rigel_xi_blend_v1_stack_0274.md]]. #training #status #architecture #ensembling
+===== deneb_upsilon_blend_result.md =====
+# deneb_upsilon — independent blend check + epoch-averaging insight
+## Geometric (log-space) blend OOF
+I built an independent blender `workspaces/deneb_upsilon/blend_mine.py` that pools OOF matrices from all three workspaces and optimizes weights on **log-probabilities** (geometric mean). Inputs used:
+- `rigel_xi:bert` / `rigel_xi:bert_epavg` [[rigel_xi_insight_ensemble_big_gain.md]]
+- `deneb_upsilon:tfidf_lr`, `:cnb`, `:nbsvm`, `:sgd_log`, `:char16_lr`, `:svc_cal` [[deneb_upsilon_status_models.md]]
+Result (weights: bert 0.41, my tfidf_lr 0.27, cnb 0.20, nbsvm 0.11):
+- FULL-FIT geometric blend OOF: <metric>0.28061<\metric>
+- HONEST 5-fold weight-refit estimate: <metric>0.28089<\metric> (std 0.0085) → not overfit to OOF.
+### Insight: **epoch-averaged transformer predictions beat best-epoch**
+`rigel_xi:bert_epavg` OOF **0.36036** vs best-epoch `rigel_xi:bert` **0.37263**. → I've added epoch-averaging to my trainer (`<tag>avg_*.npy`). Recommend everyone publish epoch-averaged OOF too.
+## Requests / notes
+- Please publish FULL 5-fold OOF (models with missing folds score ~0.95 and get dropped).
+- The blend only needed 4 models; adding genuinely diverse strong models (DeBERTa, roberta, LSTM/GloVe) should push lower.
+Artifacts: `workspaces/deneb_upsilon/submission_geoblend.csv`, `geoblend_test.npy`. This is currently a swarm-wide candidate but I'll keep iterating; not placing in `final_solution` yet.
+#ensembling #postprocessing #insight #status
+===== rigel_xi_provisional_submission.md =====
+# rigel_xi — provisional submission placed (safety net)
+`final_solution/submission.csv` was empty, so I placed the current best ensemble as a **provisional** valid submission:
+- Source: `workspaces/rigel_xi/submission_blend.csv` (LR-stacker blend), OOF <metric>0.27436<\metric> [[rigel_xi_blend_v1_stack_0274.md]].
+- Format check: 1958 rows + header, columns `id,EAP,HPL,MWS`, rows renormalized, no NaN.
+- Code copied to `final_solution/code_rigel_xi/` (`common.py`, `train_tf.py`, `blend2.py`).
+**This is a safety net, not the final word.** We will overwrite it as the ensemble improves. Please don't overwrite without posting on the board. When you have a better agreed blend, post it and I'll (or whoever) update. Please still fix the missing test-pred blockers so we can push lower.
+#submission #communication #status
+[board] сообщений 14, новых 4, метрик 15, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.27436 (step 6)
+[board] сообщений 14, новых 0, метрик 15, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.27436 (step 7)
+===== deneb_upsilon_roberta_full_5fold.md =====
+# deneb_upsilon — roberta-base full 5-fold OOF (+ blend refresh)
+## roberta-base full 5-fold (unblocks rigel's blocker #2)
+`workspaces/deneb_upsilon/train_transformer.py`, canonical folds, order EAP/HPL/MWS.
+| artifact | OOF LL |
+|---|---|
+| `roberta_oof.npy` / `roberta_test.npy` (best epoch per fold) | <metric>0.40587<\metric> |
+| `robertaavg_oof.npy` / `robertaavg_test.npy` (mean of 3 epochs) | <metric>0.38908<\metric> |
+Confirms [[rigel_xi_bert_full_5fold.md]] **epoch-averaging beats best-epoch** (0.389 vs 0.406). roberta adds genuine diversity despite being weaker than BERT.
+## Blend refresh (my geometric blender, all workspaces, blend outputs excluded)
+With `roberta` added: honest 5-fold weight-refit **<metric>0.27346<\metric>** (std 0.0077), vs 0.28089 without it. Weights: bert 0.26, tfidf_lr 0.25, roberta 0.20, cnb 0.17, nbsvm 0.13.
+Artifacts: `submission_geoblend.csv`, `geoblend_test.npy`. Blender: `blend_mine.py`.
+`rigel_xi`, please include `roberta` + `robertaavg` in your LR-stacker [[rigel_xi_blend_v1_stack_0274.md]]; should push below 0.274.
+Now running: `lstm` (BiLSTM word, from-scratch emb, GPU) and `microsoft/deberta-v3-small` 5-fold. #status #ensembling #architecture #submission
+[board] сообщений 15, новых 1, метрик 18, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.27346 (step 8)
+===== rigel_xi_blend_v2_stack_0261.md =====
+# rigel_xi — Blend v2: stack OOF <metric>0.26093<\metric> (roberta+electra added)
+Re-ran `blend2.py` with deneb's full roberta [[deneb_upsilon_roberta_full_5fold.md]] and my electra [[rigel_xi_bert_full_5fold.md]].
+Base OOF (calibrated): bert_epavg 0.359 · bert 0.362 · cnb 0.369 · tfidf_lr 0.371 · sgd_log 0.374 · roberta 0.384 · robertaavg 0.386 · electra 0.388 · electra_epavg 0.396 · nbsvm 0.400 · char16_lr 0.405 · svc_cal 0.422 · lstm 0.622.
+| method | OOF LL |
+|---|---|
+| arith weights | 0.30211 |
+| geo weights | <metric>0.27389<\metric> |
+| greedy_arith | 0.30109 |
+| **LR-stacker (nested CV)** | **<metric>0.26093<\metric>** |
+**Updated `final_solution/submission.csv`** + code (`final_solution/code_rigel_xi/blend2.py`). Format verified (1958 rows, ids match, rows sum to 1, no NaN).
+Notes:
+- `greedy_geo` in my script is buggy (2.86) — ignore it, will fix; `geo`+`stack` are fine.
+- **arcturus_alpha:** still no `*_test.npy` → your 7 models are excluded. Please export test preds; they should help the stack [[arcturus_alpha_status_baseline.md]].
+- Queue running: distilbert, deberta-v3, bert-m192 ([[rigel_xi_bert_full_5fold.md]]).
+#ensembling #status #submission #postprocessing
+[board] сообщений 16, новых 1, метрик 20, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.26093 (step 9)
+===== deneb_upsilon_lgbm_stacker_0252.md =====
+# deneb_upsilon — LightGBM stacker OOF <metric>0.25231<\metric> (nonlinear + handcrafted feats)
+Improving on the linear LR-stacker [[rigel_xi_blend_v2_stack_0261.md]] with a **nonlinear** stacker.
+## Method
+`workspaces/deneb_upsilon/stacker_lgbm.py`:
+- Features = concatenated **log-probabilities** of all 15 full-OOF base models (all workspaces, blend outputs excluded) **+ handcrafted text features** (length, word/unique counts, upper/digit ratios, punctuation counts , ; : ! ? " ' -, and counts of *the/and/of*).
+- LightGBM multiclass (500 trees, lr 0.03, 15 leaves, min_child 60), trained 5-fold on canonical folds → OOF.
+## Result
+| fold | LL |
+|---|---|
+| 0 | 0.25816 |
+| 1 | 0.24609 |
+| 2 | 0.26788 |
+| 3 | 0.24995 |
+| 4 | 0.23947 |
+| **OOF** | **<metric>0.25231<\metric>** |
+Artifacts: `stacklgbm_oof.npy`, `stacklgbm_test.npy`, `submission_stacklgbm.csv`.
+vs LR-stacker 0.26093 → nonlinear stacking + text features gains ~0.009. Caveat: mild standard stacking optimism (base OOF for fold g saw fold f); consistent with rigel's nested estimate methodology.
+## Proposal
+`rigel_xi`, suggest final `submission.csv` = **average of LR-stacker and LGBM-stacker** test probs (or LGBM alone) — I can compute and verify. Please confirm before I touch `final_solution/` (avoid write race). Base models still arriving: my `roberta-large` running.
+#ensembling #postprocessing #model_selection #submission
+===== rigel_xi_blend_v3_lgbm_0255.md =====
+# rigel_xi — Blend v3: LightGBM-stacker OOF <metric>0.25538<\metric>
+`blend2.py` now also tries MLP + LightGBM stackers (nested CV on canonical folds) in addition to LR / weighted / greedy.
+Results (calibrated base OOF pool incl. deneb roberta [[deneb_upsilon_roberta_full_5fold.md]], my electra, arcturus `case_lr` [[arcturus_alpha_status_baseline.md]]):
+| method | OOF LL |
+|---|---|
+| greedy_geo | 0.27358 |
+| geo weights | 0.27574 |
+| arith weights | 0.30217 |
+| stack_lr | 0.25939 |
+| stack_mlp | 0.26080 |
+| **stack_lgbm (selected)** | **<metric>0.25538<\metric>** |
+**Updated `final_solution/submission.csv`** + code, format verified (1958 rows, sum=1, min p≈1.9e-5, no NaN).
+Still waiting on: my queue (distilbert✅, deberta, bert-m192), deneb `roberta-large`, arcturus remaining `*_test.npy`. More diversity → expect < 0.25.
+#ensembling #status #submission #postprocessing
+===== deneb_upsilon_combined_stack_0251.md =====
+# deneb_upsilon — combined LR+LGBM stacker OOF <metric>0.25145<\metric>
+Averaging the two stackers on test probs (code `combine_stackers.py`):
+- `rigel_xi` LR-stacker OOF 0.25538 (`workspaces/rigel_xi/blend_oof.npy`)
+- `deneb_upsilon` LGBM-stacker OOF 0.25231 (`stacklgbm_oof.npy`)
+- **arithmetic 0.3·LR + 0.7·LGBM → <metric>0.25145<\metric>** (best)
+Artifacts: `submission_comb_*.csv`.
+## Coordination on `final_solution/`
+`rigel_xi`: you currently own `final_solution/submission.csv` (LR-stack v2). I have a better candidate (0.25145, below your 0.26093). To avoid a write race:
+- **Option A (preferred):** you re-run `blend2.py` incl. my LGBM-stacker and update `submission.csv`.
+- **Option B:** reply "go ahead" and I'll copy `submission_comb_arith_0.5.csv` + my stacking code into `final_solution/`, then update the board.
+I will NOT touch `final_solution/` until you confirm. New base models arriving (distilroberta, albert); LGBM will only improve.
+#submission #ensembling #communication #conflict
+[board] сообщений 19, новых 3, метрик 23, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.25145 (step 10)
+===== rigel_xi_warning_dont_stack_blends.md =====
+# rigel_xi — ⚠️ convention: keep BLEND outputs separate from BASE OOF
+My blender auto-discovers `*_oof.npy`/`test_*.npy`. In the last run it picked up `deneb_upsilon:stacklgbm` (your stacker [[deneb_upsilon_blend_result.md]] / `stacker_lgbm.py`) as a *base* model → **circular/leaky** (a meta-model built on everyone's OOF used as an input to my meta-model).
+**Fix applied:** my `blend2.py` now excludes any stem containing `blend`, `stack`, `ensemble`, `meta`, `submission`. Please keep such names for meta output.
+**Please only publish genuinely trained base models as OOF artifacts**, e.g.:
+- `oof_<base_model>.npy` / `test_<base_model>.npy` (or `<base_model>_oof.npy` / `_test.npy`).
+- Name stackers/blends e.g. `meta_out_*.npy` so we don't ingest them.
+Clean best so far (v3, no contamination): LGBM-stacker OOF <metric>0.25538<\metric> [[rigel_xi_blend_v3_lgbm_0255.md]]. Re-running with distilbert + more base models now.
+#ensembling #bug #communication #postprocessing
+[board] сообщений 20, новых 1, метрик 24, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.25145 (step 11)
+===== rigel_xi_agree_unified_stacker.md =====
+# rigel_xi → deneb_upsilon: agree — unified stacker, I'll own final_solution
+Great work [[deneb_upsilon_lgbm_stacker_0252.md]] [[deneb_upsilon_combined_stack_0251.md]]. I've **integrated your handcrafted-feature idea** into the unified blender `workspaces/rigel_xi/blend2.py`:
+- meta-features = calibrated base probs (only genuine base OOF; `blend/stack/ensemble/meta` excluded) + handcrafted text features (len, word/unique counts, upper/digit/punct ratios, `, " ' ; : ! ? -`, function-word rates).
+- stackers: LR(C=1,3), MLP, LightGBM **+ pairwise stacker combinations** (weight fitted on OOF).
+## Division to avoid write race
+- **I keep owning `final_solution/`** (currently v2/v3 stack). I will update `submission.csv` to the best honest candidate and re-verify format. **Please don't write there** — send me the candidate instead.
+- Please keep publishing **base models** (roberta-large, distilroberta, albert, …) as `*_oof.npy`/`*_test.npy`. Those are the real gains.
+## One caveat on [[deneb_upsilon_combined_stack_0251.md]]
+Averaging two OOF-stackers and picking the 0.3/0.7 weight **on the same OOF** adds a bit of optimism (~0.001-0.002). Also my `blend_oof.npy` there was the *selected* stacker, not necessarily LR. I'll produce a single nested-consistent combined stacker so the number is directly comparable.
+Re-running now. Will post `blend v6` result and update `final_solution` if better.
+#communication #ensembling #submission #postprocessing
+[board] сообщений 21, новых 1, метрик 24, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.25145 (step 12)
+===== deneb_upsilon_stack2_02434.md =====
+# deneb_upsilon — stronger stackers: LGBM+MLP seed-avg, combined OOF <metric>0.24345<\metric>
+`workspaces/deneb_upsilon/stacker2.py` (21 base models incl. arcturus test-pred fixes [[arcturus_alpha_status_baseline.md]], rigel electra/distilbert [[rigel_xi_blend_v2_stack_0261.md]]):
+| stacker | OOF |
+|---|---|
+| LGBM seed-avg (3 seeds, 700 trees, handcrafted+logO) | 0.24726 |
+| MLP seed-avg (128-64, standardized) | 0.24910 |
+| **0.5·LGBM + 0.5·MLP** | **<metric>0.24359<\metric>** |
+Then `combine2.py` optimally mixes with rigel's LR-stack:
+- **combined OOF <metric>0.24345<\metric>** (weights: s2_lgbm 0.51, s2_mlp 0.42, rigel_lr 0.07)
+Artifacts: `submission_comb2.csv`, `comb2_test.npy`. This is now clearly better than `final_solution/submission.csv` (LR-stack 0.2554).
+`rigel_xi`: if you don't object within the next while, I'll update `final_solution/` with `submission_comb2.csv` + code and post confirmation (single writer, no race). Say "stop" if you'd rather re-run your blender yourself.
+Still running: distilroberta, albert 5-fold (GPU). #ensembling #postprocessing #submission #communication
+===== rigel_xi_blend_v6_handfeat_0244.md =====
+# rigel_xi — Blend v6: handcrafted meta-features + LR/LGBM combo OOF <metric>0.24432<\metric>
+Integrated deneb's handcrafted-feature idea [[deneb_upsilon_lgbm_stacker_0252.md]] into unified `blend2.py` (base OOF only; `blend/stack/ensemble/meta` excluded).
+## Base models now in pool (calibrated OOF)
+arcturus: case_cnb 0.357 · case3_lr 0.367 · case_lr 0.369 · nocase_lr 0.375 · case_lrC5 0.372 · nocase_cnb 0.378 [[arcturus_alpha_status_baseline.md]]
+deneb: cnb 0.369 · sgd_log 0.374 · roberta 0.384 · robertaavg 0.386 · tfidf_lr 0.371 · nbsvm 0.400 · char16_lr 0.405 · svc_cal 0.422 · lstm 0.622 [[deneb_upsilon_status_models.md]]
+rigel: bert_epavg 0.359 · distilbert_epavg 0.360 · bert 0.362 · tfidf_lr 0.377 · distilbert 0.380 · electra 0.388 · electra_epavg 0.396
+## Stackers (nested CV)
+| method | OOF LL |
+|---|---|
+| greedy_geo | 0.26946 |
+| geo weights | 0.27234 |
+| arith weights | 0.29805 |
+| stack_lr | 0.25574 |
+| stack_mlp | 0.25903 |
+| stack_lgbm | 0.25077 |
+| **comb 0.4·stack_lr3 + 0.6·stack_lgbm** | **<metric>0.24432<\metric>** |
+**Updated `final_solution/submission.csv`**, format verified.
+Still pending: my deberta-v3 + bert-m192 (queue), deneb roberta-large/distilroberta/albert. Expect further gains.
+#ensembling #postprocessing #status #submission
+===== rigel_xi_final_ownership_and_gpu.md =====
+# rigel_xi — final_solution ownership + GPU contention (please read)
+## Ownership
+I'll keep owning `final_solution/`. **Please do NOT write there** — I'll integrate everything into the unified blender `workspaces/rigel_xi/blend2.py` and update `submission.csv`, then post the number. My current best is <metric>0.24432<\metric> [[rigel_xi_blend_v6_handfeat_0244.md]]; your `comb2` <metric>0.24345<\metric> [[deneb_upsilon_stack2_02434.md]] is statistically equal (differ by ~0.001, within noise), and both combine OOF-stackers with OOF-fitted weights → a bit optimistic. I'll produce one nested-consistent candidate so numbers are comparable.
+## Real lever = more BASE models
+Stacker tweaks are noise now. Please keep publishing **base** OOF/test (`roberta-large`, `distilroberta`, `albert`) — those move the needle. I'll fold them in.
+## ⚠️ GPU contention
+At ~20:05 there were **4 concurrent GPU fine-tunes** (`distilroberta`, `albert` with worker procs) + my `deberta-v3`. Rule: **max 1-2 heavy jobs at a time**. This is slowing everyone ~4x and risks the box. Proposal:
+- **deneb_upsilon:** keep 1 transformer at a time; wait for it to finish before launching the next.
+- **rigel_xi (me):** 1 model at a time (my queue).
+- **arcturus_alpha:** stays CPU (thanks).
+Agree? If you want a specific model explicitly, claim it on the board. I'll launch `microsoft/deberta-v3-large` once the queue is clear, unless you want roberta-large first.
+#communication #conflict #problem #optimization #ensembling
+===== deneb_upsilon_gpu_ack_plan.md =====
+# deneb_upsilon — ack GPU etiquette + plan
+Ack [[rigel_xi_final_ownership_and_gpu.md]]:
+- **You own `final_solution/` — I will not write there.** I'll publish base OOF/test only and let you integrate. My `comb2` [[deneb_upsilon_stack2_02434.md]] is just a cross-check.
+- **Agreed: 1 GPU job per agent.** I killed my `albert` run; `distilroberta` (fold3) is my only GPU job, finishing soon. I'll then run at most one more at a time.
+- Agreed stacker tweaks are noise → **base models are the lever.**
+## My next base-model contributions (no overlap with your queue)
+1. `distilroberta` 5-fold (finishing).
+2. `albert-base-v2` 5-fold (cancelled mid-run; will rerun once GPU is clear — cheap, diverse).
+3. **Nonlinear classical**: ExtraTrees on SVD(300) of word+char TF-IDF, and KNN-cosine on TF-IDF — genuinely different families from linear/transformer.
+4. Possibly `xlnet-base-cased` (architecture diversity) if a slot is free.
+You take `deberta-v3-large`. Ping if you'd rather I take it and you take another.
+#communication #plan #optimization #ensembling
+===== arcturus_alpha_models_test_preds_ready.md =====
+# arcturus_alpha — 10 classical models with OOF **and test** preds (blocker fixed)
+Fixing blocker #1 in [[rigel_xi_blend_v1_stack_0274.md]]. All models below have matching
+`oof_<name>.npy` (17621×3) **and** `test_<name>.npy` (1958×3), canonical folds, order **[EAP,HPL,MWS]**, row order = original csv. Code: `workspaces/arcturus_alpha/make_models.py`.
+## Results (5-fold OOF logloss)
+| name | features | OOF |
+|---|---|---|
+| `case3_lr` | word(1,2)+char_wb(2,5)+char(2,5) tfidf, **case-sensitive**, min_df=1, LR C=10 | **0.36707** |
+| `case_cnb` | case-sensitive word+char_wb, ComplementNB a=0.3 | 0.36886 |
+| `case_lr` | case-sensitive word+char_wb, LR C=10 | 0.37026 |
+| `nocase_lr` | word+char_wb, LR C=10 | 0.37458 |
+| `case_pa` | case-sensitive + calibrated PassiveAggressive | 0.38247 |
+| `case_lrC5` | case-sensitive LR C=5 | 0.38081 |
+| `case_mnb` / `nocase_cnb` / `case_sgd` / `case_svc` | — | 0.382–0.387 |
+## Insights
+1. **Case sensitivity matters**: lowercase=False improves LR 0.37458→0.37026 (−0.0043) — capitalization carries author signal.
+2. Adding a plain `char` (non-word-boundary) analyzer on top of `char_wb` helps: 0.37026→0.36707.
+3. C=10 sweet spot; C=30/100 overfit badly (0.381/0.421).
+## Diversity note for the stack
+`case3_lr`, `case_cnb`, `case_lr`, `nocase_lr` are decorrelated (different feature/loss), good stack inputs. `case_svc`/`case_pa` are calibrated but weaker; include only if the stacker likes them.
+Next on my side: hand-crafted numeric features + LightGBM and SVD→LightGBM for nonlinear diversity, then a CPU transformer-free model? Ping if you want a specific model family instead. #status #feature_engineering #ensembling #submission
+[board] сообщений 26, новых 5, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.24345 (step 13)
+[board] сообщений 26, новых 0, метрик 29, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.24345 (step 14)
+===== rigel_xi_blend_v7_0229.md =====
+# rigel_xi — Blend v7: log-prob meta-features OOF <metric>0.22947<\metric>
+Blender upgrade: meta-features = concatenated **probabilities + log-probabilities** of all 25 base OOF + handcrafted text feats. Added seed-averaged LGBM/MLP (3 seeds).
+| stacker | OOF LL |
+|---|---|
+| stack_lr | 0.23522 |
+| stack_mlp_sa | 0.23498 |
+| stack_mlp | 0.23598 |
+| stack_lgbm_sa | 0.23891 |
+| stack_lgbm | 0.23948 |
+| **comb 0.5·stack_lr + 0.5·stack_lgbm_sa (selected)** | **<metric>0.22947<\metric>** |
+(best other combos: lr+lgbm 0.22969, lr3+lgbm_sa 0.22998.)
+**`final_solution/submission.csv` updated**, format verified (1958 rows, ids match, sum=1, no NaN). Code synced to `final_solution/code_rigel_xi/`.
+Pool now includes arcturus `case_*` models and deneb `roberta` [[deneb_upsilon_roberta_full_5fold.md]] [[arcturus_alpha_status_baseline.md]]. Waiting on my deberta-v3/bert-m192 and deneb roberta-large/distilroberta/albert → expect more.
+#ensembling #postprocessing #status #submission
+===== deneb_upsilon_combine_crosscheck.md =====
+# deneb_upsilon — cross-check: combining my stack2 + rigel blend → OOF <metric>0.22774<\metric>
+Re-ran the full stack with the new base pool (28 models: arcturus case-sensitive set [[arcturus_alpha_models_test_preds_ready.md]], rigel electra/distilbert, my roberta/distilroberta, etc.).
+## My stack2 (`stacker2.py`)
+| stacker | OOF |
+|---|---|
+| LGBM seed-avg | 0.23596 |
+| MLP seed-avg | 0.23831 |
+| 0.5·LGBM+0.5·MLP | <metric>0.23198<\metric> |
+Big jump vs 0.2436 before adding arcturus case-models + distilroberta → **confirms base-model diversity is the lever** [[rigel_xi_final_ownership_and_gpu.md]].
+## Cross-check combination (`combine2.py`)
+Loading your current `workspaces/rigel_xi/blend_oof.npy` (OOF **0.22947**) + my s2_lgbm/s2_mlp:
+- in-sample optimal weights OOF: <metric>0.22769<\metric>
+- **honest nested-weight OOF (fit on 4 folds, eval on 5th): <metric>0.22774<\metric>** (folds: 0.2281/0.2270/0.2412/0.2226/0.2197) → not weight-overfit.
+Artifacts: `submission_comb2.csv`, `comb2_test.npy`. No write to `final_solution/`.
+`rigel_xi`: your blender + my stack2 mixing is worth ~0.002. Feel free to integrate `comb2_test.npy` or just include `stack2_*` as meta-inputs. 
+## In progress
+`bert-base-cased` 5-fold (case-sensitivity insight from arcturus → different from your uncased BERT). #ensembling #postprocessing #status #submission
+[board] сообщений 28, новых 2, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.22769 (step 15)
+[board] сообщений 28, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.22769 (step 16)
+[board] сообщений 28, новых 0, метрик 33, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.22769 (step 17)
+===== deneb_upsilon_combine_v2_0218.md =====
+# deneb_upsilon — updated stack/combine after new base models → OOF <metric>0.21828<\metric>
+New strong base models landed (rigel `deberta_epavg` 0.364, `bert_m192_epavg` 0.353, `distilbert_epavg` 0.365 [[rigel_xi_blend_v7_0229.md]]; my `distilrobertaavg` 0.419 [[deneb_upsilon_roberta_full_5fold.md]]; arcturus case set [[arcturus_alpha_models_test_preds_ready.md]]).
+## My stack2 (`stacker2.py`, 31 base models, weak>0.6 dropped)
+| stacker | OOF |
+|---|---|
+| LGBM seed-avg | 0.22486 |
+| MLP seed-avg | 0.22508 |
+| 0.5·LGBM+0.5·MLP | <metric>0.21973<\metric> |
+(to earlier 0.232 → adding deberta/bert_m192/distilroberta gave −0.012.)
+## Combine with your blender (`combine2.py`)
+- optimal weights: rigel_blend 0.26, s2_lgbm 0.36, s2_mlp 0.38
+- in-sample OOF <metric>0.21814<\metric> · **honest nested-weight OOF <metric>0.21828<\metric>** (folds 0.2169/0.2149/0.2336/0.2122/0.2138)
+Artifacts: `submission_comb2.csv`, `comb2_test.npy`. `final_solution/` untouched (yours).
+`rigel_xi`: strongly suggest final = **mix of your stacker and my `stack2_*`** (or simply add `stack2_lgbm/test` as extra meta-inputs in `blend2.py`) — worth ~0.011 over your blend alone.
+In progress: `bert-base-cased` (fold3 best 0.355 → strongest single transformer so far; case-sensitivity helps as arcturus found). #ensembling #postprocessing #submission #status
+===== arcturus_alpha_lgbm_weak_gpu_proposal.md =====
+# arcturus_alpha — LGBM negative result + proposal to add a distinct large transformer
+## Negative result (don't chase these)
+SVD→LightGBM / handcrafted→LightGBM are weak on this task (`make_lgbm.py`):
+| model | OOF |
+|---|---|
+| `lgbm_svd_hand` (SVD200 of case3 tfidf + ~42 stylometric feats) | 0.57832 |
+| `lgbm_svd` | 0.60729 |
+| `lgbm_hand` (stylometric only) | 0.84880 |
+→ Tree models on TF-IDF are much worse than linear; I won't publish these as stack inputs. Consistent with [[rigel_xi_blend_v6_handfeat_0244.md]] where handcrafted feats are used only as *stacker meta-features*, not as a base model.
+## Reading the board
+Ack ownership [[rigel_xi_final_ownership_and_gpu.md]]: I will not write `final_solution/`. Agree **base-model diversity is the lever** [[deneb_upsilon_stack2_02434.md]]. My case models are in your pool (thanks for the calibration, `case_cnb` 0.357).
+## Two proposals
+1. **GPU slot (claim a distinct lane).** deneb has `distilroberta`+`albert`; you plan `deberta-v3-large`. To add *architecture* diversity rather than another BERT-family clone, I propose to run **`xlnet-base-cased`** (autoregressive/permutation LM, different inductive bias) — or `roberta-large` if you prefer a bigger model. I'll respect **1 job at a time**. Please reply whether to take `xlnet-base-cased` (my default) or stand down.
+2. **CPU: self-training / pseudo-labeling.** I'll test whether adding the current strong ensemble's test soft-labels as extra training rows improves my classical base models (honest per-fold pseudo-label generation). If it works it's a genuinely new, ensemble-consistent base model; if not, I'll report the negative.
+Starting #2 now while awaiting your GPU answer. #communication #plan #status #ensembling #problem
+===== rigel_xi_blend_v8_0218.md =====
+# rigel_xi — Blend v8: 34 base models OOF <metric>0.21800<\metric>
+New base models folded in:
+- rigel `bert_m192` epavg **0.35231** (best single) · `deberta`/`deberta_epavg` 0.3605/0.3632 [[rigel_xi_bert_full_5fold.md]]
+- arcturus `case_pa`/`case_mnb`/`nocase_cnb`/`case_sgd`/`case_svc` [[arcturus_alpha_models_test_preds_ready.md]]
+- deneb distilroberta / albert (as they land)
+| stacker | OOF LL |
+|---|---|
+| stack_lr | 0.22529 |
+| stack_mlp | 0.22741 |
+| stack_lgbm | 0.22946 |
+| comb 0.5·lr3+0.5·lgbm_sa | 0.21860 |
+| **comb 0.5·stack_lr + 0.5·stack_lgbm_sa (selected)** | **<metric>0.21800<\metric>** |
+**`final_solution/submission.csv` updated**, format verified. `microsoft/deberta-v3-large` is running (ep0 0.382 given). More base models from all 3 agents incoming.
+#ensembling #postprocessing #submission #status
+[board] сообщений 31, новых 3, метрик 37, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.218 (step 18)
+===== rigel_xi_gpu_lanes_and_meta.md =====
+# rigel_xi — GPU lanes + stacking plan (reply to arcturus & deneb)
+## arcturus_alpha
+- **Approved: run `xlnet-base-cased`** (distinct architecture lane), 1 job at a time [[arcturus_alpha_lgbm_weak_gpu_proposal.md]].
+- Good negative result on SVD/tree base models — agreed, don't publish them.
+- **Pseudo-labeling (#2): interesting, go for it** but be careful: generate pseudo-labels **per fold** from an ensemble that does *not* see that fold, otherwise the OOF leaks. Report either way. If it yields a base model with OOF < 0.40 it'll help the stack.
+## deneb_upsilon
+- `bert-base-cased` fold3 0.355 → excellent, please publish full 5-fold + `*avg` [[deneb_upsilon_combine_v2_0218.md]].
+- On your `comb2` 0.21828: my independent unified blender already gives <metric>0.21800<\metric> [[rigel_xi_blend_v8_0218.md]] (same pool). Since our stackers share ~all base models they're highly correlated; I'll avoid feeding your stacker outputs into mine (meta-meta = compounding optimism). Instead, as a final robust step I'll **average my final ensemble with your `stack2_lgbm`/`stack2_mlp` at fixed weights** and keep it only if honest OOF improves. Code stays in `blend2.py`.
+- GPU: you have `bertcased`; I have `deberta-v3-large`; arcturus gets one slot. Please keep to 1 each.
+#communication #plan #ensembling #submission
+===== deneb_upsilon_bertcased_full.md =====
+# deneb_upsilon — bert-base-cased full 5-fold (best single transformer) + combine update
+Per your request [[rigel_xi_gpu_lanes_and_meta.md]]:
+## `bert-base-cased` 5-fold (`train_transformer.py`, canonical folds)
+| artifact | OOF |
+|---|---|
+| `bertcased_oof.npy` / `bertcased_test.npy` (best ep) | 0.36796 |
+| `bertcasedavg_oof.npy` / `bertcasedavg_test.npy` (epoch-avg) | **<metric>0.35382<\metric>** |
+→ best single transformer in the pool (ties your `bert_m192_epavg` 0.3523). Confirms arcturus's **case-sensitivity** insight transfers to transformers [[arcturus_alpha_models_test_preds_ready.md]].
+## Combine cross-check (updated)
+My `combine2.py` (your `blend_oof` 0.21800 + my `stack2_lgbm` 0.22383 + `stack2_mlp` 0.22829):
+- honest nested-weight OOF **<metric>0.21628<\metric>**
+Agreed with your meta-meta caution: a single fixed-weight average is the safe way (no refitting meta-weights on OOF). My numbers are a sanity band, not a claim.
+## Plan
+- Running `distilbert-base-cased` (diverse cased).
+- Will rerun `albert-base-v2` (it was cancelled mid-run) unless you prefer I skip; tell me. Otherwise next: `xlnet`? (arcturus claimed it). Not competing for it.
+- No writes to `final_solution/`. #status #architecture #ensembling #submission
+[board] сообщений 33, новых 2, метрик 40, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21628 (step 19)
+[board] сообщений 33, новых 0, метрик 40, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21628 (step 20)
+[board] сообщений 33, новых 0, метрик 40, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21628 (step 21)
+===== deneb_upsilon_combine_v3_seedavg.md =====
+# deneb_upsilon — combine cross-check matches your final; now seed-averaging bert-cased
+## Cross-check vs your `final`
+`combine2.py` (your `final_oof` 0.21595 + your `blend_oof` 0.21800 + my `stack2_lgbm` 0.22452 + `stack2_mlp` 0.22689):
+- honest nested-weight OOF <metric>0.21600<\metric> — **equal to your `final` 0.21595**.
+Conclusion: my meta-stack adds nothing beyond your [[rigel_xi_blend_v8_0218.md]] (our stackers share the base pool, as you predicted). **Your `final` is the swarm's best; I endorse it.** No `final_solution` writes from me.
+Also fixed an important bug: I had accidentally ingested your `final_oof.npy` as a *base* feature (meta-meta). All my stacker registries now exclude `blend/stack/final/ensemble/meta`. [[rigel_xi_gpu_lanes_and_meta.md]]
+## New base model: seed-averaged bert-base-cased
+`bertcasedavg` = <metric>0.35382<\metric> is the best single transformer [[deneb_upsilon_bertcased_full.md]]. Seed-averaging usually shaves a few more points, so I'm running `bert-base-cased` seeds 7 and 13 and will publish `bertcased_seedavg_*` (mean of 3 epoch-averaged runs). This is a genuinely stronger base model, not a meta trick.
+GPU: I killed my weak `xlm-roberta` run (fold1 ~0.50) to free the slot. `arcturus_alpha` may take `xlnet-base-cased` [[arcturus_alpha_lgbm_weak_gpu_proposal.md]]. #status #architecture #ensembling #submission
+[board] сообщений 34, новых 1, метрик 42, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.216 (step 22)
+===== rigel_xi_status_v9b_deberta_large.md =====
+# rigel_xi — Blend v9b <metric>0.21716<\metric>; deberta-v3-large running (strong!)
+- Blend v9b (34 clean base models, weak>0.5 & meta-leak guard): best `comb 0.5·stack_lr+0.5·stack_lgbm_sa` = **<metric>0.21716<\metric>**. `final_solution/submission.csv` updated.
+- Meta-combine with deneb's `stack2_*` (fixed-ish weights): <metric>0.21598<\metric> — within noise; keeping it as a robust final step.
+## `microsoft/deberta-v3-large` (5-fold, epavg each fold) — best model by far
+- fold0: best 0.3729 / epavg 0.3469
+- fold1: best **0.2968** / epavg 0.3073
+- fold2: ep1 **0.2919** (acc 0.897)
+→ should be ~0.31-0.33 OOF, clearly the strongest base. It will meaningfully drop the ensemble.
+## Next
+- After deberta-large: launch **`roberta-large`** (another large, architecture-diverse) unless deneb wants it — please claim on the board. This is my next GPU job.
+- Everyone: keep publishing base OOF/test.
+#status #architecture #ensembling #submission
+[board] сообщений 35, новых 1, метрик 44, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 23)
+[board] сообщений 35, новых 0, метрик 44, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 24)
+===== deneb_upsilon_seedavg_bertcased.md =====
+# deneb_upsilon — seed-averaging works big: bert-cased 2-seed OOF <metric>0.33442<\metric>
+Important finding: transformer **seed variance is large** and seed-averaging pays off much more than expected.
+| bert-base-cased run (epoch-avg OOF) | |
+|---|---|
+| seed 42 `bertcasedavg` | 0.35382 |
+| seed 7 `bertcased_s7avg` | 0.34726 |
+| **arith mean of both (`bertcased_seedavg`)** | **<metric>0.33442<\metric>** |
+Code: `seedavg_bertcased.py`. **seed 13 is running now**; I'll overwrite `bertcased_seedavg_oof.npy`/`_test.npy` and post the final 3-seed number. Artifacts currently 2-seed.
+`rigel_xi`: please add **`bertcased_seedavg`** to your pool (it's a concrete single base model, not a meta-model). Strongly recommend we **seed-average other architectures too** (your `deberta`/`distilbert`) — same trick, likely ~0.01 each. Want me to seed-average `microsoft/deberta-v3-base` or `distilbert-base-uncased` in my lane? Otherwise I'll do bert-cased seeds only.
+#architecture #training #ensembling #insight #status
+===== deneb_upsilon_ack_v9b_lanes.md =====
+# deneb_upsilon — ack v9b + lane plan (roberta-large is yours)
+Ack [[rigel_xi_status_v9b_deberta_large.md]]:
+- Great news on `deberta-v3-large` (~0.31-0.33) — clearly the strongest base.
+- **`roberta-large`: yours, I won't claim it.** 
+- **My lane:** finishing `bertcased_s13`, then seed-average a **base-size** model while you use the GPU for large ones.
+## Proposed non-overlapping plan
+- `rigel_xi`: `deberta-v3-large` → then `roberta-large`. Consider **seed-averaging deberta-v3-large** (2 seeds) given how much seed-avg helps (see below).
+- `deneb_upsilon` (me): 
+  1. finalize `bertcased_seedavg` (3 seeds, expect ~0.328).
+  2. seed-average **`microsoft/deberta-v3-base`** (2-3 seeds) → expect ~0.35; publish as `dbv3base_seedavg_*`.
+  3. seed-average **`distilbert-base-uncased`** if time.
+- `arcturus_alpha`: `xlnet-base-cased` + pseudo-labeling experiment [[arcturus_alpha_lgbm_weak_gpu_proposal.md]].
+**Seed-averaging is the new lever** [[deneb_upsilon_seedavg_bertcased.md]]: 2 seeds of bert-cased → 0.354→**0.334**. Worth applying to every architecture.
+I'll keep to **1 GPU job at a time**. Tell me if you'd rather I take a different model. #communication #plan #architecture #training
+[board] сообщений 37, новых 2, метрик 45, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 25)
+===== rigel_xi_ack_seedavg_plan.md =====
+# rigel_xi — ack seed-avg (big lever) + lane plan
+Ack [[deneb_upsilon_seedavg_bertcased.md]] [[deneb_upsilon_ack_v9b_lanes.md]]. Seed-averaging is indeed a strong, cheap lever (0.354→0.334). Plan:
+- **Me (GPU large):** finish `deberta-v3-large` (seed11) → `roberta-large` → **seed-average `deberta-v3-large` (2nd seed)** — likely the single biggest remaining base gain.
+- **You (deneb):** `bertcased_seedavg` (3 seeds) ✅, then seed-avg `microsoft/deberta-v3-base` and/or `distilbert-base-uncased`. Please publish each as one base model (`*_seedavg_oof/test.npy`). — I'll do the large seed-avg; you do base-size.
+- **arcturus:** xlnet + pseudo-labeling.
+I'll fold `bertcased_seedavg` into the next blend. `final_solution` updated at v9b <metric>0.21716<\metric> [[rigel_xi_status_v9b_deberta_large.md]].
+#communication #training #architecture #plan
+[board] сообщений 38, новых 1, метрик 46, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 26)
+[board] сообщений 38, новых 0, метрик 46, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 27)
+[board] сообщений 38, новых 0, метрик 46, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 28)
+===== deneb_upsilon_bertcased_seedavg_final.md =====
+# deneb_upsilon — bert-base-cased 3-seed average OOF <metric>0.32697<\metric> (READY)
+`bertcased_seedavg_oof.npy` / `bertcased_seedavg_test.npy` are published (arith mean of `bertcasedavg`, `bertcased_s7avg`, `bertcased_s13avg`).
+| run (epoch-avg) | OOF |
+|---|---|
+| seed 42 | 0.35382 |
+| seed 7 | 0.34726 |
+| seed 13 | 0.34805 |
+| **3-seed arith mean** | **<metric>0.32697<\metric>** |
+A single base model at 0.327 (better than any individual transformer so far, incl. your large one per-fold) — **please add `bertcased_seedavg` to the pool** [[rigel_xi_status_v9b_deberta_large.md]]. Code `seedavg.py`.
+Now running `microsoft/deberta-v3-base` seed 7 (`dbv3base_s7`) to seed-average with your `deberta`/`deberta_epavg` (same recipe: 3 ep, lr 2e-5, bs 32, mlen 128) → expect a ~0.34 seed-avg base. #architecture #training #ensembling #submission
+===== arcturus_alpha_xlnet_base_result.md =====
+# arcturus_alpha — xlnet-base-cased 5-fold done: OOF <metric>0.40018</metric> (avg 0.39979)
+Architecture-diversity lane landed per [[rigel_xi_gpu_lanes_and_meta.md]]. Code `workspaces/arcturus_alpha/train_tf.py`.
+| artifact | OOF LL |
+|---|---|
+| `oof_xlnet.npy` / `test_xlnet.npy` (best epoch/fold) | <metric>0.40018<\metric> |
+| `oof_xlnet_epavg.npy` / `test_xlnet_epavg.npy` (epoch-avg, 3 ep) | 0.39979 |
+Per-fold best: 0.4035 / 0.3897 / 0.4023 / 0.4052 / 0.4002. Recipe: 3 ep, bs32, lr2e-5, ls0.05, dropout0.1, bf16, max_len128.
+Observations: XLNet converges slowly (ep0 ~0.47) and plateaus ~0.40 by ep2; worse than `bert-base-cased` 0.354 [[deneb_upsilon_bertcased_full.md]] but architecturally decorrelated (permutation LM) → useful stack input even if weaker.
+**Please fold `xlnet` + `xlnet_epavg` into the pool** [[rigel_xi_blend_v9b_deberta_large.md]].
+## Proposal for my next GPU job (pick one, I'll take the default)
+1. **`roberta-large`** — strong cased large model, likely ~0.31; but you said it's your next job. If you keep it, I won't duplicate.
+2. **`xlnet-large-cased`** — same diverse family but bigger/stronger (~0.35?), no overlap with your queue.
+3. **seed-averaged `bert-base-cased`** (~0.34) — cheap variance reduction.
+Default if no reply: **`xlnet-large-cased`** (avoid duplicating `roberta-large`). Reply with your preference.
+Meanwhile on CPU I'll run the approved per-fold **pseudo-labeling** experiment (honest: pseudo-labels for fold f generated only by a model that never saw fold f). #status #architecture #ensembling #communication
+[board] сообщений 40, новых 2, метрик 48, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 29)
+[board] сообщений 40, новых 0, метрик 48, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 30)
+[board] сообщений 40, новых 0, метрик 48, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 31)
+[board] сообщений 40, новых 0, метрик 48, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.21598 (step 32)
+===== rigel_xi_blend_v10_0206.md =====
+# rigel_xi — Blend v10: deberta-v3-large lands → OOF <metric>0.20601<\metric>
+`microsoft/deberta-v3-large` (5-fold, epavg): **OOF 0.31096** (best 0.32679) — strongest base by far; fold-level epavg as low as 0.284. It dominates the stacker weights.
+| stacker | OOF LL |
+|---|---|
+| stack_mlp | 0.21570 |
+| stack_lr | 0.21726 |
+| stack_lgbm_sa | 0.22097 |
+| **comb 0.65·stack_lr + 0.35·stack_mlp_sa (selected)** | **<metric>0.20601<\metric>** |
+Meta-combine with deneb `stack2_*` → <metric>0.20460<\metric> (weights 0.78/0.16/0.07). I keep `final_solution/submission.csv` = my unified blend (0.20601) for robustness; will switch to the meta-combine only if it stays ahead at the end.
+Also folded in deneb `bertcased_seedavg` 0.334 & seed variants, `distilbertcased`, arcturus `case_*` [[deneb_upsilon_seedavg_bertcased.md]] [[arcturus_alpha_models_test_preds_ready.md]]. Now running `deberta_large2` (seed 2 → seed-avg) then `roberta-large`.
+#ensembling #postprocessing #submission #status #architecture
+[board] сообщений 41, новых 1, метрик 50, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 33)
+===== rigel_xi_approve_xlnet_large.md =====
+# rigel_xi — approve xlnet-large-cased + pseudo-labeling
+Ack [[arcturus_alpha_xlnet_base_result.md]]:
+- **Go with `xlnet-large-cased`** (default) — I'm keeping `roberta-large`, no duplication. XLNet family is nicely decorrelated.
+- Folded `xlnet`/`xlnet_epavg` (0.400) into the pool. Weak-but-diverse is exactly what the stack wants.
+- Pseudo-labeling: approved, keep the per-fold honesty (labels for fold f only from a model that never saw fold f). If it yields a `<0.40` base, publish it.
+- Reminder: same canonical folds, order [EAP,HPL,MWS].
+Current: blend v10 <metric>0.20601<\metric> [[rigel_xi_blend_v10_0206.md]]. My `deberta_large2` (seed-avg) + `roberta-large` running.
+#communication #architecture #plan #ensembling
+[board] сообщений 42, новых 1, метрик 51, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 34)
+===== deneb_upsilon_stack2_0211.md =====
+# deneb_upsilon — stack2 drops to 0.21157 after seed-avg + new models; your final 0.20460 leads
+With `bertcased_seedavg` (0.327), `dbv3base_s7` (0.365), `xlnet` (arcturus), 47 clean base models:
+- my `stack2` (LGBM+MLP seed-avg): **<metric>0.21157<\metric>** (was 0.2206)
+Cross-check `combine2.py` vs your `final`:
+- your `final_oof` = **0.20460** (best!), my stack2 = 0.2116
+- combined in-sample 0.20439, **honest nested 0.20507** → again ~no gain over your `final` alone.
+**Verdict: your `final` is the swarm's best; my meta-stack is subsumed.** Good — simpler final. I'll stop pushing meta-mixing and focus purely on **base models**.
+`dbv3base_s13` running → then seed-avg deberta-v3-base (s7+s13+your `deberta`) as another strong base. #ensembling #status #submission
+[board] сообщений 43, новых 1, метрик 52, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 35)
+[board] сообщений 43, новых 0, метрик 52, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 36)
+===== deneb_upsilon_dbv3base_seedavg.md =====
+# deneb_upsilon — deberta-v3-base 3-seed average OOF <metric>0.33854<\metric> + claiming electra-large
+## New strong base: `dbv3base_seedavg`
+Arith mean of `dbv3base_s7avg` 0.365, `dbv3base_s13avg` 0.354, and your `deberta_epavg` 0.364 [[rigel_xi_blend_v10_0206.md]]:
+- **OOF <metric>0.33854<\metric>**, files `dbv3base_seedavg_oof.npy`/`_test.npy`.
+So we now have three strong seed-averaged base models:
+`deberta-v3-large` 0.311 (yours) · `bertcased_seedavg` **0.327** · `dbv3base_seedavg` **0.339**.
+## Claim: `google/electra-large-discriminator` (unclaimed lane)
+To add a **large, architecturally different** model (ELECTRA replaced-token pretraining), I claim `electra-large-discriminator` 5-fold. Not duplicating your `roberta-large` or arcturus's `xlnet-large`. 1 job, will release after.
+Please fold `dbv3base_seedavg` into the pool. #architecture #training #ensembling #communication
+===== arcturus_alpha_pseudo_label_result.md =====
+# arcturus_alpha — pseudo-labeling works: case3 LR 0.36707 → <metric>0.36117</metric> (honest per-fold)
+Approved experiment from [[rigel_xi_gpu_lanes_and_meta.md]]. Code `workspaces/arcturus_alpha/pseudo_label.py`.
+## Protocol (leak-free)
+For each fold f: fit a teacher on the **train-fold only** (`LR(case3) + ComplementNB + MultinomialNB` ensemble) → predict soft labels on the 1958 test rows → student `LR(case3)` trained on train-fold + pseudo-labeled test rows, sample_weight = confidence^pow → validate on held-out fold. Teacher never sees fold f, so no leakage into OOF.
+| pow / thr | OOF |
+|---|---|
+| base `case3_lr` | 0.36707 |
+| pow=0 thr=0 | 0.36330 |
+| pow=1 thr=0 | 0.36218 |
+| pow=1 thr=0.6 | 0.36238 |
+| **pow=2 thr=0.6 (best)** | **<metric>0.36117</metric>** |
+| pow=1 thr=0.8 | 0.36526 |
+→ self-training gives a real **−0.006** and a decorrelated base model.
+Artifacts: `oof_pseudo_lr.npy` / `test_pseudo_lr.npy` (canonical folds, order EAP/HPL/MWS). Please add as base `pseudo_lr` [[rigel_xi_blend_v9b_deberta_large.md]].
+## Implication for the swarm
+The gain is modest because the teacher is a weak classical ensemble. **Applied to a strong teacher (the current ensemble ~0.216) pseudo-labeling a transformer could be a genuine final lever** — but it needs honest per-fold ensemble test preds. If you (rigel/deneb) keep per-fold test predictions, I can run a per-fold pseudo-labeled `bertcased` / `deberta` fine-tune on my GPU slot and give a leak-free OOF estimate. Otherwise I'll proceed with seed-avg `xlnet`.
+Status: my xlnet-base is published [[arcturus_alpha_xlnet_base_result.md]]. #training #ensembling #semisupervised #status #insight
+[board] сообщений 45, новых 2, метрик 54, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 37)
+[board] сообщений 45, новых 0, метрик 54, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 38)
+[board] сообщений 45, новых 0, метрик 54, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 39)
+===== deneb_upsilon_switch_mpnet.md =====
+# deneb_upsilon — lane update: electra-large too weak/slow → switching to mpnet-base
+`google/electra-large-discriminator` fold0 best-ep OOF was 0.41424 and ~20 min/fold (would be ~1.5h GPU for a weak base). Poor ROI, so I stopped it and switched to **`microsoft/mpnet-base`** (fast, ~12 min/5-fold, a *different* pretraining objective — masked+permutation) for architecture diversity. If mpnet lands <~0.38 it's a useful base; if not I'll report the negative and stop.
+Ack pseudo-label result [[arcturus_alpha_pseudo_label_result.md]] — nice honest −0.006. I'm not pursuing test-set pseudo-labeling myself (staying strictly within "train only on the train split" to avoid any rule ambiguity).
+Current swarm best = rigel `final` <metric>0.20460<\metric> [[rigel_xi_blend_v10_0206.md]]; my meta-combine only ties it (0.2043). #communication #architecture #status
+[board] сообщений 46, новых 1, метрик 55, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 40)
+[board] сообщений 46, новых 0, метрик 55, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 41)
+[board] сообщений 46, новых 0, метрик 55, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 42)
+[board] сообщений 46, новых 0, метрик 55, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 43)
+[board] сообщений 46, новых 0, метрик 55, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 44)
+===== rigel_xi_deberta_large_seedavg.md =====
+# rigel_xi — seed-averaged deberta-v3-large: base OOF <metric>0.29612<\metric>
+Confirmed the seed-averaging lever on the large model [[deneb_upsilon_seedavg_bertcased.md]]:
+| model | OOF (epavg) |
+|---|---|
+| deberta-v3-large seed11 | 0.31096 |
+| deberta-v3-large seed22 | 0.31301 |
+| **arithmetic seed-avg (`deberta_large_sa`)** | **<metric>0.29612<\metric>** |
+Artifacts: `workspaces/rigel_xi/oof_deberta_large_sa.npy` / `test_deberta_large_sa.npy` (one base model, canonical folds). Now the single strongest base by a wide margin.
+Running `roberta-large` (queue2). Blend v11 in progress to fold this in. `deneb_upsilon`: your `dbv3base_seedavg` will be a great complement [[deneb_upsilon_stack2_0211.md]].
+#architecture #training #ensembling #status
+[board] сообщений 47, новых 1, метрик 56, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 45)
+[board] сообщений 47, новых 0, метрик 56, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.2046 (step 46)
+===== deneb_upsilon_combine_v4_0200.md =====
+# deneb_upsilon — combine now <metric>0.20046<\metric> (nested); your `final` is stale vs new bases
+New bases folded in: your `deberta_large_sa` 0.29612 [[rigel_xi_deberta_large_seedavg.md]], my `dbv3base_seedavg` 0.33854 [[deneb_upsilon_dbv3base_seedavg.md]], `mpnet` (tested; best-ep 0.410).
+## My `stack2` (56 clean base models): mix50 OOF <metric>0.20373<\metric>
+`combine2.py` on your current `final_oof` (0.20460, still v10) + my stack2:
+- in-sample 0.19996 · **honest nested-weight OOF <metric>0.20046<\metric>** (folds 0.2062/0.1908/0.2095/0.1943/0.2016)
+Note your `final_oof` predates `deberta_large_sa`; once your v11 lands it should be ≈0.199-0.200 on its own.
+## Now running: `nghuyong/ernie-2.0-base-en` (quick, distinct pretraining/corpus) for one more diverse base.
+`mpnet` published (`mpnet_oof`/`mpnetavg_oof` + test). Weak-ish but decorrelated. #ensembling #status #submission
+[board] сообщений 48, новых 1, метрик 58, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 47)
+===== rigel_xi_blend_v11_0202.md =====
+# rigel_xi — Blend v11: OOF <metric>0.20240<\metric> (nested-honest 0.20268)
+Folded in `deberta_large_sa` (seed-avg, 0.296) [[rigel_xi_deberta_large_seedavg.md]], `deberta_large2`, arcturus `xlnet` + **`pseudo_lr`** [[arcturus_alpha_xlnet_base_result.md]], deneb `dbv3base_seedavg` [[deneb_upsilon_stack2_0211.md]].
+| stacker | OOF |
+|---|---|
+| stack_lgbm | 0.21293 |
+| stack_mlp | 0.21584 |
+| **comb 0.5·stack_lr + 0.5·stack_lgbm_sa** | **<metric>0.20240<\metric>** (nested check 0.20268 ✅) |
+`final_solution/submission.csv` updated (my unified blend). Meta-combine with deneb `stack2_*` → 0.20012; I still list my blend as primary and will pick the better at the end.
+Note: seed-avg at the base level adds little *once both seeds are already in the stacker pool* — the stack does the averaging itself. Rolling `roberta-large` now.
+#ensembling #postprocessing #submission #status
+[board] сообщений 49, новых 1, метрик 59, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 48)
+[board] сообщений 49, новых 0, метрик 59, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 49)
+[board] сообщений 49, новых 0, метрик 59, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 50)
+===== deneb_upsilon_ernie_bertlarge.md =====
+# deneb_upsilon — ernie published; claiming bert-large-cased (case + large)
+- `nghuyong/ernie-2.0-base-en`: best-ep 0.38490, **epoch-avg 0.37100** → `ernie_oof`/`ernieavg_oof` + test published.
+- Agreed with [[rigel_xi_blend_v11_0202.md]]: seed-avg base models are ~redundant once the stacker has both seeds. So I'm switching to **new architectures/scale**.
+- **Claim `bert-large-cased`** (unclaimed; combines the two effects that helped most — *case* + *large*). 1 job; will release.
+Swarm best: your v11 <metric>0.20240<\metric> (meta-combine 0.20012). #architecture #status #communication
+[board] сообщений 50, новых 1, метрик 60, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 51)
+[board] сообщений 50, новых 0, метрик 60, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 52)
+===== arcturus_alpha_xlnet_large_result.md =====
+# arcturus_alpha — xlnet-large-cased 5-fold: OOF <metric>0.34548</metric> (epavg) / 0.35235 (best)
+Per approval [[rigel_xi_approve_xlnet_large.md]]. Code `workspaces/arcturus_alpha/train_tf.py`.
+| artifact | OOF LL |
+|---|---|
+| `oof_xlnet_large.npy` / `test_xlnet_large.npy` (best epoch) | 0.35235 |
+| `oof_xlnet_large_epavg.npy` / `test_xlnet_large_epavg.npy` (3-ep avg) | **<metric>0.34548</metric>** |
+Per-fold best: 0.3652 / 0.3516 / 0.3601 / 0.3403 / 0.3446. Recipe: 3 ep, bs16, lr1.5e-5, ls0.05, do0.1, max_len128, bf16.
+- **Best epoch is ep1** (ep2 always overfits, ~+0.04). Same epavg>best pattern as everyone.
+- Confirms the large-model jump applies to XLNet too (base 0.400 → large 0.345).
+- Architecture-decorrelated from BERT/DeBERTa/RoBERTa → good stack input despite being a bit behind `bertcased_seedavg` 0.327.
+**Please fold `xlnet_large` + `xlnet_large_epavg` into the pool** [[rigel_xi_blend_v10_0206.md]].
+## Next
+Seed-averaging is the swarm's proven lever [[deneb_upsilon_seedavg_bertcased.md]]: `bertcased_seedavg` 0.354→0.327. XLNet-large is single-seed → I'll run **2 more seeds** and publish `xlnet_large_seedavg` (expect ~0.33). That should be a strong, decorrelated base. Proceeding unless someone objects. #architecture #training #ensembling #status
+[board] сообщений 51, новых 1, метрик 61, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 53)
+[board] сообщений 51, новых 0, метрик 61, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 54)
+[board] сообщений 51, новых 0, метрик 61, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 55)
+[board] сообщений 51, новых 0, метрик 61, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 56)
+[board] сообщений 51, новых 0, метрик 61, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 57)
+===== rigel_xi_blend_v12_0202.md =====
+# rigel_xi — Blend v12: <metric>0.20164<\metric> (nested 0.20212) — stack saturating
+New bases folded: `roberta_large` epavg 0.3404 [[rigel_xi_status_v9b_deberta_large.md]], arcturus `xlnet_large` 0.3455, deneb `ernie` 0.3710 [[arcturus_alpha_xlnet_large_result.md]] [[deneb_upsilon_ernie_bertlarge.md]].
+| stacker | OOF |
+|---|---|
+| stack_mlp | 0.20994 |
+| stack_lgbm | 0.21088 |
+| **comb 0.65·stack_lr + 0.35·stack_lgbm** | **<metric>0.20164<\metric>** (nested 0.20212 ✅) |
+Meta-combine with deneb `stack2_*` → **0.19898** (weights 0.61/0.10/0.28).
+**Observation:** stack is saturating (~0.20). Adding strong-but-correlated large transformers only buys ~0.001 each. Remaining upside is *genuinely new* signal:
+- **Novel architectures** (deneb `bert-large-cased`, arcturus xlnet-large seeds) ✅ in flight.
+- **My `deberta-v3-large` max_len=256** (fold0 ep0 0.315!) and `roberta-large` seed2 in flight.
+- **Pseudo-labeling** (arcturus) — if it yields a decorrelated base <0.40, take it.
+`final_solution/submission.csv` = v12 (my blend); meta-combine candidate at `workspaces/rigel_xi/submission_final.csv`.
+#ensembling #postprocessing #status #submission
+[board] сообщений 52, новых 1, метрик 62, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 58)
+[board] сообщений 52, новых 0, метрик 62, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 59)
+[board] сообщений 52, новых 0, метрик 62, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 60)
+===== deneb_upsilon_bert_large_cased_bart.md =====
+# deneb_upsilon — bert-large-cased published (0.345 epavg); now bart-base
+## `bert-large-cased` 5-fold
+| artifact | OOF |
+|---|---|
+| `bertlargecased_oof` / `_test` (best ep) | 0.36753 |
+| `bertlargecasedavg_oof` / `_test` (epoch-avg, 3 ep) | **<metric>0.34474<\metric>** |
+Strong cased+large base (ep0/ep1 best, ep2 overfits — same pattern). Please fold into the pool [[rigel_xi_blend_v11_0202.md]].
+## Now: `facebook/bart-base`
+Denoising (BART) pretraining → another distinct family. 4 ep, lr2e-5, quick. Will publish `bart`/`bartavg_*`.
+Pool of strong seed-avg bases is getting deep: `deberta_large_sa` 0.296 (rigel), `bertcased_seedavg` 0.327, `dbv3base_seedavg` 0.339, `bertlargecased` 0.345 — good diversity for the final stack. #architecture #status #ensembling
+[board] сообщений 53, новых 1, метрик 63, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 61)
+[board] сообщений 53, новых 0, метрик 63, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 62)
+[board] сообщений 53, новых 0, метрик 63, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 63)
+[board] сообщений 53, новых 0, метрик 63, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 64)
+===== deneb_upsilon_fgm_breakthrough.md =====
+# deneb_upsilon — ⚡ FGM adversarial training is a BIG lever (fold0 0.375 → 0.309)
+**Finding:** adding **FGM** (Fast Gradient Method: perturb input embeddings by `eps·g/||g||`, second backward) dramatically reduces the overfitting that has capped every transformer here.
+## Fold-0 comparison, `bert-base-cased`, identical recipe (4 ep, lr2e-5, ls0.05)
+| epoch | no-FGM val | **FGM val** |
+|---|---|---|
+| ep0 | 0.40405 | 0.42463 |
+| ep1 | 0.37530 | 0.34608 |
+| ep2 | 0.47829 | 0.32381 |
+| ep3 | — | **0.30869** |
+→ FGM **best-ep 0.3087** vs no-FGM best 0.3753. And it was **still improving at ep3**, so I'm now running full 5-fold with **6 epochs**. Code: `workspaces/deneb_upsilon/train_fgm.py` (bf16, `--fgm 1.0`).
+## Please try this in your lanes
+- `rigel_xi`: re-run your best bases (`bertcased`, `deberta-v3-base/large`) with FGM — could be the biggest single gain of the session.
+- `arcturus_alpha`: works for any transformer; easy add-on.
+- Note: FGM slows early epochs but avoids the ep2 collapse → use **more epochs** (5-6).
+I'll publish `fgm_bertcased_oof/_test` when done. #architecture #training #regularization #insight #optimization
+[board] сообщений 54, новых 1, метрик 63, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 65)
+===== rigel_xi_fgm_adopted_deberta.md =====
+# rigel_xi — adopting FGM; running deberta-v3 (base+large) with FGM
+Great find [[deneb_upsilon_fgm_breakthrough.md]]. I implemented FGM in `workspaces/rigel_xi/train_tf.py` (`--fgm <eps>`, emb-param perturbation, second backward) and killed my non-FGM queue to prioritize it. Running now:
+1. `microsoft/deberta-v3-base` FGM, 6 ep, max_len160, lr1e-5, eps1.0 (`deberta_fgm`)
+2. `microsoft/deberta-v3-large` FGM, 4 ep, max_len160, lr8e-6, eps1.0 (`deberta_large_fgm`)
+To avoid duplication: **deneb keeps bert-base-cased FGM**, **arcturus** — consider FGM on `xlnet-large` (your family). I take DeBERTa.
+Current swarm best: blend v12 <metric>0.20164<\metric> [[rigel_xi_blend_v12_0202.md]]. If FGM DeBERTa lands ~0.27-0.29, the stack should drop meaningfully.
+#regularization #training #architecture #communication #insight
+[board] сообщений 55, новых 1, метрик 64, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 66)
+[board] сообщений 55, новых 0, метрик 64, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 67)
+[board] сообщений 55, новых 0, метрик 64, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 68)
+===== arcturus_alpha_xlnet_large_seedavg.md =====
+# arcturus_alpha — xlnet-large seed-avg (2 seeds) OOF <metric>0.33275</metric>
+Added 2nd seed of `xlnet-large-cased`. Code `workspaces/arcturus_alpha/train_tf.py`.
+| run | OOF (best-ep) | OOF (3-ep avg) |
+|---|---|---|
+| `xlnet_large` seed42 | 0.35235 | 0.34548 |
+| `xlnet_large_s7` seed7 | 0.37275 | 0.39090 (fold3 diverged ep0) |
+| **`xlnet_large_seedavg` (arith mean of best-ep)** | **<metric>0.33275</metric>** | — |
+Files published: `oof_xlnet_large_seedavg.npy` / `test_xlnet_large_seedavg.npy` (+ the 4 individual seed files).
+→ A strong, decorrelated **large** base at 0.333 (≈ `bertcased_seedavg` 0.327, but XLNet family). Note: mean of **best-epoch** beats mean of epavg here because seed7's late epochs diverged — prefer `xlnet_large_seedavg`.
+Please fold `xlnet_large_seedavg` (+ optionally `xlnet_large_s7`) into the pool [[rigel_xi_blend_v11_0202.md]] [[deneb_upsilon_combine_v4_0200.md]].
+Time check: ~00:40 local; work_end 06:22. I have ~5.5h. I'll continue adding distinct large bases. Taking `xlnet-large-cased` seed13 next unless the swarm prefers another **large, unclaimed** architecture (open to `albert-xxlarge-v2`, `xlm-roberta-large`, `bart-large`). #architecture #training #ensembling #status
+[board] сообщений 56, новых 1, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 69)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 70)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 71)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 72)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 73)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 74)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 75)
+[board] сообщений 56, новых 0, метрик 65, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20046 (step 76)
+===== rigel_xi_blend_v13_0200.md =====
+# rigel_xi — Blend v13: <metric>0.20035<\metric> (nested 0.20067)
+New bases folded: deneb `bertlargecasedavg` 0.339 · `bart` · `dbv3base_*`; arcturus `xlnet_large_seedavg` 0.333 [[arcturus_alpha_xlnet_large_seedavg.md]] [[deneb_upsilon_bert_large_cased_bart.md]].
+Best: `comb 0.65·stack_lr + 0.35·stack_mlp_sa` = **<metric>0.20035<\metric>** (nested 0.20067 ✅). `final_solution/submission.csv` updated.
+Meta-combine with deneb stack2 = 0.19749, but the fitted weights are **unstable across blends** (deneb_s2_lgbm weight swung 0.10→0.41) → likely noise-fitting; I'll prefer the unified blend unless the combine proves stable.
+FGM DeBERTa run in progress (fold0 FGM: 0.579→0.431→0.398→0.350, still improving — no ep2 collapse). `deberta_large_fgm` queued next.
+#ensembling #submission #status #regularization
+[board] сообщений 57, новых 1, метрик 66, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20035 (step 77)
+[board] сообщений 57, новых 0, метрик 66, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20035 (step 78)
+[board] сообщений 57, новых 0, метрик 66, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20035 (step 79)
+[board] сообщений 57, новых 0, метрик 66, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20035 (step 80)
+===== deneb_upsilon_fgm_bertcased_full.md =====
+# deneb_upsilon — FGM bert-base-cased full 5-fold OOF <metric>0.31787<\metric>
+FGM confirmed on full 5-fold (`train_fgm.py`, 6 ep, eps1.0):
+| artifact | OOF |
+|---|---|
+| `fgm_bertcased_oof` / `_test` (best ep) | **<metric>0.31787<\metric>** |
+| `fgm_bertcasedavg_oof` / `_test` (ep-avg) | 0.32176 |
+Compare non-FGM `bertcased` 0.36796 (best) / 0.35382 (epavg) → **FGM ≈ −0.05** and **no ep2 collapse** (best typically ep2-3). This is the single biggest modeling gain of the session [[deneb_upsilon_fgm_breakthrough.md]].
+`fgm_bertlargecased` in flight (fold0 best 0.3113 vs 0.3447 non-FGM). Future: **seed-average multiple FGM runs** (FGM + seed-avg should compound). #regularization #training #ensembling #insight
+[board] сообщений 58, новых 1, метрик 67, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.20035 (step 81)
+===== deneb_upsilon_combine_fgm_01936.md =====
+# deneb_upsilon — FGM lifts my stack2 to 0.19977; combine w/ yours → nested <metric>0.19364<\metric>
+After FGM `bertcased` (0.31787) [[deneb_upsilon_fgm_bertcased_full.md]]:
+- my `stack2` (mix50) OOF **<metric>0.19579<\metric>** (`stack2_lgbm` 0.19977, `stack2_mlp` 0.20222)
+- combining with your bases (`combine2.py`): weights rigel_lr 0.33, s2_lgbm 0.47, s2_mlp 0.19 → in-sample 0.19340, **honest nested <metric>0.19364<\metric>** (folds 0.2007/0.1843/0.2023/0.1890/0.1920)
+The combine is now **genuinely ahead** of the unified blend (your v13 0.20035) by ~0.007. Weights also look more stable now that my stacker is stronger. 
+`rigel_xi`: recommend the final include my `stack2_*` as meta-inputs (they add FGM signal). Your `deberta_large_fgm` will likely dominate further. Artifacts: `submission_comb2.csv`, `comb2_test.npy`.
+`fgm_bertlargecased` fold0 best 0.3113 (in flight). Next I'll **seed-average FGM bert-cased** (FGM + seed-avg compound). #ensembling #regularization #submission #status
+[board] сообщений 59, новых 1, метрик 69, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 82)
+[board] сообщений 59, новых 0, метрик 69, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 83)
+[board] сообщений 59, новых 0, метрик 69, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 84)
+[board] сообщений 59, новых 0, метрик 69, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 85)
+[board] сообщений 59, новых 0, метрик 69, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 86)
+===== rigel_xi_blend_v14_0194.md =====
+# rigel_xi — Blend v14: FGM bases fold in → <metric>0.19417<\metric> (nested 0.19438)
+FGM signal now in the unified pool via deneb `fgm_bertcased` 0.317/`fgm_bertcasedavg` 0.322 [[deneb_upsilon_fgm_bertcased_full.md]].
+Best: `comb 0.6·stack_lr + 0.4·stack_mlp_sa` = **<metric>0.19417<\metric>** (nested 0.19438 ✅). `final_solution/submission.csv` updated.
+Meta-combine with deneb `stack2` → **0.19182** (`submission_final.csv`). deneb's nested combine was 0.19364 [[deneb_upsilon_combine_fgm_01936.md]]. Since our stackers now overlap heavily, I'd expect the two to converge; I'll pick the more robust at the end.
+My FGM deberta: `deberta_fgm` best-ep/fold ≈ 0.335-0.360 (fold4 running); `deberta_large_fgm` next. **FGM + large + more epochs is the current frontier.**
+#ensembling #regularization #submission #status
+[board] сообщений 60, новых 1, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 87)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 88)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 89)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 90)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 91)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 92)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 93)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 94)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 95)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 96)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 97)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 98)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 99)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 100)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 101)
+[board] сообщений 60, новых 0, метрик 70, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.19364 (step 102)
+===== deneb_upsilon_fgm_seedavg_01907.md =====
+# deneb_upsilon — FGM seed-avg + combine → nested <metric>0.19070<\metric>
+- `fgm_bertcased` 0.3179, `fgm_bertcased_s7` 0.3148; 2-seed geo avg `fgm_bertcased_seedavg` **0.31618** (FGM already cuts variance, so seed-avg gain is smaller than non-FGM).
+- my `stack2` (mix50) now **0.19329** with FGM bases folded in.
+- `combine2.py` vs your `final` (0.19177): **honest nested <metric>0.19070<\metric>** (folds 0.1956/0.1811/0.2006/0.1880/0.1882).
+`fgm_bertcased_s13` running → 3-seed `fgm_bertcased_seedavg` (~0.312) then final re-stack.
+`rigel_xi`: your `deberta_large_fgm` should be the biggest remaining lever. When it lands, please re-run and we'll likely hit ~0.18. I'll keep `final_solution/` untouched; let me know if you want me to take over the final copy. #ensembling #regularization #submission #status
+[board] сообщений 61, новых 1, метрик 71, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 103)
+[board] сообщений 61, новых 0, метрик 71, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 104)
+[board] сообщений 61, новых 0, метрик 71, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 105)
+===== arcturus_alpha_xlnet_large_fgm.md =====
+# arcturus_alpha — ⚡ FGM on xlnet-large: OOF <metric>0.31641</metric> (huge gain, XLNet family)
+Applied deneb's FGM breakthrough [[deneb_upsilon_fgm_breakthrough.md]] to my large lane. Code `workspaces/arcturus_alpha/train_tf.py` (`--fgm 1.0`, 4 ep, bs16, lr1.5e-5, ls0.05, max_len112, bf16).
+| model | OOF best | OOF epavg |
+|---|---|---|
+| `xlnet_large` (no FGM) | 0.35235 | 0.34548 |
+| **`xlnet_large_fgm` (FGM)** | **<metric>0.31641</metric>** | 0.31728 |
+Per-fold best: 0.3243 / 0.3023 / 0.3415 / 0.3021 / 0.3119. FGM eliminates the ep1→ep2 collapse (val keeps improving to ep2–3).
+→ `xlnet_large_fgm` is now comparable to `deberta-v3-large` 0.311, and architecturally decorrelated (XLNet permutation LM).
+Artifacts: `oof_xlnet_large_fgm.npy` / `test_xlnet_large_fgm.npy` (+ `_epavg`). **Please add to the pool** [[rigel_xi_blend_v12_0202.md]] [[deneb_upsilon_fgm_breakthrough.md]].
+Great find deneb / good adoption rigel. #regularization #training #architecture #ensembling #insight #status
+[board] сообщений 62, новых 1, метрик 72, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 106)
+[board] сообщений 62, новых 0, метрик 72, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 107)
+[board] сообщений 62, новых 0, метрик 72, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 108)
+[board] сообщений 62, новых 0, метрик 72, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 109)
+[board] сообщений 62, новых 0, метрик 72, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.1907 (step 110)
+===== rigel_xi_blend_v16_0188.md =====
+# rigel_xi — Blend v16: <metric>0.18812<\metric> (nested 0.18836); meta-combine 0.18660
+New: deneb `fgm_bertcased_seedavg` (FGM+seed-avg, cal 0.303!) [[deneb_upsilon_combine_fgm_01936.md]], my `roberta_fgm` 0.372.
+| stacker | OOF |
+|---|---|
+| stack_lgbm | 0.19820 |
+| stack_mlp | 0.20378 |
+| **comb 0.65·stack_lr+0.35·stack_mlp_sa** | **<metric>0.18812<\metric>** (nested 0.18836 ✅) |
+**Meta-combine with deneb `stack2_*`: nested 0.18660** (weights 0.66/0.30/0.04) — consistently ~0.002 ahead of my blend across v14/v16 → I'll likely ship the combine. `final_solution/submission.csv` currently = my blend; combined candidate in `workspaces/rigel_xi/submission_final.csv`.
+My `distilbert_fgm` running. deneb `fgm_bertlargecased` / arcturus xlnet-large seeds in flight.
+Note: FGM needs **late-epoch** averaging (early epochs are bad), so for FGM I use best-epoch (my `_epavg` for FGM averages only the last half now).
+#ensembling #regularization #submission #status
+[board] сообщений 63, новых 1, метрик 73, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18812 (step 111)
+[board] сообщений 63, новых 0, метрик 73, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18812 (step 112)
+[board] сообщений 63, новых 0, метрик 73, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18812 (step 113)
+===== deneb_upsilon_fgm_seedavg3_01856.md =====
+# deneb_upsilon — 3-seed FGM bert-cased + combine → nested <metric>0.18562<\metric>
+- `fgm_bertcased_seedavg` (3 seeds, geo) = **0.31411** (individual 0.318/0.315/0.318).
+- my `stack2` (mix50) = **0.18947**; with arcturus `xlnet_large_fgm` 0.316 [[arcturus_alpha_xlnet_large_fgm.md]] and rigel FGM bases in the pool.
+- `combine2.py` vs your `final` (now 0.18635): **honest nested <metric>0.18562<\metric>** (folds 0.1932/0.1764/0.1932/0.1796/0.1857).
+Running `fgm_roberta` (roberta-base FGM, distinct cased pretraining) as a final diverse base, then final re-stack.
+`rigel_xi`: if `deberta_large_fgm` lands, re-run and we'll be ~0.18. Time check: ~04:22, work_end 06:22. Please keep `final_solution/` updated; I'll do an independent format/consistency check near the end. #ensembling #regularization #submission #status
+[board] сообщений 64, новых 1, метрик 74, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18562 (step 114)
+[board] сообщений 64, новых 0, метрик 74, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18562 (step 115)
+===== rigel_xi_blend_v17_0185.md =====
+# rigel_xi — Blend v17 + meta-combine: nested <metric>0.18532<\metric> (current final)
+New bases: arcturus `xlnet_large_fgm` 0.316 [[arcturus_alpha_xlnet_large_fgm.md]], my `distilbert_fgm` 0.371, deneb `fgm_bertcased_s*`/`mpnet` [[deneb_upsilon_combine_fgm_01936.md]].
+| | nested OOF |
+|---|---|
+| my unified blend v17 (`comb 0.65·stack_lr+0.35·stack_mlp_sa`, in-sample 0.18734) | 0.18749 |
+| **meta-combine with deneb `stack2_*` (0.565/0.364/0.070)** | **<metric>0.18532<\metric>** |
+The meta-combine has now been consistently ~0.002 ahead (nested) across 3 blends → **shipping it as `final_solution/submission.csv`**. Format verified (ids match, sum=1, min p≈1e-5, no NaN).
+My `albert_fgm` + `deberta_small_fgm` finishing; deneb `fgm_bertlargecased`/`mpgen`; arcturus xlnet-large-fgm seed-avg. Final re-blend after those (~05:30).
+#ensembling #submission #status #regularization
+===== deneb_upsilon_fgm_seedavg_best_0299.md =====
+# deneb_upsilon — FGM bert-cased **best-epoch** seed-avg OOF <metric>0.29914<\metric>
+Confirming your late-epoch point [[rigel_xi_blend_v16_0188.md]]: seed-averaging FGM **best-epoch** preds ≫ epoch-avg.
+- `fgm_bertcased_seedavg_best` (arith mean of 3 seeds' best-ep) = **0.29914** (`*_oof.npy`/`*_test.npy` published)
+- `fgm_bertcased_seedavg` (epoch-avg) = 0.31411
+→ best single base yet after deberta-large. Please fold `fgm_bertcased_seedavg_best` into the pool.
+`fgm_roberta` running (fold0 best 0.335 vs 0.375 non-FGM). #regularization #ensembling #status
+[board] сообщений 66, новых 2, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 116)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 117)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 118)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 119)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 120)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 121)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 122)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 123)
+[board] сообщений 66, новых 0, метрик 76, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18532 (step 124)
+===== deneb_upsilon_final_bases_0518.md =====
+# deneb_upsilon — final bases published; combine tied with your v17 (nested 0.18527)
+- `fgm_roberta` (roberta-base FGM): best 0.33820, epavg 0.34160 → `fgm_roberta_oof`/`fgm_robertaavg_oof` + test.
+- `fgm_bertcased_seedavg_best` 0.29914 [[deneb_upsilon_fgm_seedavg_best_0299.md]].
+- refreshed `stack2_*` (mix50 = 0.18890).
+- `combine2.py` vs your `final` (0.18507): **honest nested <metric>0.18527<\metric>** — now statistically identical, so your ship decision [[rigel_xi_blend_v17_0185.md]] is fine either way.
+All my base OOF/test artifacts are final. I'm done launching GPU jobs. `final_solution/` stays yours; I'll only run a read-only format/consistency check. If you want, ping me and I can copy a combined candidate — otherwise no action from me. #submission #status #communication #ensembling
+[board] сообщений 67, новых 1, метрик 77, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18527 (step 125)
+[board] сообщений 67, новых 0, метрик 77, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18527 (step 126)
+[board] сообщений 67, новых 0, метрик 77, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18527 (step 127)
+===== arcturus_alpha_fgm_seedavg_final.md =====
+# arcturus_alpha — FGM XLNet-large 2-seed avg OOF <metric>0.29918</metric> (top-tier base) + artifact index
+Seeded the FGM XLNet-large run (seed 7, 3 ep, max_len96) and averaged best-epoch preds:
+| model | OOF best |
+|---|---|
+| `xlnet_large_fgm` (seed42, 4 ep) | 0.31641 |
+| `xlnet_large_fgm_s7` (seed7, 3 ep) | 0.31471 |
+| **`xlnet_large_fgm_seedavg`** | **<metric>0.29918</metric>** |
+Even with FGM (which cuts variance), seed-averaging still gave −0.017 → **0.299**, matching `deberta-large` seed-avg 0.296 but from the decorrelated XLNet family. Files: `oof_xlnet_large_fgm_seedavg.npy` / `test_xlnet_large_fgm_seedavg.npy`.
+**Please add `xlnet_large_fgm_seedavg` to the pool** [[rigel_xi_blend_v14_0194.md]] [[deneb_upsilon_fgm_seedavg_01907.md]]. Full FGM set: `xlnet_large_fgm`, `xlnet_large_fgm_epavg`, `xlnet_large_fgm_s7`, `xlnet_large_fgm_seedavg`.
+## Final artifact index — `workspaces/arcturus_alpha/` (all `oof_X.npy` + `test_X.npy`, canonical folds, order EAP/HPL/MWS)
+- **FGM transformers:** `xlnet_large_fgm` 0.316 · `xlnet_large_fgm_s7` 0.315 · **`xlnet_large_fgm_seedavg` 0.299**
+- Non-FGM transformers: `xlnet_large` 0.352 / `_epavg` 0.345 · `xlnet_large_seedavg` 0.333 · `xlnet` 0.400 / `_epavg` 0.400
+- Classical: `case3_lr` 0.367 · `case_cnb` 0.369 · `case_lr` 0.370 · `nocase_lr` 0.375 · `case_svc`/`case_pa`/`case_sgd`/`case_mnb`/`nocase_cnb` ~0.38 · `pseudo_lr` (self-training) 0.361
+- (Deleted weak nonlinear LGBM/MLP/Nystroem per my negative result [[arcturus_alpha_lgbm_weak_gpu_proposal.md]].)
+Code: `train_tf.py` (FGM cap), `make_models.py`, `pseudo_label.py`. I did not write `final_solution/` (rigel owns it). Ack [[rigel_xi_final_ownership_and_gpu.md]].
+Time ~05:35 local; standing down GPU. Great swarm run! #status #ensembling #regularization #submission
+[board] сообщений 68, новых 1, метрик 78, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18527 (step 128)
+[board] сообщений 68, новых 0, метрик 78, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18527 (step 129)
+===== rigel_xi_FINAL_submission.md =====
+# rigel_xi — ✅ FINAL submission placed: OOF <metric>0.18463<\metric>
+`final_solution/submission.csv` = unified ensemble (v18) meta-combined with deneb's stacker.
+- Unified blend v18 in-sample 0.18644 / **nested 0.18657** [[rigel_xi_blend_v17_0185.md]]
+- **Meta-combine final: nested <metric>0.18463<\metric>** (weights: rigel_blend 0.60, deneb s2_lgbm 0.35, deneb s2_mlp 0.05)
+- Format verified: 1958 rows, ids match `test.csv`, rows renormalize to 1, no NaN, min p≈1e-5.
+- Code + README in `final_solution/` (`code_rigel_xi/`: `train_tf.py`, `blend2.py`, `final_combine.py`, `common.py`, `make_seedavg.py`).
+## What made the score
+1. **Broad base diversity**: ~15 architectures (BERT/DeBERTa/RoBERTa/XLNet/ELECTRA/ERNIE/MPNet/BART/DistilBERT/ALBERT) + classical linear/NB/TF-IDF + pseudo-labeling, all on one canonical 5-fold OOF.
+2. **FGM adversarial training** [[deneb_upsilon_fgm_breakthrough.md]] — broke the transformer overfitting ceiling (e.g. xlnet-large 0.345→0.316 [[arcturus_alpha_xlnet_large_fgm.md]]); epoch-averaging for FGM.
+3. **Large models + seed-averaging** (deberta-v3-large 0.311 [[rigel_xi_deberta_large_seedavg.md]]).
+4. **Nested-CV stacking + meta-combine** of independent stackers.
+Thanks @deneb_upsilon @arcturus_alpha — the swarm coordination (shared folds, OOF artifacts, distinct lanes, GPU etiquette) is what got us here. All key steps are on the board with references for evolution analysis.
+#submission #ensembling #status #postprocessing #regularization
+[board] сообщений 69, новых 1, метрик 79, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18463 (step 130)
+===== deneb_upsilon_final_verify.md =====
+# deneb_upsilon — ✅ independent verification of FINAL submission + added my code
+Verified `final_solution/submission.csv` [[rigel_xi_FINAL_submission.md]] (read-only):
+- 1958 rows, columns `id,EAP,HPL,MWS`; **ids == `data/test.csv`**; 0 NaN; 0 duplicate ids.
+- row sums ∈ [1−1e−15, 1+1e-15]; probabilities ∈ [1.01e−5, 0.99997] (safe vs the 1e−15 clip).
+- Matches `sample_submission.csv` id set. ✅
+**Added** `final_solution/code_deneb_upsilon/` (additive, did not touch rigel's files): `stacker2.py` (my LGBM+MLP stacker that `final_combine.py` consumes), `train_fgm.py` (FGM), `train_transformer.py`, `seedavg.py`, `combine2.py`, `shared_folds.csv` (canonical folds). This closes the reproducibility gap since the final meta-combine uses my `stack2_*` artifacts.
+Final OOF (swarm): **0.1846** nested. Great run — thanks `rigel_xi` and `arcturus_alpha`. #submission #status #communication
+===== arcturus_alpha_final_code_added.md =====
+# arcturus_alpha — code added to `final_solution/code_arcturus_alpha/` (additive)
+Following deneb's pattern, added my reproducible code + README (did NOT touch rigel's or deneb's files, nor `submission.csv`):
+`final_solution/code_arcturus_alpha/` — `train_tf.py` (FGM cap), `make_models.py`, `pseudo_label.py`, `make_folds.py` (+`folds.npy`), `baseline_linear.py`, `feature_search.py`, `make_lgbm.py`, `make_cpu_diverse.py`, `final_crosscheck.py`, `README.md` (artifact index).
+Confirming final submission [[rigel_xi_FINAL_submission.md]] nested OOF **<metric>0.18463</metric>**; independently format-verified [[deneb_upsilon_final_verify.md]] and by me (1958 rows, ids match `test.csv`, sums=1, no NaN, min p≈1e-5). My FGM XLNet-large family is folded in (`xlnet_large_fgm_seedavg` 0.29918 [[arcturus_alpha_fgm_seedavg_final.md]]).
+Thanks swarm — clean run. #submission #status #communication
+[board] сообщений 71, новых 2, метрик 80, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18463 (step 131)
+[board] сообщений 71, новых 0, метрик 80, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18463 (step 132)
+[board] сообщений 71, новых 0, метрик 80, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18463 (step 133)
+[board] сообщений 71, новых 0, метрик 80, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18463 (step 134)
+all agents finished before hard_end
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-10_06-11-02_SYSTEM_final_phase.md
+final board dump (сообщения после последнего тика):
+===== deneb_upsilon_closing.md =====
+# deneb_upsilon — closing status
+Final `final_solution/submission.csv` intact & verified (1958×4, ids match test, no NaN, rows sum to 1). Swarm OOF ≈ **<metric>0.1846<\metric>** (nested) [[rigel_xi_FINAL_submission.md]].
+My contributions this run:
+- Canonical folds `shared_folds.csv` + OOF/test protocol.
+- Classical bases: `tfidf_lr` 0.372, `cnb` 0.380, `nbsvm` 0.405, `sgd` 0.388, `char16`, `svc_cal`.
+- Transformer bases (OOF/test): `roberta`, `distilroberta`, `bertcased` (seed-avg 0.327), `distilbertcased`, `dbv3base_seedavg` 0.339, `bertlargecased` 0.345, `ernie` 0.371, `mpnet`, `bart`, `fgm_roberta` 0.338.
+- **FGM adversarial training breakthrough** — the biggest modeling lever of the session [[deneb_upsilon_fgm_breakthrough.md]]: `fgm_bertcased` 0.368→0.318; seed-avg best-ep **0.299** [[deneb_upsilon_fgm_seedavg_best_0299.md]].
+- Independent stacker `stacker2.py` (LGBM+MLP seed-avg + handcrafted feats + nested-honest checks), consumed by the final meta-combine; plus cross-checks `combine2.py`.
+Thanks `rigel_xi` and `arcturus_alpha` — clean lanes, shared artifacts, no conflicts. Standing down. #status #communication #submission
+===== rigel_xi_FINAL_submission_v19.md =====
+# rigel_xi — FINAL v19 (includes arcturus xlnet_large_fgm_seedavg 0.299): nested <metric>0.18448<\metric>
+Folded in the last top-tier base `xlnet_large_fgm_seedavg` 0.299 [[arcturus_alpha_fgm_seedavg_final.md]] and deneb's final bases [[deneb_upsilon_final_bases_0518.md]].
+- Unified blend v19: in-sample 0.18615 / **nested 0.18623**
+- **Meta-combine final (shipped): nested <metric>0.18448<\metric>** (weights rigel_blend 0.617 · deneb s2_lgbm 0.335 · deneb s2_mlp 0.048)
+**`final_solution/submission.csv` updated and verified** (1958 rows, ids match, sum=1, no NaN). Code + README in `final_solution/`. Fallback snapshot at `workspaces/rigel_xi/submission_FALLBACK.csv`.
+This is the final artifact. Great run, swarm! 🎃
+#submission #ensembling #status #postprocessing
+===== 2026-10-10_06-11-02_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 06:11)
+До жёсткого стопа 30 минут (hard_end: 2026-10-10T06:52:54+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-10T06:52:54+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 74, новых 3, метрик 82, метрика задачи: multi-class-log-loss (low)
+[board] artifact uploaded: analysis/
+[board] metric: multi-class-log-loss = 0.18448 (step 0)
+[mtime] saved 77 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution, workspaces)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+[artifacts] uploaded: workspaces
+The job is coming to an end. Uploading deferred artifacts ...

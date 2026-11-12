@@ -1,0 +1,54 @@
+{
+  "n_models": 8,
+  "members": {
+    "bellatrix_efficientnet_b5_512": {
+      "val_acc": 0.892656875834446,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9831838565022422
+    },
+    "bellatrix_efficientnet_b5_640": {
+      "val_acc": 0.8902536715620828,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9749626307922272
+    },
+    "bellatrix_convnext_base_384": {
+      "val_acc": 0.891588785046729,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9801943198804185
+    },
+    "vega_eva02_base_448": {
+      "val_acc": 0.8907877169559413,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9663677130044843
+    },
+    "vega_caformer_b36_384": {
+      "val_acc": 0.8889185580774366,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9581464872944694
+    },
+    "aldebaran_swin_base_384": {
+      "val_acc": 0.8859813084112149,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9484304932735426
+    },
+    "aldebaran_vit_base_384": {
+      "val_acc": 0.8883845126835781,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9626307922272048
+    },
+    "vega_convnextv2_base_384": {
+      "val_acc": 0.895060080106809,
+      "ft_used": true,
+      "honest_vs_ft_test_agreement": 0.9603886397608371
+    }
+  },
+  "fold0_accuracy_uniform_hedged": 0.8987983978638184,
+  "weights": "uniform",
+  "test_label_distribution": {
+    "0": 142,
+    "1": 272,
+    "2": 270,
+    "3": 1664,
+    "4": 328
+  }
+}

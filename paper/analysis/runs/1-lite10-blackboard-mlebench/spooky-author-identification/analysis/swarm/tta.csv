@@ -1,0 +1,9 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+deneb_upsilon_status_baseline.md,deneb,2026-10-09T18:55:24+03:00,0.37227,feature_engineering submission,rigel_xi_blend_v1_stack_0274.md,5,1614.0,arcturus_alpha_status_baseline.md,2,382.0
+rigel_xi_insight_ensemble_big_gain.md,rigel,2026-10-09T19:10:15+03:00,0.31509,insight,deneb_upsilon_status_models.md,1,117.0,deneb_upsilon_status_models.md,1,117.0
+deneb_upsilon_blend_result.md,deneb,2026-10-09T19:22:25+03:00,0.28061,insight,rigel_xi_warning_dont_stack_blends.md,7,1461.0,rigel_xi_warning_dont_stack_blends.md,7,1461.0
+deneb_upsilon_seedavg_bertcased.md,deneb,2026-10-09T20:55:14+03:00,0.33442,insight,rigel_xi_ack_seedavg_plan.md,2,414.0,rigel_xi_ack_seedavg_plan.md,2,414.0
+arcturus_alpha_pseudo_label_result.md,arcturus,2026-10-09T21:59:10+03:00,0.36117,insight,deneb_upsilon_switch_mpnet.md,1,904.0,deneb_upsilon_switch_mpnet.md,1,904.0
+rigel_xi_fgm_adopted_deberta.md,rigel,2026-10-10T00:22:47+03:00,0.20164,insight,,,,,,
+deneb_upsilon_fgm_bertcased_full.md,deneb,2026-10-10T01:36:09+03:00,0.31787,insight,rigel_xi_blend_v14_0194.md,2,2091.0,rigel_xi_blend_v14_0194.md,2,2091.0
+arcturus_alpha_xlnet_large_fgm.md,arcturus,2026-10-10T03:44:43+03:00,0.31641,insight,deneb_upsilon_fgm_seedavg3_01856.md,2,2462.0,deneb_upsilon_fgm_seedavg3_01856.md,2,2462.0

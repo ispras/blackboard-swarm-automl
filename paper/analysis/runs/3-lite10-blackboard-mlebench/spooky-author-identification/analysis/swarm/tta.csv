@@ -1,0 +1,17 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+achernar_kappa_classical_results.md,achernar,2026-10-30T20:07:43+03:00,0.3977,feature_engineering,pollux_upsilon_transformer_results1.md,2,55.0,pollux_upsilon_transformer_results1.md,2,55.0
+pollux_upsilon_transformer_results1.md,pollux,2026-10-30T20:08:38+03:00,0.3554,insight,achernar_kappa_probe_results.md,2,762.0,achernar_kappa_probe_results.md,2,762.0
+pollux_upsilon_blend_finding.md,pollux,2026-10-30T20:23:12+03:00,0.2898,insight,,,,,,
+pollux_upsilon_stacking_breakthrough.md,pollux,2026-10-30T20:51:47+03:00,0.2531,insight submission,aldebaran_xi_stacking_confirmed.md,1,602.0,aldebaran_xi_stacking_confirmed.md,1,602.0
+aldebaran_xi_stacking_confirmed.md,aldebaran,2026-10-30T21:01:49+03:00,0.2425,insight,pollux_upsilon_stack_size.md,4,1478.0,pollux_upsilon_stack_size.md,4,1478.0
+pollux_upsilon_stack_0224.md,pollux,2026-10-30T21:13:10+03:00,0.2237,insight submission,,,,,,
+pollux_upsilon_stack_size.md,pollux,2026-10-30T21:26:27+03:00,0.22254,insight,,,,,,
+pollux_upsilon_dbv3l_landed.md,pollux,2026-10-30T23:05:39+03:00,0.19862,insight submission,achernar_kappa_status_bertlarge.md,1,496.0,achernar_kappa_status_bertlarge.md,1,496.0
+pollux_upsilon_stack_01935.md,pollux,2026-10-31T00:46:24+03:00,0.19348,insight submission,aldebaran_xi_stack_01903.md,1,937.0,aldebaran_xi_stack_01903.md,1,937.0
+aldebaran_xi_stack_01903.md,aldebaran,2026-10-31T01:02:01+03:00,0.1902,insight submission,,,,,,
+pollux_upsilon_s1234_best.md,pollux,2026-10-31T03:05:20+03:00,0.19159,insight submission,,,,,,
+pollux_upsilon_final_analysis.md,pollux,2026-10-31T05:02:52+03:00,0.1878,insight,achernar_kappa_verification_report.md,1,16.0,achernar_kappa_verification_report.md,1,16.0
+achernar_kappa_verification_report.md,achernar,2026-10-31T05:03:08+03:00,0.18603,insight submission,aldebaran_xi_elarge_fail_freeze.md,1,1733.0,aldebaran_xi_elarge_fail_freeze.md,1,1733.0
+achernar_kappa_dapt_result_freeze_rec.md,achernar,2026-10-31T05:51:20+03:00,0.1861,insight submission,aldebaran_xi_FINAL_frozen.md,3,1446.0,aldebaran_xi_FINAL_frozen.md,3,1446.0
+pollux_upsilon_bertlargec_negative.md,pollux,2026-10-31T06:12:43+03:00,0.18703,insight submission,,,,,,
+pollux_upsilon_stacker_probe_final.md,pollux,2026-10-31T07:20:46+03:00,0.18785,insight submission,,,,,,

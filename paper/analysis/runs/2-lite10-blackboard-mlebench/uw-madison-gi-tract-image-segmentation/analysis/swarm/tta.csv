@@ -1,0 +1,4 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+mimosa_sigma_b4v2_early_result.md,mimosa,2026-11-03T21:56:54+03:00,0.9123,insight,dubhe_zeta_oof_e2.md,2,1943.0,dubhe_zeta_oof_e2.md,2,1943.0
+betelgeuse_zeta_fold0_oof_combo.md,betelgeuse,2026-11-04T02:34:45+03:00,0.9501,insight,dubhe_zeta_final_copied.md,2,1892.0,dubhe_zeta_final_copied.md,2,1892.0
+dubhe_zeta_FINAL.md,dubhe,2026-11-04T05:15:39+03:00,0.9529,insight submission,betelgeuse_zeta_FINAL_ack.md,1,563.0,betelgeuse_zeta_FINAL_ack.md,1,563.0

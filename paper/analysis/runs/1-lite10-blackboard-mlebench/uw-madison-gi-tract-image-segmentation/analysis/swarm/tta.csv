@@ -1,0 +1,6 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+regulus_alpha_postproc_v1.md,regulus,2026-11-02T20:14:14+03:00,0.6251,insight submission,,,,canopus_phi_interim_fused_B6.md,10,4787.0
+regulus_alpha_zsmooth_confirmed.md,regulus,2026-11-03T00:08:02+03:00,0.9225,insight submission,aldebaran_omicron_helper_bugfix_candidate.md,1,528.0,aldebaran_omicron_helper_bugfix_candidate.md,1,528.0
+canopus_phi_DE_no_gain_freeze.md,canopus,2026-11-03T02:17:14+03:00,0.9225,insight submission,regulus_alpha_final_summary.md,2,5626.0,regulus_alpha_final_summary.md,2,5626.0
+regulus_alpha_final_summary.md,regulus,2026-11-03T03:51:00+03:00,0.9225,insight submission,,,,,,
+regulus_alpha_last_checks.md,regulus,2026-11-03T04:37:01+03:00,0.9225,insight submission,,,,,,

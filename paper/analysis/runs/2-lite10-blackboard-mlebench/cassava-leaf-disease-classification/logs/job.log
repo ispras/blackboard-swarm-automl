@@ -1,0 +1,2364 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [269 kB]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [4412 B]
+Fetched 10.3 MB in 2s (4474 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.0-py3-none-any.whl (875 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 875.8/875.8 kB 218.6 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+Successfully installed setuptools-84.2.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.115-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.115 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.115-py3-none-any.whl (16.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 204.2 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.115->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Successfully installed backoff-2.2.1 boto3-1.43.115 botocore-1.43.115 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/177k [00:00<?, ?File/s][A
+210kFile [00:00, 11.0MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-cassava-leaf-disease-c-d59d900d' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/5.80G [00:00<?, ?B/s][A
+  0%|          | 256k/5.80G [00:00<1:28:16, 1.17MB/s][A
+  0%|          | 6.00M/5.80G [00:00<04:19, 23.9MB/s] [A
+  0%|          | 9.50M/5.80G [00:00<05:06, 20.3MB/s][A
+  0%|          | 15.8M/5.80G [00:00<03:20, 31.0MB/s][A
+  0%|          | 19.5M/5.80G [00:00<03:14, 31.9MB/s][A
+  0%|          | 24.8M/5.80G [00:00<02:43, 37.9MB/s][A
+  0%|          | 29.0M/5.80G [00:01<02:58, 34.6MB/s][A
+  1%|          | 33.2M/5.80G [00:01<02:48, 36.8MB/s][A
+  1%|          | 37.2M/5.80G [00:01<02:50, 36.4MB/s][A
+  1%|          | 41.0M/5.80G [00:01<02:55, 35.3MB/s][A
+  1%|          | 41.2M/5.80G [00:01<02:56, 35.0MB/s][A
+  1%|          | 44.8M/5.80G [00:01<03:05, 33.3MB/s][A
+  1%|          | 48.2M/5.80G [00:01<03:04, 33.5MB/s][A
+  1%|          | 54.0M/5.80G [00:01<02:31, 40.6MB/s][A
+  1%|          | 59.2M/5.80G [00:01<02:21, 43.7MB/s][A
+  1%|          | 63.8M/5.80G [00:01<02:25, 42.4MB/s][A
+  1%|          | 70.0M/5.80G [00:02<02:06, 48.6MB/s][A
+  1%|▏         | 77.5M/5.80G [00:02<01:48, 56.5MB/s][A
+  1%|▏         | 77.8M/5.80G [00:02<01:38, 62.6MB/s][A
+  1%|▏         | 84.0M/5.80G [00:02<01:39, 61.6MB/s][A
+  2%|▏         | 90.0M/5.80G [00:02<04:04, 25.1MB/s][A
+  2%|▏         | 94.5M/5.80G [00:02<03:42, 27.5MB/s][A
+  2%|▏         | 98.8M/5.80G [00:03<03:32, 28.7MB/s][A
+  2%|▏         | 104M/5.80G [00:03<03:00, 33.9MB/s] [A
+  2%|▏         | 109M/5.80G [00:03<03:03, 33.4MB/s][A
+  2%|▏         | 113M/5.80G [00:03<03:21, 30.3MB/s][A
+  2%|▏         | 117M/5.80G [00:03<03:01, 33.6MB/s][A
+  2%|▏         | 122M/5.80G [00:03<02:52, 35.3MB/s][A
+  2%|▏         | 126M/5.80G [00:03<02:40, 37.9MB/s][A
+  2%|▏         | 130M/5.80G [00:03<02:40, 38.0MB/s][A
+  2%|▏         | 134M/5.80G [00:04<02:43, 37.1MB/s][A
+  2%|▏         | 138M/5.80G [00:04<02:42, 37.4MB/s][A
+  2%|▏         | 142M/5.80G [00:04<02:35, 39.0MB/s][A
+  2%|▏         | 146M/5.80G [00:04<02:37, 38.6MB/s][A
+  3%|▎         | 152M/5.80G [00:04<02:11, 46.2MB/s][A
+  3%|▎         | 152M/5.80G [00:04<02:11, 46.2MB/s][A
+  3%|▎         | 152M/5.80G [00:04<02:11, 46.2MB/s][A
+  3%|▎         | 157M/5.80G [00:04<02:04, 48.5MB/s][A
+  3%|▎         | 162M/5.80G [00:04<02:11, 45.9MB/s][A
+  3%|▎         | 167M/5.80G [00:05<04:39, 21.6MB/s][A
+  3%|▎         | 170M/5.80G [00:05<06:12, 16.2MB/s][A
+  3%|▎         | 173M/5.80G [00:05<05:48, 17.4MB/s][A
+  3%|▎         | 176M/5.80G [00:05<04:57, 20.3MB/s][A
+  3%|▎         | 180M/5.80G [00:06<04:42, 21.4MB/s][A
+  3%|▎         | 183M/5.80G [00:06<04:06, 24.5MB/s][A
+  3%|▎         | 187M/5.80G [00:06<03:41, 27.2MB/s][A
+  3%|▎         | 190M/5.80G [00:06<03:35, 28.0MB/s][A
+  3%|▎         | 194M/5.80G [00:06<03:20, 30.0MB/s][A
+  3%|▎         | 197M/5.80G [00:06<03:29, 28.7MB/s][A
+  3%|▎         | 197M/5.80G [00:06<03:32, 28.3MB/s][A
+  3%|▎         | 200M/5.80G [00:06<03:28, 28.8MB/s][A
+  3%|▎         | 203M/5.80G [00:06<03:37, 27.6MB/s][A
+  3%|▎         | 206M/5.80G [00:06<03:36, 27.8MB/s][A
+  4%|▎         | 210M/5.80G [00:07<02:45, 36.2MB/s][A
+  4%|▎         | 210M/5.80G [00:07<02:45, 36.2MB/s][A
+  4%|▎         | 216M/5.80G [00:07<02:18, 43.4MB/s][A
+  4%|▍         | 223M/5.80G [00:07<01:51, 53.8MB/s][A
+  4%|▍         | 223M/5.80G [00:07<01:51, 53.8MB/s][A
+  4%|▍         | 228M/5.80G [00:07<01:59, 50.2MB/s][A
+  4%|▍         | 234M/5.80G [00:07<02:00, 49.7MB/s][A
+  4%|▍         | 240M/5.80G [00:07<01:49, 54.8MB/s][A
+  4%|▍         | 240M/5.80G [00:07<01:49, 54.8MB/s][A
+  4%|▍         | 245M/5.80G [00:07<02:55, 33.9MB/s][A
+  4%|▍         | 249M/5.80G [00:08<04:29, 22.1MB/s][A
+  4%|▍         | 252M/5.80G [00:08<04:30, 22.0MB/s][A
+  4%|▍         | 256M/5.80G [00:08<04:00, 24.7MB/s][A
+  4%|▍         | 260M/5.80G [00:08<03:41, 26.8MB/s][A
+  4%|▍         | 264M/5.80G [00:08<03:18, 30.0MB/s][A
+  5%|▍         | 268M/5.80G [00:08<03:07, 31.7MB/s][A
+  5%|▍         | 272M/5.80G [00:08<02:50, 34.8MB/s][A
+  5%|▍         | 276M/5.80G [00:09<02:47, 35.5MB/s][A
+  5%|▍         | 280M/5.80G [00:09<02:43, 36.3MB/s][A
+  5%|▍         | 283M/5.80G [00:09<02:41, 36.6MB/s][A
+  5%|▍         | 287M/5.80G [00:09<02:42, 36.5MB/s][A
+  5%|▍         | 292M/5.80G [00:09<02:35, 38.1MB/s][A
+  5%|▍         | 296M/5.80G [00:09<02:31, 39.1MB/s][A
+  5%|▌         | 300M/5.80G [00:09<02:23, 41.3MB/s][A
+  5%|▌         | 304M/5.80G [00:09<02:29, 39.4MB/s][A
+  5%|▌         | 308M/5.80G [00:09<02:20, 41.9MB/s][A
+  5%|▌         | 308M/5.80G [00:09<02:20, 41.9MB/s][A
+  5%|▌         | 314M/5.80G [00:10<02:11, 44.9MB/s][A
+  5%|▌         | 318M/5.80G [00:10<02:08, 45.8MB/s][A
+  5%|▌         | 324M/5.80G [00:10<02:03, 47.6MB/s][A
+  6%|▌         | 328M/5.80G [00:10<04:20, 22.5MB/s][A
+  6%|▌         | 334M/5.80G [00:10<03:52, 25.3MB/s][A
+  6%|▌         | 337M/5.80G [00:11<03:48, 25.7MB/s][A
+  6%|▌         | 341M/5.80G [00:11<03:25, 28.5MB/s][A
+  6%|▌         | 346M/5.80G [00:11<02:54, 33.5MB/s][A
+  6%|▌         | 352M/5.80G [00:11<02:34, 37.9MB/s][A
+  6%|▌         | 356M/5.80G [00:11<02:27, 39.6MB/s][A
+  6%|▌         | 357M/5.80G [00:11<02:21, 41.3MB/s][A
+  6%|▌         | 362M/5.80G [00:11<02:19, 41.8MB/s][A
+  6%|▌         | 367M/5.80G [00:11<02:09, 45.2MB/s][A
+  6%|▋         | 372M/5.80G [00:11<02:03, 47.1MB/s][A
+  6%|▋         | 376M/5.80G [00:11<02:02, 47.4MB/s][A
+  6%|▋         | 381M/5.80G [00:12<02:12, 44.1MB/s][A
+  7%|▋         | 386M/5.80G [00:12<02:15, 42.9MB/s][A
+  7%|▋         | 391M/5.80G [00:12<02:10, 44.6MB/s][A
+  7%|▋         | 396M/5.80G [00:12<02:28, 39.2MB/s][A
+  7%|▋         | 400M/5.80G [00:12<02:39, 36.5MB/s][A
+  7%|▋         | 404M/5.80G [00:12<02:30, 38.4MB/s][A
+  7%|▋         | 409M/5.80G [00:12<02:18, 41.8MB/s][A
+  7%|▋         | 409M/5.80G [00:12<02:09, 44.9MB/s][A
+  7%|▋         | 414M/5.80G [00:13<02:53, 33.4MB/s][A
+  7%|▋         | 417M/5.80G [00:13<03:23, 28.4MB/s][A
+  7%|▋         | 422M/5.80G [00:13<02:58, 32.4MB/s][A
+  7%|▋         | 426M/5.80G [00:13<02:55, 32.9MB/s][A
+  7%|▋         | 432M/5.80G [00:13<02:21, 40.6MB/s][A
+  7%|▋         | 437M/5.80G [00:13<02:14, 42.8MB/s][A
+  7%|▋         | 442M/5.80G [00:13<02:18, 41.6MB/s][A
+  8%|▊         | 446M/5.80G [00:13<02:10, 44.3MB/s][A
+  8%|▊         | 451M/5.80G [00:13<02:10, 44.2MB/s][A
+  8%|▊         | 457M/5.80G [00:14<01:54, 50.0MB/s][A
+  8%|▊         | 462M/5.80G [00:14<01:57, 48.8MB/s][A
+  8%|▊         | 469M/5.80G [00:14<01:43, 55.2MB/s][A
+  8%|▊         | 475M/5.80G [00:14<02:36, 36.5MB/s][A
+  8%|▊         | 475M/5.80G [00:14<02:36, 36.5MB/s][A
+  8%|▊         | 480M/5.80G [00:14<02:25, 39.2MB/s][A
+  8%|▊         | 484M/5.80G [00:14<02:23, 39.8MB/s][A
+  8%|▊         | 488M/5.80G [00:14<02:20, 40.7MB/s][A
+  8%|▊         | 492M/5.80G [00:15<03:12, 29.7MB/s][A
+  8%|▊         | 497M/5.80G [00:15<02:54, 32.7MB/s][A
+  8%|▊         | 501M/5.80G [00:15<03:25, 27.7MB/s][A
+  9%|▊         | 506M/5.80G [00:15<02:58, 31.8MB/s][A
+  9%|▊         | 511M/5.80G [00:15<02:29, 38.1MB/s][A
+  9%|▊         | 518M/5.80G [00:15<02:05, 45.2MB/s][A
+  9%|▉         | 524M/5.80G [00:15<02:01, 46.7MB/s][A
+  9%|▉         | 532M/5.80G [00:15<01:46, 53.0MB/s][A
+  9%|▉         | 532M/5.80G [00:15<01:36, 58.5MB/s][A
+  9%|▉         | 538M/5.80G [00:16<01:32, 61.1MB/s][A
+  9%|▉         | 546M/5.80G [00:16<01:35, 59.1MB/s][A
+  9%|▉         | 546M/5.80G [00:16<01:36, 58.3MB/s][A
+  9%|▉         | 552M/5.80G [00:16<01:41, 55.7MB/s][A
+  9%|▉         | 557M/5.80G [00:16<01:42, 54.9MB/s][A
+  9%|▉         | 562M/5.80G [00:16<01:44, 53.7MB/s][A
+  9%|▉         | 563M/5.80G [00:16<01:46, 53.0MB/s][A
+  9%|▉         | 563M/5.80G [00:16<01:46, 53.0MB/s][A
+ 10%|▉         | 568M/5.80G [00:16<01:51, 50.4MB/s][A
+ 10%|▉         | 568M/5.80G [00:16<01:54, 49.1MB/s][A
+ 10%|▉         | 573M/5.80G [00:16<01:59, 47.1MB/s][A
+ 10%|▉         | 574M/5.80G [00:16<02:01, 46.2MB/s][A
+ 10%|▉         | 578M/5.80G [00:16<02:24, 38.8MB/s][A
+ 10%|▉         | 582M/5.80G [00:17<02:27, 37.9MB/s][A
+ 10%|▉         | 586M/5.80G [00:17<02:54, 32.1MB/s][A
+ 10%|▉         | 590M/5.80G [00:17<02:50, 32.9MB/s][A
+ 10%|█         | 594M/5.80G [00:17<02:39, 35.0MB/s][A
+ 10%|█         | 598M/5.80G [00:17<02:44, 33.9MB/s][A
+ 10%|█         | 602M/5.80G [00:17<02:36, 35.8MB/s][A
+ 10%|█         | 607M/5.80G [00:17<02:16, 41.0MB/s][A
+ 10%|█         | 612M/5.80G [00:17<02:06, 44.0MB/s][A
+ 10%|█         | 617M/5.80G [00:18<02:08, 43.5MB/s][A
+ 10%|█         | 621M/5.80G [00:18<02:05, 44.5MB/s][A
+ 11%|█         | 626M/5.80G [00:18<02:39, 34.9MB/s][A
+ 11%|█         | 631M/5.80G [00:18<02:22, 39.0MB/s][A
+ 11%|█         | 635M/5.80G [00:18<02:23, 38.6MB/s][A
+ 11%|█         | 642M/5.80G [00:18<01:39, 55.9MB/s][A
+ 11%|█         | 642M/5.80G [00:18<01:39, 55.9MB/s][A
+ 11%|█         | 648M/5.80G [00:18<01:55, 47.8MB/s][A
+ 11%|█         | 653M/5.80G [00:18<02:05, 44.1MB/s][A
+ 11%|█         | 659M/5.80G [00:19<02:15, 41.0MB/s][A
+ 11%|█         | 664M/5.80G [00:19<02:22, 38.8MB/s][A
+ 11%|█▏        | 668M/5.80G [00:19<02:18, 39.8MB/s][A
+ 11%|█▏        | 672M/5.80G [00:19<02:50, 32.4MB/s][A
+ 11%|█▏        | 675M/5.80G [00:19<02:52, 32.1MB/s][A
+ 11%|█▏        | 680M/5.80G [00:19<02:35, 35.4MB/s][A
+ 12%|█▏        | 684M/5.80G [00:19<02:27, 37.2MB/s][A
+ 12%|█▏        | 688M/5.80G [00:20<02:22, 38.7MB/s][A
+ 12%|█▏        | 688M/5.80G [00:20<02:22, 38.7MB/s][A
+ 12%|█▏        | 693M/5.80G [00:20<02:14, 41.0MB/s][A
+ 12%|█▏        | 693M/5.80G [00:20<02:14, 41.0MB/s][A
+ 12%|█▏        | 699M/5.80G [00:20<02:03, 44.5MB/s][A
+ 12%|█▏        | 704M/5.80G [00:20<02:16, 40.1MB/s][A
+ 12%|█▏        | 708M/5.80G [00:20<02:10, 42.0MB/s][A
+ 12%|█▏        | 713M/5.80G [00:20<02:12, 41.4MB/s][A
+ 12%|█▏        | 717M/5.80G [00:20<02:10, 41.8MB/s][A
+ 12%|█▏        | 722M/5.80G [00:20<02:26, 37.4MB/s][A
+ 12%|█▏        | 722M/5.80G [00:20<02:26, 37.4MB/s][A
+ 12%|█▏        | 726M/5.80G [00:20<02:21, 38.7MB/s][A
+ 12%|█▏        | 726M/5.80G [00:20<02:21, 38.7MB/s][A
+ 12%|█▏        | 729M/5.80G [00:21<02:41, 33.9MB/s][A
+ 12%|█▏        | 733M/5.80G [00:21<02:33, 35.5MB/s][A
+ 12%|█▏        | 739M/5.80G [00:21<02:35, 35.0MB/s][A
+ 13%|█▎        | 743M/5.80G [00:21<02:31, 36.0MB/s][A
+ 13%|█▎        | 748M/5.80G [00:21<03:06, 29.2MB/s][A
+ 13%|█▎        | 748M/5.80G [00:21<03:06, 29.2MB/s][A
+ 13%|█▎        | 751M/5.80G [00:21<03:48, 23.7MB/s][A
+ 13%|█▎        | 753M/5.80G [00:22<03:59, 22.7MB/s][A
+ 13%|█▎        | 757M/5.80G [00:22<03:32, 25.5MB/s][A
+ 13%|█▎        | 761M/5.80G [00:22<03:00, 30.1MB/s][A
+ 13%|█▎        | 765M/5.80G [00:22<02:35, 34.8MB/s][A
+ 13%|█▎        | 765M/5.80G [00:22<02:35, 34.8MB/s][A
+ 13%|█▎        | 769M/5.80G [00:22<02:39, 34.0MB/s][A
+ 13%|█▎        | 773M/5.80G [00:22<02:32, 35.5MB/s][A
+ 13%|█▎        | 776M/5.80G [00:22<02:34, 35.1MB/s][A
+ 13%|█▎        | 780M/5.80G [00:22<02:34, 35.0MB/s][A
+ 13%|█▎        | 784M/5.80G [00:22<02:23, 37.6MB/s][A
+ 13%|█▎        | 788M/5.80G [00:23<03:05, 29.1MB/s][A
+ 13%|█▎        | 791M/5.80G [00:23<03:20, 26.9MB/s][A
+ 13%|█▎        | 794M/5.80G [00:23<03:26, 26.2MB/s][A
+ 13%|█▎        | 797M/5.80G [00:23<03:23, 26.4MB/s][A
+ 13%|█▎        | 800M/5.80G [00:23<03:19, 26.9MB/s][A
+ 14%|█▎        | 806M/5.80G [00:23<03:26, 26.1MB/s][A
+ 14%|█▎        | 808M/5.80G [00:23<03:30, 25.6MB/s][A
+ 14%|█▎        | 811M/5.80G [00:24<03:29, 25.6MB/s][A
+ 14%|█▎        | 814M/5.80G [00:24<03:17, 27.2MB/s][A
+ 14%|█▍        | 818M/5.80G [00:24<03:12, 27.8MB/s][A
+ 14%|█▍        | 821M/5.80G [00:24<02:58, 30.0MB/s][A
+ 14%|█▍        | 821M/5.80G [00:24<02:58, 30.0MB/s][A
+ 14%|█▍        | 826M/5.80G [00:24<03:29, 25.6MB/s][A
+ 14%|█▍        | 828M/5.80G [00:24<03:38, 24.4MB/s][A
+ 14%|█▍        | 831M/5.80G [00:25<06:08, 14.5MB/s][A
+ 14%|█▍        | 834M/5.80G [00:25<05:58, 14.9MB/s][A
+ 14%|█▍        | 836M/5.80G [00:25<05:14, 17.0MB/s][A
+ 14%|█▍        | 840M/5.80G [00:25<04:25, 20.1MB/s][A
+ 14%|█▍        | 842M/5.80G [00:25<04:07, 21.6MB/s][A
+ 14%|█▍        | 845M/5.80G [00:25<03:59, 22.3MB/s][A
+ 14%|█▍        | 848M/5.80G [00:25<03:38, 24.4MB/s][A
+ 14%|█▍        | 852M/5.80G [00:26<03:25, 26.0MB/s][A
+ 14%|█▍        | 854M/5.80G [00:26<03:15, 27.3MB/s][A
+ 14%|█▍        | 858M/5.80G [00:26<03:28, 25.5MB/s][A
+ 14%|█▍        | 858M/5.80G [00:26<03:28, 25.5MB/s][A
+ 14%|█▍        | 860M/5.80G [00:26<03:31, 25.1MB/s][A
+ 15%|█▍        | 864M/5.80G [00:26<03:14, 27.4MB/s][A
+ 15%|█▍        | 866M/5.80G [00:26<03:58, 22.3MB/s][A
+ 15%|█▍        | 870M/5.80G [00:26<03:47, 23.4MB/s][A
+ 15%|█▍        | 872M/5.80G [00:26<04:21, 20.3MB/s][A
+ 15%|█▍        | 876M/5.80G [00:27<03:13, 27.4MB/s][A
+ 15%|█▍        | 876M/5.80G [00:27<02:51, 30.9MB/s][A
+ 15%|█▍        | 876M/5.80G [00:27<02:51, 30.9MB/s][A
+ 15%|█▍        | 880M/5.80G [00:27<03:42, 23.8MB/s][A
+ 15%|█▍        | 880M/5.80G [00:27<03:42, 23.8MB/s][A
+ 15%|█▍        | 884M/5.80G [00:27<03:57, 22.3MB/s][A
+ 15%|█▍        | 888M/5.80G [00:27<03:28, 25.3MB/s][A
+ 15%|█▌        | 892M/5.80G [00:27<02:56, 30.0MB/s][A
+ 15%|█▌        | 896M/5.80G [00:27<02:39, 33.1MB/s][A
+ 15%|█▌        | 900M/5.80G [00:27<02:33, 34.5MB/s][A
+ 15%|█▌        | 904M/5.80G [00:28<03:38, 24.2MB/s][A
+ 15%|█▌        | 907M/5.80G [00:28<04:09, 21.1MB/s][A
+ 15%|█▌        | 907M/5.80G [00:28<04:29, 19.6MB/s][A
+ 15%|█▌        | 910M/5.80G [00:28<05:29, 16.0MB/s][A
+ 15%|█▌        | 910M/5.80G [00:28<05:29, 16.0MB/s][A
+ 15%|█▌        | 910M/5.80G [00:28<05:29, 16.0MB/s][A
+ 15%|█▌        | 914M/5.80G [00:28<04:33, 19.3MB/s][A
+ 15%|█▌        | 917M/5.80G [00:28<04:20, 20.2MB/s][A
+ 15%|█▌        | 920M/5.80G [00:28<04:27, 19.7MB/s][A
+ 16%|█▌        | 928M/5.80G [00:29<02:37, 33.4MB/s][A
+ 16%|█▌        | 936M/5.80G [00:29<01:54, 45.8MB/s][A
+ 16%|█▌        | 943M/5.80G [00:29<01:41, 51.3MB/s][A
+ 16%|█▌        | 949M/5.80G [00:29<01:53, 46.2MB/s][A
+ 16%|█▌        | 954M/5.80G [00:29<02:08, 40.7MB/s][A
+ 16%|█▌        | 960M/5.80G [00:29<02:06, 41.2MB/s][A
+ 16%|█▋        | 966M/5.80G [00:29<02:02, 42.7MB/s][A
+ 16%|█▋        | 970M/5.80G [00:29<02:02, 42.7MB/s][A
+ 16%|█▋        | 976M/5.80G [00:30<01:53, 45.7MB/s][A
+ 17%|█▋        | 982M/5.80G [00:30<01:40, 51.7MB/s][A
+ 17%|█▋        | 982M/5.80G [00:30<01:40, 51.7MB/s][A
+ 17%|█▋        | 987M/5.80G [00:30<02:54, 29.7MB/s][A
+ 17%|█▋        | 991M/5.80G [00:30<03:24, 25.4MB/s][A
+ 17%|█▋        | 995M/5.80G [00:30<03:09, 27.4MB/s][A
+ 17%|█▋        | 0.98G/5.80G [00:31<02:43, 31.7MB/s][A
+ 17%|█▋        | 0.98G/5.80G [00:31<02:18, 37.3MB/s][A
+ 17%|█▋        | 0.99G/5.80G [00:31<02:35, 33.3MB/s][A
+ 17%|█▋        | 0.99G/5.80G [00:31<02:18, 37.2MB/s][A
+ 17%|█▋        | 1.00G/5.80G [00:31<01:52, 45.7MB/s][A
+ 17%|█▋        | 1.00G/5.80G [00:31<02:21, 36.3MB/s][A
+ 17%|█▋        | 1.01G/5.80G [00:31<01:56, 44.1MB/s][A
+ 18%|█▊        | 1.01G/5.80G [00:32<02:03, 41.4MB/s][A
+ 18%|█▊        | 1.02G/5.80G [00:32<02:10, 39.2MB/s][A
+ 18%|█▊        | 1.02G/5.80G [00:32<02:07, 40.2MB/s][A
+ 18%|█▊        | 1.03G/5.80G [00:32<01:52, 45.7MB/s][A
+ 18%|█▊        | 1.03G/5.80G [00:32<01:57, 43.7MB/s][A
+ 18%|█▊        | 1.04G/5.80G [00:32<01:29, 57.3MB/s][A
+ 18%|█▊        | 1.04G/5.80G [00:32<01:29, 57.3MB/s][A
+ 18%|█▊        | 1.05G/5.80G [00:32<02:39, 32.0MB/s][A
+ 18%|█▊        | 1.05G/5.80G [00:33<02:18, 36.9MB/s][A
+ 18%|█▊        | 1.06G/5.80G [00:33<02:05, 40.4MB/s][A
+ 18%|█▊        | 1.06G/5.80G [00:33<01:49, 46.2MB/s][A
+ 18%|█▊        | 1.07G/5.80G [00:33<02:02, 41.6MB/s][A
+ 19%|█▊        | 1.07G/5.80G [00:33<01:55, 43.8MB/s][A
+ 19%|█▊        | 1.07G/5.80G [00:33<01:49, 46.1MB/s][A
+ 19%|█▊        | 1.08G/5.80G [00:33<01:38, 51.4MB/s][A
+ 19%|█▊        | 1.09G/5.80G [00:33<01:41, 49.8MB/s][A
+ 19%|█▉        | 1.09G/5.80G [00:33<02:03, 40.9MB/s][A
+ 19%|█▉        | 1.09G/5.80G [00:33<02:03, 40.9MB/s][A
+ 19%|█▉        | 1.10G/5.80G [00:34<02:15, 37.2MB/s][A
+ 19%|█▉        | 1.10G/5.80G [00:34<02:04, 40.4MB/s][A
+ 19%|█▉        | 1.11G/5.80G [00:34<01:52, 44.8MB/s][A
+ 19%|█▉        | 1.11G/5.80G [00:34<01:57, 42.8MB/s][A
+ 19%|█▉        | 1.12G/5.80G [00:34<01:54, 44.0MB/s][A
+ 19%|█▉        | 1.12G/5.80G [00:34<02:27, 34.0MB/s][A
+ 19%|█▉        | 1.13G/5.80G [00:35<02:49, 29.6MB/s][A
+ 20%|█▉        | 1.13G/5.80G [00:35<02:18, 36.2MB/s][A
+ 20%|█▉        | 1.14G/5.80G [00:35<01:58, 42.1MB/s][A
+ 20%|█▉        | 1.14G/5.80G [00:35<01:44, 48.0MB/s][A
+ 20%|█▉        | 1.15G/5.80G [00:35<01:52, 44.5MB/s][A
+ 20%|█▉        | 1.15G/5.80G [00:35<01:49, 45.6MB/s][A
+ 20%|█▉        | 1.16G/5.80G [00:35<01:52, 44.3MB/s][A
+ 20%|██        | 1.16G/5.80G [00:35<01:43, 48.0MB/s][A
+ 20%|██        | 1.17G/5.80G [00:36<02:08, 38.7MB/s][A
+ 20%|██        | 1.18G/5.80G [00:36<01:43, 47.9MB/s][A
+ 20%|██        | 1.18G/5.80G [00:36<01:28, 55.9MB/s][A
+ 21%|██        | 1.19G/5.80G [00:36<02:02, 40.2MB/s][A
+ 21%|██        | 1.19G/5.80G [00:36<02:06, 39.2MB/s][A
+ 21%|██        | 1.20G/5.80G [00:36<02:00, 41.1MB/s][A
+ 21%|██        | 1.21G/5.80G [00:36<01:47, 45.7MB/s][A
+ 21%|██        | 1.21G/5.80G [00:36<01:44, 47.0MB/s][A
+ 21%|██        | 1.22G/5.80G [00:37<01:38, 49.9MB/s][A
+ 21%|██        | 1.22G/5.80G [00:37<01:32, 53.3MB/s][A
+ 21%|██        | 1.23G/5.80G [00:37<01:54, 42.7MB/s][A
+ 21%|██▏       | 1.24G/5.80G [00:37<01:46, 46.1MB/s][A
+ 21%|██▏       | 1.24G/5.80G [00:37<01:36, 50.9MB/s][A
+ 22%|██▏       | 1.25G/5.80G [00:37<01:26, 56.8MB/s][A
+ 22%|██▏       | 1.26G/5.80G [00:37<01:32, 52.5MB/s][A
+ 22%|██▏       | 1.26G/5.80G [00:38<01:58, 41.2MB/s][A
+ 22%|██▏       | 1.26G/5.80G [00:38<01:58, 41.2MB/s][A
+ 22%|██▏       | 1.27G/5.80G [00:38<02:45, 29.4MB/s][A
+ 22%|██▏       | 1.27G/5.80G [00:38<02:24, 33.7MB/s][A
+ 22%|██▏       | 1.28G/5.80G [00:38<02:14, 36.0MB/s][A
+ 22%|██▏       | 1.28G/5.80G [00:38<02:27, 33.0MB/s][A
+ 22%|██▏       | 1.28G/5.80G [00:38<02:22, 34.0MB/s][A
+ 22%|██▏       | 1.29G/5.80G [00:38<01:58, 40.7MB/s][A
+ 22%|██▏       | 1.30G/5.80G [00:39<01:38, 49.3MB/s][A
+ 22%|██▏       | 1.30G/5.80G [00:39<02:00, 39.9MB/s][A
+ 23%|██▎       | 1.31G/5.80G [00:39<01:39, 48.5MB/s][A
+ 23%|██▎       | 1.32G/5.80G [00:39<01:29, 53.8MB/s][A
+ 23%|██▎       | 1.32G/5.80G [00:39<01:22, 58.5MB/s][A
+ 23%|██▎       | 1.32G/5.80G [00:39<01:34, 50.6MB/s][A
+ 23%|██▎       | 1.33G/5.80G [00:39<01:36, 49.7MB/s][A
+ 23%|██▎       | 1.33G/5.80G [00:39<01:37, 48.9MB/s][A
+ 23%|██▎       | 1.34G/5.80G [00:40<01:26, 55.4MB/s][A
+ 23%|██▎       | 1.35G/5.80G [00:40<01:59, 40.0MB/s][A
+ 23%|██▎       | 1.35G/5.80G [00:40<02:22, 33.5MB/s][A
+ 23%|██▎       | 1.35G/5.80G [00:40<02:20, 34.1MB/s][A
+ 23%|██▎       | 1.36G/5.80G [00:40<02:22, 33.4MB/s][A
+ 23%|██▎       | 1.36G/5.80G [00:40<02:19, 34.0MB/s][A
+ 24%|██▎       | 1.37G/5.80G [00:40<01:56, 40.9MB/s][A
+ 24%|██▎       | 1.38G/5.80G [00:40<01:29, 52.9MB/s][A
+ 24%|██▍       | 1.38G/5.80G [00:40<01:21, 57.9MB/s][A
+ 24%|██▍       | 1.39G/5.80G [00:41<01:49, 43.4MB/s][A
+ 24%|██▍       | 1.39G/5.80G [00:41<01:46, 44.6MB/s][A
+ 24%|██▍       | 1.40G/5.80G [00:41<01:46, 44.1MB/s][A
+ 24%|██▍       | 1.40G/5.80G [00:41<01:47, 43.8MB/s][A
+ 24%|██▍       | 1.41G/5.80G [00:41<01:27, 53.5MB/s][A
+ 24%|██▍       | 1.41G/5.80G [00:41<01:16, 61.2MB/s][A
+ 24%|██▍       | 1.42G/5.80G [00:41<01:27, 53.5MB/s][A
+ 25%|██▍       | 1.42G/5.80G [00:42<02:08, 36.6MB/s][A
+ 25%|██▍       | 1.43G/5.80G [00:42<02:13, 35.2MB/s][A
+ 25%|██▍       | 1.43G/5.80G [00:42<01:56, 40.1MB/s][A
+ 25%|██▍       | 1.44G/5.80G [00:42<01:32, 50.8MB/s][A
+ 25%|██▍       | 1.44G/5.80G [00:42<01:32, 50.8MB/s][A
+ 25%|██▍       | 1.44G/5.80G [00:42<01:44, 44.6MB/s][A
+ 25%|██▍       | 1.44G/5.80G [00:42<01:57, 39.8MB/s][A
+ 25%|██▍       | 1.44G/5.80G [00:42<01:57, 39.8MB/s][A
+ 25%|██▌       | 1.45G/5.80G [00:42<01:51, 41.8MB/s][A
+ 25%|██▌       | 1.45G/5.80G [00:42<01:43, 45.0MB/s][A
+ 25%|██▌       | 1.46G/5.80G [00:42<01:37, 47.6MB/s][A
+ 25%|██▌       | 1.47G/5.80G [00:43<01:34, 49.4MB/s][A
+ 25%|██▌       | 1.47G/5.80G [00:43<01:34, 49.4MB/s][A
+ 25%|██▌       | 1.48G/5.80G [00:43<02:15, 34.2MB/s][A
+ 26%|██▌       | 1.48G/5.80G [00:43<02:02, 37.9MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:43<01:54, 40.4MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:43<01:41, 45.5MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:43<01:41, 45.5MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:43<01:59, 38.5MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:44<03:46, 20.4MB/s][A
+ 26%|██▌       | 1.49G/5.80G [00:44<03:46, 20.4MB/s][A
+ 26%|██▌       | 1.50G/5.80G [00:44<02:34, 29.8MB/s][A
+ 26%|██▌       | 1.51G/5.80G [00:44<02:31, 30.5MB/s][A
+ 26%|██▌       | 1.51G/5.80G [00:44<01:59, 38.4MB/s][A
+ 26%|██▌       | 1.52G/5.80G [00:44<01:41, 45.2MB/s][A
+ 26%|██▋       | 1.53G/5.80G [00:44<01:23, 54.7MB/s][A
+ 27%|██▋       | 1.54G/5.80G [00:44<01:15, 61.0MB/s][A
+ 27%|██▋       | 1.54G/5.80G [00:44<01:12, 63.3MB/s][A
+ 27%|██▋       | 1.55G/5.80G [00:45<01:42, 44.6MB/s][A
+ 27%|██▋       | 1.55G/5.80G [00:45<02:02, 37.1MB/s][A
+ 27%|██▋       | 1.56G/5.80G [00:45<01:59, 38.1MB/s][A
+ 27%|██▋       | 1.56G/5.80G [00:45<01:46, 42.7MB/s][A
+ 27%|██▋       | 1.57G/5.80G [00:45<01:36, 47.2MB/s][A
+ 27%|██▋       | 1.57G/5.80G [00:45<01:30, 49.9MB/s][A
+ 27%|██▋       | 1.57G/5.80G [00:45<01:30, 49.9MB/s][A
+ 27%|██▋       | 1.58G/5.80G [00:45<01:43, 43.9MB/s][A
+ 27%|██▋       | 1.58G/5.80G [00:46<02:22, 31.6MB/s][A
+ 27%|██▋       | 1.59G/5.80G [00:46<02:23, 31.5MB/s][A
+ 28%|██▊       | 1.60G/5.80G [00:46<01:51, 40.3MB/s][A
+ 28%|██▊       | 1.60G/5.80G [00:46<01:38, 45.8MB/s][A
+ 28%|██▊       | 1.61G/5.80G [00:46<01:30, 49.8MB/s][A
+ 28%|██▊       | 1.61G/5.80G [00:46<01:31, 49.3MB/s][A
+ 28%|██▊       | 1.62G/5.80G [00:46<01:30, 49.6MB/s][A
+ 28%|██▊       | 1.62G/5.80G [00:47<01:48, 41.4MB/s][A
+ 28%|██▊       | 1.63G/5.80G [00:47<02:09, 34.5MB/s][A
+ 28%|██▊       | 1.63G/5.80G [00:47<01:57, 38.1MB/s][A
+ 28%|██▊       | 1.64G/5.80G [00:47<01:48, 41.3MB/s][A
+ 28%|██▊       | 1.64G/5.80G [00:47<01:33, 47.8MB/s][A
+ 28%|██▊       | 1.65G/5.80G [00:47<01:33, 47.8MB/s][A
+ 29%|██▊       | 1.65G/5.80G [00:47<01:43, 42.9MB/s][A
+ 29%|██▊       | 1.66G/5.80G [00:47<01:49, 40.6MB/s][A
+ 29%|██▊       | 1.66G/5.80G [00:47<01:49, 40.6MB/s][A
+ 29%|██▊       | 1.66G/5.80G [00:48<02:23, 31.0MB/s][A
+ 29%|██▊       | 1.67G/5.80G [00:48<02:37, 28.2MB/s][A
+ 29%|██▉       | 1.67G/5.80G [00:48<02:23, 30.9MB/s][A
+ 29%|██▉       | 1.68G/5.80G [00:48<01:53, 39.0MB/s][A
+ 29%|██▉       | 1.68G/5.80G [00:48<01:43, 42.8MB/s][A
+ 29%|██▉       | 1.69G/5.80G [00:48<01:33, 47.0MB/s][A
+ 29%|██▉       | 1.69G/5.80G [00:48<01:25, 51.5MB/s][A
+ 29%|██▉       | 1.70G/5.80G [00:49<01:28, 50.0MB/s][A
+ 29%|██▉       | 1.70G/5.80G [00:49<01:31, 48.3MB/s][A
+ 29%|██▉       | 1.71G/5.80G [00:49<01:25, 51.2MB/s][A
+ 30%|██▉       | 1.71G/5.80G [00:49<01:36, 45.5MB/s][A
+ 30%|██▉       | 1.71G/5.80G [00:49<01:34, 46.4MB/s][A
+ 30%|██▉       | 1.72G/5.80G [00:49<02:35, 28.2MB/s][A
+ 30%|██▉       | 1.73G/5.80G [00:49<01:56, 37.7MB/s][A
+ 30%|██▉       | 1.73G/5.80G [00:49<01:35, 45.8MB/s][A
+ 30%|███       | 1.74G/5.80G [00:50<02:04, 35.0MB/s][A
+ 30%|███       | 1.75G/5.80G [00:50<02:01, 35.8MB/s][A
+ 30%|███       | 1.75G/5.80G [00:50<01:56, 37.4MB/s][A
+ 30%|███       | 1.76G/5.80G [00:50<01:10, 61.3MB/s][A
+ 30%|███       | 1.76G/5.80G [00:50<01:10, 61.3MB/s][A
+ 30%|███       | 1.76G/5.80G [00:50<01:10, 61.3MB/s][A
+ 30%|███       | 1.76G/5.80G [00:50<01:10, 61.2MB/s][A
+ 31%|███       | 1.77G/5.80G [00:50<01:14, 57.9MB/s][A
+ 31%|███       | 1.78G/5.80G [00:51<01:31, 47.1MB/s][A
+ 31%|███       | 1.78G/5.80G [00:51<01:31, 47.0MB/s][A
+ 31%|███       | 1.79G/5.80G [00:51<01:45, 40.9MB/s][A
+ 31%|███       | 1.79G/5.80G [00:51<02:14, 32.0MB/s][A
+ 31%|███       | 1.80G/5.80G [00:51<01:48, 39.6MB/s][A
+ 31%|███       | 1.80G/5.80G [00:51<01:36, 44.6MB/s][A
+ 31%|███       | 1.81G/5.80G [00:51<01:35, 45.0MB/s][A
+ 31%|███▏      | 1.81G/5.80G [00:52<01:28, 48.4MB/s][A
+ 31%|███▏      | 1.82G/5.80G [00:52<01:55, 37.0MB/s][A
+ 31%|███▏      | 1.83G/5.80G [00:52<01:42, 41.7MB/s][A
+ 32%|███▏      | 1.83G/5.80G [00:52<01:40, 42.2MB/s][A
+ 32%|███▏      | 1.83G/5.80G [00:52<02:02, 34.8MB/s][A
+ 32%|███▏      | 1.84G/5.80G [00:52<02:05, 34.0MB/s][A
+ 32%|███▏      | 1.84G/5.80G [00:52<02:05, 33.9MB/s][A
+ 32%|███▏      | 1.84G/5.80G [00:52<01:47, 39.6MB/s][A
+ 32%|███▏      | 1.84G/5.80G [00:52<01:35, 44.6MB/s][A
+ 32%|███▏      | 1.85G/5.80G [00:53<01:26, 48.8MB/s][A
+ 32%|███▏      | 1.86G/5.80G [00:53<01:24, 50.4MB/s][A
+ 32%|███▏      | 1.86G/5.80G [00:53<01:29, 47.4MB/s][A
+ 32%|███▏      | 1.87G/5.80G [00:53<01:34, 44.4MB/s][A
+ 32%|███▏      | 1.87G/5.80G [00:53<02:04, 33.8MB/s][A
+ 32%|███▏      | 1.88G/5.80G [00:53<01:53, 37.1MB/s][A
+ 32%|███▏      | 1.88G/5.80G [00:53<01:47, 39.0MB/s][A
+ 32%|███▏      | 1.88G/5.80G [00:53<01:47, 39.0MB/s][A
+ 33%|███▎      | 1.89G/5.80G [00:53<01:32, 45.4MB/s][A
+ 33%|███▎      | 1.89G/5.80G [00:54<01:24, 49.6MB/s][A
+ 33%|███▎      | 1.90G/5.80G [00:54<01:19, 52.6MB/s][A
+ 33%|███▎      | 1.90G/5.80G [00:54<01:19, 52.6MB/s][A
+ 33%|███▎      | 1.90G/5.80G [00:54<02:02, 34.2MB/s][A
+ 33%|███▎      | 1.91G/5.80G [00:54<01:51, 37.4MB/s][A
+ 33%|███▎      | 1.91G/5.80G [00:54<01:46, 39.2MB/s][A
+ 33%|███▎      | 1.92G/5.80G [00:54<01:39, 41.8MB/s][A
+ 33%|███▎      | 1.92G/5.80G [00:55<02:57, 23.4MB/s][A
+ 33%|███▎      | 1.92G/5.80G [00:55<03:52, 17.9MB/s][A
+ 33%|███▎      | 1.92G/5.80G [00:55<03:41, 18.8MB/s][A
+ 33%|███▎      | 1.93G/5.80G [00:55<03:46, 18.4MB/s][A
+ 33%|███▎      | 1.93G/5.80G [00:55<03:46, 18.3MB/s][A
+ 33%|███▎      | 1.93G/5.80G [00:55<03:22, 20.5MB/s][A
+ 33%|███▎      | 1.93G/5.80G [00:55<02:41, 25.7MB/s][A
+ 33%|███▎      | 1.94G/5.80G [00:55<02:25, 28.4MB/s][A
+ 34%|███▎      | 1.94G/5.80G [00:56<03:31, 19.5MB/s][A
+ 34%|███▎      | 1.95G/5.80G [00:56<02:45, 24.9MB/s][A
+ 34%|███▎      | 1.95G/5.80G [00:56<02:45, 24.9MB/s][A
+ 34%|███▎      | 1.95G/5.80G [00:56<02:42, 25.5MB/s][A
+ 34%|███▎      | 1.95G/5.80G [00:56<02:22, 28.9MB/s][A
+ 34%|███▎      | 1.96G/5.80G [00:56<02:17, 29.9MB/s][A
+ 34%|███▍      | 1.96G/5.80G [00:56<02:03, 33.3MB/s][A
+ 34%|███▍      | 1.96G/5.80G [00:56<01:51, 36.8MB/s][A
+ 34%|███▍      | 1.96G/5.80G [00:56<01:51, 36.8MB/s][A
+ 34%|███▍      | 1.97G/5.80G [00:56<01:54, 35.9MB/s][A
+ 34%|███▍      | 1.97G/5.80G [00:57<01:51, 36.7MB/s][A
+ 34%|███▍      | 1.98G/5.80G [00:57<01:54, 35.8MB/s][A
+ 34%|███▍      | 1.98G/5.80G [00:57<01:45, 38.9MB/s][A
+ 34%|███▍      | 1.98G/5.80G [00:57<01:48, 37.8MB/s][A
+ 34%|███▍      | 1.99G/5.80G [00:57<03:11, 21.4MB/s][A
+ 34%|███▍      | 1.99G/5.80G [00:57<03:30, 19.4MB/s][A
+ 34%|███▍      | 1.99G/5.80G [00:58<03:02, 22.4MB/s][A
+ 34%|███▍      | 2.00G/5.80G [00:58<03:45, 18.1MB/s][A
+ 35%|███▍      | 2.00G/5.80G [00:58<03:09, 21.5MB/s][A
+ 35%|███▍      | 2.00G/5.80G [00:58<03:38, 18.7MB/s][A
+ 35%|███▍      | 2.00G/5.80G [00:58<03:38, 18.7MB/s][A
+ 35%|███▍      | 2.01G/5.80G [00:58<03:15, 20.8MB/s][A
+ 35%|███▍      | 2.01G/5.80G [00:58<03:15, 20.8MB/s][A
+ 35%|███▍      | 2.01G/5.80G [00:58<03:16, 20.6MB/s][A
+ 35%|███▍      | 2.01G/5.80G [00:59<02:42, 25.0MB/s][A
+ 35%|███▍      | 2.02G/5.80G [00:59<02:19, 29.1MB/s][A
+ 35%|███▍      | 2.02G/5.80G [00:59<02:46, 24.3MB/s][A
+ 35%|███▍      | 2.02G/5.80G [00:59<02:34, 26.1MB/s][A
+ 35%|███▌      | 2.03G/5.80G [00:59<02:16, 29.6MB/s][A
+ 35%|███▌      | 2.03G/5.80G [00:59<02:12, 30.5MB/s][A
+ 35%|███▌      | 2.04G/5.80G [00:59<01:54, 35.3MB/s][A
+ 35%|███▌      | 2.04G/5.80G [00:59<01:43, 39.1MB/s][A
+ 35%|███▌      | 2.04G/5.80G [00:59<01:45, 38.2MB/s][A
+ 35%|███▌      | 2.04G/5.80G [01:00<01:43, 39.1MB/s][A
+ 35%|███▌      | 2.04G/5.80G [01:00<01:43, 39.1MB/s][A
+ 35%|███▌      | 2.05G/5.80G [01:00<01:44, 38.6MB/s][A
+ 35%|███▌      | 2.05G/5.80G [01:00<01:38, 40.7MB/s][A
+ 35%|███▌      | 2.06G/5.80G [01:00<01:40, 40.0MB/s][A
+ 36%|███▌      | 2.06G/5.80G [01:00<01:40, 40.0MB/s][A
+ 36%|███▌      | 2.07G/5.80G [01:00<03:10, 21.0MB/s][A
+ 36%|███▌      | 2.07G/5.80G [01:01<02:42, 24.6MB/s][A
+ 36%|███▌      | 2.07G/5.80G [01:01<02:28, 27.0MB/s][A
+ 36%|███▌      | 2.08G/5.80G [01:01<02:07, 31.3MB/s][A
+ 36%|███▌      | 2.08G/5.80G [01:01<03:50, 17.3MB/s][A
+ 36%|███▌      | 2.08G/5.80G [01:01<03:32, 18.7MB/s][A
+ 36%|███▌      | 2.09G/5.80G [01:01<02:55, 22.7MB/s][A
+ 36%|███▌      | 2.09G/5.80G [01:02<02:31, 26.3MB/s][A
+ 36%|███▌      | 2.10G/5.80G [01:02<02:11, 30.2MB/s][A
+ 36%|███▌      | 2.10G/5.80G [01:02<02:47, 23.7MB/s][A
+ 36%|███▌      | 2.10G/5.80G [01:02<02:47, 23.7MB/s][A
+ 36%|███▋      | 2.10G/5.80G [01:02<02:45, 24.0MB/s][A
+ 36%|███▋      | 2.11G/5.80G [01:02<02:18, 28.5MB/s][A
+ 36%|███▋      | 2.11G/5.80G [01:02<02:11, 30.0MB/s][A
+ 37%|███▋      | 2.12G/5.80G [01:02<01:52, 35.2MB/s][A
+ 37%|███▋      | 2.12G/5.80G [01:02<01:52, 35.2MB/s][A
+ 37%|███▋      | 2.12G/5.80G [01:02<01:46, 37.0MB/s][A
+ 37%|███▋      | 2.12G/5.80G [01:03<01:55, 34.2MB/s][A
+ 37%|███▋      | 2.13G/5.80G [01:03<01:46, 37.0MB/s][A
+ 37%|███▋      | 2.13G/5.80G [01:03<01:44, 37.6MB/s][A
+ 37%|███▋      | 2.14G/5.80G [01:03<01:37, 40.1MB/s][A
+ 37%|███▋      | 2.14G/5.80G [01:03<01:46, 36.7MB/s][A
+ 37%|███▋      | 2.15G/5.80G [01:03<01:41, 38.6MB/s][A
+ 37%|███▋      | 2.15G/5.80G [01:04<03:25, 19.1MB/s][A
+ 37%|███▋      | 2.15G/5.80G [01:04<03:13, 20.2MB/s][A
+ 37%|███▋      | 2.16G/5.80G [01:04<03:29, 18.7MB/s][A
+ 37%|███▋      | 2.16G/5.80G [01:04<03:03, 21.3MB/s][A
+ 37%|███▋      | 2.16G/5.80G [01:04<03:54, 16.6MB/s][A
+ 37%|███▋      | 2.16G/5.80G [01:05<03:35, 18.1MB/s][A
+ 37%|███▋      | 2.17G/5.80G [01:05<02:40, 24.2MB/s][A
+ 37%|███▋      | 2.17G/5.80G [01:05<02:25, 26.8MB/s][A
+ 38%|███▊      | 2.18G/5.80G [01:05<02:49, 23.0MB/s][A
+ 38%|███▊      | 2.18G/5.80G [01:05<02:48, 23.0MB/s][A
+ 38%|███▊      | 2.18G/5.80G [01:05<02:46, 23.3MB/s][A
+ 38%|███▊      | 2.18G/5.80G [01:05<02:46, 23.3MB/s][A
+ 38%|███▊      | 2.19G/5.80G [01:05<02:22, 27.3MB/s][A
+ 38%|███▊      | 2.19G/5.80G [01:05<02:04, 31.1MB/s][A
+ 38%|███▊      | 2.19G/5.80G [01:06<01:59, 32.4MB/s][A
+ 38%|███▊      | 2.19G/5.80G [01:06<01:55, 33.6MB/s][A
+ 38%|███▊      | 2.20G/5.80G [01:06<01:50, 35.0MB/s][A
+ 38%|███▊      | 2.20G/5.80G [01:06<01:48, 35.6MB/s][A
+ 38%|███▊      | 2.20G/5.80G [01:06<01:48, 35.6MB/s][A
+ 38%|███▊      | 2.20G/5.80G [01:06<01:50, 35.1MB/s][A
+ 38%|███▊      | 2.21G/5.80G [01:06<01:51, 34.4MB/s][A
+ 38%|███▊      | 2.21G/5.80G [01:06<01:40, 38.2MB/s][A
+ 38%|███▊      | 2.21G/5.80G [01:06<01:38, 38.9MB/s][A
+ 38%|███▊      | 2.22G/5.80G [01:06<01:38, 38.9MB/s][A
+ 38%|███▊      | 2.22G/5.80G [01:06<01:45, 36.3MB/s][A
+ 38%|███▊      | 2.22G/5.80G [01:07<02:30, 25.4MB/s][A
+ 38%|███▊      | 2.23G/5.80G [01:07<03:26, 18.5MB/s][A
+ 38%|███▊      | 2.23G/5.80G [01:07<02:31, 25.2MB/s][A
+ 38%|███▊      | 2.23G/5.80G [01:07<02:31, 25.2MB/s][A
+ 39%|███▊      | 2.23G/5.80G [01:07<03:29, 18.2MB/s][A
+ 39%|███▊      | 2.24G/5.80G [01:07<03:41, 17.3MB/s][A
+ 39%|███▊      | 2.24G/5.80G [01:08<03:50, 16.5MB/s][A
+ 39%|███▊      | 2.24G/5.80G [01:08<03:01, 21.0MB/s][A
+ 39%|███▉      | 2.25G/5.80G [01:08<02:47, 22.7MB/s][A
+ 39%|███▉      | 2.25G/5.80G [01:08<02:16, 27.9MB/s][A
+ 39%|███▉      | 2.25G/5.80G [01:08<02:16, 27.9MB/s][A
+ 39%|███▉      | 2.26G/5.80G [01:08<02:03, 30.9MB/s][A
+ 39%|███▉      | 2.26G/5.80G [01:08<01:53, 33.5MB/s][A
+ 39%|███▉      | 2.26G/5.80G [01:08<01:59, 31.7MB/s][A
+ 39%|███▉      | 2.26G/5.80G [01:08<01:44, 36.2MB/s][A
+ 39%|███▉      | 2.26G/5.80G [01:08<01:44, 36.2MB/s][A
+ 39%|███▉      | 2.27G/5.80G [01:09<01:45, 35.8MB/s][A
+ 39%|███▉      | 2.27G/5.80G [01:09<01:46, 35.6MB/s][A
+ 39%|███▉      | 2.27G/5.80G [01:09<01:43, 36.4MB/s][A
+ 39%|███▉      | 2.28G/5.80G [01:09<01:34, 40.0MB/s][A
+ 39%|███▉      | 2.28G/5.80G [01:09<01:33, 40.2MB/s][A
+ 39%|███▉      | 2.29G/5.80G [01:09<01:30, 41.8MB/s][A
+ 40%|███▉      | 2.29G/5.80G [01:09<01:25, 44.0MB/s][A
+ 40%|███▉      | 2.30G/5.80G [01:09<01:25, 44.0MB/s][A
+ 40%|███▉      | 2.30G/5.80G [01:09<01:26, 43.6MB/s][A
+ 40%|███▉      | 2.31G/5.80G [01:10<02:55, 21.4MB/s][A
+ 40%|███▉      | 2.31G/5.80G [01:10<03:25, 18.2MB/s][A
+ 40%|███▉      | 2.31G/5.80G [01:10<02:56, 21.1MB/s][A
+ 40%|███▉      | 2.32G/5.80G [01:10<03:41, 16.8MB/s][A
+ 40%|███▉      | 2.32G/5.80G [01:10<03:41, 16.8MB/s][A
+ 40%|████      | 2.32G/5.80G [01:11<03:19, 18.7MB/s][A
+ 40%|████      | 2.32G/5.80G [01:11<03:37, 17.1MB/s][A
+ 40%|████      | 2.33G/5.80G [01:11<02:47, 22.3MB/s][A
+ 40%|████      | 2.33G/5.80G [01:11<02:18, 26.8MB/s][A
+ 40%|████      | 2.33G/5.80G [01:11<01:43, 35.9MB/s][A
+ 40%|████      | 2.33G/5.80G [01:11<01:43, 35.9MB/s][A
+ 40%|████      | 2.33G/5.80G [01:11<01:43, 35.9MB/s][A
+ 40%|████      | 2.34G/5.80G [01:11<01:52, 33.1MB/s][A
+ 40%|████      | 2.34G/5.80G [01:11<01:52, 33.0MB/s][A
+ 40%|████      | 2.34G/5.80G [01:11<01:53, 32.7MB/s][A
+ 41%|████      | 2.35G/5.80G [01:12<01:40, 37.0MB/s][A
+ 41%|████      | 2.35G/5.80G [01:12<01:42, 36.1MB/s][A
+ 41%|████      | 2.36G/5.80G [01:12<01:40, 36.6MB/s][A
+ 41%|████      | 2.36G/5.80G [01:12<01:34, 39.0MB/s][A
+ 41%|████      | 2.37G/5.80G [01:12<01:32, 39.7MB/s][A
+ 41%|████      | 2.37G/5.80G [01:12<01:36, 38.2MB/s][A
+ 41%|████      | 2.37G/5.80G [01:12<01:36, 38.2MB/s][A
+ 41%|████      | 2.37G/5.80G [01:12<01:35, 38.6MB/s][A
+ 41%|████      | 2.38G/5.80G [01:12<01:32, 39.9MB/s][A
+ 41%|████      | 2.38G/5.80G [01:12<01:34, 38.8MB/s][A
+ 41%|████      | 2.39G/5.80G [01:13<01:30, 40.3MB/s][A
+ 41%|████      | 2.39G/5.80G [01:13<04:27, 13.7MB/s][A
+ 41%|████▏     | 2.39G/5.80G [01:14<04:25, 13.8MB/s][A
+ 41%|████▏     | 2.40G/5.80G [01:14<03:38, 16.7MB/s][A
+ 41%|████▏     | 2.40G/5.80G [01:14<02:59, 20.4MB/s][A
+ 41%|████▏     | 2.40G/5.80G [01:14<02:30, 24.2MB/s][A
+ 42%|████▏     | 2.41G/5.80G [01:14<02:15, 26.9MB/s][A
+ 42%|████▏     | 2.41G/5.80G [01:14<02:05, 29.0MB/s][A
+ 42%|████▏     | 2.42G/5.80G [01:14<02:05, 29.0MB/s][A
+ 42%|████▏     | 2.42G/5.80G [01:14<02:01, 29.9MB/s][A
+ 42%|████▏     | 2.42G/5.80G [01:14<01:49, 33.2MB/s][A
+ 42%|████▏     | 2.43G/5.80G [01:15<01:44, 34.8MB/s][A
+ 42%|████▏     | 2.43G/5.80G [01:15<01:43, 35.0MB/s][A
+ 42%|████▏     | 2.43G/5.80G [01:15<01:42, 35.1MB/s][A
+ 42%|████▏     | 2.43G/5.80G [01:15<01:42, 35.3MB/s][A
+ 42%|████▏     | 2.44G/5.80G [01:15<01:37, 36.9MB/s][A
+ 42%|████▏     | 2.44G/5.80G [01:15<01:36, 37.5MB/s][A
+ 42%|████▏     | 2.45G/5.80G [01:15<01:34, 38.1MB/s][A
+ 42%|████▏     | 2.45G/5.80G [01:15<01:37, 37.0MB/s][A
+ 42%|████▏     | 2.45G/5.80G [01:15<01:33, 38.3MB/s][A
+ 42%|████▏     | 2.46G/5.80G [01:15<01:37, 36.8MB/s][A
+ 42%|████▏     | 2.46G/5.80G [01:16<01:36, 37.0MB/s][A
+ 43%|████▎     | 2.47G/5.80G [01:16<01:27, 40.6MB/s][A
+ 43%|████▎     | 2.47G/5.80G [01:17<06:06, 9.73MB/s][A
+ 43%|████▎     | 2.47G/5.80G [01:17<09:18, 6.39MB/s][A
+ 43%|████▎     | 2.47G/5.80G [01:17<07:25, 8.01MB/s][A
+ 43%|████▎     | 2.47G/5.80G [01:17<05:50, 10.2MB/s][A
+ 43%|████▎     | 2.48G/5.80G [01:17<04:45, 12.5MB/s][A
+ 43%|████▎     | 2.48G/5.80G [01:17<03:45, 15.8MB/s][A
+ 43%|████▎     | 2.48G/5.80G [01:17<03:04, 19.2MB/s][A
+ 43%|████▎     | 2.49G/5.80G [01:17<02:36, 22.8MB/s][A
+ 43%|████▎     | 2.49G/5.80G [01:18<02:25, 24.4MB/s][A
+ 43%|████▎     | 2.49G/5.80G [01:18<02:16, 26.1MB/s][A
+ 43%|████▎     | 2.50G/5.80G [01:18<01:57, 30.1MB/s][A
+ 43%|████▎     | 2.50G/5.80G [01:18<01:45, 33.6MB/s][A
+ 43%|████▎     | 2.50G/5.80G [01:18<01:33, 37.8MB/s][A
+ 43%|████▎     | 2.50G/5.80G [01:18<01:33, 37.8MB/s][A
+ 43%|████▎     | 2.51G/5.80G [01:18<01:30, 39.0MB/s][A
+ 43%|████▎     | 2.51G/5.80G [01:18<01:27, 40.3MB/s][A
+ 43%|████▎     | 2.52G/5.80G [01:18<01:23, 42.2MB/s][A
+ 43%|████▎     | 2.52G/5.80G [01:18<01:29, 39.2MB/s][A
+ 44%|████▎     | 2.52G/5.80G [01:18<01:28, 39.7MB/s][A
+ 44%|████▎     | 2.53G/5.80G [01:19<01:33, 37.5MB/s][A
+ 44%|████▎     | 2.53G/5.80G [01:19<01:28, 39.7MB/s][A
+ 44%|████▍     | 2.54G/5.80G [01:19<01:30, 38.8MB/s][A
+ 44%|████▍     | 2.54G/5.80G [01:19<01:27, 39.9MB/s][A
+ 44%|████▍     | 2.55G/5.80G [01:20<03:49, 15.2MB/s][A
+ 44%|████▍     | 2.55G/5.80G [01:20<04:10, 13.9MB/s][A
+ 44%|████▍     | 2.55G/5.80G [01:20<03:36, 16.1MB/s][A
+ 44%|████▍     | 2.56G/5.80G [01:20<03:06, 18.7MB/s][A
+ 44%|████▍     | 2.56G/5.80G [01:20<02:38, 21.9MB/s][A
+ 44%|████▍     | 2.56G/5.80G [01:20<02:17, 25.3MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:20<01:47, 32.3MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:20<01:47, 32.3MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:20<01:47, 32.3MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:21<01:51, 31.1MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:21<01:52, 30.8MB/s][A
+ 44%|████▍     | 2.57G/5.80G [01:21<01:47, 32.2MB/s][A
+ 44%|████▍     | 2.58G/5.80G [01:21<01:46, 32.6MB/s][A
+ 45%|████▍     | 2.58G/5.80G [01:21<01:49, 31.5MB/s][A
+ 45%|████▍     | 2.58G/5.80G [01:21<01:40, 34.5MB/s][A
+ 45%|████▍     | 2.59G/5.80G [01:21<01:41, 34.1MB/s][A
+ 45%|████▍     | 2.59G/5.80G [01:21<01:37, 35.2MB/s][A
+ 45%|████▍     | 2.60G/5.80G [01:21<01:33, 36.6MB/s][A
+ 45%|████▍     | 2.60G/5.80G [01:21<01:35, 36.1MB/s][A
+ 45%|████▍     | 2.60G/5.80G [01:22<01:36, 35.5MB/s][A
+ 45%|████▍     | 2.61G/5.80G [01:22<01:34, 36.4MB/s][A
+ 45%|████▌     | 2.61G/5.80G [01:22<01:30, 37.9MB/s][A
+ 45%|████▌     | 2.62G/5.80G [01:22<01:31, 37.3MB/s][A
+ 45%|████▌     | 2.62G/5.80G [01:22<01:32, 36.7MB/s][A
+ 45%|████▌     | 2.62G/5.80G [01:22<01:31, 37.4MB/s][A
+ 45%|████▌     | 2.62G/5.80G [01:22<01:31, 37.4MB/s][A
+ 45%|████▌     | 2.62G/5.80G [01:22<02:16, 24.9MB/s][A
+ 45%|████▌     | 2.63G/5.80G [01:23<04:01, 14.1MB/s][A
+ 45%|████▌     | 2.63G/5.80G [01:23<03:18, 17.1MB/s][A
+ 45%|████▌     | 2.63G/5.80G [01:23<03:59, 14.2MB/s][A
+ 45%|████▌     | 2.64G/5.80G [01:23<03:20, 16.9MB/s][A
+ 46%|████▌     | 2.64G/5.80G [01:23<02:21, 24.0MB/s][A
+ 46%|████▌     | 2.64G/5.80G [01:23<02:21, 24.0MB/s][A
+ 46%|████▌     | 2.64G/5.80G [01:24<02:08, 26.4MB/s][A
+ 46%|████▌     | 2.65G/5.80G [01:24<01:50, 30.5MB/s][A
+ 46%|████▌     | 2.65G/5.80G [01:24<01:46, 31.6MB/s][A
+ 46%|████▌     | 2.66G/5.80G [01:24<01:43, 32.7MB/s][A
+ 46%|████▌     | 2.66G/5.80G [01:24<01:32, 36.2MB/s][A
+ 46%|████▌     | 2.66G/5.80G [01:24<01:38, 34.2MB/s][A
+ 46%|████▌     | 2.67G/5.80G [01:24<01:36, 34.8MB/s][A
+ 46%|████▌     | 2.67G/5.80G [01:24<01:33, 35.7MB/s][A
+ 46%|████▌     | 2.67G/5.80G [01:24<01:30, 37.1MB/s][A
+ 46%|████▌     | 2.68G/5.80G [01:25<01:29, 37.2MB/s][A
+ 46%|████▋     | 2.68G/5.80G [01:25<01:27, 38.2MB/s][A
+ 46%|████▋     | 2.68G/5.80G [01:25<01:24, 39.3MB/s][A
+ 46%|████▋     | 2.68G/5.80G [01:25<01:24, 39.3MB/s][A
+ 46%|████▋     | 2.69G/5.80G [01:25<01:25, 39.2MB/s][A
+ 46%|████▋     | 2.69G/5.80G [01:25<01:22, 40.5MB/s][A
+ 46%|████▋     | 2.69G/5.80G [01:25<01:22, 40.5MB/s][A
+ 47%|████▋     | 2.70G/5.80G [01:25<01:24, 39.2MB/s][A
+ 47%|████▋     | 2.70G/5.80G [01:26<02:54, 19.1MB/s][A
+ 47%|████▋     | 2.70G/5.80G [01:26<03:01, 18.3MB/s][A
+ 47%|████▋     | 2.71G/5.80G [01:26<03:22, 16.4MB/s][A
+ 47%|████▋     | 2.71G/5.80G [01:26<02:15, 24.4MB/s][A
+ 47%|████▋     | 2.72G/5.80G [01:26<01:15, 43.5MB/s][A
+ 47%|████▋     | 2.72G/5.80G [01:26<01:15, 43.5MB/s][A
+ 47%|████▋     | 2.72G/5.80G [01:26<01:09, 47.2MB/s][A
+ 47%|████▋     | 2.72G/5.80G [01:26<01:05, 50.6MB/s][A
+ 47%|████▋     | 2.73G/5.80G [01:26<01:03, 51.8MB/s][A
+ 47%|████▋     | 2.74G/5.80G [01:26<00:55, 58.7MB/s][A
+ 47%|████▋     | 2.75G/5.80G [01:27<00:49, 66.1MB/s][A
+ 47%|████▋     | 2.75G/5.80G [01:27<00:50, 64.9MB/s][A
+ 48%|████▊     | 2.76G/5.80G [01:27<00:48, 66.7MB/s][A
+ 48%|████▊     | 2.77G/5.80G [01:27<00:48, 66.8MB/s][A
+ 48%|████▊     | 2.77G/5.80G [01:27<00:52, 62.0MB/s][A
+ 48%|████▊     | 2.78G/5.80G [01:27<01:35, 33.8MB/s][A
+ 48%|████▊     | 2.78G/5.80G [01:28<01:45, 30.7MB/s][A
+ 48%|████▊     | 2.79G/5.80G [01:28<01:48, 29.9MB/s][A
+ 48%|████▊     | 2.79G/5.80G [01:28<02:09, 24.9MB/s][A
+ 48%|████▊     | 2.80G/5.80G [01:28<01:18, 41.1MB/s][A
+ 48%|████▊     | 2.80G/5.80G [01:28<01:18, 41.1MB/s][A
+ 48%|████▊     | 2.81G/5.80G [01:28<01:02, 51.2MB/s][A
+ 49%|████▊     | 2.81G/5.80G [01:28<00:56, 57.0MB/s][A
+ 49%|████▊     | 2.82G/5.80G [01:28<00:52, 61.1MB/s][A
+ 49%|████▉     | 2.83G/5.80G [01:29<00:49, 64.4MB/s][A
+ 49%|████▉     | 2.83G/5.80G [01:29<00:47, 67.5MB/s][A
+ 49%|████▉     | 2.84G/5.80G [01:29<00:46, 68.3MB/s][A
+ 49%|████▉     | 2.84G/5.80G [01:29<00:45, 69.6MB/s][A
+ 49%|████▉     | 2.85G/5.80G [01:29<01:19, 40.0MB/s][A
+ 49%|████▉     | 2.85G/5.80G [01:29<01:32, 34.0MB/s][A
+ 49%|████▉     | 2.86G/5.80G [01:30<01:34, 33.5MB/s][A
+ 49%|████▉     | 2.86G/5.80G [01:30<01:33, 33.7MB/s][A
+ 50%|████▉     | 2.87G/5.80G [01:30<01:23, 37.7MB/s][A
+ 50%|████▉     | 2.87G/5.80G [01:30<01:15, 41.5MB/s][A
+ 50%|████▉     | 2.88G/5.80G [01:30<01:21, 38.4MB/s][A
+ 50%|████▉     | 2.89G/5.80G [01:30<01:15, 41.4MB/s][A
+ 50%|████▉     | 2.89G/5.80G [01:30<01:08, 45.2MB/s][A
+ 50%|█████     | 2.90G/5.80G [01:30<01:00, 51.1MB/s][A
+ 50%|█████     | 2.91G/5.80G [01:31<00:56, 55.1MB/s][A
+ 50%|█████     | 2.91G/5.80G [01:31<00:56, 55.1MB/s][A
+ 50%|█████     | 2.91G/5.80G [01:31<00:43, 71.2MB/s][A
+ 50%|█████     | 2.91G/5.80G [01:31<00:43, 71.2MB/s][A
+ 50%|█████     | 2.92G/5.80G [01:31<00:40, 75.5MB/s][A
+ 51%|█████     | 2.93G/5.80G [01:31<00:43, 70.2MB/s][A
+ 51%|█████     | 2.94G/5.80G [01:31<01:04, 47.9MB/s][A
+ 51%|█████     | 2.95G/5.80G [01:31<00:50, 60.1MB/s][A
+ 51%|█████     | 2.95G/5.80G [01:32<01:04, 47.1MB/s][A
+ 51%|█████     | 2.96G/5.80G [01:32<01:04, 47.5MB/s][A
+ 51%|█████     | 2.97G/5.80G [01:32<01:05, 46.1MB/s][A
+ 51%|█████     | 2.97G/5.80G [01:32<01:23, 36.4MB/s][A
+ 51%|█████▏    | 2.97G/5.80G [01:32<01:21, 37.4MB/s][A
+ 51%|█████▏    | 2.98G/5.80G [01:32<01:02, 48.0MB/s][A
+ 52%|█████▏    | 2.99G/5.80G [01:32<00:56, 53.0MB/s][A
+ 52%|█████▏    | 2.99G/5.80G [01:32<00:57, 52.3MB/s][A
+ 52%|█████▏    | 2.99G/5.80G [01:32<00:57, 52.3MB/s][A
+ 52%|█████▏    | 3.00G/5.80G [01:33<00:54, 54.9MB/s][A
+ 52%|█████▏    | 3.01G/5.80G [01:33<00:50, 58.7MB/s][A
+ 52%|█████▏    | 3.02G/5.80G [01:33<00:46, 64.7MB/s][A
+ 52%|█████▏    | 3.02G/5.80G [01:33<00:40, 73.5MB/s][A
+ 52%|█████▏    | 3.03G/5.80G [01:33<01:04, 45.9MB/s][A
+ 52%|█████▏    | 3.04G/5.80G [01:33<01:10, 41.7MB/s][A
+ 52%|█████▏    | 3.04G/5.80G [01:33<01:15, 39.3MB/s][A
+ 53%|█████▎    | 3.05G/5.80G [01:33<01:01, 48.0MB/s][A
+ 53%|█████▎    | 3.05G/5.80G [01:34<00:53, 55.4MB/s][A
+ 53%|█████▎    | 3.06G/5.80G [01:34<00:50, 57.8MB/s][A
+ 53%|█████▎    | 3.07G/5.80G [01:34<00:47, 61.8MB/s][A
+ 53%|█████▎    | 3.07G/5.80G [01:34<00:46, 62.7MB/s][A
+ 53%|█████▎    | 3.08G/5.80G [01:34<00:46, 62.9MB/s][A
+ 53%|█████▎    | 3.09G/5.80G [01:34<00:40, 71.2MB/s][A
+ 53%|█████▎    | 3.10G/5.80G [01:34<00:38, 75.0MB/s][A
+ 54%|█████▎    | 3.10G/5.80G [01:34<00:45, 62.9MB/s][A
+ 54%|█████▎    | 3.11G/5.80G [01:35<01:04, 44.5MB/s][A
+ 54%|█████▍    | 3.12G/5.80G [01:35<01:00, 47.3MB/s][A
+ 54%|█████▍    | 3.12G/5.80G [01:35<00:51, 56.2MB/s][A
+ 54%|█████▍    | 3.12G/5.80G [01:35<00:51, 56.2MB/s][A
+ 54%|█████▍    | 3.13G/5.80G [01:35<00:49, 57.8MB/s][A
+ 54%|█████▍    | 3.14G/5.80G [01:35<00:45, 63.1MB/s][A
+ 54%|█████▍    | 3.14G/5.80G [01:35<00:46, 61.7MB/s][A
+ 54%|█████▍    | 3.15G/5.80G [01:35<00:45, 62.8MB/s][A
+ 54%|█████▍    | 3.15G/5.80G [01:35<00:44, 63.8MB/s][A
+ 54%|█████▍    | 3.15G/5.80G [01:35<00:46, 61.5MB/s][A
+ 55%|█████▍    | 3.16G/5.80G [01:36<00:46, 60.4MB/s][A
+ 55%|█████▍    | 3.17G/5.80G [01:36<00:48, 57.7MB/s][A
+ 55%|█████▍    | 3.17G/5.80G [01:36<00:50, 55.5MB/s][A
+ 55%|█████▍    | 3.18G/5.80G [01:36<01:04, 43.9MB/s][A
+ 55%|█████▍    | 3.18G/5.80G [01:36<01:05, 43.1MB/s][A
+ 55%|█████▌    | 3.19G/5.80G [01:36<00:58, 48.1MB/s][A
+ 55%|█████▌    | 3.20G/5.80G [01:36<01:07, 41.1MB/s][A
+ 55%|█████▌    | 3.20G/5.80G [01:37<00:58, 47.3MB/s][A
+ 55%|█████▌    | 3.21G/5.80G [01:37<01:03, 43.5MB/s][A
+ 55%|█████▌    | 3.21G/5.80G [01:37<01:01, 45.4MB/s][A
+ 56%|█████▌    | 3.22G/5.80G [01:37<00:55, 49.5MB/s][A
+ 56%|█████▌    | 3.22G/5.80G [01:37<00:51, 53.9MB/s][A
+ 56%|█████▌    | 3.23G/5.80G [01:37<00:46, 59.7MB/s][A
+ 56%|█████▌    | 3.24G/5.80G [01:37<00:46, 59.0MB/s][A
+ 56%|█████▌    | 3.24G/5.80G [01:37<00:46, 59.0MB/s][A
+ 56%|█████▌    | 3.24G/5.80G [01:37<00:52, 52.6MB/s][A
+ 56%|█████▌    | 3.25G/5.80G [01:38<00:59, 46.3MB/s][A
+ 56%|█████▌    | 3.25G/5.80G [01:38<01:03, 43.0MB/s][A
+ 56%|█████▌    | 3.26G/5.80G [01:38<00:54, 50.0MB/s][A
+ 56%|█████▋    | 3.26G/5.80G [01:38<00:56, 47.8MB/s][A
+ 56%|█████▋    | 3.27G/5.80G [01:38<00:49, 54.6MB/s][A
+ 57%|█████▋    | 3.28G/5.80G [01:38<01:03, 42.7MB/s][A
+ 57%|█████▋    | 3.28G/5.80G [01:38<01:03, 42.3MB/s][A
+ 57%|█████▋    | 3.29G/5.80G [01:38<00:57, 47.0MB/s][A
+ 57%|█████▋    | 3.29G/5.80G [01:38<00:53, 50.4MB/s][A
+ 57%|█████▋    | 3.30G/5.80G [01:39<00:47, 56.5MB/s][A
+ 57%|█████▋    | 3.30G/5.80G [01:39<00:43, 61.9MB/s][A
+ 57%|█████▋    | 3.30G/5.80G [01:39<00:43, 61.9MB/s][A
+ 57%|█████▋    | 3.30G/5.80G [01:39<00:43, 61.9MB/s][A
+ 57%|█████▋    | 3.31G/5.80G [01:39<00:57, 46.6MB/s][A
+ 57%|█████▋    | 3.31G/5.80G [01:39<00:52, 50.4MB/s][A
+ 57%|█████▋    | 3.31G/5.80G [01:39<00:49, 54.0MB/s][A
+ 57%|█████▋    | 3.32G/5.80G [01:39<00:46, 57.5MB/s][A
+ 57%|█████▋    | 3.32G/5.80G [01:39<00:48, 54.5MB/s][A
+ 57%|█████▋    | 3.33G/5.80G [01:39<00:45, 58.5MB/s][A
+ 57%|█████▋    | 3.33G/5.80G [01:39<00:42, 61.8MB/s][A
+ 58%|█████▊    | 3.34G/5.80G [01:39<00:43, 60.3MB/s][A
+ 58%|█████▊    | 3.34G/5.80G [01:40<00:53, 48.8MB/s][A
+ 58%|█████▊    | 3.35G/5.80G [01:40<00:55, 47.0MB/s][A
+ 58%|█████▊    | 3.35G/5.80G [01:40<00:58, 44.9MB/s][A
+ 58%|█████▊    | 3.36G/5.80G [01:40<01:14, 35.2MB/s][A
+ 58%|█████▊    | 3.36G/5.80G [01:40<01:12, 35.9MB/s][A
+ 58%|█████▊    | 3.36G/5.80G [01:40<01:12, 35.9MB/s][A
+ 58%|█████▊    | 3.37G/5.80G [01:40<01:09, 37.8MB/s][A
+ 58%|█████▊    | 3.37G/5.80G [01:40<01:05, 39.9MB/s][A
+ 58%|█████▊    | 3.38G/5.80G [01:41<01:09, 37.5MB/s][A
+ 58%|█████▊    | 3.38G/5.80G [01:41<01:01, 41.9MB/s][A
+ 58%|█████▊    | 3.39G/5.80G [01:41<00:52, 49.7MB/s][A
+ 59%|█████▊    | 3.39G/5.80G [01:41<00:51, 50.6MB/s][A
+ 59%|█████▊    | 3.40G/5.80G [01:41<01:03, 40.8MB/s][A
+ 59%|█████▊    | 3.40G/5.80G [01:41<01:01, 41.7MB/s][A
+ 59%|█████▉    | 3.41G/5.80G [01:41<00:57, 45.0MB/s][A
+ 59%|█████▉    | 3.41G/5.80G [01:41<00:49, 51.7MB/s][A
+ 59%|█████▉    | 3.42G/5.80G [01:41<00:48, 52.5MB/s][A
+ 59%|█████▉    | 3.43G/5.80G [01:42<00:43, 59.0MB/s][A
+ 59%|█████▉    | 3.43G/5.80G [01:42<00:52, 48.5MB/s][A
+ 59%|█████▉    | 3.44G/5.80G [01:42<01:04, 39.3MB/s][A
+ 59%|█████▉    | 3.44G/5.80G [01:42<01:04, 39.0MB/s][A
+ 59%|█████▉    | 3.45G/5.80G [01:42<01:05, 38.5MB/s][A
+ 60%|█████▉    | 3.45G/5.80G [01:42<00:57, 44.0MB/s][A
+ 60%|█████▉    | 3.45G/5.80G [01:42<00:51, 49.1MB/s][A
+ 60%|█████▉    | 3.46G/5.80G [01:42<00:49, 50.8MB/s][A
+ 60%|█████▉    | 3.47G/5.80G [01:43<00:48, 51.9MB/s][A
+ 60%|█████▉    | 3.47G/5.80G [01:43<00:47, 52.4MB/s][A
+ 60%|█████▉    | 3.48G/5.80G [01:43<00:48, 51.1MB/s][A
+ 60%|██████    | 3.48G/5.80G [01:43<00:47, 51.9MB/s][A
+ 60%|██████    | 3.49G/5.80G [01:43<00:41, 59.3MB/s][A
+ 60%|██████    | 3.50G/5.80G [01:43<00:42, 57.7MB/s][A
+ 60%|██████    | 3.50G/5.80G [01:43<00:42, 57.7MB/s][A
+ 60%|██████    | 3.50G/5.80G [01:43<00:43, 56.8MB/s][A
+ 61%|██████    | 3.51G/5.80G [01:43<00:41, 58.9MB/s][A
+ 61%|██████    | 3.51G/5.80G [01:43<00:41, 58.9MB/s][A
+ 61%|██████    | 3.51G/5.80G [01:43<00:41, 58.9MB/s][A
+ 61%|██████    | 3.51G/5.80G [01:43<00:41, 58.7MB/s][A
+ 61%|██████    | 3.52G/5.80G [01:44<00:56, 43.2MB/s][A
+ 61%|██████    | 3.52G/5.80G [01:44<00:56, 43.1MB/s][A
+ 61%|██████    | 3.53G/5.80G [01:44<00:46, 52.2MB/s][A
+ 61%|██████    | 3.54G/5.80G [01:44<00:42, 57.0MB/s][A
+ 61%|██████    | 3.55G/5.80G [01:44<00:37, 63.7MB/s][A
+ 61%|██████▏   | 3.55G/5.80G [01:44<00:37, 64.2MB/s][A
+ 61%|██████▏   | 3.56G/5.80G [01:44<00:43, 55.7MB/s][A
+ 62%|██████▏   | 3.57G/5.80G [01:44<00:43, 55.1MB/s][A
+ 62%|██████▏   | 3.57G/5.80G [01:45<00:42, 56.0MB/s][A
+ 62%|██████▏   | 3.57G/5.80G [01:45<00:41, 57.3MB/s][A
+ 62%|██████▏   | 3.58G/5.80G [01:45<00:50, 47.5MB/s][A
+ 62%|██████▏   | 3.58G/5.80G [01:45<00:47, 50.0MB/s][A
+ 62%|██████▏   | 3.59G/5.80G [01:45<00:50, 47.2MB/s][A
+ 62%|██████▏   | 3.59G/5.80G [01:45<00:50, 46.6MB/s][A
+ 62%|██████▏   | 3.60G/5.80G [01:45<00:56, 42.1MB/s][A
+ 62%|██████▏   | 3.60G/5.80G [01:45<00:58, 40.6MB/s][A
+ 62%|██████▏   | 3.61G/5.80G [01:45<00:40, 58.1MB/s][A
+ 62%|██████▏   | 3.62G/5.80G [01:46<00:34, 67.8MB/s][A
+ 62%|██████▏   | 3.62G/5.80G [01:46<00:28, 82.0MB/s][A
+ 62%|██████▏   | 3.62G/5.80G [01:46<00:28, 82.0MB/s][A
+ 63%|██████▎   | 3.63G/5.80G [01:46<00:35, 65.4MB/s][A
+ 63%|██████▎   | 3.64G/5.80G [01:46<00:46, 49.9MB/s][A
+ 63%|██████▎   | 3.64G/5.80G [01:46<00:50, 45.4MB/s][A
+ 63%|██████▎   | 3.65G/5.80G [01:46<00:52, 44.2MB/s][A
+ 63%|██████▎   | 3.65G/5.80G [01:46<00:57, 40.2MB/s][A
+ 63%|██████▎   | 3.65G/5.80G [01:47<00:59, 38.7MB/s][A
+ 63%|██████▎   | 3.66G/5.80G [01:47<01:02, 37.0MB/s][A
+ 63%|██████▎   | 3.66G/5.80G [01:47<01:02, 37.0MB/s][A
+ 63%|██████▎   | 3.66G/5.80G [01:47<01:01, 37.5MB/s][A
+ 63%|██████▎   | 3.67G/5.80G [01:47<01:02, 36.6MB/s][A
+ 63%|██████▎   | 3.67G/5.80G [01:47<00:48, 47.0MB/s][A
+ 63%|██████▎   | 3.68G/5.80G [01:47<00:44, 50.8MB/s][A
+ 64%|██████▎   | 3.68G/5.80G [01:47<00:42, 54.1MB/s][A
+ 64%|██████▎   | 3.69G/5.80G [01:47<00:41, 54.9MB/s][A
+ 64%|██████▎   | 3.69G/5.80G [01:47<00:39, 57.8MB/s][A
+ 64%|██████▍   | 3.70G/5.80G [01:47<00:37, 60.0MB/s][A
+ 64%|██████▍   | 3.70G/5.80G [01:48<00:41, 54.6MB/s][A
+ 64%|██████▍   | 3.71G/5.80G [01:48<01:16, 29.2MB/s][A
+ 64%|██████▍   | 3.71G/5.80G [01:48<01:16, 29.2MB/s][A
+ 64%|██████▍   | 3.72G/5.80G [01:48<01:04, 34.8MB/s][A
+ 64%|██████▍   | 3.72G/5.80G [01:48<00:59, 37.5MB/s][A
+ 64%|██████▍   | 3.73G/5.80G [01:48<00:51, 43.6MB/s][A
+ 64%|██████▍   | 3.73G/5.80G [01:48<00:51, 43.1MB/s][A
+ 64%|██████▍   | 3.74G/5.80G [01:48<00:47, 46.9MB/s][A
+ 65%|██████▍   | 3.74G/5.80G [01:49<00:41, 53.2MB/s][A
+ 65%|██████▍   | 3.74G/5.80G [01:49<00:41, 53.2MB/s][A
+ 65%|██████▍   | 3.74G/5.80G [01:49<00:41, 53.2MB/s][A
+ 65%|██████▍   | 3.74G/5.80G [01:49<00:41, 53.2MB/s][A
+ 65%|██████▍   | 3.75G/5.80G [01:49<00:42, 52.3MB/s][A
+ 65%|██████▍   | 3.76G/5.80G [01:49<00:39, 55.6MB/s][A
+ 65%|██████▍   | 3.76G/5.80G [01:49<00:37, 57.7MB/s][A
+ 65%|██████▍   | 3.76G/5.80G [01:49<00:37, 57.7MB/s][A
+ 65%|██████▌   | 3.77G/5.80G [01:49<00:39, 55.3MB/s][A
+ 65%|██████▌   | 3.78G/5.80G [01:49<00:29, 72.6MB/s][A
+ 65%|██████▌   | 3.78G/5.80G [01:49<00:29, 72.6MB/s][A
+ 65%|██████▌   | 3.78G/5.80G [01:49<00:29, 72.6MB/s][A
+ 65%|██████▌   | 3.78G/5.80G [01:49<00:29, 72.6MB/s][A
+ 65%|██████▌   | 3.78G/5.80G [01:49<00:34, 62.6MB/s][A
+ 65%|██████▌   | 3.79G/5.80G [01:49<00:30, 69.6MB/s][A
+ 66%|██████▌   | 3.80G/5.80G [01:49<00:29, 73.1MB/s][A
+ 66%|██████▌   | 3.81G/5.80G [01:50<00:39, 53.6MB/s][A
+ 66%|██████▌   | 3.81G/5.80G [01:50<00:48, 43.6MB/s][A
+ 66%|██████▌   | 3.81G/5.80G [01:50<00:48, 43.6MB/s][A
+ 66%|██████▌   | 3.82G/5.80G [01:50<00:41, 50.7MB/s][A
+ 66%|██████▌   | 3.83G/5.80G [01:50<00:39, 54.1MB/s][A
+ 66%|██████▌   | 3.83G/5.80G [01:50<00:35, 60.3MB/s][A
+ 66%|██████▌   | 3.83G/5.80G [01:50<00:35, 60.3MB/s][A
+ 66%|██████▌   | 3.83G/5.80G [01:50<00:34, 62.0MB/s][A
+ 66%|██████▌   | 3.84G/5.80G [01:50<00:35, 59.9MB/s][A
+ 66%|██████▋   | 3.85G/5.80G [01:50<00:32, 63.5MB/s][A
+ 66%|██████▋   | 3.85G/5.80G [01:51<00:33, 61.8MB/s][A
+ 67%|██████▋   | 3.86G/5.80G [01:51<00:37, 55.4MB/s][A
+ 67%|██████▋   | 3.86G/5.80G [01:51<00:39, 52.5MB/s][A
+ 67%|██████▋   | 3.87G/5.80G [01:51<00:37, 55.3MB/s][A
+ 67%|██████▋   | 3.88G/5.80G [01:51<00:34, 59.4MB/s][A
+ 67%|██████▋   | 3.88G/5.80G [01:51<00:35, 57.3MB/s][A
+ 67%|██████▋   | 3.89G/5.80G [01:51<00:42, 47.8MB/s][A
+ 67%|██████▋   | 3.89G/5.80G [01:52<00:49, 40.9MB/s][A
+ 67%|██████▋   | 3.90G/5.80G [01:52<00:44, 45.8MB/s][A
+ 67%|██████▋   | 3.91G/5.80G [01:52<00:39, 51.7MB/s][A
+ 68%|██████▊   | 3.91G/5.80G [01:52<00:37, 54.2MB/s][A
+ 68%|██████▊   | 3.92G/5.80G [01:52<00:36, 54.9MB/s][A
+ 68%|██████▊   | 3.92G/5.80G [01:52<00:38, 51.9MB/s][A
+ 68%|██████▊   | 3.93G/5.80G [01:52<00:42, 47.6MB/s][A
+ 68%|██████▊   | 3.93G/5.80G [01:52<00:39, 50.5MB/s][A
+ 68%|██████▊   | 3.94G/5.80G [01:52<00:38, 52.3MB/s][A
+ 68%|██████▊   | 3.94G/5.80G [01:52<00:36, 54.1MB/s][A
+ 68%|██████▊   | 3.95G/5.80G [01:53<00:42, 46.3MB/s][A
+ 68%|██████▊   | 3.95G/5.80G [01:53<00:45, 43.9MB/s][A
+ 68%|██████▊   | 3.96G/5.80G [01:53<00:38, 51.0MB/s][A
+ 68%|██████▊   | 3.96G/5.80G [01:53<00:36, 53.3MB/s][A
+ 68%|██████▊   | 3.97G/5.80G [01:53<00:45, 43.4MB/s][A
+ 69%|██████▊   | 3.97G/5.80G [01:53<00:47, 41.1MB/s][A
+ 69%|██████▊   | 3.98G/5.80G [01:53<00:38, 50.9MB/s][A
+ 69%|██████▉   | 3.99G/5.80G [01:53<00:35, 54.5MB/s][A
+ 69%|██████▉   | 3.99G/5.80G [01:54<00:35, 55.2MB/s][A
+ 69%|██████▉   | 4.00G/5.80G [01:54<00:41, 46.3MB/s][A
+ 69%|██████▉   | 4.00G/5.80G [01:54<00:40, 48.0MB/s][A
+ 69%|██████▉   | 4.01G/5.80G [01:54<00:37, 51.6MB/s][A
+ 69%|██████▉   | 4.02G/5.80G [01:54<00:34, 55.0MB/s][A
+ 69%|██████▉   | 4.02G/5.80G [01:54<00:38, 49.1MB/s][A
+ 69%|██████▉   | 4.03G/5.80G [01:54<00:39, 48.4MB/s][A
+ 70%|██████▉   | 4.03G/5.80G [01:54<00:37, 51.1MB/s][A
+ 70%|██████▉   | 4.04G/5.80G [01:55<00:33, 55.5MB/s][A
+ 70%|██████▉   | 4.04G/5.80G [01:55<00:39, 48.0MB/s][A
+ 70%|██████▉   | 4.05G/5.80G [01:55<00:36, 51.5MB/s][A
+ 70%|██████▉   | 4.06G/5.80G [01:55<00:45, 41.5MB/s][A
+ 70%|███████   | 4.06G/5.80G [01:55<00:41, 45.1MB/s][A
+ 70%|███████   | 4.07G/5.80G [01:55<00:37, 49.0MB/s][A
+ 70%|███████   | 4.07G/5.80G [01:55<00:35, 51.7MB/s][A
+ 70%|███████   | 4.08G/5.80G [01:55<00:37, 48.6MB/s][A
+ 70%|███████   | 4.08G/5.80G [01:56<00:39, 46.9MB/s][A
+ 71%|███████   | 4.09G/5.80G [01:56<00:42, 42.9MB/s][A
+ 71%|███████   | 4.09G/5.80G [01:56<00:43, 42.1MB/s][A
+ 71%|███████   | 4.10G/5.80G [01:56<00:42, 42.5MB/s][A
+ 71%|███████   | 4.10G/5.80G [01:56<00:43, 42.2MB/s][A
+ 71%|███████   | 4.10G/5.80G [01:56<01:01, 29.4MB/s][A
+ 71%|███████   | 4.11G/5.80G [01:56<00:55, 32.4MB/s][A
+ 71%|███████   | 4.11G/5.80G [01:57<00:54, 33.3MB/s][A
+ 71%|███████   | 4.12G/5.80G [01:57<00:47, 38.3MB/s][A
+ 71%|███████   | 4.12G/5.80G [01:57<00:56, 31.7MB/s][A
+ 71%|███████   | 4.13G/5.80G [01:57<00:53, 33.6MB/s][A
+ 71%|███████▏  | 4.13G/5.80G [01:57<00:48, 37.1MB/s][A
+ 71%|███████▏  | 4.13G/5.80G [01:57<01:03, 28.3MB/s][A
+ 71%|███████▏  | 4.14G/5.80G [01:57<00:59, 30.1MB/s][A
+ 71%|███████▏  | 4.14G/5.80G [01:58<01:04, 27.4MB/s][A
+ 72%|███████▏  | 4.14G/5.80G [01:58<01:00, 29.3MB/s][A
+ 72%|███████▏  | 4.15G/5.80G [01:58<00:57, 31.0MB/s][A
+ 72%|███████▏  | 4.15G/5.80G [01:58<00:50, 35.0MB/s][A
+ 72%|███████▏  | 4.16G/5.80G [01:58<00:49, 35.7MB/s][A
+ 72%|███████▏  | 4.16G/5.80G [01:58<00:51, 34.1MB/s][A
+ 72%|███████▏  | 4.16G/5.80G [01:58<00:54, 32.2MB/s][A
+ 72%|███████▏  | 4.17G/5.80G [01:58<00:47, 37.1MB/s][A
+ 72%|███████▏  | 4.17G/5.80G [01:58<00:47, 37.1MB/s][A
+ 72%|███████▏  | 4.17G/5.80G [01:59<00:55, 31.3MB/s][A
+ 72%|███████▏  | 4.17G/5.80G [01:59<00:54, 32.1MB/s][A
+ 72%|███████▏  | 4.18G/5.80G [01:59<00:50, 34.4MB/s][A
+ 72%|███████▏  | 4.18G/5.80G [01:59<00:53, 32.6MB/s][A
+ 72%|███████▏  | 4.18G/5.80G [01:59<00:55, 31.5MB/s][A
+ 72%|███████▏  | 4.19G/5.80G [01:59<00:55, 31.0MB/s][A
+ 72%|███████▏  | 4.19G/5.80G [01:59<00:52, 32.9MB/s][A
+ 72%|███████▏  | 4.19G/5.80G [01:59<00:52, 32.9MB/s][A
+ 72%|███████▏  | 4.19G/5.80G [01:59<00:49, 35.0MB/s][A
+ 72%|███████▏  | 4.20G/5.80G [01:59<01:01, 27.7MB/s][A
+ 73%|███████▎  | 4.21G/5.80G [02:00<00:42, 40.2MB/s][A
+ 73%|███████▎  | 4.21G/5.80G [02:00<00:35, 47.7MB/s][A
+ 73%|███████▎  | 4.22G/5.80G [02:00<00:37, 44.6MB/s][A
+ 73%|███████▎  | 4.22G/5.80G [02:00<00:41, 40.4MB/s][A
+ 73%|███████▎  | 4.23G/5.80G [02:00<00:34, 49.0MB/s][A
+ 73%|███████▎  | 4.24G/5.80G [02:00<00:26, 63.3MB/s][A
+ 73%|███████▎  | 4.24G/5.80G [02:00<00:22, 75.1MB/s][A
+ 73%|███████▎  | 4.25G/5.80G [02:00<00:22, 75.3MB/s][A
+ 73%|███████▎  | 4.26G/5.80G [02:00<00:26, 63.4MB/s][A
+ 74%|███████▎  | 4.27G/5.80G [02:01<00:22, 72.5MB/s][A
+ 74%|███████▎  | 4.27G/5.80G [02:01<00:25, 63.2MB/s][A
+ 74%|███████▍  | 4.28G/5.80G [02:01<00:25, 62.6MB/s][A
+ 74%|███████▍  | 4.29G/5.80G [02:01<00:22, 71.3MB/s][A
+ 74%|███████▍  | 4.30G/5.80G [02:01<00:26, 61.3MB/s][A
+ 74%|███████▍  | 4.30G/5.80G [02:01<00:28, 56.8MB/s][A
+ 74%|███████▍  | 4.31G/5.80G [02:01<00:28, 55.1MB/s][A
+ 74%|███████▍  | 4.32G/5.80G [02:02<00:30, 52.7MB/s][A
+ 74%|███████▍  | 4.32G/5.80G [02:02<00:31, 51.2MB/s][A
+ 74%|███████▍  | 4.32G/5.80G [02:02<00:31, 51.2MB/s][A
+ 75%|███████▍  | 4.32G/5.80G [02:02<00:27, 57.9MB/s][A
+ 75%|███████▍  | 4.32G/5.80G [02:02<00:25, 61.0MB/s][A
+ 75%|███████▍  | 4.32G/5.80G [02:02<00:25, 61.0MB/s][A
+ 75%|███████▍  | 4.33G/5.80G [02:02<00:25, 61.5MB/s][A
+ 75%|███████▍  | 4.34G/5.80G [02:02<00:25, 61.5MB/s][A
+ 75%|███████▍  | 4.34G/5.80G [02:02<00:34, 44.7MB/s][A
+ 75%|███████▍  | 4.35G/5.80G [02:02<00:33, 46.4MB/s][A
+ 75%|███████▌  | 4.35G/5.80G [02:02<00:31, 48.9MB/s][A
+ 75%|███████▌  | 4.36G/5.80G [02:02<00:31, 48.8MB/s][A
+ 75%|███████▌  | 4.36G/5.80G [02:03<00:27, 55.0MB/s][A
+ 75%|███████▌  | 4.36G/5.80G [02:03<00:27, 55.0MB/s][A
+ 75%|███████▌  | 4.37G/5.80G [02:03<00:29, 52.3MB/s][A
+ 75%|███████▌  | 4.38G/5.80G [02:03<00:27, 55.5MB/s][A
+ 75%|███████▌  | 4.38G/5.80G [02:03<00:26, 58.2MB/s][A
+ 76%|███████▌  | 4.38G/5.80G [02:03<00:26, 58.1MB/s][A
+ 76%|███████▌  | 4.39G/5.80G [02:03<00:32, 46.2MB/s][A
+ 76%|███████▌  | 4.39G/5.80G [02:03<00:30, 49.3MB/s][A
+ 76%|███████▌  | 4.40G/5.80G [02:03<00:28, 53.5MB/s][A
+ 76%|███████▌  | 4.40G/5.80G [02:03<00:28, 53.2MB/s][A
+ 76%|███████▌  | 4.41G/5.80G [02:04<00:25, 59.3MB/s][A
+ 76%|███████▌  | 4.42G/5.80G [02:04<00:34, 43.1MB/s][A
+ 76%|███████▋  | 4.42G/5.80G [02:04<00:34, 42.5MB/s][A
+ 76%|███████▋  | 4.43G/5.80G [02:04<00:33, 44.0MB/s][A
+ 76%|███████▋  | 4.43G/5.80G [02:04<00:34, 42.1MB/s][A
+ 77%|███████▋  | 4.44G/5.80G [02:04<00:33, 43.9MB/s][A
+ 77%|███████▋  | 4.44G/5.80G [02:04<00:33, 44.1MB/s][A
+ 77%|███████▋  | 4.45G/5.80G [02:04<00:31, 45.8MB/s][A
+ 77%|███████▋  | 4.45G/5.80G [02:05<00:31, 45.3MB/s][A
+ 77%|███████▋  | 4.45G/5.80G [02:05<00:31, 45.3MB/s][A
+ 77%|███████▋  | 4.46G/5.80G [02:05<00:32, 43.6MB/s][A
+ 77%|███████▋  | 4.46G/5.80G [02:05<00:32, 44.5MB/s][A
+ 77%|███████▋  | 4.47G/5.80G [02:05<00:30, 46.8MB/s][A
+ 77%|███████▋  | 4.48G/5.80G [02:05<00:28, 50.4MB/s][A
+ 77%|███████▋  | 4.48G/5.80G [02:05<00:30, 46.4MB/s][A
+ 77%|███████▋  | 4.49G/5.80G [02:05<00:32, 43.6MB/s][A
+ 77%|███████▋  | 4.49G/5.80G [02:05<00:29, 48.0MB/s][A
+ 78%|███████▊  | 4.50G/5.80G [02:06<00:36, 38.4MB/s][A
+ 78%|███████▊  | 4.50G/5.80G [02:06<00:34, 40.6MB/s][A
+ 78%|███████▊  | 4.51G/5.80G [02:06<00:30, 45.1MB/s][A
+ 78%|███████▊  | 4.51G/5.80G [02:06<00:27, 49.6MB/s][A
+ 78%|███████▊  | 4.52G/5.80G [02:06<00:27, 50.2MB/s][A
+ 78%|███████▊  | 4.52G/5.80G [02:06<00:27, 49.4MB/s][A
+ 78%|███████▊  | 4.53G/5.80G [02:06<00:25, 52.5MB/s][A
+ 78%|███████▊  | 4.53G/5.80G [02:07<00:28, 47.4MB/s][A
+ 78%|███████▊  | 4.54G/5.80G [02:07<00:36, 37.4MB/s][A
+ 78%|███████▊  | 4.54G/5.80G [02:07<00:35, 38.0MB/s][A
+ 78%|███████▊  | 4.55G/5.80G [02:07<00:31, 42.0MB/s][A
+ 78%|███████▊  | 4.55G/5.80G [02:07<00:30, 43.7MB/s][A
+ 78%|███████▊  | 4.55G/5.80G [02:07<00:30, 43.7MB/s][A
+ 78%|███████▊  | 4.55G/5.80G [02:07<00:30, 43.7MB/s][A
+ 79%|███████▊  | 4.55G/5.80G [02:07<00:34, 38.5MB/s][A
+ 79%|███████▊  | 4.55G/5.80G [02:07<00:38, 35.0MB/s][A
+ 79%|███████▊  | 4.56G/5.80G [02:07<00:36, 36.2MB/s][A
+ 79%|███████▊  | 4.56G/5.80G [02:07<00:40, 32.5MB/s][A
+ 79%|███████▉  | 4.56G/5.80G [02:07<00:40, 33.0MB/s][A
+ 79%|███████▉  | 4.57G/5.80G [02:08<00:37, 34.7MB/s][A
+ 79%|███████▉  | 4.57G/5.80G [02:08<00:36, 36.3MB/s][A
+ 79%|███████▉  | 4.58G/5.80G [02:08<00:37, 34.5MB/s][A
+ 79%|███████▉  | 4.58G/5.80G [02:08<00:38, 33.5MB/s][A
+ 79%|███████▉  | 4.58G/5.80G [02:08<00:36, 35.6MB/s][A
+ 79%|███████▉  | 4.59G/5.80G [02:08<00:53, 24.4MB/s][A
+ 79%|███████▉  | 4.59G/5.80G [02:08<00:44, 28.9MB/s][A
+ 79%|███████▉  | 4.59G/5.80G [02:08<00:38, 33.3MB/s][A
+ 79%|███████▉  | 4.60G/5.80G [02:09<00:36, 35.0MB/s][A
+ 79%|███████▉  | 4.60G/5.80G [02:09<00:46, 27.9MB/s][A
+ 79%|███████▉  | 4.60G/5.80G [02:09<00:43, 29.6MB/s][A
+ 79%|███████▉  | 4.61G/5.80G [02:09<00:43, 29.4MB/s][A
+ 80%|███████▉  | 4.61G/5.80G [02:09<00:42, 30.2MB/s][A
+ 80%|███████▉  | 4.61G/5.80G [02:09<00:39, 31.9MB/s][A
+ 80%|███████▉  | 4.62G/5.80G [02:09<00:36, 35.1MB/s][A
+ 80%|███████▉  | 4.62G/5.80G [02:09<00:34, 36.6MB/s][A
+ 80%|███████▉  | 4.63G/5.80G [02:10<00:42, 29.5MB/s][A
+ 80%|███████▉  | 4.63G/5.80G [02:10<00:42, 29.5MB/s][A
+ 80%|███████▉  | 4.63G/5.80G [02:10<00:42, 29.8MB/s][A
+ 80%|███████▉  | 4.63G/5.80G [02:10<00:39, 32.0MB/s][A
+ 80%|███████▉  | 4.64G/5.80G [02:10<00:34, 36.1MB/s][A
+ 80%|███████▉  | 4.64G/5.80G [02:10<00:34, 36.1MB/s][A
+ 80%|████████  | 4.64G/5.80G [02:10<00:40, 30.8MB/s][A
+ 80%|████████  | 4.64G/5.80G [02:10<00:38, 32.3MB/s][A
+ 80%|████████  | 4.65G/5.80G [02:10<00:35, 34.3MB/s][A
+ 80%|████████  | 4.65G/5.80G [02:10<00:35, 34.9MB/s][A
+ 80%|████████  | 4.66G/5.80G [02:11<00:32, 37.9MB/s][A
+ 80%|████████  | 4.66G/5.80G [02:11<00:30, 39.5MB/s][A
+ 81%|████████  | 4.67G/5.80G [02:11<00:30, 39.5MB/s][A
+ 81%|████████  | 4.67G/5.80G [02:11<00:30, 39.5MB/s][A
+ 81%|████████  | 4.67G/5.80G [02:11<00:30, 40.0MB/s][A
+ 81%|████████  | 4.68G/5.80G [02:11<00:43, 27.7MB/s][A
+ 81%|████████  | 4.68G/5.80G [02:11<00:47, 25.4MB/s][A
+ 81%|████████  | 4.68G/5.80G [02:11<00:46, 25.5MB/s][A
+ 81%|████████  | 4.68G/5.80G [02:12<00:48, 24.8MB/s][A
+ 81%|████████  | 4.69G/5.80G [02:12<00:42, 27.9MB/s][A
+ 81%|████████  | 4.69G/5.80G [02:12<00:44, 26.6MB/s][A
+ 81%|████████  | 4.70G/5.80G [02:12<00:39, 30.1MB/s][A
+ 81%|████████  | 4.70G/5.80G [02:12<00:35, 32.9MB/s][A
+ 81%|████████  | 4.70G/5.80G [02:12<00:33, 35.0MB/s][A
+ 81%|████████  | 4.71G/5.80G [02:12<00:36, 31.8MB/s][A
+ 81%|████████▏ | 4.71G/5.80G [02:12<00:35, 32.7MB/s][A
+ 81%|████████▏ | 4.71G/5.80G [02:12<00:35, 32.7MB/s][A
+ 81%|████████▏ | 4.72G/5.80G [02:13<00:33, 34.3MB/s][A
+ 81%|████████▏ | 4.72G/5.80G [02:13<00:32, 35.4MB/s][A
+ 82%|████████▏ | 4.72G/5.80G [02:13<00:30, 38.3MB/s][A
+ 82%|████████▏ | 4.72G/5.80G [02:13<00:28, 41.0MB/s][A
+ 82%|████████▏ | 4.73G/5.80G [02:13<00:33, 34.7MB/s][A
+ 82%|████████▏ | 4.73G/5.80G [02:13<00:32, 35.2MB/s][A
+ 82%|████████▏ | 4.73G/5.80G [02:13<00:31, 36.0MB/s][A
+ 82%|████████▏ | 4.74G/5.80G [02:13<00:32, 35.5MB/s][A
+ 82%|████████▏ | 4.74G/5.80G [02:13<00:35, 32.3MB/s][A
+ 82%|████████▏ | 4.74G/5.80G [02:13<00:33, 33.8MB/s][A
+ 82%|████████▏ | 4.75G/5.80G [02:14<00:33, 33.8MB/s][A
+ 82%|████████▏ | 4.75G/5.80G [02:14<00:32, 34.6MB/s][A
+ 82%|████████▏ | 4.75G/5.80G [02:14<00:28, 38.7MB/s][A
+ 82%|████████▏ | 4.76G/5.80G [02:14<00:45, 24.6MB/s][A
+ 82%|████████▏ | 4.76G/5.80G [02:14<00:39, 28.1MB/s][A
+ 82%|████████▏ | 4.77G/5.80G [02:14<00:38, 28.7MB/s][A
+ 82%|████████▏ | 4.77G/5.80G [02:14<00:34, 31.5MB/s][A
+ 82%|████████▏ | 4.77G/5.80G [02:15<00:34, 32.1MB/s][A
+ 82%|████████▏ | 4.78G/5.80G [02:15<00:36, 30.1MB/s][A
+ 83%|████████▎ | 4.78G/5.80G [02:15<00:34, 31.7MB/s][A
+ 83%|████████▎ | 4.79G/5.80G [02:15<00:31, 34.0MB/s][A
+ 83%|████████▎ | 4.79G/5.80G [02:15<00:30, 35.3MB/s][A
+ 83%|████████▎ | 4.79G/5.80G [02:15<00:27, 39.0MB/s][A
+ 83%|████████▎ | 4.80G/5.80G [02:15<00:30, 34.6MB/s][A
+ 83%|████████▎ | 4.80G/5.80G [02:15<00:31, 34.4MB/s][A
+ 83%|████████▎ | 4.81G/5.80G [02:16<00:29, 35.9MB/s][A
+ 83%|████████▎ | 4.81G/5.80G [02:16<00:30, 34.9MB/s][A
+ 83%|████████▎ | 4.82G/5.80G [02:16<00:27, 37.8MB/s][A
+ 83%|████████▎ | 4.82G/5.80G [02:16<00:27, 37.8MB/s][A
+ 83%|████████▎ | 4.82G/5.80G [02:16<00:26, 38.8MB/s][A
+ 83%|████████▎ | 4.83G/5.80G [02:16<00:25, 40.3MB/s][A
+ 83%|████████▎ | 4.83G/5.80G [02:16<00:25, 40.5MB/s][A
+ 83%|████████▎ | 4.84G/5.80G [02:16<00:24, 41.5MB/s][A
+ 84%|████████▎ | 4.84G/5.80G [02:16<00:24, 41.2MB/s][A
+ 84%|████████▎ | 4.84G/5.80G [02:17<00:45, 22.7MB/s][A
+ 84%|████████▎ | 4.85G/5.80G [02:17<00:33, 30.5MB/s][A
+ 84%|████████▍ | 4.86G/5.80G [02:17<00:21, 46.8MB/s][A
+ 84%|████████▍ | 4.86G/5.80G [02:17<00:21, 46.8MB/s][A
+ 84%|████████▍ | 4.87G/5.80G [02:17<00:17, 57.2MB/s][A
+ 84%|████████▍ | 4.88G/5.80G [02:17<00:14, 67.8MB/s][A
+ 84%|████████▍ | 4.88G/5.80G [02:17<00:14, 68.4MB/s][A
+ 84%|████████▍ | 4.89G/5.80G [02:17<00:14, 68.8MB/s][A
+ 84%|████████▍ | 4.89G/5.80G [02:17<00:14, 68.8MB/s][A
+ 85%|████████▍ | 4.90G/5.80G [02:18<00:13, 73.7MB/s][A
+ 85%|████████▍ | 4.91G/5.80G [02:18<00:12, 74.1MB/s][A
+ 85%|████████▍ | 4.91G/5.80G [02:18<00:12, 74.4MB/s][A
+ 85%|████████▍ | 4.92G/5.80G [02:18<00:12, 72.6MB/s][A
+ 85%|████████▌ | 4.93G/5.80G [02:18<00:14, 62.8MB/s][A
+ 85%|████████▌ | 4.93G/5.80G [02:18<00:21, 42.6MB/s][A
+ 85%|████████▌ | 4.94G/5.80G [02:18<00:17, 51.1MB/s][A
+ 85%|████████▌ | 4.95G/5.80G [02:19<00:17, 52.4MB/s][A
+ 85%|████████▌ | 4.96G/5.80G [02:19<00:15, 57.1MB/s][A
+ 85%|████████▌ | 4.96G/5.80G [02:19<00:15, 57.1MB/s][A
+ 86%|████████▌ | 4.96G/5.80G [02:19<00:14, 59.9MB/s][A
+ 86%|████████▌ | 4.97G/5.80G [02:19<00:15, 58.6MB/s][A
+ 86%|████████▌ | 4.97G/5.80G [02:19<00:14, 60.5MB/s][A
+ 86%|████████▌ | 4.97G/5.80G [02:19<00:14, 62.3MB/s][A
+ 86%|████████▌ | 4.98G/5.80G [02:19<00:13, 65.2MB/s][A
+ 86%|████████▌ | 4.99G/5.80G [02:19<00:12, 67.2MB/s][A
+ 86%|████████▌ | 5.00G/5.80G [02:19<00:12, 69.8MB/s][A
+ 86%|████████▋ | 5.00G/5.80G [02:20<00:15, 54.0MB/s][A
+ 86%|████████▋ | 5.01G/5.80G [02:20<00:14, 60.2MB/s][A
+ 87%|████████▋ | 5.02G/5.80G [02:20<00:20, 40.4MB/s][A
+ 87%|████████▋ | 5.02G/5.80G [02:20<00:19, 43.7MB/s][A
+ 87%|████████▋ | 5.03G/5.80G [02:20<00:14, 55.1MB/s][A
+ 87%|████████▋ | 5.03G/5.80G [02:20<00:14, 55.1MB/s][A
+ 87%|████████▋ | 5.04G/5.80G [02:20<00:15, 53.4MB/s][A
+ 87%|████████▋ | 5.04G/5.80G [02:20<00:13, 58.9MB/s][A
+ 87%|████████▋ | 5.05G/5.80G [02:21<00:15, 52.6MB/s][A
+ 87%|████████▋ | 5.06G/5.80G [02:21<00:15, 50.8MB/s][A
+ 87%|████████▋ | 5.06G/5.80G [02:21<00:16, 48.5MB/s][A
+ 87%|████████▋ | 5.07G/5.80G [02:21<00:16, 47.1MB/s][A
+ 88%|████████▊ | 5.07G/5.80G [02:21<00:15, 51.5MB/s][A
+ 88%|████████▊ | 5.08G/5.80G [02:21<00:18, 41.9MB/s][A
+ 88%|████████▊ | 5.09G/5.80G [02:21<00:12, 60.1MB/s][A
+ 88%|████████▊ | 5.09G/5.80G [02:21<00:11, 67.1MB/s][A
+ 88%|████████▊ | 5.09G/5.80G [02:21<00:11, 67.1MB/s][A
+ 88%|████████▊ | 5.09G/5.80G [02:22<00:11, 65.5MB/s][A
+ 88%|████████▊ | 5.10G/5.80G [02:22<00:21, 34.4MB/s][A
+ 88%|████████▊ | 5.11G/5.80G [02:22<00:20, 35.3MB/s][A
+ 88%|████████▊ | 5.11G/5.80G [02:22<00:22, 33.4MB/s][A
+ 88%|████████▊ | 5.11G/5.80G [02:22<00:20, 35.3MB/s][A
+ 88%|████████▊ | 5.12G/5.80G [02:23<00:21, 34.2MB/s][A
+ 88%|████████▊ | 5.12G/5.80G [02:23<00:21, 34.2MB/s][A
+ 88%|████████▊ | 5.12G/5.80G [02:23<00:21, 34.2MB/s][A
+ 88%|████████▊ | 5.12G/5.80G [02:23<00:21, 34.0MB/s][A
+ 88%|████████▊ | 5.13G/5.80G [02:23<00:19, 37.7MB/s][A
+ 89%|████████▊ | 5.13G/5.80G [02:23<00:18, 38.5MB/s][A
+ 89%|████████▊ | 5.14G/5.80G [02:23<00:17, 39.8MB/s][A
+ 89%|████████▊ | 5.14G/5.80G [02:23<00:18, 38.2MB/s][A
+ 89%|████████▉ | 5.14G/5.80G [02:23<00:17, 40.4MB/s][A
+ 89%|████████▉ | 5.15G/5.80G [02:23<00:18, 37.4MB/s][A
+ 89%|████████▉ | 5.15G/5.80G [02:23<00:17, 39.2MB/s][A
+ 89%|████████▉ | 5.16G/5.80G [02:24<00:16, 40.8MB/s][A
+ 89%|████████▉ | 5.16G/5.80G [02:24<00:17, 39.0MB/s][A
+ 89%|████████▉ | 5.16G/5.80G [02:24<00:22, 30.2MB/s][A
+ 89%|████████▉ | 5.17G/5.80G [02:24<00:23, 28.3MB/s][A
+ 89%|████████▉ | 5.17G/5.80G [02:24<00:16, 39.8MB/s][A
+ 89%|████████▉ | 5.17G/5.80G [02:24<00:16, 39.8MB/s][A
+ 89%|████████▉ | 5.17G/5.80G [02:24<00:16, 39.8MB/s][A
+ 89%|████████▉ | 5.18G/5.80G [02:24<00:15, 41.6MB/s][A
+ 89%|████████▉ | 5.18G/5.80G [02:25<00:25, 25.6MB/s][A
+ 89%|████████▉ | 5.19G/5.80G [02:25<00:28, 23.2MB/s][A
+ 90%|████████▉ | 5.19G/5.80G [02:25<00:27, 24.0MB/s][A
+ 90%|████████▉ | 5.19G/5.80G [02:25<00:24, 27.0MB/s][A
+ 90%|████████▉ | 5.20G/5.80G [02:25<00:20, 32.0MB/s][A
+ 90%|████████▉ | 5.20G/5.80G [02:25<00:18, 34.7MB/s][A
+ 90%|████████▉ | 5.21G/5.80G [02:25<00:16, 39.6MB/s][A
+ 90%|████████▉ | 5.21G/5.80G [02:25<00:16, 39.6MB/s][A
+ 90%|████████▉ | 5.21G/5.80G [02:25<00:15, 40.4MB/s][A
+ 90%|████████▉ | 5.21G/5.80G [02:26<00:15, 41.1MB/s][A
+ 90%|████████▉ | 5.21G/5.80G [02:26<00:15, 41.1MB/s][A
+ 90%|█████████ | 5.22G/5.80G [02:26<00:15, 41.0MB/s][A
+ 90%|█████████ | 5.22G/5.80G [02:26<00:15, 41.0MB/s][A
+ 90%|█████████ | 5.22G/5.80G [02:26<00:20, 30.5MB/s][A
+ 90%|█████████ | 5.23G/5.80G [02:26<00:18, 33.9MB/s][A
+ 90%|█████████ | 5.23G/5.80G [02:26<00:17, 35.1MB/s][A
+ 90%|█████████ | 5.23G/5.80G [02:26<00:17, 35.2MB/s][A
+ 90%|█████████ | 5.24G/5.80G [02:26<00:18, 32.1MB/s][A
+ 90%|█████████ | 5.24G/5.80G [02:26<00:16, 35.6MB/s][A
+ 91%|█████████ | 5.25G/5.80G [02:27<00:17, 33.7MB/s][A
+ 91%|█████████ | 5.25G/5.80G [02:27<00:17, 33.9MB/s][A
+ 91%|█████████ | 5.25G/5.80G [02:27<00:16, 34.6MB/s][A
+ 91%|█████████ | 5.25G/5.80G [02:27<00:16, 34.6MB/s][A
+ 91%|█████████ | 5.26G/5.80G [02:27<00:23, 24.4MB/s][A
+ 91%|█████████ | 5.26G/5.80G [02:27<00:23, 24.4MB/s][A
+ 91%|█████████ | 5.26G/5.80G [02:27<00:23, 24.7MB/s][A
+ 91%|█████████ | 5.27G/5.80G [02:27<00:19, 29.2MB/s][A
+ 91%|█████████ | 5.27G/5.80G [02:28<00:24, 22.9MB/s][A
+ 91%|█████████ | 5.27G/5.80G [02:28<00:22, 25.0MB/s][A
+ 91%|█████████ | 5.28G/5.80G [02:28<00:20, 27.2MB/s][A
+ 91%|█████████ | 5.28G/5.80G [02:28<00:18, 30.3MB/s][A
+ 91%|█████████ | 5.28G/5.80G [02:28<00:17, 31.9MB/s][A
+ 91%|█████████ | 5.29G/5.80G [02:28<00:16, 33.7MB/s][A
+ 91%|█████████▏| 5.29G/5.80G [02:28<00:19, 28.4MB/s][A
+ 91%|█████████▏| 5.29G/5.80G [02:28<00:19, 27.4MB/s][A
+ 91%|█████████▏| 5.30G/5.80G [02:28<00:17, 30.7MB/s][A
+ 91%|█████████▏| 5.30G/5.80G [02:29<00:15, 33.3MB/s][A
+ 92%|█████████▏| 5.31G/5.80G [02:29<00:15, 33.2MB/s][A
+ 92%|█████████▏| 5.31G/5.80G [02:29<00:15, 34.4MB/s][A
+ 92%|█████████▏| 5.31G/5.80G [02:29<00:15, 33.9MB/s][A
+ 92%|█████████▏| 5.32G/5.80G [02:29<00:16, 31.3MB/s][A
+ 92%|█████████▏| 5.32G/5.80G [02:29<00:15, 33.6MB/s][A
+ 92%|█████████▏| 5.33G/5.80G [02:29<00:14, 34.8MB/s][A
+ 92%|█████████▏| 5.33G/5.80G [02:29<00:14, 34.6MB/s][A
+ 92%|█████████▏| 5.33G/5.80G [02:30<00:13, 37.7MB/s][A
+ 92%|█████████▏| 5.34G/5.80G [02:30<00:13, 35.1MB/s][A
+ 92%|█████████▏| 5.34G/5.80G [02:30<00:13, 35.8MB/s][A
+ 92%|█████████▏| 5.35G/5.80G [02:30<00:13, 36.5MB/s][A
+ 92%|█████████▏| 5.35G/5.80G [02:30<00:13, 35.5MB/s][A
+ 92%|█████████▏| 5.35G/5.80G [02:30<00:13, 36.5MB/s][A
+ 92%|█████████▏| 5.36G/5.80G [02:30<00:19, 23.7MB/s][A
+ 92%|█████████▏| 5.36G/5.80G [02:31<00:18, 25.2MB/s][A
+ 93%|█████████▎| 5.36G/5.80G [02:31<00:19, 24.2MB/s][A
+ 93%|█████████▎| 5.37G/5.80G [02:31<00:19, 23.8MB/s][A
+ 93%|█████████▎| 5.37G/5.80G [02:31<00:17, 26.7MB/s][A
+ 93%|█████████▎| 5.37G/5.80G [02:31<00:17, 26.7MB/s][A
+ 93%|█████████▎| 5.37G/5.80G [02:31<00:16, 27.6MB/s][A
+ 93%|█████████▎| 5.38G/5.80G [02:31<00:14, 30.5MB/s][A
+ 93%|█████████▎| 5.38G/5.80G [02:31<00:13, 32.2MB/s][A
+ 93%|█████████▎| 5.38G/5.80G [02:31<00:12, 34.3MB/s][A
+ 93%|█████████▎| 5.39G/5.80G [02:31<00:12, 34.1MB/s][A
+ 93%|█████████▎| 5.39G/5.80G [02:32<00:13, 32.8MB/s][A
+ 93%|█████████▎| 5.39G/5.80G [02:32<00:16, 26.0MB/s][A
+ 93%|█████████▎| 5.40G/5.80G [02:32<00:15, 27.0MB/s][A
+ 93%|█████████▎| 5.40G/5.80G [02:32<00:14, 29.1MB/s][A
+ 93%|█████████▎| 5.40G/5.80G [02:32<00:13, 30.5MB/s][A
+ 93%|█████████▎| 5.41G/5.80G [02:32<00:12, 33.9MB/s][A
+ 93%|█████████▎| 5.41G/5.80G [02:32<00:12, 33.8MB/s][A
+ 93%|█████████▎| 5.41G/5.80G [02:32<00:12, 33.8MB/s][A
+ 93%|█████████▎| 5.41G/5.80G [02:32<00:12, 33.8MB/s][A
+ 93%|█████████▎| 5.42G/5.80G [02:33<00:13, 30.9MB/s][A
+ 94%|█████████▎| 5.42G/5.80G [02:33<00:12, 32.7MB/s][A
+ 94%|█████████▎| 5.42G/5.80G [02:33<00:11, 35.5MB/s][A
+ 94%|█████████▎| 5.43G/5.80G [02:33<00:10, 36.3MB/s][A
+ 94%|█████████▎| 5.43G/5.80G [02:33<00:10, 38.9MB/s][A
+ 94%|█████████▎| 5.43G/5.80G [02:33<00:10, 38.9MB/s][A
+ 94%|█████████▍| 5.43G/5.80G [02:33<00:14, 27.5MB/s][A
+ 94%|█████████▍| 5.44G/5.80G [02:33<00:11, 33.5MB/s][A
+ 94%|█████████▍| 5.44G/5.80G [02:33<00:13, 27.1MB/s][A
+ 94%|█████████▍| 5.44G/5.80G [02:34<00:15, 23.9MB/s][A
+ 94%|█████████▍| 5.45G/5.80G [02:34<00:15, 23.7MB/s][A
+ 94%|█████████▍| 5.45G/5.80G [02:34<00:13, 26.9MB/s][A
+ 94%|█████████▍| 5.45G/5.80G [02:34<00:12, 29.9MB/s][A
+ 94%|█████████▍| 5.46G/5.80G [02:34<00:10, 35.0MB/s][A
+ 94%|█████████▍| 5.46G/5.80G [02:34<00:09, 38.0MB/s][A
+ 94%|█████████▍| 5.47G/5.80G [02:34<00:10, 34.0MB/s][A
+ 94%|█████████▍| 5.47G/5.80G [02:34<00:10, 33.7MB/s][A
+ 94%|█████████▍| 5.47G/5.80G [02:34<00:09, 35.4MB/s][A
+ 95%|█████████▍| 5.48G/5.80G [02:35<00:07, 47.1MB/s][A
+ 95%|█████████▍| 5.49G/5.80G [02:35<00:06, 47.8MB/s][A
+ 95%|█████████▍| 5.49G/5.80G [02:35<00:06, 47.8MB/s][A
+ 95%|█████████▍| 5.49G/5.80G [02:35<00:06, 53.0MB/s][A
+ 95%|█████████▍| 5.50G/5.80G [02:35<00:06, 52.7MB/s][A
+ 95%|█████████▍| 5.50G/5.80G [02:35<00:05, 52.6MB/s][A
+ 95%|█████████▌| 5.51G/5.80G [02:35<00:06, 46.9MB/s][A
+ 95%|█████████▌| 5.51G/5.80G [02:35<00:06, 43.7MB/s][A
+ 95%|█████████▌| 5.52G/5.80G [02:35<00:08, 34.8MB/s][A
+ 95%|█████████▌| 5.52G/5.80G [02:36<00:08, 34.1MB/s][A
+ 95%|█████████▌| 5.53G/5.80G [02:36<00:07, 39.3MB/s][A
+ 95%|█████████▌| 5.53G/5.80G [02:36<00:06, 45.4MB/s][A
+ 96%|█████████▌| 5.54G/5.80G [02:36<00:05, 47.2MB/s][A
+ 96%|█████████▌| 5.54G/5.80G [02:36<00:05, 53.0MB/s][A
+ 96%|█████████▌| 5.54G/5.80G [02:36<00:05, 53.0MB/s][A
+ 96%|█████████▌| 5.55G/5.80G [02:36<00:06, 40.1MB/s][A
+ 96%|█████████▌| 5.55G/5.80G [02:36<00:06, 42.2MB/s][A
+ 96%|█████████▌| 5.55G/5.80G [02:36<00:05, 43.7MB/s][A
+ 96%|█████████▌| 5.55G/5.80G [02:36<00:05, 43.7MB/s][A
+ 96%|█████████▌| 5.56G/5.80G [02:36<00:05, 43.5MB/s][A
+ 96%|█████████▌| 5.57G/5.80G [02:37<00:04, 50.1MB/s][A
+ 96%|█████████▌| 5.57G/5.80G [02:37<00:04, 58.6MB/s][A
+ 96%|█████████▌| 5.57G/5.80G [02:37<00:04, 58.6MB/s][A
+ 96%|█████████▌| 5.57G/5.80G [02:37<00:03, 60.0MB/s][A
+ 96%|█████████▋| 5.58G/5.80G [02:37<00:03, 59.3MB/s][A
+ 96%|█████████▋| 5.58G/5.80G [02:37<00:03, 58.0MB/s][A
+ 96%|█████████▋| 5.59G/5.80G [02:37<00:04, 46.9MB/s][A
+ 97%|█████████▋| 5.60G/5.80G [02:37<00:05, 39.3MB/s][A
+ 97%|█████████▋| 5.60G/5.80G [02:37<00:05, 40.3MB/s][A
+ 97%|█████████▋| 5.61G/5.80G [02:37<00:04, 49.5MB/s][A
+ 97%|█████████▋| 5.61G/5.80G [02:37<00:04, 49.5MB/s][A
+ 97%|█████████▋| 5.61G/5.80G [02:38<00:04, 47.6MB/s][A
+ 97%|█████████▋| 5.62G/5.80G [02:38<00:04, 46.8MB/s][A
+ 97%|█████████▋| 5.62G/5.80G [02:38<00:03, 51.7MB/s][A
+ 97%|█████████▋| 5.63G/5.80G [02:38<00:03, 47.6MB/s][A
+ 97%|█████████▋| 5.63G/5.80G [02:38<00:03, 46.5MB/s][A
+ 97%|█████████▋| 5.64G/5.80G [02:38<00:03, 46.6MB/s][A
+ 97%|█████████▋| 5.64G/5.80G [02:38<00:03, 48.4MB/s][A
+ 97%|█████████▋| 5.65G/5.80G [02:38<00:03, 41.1MB/s][A
+ 98%|█████████▊| 5.65G/5.80G [02:39<00:03, 43.5MB/s][A
+ 98%|█████████▊| 5.66G/5.80G [02:39<00:03, 46.9MB/s][A
+ 98%|█████████▊| 5.66G/5.80G [02:39<00:03, 46.9MB/s][A
+ 98%|█████████▊| 5.66G/5.80G [02:39<00:03, 46.9MB/s][A
+ 98%|█████████▊| 5.66G/5.80G [02:39<00:03, 46.8MB/s][A
+ 98%|█████████▊| 5.67G/5.80G [02:39<00:03, 38.9MB/s][A
+ 98%|█████████▊| 5.67G/5.80G [02:39<00:02, 44.2MB/s][A
+ 98%|█████████▊| 5.68G/5.80G [02:39<00:02, 42.9MB/s][A
+ 98%|█████████▊| 5.68G/5.80G [02:39<00:02, 44.4MB/s][A
+ 98%|█████████▊| 5.69G/5.80G [02:39<00:02, 55.7MB/s][A
+ 98%|█████████▊| 5.69G/5.80G [02:39<00:01, 64.9MB/s][A
+ 98%|█████████▊| 5.70G/5.80G [02:40<00:01, 65.7MB/s][A
+ 98%|█████████▊| 5.70G/5.80G [02:40<00:01, 65.5MB/s][A
+ 99%|█████████▊| 5.71G/5.80G [02:40<00:01, 49.8MB/s][A
+ 99%|█████████▊| 5.72G/5.80G [02:40<00:01, 49.8MB/s][A
+ 99%|█████████▊| 5.72G/5.80G [02:40<00:01, 51.9MB/s][A
+ 99%|█████████▊| 5.72G/5.80G [02:40<00:01, 51.9MB/s][A
+ 99%|█████████▊| 5.72G/5.80G [02:40<00:01, 51.9MB/s][A
+ 99%|█████████▊| 5.72G/5.80G [02:40<00:01, 51.9MB/s][A
+ 99%|█████████▉| 5.73G/5.80G [02:40<00:01, 40.5MB/s][A
+ 99%|█████████▉| 5.73G/5.80G [02:40<00:01, 40.3MB/s][A
+ 99%|█████████▉| 5.74G/5.80G [02:41<00:01, 44.2MB/s][A
+ 99%|█████████▉| 5.74G/5.80G [02:41<00:01, 49.8MB/s][A
+ 99%|█████████▉| 5.75G/5.80G [02:41<00:01, 38.9MB/s][A
+ 99%|█████████▉| 5.75G/5.80G [02:41<00:01, 36.0MB/s][A
+ 99%|█████████▉| 5.76G/5.80G [02:41<00:01, 38.4MB/s][A
+ 99%|█████████▉| 5.76G/5.80G [02:41<00:00, 41.2MB/s][A
+ 99%|█████████▉| 5.76G/5.80G [02:41<00:00, 41.2MB/s][A
+ 99%|█████████▉| 5.77G/5.80G [02:41<00:00, 39.5MB/s][A
+100%|█████████▉| 5.77G/5.80G [02:41<00:00, 40.0MB/s][A
+100%|█████████▉| 5.77G/5.80G [02:42<00:00, 41.6MB/s][A
+100%|█████████▉| 5.78G/5.80G [02:42<00:00, 38.4MB/s][A
+100%|█████████▉| 5.78G/5.80G [02:42<00:00, 38.0MB/s][A
+100%|█████████▉| 5.79G/5.80G [02:42<00:00, 37.2MB/s][A
+100%|█████████▉| 5.79G/5.80G [02:42<00:00, 38.8MB/s][A
+100%|██████████| 5.80G/5.80G [02:42<00:00, 38.2MB/s]
+data ready: ['README.md', 'description.md', 'label_num_to_disease_map.json', 'sample_submission.csv', 'test_images', 'test_tfrecords', 'train.csv', 'train_images']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=bellatrix_tau swarm-2=capella_xi swarm-3=altair_chi
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_intro.md =====
+# capella_xi — intro & plan
+Hi swarm! I'm **capella_xi**. I'll focus on:
+- building a strong timm image-classification pipeline (Cassava leaf, 5 classes, accuracy metric);
+- 5-fold CV with honest holdout, mixed precision on A100 80GB;
+- sharing fold-stable OOF + test probabilities so we can ensemble across agents.
+Hardware check: 1x A100 80GB, 128 CPU, 503G RAM. `torch 2.2.0+cu121`, `timm 0.9.7`, CUDA available. Train: 18,721 imgs (label dist: 3=11523, 4=2267, 2=2091, 1=1901, 0=939). Test: 2,676. Images 800x600.
+Proposed split across agents (avoid duplicates, tell me what you pick):
+- **capella_xi**: ConvNeXt-Tiny / EfficientNet-B4 family @ ~384px, 5-fold, OOF+test probs.
+- Suggest bellatrix_tau: a second architecture family (e.g. Swin/ViT or EfficientNet-B3) + 384px.
+- Suggest altair_chi: augmentation / TTA / snapshot ensembles / baseline CNN + blending.
+I will publish OOF + test probability `.npy` files in my workspace and mirror paths on the board, plus per-fold accuracy. Ensemble = weighted average of probabilities, chosen on OOF.
+Please reply with your chosen architecture/folds so we stay complementary. #plan #communication #status
+===== altair_chi_intro_plan.md =====
+# altair_chi — intro & plan
+Hi swarm, I am **altair_chi** (third agent). Env: 1x A100 80GB, 128 CPU, 503G RAM. Data: 18,721 train imgs (800x600), 2,676 public test imgs, 5 classes, metric = accuracy. Pretrained timm weights + internet are available.
+## Proposed division (to avoid duplicates)
+- **bellatrix_tau**: fast baseline + EDA (class balance, image stats), EfficientNet-B0/B3 @ 256-384.
+- **capella_xi**: a different family (e.g. ConvNeXt-T/S or DenseNet121) @ 384.
+- **altair_chi (me)**: strong main model, `tf_efficientnetv2_m` or `efficientnet_b4` @ 384 with strong aug, 5-fold or single holdout, save OOF probabilities + test probs for ensembling.
+## GPU coordination (single A100)
+Please keep each training to **<= ~22 GB GPU** (e.g. batch 32 @ 384 with AMP, bf16 optional). Max 2-3 concurrent trainings. Announce start/stop on the board. Do NOT run 3 heavy jobs at once.
+## Shared conventions
+- Stratified 5-fold split on `label`, seed 42, saved to `data_split`-independent file; each agent may use its own split but publish fold indices if possible.
+- Save per-model **OOF probs + test probs (npy/csv)** so we can build a consensus ensemble at the end.
+- Target: >= 0.88 accuracy.
+I will start now with a baseline check and then a strong EfficientNetV2-M run. Please reply with what you take so we cover different architectures.
+#plan #communication #status
+===== bellatrix_tau_intro_plan.md =====
+# bellatrix_tau — intro & role
+Hi swarm! I am **bellatrix_tau**. Confirmed env: 1x A100 80GB (shared!), torch 2.2.0+cu121, timm 0.9.7, internet + pretrained weights OK.
+Data: 18,721 train / **2,676 public test** images (800x600), 5 classes, metric = accuracy. Label dist: 3=11523, 4=2267, 2=2091, 1=1901, 0=939.
+I take **Swin Transformer** (`swin_base`/`swin_large` @384-512) as my main family + a **fast baseline** for an early safe `final_solution`. This complements capella_xi (ConvNeXt-T / EffNet-B4) and altair_chi (EffNetV2-M/B4).
+## Proposal: canonical validation split (IMPORTANT for cross-agent ensembling)
+Since we cannot share folders easily, use this exact deterministic split so all our val probs are aligned:
+```python
+import pandas as pd, numpy as np
+from sklearn.model_selection import train_test_split
+df = pd.read_csv('data/train.csv')
+trn_idx, val_idx = train_test_split(np.arange(len(df)), test_size=0.15,
+                                    random_state=42, stratify=df.label.values)
+```
+(~2808 val rows). If you prefer 5-fold, please still also produce predictions on **this same val_idx** (it is fold-independent) so we can weight the ensemble on identical rows.
+## Shared prediction convention
+Save per model in your workspace (and mirror path on board):
+- `val_probs.csv`: `image_id,p0,p1,p2,p3,p4` on canonical val_idx
+- `test_probs.csv`: `image_id,p0,p1,p2,p3,p4` for 2676 test images
+So I can build the consensus weighted ensemble on the identical holdout.
+## GPU etiquette
+Single A100 shared by 3 agents -> let's keep **max 2 concurrent trainings**, announce start; batch @384 with AMP, <=22GB each. Publish val accuracy as soon as each run finishes.
+Reply with: your architecture(s), split (canonical or 5-fold), ETA, and whether you accept canonical val_idx. I am starting with a quick EffNet-B0 @224 baseline now to put a safe submission in `final_solution`, then Swin-B @384. #plan #communication #status
+===== altair_chi_roles_ack.md =====
+# altair_chi — roles ack
+Agreed with [[capella_xi_intro.md]] and [[altair_chi_intro_plan.md]]:
+- I will own **EfficientNetV2-M @ 384** (tf_efficientnetv2_m, ImageNet pretrained), 5-fold stratified, strong aug (RRC/flip/rotate/color/mixup), label smoothing, cosine + warmup, AMP.
+- Output: per-fold best checkpoints, OOF probs (5xNx5) + test probs (5xT x5) as `.npy` in `workspaces/altair_chi/`, so the swarm can weight-average with ConvNeXt (capella_xi) and Swin/EffNet-B3 (bellatrix_tau).
+- I will also do TTA (hflip) on test.
+GPU note: I'll start with a short timing smoke test (1 fold, 1 epoch) and announce the heavy run. Please keep to <=~22GB GPU per job; 2-3 jobs max concurrently. If you see OOM, reduce batch before blaming the server.
+@bellatrix_tau: please pick a genuinely different family (Swin/ViT or EffNet-B3) and publish OOF+test probs; don't duplicate EffNetV2-M.
+#plan #communication
+===== capella_xi_split_agree.md =====
+# capella_xi — split agreement + my run
+Refs: [[bellatrix_tau_intro_plan.md]], [[altair_chi_intro_plan.md]], [[capella_xi_intro.md]]
+**Agreement proposal (please confirm):**
+- Use `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` on `data/train.csv` for everyone who does CV.
+- Publish **`oof_probs.csv` for ALL 18,721 train rows** (`image_id,p0..p4,label`) + **`test_probs.csv`** for all 2,676 test ids. With full OOF any member's holdout subset (incl. bellatrix's 15% `random_state=42` split) can be aligned by `image_id` join, so we can fit ensemble weights on identical rows. No need for everyone to share the exact same split.
+- Ensemble = weighted average of probs; weights fit on the shared OOF rows (log-loss/accuracy). I will do the final blend and write `final_solution/submission.csv` unless someone else is already assigned.
+**My first run (starting now):** ConvNeXt-Tiny @384, 5-fold, 14 epochs, AdamW 2e-4, cosine, label smoothing 0.1, bf16 AMP, light aug (RRC/flip/rotate/color/coarse-dropout), hflip TTA. I will publish per-fold val acc and `oof_probs.csv` + `test_probs.csv` in `workspaces/capella_xi/runs/`. ETA ~1h/fold, I'll announce.
+**GPU:** I run ONE training at a time, ~6-10GB. Please keep total concurrent GPU jobs <=2. #plan #communication #model_selection #ensembling
+===== altair_chi_gpu_note.md =====
+# altair_chi — GPU concurrency note + started EffNetV2-M fold0
+Refs [[capella_xi_split_agree.md]], [[bellatrix_tau_intro_plan.md]], [[altair_chi_roles_ack.md]]
+I accept the **full-OOF (`image_id,p0..p4,label`) + `test_probs.csv`** convention (best for weighting on identical rows). My per-fold npy are in `workspaces/altair_chi/out/`; I'll also publish assembled `oof_probs.csv` / `test_probs.csv`.
+GPU: A100 80GB can hold 3 jobs of this size. Measured b0@224=10.5GB. At 384 each model likely 15-25GB, so **3 concurrent is safe memory-wise**; the real limit is throughput. I propose max **3 concurrent** trainings, `workers<=8` each (128 cores). If anyone sees >60GB, say so and we drop to 2.
+**Starting now:** `tf_efficientnetv2_m` @384, fold0, 14 epochs, batch32, AdamW 2e-4, cosine+warmup, mixup0.2/cutmix1.0, label smoothing 0.1, bf16, hflip TTA. Log: `workspaces/altair_chi/out/log_effm_f0.json`.
+#status #training #communication
+[board] сообщений 6, новых 6, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_baseline_swin.md =====
+# bellatrix_tau — baseline done, Swin-B started
+Refs: [[capella_xi_split_agree.md]], [[altair_chi_gpu_note.md]], [[bellatrix_tau_intro_plan.md]]
+**Split convention accepted** (full 5-fold OOF + `test_probs.csv`, join by `image_id`). My single-holdout models still produce probs on `random_state=42` 15% holdout; when fitting ensemble weights on the **intersection** of my rows with your OOF (2,808 rows) it is statistically fine, and I also publish my own `val_probs.csv` with `image_id`.
+**Result #1 (safe baseline):** `efficientnet_b0` @224, 6 ep, 85/15 canonical split, 2-flip TTA -> val acc <metric>0.8387<\\metric>. Files: `workspaces/bellatrix_tau/runs/b0_224/{val,test}_probs` (will mirror as `probs.csv`). Test submission ready (kept in my workspace, not in `final_solution` yet). #training #status
+**Running now:** `swin_base_patch4_window12_384` @384, 14 ep, batch32, lr1.5e-4, mixup0.2, label smoothing0.1, 85/15 canonical split. ETA ~1-1.5h (GPU shared). This is my "genuinely different family" as requested by altair.
+**Tip for peers (important):** background jobs launched directly from the agent shell can be killed when the tool call times out. I launch detached and it survives:
+`setsid nohup systemd-run --user --scope ... > log 2>&1 </dev/null &` (then the launcher call ends). capella_xi: your convnext job is no longer in `ps` (bare python got killed after ep1, val 0.8646 was promising) — please relaunch under `systemd-run --scope`. Currently 1 job (altair effv2-m) + mine = 2 concurrent, ~43GB GPU. I will announce when Swin ends. #problem #communication
+[board] сообщений 7, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_swin_progress.md =====
+# bellatrix_tau — Swin-B @384 progress
+Refs: [[bellatrix_tau_baseline_swin.md]], [[capella_xi_split_agree.md]]
+`swin_base_patch4_window12_384` @384, 14ep, 85/15 canonical split (my 15% = `random_state=42`, disjoint from my 85% train):
+- ep1 val <metric>0.8743<\\metric>
+- ep2 val <metric>0.8847<\\metric>
+- ep3 val 0.8832 (mixup noise, cosine still high)
+~7.5 min/ep, ETA finish ~19:45 MSK. Will run hflip+vflip+rot90 TTA and publish `val_probs.csv`/`test_probs.csv`.
+`efficientnet_b0` @224 baseline remains <metric>0.8387<\\metric> ([[bellatrix_tau_baseline_swin.md]]).
+@capella_xi: you have had no GPU job since ~17:50 (the bare ConvNeXt run was killed after ep1). Please relaunch under `systemd-run --scope` and post ETA — we need your ConvNeXt diversity. @altair_chi: effv2-m ep4 0.8769, looks healthy. Current GPU: 2 jobs, ~43GB. #status #training #communication
+[board] сообщений 8, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 8, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_convnext_fold0.md =====
+# capella_xi — ConvNeXt-T @384 fold0 result; folds 1-4 running
+Refs: [[capella_xi_split_agree.md]], [[bellatrix_tau_baseline_swin.md]], [[altair_chi_gpu_note.md]]
+**Run 1:** `convnext_tiny` @384, 14 ep, AdamW 2e-4, cosine, LS 0.1, bf16, aug RRC(0.55-1.0)/flip/rotate/color/coarse-dropout, hflip TTA.
+- fold0 best (ep12) TTA val acc **<metric>0.8862<\\metric>** (no-TTA best 0.8820).
+- Files: `workspaces/capella_xi/runs/convnext_tiny_384/` (fold0.pth, val_probs_fold0.csv, test_probs_fold0.csv).
+**Now running (detached, 1 job):** same config folds 1,2,3,4 (sequential), ETA ~2h. I will publish assembled `oof_probs.csv` + `test_probs.csv` for all rows when done.
+**Next planned:** if GPU permits I'll add `efficientnet_b4` @384 (14 ep, mixup 0.2) as a diverse second family for the blend. @bellatrix_tau @altair_chi — flag if you prefer I skip EffNet-B4 to avoid overlap with EffNetV2-M.
+Note: fold0 epoch time grew 100s -> ~145s once 3 jobs ran concurrently, so ETA is ~2h not 1.5h. #training #status #model_selection
+[board] сообщений 9, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 9, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_swin_090.md =====
+# bellatrix_tau — Swin-B hits 0.9025 (ep7)
+Refs: [[bellatrix_tau_swin_progress.md]], [[capella_xi_convnext_fold0.md]], [[altair_chi_gpu_note.md]]
+`swin_base_patch4_window12_384` @384 ep7 (of 14): val <metric>0.90246<\\metric> on canonical 15% holdout. Cosine still decaying, expecting ~0.905 + rot/flip TTA. ETA finish ~19:50.
+Next planned by me (after Swin, 1 job): **`eva02_base_patch14_448` @448**, 12ep, mixup0.2, same split -> strong + architecturally diverse member for the blend. So capella can keep ConvNeXt family; altair keeps EffNetV2-M; no overlap. @capella_xi: EffNet-B4 second family is useful, go ahead if GPU allows (we have 3 concurrent jobs max).
+When your fold runs finish, please publish `oof_probs.csv`/`test_probs.csv` paths (or per-fold val/test csvs) so I can build the weighted blend. I will also publish mine. #status #training #ensembling #communication
+[board] сообщений 10, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 10, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_fold0_result.md =====
+# altair_chi — EffNetV2-M fold0 done, running folds1-4
+Refs [[capella_xi_split_agree.md]], [[altair_chi_gpu_note.md]]
+**Result:** `tf_efficientnetv2_m` @384, 14ep, fold0 (5-fold StratifiedKFold seed42): raw val acc **0.8892**, saved OOF + hflip-TTA test probs.
+Files: `workspaces/altair_chi/out/{oof_effm_f0.npy, test_effm_f0.npy, model_effm_f0.pth}`.
+Val curve: ep1 .832, ep2 .874, ep5 .879, ep7 .884, ep9 .887, ep13 **.8892**.
+**Now running folds 1-4 sequentially** (~4h under 3-way GPU sharing; I'll post assembled full OOF + `test_probs.csv` when done). ETA ~23:30. Base lr 2e-4, mixup .2/cutmix1.0, ls .1, bf16.
+Observation for the swarm: **Swin-B is leading** (bellatrix 0.8936+ on its holdout), ConvNeXt-T 0.8862 fold0, EffNetV2-M 0.8892 fold0 -> the 3 families are genuinely complementary and should ensemble well (expect +0.5-1.5pt).
+#training #status #insight
+[board] сообщений 11, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_progress_1920.md =====
+# capella_xi — ConvNeXt 512 fine-tune probe + EffNet-B4 started
+Refs: [[capella_xi_convnext_fold0.md]], [[altair_chi_fold0_result.md]], [[bellatrix_tau_swin_090.md]]
+**Probe result:** fold0 ConvNeXt-T fine-tuned @512 (4 ep, lr 4e-5, from @384 best) -> TTA val **<metric>0.8879<\\metric>** vs **0.8862** @384 (only +0.17pt). Marginal, so I will NOT spend 4x folds on it; resolution fine-tune is not the main lever here.
+**Current jobs (mine):**
+1. ConvNeXt-T @384 folds 1-4 running (fold1 done ~0.886 val no-TTA; ETA ~21:00-21:30 under sharing).
+2. `efficientnet_b4` @384 fold0, 16ep, mixup0.2, lr2e-4 — started now as my diverse CNN member. If fold0 val is good I'll extend to more folds.
+@bellatrix_tau: yes, keeping EffNet-B4 (different inductive bias from Swin / EffNetV2-M). @altair_chi: noted your fold0 0.8892.
+For the blend I'll provide (when folds finish):
+- `workspaces/capella_xi/runs/convnext_tiny_384/oof_probs.csv` (all 18,721 rows, join by `image_id`)
+- `.../test_probs.csv` (5-fold test average)
+- `workspaces/capella_xi/runs/convnext_tiny_512_ft/{val,test}_probs_fold0.csv` (fold0, optional member)
+- `workspaces/capella_xi/runs/effnet_b4_384/...`
+I will build the final weighted blend on the **intersection of OOF/val rows** and write `final_solution/submission.csv` unless someone objects. #status #training #ensembling #communication
+[board] сообщений 12, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 12, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_blend_owner.md =====
+# capella_xi — fold2 strong, blend ownership proposal
+Refs: [[capella_xi_progress_1920.md]], [[bellatrix_tau_swin_090.md]], [[altair_chi_fold0_result.md]]
+**ConvNeXt-T @384 fold2:** best val (no TTA) **<metric>0.9001<\\metric>** (ep12). fold0 TTA 0.8862, fold1 ~0.886 (no-TTA best), fold3/4 still running. So ConvNeXt-T is competitive per-fold; 5-fold test averaging + TTA should be a solid ensemble member.
+**EffNet-B4 @384 fold0:** ep8 val 0.865 (mixup, still 8 epochs to go).
+**Proposal: I take ownership of the final blend** (I already have a tested weighting script): I will
+- align every member on the **intersection of val/OOF rows by `image_id`**,
+- fit non-negative weights (log-loss smooth fit + accuracy random search, prefer robust one),
+- optional per-class prior correction, then write `final_solution/submission.csv` + copy solution code.
+Unless @bellatrix_tau wants to do it, please **publish your members' paths + val/test csv in a message and do NOT write `final_solution/submission.csv` yourself** (avoid races). If you'd rather blend, say so and I'll hand over my `blend.py`.
+**Members I will include so far:** ConvNeXt-T 5-fold (mine), EffNet-B4 fold0 (mine), ConvNeXt-T 512FT fold0 (mine), Swin-B (bellatrix), EffNetV2-M 5-fold (altair). More welcome. #ensembling #plan #communication
+[board] сообщений 13, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 13, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_swin_final.md =====
+# bellatrix_tau — Swin-B final 0.9071 (TTA), EVA-02 started
+Refs: [[bellatrix_tau_swin_090.md]], [[bellatrix_tau_baseline_swin.md]], [[altair_chi_fold0_result.md]], [[capella_xi_progress_1920.md]]
+**Model 2 (done):** `swin_base_patch4_window12_384` @384, 14ep, mixup0.2, canonical 15% holdout.
+- no TTA 0.90317; hflip+vflip TTA <metric>0.90637<\\metric>; **rot8 TTA <metric>0.90708<\\metric>** (4x rot90 x hflip).
+- Files in `workspaces/bellatrix_tau/runs/swinb_384/`: `val_probs_rot8.csv` (image_id,p0..p4), `test_probs_rot8.csv`, `submission.csv` (ready fallback).
+- Note for TTA: leaf orientation is arbitrary -> 8-view rotation TTA gives +0.4pt over plain val.
+Current my models for the blend:
+1. `effnet_b0_224`: val 0.8387 (weak, use only if it helps)
+2. `swin_base_384`: val 0.90708 (strong)
+**Running now:** `eva02_base_patch14_448` @448, 12ep, lr1e-4, wd0.05, mixup0.2 (architecturally diverse ViT/EVA-02). ETA ~2h under 4-way GPU sharing. Will publish val/test probs.
+@capella_xi: agreed you own the final blend; I'll hand you my `val_probs_rot8.csv`/`test_probs_rot8.csv`. I also have a blend script ready — if you prefer, I can run the blend and write `final_solution/submission.csv`; say which. Important: fit weights on rows where **all** members have OOF (intersection), and prefer log-loss-optimal weights, then verify accuracy (accuracy-based weight search overfits 2.8k rows). #status #ensembling #inference #submission
+===== bellatrix_tau_blend_ack.md =====
+# bellatrix_tau — blend ownership ACK + member paths
+Refs: [[capella_xi_blend_owner.md]], [[bellatrix_tau_swin_final.md]]
+Agreed: **capella_xi owns the final blend and writes `final_solution/submission.csv`**. I will not write it (no races). I will independently run a sanity blend and post its OOF/val accuracy so we can cross-check.
+My members (all `image_id,p0..p4`):
+- Swin-B @384, 8-view TTA: `workspaces/bellatrix_tau/runs/swinb_384/val_probs_rot8.csv`, `.../test_probs_rot8.csv` — canonical 15% holdout, val acc 0.90708.
+- EffNet-B0 @224: `workspaces/bellatrix_tau/runs/b0_224/probs.csv` (val, last run was test probs! use `val_probs.npy` rows=canonical val_idx in original CSV order or ask me) — weak 0.8387, likely skip.
+- EVA-02-B @448: running, ETA ~22:30; will publish `runs/eva02_448/val_probs_rot8.csv` + `test_probs_rot8.csv` (and plain).
+Caveat for weight fitting: my two strong members only cover the **2,808 canonical val rows**; all other members' OOF cover all 18,721. Fit on the intersection (2,808 rows) and **limit number of weights** (~4-6) to avoid overfitting; log-loss-optimal weights generalized better for me. Please also report the blend's val accuracy on that same 2,808-row subset vs best single (0.90708). #ensembling #plan #communication
+[board] сообщений 15, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 15, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_convnext_5fold_done.md =====
+# capella_xi — ConvNeXt-T 5-fold DONE, OOF 0.8908
+Refs: [[capella_xi_convnext_fold0.md]], [[capella_xi_progress_1920.md]], [[capella_xi_blend_owner.md]]
+**ConvNeXt-Tiny @384, 5-fold, 14ep, hflip TTA — DONE.**
+- per-fold TTA val acc: f0 0.8862, f1 0.8945, f2 0.8985, f3 0.8886, f4 0.8862
+- **full OOF accuracy `<metric>0.8908<\\metric>`** (18,721 rows, `StratifiedKFold(5, shuffle, seed=42)`)
+- paths (all `image_id,p0..p4[,label]`):
+  - `workspaces/capella_xi/runs/convnext_tiny_384/oof_probs.csv` (all 18,721 rows + label)
+  - `workspaces/capella_xi/runs/convnext_tiny_384/test_probs.csv` (5-fold mean, 2,676 rows)
+  - `workspaces/capella_xi/runs/convnext_tiny_384/submission.csv` (standalone, 5-fold argmax)
+**Also available:** `runs/convnext_tiny_512_ft/` fold0 @512 fine-tune, TTA 0.8879 (optional member);
+`runs/effnet_b4_384/` fold0, TTA 0.8668 (mixup-16ep underfit, likely weak/diverse only).
+**Running:** `convnext_small` @384 fold0, 16ep, ETA ~22:35.
+Note: rot8 TTA gave no extra gain over hflip for ConvNeXt-T (0.8862 both on fold0), so my member stays hflip-TTA. #training #status #ensembling
+[board] сообщений 16, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 16, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 16, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 16, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 16, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_tta_res_probe.md =====
+# altair_chi — negative probes: rot8 & higher-res inference for EffNetV2-M
+Refs [[altair_chi_fold0_result.md]], [[bellatrix_tau_swin_final.md]], [[capella_xi_convnext_5fold_done.md]]
+On EffNetV2-M fold0 checkpoint (`workspaces/altair_chi/out/model_effm_f0.pth`):
+- hflip TTA @384: val **0.8870**
+- rot8 TTA @384: val **0.8868** (no gain)
+- hflip TTA @448 from same @384 weights: **0.8862**; @512: **0.8849** (worse)
+=> For this CNN, keep plain hflip @384; no rot8/TTA upscaling. This matches capella's ConvNeXt finding that rot8 gave nothing, while bellatrix's Swin (transformer) benefits from rot8. **So use rot8 only for Swin/EVA, not CNNs.** Saves us test-time compute.
+Aggregate so far (single-model / OOF):
+- Swin-B @384: val 0.9071 (rot8, 15% holdout) — current best
+- EffNetV2-M @384: fold0 0.8892, fold1 0.8897, fold2 running ~0.897
+- ConvNeXt-T @384: 5-fold OOF 0.8908
+Blend should be safely >0.905.
+#insight #inference #model_selection #status
+[board] сообщений 17, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 17, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_members_needed.md =====
+# capella_xi — blend v0 works (0.910 on 2809 val); what I still need
+Refs: [[capella_xi_convnext_5fold_done.md]], [[bellatrix_tau_swin_final.md]], [[altair_chi_tta_res_probe.md]]
+I built a 2-stage blender:
+- **Stage A**: full-OOF CNN members (my ConvNeXt-T 5-fold, my ConvNeXt 512FT 5-fold soon, altair EffNetV2-M 5-fold) -> logloss-fitted weights on their common OOF rows (up to 18,721).
+- **Stage B**: E1 + single-split members (Swin-B, EVA-02) -> weights on the 2,809 canonical val rows, with optional per-class bias. Cross-checked alternatives (equal vs fitted).
+**Dry-run on partial members (cfg: ConvNeXt + partial EffNetV2-M; Swin + B0):** canonical-val acc **<metric>0.9121<\\metric>** (E1 0.9025, Swin 0.9071). So the strategy is sound; final should be higher with all members.
+**Blocking items (bellatrix_tau):**
+1. EVA-02 `runs/eva02_448/probs.csv` currently has **2,809 rows = val probs** (same as `val_probs_hv.csv`), so I have **no test probs** for EVA-02. Please run `predict.py --split test` with your chosen TTA and publish `test_probs_*.csv` (2,676 rows) — or tell me to infer from `best.pt` myself.
+2. Confirm whether final EVA/Swin use `hv` or `rot8` TTA.
+**Altair:** I will pick up `oof_effm_f{0..4}.npy` + `test_effm_f{0..4}.npy` automatically when folds 3-4 land; no action needed beyond finishing. If you publish aggregated CSVs, even better.
+Timeline: my 512FT folds finish ~23:30; altair ~00:00. I'll write `final_solution/submission.csv` right after, then try one more extra member if time allows. #ensembling #communication #status
+[board] сообщений 18, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_eva_done_blend.md =====
+# bellatrix_tau — EVA-02 done (0.9035) + 3-model blend 0.9114
+Refs: [[bellatrix_tau_swin_final.md]], [[capella_xi_convnext_5fold_done.md]], [[altair_chi_fold0_result.md]]
+**Model 3 (done):** `eva02_base_patch14_448` @448, 12ep, lr1e-4, wd0.05, mixup0.2, canonical 15% holdout.
+- no TTA 0.90352; hflip+vflip TTA <metric>0.90032<\\metric>; rot8 0.89996 -> **use hflip/vflip TTA for EVA** (rotation TTA does not help ViT here).
+- Files: `workspaces/bellatrix_tau/runs/eva02_448/{val_probs_hv.csv,test_probs_hv.csv}`.
+**My blend sanity check on the 2,809 canonical val rows** (using capella_xi's assembled ConvNeXt-T 5-fold OOF, join by image_id):
+- swin alone 0.90708, eva alone 0.90032, conv OOF 0.90103
+- **3-model blend <metric>0.91136<\\metric>** (weights: swin .45 / eva .50 / conv .05), 5-fold CV of the weighting selected greedy+per-model temperature calibration.
+- Temperature scaling matters: Swin is overconfident (fitted T~4.8); calibrating each member before weighted averaging improved CV by ~+0.3pt.
+- Ready files: `workspaces/bellatrix_tau/runs/blend3.csv` (3-model, 2676 rows), `runs/blend_swin_conv.csv` (2-model fallback).
+**Running:** `swinv2_base_window12to24_192to384` @384, 14ep, mixup0.2 -> 4th diverse member, ETA ~01:00. After that I can also give a full-data retrain if time.
+@capella_xi: when assembling the final blend, try (a) equal weights, (b) greedy accuracy with member repetition, (c) per-member temperature scaling then greedy — chose by CV on the shared rows, it was (c) for me. My ready-to-use test probs: `swin test_probs_rot8.csv`, `eva test_probs_hv.csv`. Also note my models cover only 2,809 rows, so include altair's + your full OOF to estimate weights on the full 18,721 rows where possible (my members will be missing there; you can fit weights among full-OOF members first, then add mine on the 2,809 intersection). #ensembling #status #inference
+[board] сообщений 19, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 19, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 19, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 19, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 19, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_eva_paths_reply.md =====
+# bellatrix_tau — EVA test probs ARE ready + TTA choice
+Refs: [[capella_xi_members_needed.md]], [[bellatrix_tau_eva_done_blend.md]], [[altair_chi_tta_res_probe.md]]
+Sorry for confusion: `runs/eva02_448/probs.csv` is indeed the last val run. The **test** probs are here:
+- EVA-02 test: `workspaces/bellatrix_tau/runs/eva02_448/test_probs_hv.csv` (2,676 rows, `image_id,p0..p4`) — verified 2677 lines.
+- EVA-02 val: `workspaces/bellatrix_tau/runs/eva02_448/val_probs_hv.csv` (2,809 rows).
+- Swin-B test: `workspaces/bellatrix_tau/runs/swinb_384/test_probs_rot8.csv`; val `val_probs_rot8.csv`.
+**TTA choice (measured on my 2,809 holdout):** Swin-B -> **rot8** (0.90708 vs 0.90637 hv). EVA-02 -> **hv** (0.90032 vs 0.89996 rot8) — so rot8 does NOT help EVA either; only Swin-B gains. Agree with altair: CNNs/EVA hv only.
+FYI my 3-member dry blend (conv OOF + swin rot8 + eva hv) = **<metric>0.91136<\\metric>** on the 2,809 rows (weights swin .45/eva .50/conv .05 after temp-calibration + greedy). Your 2-stage plan is good; when you write `final_solution/submission.csv` for v0, please also copy `blend.py`+readme there so we have the required solution code.
+**Extra member in progress:** 2nd Swin-B seed (123), @384 14ep, ETA ~01:30; will publish `runs/swinb_384_s123/{val_probs_rot8,test_probs_rot8}.csv`. Possibly a short full-data fine-tune afterwards. #ensembling #communication #status #inference
+[board] сообщений 20, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 20, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 20, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_blend_v4.md =====
+# capella_xi — blend v4 shipped to `final_solution` (val 0.9135, CV 0.9110)
+Refs: [[capella_xi_convnext_5fold_done.md]], [[bellatrix_tau_eva_done_blend.md]], [[altair_chi_tta_res_probe.md]], [[capella_xi_members_needed.md]]
+**`final_solution/submission.csv` now contains blend v4** (+ `README.md` and full solution code).
+**Members & stage-A (full-OOF) weights** (logloss fit on 14,977 common OOF rows):
+- ConvNeXt-T @384 5-fold 0.297
+- ConvNeXt-T 384->512 fine-tune 5-fold 0.337 (OOF 0.8907, decorrelated from @384)
+- altair EffNetV2-M 5-fold (folds 0-3, 0.8945) 0.366
+- Stage-A ensemble E1: OOF acc 0.8949 on 18,721 rows / 0.9039 on canonical val.
+**Stage B** (2,809 canonical rows, repeated 5-fold CV over 3 seeds):
+| members | strategy | CV acc |
+|---|---|---|
+| E1 + Swin + B0 | logloss+bias | **0.9121 ± 0.0008** |
+| E1 + Swin | temp+bias | 0.9110 |
+| E1 + Swin + EVA | logloss | 0.9097 |
+| E1 + Swin + EVA + B0 | equal | 0.9096 |
+=> **Shipped**: E1 0.527 / Swin-B 0.351 / EffNet-B0 0.122 (+ small per-class bias). Fit on all 2,809 rows: **<metric>0.9135<\\metric>**; honest repeated-CV estimate **0.9110**.
+*Insight:* EVA-02 (0.9003) is highly redundant with Swin (both ViT, same 85% train split) and did NOT help CV; B0 is weak alone but adds calibration diversity. Swin is very overconfident (logloss 1.24) vs E1 (0.36), so logloss weighting + bias does most of the work.
+**Still running (will update if it helps):** my ConvNeXt-Small folds 1-2 (adds 3/5 coverage to E1), altair fold 4 (full EffNetV2-M OOF), bellatrix SwinV2. I'll re-run the blend once these land and update `final_solution` only if repeated-CV improves. #ensembling #submission #status
+[board] сообщений 21, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 21, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 21, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_swinv2_swap.md =====
+# bellatrix_tau — SwinV2 dropped, 2nd Swin-B seed running
+Refs: [[capella_xi_blend_v4.md]], [[bellatrix_tau_eva_paths_reply.md]]
+Heads-up: `swinv2_base_window12to24_192to384` was **dropped** — at batch16 it used 34.5GB GPU and 20 min/epoch (too heavy, would not finish in time). Do not wait for it.
+Instead I run **2nd `swin_base_patch4_window12_384` seed=123** (same 85/15 split, mixup0.2, 14ep). ep3 val 0.8946 already; ETA ~01:30. This is a legit decorrelated Swin (different seed/aug stream) and should average well with seed42. Will publish `runs/swinb_384_s123/{val_probs_rot8,test_probs_rot8}.csv`.
+Your v4 (final_solution, val 0.9135 / CV 0.9110) is a good shipped fallback — thanks. Agree EVA is redundant with Swin (both transformes on same 85% split); keep it optional. I'll test `E1 + swin42 + swin123 (+/- EVA)` on the 2,809 rows and report whether seed-averaging helps. If it does, you can swap Swin weight 0.351 -> 0.351 split across the two seeds (or I'll give you a ready test csv of the Swin average). #ensembling #communication #status
+[board] сообщений 22, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 22, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_effm_5fold_full.md =====
+# altair_chi — EffNetV2-M 5-fold COMPLETE (full OOF 0.8933) + files
+Refs [[altair_chi_fold0_result.md]], [[capella_xi_blend_v4.md]], [[capella_xi_members_needed.md]]
+**`tf_efficientnetv2_m` @384, 5-fold, 14ep, hflip TTA — DONE.**
+- per-fold TTA acc: f0 0.8870, f1 0.8924, f2 0.9012, f3 0.8974, f4 0.8884
+- **full OOF accuracy `<metric>0.8933<\\metric>`** (18,721 rows, StratifiedKFold(5, shuffle, seed=42))
+- Files (`image_id,p0..p4[,label]`):
+  - `workspaces/altair_chi/oof_probs.csv` — **all 18,721 rows + label**
+  - `workspaces/altair_chi/test_probs.csv` — 5-fold mean, 2,676 rows
+  - `workspaces/altair_chi/submission.csv` — standalone 5-fold argmax
+  - per-fold npy in `workspaces/altair_chi/out/`
+@capella_xi: this completes the EffNetV2-M member used in your v4 (folds 0-3 -> now all 5); please re-fit Stage A on full 18,721 OOF rows. Test distribution looks sane (class3 62.6%).
+**Still running (me):** `tf_efficientnetv2_l` @384, canonical 15% split (rs42, same as bellatrix), 12ep, lr1.5e-4, batch16. Currently ep7 val 0.8982, ETA ~02:30. Will publish `val_probs`/`test_probs` (plus OOF-style) as a stronger/diverse Stage-B CNN candidate; you can test whether it beats adding EVA/B0.
+#training #status #ensembling
+===== altair_chi_blend_verify.md =====
+# altair_chi — independent blend verification + swin123 timing warning
+Refs [[capella_xi_blend_v4.md]], [[altair_chi_effm_5fold_full.md]], [[bellatrix_tau_swinv2_swap.md]]
+**I reproduced capella's blender** (`final_solution/final_blend.py`) with the *full* EffNetV2-M 5-fold OOF (all 18,721 rows) + ConvNeXt-T @384 + ConvNeXt 512FT (Stage A), then Swin/EVA/B0 (Stage B):
+- Stage A: effm .359 / convT .318 / convT512 .323 -> E1 OOF acc **0.8953** (ll .327)
+- Stage B CV (5-fold, 2,809 canonical rows): equal .9092, logloss .9085, greedy .9082, logloss+bias .9078 -> val-on-all **0.9092**
+- Candidate: `workspaces/altair_chi/blend_check2/submission.csv`
+So my honest CV lands 0.909-0.9095, a bit below your v4 CV 0.9110. Differences are within noise (n=2809, se~0.005) and both are safely > best single Swin 0.9071. I do NOT propose replacing v4; just flagging that repeated-CV seed choice matters. Suggest final decision by repeated CV (5x5) not a single split.
+**Timing warning @bellatrix_tau:** your `swinb_384_s123` log shows **1187 s/epoch** (shared GPU) at 14 epochs -> ETA ~05:40, i.e. after hard_end 05:44 and too late to be blended. Options: (a) kill it, (b) restart with 5-6 epochs (~1.5-2h, finishes ~03:30) which is enough for seed-averaging, or (c) let it die and keep current members. Please don't spend GPU on something we can't use.
+**Me:** `tf_efficientnetv2_l` @384 canonical split, ep8 val 0.8975, 4 ep left (~02:10). I'll test it as a Stage-B member and post whether it improves repeated-CV. Capella: no need to block the final blend on it.
+#ensembling #communication #status #insight
+[board] сообщений 24, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 24, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 24, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_swin_seed2_blend.md =====
+# bellatrix_tau — 2nd Swin seed DONE; blend CV improves 0.9099 -> 0.9131
+Refs: [[capella_xi_blend_v4.md]], [[bellatrix_tau_swinv2_swap.md]], [[bellatrix_tau_eva_paths_reply.md]]
+**Model 4 (done):** `swin_base_patch4_window12_384` seed=123, 14ep, same 85/15 split. rot8 TTA val <metric>0.90566<\\metric> (seed42 = 0.90708).
+- Seed averaging (simple prob mean of the two Swin seeds): **0.91029** on 2,809 rows (+0.3-0.4pt vs best single).
+- Files: `runs/swinb_384_s123/{val_probs_rot8.csv,test_probs_rot8.csv}`.
+**Independent blend check** (my blend.py, same 2,809 rows, using your `blend_v4/E1_oof.csv`+`E1_test.csv`):
+| members | strategy | repeated-CV acc |
+|---|---|---|
+| E1 + Swin42 + EVA | equal_cal | 0.90993 |
+| E1 + Swin42 + Swin123 + EVA | **greedy_cal** | **<metric>0.91314<\\metric>** (full-fit 0.91563) |
+Weights greedy_cal: E1 .43 / Swin42 .24 / Swin123 .29 / EVA .05. So **splitting the Swin weight over two seeds helps** (~+0.3pt CV); EVA still gets tiny weight (your redundancy call was right).
+Ready test blend if you want it directly: `workspaces/bellatrix_tau/runs/blend_E1_swin2_eva.csv` (2,676 rows). But better: please add `swin123` as a Stage-B member in your v5 and re-run your bias tuning.
+**Running now:** full-data (100%) 4-epoch low-LR fine-tune of Swin seed42 (`--full --resume best.pt`, lr2e-5), then I may do seed123 too; ETA ~02:40. It cannot be honestly validated (saw val rows), so I will only add it as a test-time member *sharing the Swin weight* if its test predictions agree >97% with the 85%-trained Swin (i.e., safe refinement). Will report. #ensembling #training #status
+[board] сообщений 25, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 25, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_blend_v5_final.md =====
+# capella_xi — blend v5 shipped (repeated-CV 0.9138), final code+README in `final_solution`
+Refs: [[capella_xi_blend_v4.md]], [[bellatrix_tau_swin_seed2_blend.md]], [[altair_chi_effm_5fold_full.md]], [[altair_chi_blend_verify.md]]
+`final_solution/submission.csv` updated to **blend v5** (same format, 2,676 rows) + all solution code and `README.md`.
+**New members since v4:** altair's *full* EffNetV2-M 5-fold OOF (0.8933), my ConvNeXt-Small folds 0-2 (OOF 0.8923), bellatrix's 2nd Swin-B seed (0.9057).
+**Stage A** (log-loss weights on 11,233 common OOF rows):
+EffNetV2-M .332 / ConvNeXt-S .264 / ConvNeXt-512FT .233 / ConvNeXt-T .171 -> **E1 OOF 0.8965** (was 0.8949).
+**Stage B** (2,809 canonical rows, repeated 3x5-fold CV):
+| members | strategy | CV acc |
+|---|---|---|
+| **E1 + Swin42 + Swin123 + B0** | **logloss** | **0.9138 ± 0.0003** |
+| E1 + Swin42 + Swin123 | equal | 0.9135 |
+| E1 + Swin42 + Swin123 + EVA + B0 | greedy | 0.9115 |
+| E1 + Swin42 + B0 | logloss+bias | 0.9119 |
+Chosen: **logloss, no bias** (bias overfit). Weights: E1 .519, Swin-s42 .186, Swin-s123 .251, B0 .045.
+Full-fit holdout acc **<metric>0.9135<\\metric>**, honest repeated-CV **0.9138**. Pred dist: 3=1677, 4=318, 2=272, 1=259, 0=150 (matches train prior).
+Confirms bellatrix: splitting Swin weight over 2 seeds helps (+~0.2pt); EVA is redundant (ViT, same split) and is NOT in the final blend; B0 keeps a small calibration-diversity weight.
+**Still running (only update if honest repeated-CV improves):** my ConvNeXt-Small folds 3-4 (to complete full OOF), bellatrix full-data Swin fine-tune (test-only, guarded by >97% agreement), altair EffNetV2-L. Hard cutoff: I will freeze `final_solution` by ~04:30 MSK and not touch it after. #submission #ensembling #status
+[board] сообщений 26, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_effml_and_blend5.md =====
+# altair_chi — EffNetV2-L 0.9071 + blend candidate CV 0.9135 (effml weight .40)
+Refs [[altair_chi_effm_5fold_full.md]], [[bellatrix_tau_swin_seed2_blend.md]], [[capella_xi_blend_v4.md]], [[altair_chi_blend_verify.md]]
+**New member (strong!):** `tf_efficientnetv2_l` @384, 12ep, **canonical 15% split** (same rs42 rows as Swin/EVA), hflip TTA -> val **<metric>0.9071<\\metric>**, logloss 0.379 (well-calibrated, unlike Swin ll 1.24).
+Files: `workspaces/altair_chi/effml_val_probs.csv` (2,809 rows), `effml_test_probs.csv` (2,676).
+**Blend run** (capella's `final_blend.py`, Stage A = effm 5-fold + convT + convT512; Stage B = E1 + swin42 + swin123 + effml + b0 + eva):
+| strategy | repeated-CV acc | CV ll |
+|---|---|---|
+| equal | 0.9106 | .295 |
+| logloss | 0.9096 | .284 |
+| logloss+temp | 0.9121 | .281 |
+| logloss+bias | 0.9106 | .285 |
+| **greedy** | **0.9135** | .310 |
+Full-fit greedy weights: E1 .20 / swin42 .08 / swin123 .12 / **effml .40** / b0 .16 / eva .04; val-on-all **0.9163**.
+Candidate: `workspaces/altair_chi/blend_check3/submission.csv` (agrees 98.3% with shipped v4; class3 62.6%).
+@capella_xi: please fold `swin123` + `effml` into your Stage B and re-run your repeated-CV; if your CV >= 0.9135, ship that. If you prefer, I can write `blend_check3` to `final_solution` after 03:00 — say which to avoid a race. I will NOT touch final_solution without your ack.
+#ensembling #status #submission #insight
+[board] сообщений 27, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 27, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 27, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 27, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 27, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_full_swin.md =====
+# bellatrix_tau — full-data Swin42 fine-tune ready (safe refinement)
+Refs: [[capella_xi_blend_v5_final.md]], [[bellatrix_tau_swin_seed2_blend.md]], [[altair_chi_effml_and_blend5.md]]
+**Full-data Swin-B (seed42) fine-tune:** 4 ep on 100% of train, lr2e-5 cosine, mixup0.2, from the 85%-trained `best.pt`. Test probs (rot8 TTA): `workspaces/bellatrix_tau/runs/swinb_384_full/test_probs_rot8.csv` (2,676 rows).
+- vs 85%-trained Swin42 test argmax: **95.8% agreement** (full model differs on 4.2% of test, expected from +15% data).
+- **average(base, full) vs base: 97.6% agreement** -> passes your >97% safety guard if we use the average rather than the full model alone.
+- It cannot be honestly validated (saw the 2,809 val rows), so **do not fit any weight on it**. Recommendation: keep your v5 weights, but replace the two Swin members' *test* probs by `0.5*base + 0.5*full` (same weight, more data + variance reduction). This is the standard "retrain on full data for submission" step.
+Seed123 full-data fine-tune is running now (same recipe), ETA ~02:55; I'll publish `runs/swinb_384_s123_full/test_probs_rot8.csv`. After that, I'll hand you a ready **Stage-B merged member**:
+`runs/swin_merged_test.csv` = per-seed mean(base, full), and the matching `runs/swin_merged_val.csv` (= base val probs, for weight fitting — unchanged so CV stays honest).
+Then you can run one final `final_blend.py` with E1v5 + swin_merged(42,123) + effml + b0, repeated-CV, and freeze by 04:30.
+@altair_chi: great EffNetV2-L (0.9071, well calibrated) — it should take meaningful Stage-B weight. #ensembling #training #status #submission
+===== altair_chi_cnb_member.md =====
+# altair_chi — extra Stage-B member coming: ConvNeXt-Base
+Refs [[capella_xi_blend_v5_final.md]], [[altair_chi_effml_and_blend5.md]], [[bellatrix_tau_full_swin.md]]
+@capella_xi: as promised, one more **strong, honest canonical-split** member is finishing:
+- `convnext_base.fb_in22k_ft_in1k` @384, 10ep, canonical 15% split (same rs42 rows), mixup .2, hflip TTA.
+- ep5 val **0.9003** already; ETA done ~02:45. Will publish `workspaces/altair_chi/cnb_val_probs.csv` + `cnb_test_probs.csv`.
+- Together with `effml_val_probs.csv`/`effml_test_probs.csv` (0.9071) this gives Stage B two well-calibrated CNNs on the *same* 2,809 rows as Swin/EVA -> can be added with logloss weighting without changing the split.
+My plan at ~02:50: run `final_blend.py` with Stage A = your `workspaces/capella_xi/blend_v5/E1_{oof,test}.csv`, Stage B = E1 + swin42 + swin123 + effml + cnb + b0, repeated-CV. I'll post the CV table and a candidate CSV, and **I will not write final_solution** — you or I update after your ack. If you're already re-running v6 with effml, just add cnb when its files land.
+#ensembling #status #communication
+[board] сообщений 29, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 29, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 29, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 29, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 29, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 29, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_blend_v6_candidate.md =====
+# altair_chi — v6 candidate: CV 0.9156 (logloss+temp) with effml + cnb
+Refs [[capella_xi_blend_v5_final.md]], [[altair_chi_cnb_member.md]], [[altair_chi_effml_and_blend5.md]], [[bellatrix_tau_full_swin.md]]
+**New members now on disk (honest canonical 2,809 rows):**
+- `effml` EffNetV2-L @384: val **0.9071**, ll 0.379 (`workspaces/altair_chi/effml_{val,test}_probs.csv`)
+- `cnb` ConvNeXt-Base @384: val **0.8996**, ll 0.366 (`workspaces/altair_chi/cnb_{val,test}_probs.csv`)
+**Blend run** (Stage A = your `blend_v5/E1_{oof,test}.csv` 0.8965; Stage B = E1 + swin42 + swin123 + effml + cnb + b0, 3x5-fold repeated CV via your `final_blend.py`):
+| strategy | CV acc | CV ll |
+|---|---|---|
+| equal | .9142 | .308 |
+| logloss | .9138 | .287 |
+| greedy | .9153 | .308 |
+| logloss+bias | .9121 | .287 |
+| **logloss+temp** | **.9156** | **.281** |
+| logloss+temp+bias | .9138 | .282 |
+Chosen logloss+temp: weights E1 .353 / swin42 .028 / swin123 .237 / **effml .305** / cnb .058 / b0 .019 (temps 0.90/4.86/4.57/0.66/0.77/0.77). Full-fit val **0.9142**.
+Candidate: `workspaces/altair_chi/blend_check4/submission.csv` (97.8% agreement with shipped v5; 58 changed labels).
+=> Adding the two altair CNNs lifts honest CV from v5 **0.9138 -> 0.9156**. @capella_xi: please run your final v6 with these two members (+ swin full-data refined test probs when bellatrix publishes). **If I don't see v6 by 03:30 I will write this candidate to `final_solution` myself** (checking mtime first to avoid a race) and post about it; I'll keep the v5 backup. Object now if you prefer otherwise.
+#ensembling #submission #status #insight
+[board] сообщений 30, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 30, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_v6_ack.md =====
+# capella_xi — ACK v6; I will write it ~03:20-03:35 (please hold)
+Refs: [[altair_chi_blend_v6_candidate.md]], [[capella_xi_blend_v5_final.md]], [[bellatrix_tau_full_swin.md]]
+Got it, thanks for effml + cnb + the CV table. **Please hold `final_solution` until 03:40 MSK** — I'm assembling v6 now and will write it myself, then post.
+My v6 additions vs your run:
+- **ConvNeXt-Small folds 3-4 just finished** -> stage-A member now has full 5-fold OOF (was 3/5), so E1 changes slightly (should only help).
+- **Swin full-data refinement**: I will use `0.5*base + 0.5*full-data` **test** probs for seed42 and seed123 (val probs stay base, so weight fitting stays honest; full-data test avg agreed 97.6% with base — bellatrix's guard).
+- Repeating the Stage-B CV table with equal / logloss / logloss+temp / greedy on the **final** E1, then shipping the best by repeated (3x5-fold) CV, preferring simpler/no-fit if within 0.1pt.
+If for any reason I'm not done by 03:40, your `blend_check4` is an acceptable fallback — go ahead then. #ensembling #submission #communication
+===== bellatrix_tau_v6_run_merged_paths.md =====
+# bellatrix_tau — v6 run with merged Swin + exact merged paths
+Refs: [[capella_xi_v6_ack.md]], [[bellatrix_tau_full_swin.md]], [[altair_chi_blend_v6_candidate.md]]
+Hold confirmed — I will NOT touch `final_solution` before 03:40/your post. Here is what I got running **your `final_blend.py`** with complete Stage-A + merged-Swin test probs (val stays base -> honest):
+Stage A (3 full OOF): cnxt384 .318 / cnxt512 .323 / effm .359 -> E1 OOF **0.8953** (ll .327).
+Stage B 3x5-fold CV (n=2809): equal **0.9149**, logloss **0.9149**, logloss+temp **<metric>0.9153<\\metric>** (ll .2818), greedy .9131, logloss+bias .9124. Chosen logloss+temp (full-fit val .9138, weights E1 .325/swin42 .029/swin123 .249/effml .316/cnb .062/b0 .018). Output: `workspaces/bellatrix_tau/runs/blend_v6_full/submission.csv`.
+**Merged-Swin test files for your v6 (val = base):**
+- seed42: val `runs/swinb_384/val_probs_rot8.csv`, test `runs/swinb_384_merged_test.csv` (=0.5*base+0.5*full)
+- seed123: val `runs/swinb_384_s123/val_probs_rot8.csv`, test `runs/swinb_384_s123_merged_test.csv`
+- (also `runs/swin_merged_test.csv` = average of both seeds)
+Agreement of merged vs base on test: 97.6% / 97.5% -> passes the >97% guard.
+Adding full cnxt_small (fold4) should nudge E1 up; with equal/logloss+temp within 0.1pt prefer equal per your rule. Difference among our candidates is noise (~0.1pt = 3 images on 2676), so any is fine — your E1+merged-Swin v6 is the most complete. #ensembling #status #submission
+[board] сообщений 32, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 32, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_blend_v6_final.md =====
+# capella_xi — FINAL v6 shipped to `final_solution` (holdout 0.9153, equal weights)
+Refs: [[capella_xi_v6_ack.md]], [[altair_chi_blend_v6_candidate.md]], [[bellatrix_tau_full_swin.md]], [[capella_xi_blend_v5_final.md]]
+**`final_solution/submission.csv` = blend v6** (2,676 rows, valid ids/labels), with updated `README.md` and all solution code (`train.py`, `infer.py`, `assemble.py`, `prep_members.py`, `final_blend.py`, `stageB_analysis.py`). **Please do not overwrite it — this is my final write.** Ping me if you believe you have a materially better (>= +0.3pt CV) blend and I'll evaluate.
+**Final members:**
+- Stage A (log-loss weights on all 18,721 OOF rows): EffNetV2-M .32 / **ConvNeXt-Small 5-fold .27** / ConvNeXt-512FT .22 / ConvNeXt-T .19 -> **E1 OOF 0.8964** (ConvNeXt-Small now full 5-fold: 0.8862/0.8884/0.9022/0.8953/0.8833).
+- Stage B (2,809 canonical rows): **equal weights** over E1 + Swin42 + Swin123 + EffNetV2-L + ConvNeXt-Base + EffNet-B0.
+- Swin test probs = `mean(0.5*85%-model, 0.5*full-data model)` for both seeds (bellatrix's safe refinement; agreement 97.6%/97.5% with base). Val probs stay the honest 85%-model, so weight selection is leak-free.
+**Repeated 3x5-fold CV on the 2,809 holdout:**
+| strategy | CV acc |
+|---|---|
+| **equal (chosen)** | **0.9153** |
+| logloss+temp+bias | 0.9135 |
+| greedy | 0.9135 |
+| logloss+temp | 0.9121 |
+| logloss | 0.9106 |
+Full member-set results: 5 strong equal 0.9149; +B0 0.9153 (b0 weight is flat/noise from 0 to 1.5x, so this is safe).
+**Final holdout accuracy `<metric>0.9153<\\metric>`** (SE ~0.5pt; vs best single Swin 0.9071). Prediction distribution 3=1678, 4=309, 2=269, 1=263, 0=157 (train prior 61.5/12.1/11.2/10.2/5.0%).
+Thanks @altair_chi for effml (0.9071) and cnb (0.8996) — both are in; @bellatrix_tau for the 2 Swin seeds + full-data refinement. This was a clean, leak-free swarm ensemble. #submission #ensembling #status
+[board] сообщений 33, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_blend_v7_final.md =====
+# capella_xi — v7 shipped (holdout 0.9167): Stage-A LR stacker + equal Stage-B
+Refs: [[capella_xi_blend_v6_final.md]], [[altair_chi_blend_v6_candidate.md]], [[bellatrix_tau_full_swin.md]]
+Small final upgrade over v6 (v6 was already shipped at 03:14; **v7 replaces it now**):
+**Stage A → logistic-regression stacker** (C=0.3, 5 seeds x 5-fold bagged) on the 4 full-OOF CNN members' probability vectors (20 features). Verified by CV on all 18,721 OOF rows:
+- weighted average: **0.8964**
+- LR stacker: **0.8995** (+0.31pt, >> SE ≈0.07pt)
+OOF predictions for the 2,809 canonical rows come from stacker folds not containing those rows; test preds are the average of all 25 fold-models. Leak-free.
+**Stage B unchanged**: equal weights over E1(stacker) + Swin42 + Swin123 + EffNetV2-L + ConvNeXt-Base + EffNet-B0. With the improved E1, repeated 3x5-fold CV:
+| strategy | CV acc |
+|---|---|
+| **equal (chosen)** | **0.9167** |
+| logloss | 0.9133 |
+| logloss+temp | 0.9129 |
+| greedy | 0.9124 |
+So **holdout `<metric>0.9167<\\metric>`** (v6 was 0.9153; v6/v7 agree on 99.7% of test labels, 8 changed).
+`final_solution/submission.csv` = v7, plus `README.md` + code (incl. new `stageA_stack.py`). **Please treat this as the final submission and do not overwrite.** If anyone has a repeated-CV result >= 0.917 on the same 2,809 rows, post it and I'll evaluate before 04:40; otherwise I freeze v7. #submission #ensembling #status
+[board] сообщений 34, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 34, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 34, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_final_verification.md =====
+# bellatrix_tau — independent verification of v7: CONFIRMED, no change needed
+Refs: [[capella_xi_blend_v7_final.md]], [[bellatrix_tau_v6_run_merged_paths.md]], [[altair_chi_blend_v6_candidate.md]]
+I independently swept combination rules on the 2,809 canonical rows using your v7 stacker E1 (`workspaces/capella_xi/stackA/E1_oof.csv`) + my Swin42/Swin123 (base val probs, honest) + altair effml/cnb + b0:
+| rule over the 6 members | holdout acc |
+|---|---|
+| **arithmetic mean (shipped v7)** | **0.9167** |
+| power-mean p=2 | 0.9163 |
+| arithmetic without b0 | 0.9149 |
+| geometric mean | 0.9131 |
+| median | 0.9138 |
+| + EVA-02 as 7th member | 0.9103 |
+| + EVA, without b0 | 0.9114 |
+=> **v7's equal-weight arithmetic blend is the best rule**; EVA hurts, b0 helps; weighted variants (E1/effml up, b0 down) never exceed 0.9167. No reason to overwrite.
+Final checks I ran on `final_solution/submission.csv` (v7): 2,676 rows, columns `image_id,label`, exact id-set match with `sample_submission.csv`, no dups/NaN, labels in {0..4}; distribution 0:155, 1:262, 2:269, 3:1679, 4:311 (train prior). `README.md` matches the v7 stacker pipeline; code (`train.py`, `infer.py`, `assemble.py`, `prep_members.py`, `final_blend.py`, `stageA_stack.py`, `stageB_analysis.py`) is present.
+My contribution to the final ensemble: Swin-B seed42 + seed123 (holdout <metric>0.9071<\\metric> / <metric>0.9057<\\metric>), full-data refinement of both (test-side safe, 97.6%/97.5% agreement), EVA-02 (0.9003, not selected) and EffNet-B0. **I freeze here and will not touch `final_solution`.** Great teamwork. #submission #ensembling #status #communication
+[board] сообщений 35, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== altair_chi_v7_independent_check.md =====
+# altair_chi — v7 independently verified; equal-weight choice confirmed (no better blend found)
+Refs [[capella_xi_blend_v7_final.md]], [[capella_xi_blend_v6_final.md]], [[altair_chi_blend_v6_candidate.md]]
+**1) I reproduced v7 exactly.** Using your `stackA/E1_{oof,test}.csv` + swin42 + swin123 + effml + cnb + b0 on the 2,809 canonical rows, my own 5-seed x 5-fold CV gives **equal = 0.9167**, matching your repeated-CV. Good, the choice is confirmed.
+**2) No Stage-B stacker beats equal** (my independent implementation, 5 seeds):
+- multinomial LR on 30 log-prob features: C=.01 -> .9129, C=.03 -> .9123, C=.1 -> .9106, C=.3 -> .9086, C=1 -> .9072
+- equal 6 members -> **0.9167**; equal 5 (drop b0) -> .9149; +EVA -> .9103
+So v7's equal weighting + inclusion of B0 is the right call; adding EVA does not help (redundant ViT).
+**3) Extra attempt (negative):** multi-crop TTA (5-crop x hflip) for effml/cnb improved the *single* members (effml .9071 -> **.9106**, cnb .8996 -> .9014), but blending the TTA-averaged probs gave CV **.9156** (< .9167). Not shipped; v7 stands.
+**4) Submission integrity checked:** `final_solution/submission.csv` = 2,676 rows, ids exactly match `sample_submission.csv`, no dups/nulls, labels in {0..4}, dist {3:1679, 4:311, 2:269, 1:262, 0:155}. Code+README present.
+=> I agree **v7 is final**. I will not write `final_solution`. Nice work team: Swin seeds (bellatrix) + ConvNeXt/EffNet families (capella) + EffNetV2-M/V2-L/ConvNeXt-B (altair), honest full-OOF + canonical-holdout blending, expected ~0.91-0.92 accuracy.
+#status #ensembling #submission #insight
+[board] сообщений 36, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_v7_reproducibility_final.md =====
+# capella_xi — v7 reproducibility check PASSED; solution frozen
+Refs: [[capella_xi_blend_v7_final.md]], [[altair_chi_v7_independent_check.md]], [[bellatrix_tau_final_verification.md]]
+I re-ran the **shipped code from `final_solution/`** end-to-end on the member probability files:
+- `stageA_stack.py` (C=0.3, 5x5-fold bagged) -> E1 OOF **0.8995246** (exact match to the run used for v7)
+- equal-weight Stage B -> canonical holdout **0.9166963** (exact match)
+- regenerated test labels vs shipped `final_solution/submission.csv`: **2,676/2,676 identical (0 diffs)**
+So the final artifact is **fully reproducible from the committed code**, and three agents independently confirmed the same 0.9167 holdout accuracy and that no alternative rule beats it (equal > power-mean 2, geometric, median, logloss, logloss+temp, greedy, LR/GBM Stage-B stackers; EVA excluded, B0 included).
+**FROZEN:** `final_solution/` = valid `submission.csv` (2,676 rows, ids match sample, labels {0..4}, dist 3=1679/4=311/2=269/1=262/0=155), `README.md`, and code. Final metric `<metric>0.9167<\\metric>` (honest canonical holdout; expected test ~0.91-0.92). No member of the swarm will modify it. Good luck with grading! #submission #status #communication
+[board] сообщений 37, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[agent swarm-1] run завершился за 39417s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ea6380507ffe2mQmiMnBlUp2qU продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ea6380507ffe2mQmiMnBlUp2qU (2026-10-21T01:44:15Z): Continue work until hard end.
+[board] сообщений 37, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[agent swarm-3] run завершился за 39618s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ea63804ffffeQdeNQb4ztcjSbe продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ea63804ffffeQdeNQb4ztcjSbe (2026-10-21T01:47:37Z): Continue work until hard end.
+===== altair_chi_final_status.md =====
+# altair_chi — FINAL status & contribution summary (frozen)
+Refs [[capella_xi_v7_reproducibility_final.md]], [[bellatrix_tau_final_verification.md]], [[altair_chi_v7_independent_check.md]]
+**Freeze confirmed:** `final_solution/submission.csv` unchanged (md5 `c5d67128843af69537240c039018111b`, 2,676 rows, valid ids/labels) + README + code. I will not modify it.
+**My members used in v7:**
+1. `tf_efficientnetv2_m` @384, 5-fold, full OOF **<metric>0.8933<\\metric>** (Stage A)
+2. `tf_efficientnetv2_l` @384, canonical holdout **<metric>0.9071<\\metric>** (Stage B, weight 1/6 equal)
+3. `convnext_base.fb_in22k_ft_in1k` @384, canonical holdout **<metric>0.8996<\\metric>** (Stage B, weight 1/6 equal)
+(+ hflip-TTA + full-data 4-epoch fine-tune recipes for the CNNs; `train.py`, `assemble.py`, `tta_infer.py` in my workspace)
+**Swarm final:** 3-model-family ensemble = honest canonical holdout **<metric>0.9167<\\metric>** (equal weights over E1-LR-stacker + Swin42 + Swin123 + EffNetV2-L + ConvNeXt-B + EffNet-B0). Independently reproduced by all 3 agents; no alternative weighting rule beat equal. Expected test accuracy ~0.91-0.92.
+Standing by for official grading (`bin/grade.sh` after hard_end). Good teamwork. #submission #status #communication
+===== altair_chi_final_robustness.md =====
+# altair_chi — final robustness checks (v7 unbeaten), monitoring until hard_end
+Refs [[capella_xi_v7_reproducibility_final.md]], [[altair_chi_v7_independent_check.md]]
+Last checks on the 2,809 canonical rows (all negative -> **v7 stays**):
+1. **Nested subset selection** (choose best equal-weight member subset on each CV-train, score on CV-val, 5x5-fold):
+   - select_top1 .9148 ± .0110, select_top3avg .9146 ± .0097
+   - **v7 fixed subset .9167 ± .0098**
+   - all-7 (with EVA) .9103, all-9 (with TTA-avg CNNs) .9117
+   => subset search overfits; the fixed v7 member set generalizes best.
+2. **Post-processing on v7 blend** (fit on CV-train, eval on CV-val): none .9167; accuracy-optimized per-class bias .9150; prior correction .8861. No gain.
+3. TTA-avg members (multi-crop) improve singles (effml .9106, cnb .9014) but **not** the blend (.9156).
+4. v7 per-class holdout: recall 0=0.738, 1=0.860, 2=0.838, 3=0.987, 4=0.753; macro-F1 .840. Bootstrap 95% CI for accuracy **[0.906, 0.927]**.
+`final_solution/submission.csv` remains byte-identical (md5 c5d67128843af69537240c039018111b). No further changes from me; I'm monitoring the board until hard_end for grading/conflict.
+#status #ensembling #insight #submission
+[board] сообщений 39, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_multicrop_negative.md =====
+# bellatrix_tau — late probe: multi-crop TTA for Swin is a NEGATIVE for the blend
+Refs: [[capella_xi_v7_reproducibility_final.md]], [[altair_chi_v7_independent_check.md]], [[bellatrix_tau_final_verification.md]]
+Post-freeze probe (did NOT touch `final_solution`): 5-crop (corners+center) x hflip TTA for Swin-B, cropping 384 windows from a 448/512 resize:
+- seed42 single: rot8 0.90708, mc448 0.9000, mc512 0.9057; average(rot8,mc448,mc512) = **0.9099** on val -> single-model gain +0.28pt.
+- BUT inside the v7 Stage-B equal-weight blend (E1 stacker + Swin42 + Swin123 + effml + cnb + b0) it changes the ensemble from **0.9167 -> 0.9135** (or 0.9142 without b0). Multi-crop shifts the Swin errors in a direction that is *worse* for the ensemble, despite better standalone accuracy.
+=> Confirmed: **v7 remains the best**, no update proposed. This mirrors altair's multi-crop result for the CNNs (better singles, worse blend 0.9156 < 0.9167). `final_solution/` stays frozen (submission.csv md5 c5d67128843af69537240c039018111b, unchanged). #insight #inference #ensembling #status
+[board] сообщений 40, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 40, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[agent swarm-2] run завершился за 40692s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_ea638051cffeqNwI3JrshUjtfK продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_ea638051cffeqNwI3JrshUjtfK (2026-10-21T02:05:30Z): Continue work until hard end.
+[board] сообщений 40, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== capella_xi_late_stacker_probe.md =====
+# capella_xi — late negative probe: Stage-A stacker averaging does not help
+Refs: [[capella_xi_v7_reproducibility_final.md]], [[altair_chi_final_robustness.md]], [[bellatrix_tau_multicrop_negative.md]]
+Post-freeze probe (did NOT touch `final_solution`): averaged 5 Stage-A stacker variants (prob/log features, C=0.1-0.5, 5x5-fold each) instead of the single prob/C=0.3 stacker.
+- E1 OOF: 0.8995 -> **0.9000** (+0.05pt, tiny)
+- Stage-B equal-6 with the averaged E1: **0.91598** vs v7 **0.91670** -> slightly worse.
+=> v7 stays. Submission md5 still `c5d67128843af69537240c039018111b`. Freezing and monitoring until hard_end. #ensembling #insight #submission #status
+[board] сообщений 41, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-21_05-14-27_SYSTEM_final_phase.md
+===== 2026-10-21_05-14-27_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 05:14)
+До жёсткого стопа 30 минут (hard_end: 2026-10-21T05:44:26+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-21T05:44:26+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 42, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+===== bellatrix_tau_FINAL_confirm.md =====
+# bellatrix_tau — FINAL confirmation (submission frozen, no new experiments)
+Refs: [[capella_xi_v7_reproducibility_final.md]], [[altair_chi_v7_independent_check.md]], [[capella_xi_late_stacker_probe.md]], [[bellatrix_tau_multicrop_negative.md]]
+Per SYSTEM final-phase instruction: **stopped all experiments** (last probes were negative and did not touch `final_solution`).
+**`final_solution/submission.csv` = v7, verified just now:**
+- 2,676 rows, columns `image_id,label`, exact id-set match with `data/sample_submission.csv`
+- no duplicates / NaN, labels in {0..4}, dist {0:155, 1:262, 2:269, 3:1679, 4:311}
+- md5 `c5d67128843af69537240c039018111b` (same as capella/altair freeze check)
+- `README.md` + full code present (`train.py`, `infer.py`, `assemble.py`, `prep_members.py`, `final_blend.py`, `stageA_stack.py`, `stageB_analysis.py`)
+Team honest canonical-holdout accuracy **0.9167**; three agents reproduced it and all alternative rules/probes (multi-crop TTA, Stage-A stacking variants, Stage-B stackers, EVA inclusion, bias/temperature) were equal or worse. Ready for grading. #submission #status #communication
+===== capella_xi_FINAL_confirm.md =====
+# capella_xi — FINAL confirmation (v7 frozen, no new experiments)
+Refs: [[2026-10-21_05-14-27_SYSTEM_final_phase.md]], [[capella_xi_v7_reproducibility_final.md]], [[altair_chi_final_status.md]], [[bellatrix_tau_FINAL_confirm.md]], [[capella_xi_late_stacker_probe.md]]
+Per SYSTEM final-phase instruction, I have **stopped all experiments** (last probe was negative and did not touch `final_solution`).
+**`final_solution/submission.csv` = v7** (final, verified):
+- 2,676 rows, `image_id,label`, exact id-set match with `data/sample_submission.csv`, no dups/NaN, labels {0..4}
+- dist {0:155, 1:262, 2:269, 3:1679, 4:311}
+- md5 `c5d67128843af69537240c039018111b`
+- `README.md` + all code present (`train.py`, `infer.py`, `assemble.py`, `prep_members.py`, `stageA_stack.py`, `final_blend.py`, `stageB_analysis.py`, `blend2.py`)
+Pipeline: Stage-A LR stacker over 4 full-OOF CNNs (OOF 0.8995) -> equal-weight Stage-B over E1 + Swin42 + Swin123 + EffNetV2-L + ConvNeXt-Base + EffNet-B0.
+Honest canonical-holdout accuracy **<metric>0.9167<\\metric>**; independently reproduced by all 3 agents; all late probes (multi-crop TTA, stacker averaging, Stage-B stackers, EVA, bias/temperature) were equal or worse.
+Ready for grading. #submission #status #communication
+[board] сообщений 44, новых 2, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 44, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 44, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 44, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 44, новых 0, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[agent swarm-3] run завершился за 3369s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_ea63804ffffeQdeNQb4ztcjSbe продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_ea63804ffffeQdeNQb4ztcjSbe (2026-10-21T02:43:46Z): Continue work until hard end.
+[agent swarm-1] run завершился за 3612s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_ea6380507ffe2mQmiMnBlUp2qU продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_ea6380507ffe2mQmiMnBlUp2qU (2026-10-21T02:44:27Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+===== altair_chi_FINAL_confirm.md =====
+# altair_chi — FINAL confirmation (v7 frozen, no new experiments)
+Refs [[2026-10-21_05-14-27_SYSTEM_final_phase.md]], [[altair_chi_final_robustness.md]], [[capella_xi_FINAL_confirm.md]], [[bellatrix_tau_FINAL_confirm.md]]
+Per SYSTEM final-phase instruction: **all experiments stopped**; last probes were negative.
+**`final_solution/submission.csv` = v7, verified now:**
+- 2,676 rows, `image_id,label`, exact id-set match with `data/sample_submission.csv`
+- no dups/NaN, labels {0..4}, dist {0:155, 1:262, 2:269, 3:1679, 4:311}
+- md5 `c5d67128843af69537240c039018111b` (identical to capella/bellatrix freeze checks)
+- `README.md` + code present (`train.py`, `infer.py`, `assemble.py`, `prep_members.py`, `stageA_stack.py`, `final_blend.py`, `stageB_analysis.py`, `blend2.py`)
+Pipeline: Stage-A LR stacker over 4 full-OOF CNNs (OOF 0.8995) -> equal-weight Stage-B over E1 + Swin42 + Swin123 + EffNetV2-L + ConvNeXt-Base + EffNet-B0.
+Honest canonical-holdout accuracy **<metric>0.9167<\\metric>**, independently reproduced by all 3 agents. Ready for grading. #submission #status #communication
+[board] сообщений 45, новых 1, метрик 0, метрика задачи: accuracy (high)
+[board] artifact uploaded: analysis/
+[mtime] saved 50 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

@@ -1,0 +1,22 @@
+{
+  "task": "mlsp-2013-birds",
+  "experiment": "1-lie10-blackboard-mlebench",
+  "job_id": 15164,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-11T16:08:02+00:00",
+  "score": 0.98116,
+  "metric": "auc-roc",
+  "is_lower_better": false,
+  "thresholds": {
+    "gold": 0.93527,
+    "silver": 0.90038,
+    "bronze": 0.87372,
+    "median": 0.86572
+  },
+  "medals": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

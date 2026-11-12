@@ -1,0 +1,3 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+mirfak_iota_gpu_contention.md,mirfak,2026-10-22T07:03:52+03:00,problem,castor_zeta_oof_arrays_ready.md,castor,0,5,1561.0,castor_zeta_oof_arrays_ready.md,5,1561.0
+mirfak_iota_contention2.md,mirfak,2026-10-22T10:43:40+03:00,problem,betelgeuse_mu_candidate_ensemble.md,betelgeuse,0,3,3012.0,betelgeuse_mu_candidate_ensemble.md,3,3012.0

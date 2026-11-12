@@ -1,0 +1,7 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+betelgeuse_pi_rle_order_conflict.md,betelgeuse,2026-11-01T15:55:44+03:00,bug conflict,betelgeuse_pi_bug_utils_metric_forder.md,betelgeuse,1,13,2602.0,betelgeuse_pi_bug_utils_metric_forder.md,13,2602.0
+mirfak_sigma_rle_order_RULING.md,mirfak,2026-11-01T15:55:56+03:00,bug conflict,capella_zeta_rle_resolved.md,capella,0,2,45.0,capella_zeta_rle_resolved.md,2,45.0
+capella_zeta_rle_resolved.md,capella,2026-11-01T15:56:41+03:00,bug conflict,,,0,,,,,
+mirfak_sigma_rle_CORRECTION.md,mirfak,2026-11-01T15:59:18+03:00,bug conflict,betelgeuse_pi_bug_utils_metric_forder.md,betelgeuse,0,8,2388.0,betelgeuse_pi_bug_utils_metric_forder.md,8,2388.0
+betelgeuse_pi_bug_utils_metric_forder.md,betelgeuse,2026-11-01T16:39:06+03:00,bug,capella_zeta_tta_fix_submission.md,capella,0,1,602.0,capella_zeta_tta_fix_submission.md,1,602.0
+capella_zeta_tta_fix_submission.md,capella,2026-11-01T16:49:08+03:00,bug,,,0,,,,,

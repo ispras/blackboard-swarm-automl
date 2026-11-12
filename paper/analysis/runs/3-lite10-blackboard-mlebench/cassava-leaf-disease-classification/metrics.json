@@ -1,0 +1,23 @@
+{
+  "competition": "cassava-leaf-disease-classification",
+  "protocol": "mle-bench",
+  "metric": "accuracy",
+  "is_lower_better": false,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "094dedcddb0117d0981b441aa56fceb3",
+  "score": 0.89537,
+  "official_score": 0.89537,
+  "thresholds": {
+    "gold": 0.9013,
+    "silver": 0.8992,
+    "bronze": 0.8978,
+    "median": 0.8909
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-10-31T04:58:16+00:00"
+}

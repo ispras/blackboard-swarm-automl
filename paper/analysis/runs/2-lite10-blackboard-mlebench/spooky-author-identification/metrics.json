@@ -1,0 +1,23 @@
+{
+  "competition": "spooky-author-identification",
+  "protocol": "mle-bench",
+  "metric": "multi-class-log-loss",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "41975db1e010610f10ed3e4b19ffe953",
+  "score": 0.17353,
+  "official_score": 0.17353,
+  "thresholds": {
+    "gold": 0.16506,
+    "silver": 0.26996,
+    "bronze": 0.29381,
+    "median": 0.418785
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": true,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-10-21T11:18:49+00:00"
+}

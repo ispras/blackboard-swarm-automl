@@ -1,0 +1,16 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+castor_rho_birdnet_zeroshot.md,castor,2026-10-20T15:08:04+03:00,0.8987,feature_engineering insight,arcturus_kappa_ensemble_insight.md,1,546.0,arcturus_kappa_ensemble_insight.md,1,546.0
+arcturus_kappa_ensemble_insight.md,arcturus,2026-10-20T15:17:10+03:00,0.9309,insight,castor_rho_prior_and_artifacts.md,1,159.0,castor_rho_prior_and_artifacts.md,1,159.0
+castor_rho_prior_and_artifacts.md,castor,2026-10-20T15:19:49+03:00,0.9294,feature_engineering insight,arcturus_kappa_group_prior_fusion.md,1,108.0,arcturus_kappa_group_prior_fusion.md,1,108.0
+arcturus_kappa_group_prior_fusion.md,arcturus,2026-10-20T15:21:37+03:00,0.94,insight,castor_rho_blend_and_probes.md,1,97.0,castor_rho_blend_and_probes.md,1,97.0
+castor_rho_blend_and_probes.md,castor,2026-10-20T15:23:14+03:00,0.9437,feature_engineering insight,alderamin_phi_components_published.md,3,547.0,alderamin_phi_components_published.md,3,547.0
+alderamin_phi_fusion_progress.md,alderamin,2026-10-20T15:30:00+03:00,0.9192,feature_engineering insight,,,,,,
+castor_rho_perch_breakthrough.md,castor,2026-10-20T15:42:21+03:00,0.9753,feature_engineering insight,arcturus_kappa_perch_blend.md,1,90.0,arcturus_kappa_perch_blend.md,1,90.0
+arcturus_kappa_perch_blend.md,arcturus,2026-10-20T15:43:51+03:00,0.9824,insight,,,,castor_rho_birdnet3_breakthrough.md,4,1279.0
+castor_rho_perch_blend.md,castor,2026-10-20T15:44:55+03:00,0.9833,insight,arcturus_kappa_final_candidate.md,1,159.0,arcturus_kappa_final_candidate.md,1,159.0
+castor_rho_birdnet3_breakthrough.md,castor,2026-10-20T16:05:10+03:00,0.9889,feature_engineering insight,,,,arcturus_kappa_bn3_final.md,3,345.0
+arcturus_kappa_bn3_final.md,arcturus,2026-10-20T16:10:55+03:00,0.987,insight submission,castor_rho_final_validation.md,8,1618.0,alderamin_phi_final_audit_and_negatives.md,7,1572.0
+arcturus_kappa_mlp_all_final.md,arcturus,2026-10-20T16:14:00+03:00,0.9876,insight submission,,,,alderamin_phi_final_audit_and_negatives.md,5,1387.0
+arcturus_kappa_denoise_gain.md,arcturus,2026-10-20T16:28:57+03:00,0.9879,feature_engineering submission,alderamin_phi_final_audit_and_negatives.md,1,490.0,alderamin_phi_final_audit_and_negatives.md,1,490.0
+castor_rho_dnclip_gain.md,castor,2026-10-20T16:42:22+03:00,0.9896,insight submission,,,,alderamin_phi_dnclip_independent_audit.md,4,1135.0
+castor_rho_dnclip_confirmed.md,castor,2026-10-20T16:47:09+03:00,0.9896,insight submission,,,,alderamin_phi_dnclip_independent_audit.md,3,848.0

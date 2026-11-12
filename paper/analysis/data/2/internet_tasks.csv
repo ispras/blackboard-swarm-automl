@@ -1,0 +1,11 @@
+task,short,internet_any,webfetch_calls,weight_gb,ladder,medal
+billion-word-imputation,billion-word,True,0,3.31,4.0,gold
+bms-molecular-translation,bms-mol,True,0,1.13,4.0,bronze
+cassava-leaf-disease-classification,cassava,True,0,2.192,3.917391304347816,above_median
+mlsp-2013-birds,mlsp-birds,True,0,1.207,4.0,gold
+nfl-player-contact-detection,nfl-contact,True,0,0.319,4.0,silver
+spooky-author-identification,spooky,True,0,3.958,4.0,silver
+stanford-covid-vaccine,stanford-covid,False,0,0.0,4.0,gold
+new-york-city-taxi-fare-prediction,taxi,False,0,0.0,2.6144723170550694,below_median
+uw-madison-gi-tract-image-segmentation,uw-gi,True,0,0.069,3.635833333333335,above_median
+ventilator-pressure-prediction,ventilator,True,2,0.0,3.4262773722627733,above_median

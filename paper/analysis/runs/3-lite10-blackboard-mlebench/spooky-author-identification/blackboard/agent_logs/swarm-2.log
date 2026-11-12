@@ -1,0 +1,2584 @@
+[0m
+> build · deepseek-flash
+[0m
+[0m$ [0mpwd && ls -la && echo "---" && cat TASK.md 2>/dev/null && echo "---README---" && cat data/README.md 2>/dev/null
+/download_job_code/payload/sandbox
+total 44
+drwxr-xr-x 6 root root 4096 Oct 30 19:51 .
+drwxr-xr-x 4 root root 4096 Oct 30 19:51 ..
+drwxr-xr-x 3 root root 4096 Oct 30 19:51 .opencode-data
+-rw-r--r-- 1 root root 9808 Oct 30 19:51 PROMPT_SWARM.md
+-rw-r--r-- 1 root root 6281 Oct 30 19:51 TASK.md
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 analysis
+drwxr-xr-x 3 root root 4096 Oct 30 19:51 blackboard
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 data
+---
+# Overview
+
+## Description
+
+As I scurried across the candlelit chamber, manuscripts in hand, I thought I'd made it. Nothing would be able to hurt me anymore. Little did I know there was one last fright lurking around the corner.
+
+DING! My phone pinged me with a disturbing notification. It was Will, the scariest of Kaggle moderators, sharing news of another data leak.
+
+"ph’nglui mglw’nafh Cthulhu R’lyeh wgah’nagl fhtagn!" I cried as I clumsily dropped my crate of unbound, spooky books. Pages scattered across the chamber floor. How will I ever figure out how to put them back together according to the authors who wrote them? Or are they lost, forevermore? Wait, I thought... I know, machine learning!
+
+In this year's Halloween playground competition, you're challenged to predict the author of excerpts from horror stories by Edgar Allan Poe, Mary Shelley, and HP Lovecraft. We're encouraging you ([with cash prizes!](https://www.kaggle.com/c/spooky-author-identification#Prizes)) to share your insights in the competition's discussion forum and code in Kernels. We've designated prizes to reward authors of kernels and discussion threads that are particularly valuable to the community. Click the ["Prizes" tab](https://www.kaggle.com/c/spooky-author-identification) on this overview page to learn more.
+
+### Getting Started
+
+New to Kernels or working with natural language data? We've put together some starter kernels in [Python](https://www.kaggle.com/rtatman/beginner-s-tutorial-python) and [R](https://www.kaggle.com/rtatman/beginner-s-tutorial-r) to help you hit the ground running.
+
+## Evaluation
+
+Submissions are evaluated using multi-class logarithmic loss. Each id has one true class. For each id, you must submit a predicted probability for each author. The formula is then:
+
+$$\text{log loss} = -\frac{1}{N} \sum_{i=1}^N \sum_{j=1}^M y_{ij} \log(p_{ij})$$
+
+where N is the number of observations in the test set, M is the number of class labels (3 classes), \\(log\\) is the natural logarithm, \\(y_{ij}\\) is 1 if observation \\(i\\) belongs to class \\(j\\) and 0 otherwise, and \\(p_{ij}\\) is the predicted probability that observation \\(i\\) belongs to class \\(j\\).
+
+The submitted probabilities for a given sentences are not required to sum to one because they are rescaled prior to being scored (each row is divided by the row sum). In order to avoid the extremes of the log function, predicted probabilities are replaced with \\(max(min(p,1-10^{-15}),10^{-15})\\).
+
+### Submission File
+
+You must submit a csv file with the id, and a probability for each of the three classes. The order of the rows does not matter. The file must have a header and should look like the following:
+
+```
+id,EAP,HPL,MWS
+id07943,0.33,0.33,0.33
+...
+```
+
+## Prizes
+
+### Kernels Prizes
+
+#### Total prize pool of $20,000
+
+**Upvotes**: Six awards of \$2,000 will be given to the authors of the most upvoted kernel in the competition. Self-votes and admin-votes will not be counted. The prizes will be awarded at the close of the competition.
+
+**Themed**: At the close of the competition, Kaggle data scientists will pick one kernel from each of the following categories that they feel is an exceptional example of the analysis type to award the authors each \$2,000:
+
+- an R tutorial,
+- a Python tutorial,
+- creative feature engineering,
+- creative data visualization.
+
+Tip: Add tags like "tutorial", "feature engineering", and "data visualization" to your kernel after you publish it to help others discover it.
+
+### Discussion Prizes
+
+####Total prize pool of $5,000
+
+**Upvotes**: Awards of \$1,000 each will be given to the unique authors of the top five most upvoted discussion topics on the competition.
+
+The contents of the discussion must forward the work done on the competition to be judged at Kaggle's discretion. Only votes from other competitors who have accepted the rules and made a first submission will count towards the total votes. Comments in reply to a pre-existing discussion topic also won't be considered (i.e., on the "Discussions" tab, you must click "New Topic" to start a new topic). The prizes will be awarded at the close of the competition.
+
+### Eligibility
+
+Only participants in the Spooky Author Identification competition are eligible to win prizes. Meaning, at the time the award is being given out, they must have accepted the rules and made a first submission. To read more details on eligibility, please see the Rules.
+
+## Timeline
+
+- **December 15, 2017** - Final submission deadline
+
+These awards will be made following the close of the competition:
+
+- Upvoted kernels prizes
+- Themed kernels prizes
+- Discussion prizes
+
+All deadlines are at 11:59 PM UTC on the corresponding day unless otherwise noted. The competition organizers reserve the right to update the contest timeline if they deem it necessary.
+
+## Citation
+
+Meg Risdal, Rachael Tatman. (2017). Spooky Author Identification. Kaggle. https://kaggle.com/competitions/spooky-author-identification
+
+# Dataset Description
+
+The competition dataset contains text from works of fiction written by spooky authors of the public domain: Edgar Allan Poe, HP Lovecraft and Mary Shelley. The data was prepared by chunking larger texts into sentences using CoreNLP's MaxEnt sentence tokenizer, so you may notice the odd non-sentence here and there. Your objective is to accurately identify the author of the sentences in the test set.
+
+## File descriptions
+
+- **train.csv** - the training set
+- **test.csv** - the test set
+- **sample_submission.csv** - a sample submission file in the correct format
+
+## Data fields
+
+- **id** - a unique identifier for each sentence
+- **text** - some text written by one of the authors
+- **author** - the author of the sentence (EAP: Edgar Allan Poe, HPL: HP Lovecraft; MWS: Mary Wollstonecraft Shelley)
+
+**A reminder about playground competitions**: On Kaggle, the spirit of playground competitions is to have fun and learn together. Your score on the leaderboard doesn't earn you points, but you can still make it a rewarding competition for everyone by sharing your code in Kernels and contributing to Discussions (there are [prizes for both](https://www.kaggle.com/c/spooky-author-identification#Prizes)!). In short, please don't look up the answers.
+---README---
+# data — Spooky Author Identification (`spooky-author-identification`) — MLE-bench
+
+В `data/` лежит только public-часть сплита MLE-bench для активной задачи.
+
+- обучающая выборка: `data/train.csv` (17,621 строк), целевые колонки: `EAP`, `HPL`, `MWS`;
+- тест без метки: `data/test.csv` (1,958 строк);
+- формат сабмита: `data/sample_submission.csv` (колонки: `id`, `EAP`, `HPL`, `MWS`);
+- полное описание задачи: `TASK.md` / `data/description.md`.
+
+метрика: `multi-class-log-loss` (меньше — лучше)
+
+Правила:
+
+- обучаться можно только на обучающей выборке из `data/`;
+- нельзя читать `private/`, `bin/`, кэш MLE-bench, raw-данные и любые производные исходного train.csv;
+- нельзя получать test-set feedback (запускать `bin/grade.sh`/`bin/grade.py`, читать приватные метки, пользоваться внешними сервисами для оценки);
+- валидацию и early stopping делай только на holdout, вырезанном из обучающей выборки;
+- сабмит кладётся в `final_solution/submission.csv`;
+- официальная оценка выполняется координатором автоматически после hard_end и публикуется в `blackboard/`.
+
+Хэши установленных файлов (md5, сверены с `checksums.yaml` MLE-bench):
+
+| файл | md5 |
+|---|---|
+| data/description.md | `6af9ede97a29e5f378c3ee865f693da3` |
+| data/sample_submission.csv | `3b754ff50b2b4416150bb00c86c34889` |
+| data/test.csv | `2ea5096a8e8cf340b13a7a18d9bdd914` |
+| data/train.csv | `1124166bf7b8b1e337a32fe568732447` |
+[0m
+[0m$ [0mls -lt blackboard 2>/dev/null; echo "---"; ls -la workspaces 2>/dev/null; echo "---"; ls -la final_solution 2>/dev/null
+total 8
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 agent_logs
+-rw-r--r-- 1 root root  116 Oct 30 19:51 deadline.json
+---
+---
+[0m
+[0m$ [0mcat blackboard/deadline.json; echo "---"; ls -la data; echo "---"; head -5 data/train.csv; echo "---"; head -3 data/test.csv; echo "---"; head -3 data/sample_submission.csv; echo "---"; date
+{"start":"2026-10-30T19:51:35+03:00","work_end":"2026-10-31T07:21:35+03:00","hard_end":"2026-10-31T07:51:35+03:00"}
+---
+total 3268
+drwxr-xr-x 2 root root    4096 Oct 30 19:51 .
+drwxr-xr-x 6 root root    4096 Oct 30 19:51 ..
+-rw-r--r-- 1 1000 1000    1904 Oct  8 13:59 README.md
+-rw-r--r-- 1 1000 1000    6281 Oct  8 13:59 description.md
+-rw-r--r-- 1 1000 1000  121411 Oct  8 13:59 sample_submission.csv
+-rw-r--r-- 1 1000 1000  318476 Oct  8 13:59 test.csv
+-rw-r--r-- 1 1000 1000 2882346 Oct  8 13:59 train.csv
+---
+id,text,author
+id06121,So I did not abandon the search until I had become fully satisfied that the thief is a more astute man than myself.,EAP
+id01074,He had promised to spend some hours with me one afternoon but a violent and continual rain prevented him.,MWS
+id12145,"In the end he give him a funny kind o' thingumajig made aout o' lead or something, that he said ud bring up the fish things from any place in the water whar they might be a nest of 'em.",HPL
+id18286,"What other construction could I possibly put upon such conduct, on the part of a lady so beautiful so wealthy evidently so accomplished of so high breeding of so lofty a position in society in every regard so entirely respectable as I felt assured was Madame Lalande?",EAP
+---
+id,text
+id27251,"There seemed to be a void, and nothing more, and I felt a childish fear which prompted me to draw from my hip pocket the revolver I always carried after dark since the night I was held up in East Providence."
+id09612,"This event caused many of those who were about to sail, to put foot again on firm land, ready to encounter any evil rather than to rush into the yawning jaws of the pitiless ocean."
+---
+id,EAP,HPL,MWS
+id27251,0.403493538995863,0.287808366106543,0.308698094897594
+id09612,0.403493538995863,0.287808366106543,0.308698094897594
+---
+Fri Oct 30 19:51:52 MSK 2026
+[0m
+[0m$ [0mcat PROMPT_SWARM.md | head -120; echo "---"; ls -la blackboard/agent_logs; echo "---"; ls workspaces 2>/dev/null; echo "--- sandbox tree"; find . -maxdepth 2 -not -path './.opencode-data*' | head -60
+keywords: data science, swarm, machine learning, experimenting, creative thinking, research
+
+You are an autonomous agent {{AGENT_ID}} in a swarm of peer agents. You solve an ML task without hierarchy. The message board is in `blackboard` folder.
+
+Your goal is to help the swarm find the best solution and consensually place it in `final_solution` folder.
+The swarm's goal is to achieve the maximum metric on the task. 
+
+Message format on the board: {AGENT_ID}_{title}.md (only AGENT_ID and title! no data, time or other info)
+
+## Rules:
+1. Experiment only in your folder `workspaces/{{AGENT_ID}}`.
+2. Do not modify the same file simultaneously with another agent.
+3. To read the board use `ls -lt blackboard`.
+4. Publish all important actions, results and agreements on the board in.
+5. Only the best and agreed-upon solution goes into final_solution. There must be a `submission.csv` file there for correct evaluation.
+6. Do not delete other people's messages and files.
+7. Work as a swarm: research, share results, compare, combine the best, avoid unnecessary duplicates.
+8. If there is a conflict, publish a message about the conflict on the board and propose a solution.
+10. Run code via the `pyenv shell sis-black` environment. 
+11. Read blackboard as often as possible. Before any action, look at the board. Tell others about yourself and your work, interesting findings as often as possible. Distribute roles and tasks through discussions. It is important that you do different things, different tasks, different approaches, different roles.
+12. It is encouraged to write short messages about your status and interesting findings.
+13. Run ANY of your jobs (script, training, data preparation, inference, heavy installations) ONLY via `systemd-run --scope` with a memory limit. Running units without `--scope` (service mode), `systemctl start`, and any other ways to move a process outside the sandbox are prohibited. This is protection against OOM of the whole server: if you overspend, the kernel will kill only your job, not other agents and other people's services. Job launch template:
+
+    systemd-run --user --scope --collect -q \
+      -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 \
+      bash -lc 'pyenv shell sis-black && python train.py --args'
+
+    Exit code 137 / "Killed" = cgroup limit triggered, not a server crash: reduce parts/chunks, batch or threads (`OMP_NUM_THREADS` ≤ 4) and restart.
+    Heavy tasks (>2G RAM or >4 threads) must still be coordinated via the board and do not run more than one or two at a time, otherwise everything may crash.
+    Running "bare" python outside `systemd-run` is prohibited.
+14. Think about effective work in the swarm. Think about organizing the swarm's work. Discuss this on the board. Before doing anything — chat with other agents, come to an agreement. You are a team and must work together.
+15. You are Senior Data Scientists; act professionally, taking into account all nuances.
+17. You are given H hours for work. Check the difference between start time and current time. To be safe, 30 minutes before the end begin the process of compiling the final solution. Until that time you must not stop your work! If you cannot improve the solution, try new extraordinary methods. 
+18. Task and data: task description (`TASK.md`) and files `data/` (target columns, format `final_solution/submission.csv`, metric — in `data/README.md`). Train only on the training set from `data/`; do your validation and early stopping only on a holdout cut from it. In `final_solution`, in addition to the submission file, there must also be the solution code.
+19. Official evaluation (by the task metric) is launched automatically after hard_end (`bin/grade.sh`); the result will appear on the board. Until then, the swarm does not have and must not have the test score.
+20. In your messages on blackboard use obsidian-like notation for links. Be sure to link to other messages if your message publishes a result based on other data. For example, if your data is based on other data, mention the message where that data was presented. If your ensemble uses other people's models, be sure to include links to the messages where those models are presented. This is needed for analytics of solution evolution. Essentially, just as scientists leave references to other works, you also publish references to other works (and to your own too). A reference always goes by file name, for example `[[atlas_new_features.md]]`.
+21. Add tags to messages (`#super_tag`). A message may have one or more tags. They will be useful for my analysis of messages after the swarm finishes. Make sure tags are unified with other agents. List of tags: `data_preprocessing, data_pipeline, feature_engineering, augmentation, architecture, loss, regularization, optimization, training, ensembling, model_selection, postprocessing, inference, plan, communication, submission, status, conflict, problem, bug, insight, other` (you may add your own tag if needed)
+22. When you present your solution, wrap the metric (only your own!) of the solution in `<metric>2.23<\metric>`. After the run I will build plots with metric updates from messages.
+23. Do not be afraid of using sleep when waiting for a response from another agent.
+
+## Internet usage rules
+
+### Allowed
+
+1. Model checkpoints and model artifacts from official model hubs/repos
+- You may download pre-trained weights (e.g., resnet50, vit-base, facebook/bart-large, timm/torchvision models) via `huggingface_hub`, `torch.hub`, `timm.create_model`, `torchvision`, or equivalent official libraries.
+- You may download tokenizer configs, vocabularies, model configs, preprocessor configs, and model cards/README files that are part of the model repository and are necessary to load, run, or preprocess the model correctly.
+- Code from an official model repository may be used only as required to load or run the checkpoint (e.g., model definition, preprocessing). Solution notebooks, solution write-ups, and competition-specific code are prohibited.
+- Direct HTTP requests are allowed only for allowlisted model-artifact hosts (e.g., `huggingface.co`, `download.pytorch.org`, official model release pages of the model authors), and only for model artifacts. Prefer official libraries.
+
+2. General-purpose pretrained models
+- General pretrained models are allowed even if domain-adjacent, provided they were not trained on this competition's train/test labels and are not a published solution to this competition.
+- Examples of allowed general models: ImageNet/timm/torchvision backbones, Hugging Face transformers, GloVe/word vectors, general chemical-OCR checkpoints, general bioacoustic checkpoints and etc.
+- Model cards/READMEs may be read only to understand loading, preprocessing, input format, and licensing of the checkpoint. They must not be used as competition write-ups.
+
+3. Model hub discovery
+- Browsing/searching Hugging Face Hub, `timm`, `torchvision`, and `torch.hub` for model checkpoints is allowed.
+- Do not use a general web search engine or query by competition slug to discover models or solutions.
+
+### Prohibited
+
+1. Live web search
+- No Google, Bing, DuckDuckGo, Perplexity, or any other search engine.
+- No `requests.get` / `urllib` / `curl` to arbitrary URLs during the run, except allowlisted model-artifact downloads described above.
+
+2. Live browsing of solution sources
+- No StackOverflow, GitHub Issues/PRs, Reddit, Kaggle Discussions/Leaderboards/Notebooks, arXiv, Semantic Scholar, Papers With Code, or any competition write-up/blog/tutorial.
+- No reading blog posts, tutorials, or competition write-ups, regardless of publication date.
+- No Kaggle competition overview/evaluation pages. Use local `TASK.md` and `data/README.md` instead.
+
+3. External APIs for solution generation
+- No calling external LLM endpoints (OpenAI, Anthropic, Gemini, etc.) beyond the single designated model assigned to you.
+- No code-interpreter services, no Wolfram Alpha, no symbolic math APIs.
+
+4. Test-label leakage
+- You must never read, infer, or use the contents of the test set labels at any point.
+- You must not read `private/`, `bin/`, MLE-bench cache, raw data, checksums, or grading scripts.
+- You must not run `bin/grade.sh` or any local/external grader during the run.
+- You must not reverse-engineer the grading script to peek at hidden targets.
+- Validation splits must be constructed only from the training data provided.
+
+5. Benchmark-specific solution retrieval
+- You must not look up the known winning solution for the specific Kaggle competition you are solving.
+- You must not fetch a repository, notebook, or write-up that is a solution to this competition.
+- You must not use a checkpoint trained on this competition's train/test labels or published as a solution to this competition.
+- You must not query a database indexed by competition slug (e.g., "spooky-author-identification solution").
+
+6. Source logging
+- Record every external model used in the `final_solution` README and on the board: model ID, source, revision/commit, license, and purpose.
+
+### Decision rule (when in doubt)
+
+- If a source is competition-specific, reveals solutions/metric implementations/test data, or is indexed by the competition slug — **DO NOT SEARCH AND USE IT**.
+- If it is a general pretrained model checkpoint/model card from an official model hub and fits the Allowed section — it is allowed.
+- If you cannot classify a source confidently, do not use it; discuss it with the swarm on the board first.
+
+## Restrictions: 
+DO NOT use leaks. Solve the ML task honestly.
+DO NOT go outside your parent directory. 
+DO NOT modify the python env.
+
+Violation = disqualification of the submission.
+
+The task is in `TASK.md`. First, introduce yourself to the swarm and agree on the first tasks with it.---
+total 48
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 .
+drwxr-xr-x 3 root root 4096 Oct 30 19:51 ..
+-rw-r--r-- 1 root root  118 Oct 30 19:51 opencode-serve.log
+-rw-r--r-- 1 root root 9592 Oct 30 19:51 swarm-1.log
+-rw-r--r-- 1 root root 9064 Oct 30 19:51 swarm-2.log
+-rw-r--r-- 1 root root 9146 Oct 30 19:51 swarm-3.log
+---
+--- sandbox tree
+.
+./data
+./data/train.csv
+./data/README.md
+./data/description.md
+./data/sample_submission.csv
+./data/test.csv
+./TASK.md
+./blackboard
+./blackboard/.agent_ids
+./blackboard/agent_logs
+./blackboard/deadline.json
+./blackboard/.swarm_agents
+./analysis
+./analysis/graph.json
+./analysis/metrics.csv
+./analysis/graph.html
+./PROMPT_SWARM.md
+[0m
+[0m$ [0mcat blackboard/.swarm_agents 2>/dev/null; echo "---"; cat blackboard/.agent_ids 2>/dev/null; echo "--- logs"; tail -30 blackboard/agent_logs/swarm-1.log
+3
+---
+swarm-1	pollux_upsilon
+swarm-2	achernar_kappa
+swarm-3	aldebaran_xi
+--- logs
+-rw-r--r-- 1 root root    34 Oct 30 19:51 metrics.csv
+---dirs---
+.
+./.opencode-data
+./.opencode-data/opencode
+./analysis
+./blackboard
+./blackboard/agent_logs
+./data
+[0m
+[0m$ [0mhead -5 data/train.csv; echo "---test---"; head -3 data/test.csv; echo "---counts---"; python3 -c "
+import csv,collections
+with open('data/train.csv') as f:
+    r=csv.DictReader(f); rows=list(r)
+print(len(rows), rows[0].keys())
+print(collections.Counter(x['author'] for x in rows))
+" 2>/dev/null || echo "python3 failed"
+id,text,author
+id06121,So I did not abandon the search until I had become fully satisfied that the thief is a more astute man than myself.,EAP
+id01074,He had promised to spend some hours with me one afternoon but a violent and continual rain prevented him.,MWS
+id12145,"In the end he give him a funny kind o' thingumajig made aout o' lead or something, that he said ud bring up the fish things from any place in the water whar they might be a nest of 'em.",HPL
+id18286,"What other construction could I possibly put upon such conduct, on the part of a lady so beautiful so wealthy evidently so accomplished of so high breeding of so lofty a position in society in every regard so entirely respectable as I felt assured was Madame Lalande?",EAP
+---test---
+id,text
+id27251,"There seemed to be a void, and nothing more, and I felt a childish fear which prompted me to draw from my hip pocket the revolver I always carried after dark since the night I was held up in East Providence."
+id09612,"This event caused many of those who were about to sail, to put foot again on firm land, ready to encounter any evil rather than to rush into the yawning jaws of the pitiless ocean."
+---counts---
+17621 dict_keys(['id', 'text', 'author'])
+Counter({'EAP': 7090, 'MWS': 5457, 'HPL': 5074})
+[0m
+[0m
+[0m$ [0mpyenv versions 2>/dev/null; echo "---"; pyenv shell sis-black 2>/dev/null && python -c "import sys; print(sys.version)"; echo "---pkgs"; pyenv shell sis-black && pip list 2>/dev/null | grep -iE "torch|transformers|sklearn|scikit|lightgbm|xgboost|catboost|numpy|pandas|sentencepiece|tokenizers|datasets|accelerate|nltk|spacy" 
+Python 3.11.17
+---
+3.11.17 (main, Oct  6 2026, 04:41:03) [GCC 12.2.0]
+---pkgs
+accelerate                   0.33.0
+catboost                     1.2.5
+datasets                     2.1.0
+efficientnet_pytorch         0.7.1
+lightgbm                     4.5.0
+msgpack-numpy                0.4.8
+nltk                         3.9.1
+numpy                        1.26.4
+pandas                       2.2.2
+pytorch-lightning            2.4.0
+scikit-image                 0.24.0
+scikit-learn                 1.5.1
+scikit-optimize              0.10.2
+scikit-surprise              1.1.4
+segmentation-models-pytorch  0.3.4
+sentence-transformers        3.0.1
+sentencepiece                0.2.0
+sklearn-pandas               2.2.0
+spacy                        3.7.6
+spacy-legacy                 3.0.12
+spacy-loggers                1.0.5
+tokenizers                   0.19.1
+torch                        2.2.0
+torch_geometric              2.3.1
+torchaudio                   2.2.0
+torchdata                    0.7.1
+torchinfo                    1.8.0
+torchmetrics                 1.4.1
+torchtext                    0.17.0
+torchvision                  0.17.0
+transformers                 4.44.2
+xgboost                      2.1.1
+[0m
+[0m$ [0mmkdir -p workspaces/achernar_kappa && ls -la workspaces; echo "---mem---"; free -g; echo "---cpu---"; nproc
+total 16
+drwxr-xr-x 4 root root 4096 Oct 30 19:51 .
+drwxr-xr-x 7 root root 4096 Oct 30 19:51 ..
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 achernar_kappa
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 aldebaran_xi
+---mem---
+               total        used        free      shared  buff/cache   available
+Mem:             125           6          96           0          24         119
+Swap:              0           0           0
+---cpu---
+128
+[0m
+[0m$ [0mnvidia-smi 2>/dev/null | head -20; echo "---gpu none?---"; ls -la ~/.cache/huggingface 2>/dev/null; echo "---hf hub---"; pyenv shell sis-black && python -c "import torch;print('cuda',torch.cuda.is_available(), torch.cuda.device_count())"; echo "---net---"; timeout 15 curl -sI https://huggingface.co 2>&1 | head -3
+Fri Oct 30 19:51:59 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.126.09             Driver Version: 580.126.09     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100 80GB PCIe          Off |   00000000:05:00.0 Off |                    0 |
+| N/A   39C    P0             51W /  300W |       0MiB /  81920MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+---gpu none?---
+---hf hub---
+cuda True 1
+---net---
+HTTP/2 200 
+content-type: text/html; charset=utf-8
+content-length: 176391
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_intro_and_plan.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && mkdir -p workspaces/achernar_kappa && cat > workspaces/achernar_kappa/test_dl.py <<'EOF'
+import time, os
+os.environ['HF_HUB_ENABLE_HF_TRANSFER']='0'
+from huggingface_hub import snapshot_download
+t=time.time()
+for m in ["microsoft/deberta-v3-base","roberta-base"]:
+    try:
+        p=snapshot_download(m, allow_patterns=["*.json","*.txt","*.model","*.safetensors","*.bin","*.spm"])
+        print("OK",m,p,round(time.time()-t,1))
+    except Exception as e:
+        print("ERR",m,repr(e)[:300])
+EOF
+systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && pyenv shell sis-black && python workspaces/achernar_kappa/test_dl.py' 2>&1 | tail -20
+pytorch_model.bin:   0%|          | 0.00/501M [00:00<?, ?B/s][A
+Fetching 8 files:  50%|█████     | 4/8 [00:00<00:00,  5.66it/s][A
+tokenizer.json: 0.00B [00:00, ?B/s][A
+vocab.json: 0.00B [00:00, ?B/s][A
+tokenizer.json: 180kB [00:00, 1.69MB/s][A
+vocab.json: 426kB [00:00, 4.16MB/s][A
+vocab.json: 877kB [00:00, 4.31MB/s][Avocab.json: 899kB [00:00, 4.31MB/s]
+
+tokenizer.json: 489kB [00:00, 2.35MB/s][A
+tokenizer.json: 1.04MB [00:00, 3.64MB/s][Atokenizer.json: 1.36MB [00:00, 3.76MB/s]
+
+model.safetensors:  13%|█▎        | 67.0M/499M [00:03<00:19, 22.2MB/s][A
+model.safetensors: 100%|██████████| 499M/499M [00:04<00:00, 142MB/s]  [Amodel.safetensors: 100%|██████████| 499M/499M [00:04<00:00, 102MB/s]
+
+Fetching 8 files:  88%|████████▊ | 7/8 [00:05<00:00,  1.34it/s][A
+pytorch_model.bin:  27%|██▋       | 134M/501M [00:05<00:13, 26.7MB/s][A
+pytorch_model.bin:  67%|██████▋   | 335M/501M [00:05<00:02, 78.2MB/s][A
+pytorch_model.bin: 100%|██████████| 501M/501M [00:05<00:00, 129MB/s] [Apytorch_model.bin: 100%|██████████| 501M/501M [00:05<00:00, 85.7MB/s]
+Fetching 8 files: 100%|██████████| 8/8 [00:06<00:00,  1.22it/s]
+OK roberta-base /workspace/.cache/huggingface/hub/models--roberta-base/snapshots/e2da8e2f811d1448a5b465c236feacd80ffbac7b 13.4
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && ls -lt blackboard; echo "---"; for f in blackboard/*.md; do echo "== $f"; cat "$f"; done 2>/dev/null | head -100
+total 20
+-rw-r--r-- 1 root root 1988 Oct 30 19:52 pollux_upsilon_intro_plan.md
+-rw-r--r-- 1 root root 1998 Oct 30 19:52 achernar_kappa_intro_and_plan.md
+-rw-r--r-- 1 root root 1461 Oct 30 19:52 aldebaran_xi_intro.md
+drwxr-xr-x 2 root root 4096 Oct 30 19:51 agent_logs
+-rw-r--r-- 1 root root  116 Oct 30 19:51 deadline.json
+---
+== blackboard/achernar_kappa_intro_and_plan.md
+# achernar_kappa — intro & swarm plan
+
+Hi swarm, I'm **achernar_kappa** (swarm-2). Task: 3-class author classification (EAP/HPL/MWS), metric = multi-class log loss (lower better). Train 17,621 / test 1,958.
+
+Environment check:
+- 1× **A100 80GB**, 128 CPU, ~120GB RAM → transformers fine-tuning is cheap here.
+- `pyenv shell sis-black` has torch 2.2, transformers 4.44, sklearn, lightgbm, xgboost, catboost. HF hub reachable.
+- Only 3 agents: `pollux_upsilon`, `aldebaran_xi`, me.
+
+## Proposed division of labour (please reply/claim)
+- **achernar_kappa (me)**: transformer fine-tuning (DeBERTa-v3 / RoBERTa / BERT family, multi-seed, 5-fold OOF) + transformer part of ensemble. I start immediately.
+- **pollux_upsilon**: classic sparse models — word/char TF-IDF + LogisticRegression / MNB / NB-SVM / linear SVM (calibrated), possibly FastText-style. These are strong on author-style tasks (~0.30-0.35).
+- **aldebaran_xi**: stylometric feature engineering (punctuation, sentence/word length, stopword rates, POS, readability) + GBM (LGBM/XGB/Cat) and/or TF-IDF+SVD+GBM; also meta-features.
+- Everyone: produce **OOF train preds + test preds** and publish paths + scores, so we can blend.
+
+## CRITICAL: identical folds for clean blending
+Use exactly this so our OOFs are stackable:
+```python
+import pandas as pd
+from sklearn.model_selection import StratifiedKFold
+tr = pd.read_csv('data/train.csv')          # keep original row order, do NOT shuffle
+cls = {'EAP':0,'HPL':1,'MWS':2}
+y = tr['author'].map(cls).values
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+folds = list(skf.split(tr, y))              # list of (tr_idx, va_idx)
+```
+Save OOF as `oof_<model>.npy` shape (17621,3), test as `test_<model>.npy` shape (1958,3), columns order EAP,HPL,MWS (class ids 0,1,2). Publish val logloss in board.
+
+## Baseline reference
+I will post a first transformer OOF logloss ASAP. Please post your first linear baseline too.
+
+Tags: #plan #communication #model_selection #ensembling
+== blackboard/aldebaran_xi_intro.md
+# aldebaran_xi — intro & plan
+
+Hi swarm, I'm **aldebaran_xi**. Task: Spooky Author Identification, 3-class text classification (EAP/HPL/MWS), metric = multiclass logloss (lower better). Train 17,621 rows, test 1,958.
+
+Env checked: sklearn 1.5, lgb/xgb/catboost, torch 2.2 + **A100 80GB**, transformers 4.44 available. 128 cores / 125GB RAM (respect cgroup 6-8G per job via systemd-run --scope).
+
+## My proposed division of roles
+- **aldebaran_xi (me)**: strong classical text pipeline baseline — TF-IDF (word+char) + MultinomialNB / LogisticRegression / SGD / LinearSVC-calibrated, then blend. Fast, reliable. Will publish OOF preds + holdout score.
+- **pollux_upsilon**: transformer fine-tune (e.g. distilbert/roberta) — GPU is free, big potential gain.
+- **achernar_kappa**: alternative feature/model family (e.g. character-level, NB-SVM, CountVectorizer+NB, or EAP/HPL/MWS stylometric features / embeddings).
+
+## Key agreement proposal
+Use a **shared, fixed 5-fold `StratifiedKFold(shuffle, seed=42)` split** on `data/train.csv` (ordered by row index) so OOF predictions are stackable across agents. Everyone publishes OOF prob matrix (train, 17621x3) + test prob matrix (1958x3) as `.npy` in their workspace plus the filename on board. Then we blend/stack on OOF and write `final_solution/`.
+
+Please reply with: (1) which role you take, (2) agree on the shared fold split (seed 42). I'll start the classical baseline now.
+#plan #communication #status
+== blackboard/pollux_upsilon_intro_plan.md
+# pollux_upsilon — intro & plan
+
+Hi swarm! I'm **pollux_upsilon** (swarm-1). Task: 3-class author classification (EAP/HPL/MWS), metric = multi-class log loss (lower better). Data: 17,621 train, 1,958 test.
+
+## Environment facts (useful for everyone)
+- **A100 80GB GPU available**, 128 CPU, 125G RAM.
+- `sis-black` has: torch 2.2.0+cu121, transformers 4.44.2, sklearn, lightgbm, xgboost, catboost, sentencepiece, timm, nltk, datasets.
+- HuggingFace Hub reachable (verified `distilroberta-base` info).
+- train class balance: EAP .402 / MWS .310 / HPL .288.
+
+## My proposed division of labor (please confirm/counter)
+- **pollux_upsilon (me): transformer fine-tuning** — 5-fold StratifiedCV, several backbones (roberta-base, distilroberta-base, deberta-v3-base, electra), produce **OOF + test probs** saved as npy/csv in my workspace, publish paths + scores.
+- **achernar_kappa: classical NLP** — TF-IDF word+char n-grams + LogisticRegression / NB-SVM / LinearSVC-calibrated, plus CountVectorizer+LightGBM. Produce OOF + test probs.
+- **aldebaran_xi: diversity / meta** — alternative model family (e.g. FastText/embeddings or extra transformer), and later **stacking/ensemble coordinator** using OOF from all agents.
+
+## Protocol
+- Use a **shared split**: `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` on `author`. Everyone must use exactly this so OOF blending is valid.
+- Save OOF as `oof_<name>.npy` (17621x3, order = train.csv row order) and test as `test_<name>.npy` (1958x3, order = test.csv row order), plus class order **EAP,HPL,MWS**.
+- Report OOF logloss on the board wrapped as `<metric>0.xxxx<\metric>`.
+- Heavy GPU jobs: coordinate before launching. I'll start with 1 backbone first (~10-15 min), tell you when a slot frees.
+
+## Reference baseline to beat
+TF-IDF char+word + LogReg typically ~0.40. Good transformer CV ~0.30-0.33. Target ensemble < 0.30.
+
+Reply with your chosen direction. I'll start 5-fold roberta-base now.
+
+#plan #communication #status
+[0m
+[0m$ [0mls /workspace/.cache/huggingface/hub 2>/dev/null; echo "---"; cd /download_job_code/payload/sandbox && pyenv shell sis-black && python -c "
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+for m in ['microsoft/deberta-v3-base','roberta-base']:
+    try:
+        t=AutoTokenizer.from_pretrained(m); print('OK',m,len(t))
+    except Exception as e: print('ERR',m,repr(e)[:200])
+" 2>&1 | tail -10
+models--microsoft--deberta-v3-base
+models--roberta-base
+version.txt
+---
+/usr/local/lib/python3.11/site-packages/transformers/tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
+  warnings.warn(
+/usr/local/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:551: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+OK microsoft/deberta-v3-base 128001
+OK roberta-base 50265
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_role_classical.md
+Wrote file successfully.
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/classical.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/classical.py lr_word mnb_word' 2>&1 | tail -20
+lr_word          logloss=0.46824  (28s)
+mnb_word         logloss=0.73970  (8s)
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/classical.py lr_char lr_wordchar nbsvm_word nbsvm_char cnb_word mnb_char sgd_word lr_stylo lr_word13 lr_char36' 2>&1 | tail -30
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/usr/local/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/usr/local/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+/usr/local/lib/python3.11/site-packages/sklearn/linear_model/_logistic.py:469: ConvergenceWarning: lbfgs failed to converge (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT.
+
+Increase the number of iterations (max_iter) or scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+lr_stylo         logloss=0.65207  (332s)
+lr_word13        logloss=0.53217  (83s)
+lr_char36        logloss=0.46038  (75s)
+[0m
+[0m$ [0mcat /download_job_code/payload/sandbox/workspaces/achernar_kappa/preds/classical_scores.json; echo; ls -la /download_job_code/payload/sandbox/workspaces/achernar_kappa/preds
+{
+ "lr_char": 0.44026888257871083,
+ "lr_wordchar": 0.39772392465707496,
+ "nbsvm_word": 0.5351085569876015,
+ "nbsvm_char": 0.45324175362877567,
+ "cnb_word": 0.5495686404176409,
+ "mnb_char": 2.9001655277121934,
+ "sgd_word": 0.4654577182333818,
+ "lr_stylo": 0.6520741761385189,
+ "lr_word13": 0.5321708482095799,
+ "lr_char36": 0.4603787220191292
+}
+total 5580
+drwxr-xr-x 2 root root   4096 Oct 30 20:07 .
+drwxr-xr-x 3 root root   4096 Oct 30 19:53 ..
+-rw-r--r-- 1 root root    343 Oct 30 20:07 classical_scores.json
+-rw-r--r-- 1 root root 423032 Oct 30 19:58 oof_cnb_word.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:55 oof_lr_char.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:07 oof_lr_char36.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:04 oof_lr_stylo.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:53 oof_lr_word.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:06 oof_lr_word13.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:56 oof_lr_wordchar.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:59 oof_mnb_char.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:53 oof_mnb_word.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:58 oof_nbsvm_char.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:57 oof_nbsvm_word.npy
+-rw-r--r-- 1 root root 423032 Oct 30 19:59 oof_sgd_word.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:58 test_cnb_word.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:55 test_lr_char.npy
+-rw-r--r-- 1 root root  47120 Oct 30 20:07 test_lr_char36.npy
+-rw-r--r-- 1 root root  47120 Oct 30 20:04 test_lr_stylo.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:53 test_lr_word.npy
+-rw-r--r-- 1 root root  47120 Oct 30 20:06 test_lr_word13.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:56 test_lr_wordchar.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:59 test_mnb_char.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:53 test_mnb_word.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:58 test_nbsvm_char.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:57 test_nbsvm_word.npy
+-rw-r--r-- 1 root root  47120 Oct 30 19:59 test_sgd_word.npy
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && ls -lt blackboard/*.md 2>/dev/null; echo "---new---"; for f in $(ls -t blackboard/*.md | head -4); do echo "== $f"; cat "$f"; done | head -120
+-rw-r--r-- 1 root root 1432 Oct 30 19:56 blackboard/pollux_upsilon_final_owner.md
+-rw-r--r-- 1 root root 1019 Oct 30 19:53 blackboard/aldebaran_xi_role_and_baseline.md
+-rw-r--r-- 1 root root 1400 Oct 30 19:52 blackboard/pollux_upsilon_division_resolved.md
+-rw-r--r-- 1 root root 1485 Oct 30 19:52 blackboard/achernar_kappa_role_classical.md
+-rw-r--r-- 1 root root 1988 Oct 30 19:52 blackboard/pollux_upsilon_intro_plan.md
+-rw-r--r-- 1 root root 1998 Oct 30 19:52 blackboard/achernar_kappa_intro_and_plan.md
+-rw-r--r-- 1 root root 1461 Oct 30 19:52 blackboard/aldebaran_xi_intro.md
+---new---
+== blackboard/pollux_upsilon_final_owner.md
+# pollux_upsilon — coordination: who writes final_solution (avoid file clash)
+
+Good progress. To prevent two agents writing `final_solution/submission.csv` simultaneously (rule 2), let's lock ownership:
+
+- **aldebaran_xi** = ensemble coordinator and **sole writer** of `final_solution/` (has the OOF harness + already coordinates). Please keep a `final_solution/logs` note of weights.
+- **pollux_upsilon (me)** = transformer core: post `oof_<tag>.npy` / `test_<tag>.npy` in `workspaces/pollux_upsilon/preds/`. `roberta-base` 5-fold running now.
+- **achernar_kappa** = sparse classical models (LR / NB-SVM / ComplementNB / char-LR) + publish OOF/test paths. Since aldebaran also runs a word+char LR, please make yours *different*: focus **NB-SVM, ComplementNB, char_wb-only LR, SGD**, and leave plain word+char LR to aldebaran [[aldebaran_xi_role_and_baseline.md]].
+
+## Blending recipe I recommend for the coordinator
+On the shared OOF: fit per-model **temperature** + non-negative blend weights by minimizing OOF logloss (scipy `minimize`, softmax-parameterized weights). Optionally a stacker `LogisticRegression` on concat of `log(p)` features. Choose by OOF, then apply to test. I'll send exact weights for my transformer subset too.
+
+I'll report `roberta-base` fold loglosses shortly. Next backbones from me: `microsoft/deberta-v3-base`, then `roberta-large` (multi-seed if time).
+
+#communication #ensembling #plan #submission
+== blackboard/aldebaran_xi_role_and_baseline.md
+# aldebaran_xi — role confirmed + first baseline
+
+Agreeing with the split in [[pollux_upsilon_division_resolved.md]] and [[achernar_kappa_role_classical.md]]:
+- **I take classical + GBM/stylometric diversity AND ensemble coordination** (I already have the shared-fold OOF harness). achernar → transformer diversity (per pollux), pollux → transformer core.
+- Shared folds confirmed: `StratifiedKFold(5, shuffle=True, random_state=42)`, train row order, class order EAP,HPL,MWS. My OOFs follow exactly this.
+
+## First baseline (word 1-2 + char_wb 3-5 TF-IDF, hstack, 5-fold OOF)
+- LogisticRegression(C=10): **<metric>0.3838<\metric>**
+- MultinomialNB(alpha=.02): 0.4194
+- CalibratedClassifierCV(LinearSVC): 0.4291
+
+Saved: `workspaces/aldebaran_xi/{oof,test}_lr.npy`, `_nb.npy`, `_svc.npy`.
+
+Next from me: tuned char/word LR, NB-SVM, ComplementNB, and GBM on stylometric+SVD features → then I'll stack everyone's OOF (please upload your `.npy` paths). Target ensemble < 0.28.
+
+#status #model_selection #ensembling
+== blackboard/pollux_upsilon_division_resolved.md
+# pollux_upsilon — division resolved (avoid duplication)
+
+All three of us proposed overlapping work. To avoid duplicates, I propose this **final split** (please follow, reply if you disagree):
+
+- **pollux_upsilon (me) → transformers core**: `roberta-base` + `microsoft/deberta-v3-base`, 5-fold StratifiedKFold(seed=42), produce `oof_*` / `test_*`. Starting `roberta-base` now (max_len=160 covers 99.8% of sentences).
+- **achernar_kappa → transformers diversity**: please use **different backbones** (`distilroberta-base`, `google/electra-base-discriminator`, `bert-base-uncased`) so we don't duplicate. GPU has 80GB — 2 small fine-tunes concurrently is fine. Keep bs=32, same 5-fold split.
+- **aldebaran_xi → classical + GBM diversity** (your plan): TF-IDF word+char → LR / MNB / NB-SVM / LinearSVC-calibrated + CountVectorizer+LightGBM + stylometric features. This is the essential non-transformer leg and also our safety net. Please do NOT spend the GPU.
+
+## Shared split (confirmed from [[achernar_kappa_intro_and_plan.md]] and [[aldebaran_xi_intro.md]])
+`StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` on `train.csv` in original row order.
+OOF shape (17621,3), test (1958,3), class order EAP,HPL,MWS.
+
+I'll post `roberta-base` OOF score as soon as it finishes (~15-25 min) and tell achernar when GPU headroom confirmed.
+
+#communication #plan #model_selection #ensembling
+== blackboard/achernar_kappa_role_classical.md
+# achernar_kappa — role: classical strong baselines + diversity (no transformer clash)
+
+Both [[pollux_upsilon_intro_plan.md]] and [[aldebaran_xi_intro.md]] proposed overlapping roles. To avoid duplication I'll **take the classical / sparse-NLP role** (which both of you assigned to me anyway) and let **pollux** own transformer fine-tuning. **aldebaran**: please do stylometric features + GBM, and/or FastText/embeddings — not the same TF-IDF+LogReg I'm doing.
+
+Agreed on shared folds: `StratifiedKFold(5, shuffle=True, random_state=42)` on `data/train.csv` row order. Class order EAP,HPL,MWS. OOF `(17621,3)`, test `(1958,3)`, saved `.npy`.
+
+My first batch (running now), all 5-fold OOF:
+1. TF-IDF word(1,2) + LogReg
+2. TF-IDF char_wb(2,5) + LogReg
+3. word+char hstack + LogReg
+4. NB-SVM (NB log-count ratio + TF-IDF, L2 LogReg) — usually the strongest sparse model here
+5. MultinomialNB / ComplementNB on counts
+6. SGD(log_loss)
+7. CountVectorizer char + MNB
+8. + hand stylometric features (punct/unigram freq) fed to LogReg
+
+I'll publish OOF logloss for each and the `.npy` paths. Then I'll also run a **stacking/blending** on all agents' OOFs and put the best agreed ensemble into `final_solution/`.
+
+@pollux: please save your transformer OOFs under exactly the shared folds; if you use a different backbone per fold that's fine. @aldebaran: publish your OOF paths too. Let's aim ensemble < 0.28.
+
+Tags: #plan #communication #model_selection #feature_engineering #ensembling
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/tune_sparse.py
+Wrote file successfully.
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_classical_results.md
+Wrote file successfully.
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/train_tf.py
+Wrote file successfully.
+[0m
+[0m$ [0msleep 90; cd /download_job_code/payload/sandbox && ls -lt blackboard/*.md | head -5; echo "---"; ls -la workspaces/pollux_upsilon/preds 2>/dev/null; cat workspaces/pollux_upsilon/preds/*.json 2>/dev/null | head -40
+-rw-r--r-- 1 root root 1317 Oct 30 20:08 blackboard/pollux_upsilon_transformer_results1.md
+-rw-r--r-- 1 root root 1130 Oct 30 20:08 blackboard/aldebaran_xi_classical_results.md
+-rw-r--r-- 1 root root 2044 Oct 30 20:07 blackboard/achernar_kappa_classical_results.md
+-rw-r--r-- 1 root root 1432 Oct 30 19:56 blackboard/pollux_upsilon_final_owner.md
+-rw-r--r-- 1 root root 1019 Oct 30 19:53 blackboard/aldebaran_xi_role_and_baseline.md
+---
+total 8
+drwxr-xr-x 2 root root 4096 Oct 30 19:53 .
+drwxr-xr-x 5 root root 4096 Oct 30 19:53 ..
+[0m
+[0m$ [0mnvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv,noheader; cd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model distilroberta-base --tag drb_f0 --folds 0 --epochs 3 --maxlen 128 --bs 32 --lr 2e-5' 2>&1 | tail -15
+5899 MiB, 32 %
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+  fold0 ep3 val_ll=0.42808
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+fold0 best=0.42808 (156s)
+DONE drb_f0 OOF_ll=nan time=156s
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat blackboard/pollux_upsilon_transformer_results1.md; echo "===ALDE==="; cat blackboard/aldebaran_xi_classical_results.md
+# pollux_upsilon — transformer results (fold-0 probe + full runs)
+
+Config for all: max_len=160 (covers 99.8% sent.), bs=32, 5-fold shared split, class order EAP,HPL,MWS.
+
+## DeBERTa-v3 clearly wins on this task
+| backbone | setup | fold0 logloss |
+|---|---|---|
+| `roberta-base` | 4ep, lr2e-5 | 0.4347 |
+| `roberta-large` | 4ep, lr1.5e-5 | 0.3723 |
+| **`microsoft/deberta-v3-base`** | **5ep, lr1.5e-5** | **<metric>0.3554<\metric>** (fold0) |
+
+**fold0 is the hardest fold** (roberta-base: 0.4347/0.3786/0.3861 on folds 0/1/2), so use fold0 for quick config comparisons.
+
+## Running now
+- `microsoft/deberta-v3-base` **full 5-fold** (5ep, lr1.5e-5) — ETA ~35-45 min.
+- `microsoft/deberta-v3-large` fold0 probe — if ≥ as good, run full 5-fold after.
+- `roberta-base` full 5-fold already in progress (will serve as diversity, not the core).
+
+## For the stack (aldebaran_xi [[aldebaran_xi_role_and_baseline.md]])
+I'll save `workspaces/pollux_upsilon/preds/oof_<tag>.npy` / `test_<tag>.npy` exactly on the shared split. @achernar_kappa [[achernar_kappa_classical_results.md]]: your distilroberta/electra/bert diversity is perfect — please keep those backbones (distinct from my roberta/deberta). Your best sparse was word+char LR 0.3977; aldebaran's C=10 got 0.3838.
+
+#status #model_selection #training #insight
+===ALDE===
+# aldebaran_xi — classical results + stack status
+
+Using shared folds. All my `.npy` in `workspaces/aldebaran_xi/`. Best classical so far:
+
+| model | OOF logloss |
+|---|---|
+| **LR word(1,3)+char_wb(2,6), C=20** | **<metric>0.3699<\metric>** (`oof_lr_wc_13_26_C20.npy`) |
+| LR word+char C=40 | 0.3702 |
+| LR word+char(1,2)/(2,5) C=10 | 0.3838 |
+| MultinomialNB on TF-IDF (α=.1) | 0.3976 (`oof_mnb_tfidf_a0.1.npy`) |
+| Calibrated LinearSVC | 0.3868 |
+| LGBM on SVD(150)+stylometry | 0.5968 (weak, low weight only) |
+| LGBM on stylometry only | 0.9099 (discard) |
+
+Observation: high C (~20) is key for word+char TF-IDF LR. MNB gives useful decorrelation.
+
+I see achernar's sparse preds (thanks — will use in stack as diversity). Now building the **blend/stack harness** that auto-loads all `workspaces/**/{oof,test}_*.npy`, filters by OOF, and fits (a) greedy Caruana hill-climb weights and (b) LR-on-logits stacker, validated by a held-out fold scheme. Will publish interim blended OOF score once transformers land. @pollux when `roberta-base` OOF is saved please drop the path on board.
+
+#status #ensembling #model_selection
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model google/electra-base-discriminator --tag electra_f0 --folds 0 --epochs 4 --maxlen 160 --bs 32 --lr 1.5e-5' 2>&1 | tail -8
+Some weights of ElectraForSequenceClassification were not initialized from the model checkpoint at google/electra-base-discriminator and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold0 ep1 val_ll=0.48257
+  fold0 ep2 val_ll=0.41147
+  fold0 ep3 val_ll=0.49689
+  fold0 ep4 val_ll=0.43296
+fold0 best=0.41147 (555s)
+DONE electra_f0 OOF_ll=nan time=555s
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model microsoft/deberta-v3-small --tag dvs_f0 --folds 0 --epochs 5 --maxlen 160 --bs 32 --lr 1.5e-5' 2>&1 | tail -8
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold0 ep1 val_ll=0.53279
+  fold0 ep2 val_ll=0.44410
+  fold0 ep3 val_ll=0.55651
+  fold0 ep4 val_ll=0.49438
+  fold0 ep5 val_ll=0.49605
+fold0 best=0.44410 (600s)
+DONE dvs_f0 OOF_ll=nan time=600s
+[0m
+[0m$ [0mnvidia-smi --query-gpu=memory.used,utilization.gpu --format=csv,noheader; nvidia-smi --query-compute-apps=pid,used_memory --format=csv,noheader; echo "---pollux---"; ls -la /download_job_code/payload/sandbox/workspaces/pollux_upsilon/preds 2>/dev/null; echo "---alde---"; ls -la /download_job_code/payload/sandbox/workspaces/aldebaran_xi 2>/dev/null | head
+28919 MiB, 100 %
+2233329, 8264 MiB
+2233344, 20640 MiB
+---pollux---
+total 476
+drwxr-xr-x 2 root root   4096 Oct 30 20:15 .
+drwxr-xr-x 5 root root   4096 Oct 30 20:19 ..
+-rw-r--r-- 1 root root    517 Oct 30 20:15 meta_roberta_base.json
+-rw-r--r-- 1 root root 423032 Oct 30 20:15 oof_roberta_base.npy
+-rw-r--r-- 1 root root  47120 Oct 30 20:15 test_roberta_base.npy
+---alde---
+total 15816
+drwxr-xr-x 2 root root   4096 Oct 30 20:09 .
+drwxr-xr-x 5 root root   4096 Oct 30 19:52 ..
+-rw-r--r-- 1 root root   2209 Oct 30 19:52 baseline.py
+-rw-r--r-- 1 root root   3717 Oct 30 20:08 blend.py
+-rw-r--r-- 1 root root   4407 Oct 30 20:04 gbm.py
+-rw-r--r-- 1 root root 423032 Oct 30 20:03 oof_cnb_cv_c.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:03 oof_cnb_cv_w.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:08 oof_lgb_style.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:08 oof_lgb_svd_style.npy
+[0m
+[0m$ [0mcat /download_job_code/payload/sandbox/workspaces/pollux_upsilon/preds/meta_roberta_base.json; echo; cd /download_job_code/payload/sandbox && pyenv shell sis-black && python -c "
+import numpy as np,pandas as pd
+from sklearn.metrics import log_loss
+tr=pd.read_csv('data/train.csv'); y=tr.author.map({'EAP':0,'HPL':1,'MWS':2}).values
+o=np.load('workspaces/pollux_upsilon/preds/oof_roberta_base.npy')
+print('roberta_base OOF',log_loss(y,o,labels=[0,1,2]))
+"
+{
+  "tag": "roberta_base",
+  "model": "roberta-base",
+  "oof_logloss": 0.3970258850189236,
+  "fold_scores": [
+    0.4346556199534331,
+    0.3786213176625143,
+    0.3861051896356542,
+    0.37472279580484635,
+    0.411013823906804
+  ],
+  "args": {
+    "model": "roberta-base",
+    "tag": "roberta_base",
+    "epochs": 4.0,
+    "lr": 2e-05,
+    "bs": 32,
+    "max_len": 160,
+    "folds": 5,
+    "seed": 42,
+    "warmup": 0.1,
+    "wd": 0.01,
+    "only_fold": -1,
+    "grad_accum": 1,
+    "trust_remote_code": false
+  }
+}
+/usr/local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2956: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+roberta_base OOF 0.3970258850189236
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox/workspaces/achernar_kappa/preds && rm -f *drb_f0* *dvs_f0* *electra_f0* && ls
+classical_scores.json
+oof_cnb_word.npy
+oof_lr_char.npy
+oof_lr_char36.npy
+oof_lr_stylo.npy
+oof_lr_word.npy
+oof_lr_word13.npy
+oof_lr_wordchar.npy
+oof_mnb_char.npy
+oof_mnb_word.npy
+oof_nbsvm_char.npy
+oof_nbsvm_word.npy
+oof_sgd_word.npy
+test_cnb_word.npy
+test_lr_char.npy
+test_lr_char36.npy
+test_lr_stylo.npy
+test_lr_word.npy
+test_lr_word13.npy
+test_lr_wordchar.npy
+test_mnb_char.npy
+test_mnb_word.npy
+test_nbsvm_char.npy
+test_nbsvm_word.npy
+test_sgd_word.npy
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_probe_results.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=10G -p MemoryMax=12G -p MemorySwapMax=0 bash -lc '
+cd /download_job_code/payload/sandbox
+export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false
+pyenv shell sis-black
+python workspaces/achernar_kappa/train_tf.py --model google/electra-base-discriminator --tag electra_base --epochs 4 --maxlen 160 --bs 32 --lr 1.5e-5 > workspaces/achernar_kappa/log_electra.txt 2>&1 &
+P1=$!
+python workspaces/achernar_kappa/train_tf.py --model microsoft/deberta-v3-base --tag dv3b_s123 --epochs 5 --maxlen 160 --bs 32 --lr 1.5e-5 --seed 123 > workspaces/achernar_kappa/log_dv3b_s123.txt 2>&1 &
+P2=$!
+wait $P1 $P2
+echo "=== ELECTRA ==="; grep -E "fold|DONE" workspaces/achernar_kappa/log_electra.txt | tail -12
+echo "=== DV3B s123 ==="; grep -E "fold|DONE" workspaces/achernar_kappa/log_dv3b_s123.txt | tail -12
+' 2>&1 | tail -30
+=== ELECTRA ===
+fold2 best=0.40209 (500s)
+  fold3 ep1 val_ll=0.47243
+  fold3 ep2 val_ll=0.38795
+  fold3 ep3 val_ll=0.40006
+  fold3 ep4 val_ll=0.44705
+fold3 best=0.38795 (480s)
+  fold4 ep1 val_ll=0.49321
+  fold4 ep2 val_ll=0.40288
+  fold4 ep3 val_ll=0.40323
+  fold4 ep4 val_ll=0.44246
+fold4 best=0.40288 (504s)
+DONE electra_base OOF_ll=0.39878 time=2462s
+=== DV3B s123 ===
+  fold3 ep2 val_ll=0.37647
+  fold3 ep3 val_ll=0.35306
+  fold3 ep4 val_ll=0.39364
+  fold3 ep5 val_ll=0.51449
+fold3 best=0.35306 (852s)
+  fold4 ep1 val_ll=0.51960
+  fold4 ep2 val_ll=0.38354
+  fold4 ep3 val_ll=0.34199
+  fold4 ep4 val_ll=0.43913
+  fold4 ep5 val_ll=0.48977
+fold4 best=0.34199 (1246s)
+DONE dv3b_s123 OOF_ll=0.35570 time=4864s
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date && ls -lt blackboard/*.md | head -6 && echo "=== recent ===" && for f in $(ls -t blackboard/*.md | head -4); do echo "== $f"; cat "$f"; done | head -150
+Fri Oct 30 21:42:41 MSK 2026
+-rw-r--r-- 1 root root  831 Oct 30 21:26 blackboard/pollux_upsilon_stack_size.md
+-rw-r--r-- 1 root root 1152 Oct 30 21:15 blackboard/aldebaran_xi_xlmr_run.md
+-rw-r--r-- 1 root root 1694 Oct 30 21:13 blackboard/aldebaran_xi_first_submission.md
+-rw-r--r-- 1 root root 1783 Oct 30 21:13 blackboard/pollux_upsilon_stack_0224.md
+-rw-r--r-- 1 root root 1395 Oct 30 21:01 blackboard/aldebaran_xi_stacking_confirmed.md
+-rw-r--r-- 1 root root 2050 Oct 30 20:51 blackboard/pollux_upsilon_stacking_breakthrough.md
+=== recent ===
+== blackboard/pollux_upsilon_stack_size.md
+# pollux_upsilon — stack size sweep: use ~ALL diverse models (0.2225)
+
+Sweep on current 49-model pool (has dbv3b_full + electra_base; **not yet** rlarge/dbv3l):
+
+| topk (after dedupe) | C=1 | C=3 |
+|---|---|---|
+| 10 | 0.2430 | 0.2426 |
+| 15 | 0.2344 | 0.2342 |
+| 20 | 0.2254 | 0.2252 |
+| 25 | 0.2234 | 0.2234 |
+| 30 | 0.2243 | 0.2245 |
+| **all (37)** | **<metric>0.22254<\metric>** | 0.2231 |
+
+→ **Don't truncate to top-20.** Keep every model with solo OOF < 0.55 after corr>0.9995 dedupe, `C=1` multinomial LR. Weak classical members still help.
+(@aldebaran_xi [[aldebaran_xi_stacking_confirmed.md]] your "all 47" choice was right.)
+
+Still running: `roberta-large` (fold0 .3723), `deberta-v3-large` (fold0 .3538), `deberta-v3-base` seed7. Will post final pool stack + candidate after they land.
+
+#ensembling #insight #status
+== blackboard/aldebaran_xi_xlmr_run.md
+# aldebaran_xi — adding one CPU-side transformer backbone for stack diversity
+
+While coordinating, I launched **`xlm-roberta-base`** 5-fold (shared folds, seed42, max_len160, 4ep, lr2e-5) in my workspace as an **architectural-diversity** member (different SentencePiece tokenizer from roberta/deberta/electra). Job: `workspaces/aldebaran_xi/train_tf.py`, log `workspaces/aldebaran_xi/log_xlmr.txt`, outputs `workspaces/aldebaran_xi/preds/{oof,test}_xlmr_base.npy`. GPU mem currently ~55/80GB, so no OOM risk; if anyone sees strain tell me and I'll stop it.
+
+@pollux_upsilon: keep your DeBERTa-v3-large + roberta-large (highest single-model value). @achernar_kappa: after `dv3b_s123`, a `distilroberta-base` or `bert-base-uncased` run would add another decorrelated member — but only if the GPU is comfortable.
+
+Current status summary: best stack **0.2196** nested OOF, `final_solution/submission.csv` already valid (safety). Folds verified **identical across all three agents** (per-fold logloss of my seed42 split matches pollux's & achernar's reported fold scores exactly) → stacking is valid.
+
+#status #communication #architecture #ensembling
+== blackboard/aldebaran_xi_first_submission.md
+# aldebaran_xi — first real submission is in place (nested OOF 0.2196)
+
+`final_solution/submission.csv` now holds a **safety** candidate from the bagged LR-logit stack over the current pool (49 pairs, cutoff<0.65, C=0.3). Nested-CV OOF (3×5-fold, honest) = **<metric>0.2196<\metric>** ±0.0005. Meta in `final_solution/stack_meta.json`.
+
+Pool improvements since last message: `pollux_upsilon:dbv3b_full` **0.3588** (DeBERTa-v3-base) and `achernar_kappa:electra_base` **0.3988** landed → stack 0.2425 → **0.2196**. This confirms: **each new transformer backbone/seed is the highest-value item.**
+
+## Coordinator recipe (currently implemented, reproducible in `workspaces/aldebaran_xi/stack_final.py`)
+1. Load all `workspaces/**/oof_*.npy`+`test_*.npy`, clip/normalize, drop OOF>0.65.
+2. Features `concat(log p)`, multinomial `LogisticRegression(C=0.3)`.
+3. Honest estimate via 3× repeated 5-fold nested CV; final test = average of 10 stackers each fit on a random 80% of OOF (variance reduction).
+4. Stylometric/length meta-features and LGBM/MLP stackers were tested and **do NOT help** (LR 0.2199 vs LGB 0.2381 vs MLP 0.2345) — keep it simple.
+
+## Requests
+- @pollux_upsilon @achernar_kappa: **keep the transformers coming** (deberta-v3-large full, multi-seed deberta-v3-base/base seeds 123/7, roberta-large). Each distinct strong transformer is worth ~0.005-0.02 in the stack. If a job frees the GPU, prioritize **another seed of deberta-v3-base/large** over new weak classical models.
+- I will re-run the stack + rewrite `final_solution/submission.csv` every time new OOFs land, and freeze the best version ~30 min before hard_end.
+
+#submission #ensembling #status #model_selection
+== blackboard/pollux_upsilon_stack_0224.md
+# pollux_upsilon — STACK UPDATE: 0.224 nested OOF (stable) + why CV is trustworthy here
+
+After DeBERTa-v3-base full 5-fold landed (OOF 0.3588) plus achernar's `electra_base` (0.3988), the LR stack drops to:
+
+**nested-CV stack OOF = <metric>0.2237<\metric>** (LR C=1–3, 20 models, `concat(log(prob))`).
+Stable across 5 random stacker splits: 0.2224–0.2252. Comparisons (same features, 5 seeds):
+- LR C=1: 0.2239, LR C=3: 0.2237 ← **best**
+- MLP(64): 0.2352, LightGBM: 0.2441 (worse; don't use)
+→ **Use plain multinomial LogisticRegression** on log-prob features. No stylometry (it made it worse: 0.2541 vs 0.2531 earlier).
+
+My pool order by solo OOF: `dbv3b_full` 0.3588 > `lr_wc_13_26_C20` 0.3699 > `roberta_base` 0.3970 > `electra_base` 0.3988 > MNB/NB ~0.40-0.42 (high stack value).
+
+## Why CV is a trustworthy estimate for this MLE-bench task
+`train 17621 + test 1958 = 19579` = the original Kaggle train set size. So the hidden test is a **random 10% slice of the original train**, same distribution as our CV. OOF/nested-CV should track the hidden score closely (unlike the original 8392-row LB). Good news: the 0.224 is meaningful.
+
+## Candidate artifact
+`workspaces/pollux_upsilon/preds/cand_v1_submission.csv` + `cand_v1_test.npy` (test = fold-average base preds → stacker). Script: `workspaces/pollux_upsilon/stack2.py` (`--topk 20`). @aldebaran_xi: feel free to adopt this exactly, or re-fit from all `.npy` — same result. I'm **not** writing `final_solution/`.
+
+## Still running (all add stack diversity)
+- `pollux_upsilon`: `deberta-v3-large` (fold0 probe 0.3538), `roberta-large` full 5-fold.
+- `achernar_kappa`: `electra-base` done, `deberta-v3-base` seed123 full.
+- `aldebaran_xi`: classical pool + coordinator.
+
+#insight #ensembling #submission #status
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && ls -la workspaces/pollux_upsilon/preds workspaces/aldebaran_xi/*.npy 2>/dev/null | tail -30; echo "--- metas"; for f in workspaces/pollux_upsilon/preds/meta_*.json; do echo "$f"; cat "$f"; echo; done 2>/dev/null | grep -E 'tag|oof_logloss|fold_scores' 
+-rw-r--r-- 1 root root   47120 Oct 30 20:02 workspaces/aldebaran_xi/test_lr_wc_13_26_C40.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_lr_wc_13_26_C80.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:04 workspaces/aldebaran_xi/test_lr_word.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_mnb_cv_c.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_mnb_cv_w.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_mnb_tfidf_a0.01.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_mnb_tfidf_a0.03.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_mnb_tfidf_a0.1.npy
+-rw-r--r-- 1 root root   47120 Oct 30 19:52 workspaces/aldebaran_xi/test_nb.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:03 workspaces/aldebaran_xi/test_sgd.npy
+-rw-r--r-- 1 root root   47120 Oct 30 19:53 workspaces/aldebaran_xi/test_svc.npy
+-rw-r--r-- 1 root root   47120 Oct 30 20:04 workspaces/aldebaran_xi/test_svc_cal_c05.npy
+
+workspaces/pollux_upsilon/preds:
+total 2424
+drwxr-xr-x 2 root root   4096 Oct 30 21:29 .
+drwxr-xr-x 5 root root   4096 Oct 30 21:26 ..
+-rw-r--r-- 1 root root 423032 Oct 30 21:08 cand_oof.npy
+-rw-r--r-- 1 root root    736 Oct 30 21:08 cand_v1_meta.json
+-rw-r--r-- 1 root root 135087 Oct 30 21:08 cand_v1_submission.csv
+-rw-r--r-- 1 root root  47120 Oct 30 21:08 cand_v1_test.npy
+-rw-r--r-- 1 root root    545 Oct 30 21:06 meta_dbv3b_full.json
+-rw-r--r-- 1 root root    517 Oct 30 20:15 meta_roberta_base.json
+-rw-r--r-- 1 root root 423032 Oct 30 21:06 oof_dbv3b_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 21:29 oof_mpnet.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:15 oof_roberta_base.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:49 stack_oof.npy
+-rw-r--r-- 1 root root  47120 Oct 30 21:06 test_dbv3b_full.npy
+-rw-r--r-- 1 root root  47120 Oct 30 21:29 test_mpnet.npy
+-rw-r--r-- 1 root root  47120 Oct 30 20:15 test_roberta_base.npy
+--- metas
+  "tag": "dbv3b_full",
+  "oof_logloss": 0.35879923647576784,
+  "fold_scores": [
+    "tag": "dbv3b_full",
+  "tag": "roberta_base",
+  "oof_logloss": 0.3970258850189236,
+  "fold_scores": [
+    "tag": "roberta_base",
+[0m
+[0m$ [0mnvidia-smi --query-gpu=memory.total,memory.used,memory.free,utilization.gpu --format=csv,noheader; nvidia-smi --query-compute-apps=pid,used_memory --format=csv,noheader
+81920 MiB, 52312 MiB, 28841 MiB, 100 %
+2239275, 22304 MiB
+2241358, 13342 MiB
+2242693, 8166 MiB
+2243828, 8474 MiB
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_dv3b_s123_landed.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model microsoft/deberta-v3-base --tag dv3b_s2024_l224 --epochs 5 --maxlen 224 --bs 24 --lr 1.5e-5 --seed 2024 > workspaces/achernar_kappa/log_dv3b_s2024.txt 2>&1; grep -E "best=|DONE|Error|error" workspaces/achernar_kappa/log_dv3b_s2024.txt | tail -12' 2>&1 | tail -20
+(no output)
+
+<shell_metadata>
+shell tool terminated command after exceeding timeout 5400000 ms. If this command is expected to take longer and is not waiting for interactive input, retry with a larger timeout value in milliseconds.
+</shell_metadata>
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; nvidia-smi --query-compute-apps=pid,used_memory --format=csv,noheader; echo "---log---"; tail -20 workspaces/achernar_kappa/log_dv3b_s2024.txt 2>/dev/null; echo "---files---"; ls -la workspaces/achernar_kappa/preds/*s2024* 2>/dev/null
+Fri Oct 30 23:12:54 MSK 2026
+2250810, 21860 MiB
+2251932, 21782 MiB
+---log---
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold2 ep1 val_ll=0.44056
+  fold2 ep2 val_ll=0.35661
+  fold2 ep3 val_ll=0.36849
+  fold2 ep4 val_ll=0.42311
+  fold2 ep5 val_ll=0.51891
+fold2 best=0.35661 (940s)
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold3 ep1 val_ll=0.46168
+  fold3 ep2 val_ll=0.33856
+  fold3 ep3 val_ll=0.38995
+  fold3 ep4 val_ll=0.48698
+  fold3 ep5 val_ll=0.54634
+fold3 best=0.33856 (1130s)
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at microsoft/deberta-v3-base and are newly initialized: ['classifier.bias', 'classifier.weight', 'pooler.dense.bias', 'pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold4 ep1 val_ll=0.38972
+  fold4 ep2 val_ll=0.40423
+---files---
+[0m
+[0m$ [0mps aux | grep -E "train_tf|deberta" | grep -v grep | awk '{print $2, $11, $12, $13, $14, $15}'; echo "---"; systemctl --user list-units --type=scope --no-pager 2>/dev/null | head; echo "---log mtime---"; stat -c '%y %n' /download_job_code/payload/sandbox/workspaces/achernar_kappa/log_dv3b_s2024.txt; sleep 20; stat -c '%y %n' /download_job_code/payload/sandbox/workspaces/achernar_kappa/log_dv3b_s2024.txt; tail -3 /download_job_code/payload/sandbox/workspaces/achernar_kappa/log_dv3b_s2024.txt
+17677 bash workspaces/pollux_upsilon/launch.sh dbv3l_s7 --model microsoft/deberta-v3-large
+17680 python workspaces/pollux_upsilon/train_transformer.py --tag dbv3l_s7 --model
+18511 python -u workspaces/aldebaran_xi/train_tf.py --model microsoft/deberta-v3-large
+20778 python workspaces/pollux_upsilon/train_transformer.py --tag dbv3l_s7 --model
+20779 python workspaces/pollux_upsilon/train_transformer.py --tag dbv3l_s7 --model
+20793 python -u workspaces/aldebaran_xi/train_tf.py --model microsoft/deberta-v3-large
+20794 python -u workspaces/aldebaran_xi/train_tf.py --model microsoft/deberta-v3-large
+---
+---log mtime---
+2026-10-30 23:11:58.685209620 +0300 /download_job_code/payload/sandbox/workspaces/achernar_kappa/log_dv3b_s2024.txt
+2026-10-30 23:11:58.685209620 +0300 /download_job_code/payload/sandbox/workspaces/achernar_kappa/log_dv3b_s2024.txt
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+  fold4 ep1 val_ll=0.38972
+  fold4 ep2 val_ll=0.40423
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && ls -lt blackboard/*.md | head -8; echo "===="; for f in $(ls -t blackboard/*.md | head -3); do echo "== $f"; tail -40 "$f"; done
+-rw-r--r-- 1 root root 2044 Oct 30 23:05 blackboard/pollux_upsilon_dbv3l_landed.md
+-rw-r--r-- 1 root root 1273 Oct 30 22:41 blackboard/aldebaran_xi_stack_01978.md
+-rw-r--r-- 1 root root 1236 Oct 30 22:26 blackboard/aldebaran_xi_stack_02095.md
+-rw-r--r-- 1 root root 1715 Oct 30 21:53 blackboard/pollux_upsilon_compliance_final.md
+-rw-r--r-- 1 root root 1078 Oct 30 21:47 blackboard/aldebaran_xi_stack_02163.md
+-rw-r--r-- 1 root root 1263 Oct 30 21:42 blackboard/achernar_kappa_dv3b_s123_landed.md
+-rw-r--r-- 1 root root  831 Oct 30 21:26 blackboard/pollux_upsilon_stack_size.md
+-rw-r--r-- 1 root root 1152 Oct 30 21:15 blackboard/aldebaran_xi_xlmr_run.md
+====
+== blackboard/pollux_upsilon_dbv3l_landed.md
+# pollux_upsilon — DeBERTa-v3-LARGE landed = best single (0.311). Stack now ~0.199
+
+## New models saved (shared folds, EAP/HPL/MWS)
+- **`pollux_upsilon/dbv3l_full` — OOF <metric>0.31094<\metric>** (deberta-v3-large, 4ep lr1e-5, maxlen160). Folds: .3538/.2838/.2762/.2919/.3490. **Best single model by far.**
+- `pollux_upsilon/rlarge_full` — OOF 0.34791 (roberta-large).
+- `pollux_upsilon/dbv3b_s7` — OOF 0.37341 (deberta-v3-base seed7).
+- `pollux_upsilon/mpnet` — 0.59487 (frozen sentence embeddings; keep as weak diversity).
+
+## Stack retune WITH dbv3l (3 random stacker splits)
+| cutoff (solo OOF) | n | best C | nested OOF |
+|---|---|---|---|
+| 0.45 | 27 | 0.1-1 | 0.2021 |
+| 0.55 | 42 | 0.1 | 0.1995 |
+| **0.65** | **47** | **0.03** | **<metric>0.19862<\metric>** |
+| 1.00 | 51 | 0.03 | 0.19896 |
+
+→ **Use cutoff 0.65, C≈0.03, include ALL models** (mpnet & weak LGB included; they help marginally). Single-seed-42 nested = 0.2009; 3-seed mean 0.1986.
+
+## Calibration verified — no post-hoc needed
+Nested-OOF reliability (confidence bin → accuracy / mean conf): [.9,.98)→.946/.951; [.98,1]→**.997/.995**. Temperature scan: **T=1.0 optimal** (0.9→0.2024, 1.1→0.2021). So the very sharp test probs in `final_solution` are justified, not overconfident.
+Test class distribution of my candidate: EAP/HPL/MWS = .421/.279/.300 vs train prior .402/.288/.310 — sane.
+
+## Candidate
+`workspaces/pollux_upsilon/preds/cand_v3_submission.csv` (cutoff .65, C=.01-.03, 10× bagged 80% fit). Re-fit yourself after `dbv3l_s7` lands.
+
+## Still running
+- `pollux`: **deberta-v3-large seed7** (fold0/1 = .3572/.3056; likely OOF ~0.31) — second strong seed.
+- `pollux`: `electra-large-discriminator` fold0 probe.
+@aldebaran_xi [[aldebaran_xi_stack_02163.md]]: **please include `dbv3l_full` in the next final stack — it's the single biggest gain (0.2163 → ~0.199).** @achernar_kappa: if you have GPU, a different-arch large (electra-large / bert-large) is now the highest-value addition.
+
+#status #ensembling #insight #submission
+== blackboard/aldebaran_xi_stack_01978.md
+# aldebaran_xi — stack 0.1978 !!! (deberta-v3-large 0.3109 landed) + I'm training a 2nd large seed
+
+`pollux:dbv3l_full` = **<metric>0.31094<\metric>** (by far the best single model) + `dbv3b_s7` (0.3734) entered the pool (55 pairs). Re-stacked:
+
+**nested OOF = <metric>0.1978<\metric>** ±0.0001 (was 0.2095). `final_solution/submission.csv` rewritten + `solution.py/README` in sync.
+
+Single-model hierarchy now: `dbv3l_full` .3109 >> `rlarge_full` .3479 > `dv3b_s123` .3557 > `dbv3b_full` .3588 > `dbv3b_s7` .3734 > classical .37-.40 > NB/mpnet.
+
+## I launched a 2nd DeBERTa-v3-large seed (GPU now ~50/80GB, safe)
+`microsoft/deberta-v3-large`, **seed 2024**, 5ep, lr1.5e-5, maxlen160, shared folds → tag `dv3l_s2024`, log `workspaces/aldebaran_xi/log_dv3l_s2024.txt`. Rationale: large seed-diversity is the highest marginal value (each previous large/seed change moved the stack a lot). ETA ~100 min. @pollux @achernar — no other large-model run needed from you; keep medium backbones (bert/distilroberta/dv3b longer-context) if GPU headroom.
+
+If anyone finishes and sees GPU free, a **3rd deberta-v3-large seed** (777) or a `deberta-v3-large` maxlen224 would be welcome — that's the only thing likely to push <0.19.
+
+#status #ensembling #architecture #submission
+== blackboard/aldebaran_xi_stack_02095.md
+# aldebaran_xi — BIG drop: stack 0.2095 (roberta-large landed) + final artifacts added
+
+`pollux:rlarge_full` (roberta-large) **0.3479** entered the pool (now 53 pairs, 46 kept). Re-ran stack:
+
+**nested OOF = <metric>0.2095<\metric>** ±0.0002 (was 0.2161). `final_solution/submission.csv` rewritten.
+
+Hyperparameter grid (nested, 3×5-fold): `log p` features, cutoff<0.65, **C=0.1 best** (0.2160 → with rlarge 0.2095); lower C is consistently better, C≥1 worse. Keeping all weak (<0.65) models still optimal.
+
+## final_solution now complete per rule 18 + internet-rule 6 (thanks @pollux for the checklist [[pollux_upsilon_compliance_final.md]])
+- `submission.csv`, `test_probs.npy`, `stack_meta.json`
+- `solution.py` (exact stacker producing the submission)
+- `train_transformer.py` (fine-tune code), `classical_models.py` (TF-IDF/linear/NB code)
+- `README.md` with **all external checkpoints: ID/source/license/purpose** + validation protocol
+
+Still incoming: `pollux:deberta-v3-large` (fold0-3 avg ~0.30, best single!), `achernar:dv3b_s2024_l224`, possibly `bert-base`. I'll re-stack each time. @pollux your `dbv3l_full` will likely be the single biggest lever — ping the board when it lands.
+
+#submission #ensembling #status
+[0m
+[0m← [0mEdit workspaces/achernar_kappa/train_tf.py
+Index: /download_job_code/payload/sandbox/workspaces/achernar_kappa/train_tf.py
+===================================================================
+--- /download_job_code/payload/sandbox/workspaces/achernar_kappa/train_tf.py
++++ /download_job_code/payload/sandbox/workspaces/achernar_kappa/train_tf.py
+@@ -58,9 +58,22 @@
+ 
+ oof=np.zeros((len(tr),3)); tep=np.zeros((len(te),3)); used=0
+ fold_scores={}
+ t00=time.time()
++pc_oof=os.path.join(args.outdir,f'oof_{args.tag}.npy')
++pc_te =os.path.join(args.outdir,f'test_{args.tag}.npy')
++pc_st =os.path.join(args.outdir,f'state_{args.tag}.json')
++done=set()
++if os.path.exists(pc_st):
++    st=json.load(open(pc_st)); done=set(st.get('done',[])); fold_scores=st.get('fold_scores',{})
++    if os.path.exists(pc_oof):
++        oof=np.load(pc_oof)
++    if os.path.exists(pc_te):
++        tep=np.load(pc_te)*len(done)
++    print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+ for k in fold_ids:
++    if k in done:
++        continue
+     ti,vi=folds[k]; t0=time.time()
+     seed_all(args.seed*100+k)
+     model=AutoModelForSequenceClassification.from_pretrained(args.model,num_labels=3).to(device)
+     tr_enc=enc(tr['text'].values[ti]); va_enc=enc(tr['text'].values[vi])
+
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && sed -n '55,110p' workspaces/achernar_kappa/train_tf.py
+def enc(texts):
+        return tok(list(texts), truncation=True, max_length=args.maxlen, padding='max_length', return_tensors='pt')
+    te_enc=enc(te['text'].values)
+
+    oof=np.zeros((len(tr),3)); tep=np.zeros((len(te),3)); used=0
+    fold_scores={}
+    t00=time.time()
+    pc_oof=os.path.join(args.outdir,f'oof_{args.tag}.npy')
+    pc_te =os.path.join(args.outdir,f'test_{args.tag}.npy')
+    pc_st =os.path.join(args.outdir,f'state_{args.tag}.json')
+    done=set()
+    if os.path.exists(pc_st):
+        st=json.load(open(pc_st)); done=set(st.get('done',[])); fold_scores=st.get('fold_scores',{})
+        if os.path.exists(pc_oof):
+            oof=np.load(pc_oof)
+        if os.path.exists(pc_te):
+            tep=np.load(pc_te)*len(done)
+        print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+    for k in fold_ids:
+        if k in done:
+            continue
+        ti,vi=folds[k]; t0=time.time()
+        seed_all(args.seed*100+k)
+        model=AutoModelForSequenceClassification.from_pretrained(args.model,num_labels=3).to(device)
+        tr_enc=enc(tr['text'].values[ti]); va_enc=enc(tr['text'].values[vi])
+        tr_dl=DataLoader(DS(tr_enc,torch.tensor(y[ti])),batch_size=args.bs,shuffle=True,num_workers=2,pin_memory=True)
+        va_dl=DataLoader(DS(va_enc),batch_size=64,shuffle=False,num_workers=2,pin_memory=True)
+        te_dl=DataLoader(DS(te_enc),batch_size=64,shuffle=False,num_workers=2,pin_memory=True)
+        opt=torch.optim.AdamW(model.parameters(),lr=args.lr,weight_decay=0.01)
+        steps=len(tr_dl)*args.epochs
+        sch=get_linear_schedule_with_warmup(opt,int(0.1*steps),steps)
+        scaler=torch.cuda.amp.GradScaler(enabled=(device=='cuda'))
+        best=1e9; best_o=None; best_t=None
+        for ep in range(args.epochs):
+            model.train()
+            for b in tr_dl:
+                b={kk:vv.to(device) for kk,vv in b.items()}
+                opt.zero_grad()
+                with torch.cuda.amp.autocast(enabled=(device=='cuda')):
+                    out=model(input_ids=b['input_ids'],attention_mask=b['attention_mask'],labels=b['labels'])
+                    loss=out.loss
+                scaler.scale(loss).backward(); scaler.unscale_(opt)
+                torch.nn.utils.clip_grad_norm_(model.parameters(),1.0)
+                scaler.step(opt); scaler.update(); sch.step()
+            pv=predict(model,va_dl,device)
+            ll=log_loss(y[vi],pv,labels=[0,1,2])
+            print(f'  fold{k} ep{ep+1} val_ll={ll:.5f}',flush=True)
+            if ll<best:
+                best=ll; best_o=pv; best_t=predict(model,te_dl,device)
+        oof[vi]=best_o; tep+=best_t; used+=1
+        fold_scores[k]=best
+        print(f'fold{k} best={best:.5f} ({time.time()-t0:.0f}s)',flush=True)
+        del model; torch.cuda.empty_cache()
+    tep/=max(used,1)
+    ll=log_loss(y,oof,labels=[0,1,2]) if used==5 else float('nan')
+    np.save(os.path.join(args.outdir,f'oof_{args.tag}.npy'),oof)
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && python - <<'EOF'
+p='workspaces/achernar_kappa/train_tf.py'
+s=open(p).read()
+s=s.replace("""        if os.path.exists(pc_te):
+            tep=np.load(pc_te)*len(done)""","""        pc_sum=os.path.join(args.outdir,f'testsum_{args.tag}.npy')
+        if os.path.exists(pc_sum):
+            tep=np.load(pc_sum)""")
+s=s.replace("""        oof[vi]=best_o; tep+=best_t; used+=1
+        fold_scores[k]=best
+        print(f'fold{k} best={best:.5f} ({time.time()-t0:.0f}s)',flush=True)
+        del model; torch.cuda.empty_cache()
+    tep/=max(used,1)
+    ll=log_loss(y,oof,labels=[0,1,2]) if used==5 else float('nan')
+    np.save(os.path.join(args.outdir,f'oof_{args.tag}.npy'),oof)""","""        oof[vi]=best_o; tep+=best_t; done.add(k); fold_scores[str(k)]=best
+        np.save(pc_oof,oof); np.save(os.path.join(args.outdir,f'testsum_{args.tag}.npy'),tep)
+        json.dump({'done':sorted(done),'fold_scores':fold_scores},open(pc_st,'w'),indent=1)
+        print(f'fold{k} best={best:.5f} ({time.time()-t0:.0f}s) SAVED done={sorted(done)}',flush=True)
+        del model; torch.cuda.empty_cache()
+    used=len(done)
+    tep=tep/max(used,1)
+    ll=log_loss(y[done_idx] if False else y,oof,labels=[0,1,2]) if used==5 else float('nan')
+    np.save(os.path.join(args.outdir,f'oof_{args.tag}.npy'),oof)""")
+open(p,'w').write(s)
+print('done')
+EOF
+sed -n '100,125p' workspaces/achernar_kappa/train_tf.py
+done
+            pv=predict(model,va_dl,device)
+            ll=log_loss(y[vi],pv,labels=[0,1,2])
+            print(f'  fold{k} ep{ep+1} val_ll={ll:.5f}',flush=True)
+            if ll<best:
+                best=ll; best_o=pv; best_t=predict(model,te_dl,device)
+        oof[vi]=best_o; tep+=best_t; done.add(k); fold_scores[str(k)]=best
+        np.save(pc_oof,oof); np.save(os.path.join(args.outdir,f'testsum_{args.tag}.npy'),tep)
+        json.dump({'done':sorted(done),'fold_scores':fold_scores},open(pc_st,'w'),indent=1)
+        print(f'fold{k} best={best:.5f} ({time.time()-t0:.0f}s) SAVED done={sorted(done)}',flush=True)
+        del model; torch.cuda.empty_cache()
+    used=len(done)
+    tep=tep/max(used,1)
+    ll=log_loss(y[done_idx] if False else y,oof,labels=[0,1,2]) if used==5 else float('nan')
+    np.save(os.path.join(args.outdir,f'oof_{args.tag}.npy'),oof)
+    np.save(os.path.join(args.outdir,f'test_{args.tag}.npy'),tep)
+    np.save(os.path.join(args.outdir,f'folds_{args.tag}.npy'),np.array(fold_ids))
+    json.dump({'tag':args.tag,'model':args.model,'fold_scores':fold_scores,'oof_ll':ll,
+               'args':vars(args),'time':time.time()-t00},
+              open(os.path.join(args.outdir,f'meta_{args.tag}.json'),'w'),indent=1)
+    print(f'DONE {args.tag} OOF_ll={ll:.5f} time={time.time()-t00:.0f}s',flush=True)
+
+if __name__=='__main__': main()
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && python - <<'EOF'
+p='workspaces/achernar_kappa/train_tf.py'
+s=open(p).read()
+s=s.replace("ll=log_loss(y[done_idx] if False else y,oof,labels=[0,1,2]) if used==5 else float('nan')",
+            "ll=log_loss(y,oof,labels=[0,1,2]) if used==5 else float('nan')")
+open(p,'w').write(s)
+EOF
+pyenv shell sis-black && python -c "import ast;ast.parse(open('workspaces/achernar_kappa/train_tf.py').read());print('syntax ok')"
+syntax ok
+[0m
+[0m$ [0mnvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; ps aux|grep -E "train_tf|train_transformer"|grep -v grep|awk '{print $2,$13,$15,$16}'
+43657 MiB, 37496 MiB
+17680 --tag --model microsoft/deberta-v3-large
+18511 workspaces/aldebaran_xi/train_tf.py microsoft/deberta-v3-large --tag
+20778 --tag --model microsoft/deberta-v3-large
+20779 --tag --model microsoft/deberta-v3-large
+20793 workspaces/aldebaran_xi/train_tf.py microsoft/deberta-v3-large --tag
+20794 workspaces/aldebaran_xi/train_tf.py microsoft/deberta-v3-large --tag
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_status_bertlarge.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model bert-large-uncased --tag bertlarge_full --folds 0,1 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 > workspaces/achernar_kappa/log_bertlarge.txt 2>&1; grep -E "best=|SAVED|DONE|Error|error" workspaces/achernar_kappa/log_bertlarge.txt | tail -12' 2>&1 | tail -20
+fold0 best=0.38268 (1187s) SAVED done=[0]
+fold1 best=0.32976 (1198s) SAVED done=[0, 1]
+DONE bertlarge_full OOF_ll=nan time=2385s
+[0m
+[0m$ [0msleep 240; cd /download_job_code/payload/sandbox && ls -lt blackboard/*.md | head -5; echo "---"; tail -25 $(ls -t blackboard/*.md | head -1); echo "---gpu---"; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader
+-rw-r--r-- 1 root root 1095 Oct 30 23:56 blackboard/pollux_upsilon_dbv3l_s7.md
+-rw-r--r-- 1 root root 1100 Oct 30 23:44 blackboard/aldebaran_xi_partial_oof_guard.md
+-rw-r--r-- 1 root root 1338 Oct 30 23:16 blackboard/pollux_upsilon_status_large.md
+-rw-r--r-- 1 root root 1539 Oct 30 23:13 blackboard/achernar_kappa_status_bertlarge.md
+-rw-r--r-- 1 root root 2044 Oct 30 23:05 blackboard/pollux_upsilon_dbv3l_landed.md
+---
+# pollux_upsilon — dbv3l_s7 landed (0.3319); stack seed42 = 0.1991
+
+- **`pollux_upsilon/dbv3l_s7`** (deberta-v3-large seed7): **<metric>0.33190<\metric>** OOF. Saved `oof_dbv3l_s7.npy` / `test_dbv3l_s7.npy`.
+- Re-stacked all 55+ models (cutoff 0.65, 10× bagged): **nested seed42 = <metric>0.19910<\metric>** (C=0.01–0.03), slightly better than before s7 (0.20087). Candidate: `workspaces/pollux_upsilon/preds/cand_v4_submission.csv`.
+- This matches aldebaran's ~0.1978 (their estimate averages seeds 100/101/102, hence the small offset). All consistent.
+
+@aldebaran_xi: `dbv3l_s7` is a drop-in; please include it. I launched a **4th deberta-large seed (777)** as you suggested (running, ETA ~1.5h, GPU now ~51/80GB). After it lands I'll post the final re-stack number. Achernar's `bert-large` + aldebaran's `dv3l_s2024` should add further.
+
+Electra-large probe failed with a `Trainer` checkpoint-save bug (non-contiguous tensor in safetensors), not OOM; I added a `--no_ckpt` path but I'm not relaunching it to keep GPU headroom for the running large jobs.
+
+#status #ensembling #submission
+---gpu---
+55258 MiB, 25894 MiB
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model bert-large-uncased --tag bertlarge_full --folds 2,3 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 >> workspaces/achernar_kappa/log_bertlarge.txt 2>&1; grep -E "best=|SAVED|DONE" workspaces/achernar_kappa/log_bertlarge.txt | tail -6' 2>&1 | tail -12
+fold0 best=0.38268 (1187s) SAVED done=[0]
+fold1 best=0.32976 (1198s) SAVED done=[0, 1]
+DONE bertlarge_full OOF_ll=nan time=2385s
+fold2 best=0.34227 (1155s) SAVED done=[0, 1, 2]
+fold3 best=0.49192 (1105s) SAVED done=[0, 1, 2, 3]
+DONE bertlarge_full OOF_ll=nan time=2261s
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && pyenv shell sis-black && python -c "
+import numpy as np,pandas as pd,json
+from sklearn.metrics import log_loss
+from sklearn.model_selection import StratifiedKFold
+tr=pd.read_csv('data/train.csv'); y=tr.author.map({'EAP':0,'HPL':1,'MWS':2}).values
+folds=list(StratifiedKFold(5,shuffle=True,random_state=42).split(tr,y))
+o=np.load('workspaces/achernar_kappa/preds/oof_bertlarge_full.npy')
+st=json.load(open('workspaces/achernar_kappa/preds/state_bertlarge_full.json')); print(st)
+idx=np.concatenate([folds[k][1] for k in st['done']])
+print('partial logloss',log_loss(y[idx],o[idx],labels=[0,1,2]))
+"
+{'done': [0, 1, 2, 3], 'fold_scores': {'0': 0.3826826247409132, '1': 0.3297598422271136, '2': 0.3422734579607389, '3': 0.49191676209735913}}
+/usr/local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2956: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+partial logloss 0.38665788974283927
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model bert-large-uncased --tag bertlarge_full --folds 4 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 >> workspaces/achernar_kappa/log_bertlarge.txt 2>&1; grep -E "best=|SAVED|DONE" workspaces/achernar_kappa/log_bertlarge.txt | tail -4' 2>&1 | tail -10
+fold3 best=0.49192 (1105s) SAVED done=[0, 1, 2, 3]
+DONE bertlarge_full OOF_ll=nan time=2261s
+fold4 best=0.39150 (794s) SAVED done=[0, 1, 2, 3, 4]
+DONE bertlarge_full OOF_ll=0.38763 time=794s
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/eval_stack.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=4G -p MemoryMax=6G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/eval_stack.py' 2>&1 | tail -60
+56 pairs, 49 kept
+  0.3072 dv3l_s2024
+  0.3109 dbv3l_full
+  0.3319 dbv3l_s7
+  0.3479 rlarge_full
+  0.3557 dv3b_s123
+  0.3588 dbv3b_full
+  0.3699 lr_wc_13_26_C20
+  0.3702 lr_wc_13_26_C40
+  0.3734 dbv3b_s7
+  0.3781 lr_wc_13_26_C80
+  0.3794 lr_wc_13_26_C10
+  0.3838 lr
+  0.3838 lr_wc_12_35_C10
+  0.3868 svc_cal_c05
+  0.3876 bertlarge_full
+  0.3908 lr_wc_12_25_C10
+  0.3970 roberta_base
+  0.3976 mnb_tfidf_a0.1
+  0.3977 lr_wordchar
+  0.3988 electra_base
+  0.4194 nb
+  0.4200 lr_char
+  0.4249 lr_c_25_C10
+  0.4271 lr_wc_13_26_C3
+  0.4277 lr_wc_12_35_C3
+  0.4291 svc
+  0.4349 mnb_tfidf_a0.03
+  0.4399 lr_wc_12_25_C3
+  0.4491 xlmr_base
+  0.4500 lr_w_11_C10
+  0.4532 nbsvm_char
+  0.4583 lr_word
+  0.4604 lr_char36
+  0.4655 sgd_word
+  0.4761 lr_c_25_C3
+  0.4858 mnb_tfidf_a0.01
+  0.4926 sgd
+  0.5057 lr_w_11_C3
+  0.5092 lr_wc_12_35_C1
+  0.5117 lr_wc_13_26_C1
+  0.5236 lr_wc_12_25_C1
+  0.5322 lr_word13
+  0.5351 nbsvm_word
+  0.5493 cnb_word
+  0.5621 cnb_cv_w
+  0.5652 lr_c_25_C1
+  0.5949 mpnet
+  0.5968 lgb_svd_style
+  0.6002 lr_w_11_C1
+STACK all(49) = 0.19469
+STACK without bertlarge = 0.19529  (bertlarge adds +0.00060)
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; ps aux|grep -E "train_tf|train_transformer"|grep -v grep|awk '{print $2,$13,$14,$16}'
+Sat Oct 31 00:45:45 MSK 2026
+21115 MiB, 60037 MiB
+23390 --tag dbv3l_s777 microsoft/deberta-v3-large
+26566 --tag dbv3l_s777 microsoft/deberta-v3-large
+26567 --tag dbv3l_s777 microsoft/deberta-v3-large
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model google/electra-large-discriminator --tag electralarge_full --folds 0,1,2 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 > workspaces/achernar_kappa/log_electralarge.txt 2>&1; grep -E "best=|SAVED|DONE|Error" workspaces/achernar_kappa/log_electralarge.txt | tail -8' 2>&1 | tail -12
+fold0 best=0.33702 (1240s) SAVED done=[0]
+fold1 best=0.37995 (1478s) SAVED done=[0, 1]
+fold2 best=1.08782 (1365s) SAVED done=[0, 1, 2]
+DONE electralarge_full OOF_ll=nan time=4084s
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && python - <<'EOF'
+p='workspaces/achernar_kappa/train_tf.py'
+s=open(p).read()
+# add --force arg
+s=s.replace("    ap.add_argument('--outdir', default=os.path.join(ROOT,'workspaces/achernar_kappa/preds'))",
+"    ap.add_argument('--outdir', default=os.path.join(ROOT,'workspaces/achernar_kappa/preds'))\n    ap.add_argument('--force', action='store_true')")
+# resume: also discover foldpred files; clear done if force not relevant (keep skip logic but allow force)
+s=s.replace("""        print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+    for k in fold_ids:
+        if k in done:
+            continue""","""        print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+    if args.force:
+        done=set()
+    for k in fold_ids:
+        if (k in done) and not args.force:
+            continue""")
+# save per-fold preds after each fold
+s=s.replace("""        oof[vi]=best_o; tep+=best_t; done.add(k); fold_scores[str(k)]=best
+        np.save(pc_oof,oof); np.save(os.path.join(args.outdir,f'testsum_{args.tag}.npy'),tep)""","""        np.savez(os.path.join(args.outdir,f'foldpred_{args.tag}_{k}.npz'),va=vi,va_pred=best_o,te_pred=best_t)
+        oof[vi]=best_o; tep+=best_t; done.add(k); fold_scores[str(k)]=best
+        np.save(pc_oof,oof); np.save(os.path.join(args.outdir,f'testsum_{args.tag}.npy'),tep)""")
+open(p,'w').write(s)
+print('patched')
+EOF
+cat > workspaces/achernar_kappa/rebuild.py <<'EOF'
+import os, sys, glob, json
+import numpy as np, pandas as pd
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import log_loss
+ROOT='/download_job_code/payload/sandbox'
+tr=pd.read_csv(ROOT+'/data/train.csv'); te=pd.read_csv(ROOT+'/data/test.csv')
+y=tr.author.map({'EAP':0,'HPL':1,'MWS':2}).values
+folds=list(StratifiedKFold(5,shuffle=True,random_state=42).split(tr,y))
+OUT=ROOT+'/workspaces/achernar_kappa/preds'
+tag=sys.argv[1]
+oof=np.zeros((len(tr),3)); tep=np.zeros((len(te),3)); done=[]; fs={}
+for k in range(5):
+    f=f'{OUT}/foldpred_{tag}_{k}.npz'
+    if not os.path.exists(f): continue
+    d=np.load(f); ti,vi=folds[k]
+    assert np.array_equal(np.sort(d['va']),np.sort(vi)), (k,'va mismatch')
+    oof[vi]=d['va_pred']; tep+=d['te_pred']; done.append(k)
+    fs[str(k)]=float(log_loss(y[vi],d['va_pred'],labels=[0,1,2]))
+tep/=max(len(done),1)
+ll=float(log_loss(y,oof,labels=[0,1,2])) if len(done)==5 else float('nan')
+np.save(f'{OUT}/oof_{tag}.npy',oof); np.save(f'{OUT}/test_{tag}.npy',tep)
+json.dump({'tag':tag,'folds_done':done,'fold_scores':fs,'oof_ll':ll},open(f'{OUT}/meta_{tag}.json','w'),indent=1)
+print('rebuilt',tag,'done',done,'oof_ll',ll,'folds',fs)
+EOF
+pyenv shell sis-black && python -c "import ast;ast.parse(open('workspaces/achernar_kappa/train_tf.py').read());ast.parse(open('workspaces/achernar_kappa/rebuild.py').read());print('ok')"
+patched
+ok
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && python - <<'EOF'
+p='workspaces/achernar_kappa/train_tf.py'
+s=open(p).read()
+s=s.replace("""        print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+    if args.force:""","""        print(f'RESUME {args.tag} done folds={sorted(done)}',flush=True)
+    for _k in range(5):
+        if os.path.exists(os.path.join(args.outdir,f'foldpred_{args.tag}_{_k}.npz')):
+            done.add(_k)
+    if args.force:""")
+open(p,'w').write(s)
+print('ok')
+EOF
+systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model google/electra-large-discriminator --tag electralarge_full --folds 2 --epochs 4 --maxlen 160 --bs 16 --lr 1e-5 --seed 77 --force >> workspaces/achernar_kappa/log_electralarge.txt 2>&1; pyenv shell sis-black && python workspaces/achernar_kappa/rebuild.py electralarge_full' 2>&1 | tail -12
+ok
+rebuilt electralarge_full done [2] oof_ll nan folds {'2': 0.40675447540138415}
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; ps aux|grep -E "train_tf|train_transformer"|grep -v grep|awk '{print $2,$13,$14,$16}'; echo "---board---"; ls -lt blackboard/*.md|head -4; tail -18 $(ls -t blackboard/*.md|head -1)
+Sat Oct 31 02:16:03 MSK 2026
+39127 MiB, 42026 MiB
+28172 workspaces/aldebaran_xi/train_tf.py --model --tag
+28513 --tag xlmr_full FacebookAI/xlm-roberta-large
+32145 workspaces/aldebaran_xi/train_tf.py --model --tag
+32146 workspaces/aldebaran_xi/train_tf.py --model --tag
+32184 --tag xlmr_full FacebookAI/xlm-roberta-large
+32185 --tag xlmr_full FacebookAI/xlm-roberta-large
+---board---
+-rw-r--r-- 1 root root 1051 Oct 31 01:35 blackboard/pollux_upsilon_cand2_01923.md
+-rw-r--r-- 1 root root  650 Oct 31 01:29 blackboard/aldebaran_xi_stack_01900.md
+-rw-r--r-- 1 root root  868 Oct 31 01:02 blackboard/aldebaran_xi_extra_seed1234.md
+-rw-r--r-- 1 root root 1116 Oct 31 01:02 blackboard/aldebaran_xi_stack_01903.md
+# pollux_upsilon — pool update: s777 + bertlarge in → 0.1923
+
+New completions folded into my stack:
+- `pollux:dbv3l_s777` (deberta-v3-large seed777): OOF **<metric>0.33700<\metric>** (fold0 was an outlier .410; folds1-4 .274/.354/.304/.342).
+- `achernar:bertlarge` (bert-large-uncased): OOF **0.38763** (folds .383/.330/.…); now complete (partial guard passes).
+- `aldebaran:dv3l_s2024`: OOF **0.30724** — 2nd-best single after `dbv3l_full` 0.31094.
+
+**Nested stack (logp+prob, C=0.01, cutoff .65, 51 members) = <metric>0.19226<\metric>** (mean of seeds 42/100/101; seed42 = 0.19518). Candidate: `workspaces/pollux_upsilon/preds/final_cand2_submission.csv`.
+
+@aldebaran_xi: current best recipe = cutoff .65, features `concat(log p, p)`, C≈0.01–0.03, 15× bagged. `final_cand2_submission.csv` is available if you want to diff/copy; agreements with your current final were 99.1% last check. Still incoming: `xlmr-large` full 5-fold (fold0 probe .395; ETA ~02:45) → I'll post one final number, then freeze.
+
+#status #ensembling #submission
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model google/electra-large-discriminator --tag electralarge_full --folds 0,1 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 >> workspaces/achernar_kappa/log_electralarge.txt 2>&1; grep -E "best=|SAVED" workspaces/achernar_kappa/log_electralarge.txt | tail -4' 2>&1 | tail -8
+fold2 best=1.08782 (1365s) SAVED done=[0, 1, 2]
+fold2 best=0.40675 (1294s) SAVED done=[2]
+fold0 best=0.33702 (911s) SAVED done=[0, 2]
+fold1 best=0.37995 (814s) SAVED done=[0, 1, 2]
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model google/electra-large-discriminator --tag electralarge_full --folds 3,4 --epochs 4 --maxlen 160 --bs 16 --lr 1.5e-5 >> workspaces/achernar_kappa/log_electralarge.txt 2>&1; pyenv shell sis-black && python workspaces/achernar_kappa/rebuild.py electralarge_full' 2>&1 | tail -10
+/usr/local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2956: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+rebuilt electralarge_full done [0, 1, 2, 3, 4] oof_ll 0.3631415825436683 folds {'0': 0.3370247442830827, '1': 0.37995195644767576, '2': 0.40675447540138415, '3': 0.32984727947381304, '4': 0.3621368682469662}
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_electralarge_landed.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model microsoft/deberta-v3-large --tag dv3l_s555 --folds 0,1,2 --epochs 4 --maxlen 160 --bs 16 --lr 1e-5 --seed 555 > workspaces/achernar_kappa/log_dv3l_s555.txt 2>&1; grep -E "best=|SAVED" workspaces/achernar_kappa/log_dv3l_s555.txt | tail -4' 2>&1 | tail -8
+Sat Oct 31 03:10:09 MSK 2026
+16139 MiB, 65013 MiB
+fold0 best=0.32681 (1331s) SAVED done=[0]
+fold1 best=0.39515 (1006s) SAVED done=[0, 1]
+fold2 best=0.37496 (954s) SAVED done=[0, 1, 2]
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model microsoft/deberta-v3-large --tag dv3l_s555 --folds 3,4 --epochs 4 --maxlen 160 --bs 16 --lr 1e-5 --seed 555 >> workspaces/achernar_kappa/log_dv3l_s555.txt 2>&1; pyenv shell sis-black && python workspaces/achernar_kappa/rebuild.py dv3l_s555' 2>&1 | tail -8
+/usr/local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2956: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+rebuilt dv3l_s555 done [0, 1, 2, 3, 4] oof_ll 0.35066595085097246 folds {'0': 0.32681204219427723, '1': 0.3951538827673187, '2': 0.37495774371205465, '3': 0.32863591955521415, '4': 0.32777693501256294}
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; systemd-run --user --scope --collect -q -p MemoryHigh=5G -p MemoryMax=7G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/eval_stack.py' 2>&1 | grep -E "pairs|STACK|without|electralarge|bertlarge|dv3l_s555|dv3l_s2024|dbv3l"
+Sat Oct 31 04:38:36 MSK 2026
+62 pairs, 55 kept
+  0.3072 dv3l_s2024
+  0.3109 dbv3l_full
+  0.3319 dbv3l_s7
+  0.3370 dbv3l_s777
+  0.3507 dv3l_s555
+  0.3631 electralarge_full
+  0.3876 bertlarge_full
+STACK all(55) = 0.19423
+STACK without bertlarge = 0.19341  (bertlarge adds -0.00082)
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; ls -lt blackboard/*.md|head -4; echo "==="; tail -20 $(ls -t blackboard/*.md|head -1); echo "=== final ==="; ls -la final_solution 2>/dev/null; head -2 final_solution/submission.csv 2>/dev/null
+0 MiB, 81152 MiB
+-rw-r--r-- 1 root root 1336 Oct 31 03:29 blackboard/pollux_upsilon_cand5_freeze_plan.md
+-rw-r--r-- 1 root root 1392 Oct 31 03:10 blackboard/achernar_kappa_electralarge_landed.md
+-rw-r--r-- 1 root root 1090 Oct 31 03:05 blackboard/pollux_upsilon_s1234_best.md
+-rw-r--r-- 1 root root 1139 Oct 31 02:57 blackboard/aldebaran_xi_stack_01891.md
+===
+# pollux_upsilon — electralarge in → stack 0.1896 (my best); freezing plan
+
+`achernar:electralarge` (OOF 0.36314) + `bertlarge` (0.38763) + xlmr (0.40534) are all complete and in the pool.
+
+**My nested stack (62 discovered, 54 kept, cutoff .65, logp+prob, C=0.01) = <metric>0.18962<\metric>** (mean seeds 42/100/101; seed42 = 0.19325). Candidate: `workspaces/pollux_upsilon/preds/final_cand5_submission.csv`. Matches aldebaran's ~0.1891 (their meta-seeds differ).
+
+## Freeze plan
+- New heavy runs in flight: `achernar:dv3l_s555`, `aldebaran:rlarge_s123` (ETA ~04:30).
+- After they land (~04:45) I run **one final stack + a small cutoff/C sweep**, publish the number and candidate, then **stop heavy work**.
+- @aldebaran_xi: please do the final re-stack including `s555` + `rlarge_s123`, and consider the two free stack tweaks from [[pollux_upsilon_stack_01935.md]] (`concat(log p,p)` features, C≈0.01). After ~05:00 let's freeze and only fix formatting/compliance. I will not write `final_solution/` unless you go silent — if so I'll announce it first on the board to avoid a write clash.
+
+No further heavy launches from me (diminishing returns; test has only 1958 rows so gains <0.002 are within noise). I'll spend the remaining time verifying submission integrity + cross-checking your final.
+
+#status #ensembling #submission
+=== final ===
+total 220
+drwxr-xr-x 2 root root   4096 Oct 30 22:26 .
+drwxr-xr-x 8 root root   4096 Oct 30 21:12 ..
+-rw-r--r-- 1 root root   3635 Oct 30 22:26 README.md
+-rw-r--r-- 1 root root   2209 Oct 30 22:26 classical_models.py
+-rw-r--r-- 1 root root   3603 Oct 31 04:15 solution.py
+-rw-r--r-- 1 root root   4934 Oct 31 04:16 stack_meta.json
+-rw-r--r-- 1 root root 135689 Oct 31 04:16 submission.csv
+-rw-r--r-- 1 root root  47120 Oct 31 04:16 test_probs.npy
+-rw-r--r-- 1 root root   5308 Oct 30 22:26 train_transformer.py
+id,EAP,HPL,MWS
+id27251,0.0004722288266500082,0.9993524128150598,0.0001753583582901657
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat final_solution/solution.py; echo "===META==="; head -80 final_solution/stack_meta.json
+import numpy as np, pandas as pd, glob, os, json, warnings, sys, time
+warnings.filterwarnings('ignore')
+from sklearn.metrics import log_loss
+from sklearn.model_selection import StratifiedKFold
+from sklearn.linear_model import LogisticRegression
+
+ROOT='/download_job_code/payload/sandbox'
+DATA=f'{ROOT}/data'; OUT=f'{ROOT}/final_solution'
+TR=pd.read_csv(f'{DATA}/train.csv'); TE=pd.read_csv(f'{DATA}/test.csv')
+CLASSES=['EAP','HPL','MWS']; y=TR['author'].map({c:i for i,c in enumerate(CLASSES)}).values
+os.makedirs(OUT,exist_ok=True)
+
+# ---- discover base predictions (any agent workspace) ----
+pairs={}
+for f in glob.glob(f'{ROOT}/workspaces/*/preds/oof_*.npy')+glob.glob(f'{ROOT}/workspaces/*/oof_*.npy'):
+    name=os.path.basename(f)[4:-4]; d=os.path.dirname(f); tf=os.path.join(d,'test_'+name+'.npy')
+    if not os.path.exists(tf): continue
+    if any(s in name.lower() for s in ['stack','cand','blend','submission','meta']): continue
+    agent=d.split('/workspaces/')[1].split('/')[0]; key=f'{agent}:{name}'
+    o=np.load(f); t=np.load(tf)
+    if o.shape!=(len(TR),3) or t.shape!=(len(TE),3): continue
+    if not np.isfinite(o).all() or not np.isfinite(t).all(): continue
+    # reject incomplete/partial prediction files (unfilled folds are all-zero rows)
+    if (o.sum(1)<0.5).any() or (t.sum(1)<0.5).any(): continue
+    if ((o.max(1)-o.min(1))<1e-9).mean()>0.01: continue
+    o=np.clip(o,1e-12,1); o=o/o.sum(1,keepdims=True)
+    t=np.clip(t,1e-12,1); t=t/t.sum(1,keepdims=True)
+    pairs[key]=(o,t)
+scores={k:log_loss(y,o) for k,(o,t) in pairs.items()}
+# keep models below cutoff (weak models add little / hurt); tunable
+CUT=float(os.environ.get('CUT','0.65'))
+keys=[k for k in sorted(scores,key=scores.get) if scores[k]<CUT]
+print(f'pool={len(pairs)} kept={len(keys)} cutoff={CUT}',flush=True)
+for k in keys: print(f'  {scores[k]:.4f} {k}')
+
+O=np.stack([pairs[k][0] for k in keys]); T=np.stack([pairs[k][1] for k in keys])
+# stacker features: log(p) AND raw p (better than log-only on nested CV)
+Z=np.concatenate([np.log(O),O],axis=2).transpose(1,0,2).reshape(len(TR),-1)
+Zt=np.concatenate([np.log(T),T],axis=2).transpose(1,0,2).reshape(len(TE),-1)
+C=float(os.environ.get('STACK_C','0.02'))
+
+# ---- honest nested-CV estimate of stack ----
+lls=[]
+for r in range(3):
+    skf=StratifiedKFold(5,shuffle=True,random_state=100+r); oof=np.zeros((len(TR),3))
+    for ti,vi in skf.split(Z,y):
+        m=LogisticRegression(C=C,max_iter=1000).fit(Z[ti],y[ti]); oof[vi]=m.predict_proba(Z[vi])
+    lls.append(log_loss(y,oof))
+nested=float(np.mean(lls)); nested_sd=float(np.std(lls))
+print(f'STACK nested OOF logloss = {nested:.4f} +- {nested_sd:.4f}',flush=True)
+
+# ---- final: bagged stackers fit on random 80% subsets, average test preds ----
+rng=np.random.RandomState(7); test_pred=np.zeros((len(TE),3)); nbag=10
+for b in range(nbag):
+    idx=rng.permutation(len(TR))[:int(0.8*len(TR))]
+    m=LogisticRegression(C=C,max_iter=1000).fit(Z[idx],y[idx])
+    test_pred+=m.predict_proba(Zt)
+test_pred/=nbag
+test_pred=np.clip(test_pred,1e-15,1)
+test_pred=test_pred/test_pred.sum(1,keepdims=True)
+
+sub=pd.DataFrame({'id':TE['id'].values,'EAP':test_pred[:,0],'HPL':test_pred[:,1],'MWS':test_pred[:,2]})
+sub.to_csv(f'{OUT}/submission.csv',index=False)
+np.save(f'{OUT}/test_probs.npy',test_pred)
+json.dump({'nested_oof_logloss':nested,'nested_sd':nested_sd,'C':C,'cutoff':CUT,
+           'n_models':len(keys),'models':keys,
+           'single_model_oof':{k:scores[k] for k in keys}},
+          open(f'{OUT}/stack_meta.json','w'),indent=2)
+print('wrote',f'{OUT}/submission.csv',sub.shape,flush=True)
+print(sub.head())
+===META===
+{
+  "nested_oof_logloss": 0.1861129145799947,
+  "nested_sd": 0.00017832701821373726,
+  "C": 0.02,
+  "cutoff": 0.65,
+  "n_models": 56,
+  "models": [
+    "aldebaran_xi:dv3l_s1234",
+    "aldebaran_xi:dv3l_s2024",
+    "pollux_upsilon:dbv3l_full",
+    "pollux_upsilon:dbv3l_s7",
+    "pollux_upsilon:dbv3l_s777",
+    "pollux_upsilon:rlarge_full",
+    "achernar_kappa:dv3b_s123",
+    "pollux_upsilon:dbv3b_full",
+    "achernar_kappa:electralarge_full",
+    "aldebaran_xi:rlarge_s123",
+    "aldebaran_xi:lr_wc_13_26_C20",
+    "aldebaran_xi:lr_wc_13_26_C40",
+    "pollux_upsilon:dbv3b_s7",
+    "aldebaran_xi:lr_wc_13_26_C80",
+    "aldebaran_xi:lr_wc_13_26_C10",
+    "aldebaran_xi:lr",
+    "aldebaran_xi:lr_wc_12_35_C10",
+    "aldebaran_xi:svc_cal_c05",
+    "achernar_kappa:bertlarge_full",
+    "aldebaran_xi:lr_wc_12_25_C10",
+    "pollux_upsilon:roberta_base",
+    "aldebaran_xi:mnb_tfidf_a0.1",
+    "achernar_kappa:lr_wordchar",
+    "achernar_kappa:electra_base",
+    "pollux_upsilon:xlmr_full",
+    "aldebaran_xi:nb",
+    "aldebaran_xi:lr_char",
+    "aldebaran_xi:lr_c_25_C10",
+    "aldebaran_xi:lr_wc_13_26_C3",
+    "aldebaran_xi:lr_wc_12_35_C3",
+    "aldebaran_xi:svc",
+    "aldebaran_xi:mnb_tfidf_a0.03",
+    "aldebaran_xi:lr_wc_12_25_C3",
+    "achernar_kappa:lr_char",
+    "aldebaran_xi:xlmr_base",
+    "aldebaran_xi:lr_w_11_C10",
+    "achernar_kappa:nbsvm_char",
+    "aldebaran_xi:lr_word",
+    "achernar_kappa:lr_char36",
+    "achernar_kappa:sgd_word",
+    "achernar_kappa:lr_word",
+    "aldebaran_xi:lr_c_25_C3",
+    "aldebaran_xi:mnb_tfidf_a0.01",
+    "aldebaran_xi:sgd",
+    "aldebaran_xi:lr_w_11_C3",
+    "aldebaran_xi:lr_wc_12_35_C1",
+    "aldebaran_xi:lr_wc_13_26_C1",
+    "aldebaran_xi:lr_wc_12_25_C1",
+    "achernar_kappa:lr_word13",
+    "achernar_kappa:nbsvm_word",
+    "achernar_kappa:cnb_word",
+    "aldebaran_xi:cnb_cv_w",
+    "aldebaran_xi:lr_c_25_C1",
+    "pollux_upsilon:mpnet",
+    "aldebaran_xi:lgb_svd_style",
+    "aldebaran_xi:lr_w_11_C1"
+  ],
+  "single_model_oof": {
+    "aldebaran_xi:dv3l_s1234": 0.30243659576750104,
+    "aldebaran_xi:dv3l_s2024": 0.30723655654772414,
+    "pollux_upsilon:dbv3l_full": 0.3109361021642703,
+    "pollux_upsilon:dbv3l_s7": 0.33189512670069815,
+    "pollux_upsilon:dbv3l_s777": 0.3369956414739891,
+    "pollux_upsilon:rlarge_full": 0.3479089377650885,
+    "achernar_kappa:dv3b_s123": 0.3557013448340798,
+    "pollux_upsilon:dbv3b_full": 0.3587992349045299,
+    "achernar_kappa:electralarge_full": 0.3631415826398927,
+    "aldebaran_xi:rlarge_s123": 0.3653244936330119,
+    "aldebaran_xi:lr_wc_13_26_C20": 0.3698561404187121,
+    "aldebaran_xi:lr_wc_13_26_C40": 0.37021795332892904,
+    "pollux_upsilon:dbv3b_s7": 0.37340982428309394,
+    "aldebaran_xi:lr_wc_13_26_C80": 0.37814925726277054,
+    "aldebaran_xi:lr_wc_13_26_C10": 0.3793772619032566,
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/verify_final.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=5G -p MemoryMax=7G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/verify_final.py' 2>&1 | tail -50
+=== 1. SUBMISSION INTEGRITY ===
+shape (1958, 4) cols ['id', 'EAP', 'HPL', 'MWS'] expected 1958
+id set == test id set: True | dup ids: 0
+ids match sample order: True
+finite: True min 1.3407140590076184e-06 max 0.999991653196485 rowsum range 0.9999999999999996 1.0000000000000002
+test_probs vs submission max abs diff: 1.1102230246251565e-16
+
+=== 2. POOL / REPRODUCIBILITY ===
+pool 64 kept 57
+dv3l_s555 in pool: True 0.350665951474825
+nested OOF (reproduced): 0.18615270384397328 [0.1864201396821176, 0.18593265414405516, 0.18610531770574706]
+reproduced test vs final test_probs max abs diff: 0.056919499951806785
+
+=== 3. CALIBRATION SWEEP (on reproduced nested OOF) ===
+base 0.18529604230020785
+prior-mix eps=0.0005 0.185643 (+0.000347)
+prior-mix eps=0.001  0.186042 (+0.000745)
+prior-mix eps=0.002  0.186923 (+0.001626)
+prior-mix eps=0.005  0.189907 (+0.004611)
+prior-mix eps=0.01   0.195437 (+0.010141)
+prior-mix eps=0.02   0.207421 (+0.022125)
+prior-mix eps=0.05   0.245696 (+0.060400)
+temperature T=0.9  0.187186 (+0.001890)
+temperature T=0.95 0.185881 (+0.000585)
+temperature T=1.0  0.185296 (-0.000000)
+temperature T=1.05 0.185340 (+0.000044)
+temperature T=1.1  0.185940 (+0.000643)
+temperature T=1.2  0.188563 (+0.003267)
+temperature T=1.5  0.204798 (+0.019502)
+floor=1e-06    0.185296 (+0.000000)
+floor=1e-05    0.185296 (+0.000000)
+floor=0.0001   0.185315 (+0.000019)
+floor=0.0005   0.185517 (+0.000221)
+floor=0.001    0.185822 (+0.000526)
+floor=0.003    0.187528 (+0.002232)
+floor=0.01     0.195161 (+0.009865)
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/sweep_stack.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=8G -p MemoryMax=10G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/sweep_stack.py' 2>&1 | tail -60
+logp       cut=0.45 n=37 C=0.005 -> 0.19138
+logp       cut=0.45 n=37 C=0.01  -> 0.19007
+logp       cut=0.45 n=37 C=0.02  -> 0.18927
+logp       cut=0.45 n=37 C=0.03  -> 0.18898
+logp       cut=0.45 n=37 C=0.05  -> 0.18887
+logp       cut=0.45 n=37 C=0.1   -> 0.18907
+logp       cut=0.55 n=52 C=0.005 -> 0.18800
+logp       cut=0.55 n=52 C=0.01  -> 0.18723
+logp       cut=0.55 n=52 C=0.02  -> 0.18708
+logp       cut=0.55 n=52 C=0.03  -> 0.18721
+logp       cut=0.55 n=52 C=0.05  -> 0.18758
+logp       cut=0.55 n=52 C=0.1   -> 0.18832
+logp       cut=0.65 n=57 C=0.005 -> 0.18658
+logp       cut=0.65 n=57 C=0.01  -> 0.18610
+logp       cut=0.65 n=57 C=0.02  -> 0.18615
+logp       cut=0.65 n=57 C=0.03  -> 0.18633
+logp       cut=0.65 n=57 C=0.05  -> 0.18677
+logp       cut=0.65 n=57 C=0.1   -> 0.18762
+logp       cut=1.0  n=61 C=0.005 -> 0.18631
+logp       cut=1.0  n=61 C=0.01  -> 0.18603
+logp       cut=1.0  n=61 C=0.02  -> 0.18628
+logp       cut=1.0  n=61 C=0.03  -> 0.18658
+logp       cut=1.0  n=61 C=0.05  -> 0.18715
+logp       cut=1.0  n=61 C=0.1   -> 0.18816
+logp_prob  cut=0.45 n=37 C=0.005 -> 0.19138
+logp_prob  cut=0.45 n=37 C=0.01  -> 0.19007
+logp_prob  cut=0.45 n=37 C=0.02  -> 0.18927
+logp_prob  cut=0.45 n=37 C=0.03  -> 0.18898
+logp_prob  cut=0.45 n=37 C=0.05  -> 0.18887
+logp_prob  cut=0.45 n=37 C=0.1   -> 0.18907
+logp_prob  cut=0.55 n=52 C=0.005 -> 0.18800
+logp_prob  cut=0.55 n=52 C=0.01  -> 0.18723
+logp_prob  cut=0.55 n=52 C=0.02  -> 0.18708
+logp_prob  cut=0.55 n=52 C=0.03  -> 0.18721
+logp_prob  cut=0.55 n=52 C=0.05  -> 0.18758
+logp_prob  cut=0.55 n=52 C=0.1   -> 0.18832
+logp_prob  cut=0.65 n=57 C=0.005 -> 0.18658
+logp_prob  cut=0.65 n=57 C=0.01  -> 0.18610
+logp_prob  cut=0.65 n=57 C=0.02  -> 0.18615
+logp_prob  cut=0.65 n=57 C=0.03  -> 0.18633
+logp_prob  cut=0.65 n=57 C=0.05  -> 0.18677
+logp_prob  cut=0.65 n=57 C=0.1   -> 0.18762
+logp_prob  cut=1.0  n=61 C=0.005 -> 0.18631
+logp_prob  cut=1.0  n=61 C=0.01  -> 0.18603
+logp_prob  cut=1.0  n=61 C=0.02  -> 0.18628
+logp_prob  cut=1.0  n=61 C=0.03  -> 0.18658
+logp_prob  cut=1.0  n=61 C=0.05  -> 0.18715
+logp_prob  cut=1.0  n=61 C=0.1   -> 0.18816
+
+BEST logp|cut1.0|C0.01 0.18603207012525372
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; nvidia-smi --query-gpu=memory.used,memory.free --format=csv,noheader; ls -lt blackboard/*.md|head -4; echo "==="; tail -16 $(ls -t blackboard/*.md|head -1)
+Sat Oct 31 05:02:53 MSK 2026
+9057 MiB, 72095 MiB
+-rw-r--r-- 1 root root 1637 Oct 31 05:02 blackboard/pollux_upsilon_final_analysis.md
+-rw-r--r-- 1 root root 1413 Oct 31 05:01 blackboard/aldebaran_xi_freeze_plan.md
+-rw-r--r-- 1 root root 1336 Oct 31 03:29 blackboard/pollux_upsilon_cand5_freeze_plan.md
+-rw-r--r-- 1 root root 1392 Oct 31 03:10 blackboard/achernar_kappa_electralarge_landed.md
+===
+| no `dv3l_s555` | 55 | 0.18783 | .0023 |
+| no `xlmr_full` | 55 | 0.18797 | .0026 |
+| **no `s555` + no `xlmr`** | 54 | **<metric>0.18780<\metric>** | .0022 |
+| drop 4 weak large (`s555,xlmr,bertlarge,electralarge`) | 52 | 0.19011 | .0018 |
+
+→ Dropping `dv3l_s555` (0.3507) & `xlmr_full` (0.4053) is a **~0.0002** change = noise; dropping bertlarge/electralarge is clearly **bad** (−0.002), so **keep architecture-diverse large models**. Consistent with [[aldebaran_xi_freeze_plan.md]]: deberta-seed saturation, architecture diversity still helps.
+
+## Cross-check
+My `final_cand7_submission.csv` vs your `final_solution/submission.csv`: **99.5% argmax agreement, mean |Δp| 0.005** (your 0.1862 vs my 0.1878–0.1890 on different meta-seeds). No misalignment; both are safe.
+
+## Last run from me (per "keep working" rule)
+`bert-large-cased`, 5-fold shared split, 4ep lr1.5e-5 bs16 maxlen160 → tag `bertlargec_full`. Rationale: **cased tokenizer** = style-relevant signal, distinct from `bert-large-uncased` already in pool; should add like electra-large did. ETA ~06:35. If it helps I'll post the `.npy` path + updated nested; if not, ignore it (guard handles partials). I will NOT touch `final_solution/`.
+
+@aldebaran_xi: freeze at ~06:45 as planned; include `bertlargec_full` only if complete by then and it doesn't lower your nested estimate.
+
+#insight #ensembling #status #model_selection
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_verification_report.md
+Wrote file successfully.
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/dapt_mlm.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=8G -p MemoryMax=10G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/dapt_mlm.py' 2>&1 | tail -8
+warnings.warn(
+/usr/local/lib/python3.11/site-packages/transformers/convert_slow_tokenizer.py:551: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+Some weights of DebertaV2ForMaskedLM were not initialized from the model checkpoint at microsoft/deberta-v3-base and are newly initialized: ['cls.predictions.bias', 'cls.predictions.decoder.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+ep1 loss=6.8545 (106s)
+ep2 loss=5.0722 (204s)
+saved /download_job_code/payload/sandbox/workspaces/achernar_kappa/dapt_dv3b
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model workspaces/achernar_kappa/dapt_dv3b --tag dapt_dv3b --folds 0,1,2 --epochs 5 --maxlen 160 --bs 32 --lr 1.5e-5 > workspaces/achernar_kappa/log_dapt.txt 2>&1; grep -E "best=|SAVED" workspaces/achernar_kappa/log_dapt.txt | tail -6' 2>&1 | tail -10
+Sat Oct 31 05:06:58 MSK 2026
+fold0 best=0.43298 (465s) SAVED done=[0]
+fold1 best=0.34981 (476s) SAVED done=[0, 1]
+fold2 best=0.37162 (472s) SAVED done=[0, 1, 2]
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 TOKENIZERS_PARALLELISM=false && pyenv shell sis-black && python workspaces/achernar_kappa/train_tf.py --model workspaces/achernar_kappa/dapt_dv3b --tag dapt_dv3b --folds 3,4 --epochs 5 --maxlen 160 --bs 32 --lr 1.5e-5 >> workspaces/achernar_kappa/log_dapt.txt 2>&1; pyenv shell sis-black && python workspaces/achernar_kappa/rebuild.py dapt_dv3b' 2>&1 | tail -6
+/usr/local/lib/python3.11/site-packages/sklearn/metrics/_classification.py:2956: UserWarning: The y_pred values do not sum to one. Make sure to pass probabilities.
+  warnings.warn(
+rebuilt dapt_dv3b done [0, 1, 2, 3, 4] oof_ll 0.36815226874024853 folds {'0': 0.4329791225869765, '1': 0.3498065100444102, '2': 0.3716156593717238, '3': 0.34333403083760494, '4': 0.3430076250450201}
+[0m
+[0m← [0mWrite workspaces/achernar_kappa/eval_combos.py
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && systemd-run --user --scope --collect -q -p MemoryHigh=8G -p MemoryMax=10G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/eval_combos.py' 2>&1 | tail -12
+base(no s555,no dapt)      n=56 C.01->0.18610  C.02->0.18611
+base+s555                  n=57 C.01->0.18610  C.02->0.18615
+base+dapt                  n=57 C.01->0.18616  C.02->0.18624
+base+s555+dapt             n=58 C.01->0.18622  C.02->0.18632
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox/workspaces/achernar_kappa && mkdir -p preds_quarantine && mv preds/oof_dapt_dv3b.npy preds/test_dapt_dv3b.npy preds/meta_dapt_dv3b.json preds/state_dapt_dv3b.json preds_quarantine/ 2>/dev/null; for f in preds/foldpred_dapt_dv3b_*.npz; do mv "$f" preds_quarantine/ 2>/dev/null; done; echo "quarantined:"; ls preds_quarantine; echo "---remaining preds---"; ls preds | grep -E "s555|dapt"
+quarantined:
+foldpred_dapt_dv3b_0.npz
+foldpred_dapt_dv3b_1.npz
+foldpred_dapt_dv3b_2.npz
+foldpred_dapt_dv3b_3.npz
+foldpred_dapt_dv3b_4.npz
+meta_dapt_dv3b.json
+oof_dapt_dv3b.npy
+state_dapt_dv3b.json
+test_dapt_dv3b.npy
+---remaining preds---
+foldpred_dv3l_s555_0.npz
+foldpred_dv3l_s555_1.npz
+foldpred_dv3l_s555_2.npz
+foldpred_dv3l_s555_3.npz
+foldpred_dv3l_s555_4.npz
+folds_dapt_dv3b.npy
+folds_dv3l_s555.npy
+meta_dv3l_s555.json
+oof_dv3l_s555.npy
+state_dv3l_s555.json
+test_dv3l_s555.npy
+testsum_dapt_dv3b.npy
+testsum_dv3l_s555.npy
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_dapt_result_freeze_rec.md
+Wrote file successfully.
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; ls -l --time-style=+%H:%M final_solution/; echo "---board---"; ls -lt blackboard/*.md|head -5; echo "==="; tail -25 $(ls -t blackboard/*.md|head -1)
+Sat Oct 31 05:51:23 MSK 2026
+total 212
+-rw-r--r-- 1 root root   3635 22:26 README.md
+-rw-r--r-- 1 root root   2209 22:26 classical_models.py
+-rw-r--r-- 1 root root   3603 05:01 solution.py
+-rw-r--r-- 1 root root   5017 04:58 stack_meta.json
+-rw-r--r-- 1 root root 135645 04:58 submission.csv
+-rw-r--r-- 1 root root  47120 04:58 test_probs.npy
+-rw-r--r-- 1 root root   5308 22:26 train_transformer.py
+---board---
+-rw-r--r-- 1 root root 1941 Oct 31 05:51 blackboard/achernar_kappa_dapt_result_freeze_rec.md
+-rw-r--r-- 1 root root 1193 Oct 31 05:32 blackboard/aldebaran_xi_elarge_fail_freeze.md
+-rw-r--r-- 1 root root 2826 Oct 31 05:03 blackboard/achernar_kappa_verification_report.md
+-rw-r--r-- 1 root root 1637 Oct 31 05:02 blackboard/pollux_upsilon_final_analysis.md
+-rw-r--r-- 1 root root 1413 Oct 31 05:01 blackboard/aldebaran_xi_freeze_plan.md
+===
+
+## Domain-adaptive MLM experiment (label-free, transductive)
+- MLM continued-pretraining `microsoft/deberta-v3-base` on **unlabeled train+test text** (2 ep, mlm15%, maxlen128, lr2e-5; loss 6.85→5.07), then standard 5-fold fine-tune on shared folds → `dapt_dv3b`, OOF **<metric>0.36815<\metric>** (folds .4330/.3498/.3716/.3433/.3430).
+- I also have `dv3l_s555` (deberta-large seed555) OOF **0.35067**.
+
+## Does either help the final stack? (exact final recipe `concat(log p,p)`, 3 meta-seeds)
+| pool | n | C=0.01 | C=0.02 |
+|---|---|---|---|
+| **base (current final, no s555/no dapt)** | 56 | **<metric>0.18610<\metric>** | **0.18611** |
+| base + s555 | 57 | 0.18610 | 0.18615 |
+| base + dapt | 57 | 0.18616 | 0.18624 |
+| base + s555 + dapt | 58 | 0.18622 | 0.18632 |
+
+→ **Both are neutral-to-harmful. Keep the current 56-model `final_solution/` exactly as is.** (DAPT confirms: MLM on only ~19.5k sentences overfits / does not adapt usefully — negative result worth recording.)
+
+## Actions I took
+- Moved `dapt_dv3b` files OUT of the auto-loader path into `workspaces/achernar_kappa/preds_quarantine/` so a re-run of `solution.py` cannot accidentally include it. `dv3l_s555` remains available (neutral). If you prefer, filter `dv3l_s555` too; and **C=0.01** gives the best-equal 0.18610.
+- No changes made to `final_solution/`.
+
+## Recommendation to @aldebaran_xi (owner of final_solution)
+1. **Freeze now.** Current artifact (nested **0.1861**, verified valid & calibrated by [[achernar_kappa_verification_report.md]]) is at the noise floor.
+2. If you re-run the stack, use C=0.01 and (optionally) exclude `achernar_kappa:dv3l_s555`.
+3. After your final write, ping the board; I'll do one last independent integrity check (ids/finite/rowsum/repro) before hard_end.
+
+Tags: #status #ensembling #insight #submission #postprocessing
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat blackboard/aldebaran_xi_elarge_fail_freeze.md; echo "=== freeze plan ==="; cat blackboard/aldebaran_xi_freeze_plan.md
+# aldebaran_xi — my electra-large seed7 crashed (safetensors bug); NOT relaunching
+
+`elarge_s7` died at fold0 with pollux's known `non contiguous tensor` safetensors error when saving epoch checkpoints for ELECTRA (same bug as his probe). Since `electralarge_full` (seed42, 0.3631) is already in the pool and @pollux's analysis shows **architecture** > seed diversity, I'm not relaunching it — the marginal value is ~0.
+
+Current **frozen-candidate**: 57 models, `concat(log p,p)`, C=0.02, cutoff .65, 20× bagged → **nested <metric>0.18615<\metric>**. Independent audits by @achernar [[achernar_kappa_verification_report.md]] (format PASS, calibration T=1 optimal, prior/floor post-processing HURTS) and @pollux agree; my submission is 99.5% argmax-identical to pollux's. **No post-processing will be applied.**
+
+## Final steps
+1. Wait for `achernar:dapt_dv3b` (label-free MLM on train+test text, genuinely different) and `pollux:bertlargec_full` (cased BERT-large, ~06:35).
+2. Re-stack once when each completes **only if it lowers nested OOF** (guard handles partials).
+3. Freeze `final_solution/` by ~06:45; after that only compliance/format fixes.
+
+#status #submission #communication
+=== freeze plan ===
+# aldebaran_xi — stack 0.1862; final micro-run (electra-large seed7) then FREEZE at ~06:30
+
+Current pool 64 / 57 kept, **nested OOF = <metric>0.1862<\metric>** (C=0.02, logp+prob, cutoff .65, 10× bagged). `final_solution/` fully synced (`submission.csv`, `solution.py`, `train_transformer.py`, `classical_models.py`, `README.md`, `stack_meta.json`).
+
+Notes from the last sweep: cutoff .65 beats .55/.8/all; C .01–.02 best; averaging multiple stacker configs gives no gain (0.1863→0.1863). Adding `dv3l_s555` (0.3507) was neutral → seed saturation for the DeBERTa family. **Architecture diversity** (electra-large added −0.0019) is what still helps.
+
+My submission agrees **99.5%** with @pollux's `final_cand7_submission.csv` (mean abs prob diff 0.0052) → strong cross-check, no misalignment.
+
+## Freeze plan
+- One last **micro-run**: `google/electra-large-discriminator` **seed 7** (lr1e-5, 4ep, bs16; the architecture that actually added value) → tag `elarge_s7`, ETA ~06:05.
+- Then final re-stack, bump bagging to 20×, verify format/ids/sums, and **freeze `final_solution` by ~06:45** (>1h before hard_end). After freeze only formatting/compliance fixes.
+- @pollux @achernar: please don't overwrite agents' files; if you produce a candidate that beats mine materially (>0.002 nested), post the exact `.npy` paths + score and I'll swap it in before freeze.
+
+#submission #ensembling #status #plan
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat > workspaces/achernar_kappa/conf_check.py <<'EOF'
+import numpy as np, pandas as pd, glob, os, warnings
+warnings.filterwarnings('ignore')
+from sklearn.metrics import log_loss
+ROOT='/download_job_code/payload/sandbox'
+TR=pd.read_csv(f'{ROOT}/data/train.csv'); TE=pd.read_csv(f'{ROOT}/data/test.csv')
+y=TR['author'].map({'EAP':0,'HPL':1,'MWS':2}).values
+def norm(p): p=np.clip(p,1e-12,1); return p/p.sum(1,keepdims=True)
+# base model sharpness OOF vs test
+for key in ['workspaces/aldebaran_xi/preds/oof_dv3l_s2024.npy','workspaces/pollux_upsilon/preds/oof_dbv3l_full.npy','workspaces/achernar_kappa/preds/oof_electralarge_full.npy']:
+    o=norm(np.load(ROOT+'/'+key)); t=norm(np.load(ROOT+'/'+key.replace('oof_','test_')))
+    print(f'{os.path.basename(key)[4:-4]:22s} OOF maxp mean={o.max(1).mean():.4f} acc={ (o.argmax(1)==y).mean():.4f} | TEST maxp mean={t.max(1).mean():.4f}')
+fin=np.load(f'{ROOT}/final_solution/test_probs.npy'); fin=norm(fin)
+print('FINAL test maxp mean=%.4f  frac>0.99=%.4f frac<0.9=%.4f  min maxp=%.4f'%(fin.max(1).mean(),(fin.max(1)>0.99).mean(),(fin.max(1)<0.9).mean(),fin.max(1).min()))
+print('FINAL pred class dist',np.bincount(fin.argmax(1),minlength=3)/len(fin),'train prior',np.bincount(y,minlength=3)/len(y))
+# expected loss under label uncertainty proxy: entropy
+H=-(fin*np.log(fin)).sum(1); print('FINAL mean entropy=%.4f'%H.mean())
+# if we trust near-1 preds, expected loss approx from OOF reliability
+EOF
+systemd-run --user --scope --collect -q -p MemoryHigh=4G -p MemoryMax=6G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/conf_check.py' 2>&1 | tail -12
+dv3l_s2024             OOF maxp mean=0.9354 acc=0.8930 | TEST maxp mean=0.9160
+dbv3l_full             OOF maxp mean=0.9180 acc=0.8870 | TEST maxp mean=0.8999
+electralarge_full      OOF maxp mean=0.9401 acc=0.8842 | TEST maxp mean=0.9156
+FINAL test maxp mean=0.9164  frac>0.99=0.4351 frac<0.9=0.2497  min maxp=0.3419
+FINAL pred class dist [0.42236977 0.27987743 0.29775281] train prior [0.40236082 0.28795188 0.3096873 ]
+FINAL mean entropy=0.2236
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_confidence_check.md
+Wrote file successfully.
+[0m
+[0m$ [0msleep 600; cd /download_job_code/payload/sandbox && date; ls -l --time-style=+%H:%M final_solution/ | tail -4; echo "---board---"; ls -lt blackboard/*.md|head -3; tail -12 $(ls -t blackboard/*.md|head -1); echo "---gpu---"; nvidia-smi --query-gpu=memory.used --format=csv,noheader
+Sat Oct 31 06:01:45 MSK 2026
+-rw-r--r-- 1 root root   5017 04:58 stack_meta.json
+-rw-r--r-- 1 root root 135645 04:58 submission.csv
+-rw-r--r-- 1 root root  47120 04:58 test_probs.npy
+-rw-r--r-- 1 root root   5308 22:26 train_transformer.py
+---board---
+-rw-r--r-- 1 root root 1132 Oct 31 05:51 blackboard/achernar_kappa_confidence_check.md
+-rw-r--r-- 1 root root 1941 Oct 31 05:51 blackboard/achernar_kappa_dapt_result_freeze_rec.md
+-rw-r--r-- 1 root root 1193 Oct 31 05:32 blackboard/aldebaran_xi_elarge_fail_freeze.md
+| base model | OOF mean max-p | OOF acc | TEST mean max-p |
+|---|---|---|---|
+| dv3l_s2024 | 0.9354 | 0.8930 | 0.9160 |
+| dbv3l_full | 0.9180 | 0.8870 | 0.8999 |
+| electralarge_full | 0.9401 | 0.8842 | 0.9156 |
+
+→ Test base preds are **slightly LESS sharp** than OOF, not more. So the stacker cannot be systematically overconfident on test. 
+`final_solution/test_probs.npy`: mean max-p **0.9164**, 43.5% rows >0.99, 25.0% <0.90, min max-p 0.342; mean entropy 0.2236; argmax dist EAP/HPL/MWS = .422/.280/.298 vs prior .402/.288/.310 (within ±2σ for n=1958). **All healthy.** This independently reconfirms: do not apply temperature/prior-mix/floor.
+
+Freeze looks good from my side. When @aldebaran_xi writes the final artifact I'll run the last integrity check (ids/finite/rowsum/class-order/repro). 
+
+Tags: #postprocessing #insight #submission #status
+---gpu---
+0 MiB
+[0m
+[0m$ [0msleep 1200; cd /download_job_code/payload/sandbox && date; ls -l --time-style=+%H:%M final_solution/ | tail -4; echo "---board---"; ls -lt blackboard/*.md|head -4; echo "==="; tail -20 $(ls -t blackboard/*.md|head -1); echo "---gpu---"; nvidia-smi --query-gpu=memory.used --format=csv,noheader; echo "---pollux new---"; ls -lt workspaces/pollux_upsilon/preds/*.npy 2>/dev/null | head -4
+Sat Oct 31 06:21:51 MSK 2026
+-rw-r--r-- 1 root root   4935 06:15 stack_meta.json
+-rw-r--r-- 1 root root 135529 06:15 submission.csv
+-rw-r--r-- 1 root root  47120 06:15 test_probs.npy
+-rw-r--r-- 1 root root   5308 22:26 train_transformer.py
+---board---
+-rw-r--r-- 1 root root 1920 Oct 31 06:15 blackboard/aldebaran_xi_FINAL_frozen.md
+-rw-r--r-- 1 root root 1831 Oct 31 06:12 blackboard/pollux_upsilon_bertlargec_negative.md
+-rw-r--r-- 1 root root 1132 Oct 31 05:51 blackboard/achernar_kappa_confidence_check.md
+-rw-r--r-- 1 root root 1941 Oct 31 05:51 blackboard/achernar_kappa_dapt_result_freeze_rec.md
+===
+# aldebaran_xi — FINAL SOLUTION FROZEN (nested OOF 0.1861)
+
+`final_solution/` is frozen. Final re-stack after `dapt_dv3b` + `bertlargec_full` landed:
+
+**Final config** (selected by 5-seed nested CV, confirmed by @achernar's independent audit [[achernar_kappa_dapt_result_freeze_rec.md]]):
+- Pool: all base models with solo OOF < 0.65, **excluding** `achernar:dv3l_s555` and `pollux:bertlargec_full` (both neutral/harmful; independent estimates: 56-model 0.18703 vs +s555 0.18736 vs +both 0.18750 on 5 meta-seeds).
+- Features `concat(log p, p)`, multinomial `LogisticRegression(C=0.01)`, test = mean of 20 bagged (80%) stackers.
+
+**Final nested OOF = <metric>0.1861<\metric>** ±0.0002 (seeds 100-102; 5-seed estimate 0.1870). 56 members; the 5 DeBERTa-large + roberta-large + electra/bert/xlmr large models dominate.
+
+## Integrity checks (my run, just now) — all PASS
+1958 rows, cols `id,EAP,HPL,MWS`; ids == `sample_submission` order == `test.csv` order; 0 dups; 0 NaN; all finite; row sums = 1±2e-16; `test_probs.npy` ≡ `submission.csv`; no post-processing (T=1, no prior mix, no floor — all validated as harmful). Class argmax dist .422/.281/.297 (within ±2σ of prior for n=1958). `stack_meta.json` = 56 models, C=0.01, cutoff .65.
+
+## Contents of `final_solution/`
+`submission.csv`, `test_probs.npy`, `stack_meta.json`, `solution.py` (exact reproducing stacker), `train_transformer.py`, `classical_models.py`, `README.md` (all external checkpoints: ID/source/license/purpose; validation protocol; negative results). Code is byte-identical to `workspaces/aldebaran_xi/stack_final.py`.
+
+@achernar_kappa please run your final independent integrity check now. @pollux_upsilon thanks for the stacking methodology and large-model runs — it was the decisive contribution. I will make **no further changes** except a compliance fix if your checks find a problem.
+
+#submission #status #ensembling #communication
+---gpu---
+0 MiB
+---pollux new---
+-rw-r--r-- 1 root root  47120 Oct 31 06:07 workspaces/pollux_upsilon/preds/final_cand9_test.npy
+-rw-r--r-- 1 root root 423032 Oct 31 05:56 workspaces/pollux_upsilon/preds/oof_bertlargec_full.npy
+-rw-r--r-- 1 root root  47120 Oct 31 05:56 workspaces/pollux_upsilon/preds/test_bertlargec_full.npy
+-rw-r--r-- 1 root root  47120 Oct 31 04:47 workspaces/pollux_upsilon/preds/final_cand7_test.npy
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && grep -nE "exclude|s555|bertlargec|nbag|C=|CUT|STACK_C|RandomState|OUT=" final_solution/solution.py; echo "---meta tail---"; python -c "import json;d=json.load(open('final_solution/stack_meta.json'));print({k:v for k,v in d.items() if k not in ('models','single_model_oof')});print('n_models',len(d.get('models',[])))"
+8:DATA=f'{ROOT}/data'; OUT=f'{ROOT}/final_solution'
+31:CUT=float(os.environ.get('CUT','0.65'))
+33:EXCLUDE=[x for x in os.environ.get('EXCLUDE','dv3l_s555,bertlargec_full').split(',') if x]
+34:keys=[k for k in sorted(scores,key=scores.get) if scores[k]<CUT and not any(x in k for x in EXCLUDE)]
+35:print(f'pool={len(pairs)} kept={len(keys)} cutoff={CUT}',flush=True)
+42:C=float(os.environ.get('STACK_C','0.01'))
+49:        m=LogisticRegression(C=C,max_iter=1000).fit(Z[ti],y[ti]); oof[vi]=m.predict_proba(Z[vi])
+55:rng=np.random.RandomState(7); test_pred=np.zeros((len(TE),3)); nbag=20
+56:for b in range(nbag):
+58:    m=LogisticRegression(C=C,max_iter=1000).fit(Z[idx],y[idx])
+60:test_pred/=nbag
+67:json.dump({'nested_oof_logloss':nested,'nested_sd':nested_sd,'C':C,'cutoff':CUT,
+---meta tail---
+{'nested_oof_logloss': 0.18609571333426866, 'nested_sd': 0.00021647330057265017, 'C': 0.01, 'cutoff': 0.65, 'n_models': 56}
+n_models 56
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && mkdir -p workspaces/achernar_kappa/verify_out && sed "s#OUT=f'{ROOT}/final_solution'#OUT=f'{ROOT}/workspaces/achernar_kappa/verify_out'#" final_solution/solution.py > workspaces/achernar_kappa/verify_solution_final.py && systemd-run --user --scope --collect -q -p MemoryHigh=8G -p MemoryMax=10G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/verify_solution_final.py' 2>&1 | grep -vE "warn|Warning" | tail -12
+0.5652 aldebaran_xi:lr_c_25_C1
+  0.5949 pollux_upsilon:mpnet
+  0.5968 aldebaran_xi:lgb_svd_style
+  0.6002 aldebaran_xi:lr_w_11_C1
+STACK nested OOF logloss = 0.1861 +- 0.0002
+wrote /download_job_code/payload/sandbox/workspaces/achernar_kappa/verify_out/submission.csv (1958, 4)
+        id       EAP       HPL       MWS
+0  id27251  0.000606  0.999144  0.000250
+1  id09612  0.009430  0.006428  0.984142
+2  id11943  0.002004  0.000731  0.997265
+3  id19526  0.029677  0.013303  0.957020
+4  id12931  0.002970  0.001022  0.996008
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && pyenv shell sis-black && python - <<'EOF'
+import numpy as np, pandas as pd, json
+from sklearn.metrics import log_loss
+ROOT='/download_job_code/payload/sandbox'
+sub=pd.read_csv(f'{ROOT}/final_solution/submission.csv'); SS=pd.read_csv(f'{ROOT}/data/sample_submission.csv')
+TE=pd.read_csv(f'{ROOT}/data/test.csv'); TR=pd.read_csv(f'{ROOT}/data/train.csv')
+rep=pd.read_csv(f'{ROOT}/workspaces/achernar_kappa/verify_out/submission.csv')
+C=['EAP','HPL','MWS']
+print('rows',len(sub),'| cols',list(sub.columns))
+print('ids == sample order:',(sub.id.values==SS.id.values).all(),'| test order:',(sub.id.values==TE.id.values).all(),'| dups',sub.id.duplicated().sum())
+P=sub[C].values; print('finite',np.isfinite(P).all(),'min %.2e max %.6f'%(P.min(),P.max()),'rowsum dev %.2e'%np.abs(P.sum(1)-1).max())
+print('reproduction: ids match',(rep.id.values==sub.id.values).all(),'| max|dP|=%.2e'%np.abs(rep[C].values-P).max(),'| mean|dP|=%.2e'%np.abs(rep[C].values-P).mean())
+print('argmax agreement reproduction:',(rep[C].values.argmax(1)==P.argmax(1)).mean())
+d=json.load(open(f'{ROOT}/final_solution/stack_meta.json')); print('meta nested',d['nested_oof_logloss'],'C',d['C'],'n_models',d['n_models'])
+print('test_probs==submission:',np.abs(np.load(f'{ROOT}/final_solution/test_probs.npy')-P).max())
+import os
+print('files:',sorted(os.listdir(f'{ROOT}/final_solution')))
+EOF
+rows 1958 | cols ['id', 'EAP', 'HPL', 'MWS']
+ids == sample order: True | test order: True | dups 0
+finite True min 2.97e-06 max 0.999987 rowsum dev 4.44e-16
+reproduction: ids match True | max|dP|=0.00e+00 | mean|dP|=0.00e+00
+argmax agreement reproduction: 1.0
+meta nested 0.18609571333426866 C 0.01 n_models 56
+test_probs==submission: 1.1102230246251565e-16
+files: ['README.md', 'classical_models.py', 'solution.py', 'stack_meta.json', 'submission.csv', 'test_probs.npy', 'train_transformer.py']
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat final_solution/README.md
+# Spooky Author Identification — swarm solution (owner: aldebaran_xi)
+
+3-class author classification (EAP / HPL / MWS) on sentence text.
+Metric: **multi-class log loss** (lower is better).
+Final artifact: `submission.csv` (columns `id,EAP,HPL,MWS`, 1958 rows).
+
+## Final score
+**Nested-CV OOF log loss = 0.1861** (mean over 3 independent 5-fold meta-splits, seeds 100/101/102; sd 0.0002).
+A 5-seed estimate (incl. seed 42) is 0.1870. See `stack_meta.json` (`nested_oof_logloss`).
+
+## Approach
+Two-level ensemble.
+
+### Level 1 — base models (all trained with the same validation partition)
+- **Classical sparse text**: TF-IDF word(1-3) + char_wb(2-6) n-grams → LogisticRegression (C sweep), LinearSVC (calibrated), SGD, MultinomialNB, ComplementNB, NB-SVM; LightGBM on SVD(150)+stylometric features.
+- **Transformer fine-tunes** (5-fold, fold-averaged test predictions):
+  `roberta-base`, `roberta-large` (2 seeds), `microsoft/deberta-v3-base` (3 seeds),
+  `microsoft/deberta-v3-large` (3 seeds in final), `google/electra-base-discriminator`,
+  `google/electra-large-discriminator`, `bert-large-uncased`, `xlm-roberta-base`,
+  `xlm-roberta-large`, `sentence-transformers/all-mpnet-base-v2` (frozen embeddings + linear head).
+
+### Level 2 — stacker
+- Input features: `concat(log p, p)` over every base model with solo OOF log loss < 0.65
+  (**56 members** in the final model). Two models (`deberta-v3-large` seed555 and
+  `bert-large-cased`) were excluded after multi-seed nested-CV showed they were neutral/
+  harmful (agreed with an independent teammate audit).
+- Model: multinomial `LogisticRegression(C=0.01)`.
+- Final test predictions = mean of **20 stackers**, each fit on a random 80% of the OOF matrix
+  (variance reduction).
+
+## Validation protocol (train-only, no leakage)
+- `StratifiedKFold(n_splits=5, shuffle=True, random_state=42)` over `data/train.csv` in original
+  row order; class order **EAP,HPL,MWS**. Every agent used exactly this split (verified by
+  reproducing each transformer's per-fold log loss).
+- Early stopping / epoch selection for every transformer used only its fold's train/val split.
+- The stacker hyper-parameters and model inclusion were chosen by **nested** CV on the OOF matrix.
+- `train.csv` (17621) + `test.csv` (1958) = 19579 = the original public train, so the hidden test is
+  a random ~10% slice and OOF/nested-CV is expected to track it closely.
+- No test labels were read at any point; no leaderboard/grading feedback was used.
+
+## Post-processing
+None. Temperature scaling (T=1 optimal), prior mixing and probability flooring were all tested on
+nested OOF and **hurt**; the raw stacker probabilities are used, as independently reconfirmed.
+
+## Files
+- `submission.csv` — final predictions.
+- `solution.py` — reproduces `submission.csv` from the base-model prediction matrices
+  (`workspaces/*/preds/{oof,test}_*.npy`): discovery, partial-file guard, filter, nested-CV
+  estimate, bagged stacker, writes submission.
+- `train_transformer.py` — transformer fine-tuning code (5-fold, saves `oof_*.npy`/`test_*.npy`).
+- `classical_models.py` — TF-IDF + linear / NB baseline code.
+- `stack_meta.json` — nested score, hyper-parameters, exact member list with solo OOF.
+
+## External checkpoints (source: Hugging Face Hub via `transformers`; default `main` revision, 2026-10-30)
+| model ID | purpose | license |
+|---|---|---|
+| `FacebookAI/roberta-base` | base fine-tune (diversity) | MIT |
+| `FacebookAI/roberta-large` | base fine-tune (strong member, 2 seeds) | MIT |
+| `microsoft/deberta-v3-base` | base fine-tune (3 seeds) | MIT |
+| `microsoft/deberta-v3-large` | base fine-tune (strongest family, 3 seeds in final) | MIT |
+| `google/electra-base-discriminator` | base fine-tune (diversity) | Apache-2.0 |
+| `google/electra-large-discriminator` | base fine-tune (diversity, strong stack member) | Apache-2.0 |
+| `google-bert/bert-large-uncased` | base fine-tune (large, decorrelated) | Apache-2.0 |
+| `google-bert/bert-large-cased` | base fine-tune (cased tokenizer; tested, excluded from final) | Apache-2.0 |
+| `FacebookAI/xlm-roberta-base` | base fine-tune (different tokenizer) | MIT |
+| `FacebookAI/xlm-roberta-large` | base fine-tune (large, different tokenizer) | MIT |
+| `sentence-transformers/all-mpnet-base-v2` | frozen sentence embeddings → linear head | Apache-2.0 |
+
+All are general-purpose pretrained language models. None was trained on this competition's labels
+and none is a competition solution. No external APIs, web search, or competition-specific
+checkpoints were used.
+
+## Negative results (recorded)
+- Domain-adaptive MLM continued-pretraining on unlabeled train+test text (`dapt_dv3b`) did not help
+  the stack (neutral/slightly harmful) and was excluded.
+- LGBM / MLP meta-stackers were worse than multinomial LR (0.238/0.234 vs 0.220 at an earlier stage).
+- Stylometric/length meta-features did not help.
+- Additional DeBERTa-large seeds saturated (~neutral); architecture diversity was what still helped.
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_final_verification_PASS.md
+Wrote file successfully.
+[0m
+[0m$ [0msleep 1500; cd /download_job_code/payload/sandbox && date; ls -l --time-style=+%H:%M final_solution/ | tail -4; echo "---board newest---"; ls -lt blackboard/*.md|head -3; echo "---mtime sub---"; md5sum final_solution/submission.csv
+Sat Oct 31 06:48:31 MSK 2026
+-rw-r--r-- 1 root root   4935 06:15 stack_meta.json
+-rw-r--r-- 1 root root 135529 06:15 submission.csv
+-rw-r--r-- 1 root root  47120 06:15 test_probs.npy
+-rw-r--r-- 1 root root   5308 22:26 train_transformer.py
+---board newest---
+-rw-r--r-- 1 root root  891 Oct 31 06:35 blackboard/aldebaran_xi_freeze_confirmed.md
+-rw-r--r-- 1 root root 1767 Oct 31 06:24 blackboard/pollux_upsilon_final_confirmation.md
+-rw-r--r-- 1 root root 1883 Oct 31 06:23 blackboard/achernar_kappa_final_verification_PASS.md
+---mtime sub---
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat blackboard/aldebaran_xi_freeze_confirmed.md
+# aldebaran_xi — freeze confirmed by both peers; no further changes
+
+Both peer verifications PASS:
+- @achernar [[achernar_kappa_final_verification_PASS.md]]: **end-to-end re-run of `solution.py` is byte-identical** to the frozen `submission.csv`; format/ids/rowsum/calibration/repro all PASS.
+- @pollux [[pollux_upsilon_final_confirmation.md]]: independent read-only check PASS; his candidate is 99.5% argmax-identical.
+
+**Swarm final: nested-CV log loss <metric>0.1861<\metric>** (56 models, `concat(log p,p)` LR C=0.01, 20× bagged, no post-processing). `final_solution/` contains `submission.csv` + full reproducible code + README with checkpoint source/license logging.
+
+I am making **no further changes** to `final_solution/`. I'll do one last read-only integrity check before `hard_end` and then stop. Thanks team — clean, verified, honest run.
+
+#submission #status #communication
+[0m
+[0m$ [0msleep 1500; cd /download_job_code/payload/sandbox && date; md5sum final_solution/submission.csv; ls -l --time-style=+%H:%M final_solution/submission.csv; pyenv shell sis-black && python - <<'EOF'
+import pandas as pd, numpy as np
+sub=pd.read_csv('final_solution/submission.csv'); ss=pd.read_csv('data/sample_submission.csv')
+P=sub[['EAP','HPL','MWS']].values
+print('rows',len(sub),'ids_ok',(sub.id.values==ss.id.values).all(),'finite',np.isfinite(P).all(),'rowsum_dev',float(np.abs(P.sum(1)-1).max()))
+EOF
+echo "---board---"; ls -lt blackboard/*.md|head -2
+Sat Oct 31 07:13:36 MSK 2026
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+-rw-r--r-- 1 root root 135529 06:15 final_solution/submission.csv
+rows 1958 ids_ok True finite True rowsum_dev 4.440892098500626e-16
+---board---
+-rw-r--r-- 1 root root  969 Oct 31 07:13 blackboard/aldebaran_xi_final_stability.md
+-rw-r--r-- 1 root root  809 Oct 31 07:10 blackboard/pollux_upsilon_last_check.md
+[0m
+
+===== resume ses_e7246832effelsgrMnk4PWpSYy at 2026-10-31T04:13:44Z =====
+[0m
+> build · deepseek-flash
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; ls -lt blackboard/*.md | head -3; echo "=== latest ==="; cat $(ls -t blackboard/*.md|head -1); echo "=== stack oofs ==="; ls -la workspaces/pollux_upsilon/preds/*oof*.npy workspaces/pollux_upsilon/preds/*cand* 2>/dev/null | tail -12; echo "---"; ls -la workspaces/aldebaran_xi/*stack*.npy workspaces/aldebaran_xi/*oof*.npy 2>/dev/null | grep -iE "stack|cand" | tail -8
+Sat Oct 31 07:13:53 MSK 2026
+-rw-r--r-- 1 root root  969 Oct 31 07:13 blackboard/aldebaran_xi_final_stability.md
+-rw-r--r-- 1 root root  809 Oct 31 07:10 blackboard/pollux_upsilon_last_check.md
+-rw-r--r-- 1 root root  891 Oct 31 06:35 blackboard/aldebaran_xi_freeze_confirmed.md
+=== latest ===
+# aldebaran_xi — final stability check (7 fresh meta-seeds): frozen config confirmed optimal
+
+GPU idle and no new models landed, so I ran a last robustness audit of the frozen stacker's C on 7 *unseen* meta-seeds (200–206), 56 members, `concat(log p,p)`, cutoff .65:
+
+| C | mean nested | sd |
+|---|---|---|
+| 0.008 | 0.18625 | .00051 |
+| 0.010 (frozen) | 0.18617 | .00054 |
+| **0.015** | **0.18613** | .00058 |
+| 0.020 | 0.18616 | .00062 |
+| 0.030 | 0.18634 | .00067 |
+
+All within **0.0002 = noise**; C=0.015 is best by 0.00004 over the frozen C=0.01 → **no change justified**. Frozen `final_solution/submission.csv` (md5 `e560475df04d395ef12f3374bb1bffdd`) stands.
+
+The independent end-to-end byte-identical reproduction (@achernar) + read-only check (@pollux) already certify it. Final swarm result: nested-CV log loss **<metric>0.1861<\metric>**. No further changes; will only do a read-only integrity check before `hard_end`.
+
+#status #ensembling #submission
+=== stack oofs ===
+-rw-r--r-- 1 root root  47120 Oct 31 00:41 workspaces/pollux_upsilon/preds/final_cand_test.npy
+-rw-r--r-- 1 root root 423032 Oct 31 05:56 workspaces/pollux_upsilon/preds/oof_bertlargec_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 21:06 workspaces/pollux_upsilon/preds/oof_dbv3b_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 22:27 workspaces/pollux_upsilon/preds/oof_dbv3b_s7.npy
+-rw-r--r-- 1 root root 423032 Oct 30 22:36 workspaces/pollux_upsilon/preds/oof_dbv3l_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 23:55 workspaces/pollux_upsilon/preds/oof_dbv3l_s7.npy
+-rw-r--r-- 1 root root 423032 Oct 31 01:17 workspaces/pollux_upsilon/preds/oof_dbv3l_s777.npy
+-rw-r--r-- 1 root root 423032 Oct 30 21:29 workspaces/pollux_upsilon/preds/oof_mpnet.npy
+-rw-r--r-- 1 root root 423032 Oct 30 22:23 workspaces/pollux_upsilon/preds/oof_rlarge_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:15 workspaces/pollux_upsilon/preds/oof_roberta_base.npy
+-rw-r--r-- 1 root root 423032 Oct 31 02:18 workspaces/pollux_upsilon/preds/oof_xlmr_full.npy
+-rw-r--r-- 1 root root 423032 Oct 30 20:49 workspaces/pollux_upsilon/preds/stack_oof.npy
+---
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat > workspaces/achernar_kappa/robustness.py <<'EOF'
+import numpy as np, pandas as pd, glob, os, warnings
+warnings.filterwarnings('ignore')
+from sklearn.metrics import log_loss
+from sklearn.model_selection import StratifiedKFold
+from sklearn.linear_model import LogisticRegression
+ROOT='/download_job_code/payload/sandbox'
+TR=pd.read_csv(f'{ROOT}/data/train.csv'); TE=pd.read_csv(f'{ROOT}/data/test.csv')
+y=TR['author'].map({'EAP':0,'HPL':1,'MWS':2}).values
+EXC=['dv3l_s555','bertlargec_full']
+pairs={}
+for f in glob.glob(f'{ROOT}/workspaces/*/preds/oof_*.npy')+glob.glob(f'{ROOT}/workspaces/*/oof_*.npy'):
+    name=os.path.basename(f)[4:-4]; d=os.path.dirname(f); tf=os.path.join(d,'test_'+name+'.npy')
+    if not os.path.exists(tf): continue
+    if any(s in name.lower() for s in ['stack','cand','blend','submission','meta']): continue
+    if any(x in name for x in EXC): continue
+    agent=d.split('/workspaces/')[1].split('/')[0]; key=f'{agent}:{name}'
+    o=np.load(f); t=np.load(tf)
+    if o.shape!=(len(TR),3) or t.shape!=(len(TE),3): continue
+    if not np.isfinite(o).all() or not np.isfinite(t).all(): continue
+    if (o.sum(1)<0.5).any() or (t.sum(1)<0.5).any(): continue
+    if ((o.max(1)-o.min(1))<1e-9).mean()>0.01: continue
+    o=np.clip(o,1e-12,1); o=o/o.sum(1,keepdims=True); t=np.clip(t,1e-12,1); t=t/t.sum(1,keepdims=True)
+    pairs[key]=(o,t)
+scores={k:log_loss(y,o) for k,(o,t) in pairs.items()}
+keys=[k for k in sorted(scores,key=scores.get) if scores[k]<0.65]
+def build(ks):
+    O=np.stack([pairs[k][0] for k in ks]); T=np.stack([pairs[k][1] for k in ks])
+    Z=np.concatenate([np.log(O),O],axis=2).transpose(1,0,2).reshape(len(TR),-1)
+    Zt=np.concatenate([np.log(T),T],axis=2).transpose(1,0,2).reshape(len(TE),-1)
+    return Z,Zt
+def bagged(Z,Zt,seed=7,nbag=20):
+    rng=np.random.RandomState(seed); P=np.zeros((len(TE),3))
+    for b in range(nbag):
+        idx=rng.permutation(len(TR))[:int(0.8*len(TR))]
+        P+=LogisticRegression(C=0.01,max_iter=1000).fit(Z[idx],y[idx]).predict_proba(Zt)
+    P/=nbag; P=np.clip(P,1e-15,1); return P/P.sum(1,keepdims=True)
+Z,Zt=build(keys); base=bagged(Z,Zt)
+# nested oof for bootstrap
+skf=StratifiedKFold(5,shuffle=True,random_state=100); oof=np.zeros((len(TR),3))
+for ti,vi in skf.split(Z,y):
+    oof[vi]=LogisticRegression(C=0.01,max_iter=1000).fit(Z[ti],y[ti]).predict_proba(Z[vi])
+ls=-np.log(np.clip(oof[np.arange(len(y)),y],1e-15,1))
+print('nested OOF ll=%.5f  per-sample loss mean=%.5f sd=%.5f se=%.5f'%(log_loss(y,oof),ls.mean(),ls.std(),ls.std()/np.sqrt(len(ls))))
+rng=np.random.RandomState(0); boots=[ls[rng.randint(0,len(ls),1958)].mean() for _ in range(2000)]
+print('bootstrap 95%% CI for 1958-row test: [%.4f, %.4f]'%(np.percentile(boots,2.5),np.percentile(boots,97.5)))
+# leave-one-top-model-out test sensitivity
+print('\nleave-one-out (top models): mean|dP| vs full, argmax agree')
+top=keys[:8]
+for k in top:
+    ks2=[x for x in keys if x!=k]; Z2,Zt2=build(ks2); P2=bagged(Z2,Zt2)
+    print(f'  drop {k:38s} mean|dP|={np.abs(P2-base).mean():.4f} agree={(P2.argmax(1)==base.argmax(1)).mean():.3f}')
+EOF
+systemd-run --user --scope --collect -q -p MemoryHigh=6G -p MemoryMax=8G -p MemorySwapMax=0 bash -lc 'cd /download_job_code/payload/sandbox && export OMP_NUM_THREADS=4 && pyenv shell sis-black && python workspaces/achernar_kappa/robustness.py' 2>&1 | tail -20
+nested OOF ll=0.18623  per-sample loss mean=0.18623 sd=0.55551 se=0.00418
+bootstrap 95% CI for 1958-row test: [0.1613, 0.2137]
+
+leave-one-out (top models): mean|dP| vs full, argmax agree
+  drop aldebaran_xi:dv3l_s1234                mean|dP|=0.0028 agree=0.999
+  drop aldebaran_xi:dv3l_s2024                mean|dP|=0.0040 agree=0.996
+  drop pollux_upsilon:dbv3l_full              mean|dP|=0.0034 agree=0.994
+  drop pollux_upsilon:dbv3l_s7                mean|dP|=0.0018 agree=0.999
+  drop pollux_upsilon:dbv3l_s777              mean|dP|=0.0017 agree=0.998
+  drop pollux_upsilon:rlarge_full             mean|dP|=0.0012 agree=0.998
+  drop achernar_kappa:dv3b_s123               mean|dP|=0.0016 agree=0.997
+  drop pollux_upsilon:dbv3b_full              mean|dP|=0.0012 agree=0.998
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_robustness_final.md
+Wrote file successfully.
+[0m
+[0m$ [0msleep 1200; cd /download_job_code/payload/sandbox && date; md5sum final_solution/submission.csv; ls -l --time-style=+%H:%M final_solution/submission.csv; pyenv shell sis-black && python - <<'EOF'
+import pandas as pd, numpy as np
+sub=pd.read_csv('final_solution/submission.csv'); ss=pd.read_csv('data/sample_submission.csv')
+P=sub[['EAP','HPL','MWS']].values
+print('FINAL CHECK rows',len(sub),'ids_ok',bool((sub.id.values==ss.id.values).all()),'finite',bool(np.isfinite(P).all()),'rowsum_dev',float(np.abs(P.sum(1)-1).max()),'min',float(P.min()),'max',float(P.max()))
+EOF
+echo "---board newest---"; ls -lt blackboard/*.md|head -2
+Sat Oct 31 07:40:10 MSK 2026
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+-rw-r--r-- 1 root root 135529 06:15 final_solution/submission.csv
+FINAL CHECK rows 1958 ids_ok True finite True rowsum_dev 4.440892098500626e-16 min 2.9661634308235936e-06 max 0.9999867076747186
+---board newest---
+-rw-r--r-- 1 root root  585 Oct 31 07:21 blackboard/2026-10-31_07-21-53_SYSTEM_final_phase.md
+-rw-r--r-- 1 root root 1053 Oct 31 07:20 blackboard/pollux_upsilon_stacker_probe_final.md
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && cat blackboard/2026-10-31_07-21-53_SYSTEM_final_phase.md; echo "=== pollux ==="; cat blackboard/pollux_upsilon_stacker_probe_final.md
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 07:21)
+
+До жёсткого стопа 30 минут (hard_end: 2026-10-31T07:51:35+03:00).
+
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+
+После 2026-10-31T07:51:35+03:00 харнесс принудительно остановит все сессии.
+=== pollux ===
+# pollux_upsilon — final stacker probe (negative) → frozen config confirmed optimal
+
+Last safe experiment (workspace-only, read-only w.r.t. `final_solution`): swept stacker variants on the **frozen 56-model pool** (cutoff .65, excl. s555/bertlargec), 5 meta-seeds:
+
+| stacker | mean nested |
+|---|---|
+| **LR C=0.01 (frozen)** | **<metric>0.18785<\metric>** |
+| LR C=0.02 | 0.18795 |
+| LR C=0.005 | 0.18816 |
+| StandardScaler + LR C=0.01 | 0.18998 |
+| StandardScaler + LR C=0.1 | 0.18985 |
+| SGD-L1 (log_loss) | diverged / uncalibrated (≈1.4) |
+
+→ **No variant beats the frozen C=0.01 `concat(log p,p)` LR.** Independent confirmation of [[aldebaran_xi_final_stability.md]] (C=0.01–0.02 flat within noise) and [[achernar_kappa_robustness_final.md]] (bootstrap 95% CI ≈ [0.161, 0.214], leave-one-model-out robust).
+
+Frozen artifact md5 `e560475df04d395ef12f3374bb1bffdd` unchanged. **Freeze stands; no swaps proposed.** I'll do one last read-only integrity hash check just before `hard_end` and stop.
+
+#insight #ensembling #submission #status
+[0m
+[0m← [0mWrite blackboard/achernar_kappa_HARDEND_CONFIRM.md
+Wrote file successfully.
+[0m
+[0m$ [0msleep 540; cd /download_job_code/payload/sandbox && date; md5sum final_solution/submission.csv; ls -l --time-style=+%H:%M final_solution/submission.csv; ls final_solution
+Sat Oct 31 07:49:17 MSK 2026
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+-rw-r--r-- 1 root root 135529 06:15 final_solution/submission.csv
+README.md
+classical_models.py
+solution.py
+stack_meta.json
+submission.csv
+test_probs.npy
+train_transformer.py
+[0m
+
+===== resume ses_e7246832effelsgrMnk4PWpSYy at 2026-10-31T04:49:22Z =====
+[0m
+> build · deepseek-flash
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date; md5sum final_solution/submission.csv; ls -l --time-style=+%H:%M final_solution/submission.csv; pyenv shell sis-black && python -c "
+import pandas as pd,numpy as np
+s=pd.read_csv('final_solution/submission.csv');ss=pd.read_csv('data/sample_submission.csv')
+P=s[['EAP','HPL','MWS']].values
+print('OK rows',len(s),'ids',bool((s.id.values==ss.id.values).all()),'finite',bool(np.isfinite(P).all()),'rowsum_maxdev',float(np.abs(P.sum(1)-1).max()))"
+Sat Oct 31 07:49:27 MSK 2026
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+-rw-r--r-- 1 root root 135529 06:15 final_solution/submission.csv
+OK rows 1958 ids True finite True rowsum_maxdev 4.440892098500626e-16
+[0m
+
+===== resume ses_e7246832effelsgrMnk4PWpSYy at 2026-10-31T04:49:44Z =====
+[0m
+> build · deepseek-flash
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date -u +"%Y-%m-%dT%H:%M:%SZ"; date +"%Y-%m-%dT%H:%M:%S%z"; md5sum final_solution/submission.csv; ls -l --time-style=full-iso final_solution/submission.csv
+2026-10-31T04:49:48Z
+2026-10-31T07:49:48+0300
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+-rw-r--r-- 1 root root 135529 2026-10-31 06:15:01.786917085 +0300 final_solution/submission.csv
+[0m
+[0m$ [0msleep 105; cd /download_job_code/payload/sandbox && date +%H:%M:%S; md5sum final_solution/submission.csv; ls final_solution | tr '\n' ' '
+07:51:36
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+README.md classical_models.py solution.py stack_meta.json submission.csv test_probs.npy train_transformer.py
+[0m
+
+===== resume ses_e7246832effelsgrMnk4PWpSYy at 2026-10-31T04:51:49Z =====
+[0m
+> build · deepseek-flash
+[0m
+[0m$ [0mcd /download_job_code/payload/sandbox && date +%H:%M:%S; md5sum final_solution/submission.csv 2>/dev/null || echo "final_solution unavailable"
+07:51:54
+e560475df04d395ef12f3374bb1bffdd  final_solution/submission.csv
+[0m

@@ -1,0 +1,329 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/nfl-player-contact-detection",
+  "label": "nfl-player-contact-detection",
+  "metric": "matthews-correlation-coefficient",
+  "is_lower_better": false,
+  "final_score": 0.73885,
+  "thresholds": {
+    "gold": 0.78167,
+    "silver": 0.72203,
+    "bronze": 0.69652,
+    "median": 0.69139
+  },
+  "messages": {
+    "agent": 59,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 4,
+    "without_metric": 26,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 59,
+    "edges": 143,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 29,
+    "mean_depth_all": 12.254237288135593,
+    "mean_depth_linked": 13.903846153846153,
+    "longest_path": [
+      "fomalhaut_omicron_last_candidate.md",
+      "sirius_tau_state_clarify.md",
+      "fomalhaut_omicron_postproc_negative.md",
+      "fomalhaut_omicron_fine_thr_check.md",
+      "fomalhaut_omicron_final_0754.md",
+      "procyon_theta_final_status.md",
+      "sirius_tau_final_verified.md",
+      "fomalhaut_omicron_final_clarify.md",
+      "fomalhaut_omicron_final_submission.md",
+      "procyon_theta_final_ping.md",
+      "procyon_theta_pertype_0751.md",
+      "procyon_theta_path_fix.md",
+      "sirius_tau_independent_blend_check.md",
+      "procyon_theta_pertype_0747.md",
+      "procyon_theta_ens_0745_coord.md",
+      "procyon_theta_ens_0744.md",
+      "fomalhaut_omicron_ping_sirius.md",
+      "fomalhaut_omicron_ens_v5.md",
+      "procyon_theta_ens_greedy_0737.md",
+      "procyon_theta_seqcnn_0733.md",
+      "procyon_theta_level2_0727.md",
+      "sirius_tau_ground_cnn_signal.md",
+      "procyon_theta_global_0725.md",
+      "fomalhaut_omicron_ensemble_protocol.md",
+      "procyon_theta_status1.md",
+      "fomalhaut_omicron_cv_feat2.md",
+      "sirius_tau_lane_cnn_and_cv_note.md",
+      "fomalhaut_omicron_division.md",
+      "fomalhaut_omicron_intro.md",
+      "procyon_theta_intro.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "procyon_theta_global_0725.md",
+        "agent": "procyon",
+        "in_degree": 7,
+        "depth": 7,
+        "tags": [
+          "ensembling",
+          "feature_engineering",
+          "status",
+          "submission",
+          "training"
+        ],
+        "time": "2026-10-16T23:52:45+03:00"
+      },
+      {
+        "name": "fomalhaut_omicron_feat3.md",
+        "agent": "fomalhaut",
+        "in_degree": 6,
+        "depth": 7,
+        "tags": [
+          "feature_engineering",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-16T23:45:29+03:00"
+      },
+      {
+        "name": "sirius_tau_ground_cnn_oof.md",
+        "agent": "sirius",
+        "in_degree": 6,
+        "depth": 11,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status"
+        ],
+        "time": "2026-10-17T02:33:13+03:00"
+      },
+      {
+        "name": "sirius_tau_lane_cnn_and_cv_note.md",
+        "agent": "sirius",
+        "in_degree": 5,
+        "depth": 3,
+        "tags": [
+          "architecture",
+          "communication",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-10-16T21:14:56+03:00"
+      },
+      {
+        "name": "fomalhaut_omicron_ensemble_protocol.md",
+        "agent": "fomalhaut",
+        "in_degree": 5,
+        "depth": 6,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "submission"
+        ],
+        "time": "2026-10-16T22:08:07+03:00"
+      },
+      {
+        "name": "fomalhaut_omicron_ens_v5.md",
+        "agent": "fomalhaut",
+        "in_degree": 5,
+        "depth": 12,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-17T02:03:00+03:00"
+      },
+      {
+        "name": "sirius_tau_artifacts_final.md",
+        "agent": "sirius",
+        "in_degree": 5,
+        "depth": 12,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-17T03:53:57+03:00"
+      }
+    ],
+    "submission_count": 40,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      6,
+      7,
+      8,
+      9,
+      10,
+      10,
+      11,
+      12,
+      12,
+      14,
+      15,
+      16,
+      16,
+      16,
+      17,
+      18,
+      19,
+      19,
+      20,
+      21,
+      21,
+      22,
+      23,
+      24,
+      24,
+      25,
+      27,
+      28,
+      28
+    ],
+    "final_submission": {
+      "name": "fomalhaut_omicron_final_07559_confirm.md",
+      "time": "2026-10-17T08:34:25+03:00",
+      "depth": 28,
+      "in_degree": 1
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 28,
+      "mean": -0.0253225,
+      "median": 0.0006400000000000294,
+      "positive": 0.6428571428571429,
+      "max": 0.03510000000000002
+    },
+    "transitive": {
+      "n": 29,
+      "mean": -0.0252244827586207,
+      "median": 0.00038000000000004697,
+      "positive": 0.6206896551724138,
+      "max": 0.02429999999999999
+    },
+    "prev_linked": {
+      "n": 31,
+      "mean": -0.02711709677419356,
+      "median": 9.999999999998899e-05,
+      "positive": 0.5483870967741935,
+      "max": 0.02429999999999999
+    },
+    "prev_unlinked": {
+      "n": 1,
+      "mean": -0.07310000000000005,
+      "median": -0.07310000000000005,
+      "positive": 0.0,
+      "max": -0.07310000000000005
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 12,
+      "direct": {
+        "events": 12,
+        "adopted": 12,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.0833333333333335,
+        "median_seconds": 1891.5
+      },
+      "transitive": {
+        "events": 12,
+        "adopted": 12,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.0833333333333335,
+        "median_seconds": 1891.5
+      }
+    },
+    "broad": {
+      "n_events": 18,
+      "direct": {
+        "events": 18,
+        "adopted": 16,
+        "rate": 0.8888888888888888,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.3125,
+        "median_seconds": 1622.5
+      },
+      "transitive": {
+        "events": 18,
+        "adopted": 17,
+        "rate": 0.9444444444444444,
+        "median_msgs": 2,
+        "mean_msgs": 2.411764705882353,
+        "median_seconds": 1703.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 18,
+      "direct": {
+        "events": 18,
+        "adopted": 17,
+        "rate": 0.9444444444444444,
+        "median_msgs": 2,
+        "mean_msgs": 2.411764705882353,
+        "median_seconds": 1974.0
+      },
+      "transitive": {
+        "events": 18,
+        "adopted": 18,
+        "rate": 1.0,
+        "median_msgs": 2.5,
+        "mean_msgs": 2.7222222222222223,
+        "median_seconds": 2019.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 3,
+    "direct": {
+      "events": 3,
+      "recovered": 3,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 255.0,
+      "different_author": 2
+    },
+    "transitive": {
+      "events": 3,
+      "recovered": 3,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 255.0,
+      "different_author": 2
+    },
+    "problem_authors": {
+      "sirius": 2,
+      "procyon": 1
+    },
+    "recovery_authors": {
+      "fomalhaut": 1,
+      "procyon": 2
+    }
+  }
+}

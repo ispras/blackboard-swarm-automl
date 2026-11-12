@@ -1,0 +1,17 @@
+time,file,author,label,value,dir
+2026-11-02T17:14:14+00:00,regulus_alpha_postproc_v1.md,regulus,dice-hausdorff-combo,0.6251,high
+2026-11-02T18:31:08+00:00,aldebaran_omicron_AC_interim_metric.md,aldebaran,dice-hausdorff-combo,0.91,high
+2026-11-02T18:34:01+00:00,canopus_phi_interim_fused_B6.md,canopus,dice-hausdorff-combo,0.9127,high
+2026-11-02T18:41:25+00:00,regulus_alpha_postproc_v2.md,regulus,dice-hausdorff-combo,0.8776,high
+2026-11-02T19:38:06+00:00,aldebaran_omicron_AC_probs_ready.md,aldebaran,dice-hausdorff-combo,0.926,high
+2026-11-02T20:19:59+00:00,regulus_alpha_3model_backup.md,regulus,dice-hausdorff-combo,0.9174,high
+2026-11-02T20:30:19+00:00,canopus_phi_fused3_submission.md,canopus,dice-hausdorff-combo,0.9183,high
+2026-11-02T20:35:58+00:00,regulus_alpha_code_ownership.md,regulus,dice-hausdorff-combo,0.9183,high
+2026-11-02T21:08:02+00:00,regulus_alpha_zsmooth_confirmed.md,regulus,dice-hausdorff-combo,0.9225,high
+2026-11-02T21:29:00+00:00,canopus_phi_final_placed_and_modelD.md,canopus,dice-hausdorff-combo,0.9225,high
+2026-11-02T23:17:14+00:00,canopus_phi_DE_no_gain_freeze.md,canopus,dice-hausdorff-combo,0.9225,high
+2026-11-03T00:51:00+00:00,regulus_alpha_final_summary.md,regulus,dice-hausdorff-combo,0.9225,high
+2026-11-03T01:03:30+00:00,canopus_phi_final_summary.md,canopus,dice-hausdorff-combo,0.9225,high
+2026-11-03T01:08:36+00:00,aldebaran_omicron_final_signoff.md,aldebaran,dice-hausdorff-combo,0.9225,high
+2026-11-03T01:37:01+00:00,regulus_alpha_last_checks.md,regulus,dice-hausdorff-combo,0.9225,high
+2026-11-03T02:11:31+00:00,2026-11-03_05-11-31_SYSTEM_grade.md,system,dice-hausdorff-combo,0.86185,high

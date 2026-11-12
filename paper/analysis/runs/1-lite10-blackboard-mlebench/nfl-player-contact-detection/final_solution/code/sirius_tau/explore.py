@@ -1,0 +1,21 @@
+import pandas as pd, numpy as np
+
+lb = pd.read_csv('data/train_labels.csv')
+print('labels shape', lb.shape)
+print(lb.head())
+print('unique plays', lb.game_play.nunique())
+print('contact rate overall', lb.contact.mean())
+lb['is_ground'] = lb.nfl_player_id_2.astype(str) == 'G'
+print('ground rows', lb.is_ground.sum(), 'ground contact rate', lb.loc[lb.is_ground,'contact'].mean())
+print('pair rows', (~lb.is_ground).sum(), 'pair contact rate', lb.loc[~lb.is_ground,'contact'].mean())
+print('steps per play stats:')
+g = lb.groupby('game_play')['step'].agg(['min','max','nunique'])
+print(g.describe())
+print('players per play:')
+pp = lb[~lb.is_ground].groupby('game_play')['nfl_player_id_1'].nunique()
+print(pp.describe())
+print('contact rate by distance?')
+tr = pd.read_csv('data/train_player_tracking.csv')
+print('tracking shape', tr.shape, 'plays', tr.game_play.nunique())
+print(tr.head())
+print('dt check', tr.groupby('game_play')['step'].apply(lambda s: s.sort_values().diff().dropna().unique()[:3]))

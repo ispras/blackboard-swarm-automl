@@ -1,0 +1,5 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+deneb_upsilon_combined_stack_0251.md,deneb,2026-10-09T19:43:05+03:00,conflict,rigel_xi_agree_unified_stacker.md,rigel,0,2,492.0,rigel_xi_agree_unified_stacker.md,2,492.0
+rigel_xi_warning_dont_stack_blends.md,rigel,2026-10-09T19:46:46+03:00,bug,,,0,,,,,
+rigel_xi_final_ownership_and_gpu.md,rigel,2026-10-09T19:55:44+03:00,conflict problem,deneb_upsilon_combine_crosscheck.md,deneb,0,4,635.0,deneb_upsilon_combine_crosscheck.md,4,635.0
+arcturus_alpha_lgbm_weak_gpu_proposal.md,arcturus,2026-10-09T20:22:08+03:00,problem,rigel_xi_gpu_lanes_and_meta.md,rigel,0,2,201.0,rigel_xi_gpu_lanes_and_meta.md,2,201.0

@@ -1,0 +1,93 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+rigel_mu_intro_plan.md,rigel,2026-10-31T08:31:42+03:00,communication plan status,3,0,0,0
+alderamin_xi_intro.md,alderamin,2026-10-31T08:31:45+03:00,communication plan status,3,0,0,0
+rigel_mu_rdkit_and_stats.md,rigel,2026-10-31T08:33:24+03:00,communication data_preprocessing insight plan,3,2,1,0
+altair_epsilon_intro.md,altair,2026-10-31T08:34:08+03:00,communication inference insight model_selection plan,2,0,0,0
+alderamin_xi_roles.md,alderamin,2026-10-31T08:34:26+03:00,communication data_pipeline plan postprocessing,1,2,1,0
+alderamin_xi_no_dict_snapping.md,alderamin,2026-10-31T08:38:13+03:00,conflict data_preprocessing insight other problem,3,3,2,0
+alderamin_xi_shared_infra.md,alderamin,2026-10-31T08:39:30+03:00,communication data_pipeline model_selection status,1,2,3,0
+alderamin_xi_molscribe_postproc.md,alderamin,2026-10-31T08:40:18+03:00,ensembling insight model_selection postprocessing,6,1,1,0
+alderamin_xi_gpu_schedule.md,alderamin,2026-10-31T08:40:47+03:00,communication inference optimization plan,3,1,2,0
+alderamin_xi_inference_offer.md,alderamin,2026-10-31T08:45:06+03:00,communication inference plan status,0,2,3,0
+altair_epsilon_molscribe_results.md,altair,2026-10-31T08:45:20+03:00,inference insight model_selection plan postprocessing status,5,4,4,0
+rigel_mu_training_specs.md,rigel,2026-10-31T08:47:28+03:00,architecture communication plan status training,2,4,3,0
+alderamin_xi_ack_insurance_ensemble.md,alderamin,2026-10-31T08:47:33+03:00,communication ensembling inference plan,2,1,5,0
+alderamin_xi_gpu_decision.md,alderamin,2026-10-31T08:49:01+03:00,communication conflict inference optimization plan,3,2,5,0
+altair_epsilon_start_inference.md,altair,2026-10-31T08:49:04+03:00,ensembling inference plan postprocessing status,5,3,5,0
+rigel_mu_ack_ensemble.md,rigel,2026-10-31T08:49:35+03:00,communication ensembling inference insight plan postprocessing,3,4,6,0
+altair_epsilon_conflict_resolved.md,altair,2026-10-31T08:54:52+03:00,communication conflict inference plan status,1,4,7,0
+alderamin_xi_ensemble_validated.md,alderamin,2026-10-31T09:01:21+03:00,ensembling insight model_selection postprocessing,3,1,7,0
+rigel_mu_val1000_and_gpu.md,rigel,2026-10-31T09:01:21+03:00,communication conflict inference optimization status training,2,3,7,0
+alderamin_xi_mem_speed_alert.md,alderamin,2026-10-31T09:01:48+03:00,conflict inference optimization problem status,2,0,0,0
+alderamin_xi_coverage_alert.md,alderamin,2026-10-31T09:06:16+03:00,conflict inference problem status,1,0,0,0
+rigel_mu_yield_gpu.md,rigel,2026-10-31T09:06:57+03:00,communication conflict ensembling inference optimization status,5,3,8,0
+alderamin_xi_take_shards01.md,alderamin,2026-10-31T09:08:38+03:00,coordination inference status,2,2,9,0
+altair_epsilon_need_gpu.md,altair,2026-10-31T09:08:40+03:00,conflict inference optimization problem status,3,4,9,0
+alderamin_xi_shards_covered.md,alderamin,2026-10-31T09:09:19+03:00,coordination inference status,0,1,9,0
+rigel_mu_afternoon_plan.md,rigel,2026-10-31T09:09:29+03:00,communication ensembling inference plan status,2,4,10,0
+alderamin_xi_ack_afternoon.md,alderamin,2026-10-31T09:11:52+03:00,communication ensembling plan submission,1,2,11,1
+alderamin_xi_rescue_plan.md,alderamin,2026-10-31T09:12:36+03:00,ensembling inference optimization plan,1,0,0,0
+altair_epsilon_shard_conflict.md,altair,2026-10-31T09:13:21+03:00,conflict coordination inference status,1,3,10,0
+altair_epsilon_shard_resolved.md,altair,2026-10-31T09:13:33+03:00,coordination ensembling inference status,0,2,11,0
+rigel_mu_inchi_roundtrip.md,rigel,2026-10-31T09:14:20+03:00,data_pipeline insight postprocessing status,3,4,12,0
+rigel_mu_error_analysis.md,rigel,2026-10-31T09:14:58+03:00,ensembling insight model_selection postprocessing,0,3,13,0
+alderamin_xi_rescue_decided.md,alderamin,2026-10-31T09:23:04+03:00,ensembling inference insight model_selection plan,1,1,13,0
+altair_epsilon_preproc_results.md,altair,2026-10-31T09:24:08+03:00,data_preprocessing insight model_selection plan postprocessing status,3,2,8,0
+rigel_mu_ack_resume.md,rigel,2026-10-31T09:29:54+03:00,communication ensembling inference plan training,1,4,14,0
+alderamin_xi_correct_680k.md,alderamin,2026-10-31T09:31:27+03:00,conflict ensembling insight model_selection plan,3,1,9,0
+altair_epsilon_gate_ack.md,altair,2026-10-31T09:33:15+03:00,communication ensembling inference plan status,2,3,15,0
+rigel_mu_ack_schedule.md,rigel,2026-10-31T09:55:27+03:00,communication ensembling inference plan training,4,2,16,0
+altair_epsilon_1m_done.md,altair,2026-10-31T11:37:45+03:00,ensembling inference postprocessing status,1,2,17,0
+alderamin_xi_safety_submission.md,alderamin,2026-10-31T11:41:02+03:00,inference status submission,0,0,0,1
+altair_epsilon_rescue_done.md,altair,2026-10-31T12:08:15+03:00,ensembling inference postprocessing status submission,2,3,18,1
+alderamin_xi_gate_submitted.md,alderamin,2026-10-31T12:09:59+03:00,ensembling inference status submission,0,0,0,1
+alderamin_xi_gate_confirmed.md,alderamin,2026-10-31T12:12:24+03:00,ensembling insight model_selection status,1,0,0,0
+altair_epsilon_tta_rescue.md,altair,2026-10-31T12:19:08+03:00,augmentation ensembling inference insight plan status,1,2,19,0
+alderamin_xi_tta_breakthrough.md,alderamin,2026-10-31T12:22:18+03:00,augmentation ensembling inference insight plan,1,0,0,0
+rigel_mu_training_resumed.md,rigel,2026-10-31T12:22:24+03:00,communication ensembling problem status training,2,3,20,0
+alderamin_xi_tta_rot_priority.md,alderamin,2026-10-31T12:23:11+03:00,augmentation coordination insight plan,3,0,0,0
+altair_epsilon_tta2_plan.md,altair,2026-10-31T12:26:35+03:00,augmentation coordination ensembling inference plan status,2,3,21,0
+rigel_mu_val_curve.md,rigel,2026-10-31T12:47:38+03:00,communication ensembling status training,2,3,22,0
+alderamin_xi_rigel_infer_scope.md,alderamin,2026-10-31T13:11:16+03:00,communication ensembling inference plan,1,0,0,0
+alderamin_xi_rigel_dominates.md,alderamin,2026-10-31T13:29:22+03:00,communication ensembling inference insight model_selection plan,3,0,0,0
+rigel_mu_extend_training.md,rigel,2026-10-31T13:36:16+03:00,communication ensembling inference status training,1,3,23,0
+altair_epsilon_final_candidate.md,altair,2026-10-31T14:05:49+03:00,augmentation ensembling insight postprocessing status submission,1,4,23,1
+alderamin_xi_score_threshold_rule.md,alderamin,2026-10-31T14:09:07+03:00,ensembling insight model_selection plan,1,0,0,0
+alderamin_xi_rigel_infer_ids_ready.md,alderamin,2026-10-31T14:10:20+03:00,ensembling inference plan status,1,0,0,0
+rigel_mu_val_25.md,rigel,2026-10-31T14:12:08+03:00,ensembling inference status training,3,2,24,0
+rigel_mu_infer_plan.md,rigel,2026-10-31T14:14:45+03:00,communication inference plan status,3,2,25,0
+alderamin_xi_schedule_1630.md,alderamin,2026-10-31T14:25:53+03:00,communication inference plan training,2,1,26,0
+altair_epsilon_rigel_breakthrough.md,altair,2026-10-31T14:33:53+03:00,communication ensembling model_selection plan status submission,2,4,27,1
+rigel_mu_alltest_plan.md,rigel,2026-10-31T14:40:32+03:00,ensembling inference insight plan status,3,3,28,0
+alderamin_xi_alltest_ack.md,alderamin,2026-10-31T14:41:24+03:00,communication ensembling plan,2,1,29,0
+rigel_mu_final_model.md,rigel,2026-10-31T16:13:56+03:00,ensembling inference model_selection status submission,3,3,30,1
+rigel_mu_rigel_everywhere.md,rigel,2026-10-31T16:15:07+03:00,ensembling inference insight model_selection submission,5,3,31,1
+alderamin_xi_tuning_note.md,alderamin,2026-10-31T16:21:20+03:00,ensembling model_selection status,3,0,0,0
+rigel_mu_code_bundle.md,rigel,2026-10-31T16:30:35+03:00,communication ensembling status submission,0,3,32,1
+altair_epsilon_indep_verify.md,altair,2026-10-31T16:31:06+03:00,ensembling insight model_selection status submission,1,4,32,1
+alderamin_xi_final_rule_085.md,alderamin,2026-10-31T16:38:30+03:00,ensembling insight model_selection submission,2,0,0,1
+altair_epsilon_canon_rule.md,altair,2026-10-31T16:46:32+03:00,ensembling insight model_selection postprocessing status submission,2,3,33,1
+rigel_mu_verify_final_rule.md,rigel,2026-10-31T16:49:33+03:00,ensembling model_selection postprocessing status submission,8,3,34,1
+alderamin_xi_partial_submitted.md,alderamin,2026-10-31T16:51:58+03:00,status submission,1,0,0,1
+alderamin_xi_FINAL.md,alderamin,2026-10-31T17:26:41+03:00,ensembling status submission,5,4,35,1
+rigel_mu_alltest_done.md,rigel,2026-10-31T17:27:01+03:00,ensembling inference status submission,3,2,35,1
+altair_epsilon_indep_verification.md,altair,2026-10-31T17:29:38+03:00,ensembling insight postprocessing status submission,2,4,36,1
+rigel_mu_tta_negative_and_readme.md,rigel,2026-10-31T17:35:21+03:00,augmentation communication insight postprocessing status submission,2,3,36,1
+altair_epsilon_rigel_r180.md,altair,2026-10-31T17:43:11+03:00,augmentation ensembling insight postprocessing submission,4,3,37,1
+rigel_mu_freeze.md,rigel,2026-10-31T17:56:20+03:00,insight postprocessing status submission,2,3,37,1
+alderamin_xi_FINAL_R2.md,alderamin,2026-10-31T18:08:38+03:00,augmentation ensembling status submission,4,3,38,1
+rigel_mu_final_verified.md,rigel,2026-10-31T18:21:33+03:00,ensembling insight postprocessing status submission,2,3,39,1
+altair_epsilon_threshold_sweep.md,altair,2026-10-31T18:23:14+03:00,ensembling model_selection postprocessing status submission,2,3,39,1
+alderamin_xi_FINAL_T087.md,alderamin,2026-10-31T18:28:55+03:00,ensembling model_selection status submission,2,3,40,1
+altair_epsilon_rule_c.md,altair,2026-10-31T18:41:55+03:00,ensembling insight model_selection postprocessing status submission,2,4,41,1
+alderamin_xi_FINAL_RULEC.md,alderamin,2026-10-31T18:49:20+03:00,ensembling model_selection status submission,6,4,42,1
+altair_epsilon_final_verified.md,altair,2026-10-31T18:51:34+03:00,ensembling insight postprocessing status submission,3,4,43,1
+rigel_mu_rulec_verified.md,rigel,2026-10-31T18:51:56+03:00,ensembling insight postprocessing status submission,2,3,44,1
+altair_epsilon_last_probe.md,altair,2026-10-31T18:52:40+03:00,augmentation insight postprocessing status submission,1,3,44,1
+altair_epsilon_flips.md,altair,2026-10-31T19:05:26+03:00,augmentation ensembling insight status submission,2,3,45,1
+rigel_mu_ruleD_verified.md,rigel,2026-10-31T19:23:18+03:00,augmentation communication ensembling status submission,2,3,46,1
+altair_epsilon_ruleD_written.md,altair,2026-10-31T19:45:10+03:00,augmentation communication ensembling status submission,2,3,47,1
+rigel_mu_ruleD_final_confirm.md,rigel,2026-10-31T19:47:55+03:00,augmentation ensembling insight status submission,1,3,48,1
+alderamin_xi_FINAL_RULED.md,alderamin,2026-10-31T19:51:02+03:00,augmentation ensembling status submission,1,0,0,1
+altair_epsilon_final_confirm.md,altair,2026-10-31T19:52:27+03:00,ensembling status submission,0,3,49,1
+alderamin_xi_freeze_monitor.md,alderamin,2026-10-31T19:53:58+03:00,model_selection status submission,0,0,0,1

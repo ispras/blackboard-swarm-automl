@@ -1,0 +1,19 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+fomalhaut_omicron_result1.md,fomalhaut,2026-10-16T21:11:56+03:00,0.683,feature_engineering submission,sirius_tau_honest_cv_helmet.md,4,563.0,sirius_tau_honest_cv_helmet.md,4,563.0
+fomalhaut_omicron_ablation1.md,fomalhaut,2026-10-16T21:13:38+03:00,0.047,feature_engineering insight,,,,,,
+sirius_tau_baseline_tracking_lgb.md,sirius,2026-10-16T21:14:25+03:00,0.6099,feature_engineering insight submission,,,,fomalhaut_omicron_cv_feat2.md,4,1703.0
+sirius_tau_temporal_smoothing.md,sirius,2026-10-16T21:28:20+03:00,0.6722,insight submission,fomalhaut_omicron_cv_feat2.md,1,868.0,fomalhaut_omicron_cv_feat2.md,1,868.0
+fomalhaut_omicron_cv_feat2.md,fomalhaut,2026-10-16T21:42:48+03:00,0.7073,feature_engineering insight,procyon_theta_status1.md,1,272.0,procyon_theta_status1.md,1,272.0
+procyon_theta_status1.md,procyon,2026-10-16T21:47:20+03:00,0.6148,feature_engineering insight,fomalhaut_omicron_ensemble_protocol.md,1,1247.0,fomalhaut_omicron_ensemble_protocol.md,1,1247.0
+fomalhaut_omicron_feat3.md,fomalhaut,2026-10-16T23:45:29+03:00,0.7251,feature_engineering insight,procyon_theta_level2_0727.md,4,1809.0,procyon_theta_level2_0727.md,4,1809.0
+procyon_theta_global_0725.md,procyon,2026-10-16T23:52:45+03:00,0.7255,feature_engineering submission,sirius_tau_ground_cnn_signal.md,2,751.0,sirius_tau_ground_cnn_signal.md,2,751.0
+procyon_theta_level2_0727.md,procyon,2026-10-17T00:15:38+03:00,0.7273,feature_engineering submission,fomalhaut_omicron_ens_v3.md,1,1974.0,fomalhaut_omicron_ens_v3.md,1,1974.0
+fomalhaut_omicron_ens_v3.md,fomalhaut,2026-10-17T00:48:32+03:00,0.7319,insight submission,procyon_theta_ens_greedy_0737.md,2,2374.0,procyon_theta_ens_greedy_0737.md,2,2374.0
+procyon_theta_seqcnn_0733.md,procyon,2026-10-17T01:23:01+03:00,0.7335,insight submission,fomalhaut_omicron_ens_v5.md,2,2399.0,fomalhaut_omicron_ens_v5.md,2,2399.0
+procyon_theta_ens_greedy_0737.md,procyon,2026-10-17T01:28:06+03:00,0.7372,insight submission,fomalhaut_omicron_ens_v5.md,1,2094.0,fomalhaut_omicron_ens_v5.md,1,2094.0
+procyon_theta_ens_0744.md,procyon,2026-10-17T04:18:36+03:00,0.7437,feature_engineering insight submission,fomalhaut_omicron_final_writer_0745.md,3,3764.0,fomalhaut_omicron_final_writer_0745.md,3,3764.0
+procyon_theta_pertype_0747.md,procyon,2026-10-17T05:16:15+03:00,0.7468,insight submission,sirius_tau_independent_blend_check.md,3,3176.0,sirius_tau_independent_blend_check.md,3,3176.0
+sirius_tau_updated_artifacts.md,sirius,2026-10-17T05:26:22+03:00,0.7068,insight submission,fomalhaut_omicron_pertype_0750.md,4,3524.0,fomalhaut_omicron_pertype_0750.md,4,3524.0
+fomalhaut_omicron_pertype_0750.md,fomalhaut,2026-10-17T06:25:06+03:00,0.75018,feature_engineering insight submission,sirius_tau_ack_feat5.md,1,60.0,sirius_tau_ack_feat5.md,1,60.0
+procyon_theta_final_status.md,procyon,2026-10-17T08:01:08+03:00,0.7516,feature_engineering submission,fomalhaut_omicron_final_0754.md,6,1436.0,fomalhaut_omicron_final_0754.md,6,1436.0
+procyon_theta_final_07559.md,procyon,2026-10-17T08:30:19+03:00,0.7559,insight submission,sirius_tau_final_confirm_07559.md,1,97.0,sirius_tau_final_confirm_07559.md,1,97.0

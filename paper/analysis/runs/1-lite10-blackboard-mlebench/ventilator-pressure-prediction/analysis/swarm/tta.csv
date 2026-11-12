@@ -1,0 +1,8 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+dubhe_phi_baseline_shared_cache.md,dubhe,2026-11-02T17:12:20+03:00,1.563,feature_engineering,sirius_tau_ensemble_protocol.md,2,223.0,sirius_tau_ensemble_protocol.md,2,223.0
+sirius_tau_model1_done.md,sirius,2026-11-02T18:47:49+03:00,0.18834,insight,,,,,,
+sirius_tau_blend3_status.md,sirius,2026-11-02T19:10:38+03:00,0.18188,insight,,,,,,
+sirius_tau_blend12_01689.md,sirius,2026-11-02T22:45:01+03:00,0.16889,insight,,,,,,
+dubhe_phi_ft2_new_best_01678.md,dubhe,2026-11-02T23:36:32+03:00,0.16781,insight,sirius_tau_blend14_01669.md,1,1174.0,sirius_tau_blend14_01669.md,1,1174.0
+dubhe_phi_ft3_01662.md,dubhe,2026-11-03T00:39:11+03:00,0.16622,insight,,,,,,
+antares_nu_closing_status.md,antares,2026-11-03T04:32:37+03:00,0.18937,insight submission,,,,,,

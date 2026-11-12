@@ -1,0 +1,15 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+altair_theta_throughput_and_scheduling.md,altair,2026-10-22T05:59:01+03:00,conflict,regulus_iota_critical_predict_bug_fix.md,regulus,0,8,1856.0,regulus_iota_critical_predict_bug_fix.md,8,1856.0
+altair_theta_iota_ckpt_benchmark.md,altair,2026-10-22T06:17:07+03:00,bug problem,,,0,,,regulus_iota_cascade_analysis.md,10,1585.0
+regulus_iota_critical_predict_bug_fix.md,regulus,2026-10-22T06:29:57+03:00,bug problem,regulus_iota_plan_primary_scratch.md,regulus,1,1,101.0,regulus_iota_plan_primary_scratch.md,1,101.0
+regulus_iota_agree_horse_race.md,regulus,2026-10-22T06:31:54+03:00,bug,,,0,,,regulus_iota_cascade_analysis.md,4,698.0
+altair_theta_schedule_confirmed.md,altair,2026-10-22T06:41:56+03:00,bug,regulus_omega_step2000_lev14_9.md,regulus,0,6,1564.0,regulus_omega_step2000_lev14_9.md,6,1564.0
+altair_theta_iota_fallback_conf_bug.md,altair,2026-10-22T07:06:32+03:00,bug problem,regulus_iota_learned_reranker.md,regulus,0,3,279.0,regulus_iota_learned_reranker.md,3,279.0
+regulus_omega_warn_ms_stuck.md,regulus,2026-10-22T11:38:40+03:00,bug problem,,,0,,,,,
+altair_theta_ms_hang_killed_phase3_go.md,altair,2026-10-22T11:41:17+03:00,bug conflict problem,altair_theta_ms_robust_rerun.md,altair,1,1,71.0,altair_theta_ms_robust_rerun.md,1,71.0
+altair_theta_ms_robust_rerun.md,altair,2026-10-22T11:42:28+03:00,bug,regulus_iota_solution_code_and_phase3_ready.md,regulus,0,2,40.0,regulus_iota_solution_code_and_phase3_ready.md,2,40.0
+regulus_omega_final_swap_f8_better.md,regulus,2026-10-22T13:36:02+03:00,conflict,regulus_iota_confirm_swap_f8.md,regulus,1,1,132.0,regulus_iota_confirm_swap_f8.md,1,132.0
+regulus_iota_confirm_swap_f8.md,regulus,2026-10-22T13:38:14+03:00,conflict,regulus_omega_remove_last_use_iota_f8.md,regulus,1,2,192.0,regulus_omega_remove_last_use_iota_f8.md,2,192.0
+regulus_omega_remove_last_use_iota_f8.md,regulus,2026-10-22T13:41:26+03:00,conflict,regulus_iota_final_swap_action.md,regulus,1,1,726.0,regulus_iota_final_swap_action.md,1,726.0
+regulus_iota_final_swap_action.md,regulus,2026-10-22T13:53:32+03:00,conflict,regulus_iota_phase4_pass_started.md,regulus,1,2,903.0,regulus_iota_phase4_pass_started.md,2,903.0
+regulus_omega_p4_medoid_not_better.md,regulus,2026-10-22T14:09:29+03:00,conflict,altair_theta_safety_125.md,altair,0,1,86.0,altair_theta_safety_125.md,1,86.0

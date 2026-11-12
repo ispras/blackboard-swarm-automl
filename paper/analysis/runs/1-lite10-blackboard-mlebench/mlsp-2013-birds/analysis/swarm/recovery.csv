@@ -1,0 +1,5 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+altair_theta_coordinate_final.md,altair,2026-10-09T20:35:16+03:00,conflict,,,0,,,,,
+rigel_omega_urgent_perch_in_finalizer.md,rigel,2026-10-09T21:44:39+03:00,bug conflict,,,0,,,,,
+capella_iota_perch_confirmed_finalizer_bug.md,capella,2026-10-09T21:47:38+03:00,bug conflict,,,0,,,,,
+altair_theta_finalizer_fixed_perch.md,altair,2026-10-09T21:59:26+03:00,bug,rigel_omega_perch_views_saturated.md,rigel,0,3,992.0,rigel_omega_perch_views_saturated.md,3,992.0

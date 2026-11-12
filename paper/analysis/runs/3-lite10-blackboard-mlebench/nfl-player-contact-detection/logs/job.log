@@ -1,0 +1,2556 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [270 kB]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [720 B]
+Fetched 10.3 MB in 3s (3751 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Collecting pip
+  Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 134.5 MB/s  0:00:00
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 44.7 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+  Attempting uninstall: pip
+    Found existing installation: pip 26.2.1
+    Uninstalling pip-26.2.1:
+      Successfully uninstalled pip-26.2.1
+Successfully installed pip-26.2.2 setuptools-84.2.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.123-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.123 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.123-py3-none-any.whl (16.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.2/16.2 MB 162.0 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.123->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.123 botocore-1.43.123 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/186k [00:00<?, ?File/s][A
+220kFile [00:00, 9.92MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-nfl-player-contact-detection' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/4.60G [00:00<?, ?B/s][A
+  0%|          | 256k/4.60G [00:00<47:42, 1.73MB/s][A
+  0%|          | 6.75M/4.60G [00:00<02:25, 33.9MB/s][A
+  0%|          | 10.8M/4.60G [00:00<02:50, 29.0MB/s][A
+  0%|          | 16.2M/4.60G [00:00<02:35, 31.6MB/s][A
+  0%|          | 19.8M/4.60G [00:00<02:34, 32.0MB/s][A
+  0%|          | 23.0M/4.60G [00:00<02:34, 31.9MB/s][A
+  1%|          | 27.2M/4.60G [00:00<02:24, 33.9MB/s][A
+  1%|          | 31.0M/4.60G [00:01<02:22, 34.6MB/s][A
+  1%|          | 31.0M/4.60G [00:01<02:22, 34.6MB/s][A
+  1%|          | 35.0M/4.60G [00:01<02:45, 29.6MB/s][A
+  1%|          | 35.0M/4.60G [00:01<02:45, 29.6MB/s][A
+  1%|          | 35.0M/4.60G [00:01<02:45, 29.6MB/s][A
+  1%|          | 38.0M/4.60G [00:01<02:52, 28.4MB/s][A
+  1%|          | 41.2M/4.60G [00:01<02:51, 28.6MB/s][A
+  1%|          | 44.5M/4.60G [00:01<02:43, 30.0MB/s][A
+  1%|          | 48.0M/4.60G [00:01<02:34, 31.6MB/s][A
+  1%|          | 51.5M/4.60G [00:01<02:32, 32.1MB/s][A
+  1%|          | 54.8M/4.60G [00:01<02:30, 32.5MB/s][A
+  1%|          | 58.0M/4.60G [00:01<02:29, 32.6MB/s][A
+  1%|▏         | 61.2M/4.60G [00:02<02:28, 32.8MB/s][A
+  1%|▏         | 64.8M/4.60G [00:02<02:24, 33.9MB/s][A
+  1%|▏         | 68.5M/4.60G [00:02<02:18, 35.1MB/s][A
+  1%|▏         | 69.0M/4.60G [00:02<02:13, 36.4MB/s][A
+  2%|▏         | 72.5M/4.60G [00:02<02:18, 35.3MB/s][A
+  2%|▏         | 76.2M/4.60G [00:02<02:16, 35.6MB/s][A
+  2%|▏         | 80.5M/4.60G [00:02<02:11, 36.8MB/s][A
+  2%|▏         | 84.2M/4.60G [00:02<02:14, 36.0MB/s][A
+  2%|▏         | 87.8M/4.60G [00:02<02:17, 35.4MB/s][A
+  2%|▏         | 91.2M/4.60G [00:02<02:36, 31.0MB/s][A
+  2%|▏         | 94.5M/4.60G [00:03<03:39, 22.1MB/s][A
+  2%|▏         | 97.0M/4.60G [00:03<04:33, 17.7MB/s][A
+  2%|▏         | 97.5M/4.60G [00:03<05:11, 15.5MB/s][A
+  2%|▏         | 100M/4.60G [00:03<04:38, 17.4MB/s] [A
+  2%|▏         | 104M/4.60G [00:03<03:40, 21.9MB/s][A
+  2%|▏         | 108M/4.60G [00:03<03:02, 26.5MB/s][A
+  2%|▏         | 112M/4.60G [00:03<02:48, 28.6MB/s][A
+  2%|▏         | 115M/4.60G [00:03<02:41, 29.8MB/s][A
+  3%|▎         | 119M/4.60G [00:04<02:30, 31.9MB/s][A
+  3%|▎         | 119M/4.60G [00:04<02:30, 31.9MB/s][A
+  3%|▎         | 119M/4.60G [00:04<02:30, 31.9MB/s][A
+  3%|▎         | 122M/4.60G [00:04<02:32, 31.6MB/s][A
+  3%|▎         | 125M/4.60G [00:04<02:32, 31.5MB/s][A
+  3%|▎         | 128M/4.60G [00:04<02:32, 31.6MB/s][A
+  3%|▎         | 132M/4.60G [00:04<02:30, 31.9MB/s][A
+  3%|▎         | 136M/4.60G [00:04<02:23, 33.4MB/s][A
+  3%|▎         | 140M/4.60G [00:04<02:20, 34.2MB/s][A
+  3%|▎         | 144M/4.60G [00:04<02:05, 38.3MB/s][A
+  3%|▎         | 144M/4.60G [00:04<02:05, 38.3MB/s][A
+  3%|▎         | 148M/4.60G [00:04<02:08, 37.4MB/s][A
+  3%|▎         | 151M/4.60G [00:05<02:56, 27.0MB/s][A
+  3%|▎         | 156M/4.60G [00:05<02:30, 31.7MB/s][A
+  3%|▎         | 160M/4.60G [00:05<02:16, 34.9MB/s][A
+  4%|▎         | 166M/4.60G [00:05<02:01, 39.2MB/s][A
+  4%|▎         | 170M/4.60G [00:06<03:59, 19.9MB/s][A
+  4%|▎         | 173M/4.60G [00:06<04:02, 19.6MB/s][A
+  4%|▍         | 177M/4.60G [00:06<03:24, 23.3MB/s][A
+  4%|▍         | 182M/4.60G [00:06<02:47, 28.3MB/s][A
+  4%|▍         | 186M/4.60G [00:06<03:45, 21.0MB/s][A
+  4%|▍         | 189M/4.60G [00:06<03:18, 24.0MB/s][A
+  4%|▍         | 194M/4.60G [00:06<02:46, 28.5MB/s][A
+  4%|▍         | 198M/4.60G [00:07<02:36, 30.3MB/s][A
+  4%|▍         | 202M/4.60G [00:07<02:27, 32.0MB/s][A
+  4%|▍         | 206M/4.60G [00:07<02:21, 33.5MB/s][A
+  4%|▍         | 210M/4.60G [00:07<02:14, 35.0MB/s][A
+  5%|▍         | 214M/4.60G [00:07<02:11, 35.8MB/s][A
+  5%|▍         | 219M/4.60G [00:07<01:57, 40.1MB/s][A
+  5%|▍         | 223M/4.60G [00:07<02:04, 37.8MB/s][A
+  5%|▍         | 227M/4.60G [00:07<02:05, 37.5MB/s][A
+  5%|▍         | 231M/4.60G [00:07<01:57, 40.0MB/s][A
+  5%|▍         | 235M/4.60G [00:08<01:58, 39.7MB/s][A
+  5%|▌         | 239M/4.60G [00:08<01:58, 39.7MB/s][A
+  5%|▌         | 243M/4.60G [00:08<03:24, 22.9MB/s][A
+  5%|▌         | 246M/4.60G [00:08<03:11, 24.4MB/s][A
+  5%|▌         | 247M/4.60G [00:08<02:59, 26.1MB/s][A
+  5%|▌         | 251M/4.60G [00:08<03:00, 25.9MB/s][A
+  5%|▌         | 256M/4.60G [00:08<02:41, 28.9MB/s][A
+  6%|▌         | 260M/4.60G [00:09<02:29, 31.2MB/s][A
+  6%|▌         | 263M/4.60G [00:09<02:43, 28.6MB/s][A
+  6%|▌         | 266M/4.60G [00:09<02:36, 29.9MB/s][A
+  6%|▌         | 270M/4.60G [00:09<03:36, 21.5MB/s][A
+  6%|▌         | 271M/4.60G [00:09<03:36, 21.5MB/s][A
+  6%|▌         | 276M/4.60G [00:09<02:54, 26.7MB/s][A
+  6%|▌         | 279M/4.60G [00:09<03:17, 23.6MB/s][A
+  6%|▌         | 283M/4.60G [00:09<02:37, 29.5MB/s][A
+  6%|▌         | 283M/4.60G [00:09<02:37, 29.5MB/s][A
+  6%|▌         | 286M/4.60G [00:10<02:32, 30.5MB/s][A
+  6%|▌         | 291M/4.60G [00:10<02:16, 34.1MB/s][A
+  6%|▋         | 295M/4.60G [00:10<02:13, 34.6MB/s][A
+  6%|▋         | 295M/4.60G [00:10<02:13, 34.6MB/s][A
+  6%|▋         | 299M/4.60G [00:10<02:07, 36.2MB/s][A
+  6%|▋         | 303M/4.60G [00:10<02:06, 36.5MB/s][A
+  7%|▋         | 307M/4.60G [00:10<02:03, 37.3MB/s][A
+  7%|▋         | 312M/4.60G [00:10<01:51, 41.5MB/s][A
+  7%|▋         | 317M/4.60G [00:11<03:19, 23.1MB/s][A
+  7%|▋         | 320M/4.60G [00:11<03:10, 24.2MB/s][A
+  7%|▋         | 325M/4.60G [00:11<02:35, 29.5MB/s][A
+  7%|▋         | 330M/4.60G [00:11<02:18, 33.3MB/s][A
+  7%|▋         | 334M/4.60G [00:11<02:06, 36.3MB/s][A
+  7%|▋         | 334M/4.60G [00:11<01:57, 39.2MB/s][A
+  7%|▋         | 339M/4.60G [00:11<02:40, 28.5MB/s][A
+  7%|▋         | 344M/4.60G [00:11<02:21, 32.3MB/s][A
+  7%|▋         | 344M/4.60G [00:11<02:07, 36.0MB/s][A
+  7%|▋         | 348M/4.60G [00:12<01:56, 39.3MB/s][A
+  7%|▋         | 354M/4.60G [00:12<01:47, 42.5MB/s][A
+  8%|▊         | 358M/4.60G [00:12<01:47, 42.5MB/s][A
+  8%|▊         | 362M/4.60G [00:12<02:31, 30.1MB/s][A
+  8%|▊         | 367M/4.60G [00:12<02:13, 34.1MB/s][A
+  8%|▊         | 372M/4.60G [00:12<02:21, 32.2MB/s][A
+  8%|▊         | 377M/4.60G [00:12<02:14, 33.8MB/s][A
+  8%|▊         | 382M/4.60G [00:12<01:55, 39.2MB/s][A
+  8%|▊         | 386M/4.60G [00:13<03:06, 24.3MB/s][A
+  8%|▊         | 387M/4.60G [00:13<03:56, 19.2MB/s][A
+  8%|▊         | 391M/4.60G [00:13<03:18, 22.8MB/s][A
+  8%|▊         | 396M/4.60G [00:13<02:43, 27.6MB/s][A
+  9%|▊         | 401M/4.60G [00:13<02:23, 31.4MB/s][A
+  9%|▊         | 401M/4.60G [00:13<02:08, 35.1MB/s][A
+  9%|▊         | 406M/4.60G [00:13<01:50, 40.8MB/s][A
+  9%|▊         | 406M/4.60G [00:13<01:50, 40.8MB/s][A
+  9%|▊         | 411M/4.60G [00:13<01:47, 41.9MB/s][A
+  9%|▉         | 415M/4.60G [00:13<01:46, 42.5MB/s][A
+  9%|▉         | 420M/4.60G [00:14<02:19, 32.2MB/s][A
+  9%|▉         | 426M/4.60G [00:14<01:55, 39.0MB/s][A
+  9%|▉         | 430M/4.60G [00:14<02:14, 33.5MB/s][A
+  9%|▉         | 431M/4.60G [00:14<02:26, 30.6MB/s][A
+  9%|▉         | 435M/4.60G [00:14<02:18, 32.5MB/s][A
+  9%|▉         | 439M/4.60G [00:14<02:08, 34.8MB/s][A
+  9%|▉         | 445M/4.60G [00:14<01:51, 40.0MB/s][A
+ 10%|▉         | 450M/4.60G [00:14<01:46, 41.9MB/s][A
+ 10%|▉         | 454M/4.60G [00:15<02:03, 36.1MB/s][A
+ 10%|▉         | 458M/4.60G [00:15<02:05, 35.7MB/s][A
+ 10%|▉         | 464M/4.60G [00:15<01:42, 43.4MB/s][A
+ 10%|▉         | 464M/4.60G [00:15<01:42, 43.4MB/s][A
+ 10%|▉         | 468M/4.60G [00:15<03:03, 24.3MB/s][A
+ 10%|█         | 475M/4.60G [00:15<02:20, 31.6MB/s][A
+ 10%|█         | 480M/4.60G [00:15<02:07, 34.8MB/s][A
+ 10%|█         | 486M/4.60G [00:16<02:29, 29.6MB/s][A
+ 10%|█         | 492M/4.60G [00:16<02:05, 35.4MB/s][A
+ 11%|█         | 496M/4.60G [00:16<01:59, 37.0MB/s][A
+ 11%|█         | 502M/4.60G [00:16<01:48, 40.9MB/s][A
+ 11%|█         | 507M/4.60G [00:16<01:41, 43.4MB/s][A
+ 11%|█         | 512M/4.60G [00:16<01:38, 44.8MB/s][A
+ 11%|█         | 517M/4.60G [00:16<01:35, 46.0MB/s][A
+ 11%|█         | 522M/4.60G [00:17<01:47, 40.8MB/s][A
+ 11%|█         | 522M/4.60G [00:17<01:55, 38.1MB/s][A
+ 11%|█         | 526M/4.60G [00:17<01:55, 38.0MB/s][A
+ 11%|█▏        | 531M/4.60G [00:17<01:45, 41.5MB/s][A
+ 11%|█▏        | 535M/4.60G [00:17<01:44, 42.1MB/s][A
+ 11%|█▏        | 536M/4.60G [00:17<01:41, 43.1MB/s][A
+ 11%|█▏        | 540M/4.60G [00:17<01:41, 43.0MB/s][A
+ 12%|█▏        | 545M/4.60G [00:17<01:35, 45.6MB/s][A
+ 12%|█▏        | 550M/4.60G [00:17<01:45, 41.3MB/s][A
+ 12%|█▏        | 554M/4.60G [00:17<01:41, 43.0MB/s][A
+ 12%|█▏        | 558M/4.60G [00:18<02:48, 25.9MB/s][A
+ 12%|█▏        | 564M/4.60G [00:18<02:23, 30.4MB/s][A
+ 12%|█▏        | 568M/4.60G [00:18<03:35, 20.2MB/s][A
+ 12%|█▏        | 571M/4.60G [00:18<03:12, 22.5MB/s][A
+ 12%|█▏        | 571M/4.60G [00:18<03:12, 22.5MB/s][A
+ 12%|█▏        | 576M/4.60G [00:18<02:42, 26.6MB/s][A
+ 12%|█▏        | 581M/4.60G [00:19<02:16, 31.8MB/s][A
+ 12%|█▏        | 586M/4.60G [00:19<02:05, 34.5MB/s][A
+ 13%|█▎        | 590M/4.60G [00:19<01:54, 37.6MB/s][A
+ 13%|█▎        | 596M/4.60G [00:19<01:44, 41.3MB/s][A
+ 13%|█▎        | 596M/4.60G [00:19<01:36, 44.6MB/s][A
+ 13%|█▎        | 601M/4.60G [00:19<01:36, 44.7MB/s][A
+ 13%|█▎        | 601M/4.60G [00:19<01:36, 44.7MB/s][A
+ 13%|█▎        | 606M/4.60G [00:19<01:41, 42.4MB/s][A
+ 13%|█▎        | 610M/4.60G [00:19<01:36, 44.7MB/s][A
+ 13%|█▎        | 615M/4.60G [00:19<01:34, 45.3MB/s][A
+ 13%|█▎        | 620M/4.60G [00:19<01:34, 45.6MB/s][A
+ 13%|█▎        | 625M/4.60G [00:20<01:28, 48.2MB/s][A
+ 13%|█▎        | 630M/4.60G [00:20<01:30, 47.1MB/s][A
+ 13%|█▎        | 630M/4.60G [00:20<01:30, 47.1MB/s][A
+ 13%|█▎        | 636M/4.60G [00:20<01:28, 48.1MB/s][A
+ 14%|█▎        | 642M/4.60G [00:20<01:22, 51.9MB/s][A
+ 14%|█▎        | 647M/4.60G [00:20<02:47, 25.4MB/s][A
+ 14%|█▍        | 651M/4.60G [00:21<03:07, 22.7MB/s][A
+ 14%|█▍        | 656M/4.60G [00:21<02:14, 31.6MB/s][A
+ 14%|█▍        | 656M/4.60G [00:21<02:14, 31.6MB/s][A
+ 14%|█▍        | 661M/4.60G [00:21<01:47, 39.5MB/s][A
+ 14%|█▍        | 661M/4.60G [00:21<01:47, 39.5MB/s][A
+ 14%|█▍        | 661M/4.60G [00:21<01:47, 39.5MB/s][A
+ 14%|█▍        | 665M/4.60G [00:21<01:50, 38.3MB/s][A
+ 14%|█▍        | 669M/4.60G [00:21<01:49, 38.8MB/s][A
+ 14%|█▍        | 669M/4.60G [00:21<01:47, 39.6MB/s][A
+ 14%|█▍        | 674M/4.60G [00:21<01:43, 40.9MB/s][A
+ 14%|█▍        | 679M/4.60G [00:21<01:37, 43.2MB/s][A
+ 15%|█▍        | 684M/4.60G [00:21<01:31, 46.4MB/s][A
+ 15%|█▍        | 689M/4.60G [00:21<01:32, 45.5MB/s][A
+ 15%|█▍        | 694M/4.60G [00:22<01:29, 47.2MB/s][A
+ 15%|█▍        | 699M/4.60G [00:22<01:32, 45.5MB/s][A
+ 15%|█▍        | 703M/4.60G [00:22<01:33, 44.9MB/s][A
+ 15%|█▌        | 708M/4.60G [00:22<01:34, 44.3MB/s][A
+ 15%|█▌        | 713M/4.60G [00:22<01:30, 46.5MB/s][A
+ 15%|█▌        | 717M/4.60G [00:22<01:30, 46.3MB/s][A
+ 15%|█▌        | 722M/4.60G [00:22<01:34, 44.5MB/s][A
+ 15%|█▌        | 726M/4.60G [00:23<03:08, 22.2MB/s][A
+ 15%|█▌        | 730M/4.60G [00:23<03:34, 19.5MB/s][A
+ 16%|█▌        | 734M/4.60G [00:23<03:02, 22.8MB/s][A
+ 16%|█▌        | 737M/4.60G [00:23<03:18, 21.0MB/s][A
+ 16%|█▌        | 741M/4.60G [00:23<02:59, 23.2MB/s][A
+ 16%|█▌        | 745M/4.60G [00:23<02:41, 25.8MB/s][A
+ 16%|█▌        | 749M/4.60G [00:24<02:22, 29.2MB/s][A
+ 16%|█▌        | 753M/4.60G [00:24<02:10, 31.7MB/s][A
+ 16%|█▌        | 758M/4.60G [00:24<01:46, 38.9MB/s][A
+ 16%|█▌        | 758M/4.60G [00:24<01:39, 41.8MB/s][A
+ 16%|█▌        | 758M/4.60G [00:24<01:39, 41.8MB/s][A
+ 16%|█▌        | 762M/4.60G [00:24<01:41, 40.6MB/s][A
+ 16%|█▋        | 767M/4.60G [00:24<01:42, 40.3MB/s][A
+ 16%|█▋        | 768M/4.60G [00:24<01:41, 40.6MB/s][A
+ 16%|█▋        | 772M/4.60G [00:24<01:41, 40.7MB/s][A
+ 16%|█▋        | 777M/4.60G [00:24<01:38, 41.8MB/s][A
+ 17%|█▋        | 782M/4.60G [00:24<01:34, 43.8MB/s][A
+ 17%|█▋        | 787M/4.60G [00:24<01:26, 47.4MB/s][A
+ 17%|█▋        | 792M/4.60G [00:25<01:25, 47.9MB/s][A
+ 17%|█▋        | 797M/4.60G [00:25<01:34, 43.6MB/s][A
+ 17%|█▋        | 801M/4.60G [00:25<02:43, 25.1MB/s][A
+ 17%|█▋        | 805M/4.60G [00:25<02:36, 26.1MB/s][A
+ 17%|█▋        | 809M/4.60G [00:25<02:18, 29.6MB/s][A
+ 17%|█▋        | 812M/4.60G [00:25<02:15, 30.1MB/s][A
+ 17%|█▋        | 813M/4.60G [00:25<02:11, 31.0MB/s][A
+ 17%|█▋        | 816M/4.60G [00:26<03:33, 19.2MB/s][A
+ 17%|█▋        | 821M/4.60G [00:26<02:51, 23.8MB/s][A
+ 18%|█▊        | 826M/4.60G [00:26<02:39, 25.6MB/s][A
+ 18%|█▊        | 830M/4.60G [00:26<02:19, 29.1MB/s][A
+ 18%|█▊        | 835M/4.60G [00:26<02:02, 33.3MB/s][A
+ 18%|█▊        | 840M/4.60G [00:26<01:46, 38.3MB/s][A
+ 18%|█▊        | 846M/4.60G [00:27<01:34, 42.8MB/s][A
+ 18%|█▊        | 850M/4.60G [00:27<01:29, 45.1MB/s][A
+ 18%|█▊        | 856M/4.60G [00:27<01:34, 43.0MB/s][A
+ 18%|█▊        | 856M/4.60G [00:27<01:34, 43.0MB/s][A
+ 18%|█▊        | 860M/4.60G [00:27<01:30, 44.7MB/s][A
+ 18%|█▊        | 865M/4.60G [00:27<01:27, 46.1MB/s][A
+ 18%|█▊        | 871M/4.60G [00:27<01:24, 47.5MB/s][A
+ 19%|█▊        | 876M/4.60G [00:27<02:11, 30.5MB/s][A
+ 19%|█▊        | 879M/4.60G [00:27<02:05, 32.0MB/s][A
+ 19%|█▊        | 883M/4.60G [00:28<02:41, 24.9MB/s][A
+ 19%|█▉        | 887M/4.60G [00:28<02:27, 27.2MB/s][A
+ 19%|█▉        | 891M/4.60G [00:28<02:09, 30.9MB/s][A
+ 19%|█▉        | 896M/4.60G [00:28<01:55, 34.5MB/s][A
+ 19%|█▉        | 900M/4.60G [00:28<01:48, 36.9MB/s][A
+ 19%|█▉        | 900M/4.60G [00:28<01:41, 39.2MB/s][A
+ 19%|█▉        | 905M/4.60G [00:28<01:37, 41.1MB/s][A
+ 19%|█▉        | 911M/4.60G [00:28<01:25, 46.4MB/s][A
+ 19%|█▉        | 916M/4.60G [00:29<02:04, 32.1MB/s][A
+ 20%|█▉        | 920M/4.60G [00:29<01:55, 34.3MB/s][A
+ 20%|█▉        | 924M/4.60G [00:29<02:21, 28.2MB/s][A
+ 20%|█▉        | 929M/4.60G [00:29<02:03, 32.2MB/s][A
+ 20%|█▉        | 933M/4.60G [00:29<01:52, 35.1MB/s][A
+ 20%|█▉        | 938M/4.60G [00:29<01:43, 38.3MB/s][A
+ 20%|██        | 946M/4.60G [00:29<01:20, 48.9MB/s][A
+ 20%|██        | 951M/4.60G [00:30<01:55, 34.3MB/s][A
+ 20%|██        | 956M/4.60G [00:30<01:53, 34.8MB/s][A
+ 20%|██        | 960M/4.60G [00:30<02:05, 31.3MB/s][A
+ 20%|██        | 966M/4.60G [00:30<01:29, 43.9MB/s][A
+ 20%|██        | 966M/4.60G [00:30<01:29, 43.9MB/s][A
+ 21%|██        | 973M/4.60G [00:30<01:15, 51.7MB/s][A
+ 21%|██        | 974M/4.60G [00:30<01:07, 58.5MB/s][A
+ 21%|██        | 982M/4.60G [00:30<00:58, 66.8MB/s][A
+ 21%|██        | 990M/4.60G [00:30<00:53, 72.5MB/s][A
+ 21%|██        | 990M/4.60G [00:30<00:53, 72.5MB/s][A
+ 21%|██        | 998M/4.60G [00:30<00:55, 70.8MB/s][A
+ 21%|██▏       | 0.98G/4.60G [00:31<00:54, 71.2MB/s][A
+ 21%|██▏       | 0.99G/4.60G [00:31<01:05, 59.5MB/s][A
+ 21%|██▏       | 0.99G/4.60G [00:31<01:16, 50.7MB/s][A
+ 21%|██▏       | 0.99G/4.60G [00:31<01:16, 50.7MB/s][A
+ 22%|██▏       | 1.00G/4.60G [00:31<01:03, 61.2MB/s][A
+ 22%|██▏       | 1.00G/4.60G [00:32<02:29, 25.9MB/s][A
+ 22%|██▏       | 1.01G/4.60G [00:32<01:58, 32.5MB/s][A
+ 22%|██▏       | 1.01G/4.60G [00:32<01:37, 39.5MB/s][A
+ 22%|██▏       | 1.02G/4.60G [00:32<01:26, 44.3MB/s][A
+ 22%|██▏       | 1.03G/4.60G [00:32<01:16, 50.2MB/s][A
+ 22%|██▏       | 1.03G/4.60G [00:32<01:06, 57.8MB/s][A
+ 22%|██▏       | 1.03G/4.60G [00:32<01:06, 57.8MB/s][A
+ 23%|██▎       | 1.04G/4.60G [00:32<01:07, 57.1MB/s][A
+ 23%|██▎       | 1.05G/4.60G [00:32<01:04, 59.0MB/s][A
+ 23%|██▎       | 1.05G/4.60G [00:32<01:04, 59.6MB/s][A
+ 23%|██▎       | 1.06G/4.60G [00:32<01:03, 60.2MB/s][A
+ 23%|██▎       | 1.07G/4.60G [00:33<00:58, 64.6MB/s][A
+ 23%|██▎       | 1.07G/4.60G [00:33<00:55, 68.4MB/s][A
+ 23%|██▎       | 1.07G/4.60G [00:33<00:50, 75.1MB/s][A
+ 23%|██▎       | 1.07G/4.60G [00:33<00:50, 75.1MB/s][A
+ 23%|██▎       | 1.08G/4.60G [00:33<01:44, 36.3MB/s][A
+ 24%|██▎       | 1.09G/4.60G [00:33<01:30, 41.9MB/s][A
+ 24%|██▎       | 1.09G/4.60G [00:34<01:52, 33.6MB/s][A
+ 24%|██▍       | 1.11G/4.60G [00:34<01:14, 50.6MB/s][A
+ 24%|██▍       | 1.12G/4.60G [00:34<01:01, 60.6MB/s][A
+ 24%|██▍       | 1.12G/4.60G [00:34<01:34, 39.6MB/s][A
+ 25%|██▍       | 1.13G/4.60G [00:34<01:39, 37.5MB/s][A
+ 25%|██▍       | 1.13G/4.60G [00:34<01:35, 39.1MB/s][A
+ 25%|██▍       | 1.14G/4.60G [00:34<01:31, 40.6MB/s][A
+ 25%|██▍       | 1.14G/4.60G [00:35<01:30, 40.9MB/s][A
+ 25%|██▍       | 1.15G/4.60G [00:35<01:26, 42.7MB/s][A
+ 25%|██▍       | 1.15G/4.60G [00:35<01:21, 45.5MB/s][A
+ 25%|██▌       | 1.16G/4.60G [00:35<01:17, 47.8MB/s][A
+ 25%|██▌       | 1.16G/4.60G [00:35<01:13, 50.1MB/s][A
+ 25%|██▌       | 1.16G/4.60G [00:35<01:14, 49.5MB/s][A
+ 25%|██▌       | 1.17G/4.60G [00:35<01:14, 49.6MB/s][A
+ 25%|██▌       | 1.17G/4.60G [00:35<01:15, 48.6MB/s][A
+ 26%|██▌       | 1.18G/4.60G [00:35<01:17, 47.3MB/s][A
+ 26%|██▌       | 1.18G/4.60G [00:35<01:22, 44.3MB/s][A
+ 26%|██▌       | 1.19G/4.60G [00:36<01:18, 47.0MB/s][A
+ 26%|██▌       | 1.19G/4.60G [00:36<01:18, 46.4MB/s][A
+ 26%|██▌       | 1.20G/4.60G [00:36<01:31, 40.0MB/s][A
+ 26%|██▌       | 1.20G/4.60G [00:36<01:31, 39.8MB/s][A
+ 26%|██▌       | 1.20G/4.60G [00:36<02:20, 25.9MB/s][A
+ 26%|██▌       | 1.21G/4.60G [00:36<02:32, 24.0MB/s][A
+ 26%|██▋       | 1.21G/4.60G [00:37<02:06, 28.8MB/s][A
+ 26%|██▋       | 1.22G/4.60G [00:37<01:42, 35.7MB/s][A
+ 26%|██▋       | 1.22G/4.60G [00:37<01:42, 35.7MB/s][A
+ 27%|██▋       | 1.22G/4.60G [00:37<01:33, 38.9MB/s][A
+ 27%|██▋       | 1.22G/4.60G [00:37<01:31, 39.7MB/s][A
+ 27%|██▋       | 1.23G/4.60G [00:37<01:30, 40.1MB/s][A
+ 27%|██▋       | 1.23G/4.60G [00:37<01:25, 42.1MB/s][A
+ 27%|██▋       | 1.24G/4.60G [00:37<01:25, 42.1MB/s][A
+ 27%|██▋       | 1.24G/4.60G [00:37<01:28, 40.7MB/s][A
+ 27%|██▋       | 1.25G/4.60G [00:37<01:26, 41.5MB/s][A
+ 27%|██▋       | 1.25G/4.60G [00:38<01:26, 41.4MB/s][A
+ 27%|██▋       | 1.25G/4.60G [00:38<01:27, 41.1MB/s][A
+ 27%|██▋       | 1.26G/4.60G [00:38<01:34, 37.9MB/s][A
+ 27%|██▋       | 1.26G/4.60G [00:38<01:33, 38.2MB/s][A
+ 27%|██▋       | 1.27G/4.60G [00:38<01:27, 41.1MB/s][A
+ 28%|██▊       | 1.27G/4.60G [00:38<01:50, 32.4MB/s][A
+ 28%|██▊       | 1.27G/4.60G [00:38<01:50, 32.4MB/s][A
+ 28%|██▊       | 1.27G/4.60G [00:38<01:45, 33.9MB/s][A
+ 28%|██▊       | 1.28G/4.60G [00:38<02:17, 25.9MB/s][A
+ 28%|██▊       | 1.28G/4.60G [00:39<02:20, 25.4MB/s][A
+ 28%|██▊       | 1.28G/4.60G [00:39<02:52, 20.7MB/s][A
+ 28%|██▊       | 1.29G/4.60G [00:39<02:46, 21.3MB/s][A
+ 28%|██▊       | 1.29G/4.60G [00:39<02:29, 23.8MB/s][A
+ 28%|██▊       | 1.29G/4.60G [00:39<02:22, 25.0MB/s][A
+ 28%|██▊       | 1.30G/4.60G [00:39<02:09, 27.5MB/s][A
+ 28%|██▊       | 1.30G/4.60G [00:39<02:05, 28.3MB/s][A
+ 28%|██▊       | 1.30G/4.60G [00:40<01:53, 31.2MB/s][A
+ 28%|██▊       | 1.31G/4.60G [00:40<01:45, 33.5MB/s][A
+ 28%|██▊       | 1.31G/4.60G [00:40<01:45, 33.5MB/s][A
+ 28%|██▊       | 1.31G/4.60G [00:40<01:41, 35.0MB/s][A
+ 29%|██▊       | 1.31G/4.60G [00:40<01:39, 35.4MB/s][A
+ 29%|██▊       | 1.32G/4.60G [00:40<01:37, 36.2MB/s][A
+ 29%|██▊       | 1.32G/4.60G [00:40<01:33, 37.7MB/s][A
+ 29%|██▉       | 1.33G/4.60G [00:40<01:32, 37.9MB/s][A
+ 29%|██▉       | 1.33G/4.60G [00:40<01:28, 39.8MB/s][A
+ 29%|██▉       | 1.33G/4.60G [00:40<01:21, 43.3MB/s][A
+ 29%|██▉       | 1.34G/4.60G [00:41<01:36, 36.1MB/s][A
+ 29%|██▉       | 1.34G/4.60G [00:41<01:33, 37.4MB/s][A
+ 29%|██▉       | 1.35G/4.60G [00:41<01:33, 37.3MB/s][A
+ 29%|██▉       | 1.35G/4.60G [00:41<01:46, 32.8MB/s][A
+ 29%|██▉       | 1.35G/4.60G [00:41<01:39, 35.0MB/s][A
+ 29%|██▉       | 1.36G/4.60G [00:41<01:36, 36.1MB/s][A
+ 30%|██▉       | 1.36G/4.60G [00:41<02:09, 27.0MB/s][A
+ 30%|██▉       | 1.36G/4.60G [00:41<02:06, 27.5MB/s][A
+ 30%|██▉       | 1.37G/4.60G [00:42<02:49, 20.5MB/s][A
+ 30%|██▉       | 1.37G/4.60G [00:42<02:55, 19.8MB/s][A
+ 30%|██▉       | 1.37G/4.60G [00:42<02:33, 22.7MB/s][A
+ 30%|██▉       | 1.38G/4.60G [00:42<01:48, 31.9MB/s][A
+ 30%|███       | 1.38G/4.60G [00:42<01:35, 36.0MB/s][A
+ 30%|███       | 1.38G/4.60G [00:42<01:27, 39.6MB/s][A
+ 30%|███       | 1.39G/4.60G [00:42<01:30, 37.9MB/s][A
+ 30%|███       | 1.39G/4.60G [00:42<01:33, 36.7MB/s][A
+ 30%|███       | 1.40G/4.60G [00:43<01:24, 40.5MB/s][A
+ 30%|███       | 1.40G/4.60G [00:43<01:26, 39.5MB/s][A
+ 31%|███       | 1.41G/4.60G [00:43<01:25, 39.9MB/s][A
+ 31%|███       | 1.41G/4.60G [00:43<01:39, 34.6MB/s][A
+ 31%|███       | 1.41G/4.60G [00:43<01:36, 35.5MB/s][A
+ 31%|███       | 1.42G/4.60G [00:43<01:47, 32.0MB/s][A
+ 31%|███       | 1.42G/4.60G [00:43<01:44, 32.9MB/s][A
+ 31%|███       | 1.43G/4.60G [00:43<01:28, 38.5MB/s][A
+ 31%|███       | 1.43G/4.60G [00:43<01:19, 43.1MB/s][A
+ 31%|███       | 1.43G/4.60G [00:44<01:17, 44.0MB/s][A
+ 31%|███       | 1.43G/4.60G [00:44<01:20, 42.5MB/s][A
+ 31%|███▏      | 1.44G/4.60G [00:44<01:52, 30.2MB/s][A
+ 31%|███▏      | 1.44G/4.60G [00:44<02:09, 26.3MB/s][A
+ 31%|███▏      | 1.44G/4.60G [00:44<02:09, 26.3MB/s][A
+ 31%|███▏      | 1.45G/4.60G [00:44<02:17, 24.6MB/s][A
+ 31%|███▏      | 1.45G/4.60G [00:44<02:48, 20.1MB/s][A
+ 32%|███▏      | 1.45G/4.60G [00:45<02:26, 23.0MB/s][A
+ 32%|███▏      | 1.46G/4.60G [00:45<02:09, 26.0MB/s][A
+ 32%|███▏      | 1.46G/4.60G [00:45<01:56, 28.9MB/s][A
+ 32%|███▏      | 1.46G/4.60G [00:45<01:43, 32.5MB/s][A
+ 32%|███▏      | 1.47G/4.60G [00:45<01:41, 33.3MB/s][A
+ 32%|███▏      | 1.47G/4.60G [00:45<01:41, 33.2MB/s][A
+ 32%|███▏      | 1.48G/4.60G [00:45<01:39, 33.7MB/s][A
+ 32%|███▏      | 1.48G/4.60G [00:45<01:40, 33.5MB/s][A
+ 32%|███▏      | 1.48G/4.60G [00:45<01:30, 36.9MB/s][A
+ 32%|███▏      | 1.49G/4.60G [00:46<01:36, 34.8MB/s][A
+ 32%|███▏      | 1.49G/4.60G [00:46<01:30, 36.9MB/s][A
+ 32%|███▏      | 1.50G/4.60G [00:46<01:25, 39.0MB/s][A
+ 33%|███▎      | 1.50G/4.60G [00:46<01:24, 39.3MB/s][A
+ 33%|███▎      | 1.50G/4.60G [00:46<01:24, 39.4MB/s][A
+ 33%|███▎      | 1.51G/4.60G [00:46<01:25, 38.7MB/s][A
+ 33%|███▎      | 1.51G/4.60G [00:46<01:23, 39.7MB/s][A
+ 33%|███▎      | 1.52G/4.60G [00:46<01:25, 38.9MB/s][A
+ 33%|███▎      | 1.52G/4.60G [00:47<01:32, 35.8MB/s][A
+ 33%|███▎      | 1.52G/4.60G [00:47<01:31, 36.1MB/s][A
+ 33%|███▎      | 1.53G/4.60G [00:47<02:18, 23.8MB/s][A
+ 33%|███▎      | 1.53G/4.60G [00:47<02:09, 25.4MB/s][A
+ 33%|███▎      | 1.53G/4.60G [00:47<02:04, 26.6MB/s][A
+ 33%|███▎      | 1.54G/4.60G [00:47<01:48, 30.4MB/s][A
+ 34%|███▎      | 1.54G/4.60G [00:47<01:41, 32.5MB/s][A
+ 34%|███▎      | 1.55G/4.60G [00:47<01:31, 35.7MB/s][A
+ 34%|███▎      | 1.55G/4.60G [00:48<01:36, 34.0MB/s][A
+ 34%|███▍      | 1.56G/4.60G [00:48<01:26, 37.7MB/s][A
+ 34%|███▍      | 1.56G/4.60G [00:48<01:38, 33.3MB/s][A
+ 34%|███▍      | 1.57G/4.60G [00:48<01:22, 39.8MB/s][A
+ 34%|███▍      | 1.57G/4.60G [00:48<01:22, 39.8MB/s][A
+ 34%|███▍      | 1.57G/4.60G [00:48<01:21, 40.2MB/s][A
+ 34%|███▍      | 1.57G/4.60G [00:48<01:23, 39.2MB/s][A
+ 34%|███▍      | 1.58G/4.60G [00:48<01:10, 45.8MB/s][A
+ 34%|███▍      | 1.58G/4.60G [00:48<01:10, 45.8MB/s][A
+ 34%|███▍      | 1.58G/4.60G [00:48<01:10, 45.8MB/s][A
+ 34%|███▍      | 1.59G/4.60G [00:49<01:12, 44.7MB/s][A
+ 35%|███▍      | 1.59G/4.60G [00:49<01:10, 46.0MB/s][A
+ 35%|███▍      | 1.60G/4.60G [00:49<01:39, 32.6MB/s][A
+ 35%|███▍      | 1.60G/4.60G [00:49<01:36, 33.5MB/s][A
+ 35%|███▍      | 1.60G/4.60G [00:49<01:34, 34.0MB/s][A
+ 35%|███▍      | 1.61G/4.60G [00:49<01:55, 27.8MB/s][A
+ 35%|███▍      | 1.61G/4.60G [00:50<02:06, 25.4MB/s][A
+ 35%|███▌      | 1.61G/4.60G [00:50<02:04, 25.8MB/s][A
+ 35%|███▌      | 1.62G/4.60G [00:50<02:03, 26.0MB/s][A
+ 35%|███▌      | 1.62G/4.60G [00:50<01:52, 28.5MB/s][A
+ 35%|███▌      | 1.62G/4.60G [00:50<01:31, 35.1MB/s][A
+ 35%|███▌      | 1.62G/4.60G [00:50<01:31, 35.1MB/s][A
+ 35%|███▌      | 1.63G/4.60G [00:50<01:38, 32.4MB/s][A
+ 35%|███▌      | 1.63G/4.60G [00:50<01:38, 32.4MB/s][A
+ 35%|███▌      | 1.63G/4.60G [00:50<01:37, 32.7MB/s][A
+ 36%|███▌      | 1.64G/4.60G [00:50<01:28, 35.9MB/s][A
+ 36%|███▌      | 1.64G/4.60G [00:51<01:25, 37.3MB/s][A
+ 36%|███▌      | 1.65G/4.60G [00:51<01:17, 41.0MB/s][A
+ 36%|███▌      | 1.65G/4.60G [00:51<01:17, 41.1MB/s][A
+ 36%|███▌      | 1.65G/4.60G [00:51<01:17, 41.1MB/s][A
+ 36%|███▌      | 1.66G/4.60G [00:51<01:18, 40.3MB/s][A
+ 36%|███▌      | 1.66G/4.60G [00:51<01:12, 43.4MB/s][A
+ 36%|███▌      | 1.67G/4.60G [00:51<01:13, 43.0MB/s][A
+ 36%|███▋      | 1.67G/4.60G [00:51<01:20, 39.4MB/s][A
+ 36%|███▋      | 1.67G/4.60G [00:51<01:17, 40.5MB/s][A
+ 36%|███▋      | 1.68G/4.60G [00:52<01:46, 29.6MB/s][A
+ 37%|███▋      | 1.68G/4.60G [00:52<01:42, 30.6MB/s][A
+ 37%|███▋      | 1.69G/4.60G [00:52<01:50, 28.3MB/s][A
+ 37%|███▋      | 1.69G/4.60G [00:52<01:50, 28.3MB/s][A
+ 37%|███▋      | 1.69G/4.60G [00:52<01:38, 31.6MB/s][A
+ 37%|███▋      | 1.69G/4.60G [00:52<01:53, 27.7MB/s][A
+ 37%|███▋      | 1.70G/4.60G [00:52<01:42, 30.6MB/s][A
+ 37%|███▋      | 1.70G/4.60G [00:52<01:34, 32.8MB/s][A
+ 37%|███▋      | 1.70G/4.60G [00:53<01:45, 29.6MB/s][A
+ 37%|███▋      | 1.71G/4.60G [00:53<01:40, 30.9MB/s][A
+ 37%|███▋      | 1.71G/4.60G [00:53<01:21, 38.0MB/s][A
+ 37%|███▋      | 1.71G/4.60G [00:53<01:16, 40.4MB/s][A
+ 37%|███▋      | 1.71G/4.60G [00:53<01:16, 40.4MB/s][A
+ 37%|███▋      | 1.72G/4.60G [00:53<01:21, 37.8MB/s][A
+ 37%|███▋      | 1.72G/4.60G [00:53<01:16, 40.5MB/s][A
+ 37%|███▋      | 1.73G/4.60G [00:53<01:16, 40.4MB/s][A
+ 38%|███▊      | 1.73G/4.60G [00:53<01:16, 40.2MB/s][A
+ 38%|███▊      | 1.73G/4.60G [00:53<01:15, 41.0MB/s][A
+ 38%|███▊      | 1.74G/4.60G [00:53<01:19, 38.6MB/s][A
+ 38%|███▊      | 1.74G/4.60G [00:54<01:20, 38.0MB/s][A
+ 38%|███▊      | 1.75G/4.60G [00:54<01:20, 38.3MB/s][A
+ 38%|███▊      | 1.75G/4.60G [00:54<01:20, 38.0MB/s][A
+ 38%|███▊      | 1.75G/4.60G [00:54<01:44, 29.2MB/s][A
+ 38%|███▊      | 1.75G/4.60G [00:54<02:00, 25.5MB/s][A
+ 38%|███▊      | 1.76G/4.60G [00:54<02:00, 25.4MB/s][A
+ 38%|███▊      | 1.76G/4.60G [00:54<02:08, 23.7MB/s][A
+ 38%|███▊      | 1.76G/4.60G [00:54<01:48, 28.2MB/s][A
+ 38%|███▊      | 1.76G/4.60G [00:54<01:48, 28.2MB/s][A
+ 38%|███▊      | 1.77G/4.60G [00:54<01:44, 29.1MB/s][A
+ 38%|███▊      | 1.77G/4.60G [00:55<01:28, 34.4MB/s][A
+ 38%|███▊      | 1.77G/4.60G [00:55<01:28, 34.4MB/s][A
+ 39%|███▊      | 1.77G/4.60G [00:55<01:41, 29.8MB/s][A
+ 39%|███▊      | 1.78G/4.60G [00:55<02:02, 24.7MB/s][A
+ 39%|███▊      | 1.78G/4.60G [00:55<01:54, 26.5MB/s][A
+ 39%|███▉      | 1.78G/4.60G [00:55<01:44, 28.8MB/s][A
+ 39%|███▉      | 1.79G/4.60G [00:55<01:35, 31.5MB/s][A
+ 39%|███▉      | 1.79G/4.60G [00:55<01:28, 34.1MB/s][A
+ 39%|███▉      | 1.80G/4.60G [00:55<01:33, 32.3MB/s][A
+ 39%|███▉      | 1.80G/4.60G [00:56<01:28, 34.0MB/s][A
+ 39%|███▉      | 1.80G/4.60G [00:56<01:25, 35.1MB/s][A
+ 39%|███▉      | 1.81G/4.60G [00:56<01:20, 37.5MB/s][A
+ 39%|███▉      | 1.81G/4.60G [00:56<01:16, 39.0MB/s][A
+ 39%|███▉      | 1.82G/4.60G [00:56<01:11, 41.8MB/s][A
+ 40%|███▉      | 1.82G/4.60G [00:56<01:13, 40.5MB/s][A
+ 40%|███▉      | 1.83G/4.60G [00:56<01:23, 35.6MB/s][A
+ 40%|███▉      | 1.83G/4.60G [00:56<01:31, 32.5MB/s][A
+ 40%|███▉      | 1.83G/4.60G [00:57<01:35, 31.1MB/s][A
+ 40%|███▉      | 1.84G/4.60G [00:57<01:46, 27.9MB/s][A
+ 40%|███▉      | 1.84G/4.60G [00:57<01:46, 27.9MB/s][A
+ 40%|███▉      | 1.84G/4.60G [00:57<01:53, 26.1MB/s][A
+ 40%|████      | 1.84G/4.60G [00:57<01:14, 39.7MB/s][A
+ 40%|████      | 1.84G/4.60G [00:57<01:14, 39.7MB/s][A
+ 40%|████      | 1.85G/4.60G [00:57<01:27, 33.8MB/s][A
+ 40%|████      | 1.85G/4.60G [00:57<01:27, 33.6MB/s][A
+ 40%|████      | 1.86G/4.60G [00:57<01:25, 34.6MB/s][A
+ 40%|████      | 1.86G/4.60G [00:58<01:50, 26.7MB/s][A
+ 40%|████      | 1.86G/4.60G [00:58<01:49, 26.9MB/s][A
+ 41%|████      | 1.87G/4.60G [00:58<01:38, 30.0MB/s][A
+ 41%|████      | 1.87G/4.60G [00:58<01:28, 33.0MB/s][A
+ 41%|████      | 1.88G/4.60G [00:58<01:21, 36.2MB/s][A
+ 41%|████      | 1.88G/4.60G [00:58<01:16, 38.3MB/s][A
+ 41%|████      | 1.88G/4.60G [00:58<01:17, 37.9MB/s][A
+ 41%|████      | 1.89G/4.60G [00:58<01:16, 37.9MB/s][A
+ 41%|████      | 1.89G/4.60G [00:59<01:15, 38.5MB/s][A
+ 41%|████      | 1.89G/4.60G [00:59<01:15, 38.5MB/s][A
+ 41%|████      | 1.90G/4.60G [00:59<01:29, 32.6MB/s][A
+ 41%|████▏     | 1.90G/4.60G [00:59<01:21, 35.6MB/s][A
+ 41%|████▏     | 1.90G/4.60G [00:59<01:18, 36.9MB/s][A
+ 41%|████▏     | 1.90G/4.60G [00:59<01:18, 36.9MB/s][A
+ 41%|████▏     | 1.91G/4.60G [00:59<01:45, 27.5MB/s][A
+ 41%|████▏     | 1.91G/4.60G [00:59<01:47, 27.0MB/s][A
+ 42%|████▏     | 1.92G/4.60G [00:59<01:27, 32.9MB/s][A
+ 42%|████▏     | 1.92G/4.60G [01:00<01:39, 28.9MB/s][A
+ 42%|████▏     | 1.93G/4.60G [01:00<01:26, 33.2MB/s][A
+ 42%|████▏     | 1.93G/4.60G [01:00<01:26, 33.2MB/s][A
+ 42%|████▏     | 1.93G/4.60G [01:00<01:25, 33.3MB/s][A
+ 42%|████▏     | 1.94G/4.60G [01:00<01:22, 34.8MB/s][A
+ 42%|████▏     | 1.94G/4.60G [01:00<01:18, 36.3MB/s][A
+ 42%|████▏     | 1.95G/4.60G [01:00<01:23, 34.1MB/s][A
+ 42%|████▏     | 1.95G/4.60G [01:00<01:20, 35.4MB/s][A
+ 42%|████▏     | 1.95G/4.60G [01:00<01:17, 36.9MB/s][A
+ 42%|████▏     | 1.95G/4.60G [01:01<01:16, 37.0MB/s][A
+ 43%|████▎     | 1.96G/4.60G [01:01<01:04, 43.7MB/s][A
+ 43%|████▎     | 1.96G/4.60G [01:01<01:04, 43.7MB/s][A
+ 43%|████▎     | 1.96G/4.60G [01:01<00:57, 49.3MB/s][A
+ 43%|████▎     | 1.96G/4.60G [01:01<00:57, 49.3MB/s][A
+ 43%|████▎     | 1.97G/4.60G [01:01<00:57, 49.6MB/s][A
+ 43%|████▎     | 1.97G/4.60G [01:01<01:10, 40.0MB/s][A
+ 43%|████▎     | 1.98G/4.60G [01:01<01:17, 36.4MB/s][A
+ 43%|████▎     | 1.98G/4.60G [01:01<01:02, 44.9MB/s][A
+ 43%|████▎     | 1.98G/4.60G [01:01<01:02, 44.9MB/s][A
+ 43%|████▎     | 1.98G/4.60G [01:01<01:02, 44.9MB/s][A
+ 43%|████▎     | 1.99G/4.60G [01:01<01:12, 39.0MB/s][A
+ 43%|████▎     | 1.99G/4.60G [01:01<01:18, 35.9MB/s][A
+ 43%|████▎     | 1.99G/4.60G [01:02<01:11, 39.2MB/s][A
+ 43%|████▎     | 2.00G/4.60G [01:02<01:09, 40.1MB/s][A
+ 43%|████▎     | 2.00G/4.60G [01:02<01:05, 42.8MB/s][A
+ 43%|████▎     | 2.00G/4.60G [01:02<01:05, 42.8MB/s][A
+ 44%|████▎     | 2.00G/4.60G [01:02<01:01, 45.4MB/s][A
+ 44%|████▎     | 2.01G/4.60G [01:02<01:00, 45.9MB/s][A
+ 44%|████▎     | 2.01G/4.60G [01:02<01:06, 41.8MB/s][A
+ 44%|████▍     | 2.02G/4.60G [01:02<01:07, 40.8MB/s][A
+ 44%|████▍     | 2.02G/4.60G [01:02<01:07, 41.0MB/s][A
+ 44%|████▍     | 2.03G/4.60G [01:02<01:27, 31.7MB/s][A
+ 44%|████▍     | 2.03G/4.60G [01:03<01:19, 35.0MB/s][A
+ 44%|████▍     | 2.04G/4.60G [01:03<01:16, 36.1MB/s][A
+ 44%|████▍     | 2.04G/4.60G [01:03<01:08, 40.1MB/s][A
+ 44%|████▍     | 2.04G/4.60G [01:03<01:20, 34.2MB/s][A
+ 44%|████▍     | 2.05G/4.60G [01:03<01:19, 34.4MB/s][A
+ 45%|████▍     | 2.05G/4.60G [01:03<01:19, 34.7MB/s][A
+ 45%|████▍     | 2.06G/4.60G [01:03<01:17, 35.5MB/s][A
+ 45%|████▍     | 2.06G/4.60G [01:03<01:15, 36.3MB/s][A
+ 45%|████▍     | 2.06G/4.60G [01:04<01:13, 37.0MB/s][A
+ 45%|████▍     | 2.07G/4.60G [01:04<01:24, 32.2MB/s][A
+ 45%|████▍     | 2.07G/4.60G [01:04<01:23, 32.5MB/s][A
+ 45%|████▍     | 2.07G/4.60G [01:04<01:23, 32.5MB/s][A
+ 45%|████▌     | 2.07G/4.60G [01:04<01:22, 32.8MB/s][A
+ 45%|████▌     | 2.08G/4.60G [01:04<01:17, 35.0MB/s][A
+ 45%|████▌     | 2.08G/4.60G [01:04<01:17, 35.0MB/s][A
+ 45%|████▌     | 2.08G/4.60G [01:04<01:17, 35.0MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:04<01:07, 39.8MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:04<01:38, 27.3MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:04<01:38, 27.3MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:04<01:38, 27.3MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:04<01:38, 27.3MB/s][A
+ 45%|████▌     | 2.09G/4.60G [01:05<01:38, 27.4MB/s][A
+ 46%|████▌     | 2.10G/4.60G [01:05<01:27, 30.7MB/s][A
+ 46%|████▌     | 2.10G/4.60G [01:05<01:17, 34.5MB/s][A
+ 46%|████▌     | 2.11G/4.60G [01:05<01:33, 28.7MB/s][A
+ 46%|████▌     | 2.11G/4.60G [01:05<01:29, 29.9MB/s][A
+ 46%|████▌     | 2.11G/4.60G [01:05<01:21, 33.0MB/s][A
+ 46%|████▌     | 2.11G/4.60G [01:05<01:21, 33.0MB/s][A
+ 46%|████▌     | 2.11G/4.60G [01:05<01:24, 31.6MB/s][A
+ 46%|████▌     | 2.12G/4.60G [01:05<01:22, 32.3MB/s][A
+ 46%|████▌     | 2.12G/4.60G [01:06<01:43, 25.8MB/s][A
+ 46%|████▌     | 2.12G/4.60G [01:06<01:34, 28.1MB/s][A
+ 46%|████▌     | 2.13G/4.60G [01:06<01:30, 29.3MB/s][A
+ 46%|████▌     | 2.13G/4.60G [01:06<01:20, 32.9MB/s][A
+ 46%|████▌     | 2.13G/4.60G [01:06<01:20, 32.9MB/s][A
+ 46%|████▋     | 2.13G/4.60G [01:06<01:22, 32.2MB/s][A
+ 46%|████▋     | 2.14G/4.60G [01:06<01:21, 32.7MB/s][A
+ 46%|████▋     | 2.14G/4.60G [01:06<01:32, 28.5MB/s][A
+ 46%|████▋     | 2.14G/4.60G [01:06<01:42, 25.9MB/s][A
+ 46%|████▋     | 2.14G/4.60G [01:06<01:42, 25.9MB/s][A
+ 47%|████▋     | 2.14G/4.60G [01:06<01:36, 27.2MB/s][A
+ 47%|████▋     | 2.15G/4.60G [01:06<01:45, 25.1MB/s][A
+ 47%|████▋     | 2.15G/4.60G [01:07<01:35, 27.5MB/s][A
+ 47%|████▋     | 2.15G/4.60G [01:07<01:25, 30.8MB/s][A
+ 47%|████▋     | 2.16G/4.60G [01:07<01:22, 31.9MB/s][A
+ 47%|████▋     | 2.16G/4.60G [01:07<01:10, 37.1MB/s][A
+ 47%|████▋     | 2.17G/4.60G [01:07<01:06, 39.4MB/s][A
+ 47%|████▋     | 2.17G/4.60G [01:07<01:07, 38.9MB/s][A
+ 47%|████▋     | 2.17G/4.60G [01:07<01:08, 38.0MB/s][A
+ 47%|████▋     | 2.18G/4.60G [01:07<01:06, 39.1MB/s][A
+ 47%|████▋     | 2.18G/4.60G [01:07<01:06, 39.1MB/s][A
+ 47%|████▋     | 2.18G/4.60G [01:07<01:06, 39.1MB/s][A
+ 47%|████▋     | 2.18G/4.60G [01:08<01:25, 30.6MB/s][A
+ 47%|████▋     | 2.19G/4.60G [01:08<01:22, 31.5MB/s][A
+ 48%|████▊     | 2.19G/4.60G [01:08<01:19, 32.7MB/s][A
+ 48%|████▊     | 2.19G/4.60G [01:08<01:23, 31.1MB/s][A
+ 48%|████▊     | 2.20G/4.60G [01:08<01:14, 34.7MB/s][A
+ 48%|████▊     | 2.20G/4.60G [01:08<01:16, 33.7MB/s][A
+ 48%|████▊     | 2.20G/4.60G [01:08<01:14, 34.5MB/s][A
+ 48%|████▊     | 2.21G/4.60G [01:08<01:21, 31.3MB/s][A
+ 48%|████▊     | 2.21G/4.60G [01:09<01:16, 33.6MB/s][A
+ 48%|████▊     | 2.22G/4.60G [01:09<01:21, 31.5MB/s][A
+ 48%|████▊     | 2.22G/4.60G [01:09<01:24, 30.5MB/s][A
+ 48%|████▊     | 2.22G/4.60G [01:09<01:30, 28.2MB/s][A
+ 48%|████▊     | 2.22G/4.60G [01:09<01:23, 30.7MB/s][A
+ 48%|████▊     | 2.23G/4.60G [01:09<01:18, 32.3MB/s][A
+ 48%|████▊     | 2.23G/4.60G [01:09<01:19, 32.1MB/s][A
+ 49%|████▊     | 2.24G/4.60G [01:09<01:13, 34.5MB/s][A
+ 49%|████▊     | 2.24G/4.60G [01:09<01:14, 34.2MB/s][A
+ 49%|████▊     | 2.24G/4.60G [01:09<01:14, 34.0MB/s][A
+ 49%|████▉     | 2.25G/4.60G [01:10<01:03, 39.6MB/s][A
+ 49%|████▉     | 2.25G/4.60G [01:10<00:57, 44.1MB/s][A
+ 49%|████▉     | 2.26G/4.60G [01:10<00:59, 42.0MB/s][A
+ 49%|████▉     | 2.26G/4.60G [01:10<00:59, 42.0MB/s][A
+ 49%|████▉     | 2.26G/4.60G [01:10<01:21, 30.8MB/s][A
+ 49%|████▉     | 2.27G/4.60G [01:10<01:16, 33.0MB/s][A
+ 49%|████▉     | 2.27G/4.60G [01:10<01:38, 25.5MB/s][A
+ 49%|████▉     | 2.27G/4.60G [01:10<01:53, 22.1MB/s][A
+ 49%|████▉     | 2.27G/4.60G [01:10<01:41, 24.6MB/s][A
+ 50%|████▉     | 2.28G/4.60G [01:11<01:27, 28.7MB/s][A
+ 50%|████▉     | 2.28G/4.60G [01:11<01:21, 30.5MB/s][A
+ 50%|████▉     | 2.29G/4.60G [01:11<01:18, 31.8MB/s][A
+ 50%|████▉     | 2.29G/4.60G [01:11<01:15, 32.9MB/s][A
+ 50%|████▉     | 2.29G/4.60G [01:11<01:13, 33.6MB/s][A
+ 50%|████▉     | 2.30G/4.60G [01:11<01:10, 35.0MB/s][A
+ 50%|████▉     | 2.30G/4.60G [01:11<01:30, 27.4MB/s][A
+ 50%|█████     | 2.30G/4.60G [01:11<01:20, 30.8MB/s][A
+ 50%|█████     | 2.31G/4.60G [01:12<01:27, 28.2MB/s][A
+ 50%|█████     | 2.31G/4.60G [01:12<01:31, 26.9MB/s][A
+ 50%|█████     | 2.31G/4.60G [01:12<01:24, 29.2MB/s][A
+ 50%|█████     | 2.31G/4.60G [01:12<01:18, 31.5MB/s][A
+ 50%|█████     | 2.32G/4.60G [01:12<01:14, 33.0MB/s][A
+ 50%|█████     | 2.32G/4.60G [01:12<01:09, 35.3MB/s][A
+ 50%|█████     | 2.32G/4.60G [01:12<01:09, 35.2MB/s][A
+ 51%|█████     | 2.33G/4.60G [01:12<01:06, 36.6MB/s][A
+ 51%|█████     | 2.33G/4.60G [01:12<01:07, 35.9MB/s][A
+ 51%|█████     | 2.33G/4.60G [01:12<01:13, 33.1MB/s][A
+ 51%|█████     | 2.34G/4.60G [01:13<01:37, 25.1MB/s][A
+ 51%|█████     | 2.34G/4.60G [01:13<01:29, 27.2MB/s][A
+ 51%|█████     | 2.35G/4.60G [01:13<01:14, 32.5MB/s][A
+ 51%|█████     | 2.35G/4.60G [01:13<01:14, 32.4MB/s][A
+ 51%|█████     | 2.35G/4.60G [01:13<01:10, 34.1MB/s][A
+ 51%|█████     | 2.36G/4.60G [01:13<01:06, 36.2MB/s][A
+ 51%|█████▏    | 2.36G/4.60G [01:13<01:05, 36.6MB/s][A
+ 51%|█████▏    | 2.36G/4.60G [01:13<01:08, 34.9MB/s][A
+ 51%|█████▏    | 2.37G/4.60G [01:13<01:03, 38.0MB/s][A
+ 52%|█████▏    | 2.37G/4.60G [01:14<00:58, 41.2MB/s][A
+ 52%|█████▏    | 2.38G/4.60G [01:14<01:13, 32.4MB/s][A
+ 52%|█████▏    | 2.38G/4.60G [01:14<01:33, 25.4MB/s][A
+ 52%|█████▏    | 2.39G/4.60G [01:14<01:25, 28.0MB/s][A
+ 52%|█████▏    | 2.39G/4.60G [01:14<01:17, 30.5MB/s][A
+ 52%|█████▏    | 2.39G/4.60G [01:14<01:15, 31.4MB/s][A
+ 52%|█████▏    | 2.39G/4.60G [01:14<01:10, 33.8MB/s][A
+ 52%|█████▏    | 2.40G/4.60G [01:14<01:08, 34.5MB/s][A
+ 52%|█████▏    | 2.40G/4.60G [01:15<01:04, 36.4MB/s][A
+ 52%|█████▏    | 2.40G/4.60G [01:15<01:13, 32.2MB/s][A
+ 52%|█████▏    | 2.40G/4.60G [01:15<01:13, 32.2MB/s][A
+ 52%|█████▏    | 2.41G/4.60G [01:15<01:01, 38.2MB/s][A
+ 52%|█████▏    | 2.41G/4.60G [01:15<00:56, 41.7MB/s][A
+ 53%|█████▎    | 2.42G/4.60G [01:15<00:56, 41.9MB/s][A
+ 53%|█████▎    | 2.42G/4.60G [01:15<01:10, 33.2MB/s][A
+ 53%|█████▎    | 2.43G/4.60G [01:15<01:00, 38.3MB/s][A
+ 53%|█████▎    | 2.43G/4.60G [01:15<01:03, 36.7MB/s][A
+ 53%|█████▎    | 2.44G/4.60G [01:16<01:03, 36.4MB/s][A
+ 53%|█████▎    | 2.44G/4.60G [01:16<01:04, 36.0MB/s][A
+ 53%|█████▎    | 2.44G/4.60G [01:16<01:05, 35.5MB/s][A
+ 53%|█████▎    | 2.44G/4.60G [01:16<01:05, 35.5MB/s][A
+ 53%|█████▎    | 2.44G/4.60G [01:16<01:14, 31.1MB/s][A
+ 53%|█████▎    | 2.45G/4.60G [01:16<01:22, 28.2MB/s][A
+ 53%|█████▎    | 2.45G/4.60G [01:16<01:06, 34.5MB/s][A
+ 53%|█████▎    | 2.46G/4.60G [01:16<01:19, 29.1MB/s][A
+ 53%|█████▎    | 2.46G/4.60G [01:16<01:12, 31.9MB/s][A
+ 54%|█████▎    | 2.46G/4.60G [01:16<01:10, 32.8MB/s][A
+ 54%|█████▎    | 2.47G/4.60G [01:17<01:28, 26.1MB/s][A
+ 54%|█████▎    | 2.47G/4.60G [01:17<01:31, 25.2MB/s][A
+ 54%|█████▎    | 2.47G/4.60G [01:17<01:31, 25.2MB/s][A
+ 54%|█████▎    | 2.47G/4.60G [01:17<01:09, 33.1MB/s][A
+ 54%|█████▍    | 2.48G/4.60G [01:17<00:49, 46.0MB/s][A
+ 54%|█████▍    | 2.49G/4.60G [01:17<00:49, 46.2MB/s][A
+ 54%|█████▍    | 2.49G/4.60G [01:17<00:48, 47.1MB/s][A
+ 54%|█████▍    | 2.50G/4.60G [01:17<00:48, 46.5MB/s][A
+ 54%|█████▍    | 2.50G/4.60G [01:17<01:00, 37.1MB/s][A
+ 54%|█████▍    | 2.50G/4.60G [01:17<01:00, 37.1MB/s][A
+ 54%|█████▍    | 2.51G/4.60G [01:18<01:11, 31.4MB/s][A
+ 54%|█████▍    | 2.51G/4.60G [01:18<01:19, 28.3MB/s][A
+ 55%|█████▍    | 2.51G/4.60G [01:18<01:34, 23.7MB/s][A
+ 55%|█████▍    | 2.51G/4.60G [01:18<01:52, 19.9MB/s][A
+ 55%|█████▍    | 2.51G/4.60G [01:18<01:52, 19.9MB/s][A
+ 55%|█████▍    | 2.51G/4.60G [01:18<01:31, 24.5MB/s][A
+ 55%|█████▍    | 2.51G/4.60G [01:18<01:17, 28.9MB/s][A
+ 55%|█████▍    | 2.52G/4.60G [01:18<01:04, 34.6MB/s][A
+ 55%|█████▍    | 2.52G/4.60G [01:18<01:12, 30.9MB/s][A
+ 55%|█████▍    | 2.53G/4.60G [01:18<01:08, 32.3MB/s][A
+ 55%|█████▍    | 2.53G/4.60G [01:18<01:05, 34.0MB/s][A
+ 55%|█████▌    | 2.53G/4.60G [01:19<01:07, 33.2MB/s][A
+ 55%|█████▌    | 2.54G/4.60G [01:19<01:08, 32.4MB/s][A
+ 55%|█████▌    | 2.54G/4.60G [01:19<01:09, 31.8MB/s][A
+ 55%|█████▌    | 2.55G/4.60G [01:19<01:01, 36.0MB/s][A
+ 55%|█████▌    | 2.55G/4.60G [01:19<01:01, 35.6MB/s][A
+ 56%|█████▌    | 2.56G/4.60G [01:19<00:57, 38.3MB/s][A
+ 56%|█████▌    | 2.56G/4.60G [01:19<00:52, 41.4MB/s][A
+ 56%|█████▌    | 2.56G/4.60G [01:19<00:51, 42.5MB/s][A
+ 56%|█████▌    | 2.57G/4.60G [01:19<00:48, 44.7MB/s][A
+ 56%|█████▌    | 2.57G/4.60G [01:19<00:48, 44.7MB/s][A
+ 56%|█████▌    | 2.57G/4.60G [01:20<00:49, 44.4MB/s][A
+ 56%|█████▌    | 2.58G/4.60G [01:20<00:55, 39.4MB/s][A
+ 56%|█████▌    | 2.58G/4.60G [01:20<00:55, 39.4MB/s][A
+ 56%|█████▌    | 2.59G/4.60G [01:20<01:00, 35.5MB/s][A
+ 56%|█████▋    | 2.59G/4.60G [01:20<00:50, 42.6MB/s][A
+ 56%|█████▋    | 2.60G/4.60G [01:20<00:56, 37.9MB/s][A
+ 57%|█████▋    | 2.60G/4.60G [01:20<00:52, 41.1MB/s][A
+ 57%|█████▋    | 2.61G/4.60G [01:21<01:02, 34.4MB/s][A
+ 57%|█████▋    | 2.61G/4.60G [01:21<01:25, 25.0MB/s][A
+ 57%|█████▋    | 2.62G/4.60G [01:21<01:19, 26.9MB/s][A
+ 57%|█████▋    | 2.62G/4.60G [01:21<01:06, 32.0MB/s][A
+ 57%|█████▋    | 2.63G/4.60G [01:21<00:44, 47.4MB/s][A
+ 57%|█████▋    | 2.63G/4.60G [01:21<00:44, 47.4MB/s][A
+ 57%|█████▋    | 2.63G/4.60G [01:21<00:43, 48.2MB/s][A
+ 57%|█████▋    | 2.64G/4.60G [01:21<00:48, 43.1MB/s][A
+ 57%|█████▋    | 2.64G/4.60G [01:22<00:44, 47.2MB/s][A
+ 58%|█████▊    | 2.65G/4.60G [01:22<00:40, 51.5MB/s][A
+ 58%|█████▊    | 2.65G/4.60G [01:22<00:42, 48.9MB/s][A
+ 58%|█████▊    | 2.66G/4.60G [01:22<00:46, 44.9MB/s][A
+ 58%|█████▊    | 2.66G/4.60G [01:22<00:42, 49.4MB/s][A
+ 58%|█████▊    | 2.67G/4.60G [01:22<00:39, 52.4MB/s][A
+ 58%|█████▊    | 2.67G/4.60G [01:22<00:37, 55.3MB/s][A
+ 58%|█████▊    | 2.68G/4.60G [01:22<00:37, 55.9MB/s][A
+ 58%|█████▊    | 2.68G/4.60G [01:23<00:59, 34.7MB/s][A
+ 58%|█████▊    | 2.69G/4.60G [01:23<00:52, 39.0MB/s][A
+ 58%|█████▊    | 2.69G/4.60G [01:23<00:56, 36.6MB/s][A
+ 59%|█████▊    | 2.70G/4.60G [01:23<00:53, 38.1MB/s][A
+ 59%|█████▊    | 2.70G/4.60G [01:23<00:48, 42.5MB/s][A
+ 59%|█████▊    | 2.70G/4.60G [01:23<00:43, 46.5MB/s][A
+ 59%|█████▉    | 2.71G/4.60G [01:23<00:58, 35.0MB/s][A
+ 59%|█████▉    | 2.71G/4.60G [01:23<00:55, 36.7MB/s][A
+ 59%|█████▉    | 2.72G/4.60G [01:24<00:53, 37.7MB/s][A
+ 59%|█████▉    | 2.72G/4.60G [01:24<00:52, 38.9MB/s][A
+ 59%|█████▉    | 2.72G/4.60G [01:24<00:52, 38.9MB/s][A
+ 59%|█████▉    | 2.72G/4.60G [01:24<00:53, 38.1MB/s][A
+ 59%|█████▉    | 2.73G/4.60G [01:24<00:54, 36.7MB/s][A
+ 59%|█████▉    | 2.73G/4.60G [01:24<00:52, 38.1MB/s][A
+ 59%|█████▉    | 2.73G/4.60G [01:24<00:53, 37.9MB/s][A
+ 59%|█████▉    | 2.74G/4.60G [01:24<00:49, 40.8MB/s][A
+ 60%|█████▉    | 2.74G/4.60G [01:24<00:49, 40.3MB/s][A
+ 60%|█████▉    | 2.74G/4.60G [01:24<00:49, 40.3MB/s][A
+ 60%|█████▉    | 2.74G/4.60G [01:24<00:49, 40.3MB/s][A
+ 60%|█████▉    | 2.75G/4.60G [01:24<00:49, 40.0MB/s][A
+ 60%|█████▉    | 2.75G/4.60G [01:24<00:47, 42.2MB/s][A
+ 60%|█████▉    | 2.75G/4.60G [01:24<00:45, 44.2MB/s][A
+ 60%|█████▉    | 2.76G/4.60G [01:25<00:45, 43.4MB/s][A
+ 60%|█████▉    | 2.76G/4.60G [01:25<00:51, 38.8MB/s][A
+ 60%|██████    | 2.76G/4.60G [01:25<01:07, 29.3MB/s][A
+ 60%|██████    | 2.77G/4.60G [01:25<01:02, 31.4MB/s][A
+ 60%|██████    | 2.77G/4.60G [01:25<01:17, 25.5MB/s][A
+ 60%|██████    | 2.78G/4.60G [01:25<01:07, 29.3MB/s][A
+ 60%|██████    | 2.78G/4.60G [01:25<01:02, 31.2MB/s][A
+ 60%|██████    | 2.78G/4.60G [01:25<00:59, 33.1MB/s][A
+ 60%|██████    | 2.78G/4.60G [01:26<01:06, 29.6MB/s][A
+ 61%|██████    | 2.79G/4.60G [01:26<00:58, 33.4MB/s][A
+ 61%|██████    | 2.80G/4.60G [01:26<00:41, 46.4MB/s][A
+ 61%|██████    | 2.80G/4.60G [01:26<00:41, 46.4MB/s][A
+ 61%|██████    | 2.80G/4.60G [01:26<00:41, 46.4MB/s][A
+ 61%|██████    | 2.80G/4.60G [01:26<00:41, 46.4MB/s][A
+ 61%|██████    | 2.80G/4.60G [01:26<00:43, 44.1MB/s][A
+ 61%|██████    | 2.81G/4.60G [01:26<00:44, 43.3MB/s][A
+ 61%|██████    | 2.81G/4.60G [01:26<00:44, 43.2MB/s][A
+ 61%|██████    | 2.81G/4.60G [01:26<00:54, 35.0MB/s][A
+ 61%|██████    | 2.82G/4.60G [01:27<00:49, 38.5MB/s][A
+ 61%|██████▏   | 2.82G/4.60G [01:27<00:46, 41.2MB/s][A
+ 61%|██████▏   | 2.83G/4.60G [01:27<00:41, 46.1MB/s][A
+ 62%|██████▏   | 2.83G/4.60G [01:27<00:43, 43.8MB/s][A
+ 62%|██████▏   | 2.84G/4.60G [01:27<00:44, 42.6MB/s][A
+ 62%|██████▏   | 2.84G/4.60G [01:27<00:42, 44.0MB/s][A
+ 62%|██████▏   | 2.84G/4.60G [01:27<00:42, 44.0MB/s][A
+ 62%|██████▏   | 2.85G/4.60G [01:27<01:05, 29.0MB/s][A
+ 62%|██████▏   | 2.85G/4.60G [01:27<01:05, 29.0MB/s][A
+ 62%|██████▏   | 2.85G/4.60G [01:27<01:10, 26.8MB/s][A
+ 62%|██████▏   | 2.85G/4.60G [01:27<01:10, 26.8MB/s][A
+ 62%|██████▏   | 2.85G/4.60G [01:28<01:17, 24.3MB/s][A
+ 62%|██████▏   | 2.86G/4.60G [01:28<01:05, 28.4MB/s][A
+ 62%|██████▏   | 2.86G/4.60G [01:28<01:12, 25.8MB/s][A
+ 62%|██████▏   | 2.87G/4.60G [01:28<00:59, 31.6MB/s][A
+ 62%|██████▏   | 2.87G/4.60G [01:28<00:47, 39.3MB/s][A
+ 62%|██████▏   | 2.87G/4.60G [01:28<00:47, 39.3MB/s][A
+ 62%|██████▏   | 2.88G/4.60G [01:28<00:45, 41.2MB/s][A
+ 63%|██████▎   | 2.88G/4.60G [01:28<00:41, 44.1MB/s][A
+ 63%|██████▎   | 2.89G/4.60G [01:28<00:40, 45.5MB/s][A
+ 63%|██████▎   | 2.89G/4.60G [01:29<00:38, 47.3MB/s][A
+ 63%|██████▎   | 2.90G/4.60G [01:29<00:38, 47.7MB/s][A
+ 63%|██████▎   | 2.90G/4.60G [01:29<00:37, 48.9MB/s][A
+ 63%|██████▎   | 2.91G/4.60G [01:29<00:41, 44.0MB/s][A
+ 63%|██████▎   | 2.91G/4.60G [01:29<00:36, 49.5MB/s][A
+ 63%|██████▎   | 2.91G/4.60G [01:29<00:33, 54.3MB/s][A
+ 63%|██████▎   | 2.92G/4.60G [01:29<00:36, 49.9MB/s][A
+ 63%|██████▎   | 2.92G/4.60G [01:29<00:42, 42.6MB/s][A
+ 64%|██████▎   | 2.93G/4.60G [01:29<00:42, 42.5MB/s][A
+ 64%|██████▎   | 2.93G/4.60G [01:30<00:44, 40.1MB/s][A
+ 64%|██████▍   | 2.94G/4.60G [01:30<01:02, 28.8MB/s][A
+ 64%|██████▍   | 2.95G/4.60G [01:30<00:37, 47.2MB/s][A
+ 64%|██████▍   | 2.96G/4.60G [01:30<00:37, 46.8MB/s][A
+ 64%|██████▍   | 2.96G/4.60G [01:30<00:41, 42.2MB/s][A
+ 64%|██████▍   | 2.97G/4.60G [01:31<00:40, 43.1MB/s][A
+ 65%|██████▍   | 2.97G/4.60G [01:31<00:39, 44.2MB/s][A
+ 65%|██████▍   | 2.98G/4.60G [01:31<00:38, 44.9MB/s][A
+ 65%|██████▍   | 2.98G/4.60G [01:31<00:39, 44.4MB/s][A
+ 65%|██████▍   | 2.99G/4.60G [01:31<00:37, 46.2MB/s][A
+ 65%|██████▍   | 2.99G/4.60G [01:31<00:36, 47.1MB/s][A
+ 65%|██████▌   | 3.00G/4.60G [01:31<00:35, 48.7MB/s][A
+ 65%|██████▌   | 3.00G/4.60G [01:31<00:35, 48.7MB/s][A
+ 65%|██████▌   | 3.00G/4.60G [01:31<00:32, 53.3MB/s][A
+ 65%|██████▌   | 3.01G/4.60G [01:31<00:40, 42.5MB/s][A
+ 65%|██████▌   | 3.01G/4.60G [01:32<00:36, 46.4MB/s][A
+ 66%|██████▌   | 3.02G/4.60G [01:32<00:34, 48.8MB/s][A
+ 66%|██████▌   | 3.02G/4.60G [01:32<00:33, 50.4MB/s][A
+ 66%|██████▌   | 3.03G/4.60G [01:32<00:35, 47.4MB/s][A
+ 66%|██████▌   | 3.03G/4.60G [01:32<01:07, 24.8MB/s][A
+ 66%|██████▌   | 3.03G/4.60G [01:32<01:07, 24.8MB/s][A
+ 66%|██████▌   | 3.04G/4.60G [01:32<01:03, 26.4MB/s][A
+ 66%|██████▌   | 3.04G/4.60G [01:32<00:54, 31.0MB/s][A
+ 66%|██████▌   | 3.05G/4.60G [01:33<00:48, 34.7MB/s][A
+ 66%|██████▋   | 3.05G/4.60G [01:33<00:45, 36.7MB/s][A
+ 66%|██████▋   | 3.06G/4.60G [01:33<00:41, 40.3MB/s][A
+ 66%|██████▋   | 3.06G/4.60G [01:33<00:40, 41.0MB/s][A
+ 67%|██████▋   | 3.06G/4.60G [01:33<00:40, 41.3MB/s][A
+ 67%|██████▋   | 3.07G/4.60G [01:33<00:44, 37.2MB/s][A
+ 67%|██████▋   | 3.07G/4.60G [01:33<00:49, 33.2MB/s][A
+ 67%|██████▋   | 3.08G/4.60G [01:33<00:43, 37.5MB/s][A
+ 67%|██████▋   | 3.08G/4.60G [01:33<00:41, 39.8MB/s][A
+ 67%|██████▋   | 3.09G/4.60G [01:34<00:39, 41.6MB/s][A
+ 67%|██████▋   | 3.09G/4.60G [01:34<00:40, 39.6MB/s][A
+ 67%|██████▋   | 3.10G/4.60G [01:34<00:37, 42.7MB/s][A
+ 67%|██████▋   | 3.10G/4.60G [01:34<00:37, 42.7MB/s][A
+ 67%|██████▋   | 3.10G/4.60G [01:34<00:38, 42.3MB/s][A
+ 67%|██████▋   | 3.11G/4.60G [01:34<00:33, 47.5MB/s][A
+ 68%|██████▊   | 3.11G/4.60G [01:34<00:47, 33.8MB/s][A
+ 68%|██████▊   | 3.12G/4.60G [01:34<00:53, 29.8MB/s][A
+ 68%|██████▊   | 3.12G/4.60G [01:35<01:02, 25.4MB/s][A
+ 68%|██████▊   | 3.12G/4.60G [01:35<00:59, 26.5MB/s][A
+ 68%|██████▊   | 3.13G/4.60G [01:35<00:54, 28.9MB/s][A
+ 68%|██████▊   | 3.13G/4.60G [01:35<00:50, 31.5MB/s][A
+ 68%|██████▊   | 3.13G/4.60G [01:35<00:49, 31.7MB/s][A
+ 68%|██████▊   | 3.13G/4.60G [01:35<00:48, 32.6MB/s][A
+ 68%|██████▊   | 3.13G/4.60G [01:35<00:48, 32.6MB/s][A
+ 68%|██████▊   | 3.14G/4.60G [01:35<00:48, 32.7MB/s][A
+ 68%|██████▊   | 3.14G/4.60G [01:35<00:48, 32.7MB/s][A
+ 68%|██████▊   | 3.14G/4.60G [01:35<00:48, 32.6MB/s][A
+ 68%|██████▊   | 3.14G/4.60G [01:36<00:57, 27.2MB/s][A
+ 68%|██████▊   | 3.15G/4.60G [01:36<00:55, 27.9MB/s][A
+ 68%|██████▊   | 3.15G/4.60G [01:36<00:53, 29.2MB/s][A
+ 69%|██████▊   | 3.15G/4.60G [01:36<00:49, 31.3MB/s][A
+ 69%|██████▊   | 3.15G/4.60G [01:36<00:47, 32.5MB/s][A
+ 69%|██████▊   | 3.15G/4.60G [01:36<00:47, 32.5MB/s][A
+ 69%|██████▊   | 3.16G/4.60G [01:36<00:50, 30.8MB/s][A
+ 69%|██████▊   | 3.16G/4.60G [01:36<00:49, 31.3MB/s][A
+ 69%|██████▉   | 3.17G/4.60G [01:36<00:49, 31.0MB/s][A
+ 69%|██████▉   | 3.17G/4.60G [01:36<00:49, 31.3MB/s][A
+ 69%|██████▉   | 3.17G/4.60G [01:37<00:48, 31.9MB/s][A
+ 69%|██████▉   | 3.18G/4.60G [01:37<00:43, 35.6MB/s][A
+ 69%|██████▉   | 3.18G/4.60G [01:37<00:43, 35.6MB/s][A
+ 69%|██████▉   | 3.18G/4.60G [01:37<00:44, 34.1MB/s][A
+ 69%|██████▉   | 3.18G/4.60G [01:37<00:43, 34.9MB/s][A
+ 69%|██████▉   | 3.19G/4.60G [01:37<00:53, 28.2MB/s][A
+ 69%|██████▉   | 3.19G/4.60G [01:37<01:08, 22.1MB/s][A
+ 69%|██████▉   | 3.19G/4.60G [01:37<01:05, 23.0MB/s][A
+ 69%|██████▉   | 3.20G/4.60G [01:38<01:23, 18.2MB/s][A
+ 70%|██████▉   | 3.20G/4.60G [01:38<01:11, 21.0MB/s][A
+ 70%|██████▉   | 3.20G/4.60G [01:38<01:01, 24.3MB/s][A
+ 70%|██████▉   | 3.20G/4.60G [01:38<00:54, 27.4MB/s][A
+ 70%|██████▉   | 3.21G/4.60G [01:38<00:54, 27.5MB/s][A
+ 70%|██████▉   | 3.21G/4.60G [01:38<00:51, 29.0MB/s][A
+ 70%|██████▉   | 3.21G/4.60G [01:38<00:48, 30.7MB/s][A
+ 70%|██████▉   | 3.21G/4.60G [01:38<00:44, 33.3MB/s][A
+ 70%|██████▉   | 3.22G/4.60G [01:38<00:42, 35.4MB/s][A
+ 70%|███████   | 3.22G/4.60G [01:38<00:41, 35.9MB/s][A
+ 70%|███████   | 3.23G/4.60G [01:39<00:51, 29.0MB/s][A
+ 70%|███████   | 3.23G/4.60G [01:39<00:48, 30.2MB/s][A
+ 70%|███████   | 3.23G/4.60G [01:39<00:47, 31.2MB/s][A
+ 70%|███████   | 3.23G/4.60G [01:39<00:49, 29.7MB/s][A
+ 70%|███████   | 3.24G/4.60G [01:39<00:48, 30.2MB/s][A
+ 70%|███████   | 3.24G/4.60G [01:39<00:49, 29.9MB/s][A
+ 70%|███████   | 3.24G/4.60G [01:39<00:44, 32.5MB/s][A
+ 71%|███████   | 3.25G/4.60G [01:39<00:55, 26.2MB/s][A
+ 71%|███████   | 3.25G/4.60G [01:40<00:53, 27.0MB/s][A
+ 71%|███████   | 3.25G/4.60G [01:40<00:47, 30.4MB/s][A
+ 71%|███████   | 3.26G/4.60G [01:40<00:44, 32.6MB/s][A
+ 71%|███████   | 3.26G/4.60G [01:40<00:42, 34.1MB/s][A
+ 71%|███████   | 3.26G/4.60G [01:40<00:39, 36.2MB/s][A
+ 71%|███████   | 3.27G/4.60G [01:40<00:40, 35.0MB/s][A
+ 71%|███████   | 3.27G/4.60G [01:40<00:38, 37.3MB/s][A
+ 71%|███████   | 3.28G/4.60G [01:41<01:13, 19.3MB/s][A
+ 71%|███████▏  | 3.28G/4.60G [01:41<00:55, 25.4MB/s][A
+ 71%|███████▏  | 3.29G/4.60G [01:41<00:53, 26.2MB/s][A
+ 71%|███████▏  | 3.29G/4.60G [01:41<00:48, 28.8MB/s][A
+ 72%|███████▏  | 3.29G/4.60G [01:41<00:44, 31.5MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:41<01:07, 20.7MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:42<00:47, 29.4MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:42<00:47, 29.4MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:42<00:47, 29.4MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:42<00:42, 32.5MB/s][A
+ 72%|███████▏  | 3.30G/4.60G [01:42<00:42, 32.5MB/s][A
+ 72%|███████▏  | 3.31G/4.60G [01:42<00:39, 35.6MB/s][A
+ 72%|███████▏  | 3.31G/4.60G [01:42<00:38, 35.9MB/s][A
+ 72%|███████▏  | 3.32G/4.60G [01:42<00:39, 34.9MB/s][A
+ 72%|███████▏  | 3.32G/4.60G [01:42<00:40, 34.4MB/s][A
+ 72%|███████▏  | 3.32G/4.60G [01:42<00:38, 35.9MB/s][A
+ 72%|███████▏  | 3.32G/4.60G [01:42<00:38, 35.9MB/s][A
+ 72%|███████▏  | 3.33G/4.60G [01:42<00:35, 39.0MB/s][A
+ 72%|███████▏  | 3.33G/4.60G [01:42<00:32, 41.9MB/s][A
+ 72%|███████▏  | 3.34G/4.60G [01:42<00:31, 42.8MB/s][A
+ 73%|███████▎  | 3.34G/4.60G [01:43<00:31, 42.8MB/s][A
+ 73%|███████▎  | 3.35G/4.60G [01:43<00:31, 43.3MB/s][A
+ 73%|███████▎  | 3.35G/4.60G [01:43<00:30, 43.8MB/s][A
+ 73%|███████▎  | 3.35G/4.60G [01:43<00:30, 43.4MB/s][A
+ 73%|███████▎  | 3.35G/4.60G [01:43<00:30, 43.4MB/s][A
+ 73%|███████▎  | 3.36G/4.60G [01:43<00:31, 42.1MB/s][A
+ 73%|███████▎  | 3.36G/4.60G [01:43<00:35, 37.7MB/s][A
+ 73%|███████▎  | 3.37G/4.60G [01:43<00:52, 25.4MB/s][A
+ 73%|███████▎  | 3.37G/4.60G [01:44<01:11, 18.6MB/s][A
+ 73%|███████▎  | 3.37G/4.60G [01:44<01:05, 20.1MB/s][A
+ 73%|███████▎  | 3.37G/4.60G [01:44<00:56, 23.4MB/s][A
+ 73%|███████▎  | 3.37G/4.60G [01:44<00:56, 23.4MB/s][A
+ 73%|███████▎  | 3.38G/4.60G [01:44<00:56, 23.5MB/s][A
+ 73%|███████▎  | 3.38G/4.60G [01:44<00:52, 25.2MB/s][A
+ 73%|███████▎  | 3.38G/4.60G [01:44<00:52, 25.2MB/s][A
+ 73%|███████▎  | 3.38G/4.60G [01:44<00:45, 28.7MB/s][A
+ 73%|███████▎  | 3.38G/4.60G [01:44<00:45, 28.7MB/s][A
+ 74%|███████▎  | 3.38G/4.60G [01:44<00:44, 29.4MB/s][A
+ 74%|███████▎  | 3.39G/4.60G [01:44<00:41, 31.3MB/s][A
+ 74%|███████▎  | 3.39G/4.60G [01:45<00:44, 29.2MB/s][A
+ 74%|███████▎  | 3.39G/4.60G [01:45<00:41, 31.1MB/s][A
+ 74%|███████▍  | 3.40G/4.60G [01:45<00:38, 33.8MB/s][A
+ 74%|███████▍  | 3.40G/4.60G [01:45<00:38, 33.7MB/s][A
+ 74%|███████▍  | 3.41G/4.60G [01:45<00:36, 35.7MB/s][A
+ 74%|███████▍  | 3.41G/4.60G [01:45<00:35, 36.6MB/s][A
+ 74%|███████▍  | 3.41G/4.60G [01:45<00:33, 37.8MB/s][A
+ 74%|███████▍  | 3.41G/4.60G [01:45<00:34, 36.9MB/s][A
+ 74%|███████▍  | 3.42G/4.60G [01:45<00:33, 38.0MB/s][A
+ 74%|███████▍  | 3.42G/4.60G [01:45<00:33, 38.4MB/s][A
+ 74%|███████▍  | 3.43G/4.60G [01:46<00:30, 41.3MB/s][A
+ 75%|███████▍  | 3.43G/4.60G [01:46<00:34, 36.7MB/s][A
+ 75%|███████▍  | 3.43G/4.60G [01:46<00:40, 31.1MB/s][A
+ 75%|███████▍  | 3.43G/4.60G [01:46<00:40, 31.1MB/s][A
+ 75%|███████▍  | 3.44G/4.60G [01:46<00:40, 30.8MB/s][A
+ 75%|███████▍  | 3.44G/4.60G [01:46<00:38, 32.8MB/s][A
+ 75%|███████▍  | 3.44G/4.60G [01:46<00:52, 23.6MB/s][A
+ 75%|███████▍  | 3.45G/4.60G [01:46<00:45, 27.4MB/s][A
+ 75%|███████▍  | 3.45G/4.60G [01:47<00:38, 32.5MB/s][A
+ 75%|███████▌  | 3.46G/4.60G [01:47<00:40, 30.1MB/s][A
+ 75%|███████▌  | 3.46G/4.60G [01:47<00:36, 33.8MB/s][A
+ 75%|███████▌  | 3.47G/4.60G [01:47<00:28, 42.1MB/s][A
+ 75%|███████▌  | 3.47G/4.60G [01:47<00:24, 49.1MB/s][A
+ 76%|███████▌  | 3.48G/4.60G [01:47<00:20, 58.8MB/s][A
+ 76%|███████▌  | 3.49G/4.60G [01:47<00:23, 50.5MB/s][A
+ 76%|███████▌  | 3.49G/4.60G [01:47<00:22, 53.1MB/s][A
+ 76%|███████▌  | 3.50G/4.60G [01:48<00:20, 58.9MB/s][A
+ 76%|███████▌  | 3.51G/4.60G [01:48<00:17, 65.4MB/s][A
+ 76%|███████▌  | 3.51G/4.60G [01:48<00:17, 65.4MB/s][A
+ 76%|███████▋  | 3.52G/4.60G [01:48<00:16, 70.3MB/s][A
+ 77%|███████▋  | 3.52G/4.60G [01:48<00:21, 52.9MB/s][A
+ 77%|███████▋  | 3.53G/4.60G [01:48<00:24, 47.0MB/s][A
+ 77%|███████▋  | 3.53G/4.60G [01:48<00:24, 47.0MB/s][A
+ 77%|███████▋  | 3.53G/4.60G [01:48<00:28, 40.9MB/s][A
+ 77%|███████▋  | 3.54G/4.60G [01:48<00:28, 40.1MB/s][A
+ 77%|███████▋  | 3.54G/4.60G [01:48<00:25, 44.0MB/s][A
+ 77%|███████▋  | 3.55G/4.60G [01:49<00:29, 38.5MB/s][A
+ 77%|███████▋  | 3.55G/4.60G [01:49<00:26, 43.2MB/s][A
+ 77%|███████▋  | 3.55G/4.60G [01:49<00:23, 47.4MB/s][A
+ 77%|███████▋  | 3.56G/4.60G [01:49<00:24, 45.4MB/s][A
+ 77%|███████▋  | 3.56G/4.60G [01:49<00:23, 46.9MB/s][A
+ 78%|███████▊  | 3.57G/4.60G [01:49<00:22, 50.4MB/s][A
+ 78%|███████▊  | 3.58G/4.60G [01:49<00:19, 56.0MB/s][A
+ 78%|███████▊  | 3.59G/4.60G [01:49<00:16, 65.1MB/s][A
+ 78%|███████▊  | 3.59G/4.60G [01:49<00:18, 58.5MB/s][A
+ 78%|███████▊  | 3.60G/4.60G [01:50<00:19, 55.9MB/s][A
+ 78%|███████▊  | 3.60G/4.60G [01:50<00:18, 56.8MB/s][A
+ 78%|███████▊  | 3.61G/4.60G [01:50<00:19, 53.8MB/s][A
+ 79%|███████▊  | 3.61G/4.60G [01:50<00:20, 52.1MB/s][A
+ 79%|███████▊  | 3.62G/4.60G [01:50<00:18, 56.7MB/s][A
+ 79%|███████▉  | 3.63G/4.60G [01:50<00:20, 51.4MB/s][A
+ 79%|███████▉  | 3.63G/4.60G [01:50<00:22, 46.3MB/s][A
+ 79%|███████▉  | 3.64G/4.60G [01:50<00:22, 45.1MB/s][A
+ 79%|███████▉  | 3.64G/4.60G [01:51<00:20, 49.4MB/s][A
+ 79%|███████▉  | 3.65G/4.60G [01:51<00:19, 51.6MB/s][A
+ 79%|███████▉  | 3.66G/4.60G [01:51<00:17, 59.1MB/s][A
+ 80%|███████▉  | 3.66G/4.60G [01:51<00:16, 62.1MB/s][A
+ 80%|███████▉  | 3.67G/4.60G [01:51<00:16, 59.1MB/s][A
+ 80%|███████▉  | 3.68G/4.60G [01:51<00:16, 60.0MB/s][A
+ 80%|███████▉  | 3.68G/4.60G [01:51<00:18, 54.8MB/s][A
+ 80%|████████  | 3.69G/4.60G [01:51<00:15, 61.6MB/s][A
+ 80%|████████  | 3.70G/4.60G [01:52<00:18, 52.5MB/s][A
+ 80%|████████  | 3.70G/4.60G [01:52<00:18, 53.6MB/s][A
+ 81%|████████  | 3.71G/4.60G [01:52<00:24, 39.3MB/s][A
+ 81%|████████  | 3.71G/4.60G [01:52<00:23, 40.9MB/s][A
+ 81%|████████  | 3.72G/4.60G [01:52<00:21, 43.6MB/s][A
+ 81%|████████  | 3.72G/4.60G [01:52<00:20, 46.4MB/s][A
+ 81%|████████  | 3.72G/4.60G [01:52<00:26, 35.2MB/s][A
+ 81%|████████  | 3.74G/4.60G [01:53<00:17, 52.3MB/s][A
+ 81%|████████▏ | 3.74G/4.60G [01:53<00:17, 54.2MB/s][A
+ 82%|████████▏ | 3.75G/4.60G [01:53<00:14, 62.4MB/s][A
+ 82%|████████▏ | 3.76G/4.60G [01:53<00:18, 48.1MB/s][A
+ 82%|████████▏ | 3.77G/4.60G [01:53<00:19, 46.4MB/s][A
+ 82%|████████▏ | 3.77G/4.60G [01:53<00:20, 43.5MB/s][A
+ 82%|████████▏ | 3.78G/4.60G [01:53<00:18, 48.5MB/s][A
+ 82%|████████▏ | 3.78G/4.60G [01:54<00:16, 54.6MB/s][A
+ 82%|████████▏ | 3.79G/4.60G [01:54<00:18, 47.3MB/s][A
+ 82%|████████▏ | 3.80G/4.60G [01:54<00:16, 53.6MB/s][A
+ 83%|████████▎ | 3.80G/4.60G [01:54<00:15, 55.7MB/s][A
+ 83%|████████▎ | 3.81G/4.60G [01:54<00:15, 55.9MB/s][A
+ 83%|████████▎ | 3.81G/4.60G [01:54<00:19, 43.0MB/s][A
+ 83%|████████▎ | 3.82G/4.60G [01:54<00:17, 47.8MB/s][A
+ 83%|████████▎ | 3.83G/4.60G [01:54<00:17, 49.0MB/s][A
+ 83%|████████▎ | 3.83G/4.60G [01:55<00:20, 39.7MB/s][A
+ 83%|████████▎ | 3.84G/4.60G [01:55<00:21, 38.3MB/s][A
+ 83%|████████▎ | 3.84G/4.60G [01:55<00:21, 38.8MB/s][A
+ 83%|████████▎ | 3.84G/4.60G [01:55<00:21, 38.8MB/s][A
+ 83%|████████▎ | 3.84G/4.60G [01:55<00:25, 32.1MB/s][A
+ 84%|████████▎ | 3.85G/4.60G [01:55<00:21, 36.8MB/s][A
+ 84%|████████▎ | 3.85G/4.60G [01:55<00:18, 42.8MB/s][A
+ 84%|████████▍ | 3.86G/4.60G [01:55<00:18, 44.2MB/s][A
+ 84%|████████▍ | 3.86G/4.60G [01:56<00:20, 39.2MB/s][A
+ 84%|████████▍ | 3.87G/4.60G [01:56<00:17, 44.7MB/s][A
+ 84%|████████▍ | 3.87G/4.60G [01:56<00:15, 49.4MB/s][A
+ 84%|████████▍ | 3.88G/4.60G [01:56<00:15, 50.9MB/s][A
+ 84%|████████▍ | 3.88G/4.60G [01:56<00:14, 53.8MB/s][A
+ 84%|████████▍ | 3.89G/4.60G [01:56<00:14, 53.4MB/s][A
+ 85%|████████▍ | 3.89G/4.60G [01:56<00:16, 46.4MB/s][A
+ 85%|████████▍ | 3.90G/4.60G [01:56<00:16, 45.7MB/s][A
+ 85%|████████▍ | 3.90G/4.60G [01:57<00:24, 30.5MB/s][A
+ 85%|████████▍ | 3.90G/4.60G [01:57<00:23, 32.1MB/s][A
+ 85%|████████▍ | 3.91G/4.60G [01:57<00:26, 28.1MB/s][A
+ 85%|████████▍ | 3.91G/4.60G [01:57<00:26, 28.1MB/s][A
+ 85%|████████▍ | 3.91G/4.60G [01:57<00:26, 28.1MB/s][A
+ 85%|████████▌ | 3.91G/4.60G [01:57<00:24, 30.3MB/s][A
+ 85%|████████▌ | 3.92G/4.60G [01:57<00:20, 35.8MB/s][A
+ 85%|████████▌ | 3.92G/4.60G [01:57<00:18, 40.8MB/s][A
+ 85%|████████▌ | 3.92G/4.60G [01:57<00:17, 40.7MB/s][A
+ 85%|████████▌ | 3.93G/4.60G [01:57<00:21, 33.1MB/s][A
+ 85%|████████▌ | 3.93G/4.60G [01:57<00:20, 35.0MB/s][A
+ 85%|████████▌ | 3.93G/4.60G [01:57<00:19, 37.0MB/s][A
+ 86%|████████▌ | 3.94G/4.60G [01:58<00:19, 37.6MB/s][A
+ 86%|████████▌ | 3.94G/4.60G [01:58<00:19, 35.9MB/s][A
+ 86%|████████▌ | 3.95G/4.60G [01:58<00:19, 36.1MB/s][A
+ 86%|████████▌ | 3.95G/4.60G [01:58<00:19, 36.3MB/s][A
+ 86%|████████▌ | 3.95G/4.60G [01:58<00:19, 36.8MB/s][A
+ 86%|████████▌ | 3.96G/4.60G [01:58<00:17, 39.7MB/s][A
+ 86%|████████▌ | 3.96G/4.60G [01:58<00:17, 39.7MB/s][A
+ 86%|████████▌ | 3.96G/4.60G [01:58<00:18, 38.2MB/s][A
+ 86%|████████▌ | 3.96G/4.60G [01:58<00:18, 37.0MB/s][A
+ 86%|████████▌ | 3.97G/4.60G [01:59<00:17, 39.5MB/s][A
+ 86%|████████▋ | 3.97G/4.60G [01:59<00:24, 28.1MB/s][A
+ 86%|████████▋ | 3.98G/4.60G [01:59<00:19, 34.2MB/s][A
+ 87%|████████▋ | 3.98G/4.60G [01:59<00:25, 26.2MB/s][A
+ 87%|████████▋ | 3.99G/4.60G [01:59<00:24, 27.6MB/s][A
+ 87%|████████▋ | 3.99G/4.60G [01:59<00:25, 25.4MB/s][A
+ 87%|████████▋ | 3.99G/4.60G [02:00<00:21, 30.6MB/s][A
+ 87%|████████▋ | 4.00G/4.60G [02:00<00:16, 40.2MB/s][A
+ 87%|████████▋ | 4.00G/4.60G [02:00<00:16, 40.2MB/s][A
+ 87%|████████▋ | 4.00G/4.60G [02:00<00:20, 30.8MB/s][A
+ 87%|████████▋ | 4.01G/4.60G [02:00<00:18, 34.0MB/s][A
+ 87%|████████▋ | 4.01G/4.60G [02:00<00:16, 38.0MB/s][A
+ 87%|████████▋ | 4.01G/4.60G [02:00<00:15, 41.6MB/s][A
+ 87%|████████▋ | 4.02G/4.60G [02:00<00:18, 34.3MB/s][A
+ 87%|████████▋ | 4.02G/4.60G [02:00<00:17, 35.7MB/s][A
+ 87%|████████▋ | 4.03G/4.60G [02:01<00:14, 41.6MB/s][A
+ 88%|████████▊ | 4.03G/4.60G [02:01<00:15, 38.8MB/s][A
+ 88%|████████▊ | 4.04G/4.60G [02:01<00:15, 39.5MB/s][A
+ 88%|████████▊ | 4.04G/4.60G [02:01<00:21, 28.3MB/s][A
+ 88%|████████▊ | 4.04G/4.60G [02:01<00:20, 29.9MB/s][A
+ 88%|████████▊ | 4.05G/4.60G [02:01<00:19, 31.1MB/s][A
+ 88%|████████▊ | 4.05G/4.60G [02:01<00:22, 26.7MB/s][A
+ 88%|████████▊ | 4.05G/4.60G [02:02<00:19, 30.4MB/s][A
+ 88%|████████▊ | 4.06G/4.60G [02:02<00:18, 31.5MB/s][A
+ 88%|████████▊ | 4.06G/4.60G [02:02<00:22, 25.7MB/s][A
+ 88%|████████▊ | 4.07G/4.60G [02:02<00:20, 27.8MB/s][A
+ 88%|████████▊ | 4.07G/4.60G [02:02<00:18, 31.0MB/s][A
+ 89%|████████▊ | 4.07G/4.60G [02:02<00:20, 28.0MB/s][A
+ 89%|████████▊ | 4.08G/4.60G [02:02<00:17, 32.8MB/s][A
+ 89%|████████▊ | 4.08G/4.60G [02:03<00:19, 28.6MB/s][A
+ 89%|████████▉ | 4.09G/4.60G [02:03<00:20, 27.6MB/s][A
+ 89%|████████▉ | 4.09G/4.60G [02:03<00:22, 24.7MB/s][A
+ 89%|████████▉ | 4.09G/4.60G [02:03<00:17, 31.6MB/s][A
+ 89%|████████▉ | 4.10G/4.60G [02:03<00:18, 30.2MB/s][A
+ 89%|████████▉ | 4.10G/4.60G [02:03<00:17, 30.0MB/s][A
+ 89%|████████▉ | 4.11G/4.60G [02:03<00:15, 33.6MB/s][A
+ 89%|████████▉ | 4.11G/4.60G [02:04<00:12, 42.2MB/s][A
+ 89%|████████▉ | 4.11G/4.60G [02:04<00:12, 42.2MB/s][A
+ 89%|████████▉ | 4.12G/4.60G [02:04<00:12, 43.4MB/s][A
+ 90%|████████▉ | 4.12G/4.60G [02:04<00:10, 48.3MB/s][A
+ 90%|████████▉ | 4.12G/4.60G [02:04<00:10, 48.3MB/s][A
+ 90%|████████▉ | 4.13G/4.60G [02:04<00:10, 48.2MB/s][A
+ 90%|████████▉ | 4.13G/4.60G [02:04<00:13, 36.8MB/s][A
+ 90%|████████▉ | 4.13G/4.60G [02:04<00:13, 37.5MB/s][A
+ 90%|████████▉ | 4.13G/4.60G [02:04<00:13, 37.5MB/s][A
+ 90%|████████▉ | 4.14G/4.60G [02:04<00:12, 39.5MB/s][A
+ 90%|████████▉ | 4.14G/4.60G [02:04<00:12, 39.7MB/s][A
+ 90%|█████████ | 4.15G/4.60G [02:05<00:12, 38.2MB/s][A
+ 90%|█████████ | 4.15G/4.60G [02:05<00:12, 39.3MB/s][A
+ 90%|█████████ | 4.16G/4.60G [02:05<00:12, 40.0MB/s][A
+ 90%|█████████ | 4.16G/4.60G [02:05<00:12, 37.9MB/s][A
+ 90%|█████████ | 4.16G/4.60G [02:05<00:15, 30.2MB/s][A
+ 91%|█████████ | 4.17G/4.60G [02:05<00:13, 34.7MB/s][A
+ 91%|█████████ | 4.17G/4.60G [02:05<00:15, 30.1MB/s][A
+ 91%|█████████ | 4.18G/4.60G [02:05<00:13, 33.4MB/s][A
+ 91%|█████████ | 4.18G/4.60G [02:06<00:15, 29.3MB/s][A
+ 91%|█████████ | 4.19G/4.60G [02:06<00:11, 38.7MB/s][A
+ 91%|█████████ | 4.19G/4.60G [02:06<00:11, 38.7MB/s][A
+ 91%|█████████ | 4.19G/4.60G [02:06<00:11, 37.5MB/s][A
+ 91%|█████████ | 4.20G/4.60G [02:06<00:10, 40.7MB/s][A
+ 91%|█████████ | 4.20G/4.60G [02:06<00:11, 38.6MB/s][A
+ 91%|█████████▏| 4.20G/4.60G [02:06<00:11, 38.7MB/s][A
+ 91%|█████████▏| 4.21G/4.60G [02:06<00:13, 31.6MB/s][A
+ 91%|█████████▏| 4.21G/4.60G [02:07<00:12, 32.4MB/s][A
+ 92%|█████████▏| 4.22G/4.60G [02:07<00:11, 35.0MB/s][A
+ 92%|█████████▏| 4.22G/4.60G [02:07<00:11, 34.7MB/s][A
+ 92%|█████████▏| 4.22G/4.60G [02:07<00:10, 37.1MB/s][A
+ 92%|█████████▏| 4.23G/4.60G [02:07<00:10, 36.9MB/s][A
+ 92%|█████████▏| 4.23G/4.60G [02:07<00:09, 41.1MB/s][A
+ 92%|█████████▏| 4.23G/4.60G [02:07<00:09, 41.1MB/s][A
+ 92%|█████████▏| 4.24G/4.60G [02:07<00:09, 39.5MB/s][A
+ 92%|█████████▏| 4.24G/4.60G [02:07<00:09, 41.5MB/s][A
+ 92%|█████████▏| 4.25G/4.60G [02:08<00:11, 34.9MB/s][A
+ 92%|█████████▏| 4.25G/4.60G [02:08<00:10, 36.6MB/s][A
+ 92%|█████████▏| 4.25G/4.60G [02:08<00:09, 39.8MB/s][A
+ 93%|█████████▎| 4.26G/4.60G [02:08<00:11, 32.6MB/s][A
+ 93%|█████████▎| 4.26G/4.60G [02:08<00:11, 32.0MB/s][A
+ 93%|█████████▎| 4.27G/4.60G [02:08<00:13, 27.1MB/s][A
+ 93%|█████████▎| 4.27G/4.60G [02:08<00:11, 31.2MB/s][A
+ 93%|█████████▎| 4.27G/4.60G [02:09<00:12, 29.3MB/s][A
+ 93%|█████████▎| 4.28G/4.60G [02:09<00:11, 30.6MB/s][A
+ 93%|█████████▎| 4.28G/4.60G [02:09<00:10, 32.3MB/s][A
+ 93%|█████████▎| 4.29G/4.60G [02:09<00:10, 33.7MB/s][A
+ 93%|█████████▎| 4.29G/4.60G [02:09<00:09, 35.9MB/s][A
+ 93%|█████████▎| 4.30G/4.60G [02:09<00:08, 38.6MB/s][A
+ 93%|█████████▎| 4.30G/4.60G [02:09<00:10, 32.5MB/s][A
+ 93%|█████████▎| 4.30G/4.60G [02:09<00:08, 37.4MB/s][A
+ 93%|█████████▎| 4.30G/4.60G [02:09<00:08, 37.4MB/s][A
+ 94%|█████████▎| 4.31G/4.60G [02:10<00:08, 38.2MB/s][A
+ 94%|█████████▎| 4.31G/4.60G [02:10<00:07, 39.4MB/s][A
+ 94%|█████████▍| 4.32G/4.60G [02:10<00:07, 40.4MB/s][A
+ 94%|█████████▍| 4.32G/4.60G [02:10<00:07, 41.0MB/s][A
+ 94%|█████████▍| 4.33G/4.60G [02:10<00:08, 33.5MB/s][A
+ 94%|█████████▍| 4.33G/4.60G [02:10<00:08, 35.2MB/s][A
+ 94%|█████████▍| 4.33G/4.60G [02:10<00:10, 28.1MB/s][A
+ 94%|█████████▍| 4.34G/4.60G [02:10<00:09, 29.3MB/s][A
+ 94%|█████████▍| 4.34G/4.60G [02:11<00:08, 31.7MB/s][A
+ 94%|█████████▍| 4.35G/4.60G [02:11<00:07, 37.9MB/s][A
+ 94%|█████████▍| 4.35G/4.60G [02:11<00:07, 38.8MB/s][A
+ 94%|█████████▍| 4.35G/4.60G [02:11<00:07, 38.8MB/s][A
+ 95%|█████████▍| 4.35G/4.60G [02:11<00:09, 28.8MB/s][A
+ 95%|█████████▍| 4.36G/4.60G [02:11<00:10, 26.2MB/s][A
+ 95%|█████████▍| 4.36G/4.60G [02:11<00:10, 25.6MB/s][A
+ 95%|█████████▍| 4.36G/4.60G [02:11<00:09, 26.4MB/s][A
+ 95%|█████████▍| 4.37G/4.60G [02:12<00:08, 31.3MB/s][A
+ 95%|█████████▍| 4.37G/4.60G [02:12<00:07, 34.4MB/s][A
+ 95%|█████████▌| 4.38G/4.60G [02:12<00:07, 32.3MB/s][A
+ 95%|█████████▌| 4.38G/4.60G [02:12<00:06, 36.0MB/s][A
+ 95%|█████████▌| 4.38G/4.60G [02:12<00:06, 37.7MB/s][A
+ 95%|█████████▌| 4.39G/4.60G [02:12<00:06, 38.0MB/s][A
+ 95%|█████████▌| 4.39G/4.60G [02:12<00:05, 39.9MB/s][A
+ 96%|█████████▌| 4.40G/4.60G [02:12<00:05, 42.3MB/s][A
+ 96%|█████████▌| 4.40G/4.60G [02:12<00:05, 41.7MB/s][A
+ 96%|█████████▌| 4.40G/4.60G [02:12<00:05, 41.7MB/s][A
+ 96%|█████████▌| 4.41G/4.60G [02:13<00:05, 35.4MB/s][A
+ 96%|█████████▌| 4.41G/4.60G [02:13<00:05, 39.6MB/s][A
+ 96%|█████████▌| 4.42G/4.60G [02:13<00:06, 33.3MB/s][A
+ 96%|█████████▌| 4.42G/4.60G [02:13<00:05, 34.0MB/s][A
+ 96%|█████████▌| 4.42G/4.60G [02:13<00:05, 37.2MB/s][A
+ 96%|█████████▌| 4.43G/4.60G [02:13<00:05, 35.0MB/s][A
+ 96%|█████████▋| 4.43G/4.60G [02:13<00:05, 36.6MB/s][A
+ 96%|█████████▋| 4.44G/4.60G [02:13<00:04, 38.2MB/s][A
+ 96%|█████████▋| 4.44G/4.60G [02:14<00:05, 30.1MB/s][A
+ 97%|█████████▋| 4.44G/4.60G [02:14<00:06, 28.3MB/s][A
+ 97%|█████████▋| 4.45G/4.60G [02:14<00:05, 32.7MB/s][A
+ 97%|█████████▋| 4.45G/4.60G [02:14<00:04, 35.4MB/s][A
+ 97%|█████████▋| 4.46G/4.60G [02:14<00:04, 36.7MB/s][A
+ 97%|█████████▋| 4.46G/4.60G [02:14<00:04, 36.7MB/s][A
+ 97%|█████████▋| 4.46G/4.60G [02:14<00:03, 38.9MB/s][A
+ 97%|█████████▋| 4.46G/4.60G [02:14<00:03, 40.4MB/s][A
+ 97%|█████████▋| 4.47G/4.60G [02:14<00:03, 39.7MB/s][A
+ 97%|█████████▋| 4.47G/4.60G [02:15<00:03, 39.4MB/s][A
+ 97%|█████████▋| 4.48G/4.60G [02:15<00:03, 36.4MB/s][A
+ 97%|█████████▋| 4.48G/4.60G [02:15<00:03, 35.7MB/s][A
+ 97%|█████████▋| 4.48G/4.60G [02:15<00:03, 38.2MB/s][A
+ 97%|█████████▋| 4.49G/4.60G [02:15<00:03, 37.8MB/s][A
+ 98%|█████████▊| 4.49G/4.60G [02:15<00:03, 30.6MB/s][A
+ 98%|█████████▊| 4.50G/4.60G [02:15<00:04, 25.8MB/s][A
+ 98%|█████████▊| 4.50G/4.60G [02:15<00:04, 25.8MB/s][A
+ 98%|█████████▊| 4.50G/4.60G [02:16<00:03, 30.2MB/s][A
+ 98%|█████████▊| 4.51G/4.60G [02:16<00:02, 37.7MB/s][A
+ 98%|█████████▊| 4.51G/4.60G [02:16<00:02, 43.0MB/s][A
+ 98%|█████████▊| 4.52G/4.60G [02:16<00:01, 47.1MB/s][A
+ 98%|█████████▊| 4.52G/4.60G [02:16<00:01, 45.3MB/s][A
+ 98%|█████████▊| 4.53G/4.60G [02:16<00:02, 39.3MB/s][A
+ 98%|█████████▊| 4.53G/4.60G [02:16<00:01, 39.7MB/s][A
+ 99%|█████████▊| 4.54G/4.60G [02:16<00:01, 39.4MB/s][A
+ 99%|█████████▊| 4.54G/4.60G [02:16<00:01, 44.0MB/s][A
+ 99%|█████████▊| 4.55G/4.60G [02:17<00:01, 44.2MB/s][A
+ 99%|█████████▉| 4.55G/4.60G [02:17<00:01, 32.8MB/s][A
+ 99%|█████████▉| 4.55G/4.60G [02:17<00:01, 35.2MB/s][A
+ 99%|█████████▉| 4.56G/4.60G [02:17<00:01, 37.8MB/s][A
+ 99%|█████████▉| 4.56G/4.60G [02:17<00:01, 41.4MB/s][A
+ 99%|█████████▉| 4.57G/4.60G [02:17<00:01, 36.4MB/s][A
+ 99%|█████████▉| 4.57G/4.60G [02:17<00:01, 33.8MB/s][A
+ 99%|█████████▉| 4.57G/4.60G [02:17<00:00, 35.3MB/s][A
+ 99%|█████████▉| 4.58G/4.60G [02:17<00:00, 36.3MB/s][A
+ 99%|█████████▉| 4.58G/4.60G [02:17<00:00, 37.4MB/s][A
+ 99%|█████████▉| 4.58G/4.60G [02:18<00:00, 43.5MB/s][A
+ 99%|█████████▉| 4.58G/4.60G [02:18<00:00, 43.5MB/s][A
+100%|█████████▉| 4.58G/4.60G [02:18<00:00, 36.9MB/s][A
+100%|█████████▉| 4.59G/4.60G [02:18<00:00, 38.6MB/s][A
+100%|█████████▉| 4.59G/4.60G [02:18<00:00, 38.8MB/s][A
+100%|█████████▉| 4.60G/4.60G [02:18<00:00, 46.6MB/s][A
+100%|██████████| 4.60G/4.60G [02:19<00:00, 35.6MB/s]
+data ready: ['README.md', 'description.md', 'sample_submission.csv', 'test', 'test_baseline_helmets.csv', 'test_player_tracking.csv', 'test_video_metadata.csv', 'train']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT_SWARM.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=alkaid_psi swarm-2=capella_pi swarm-3=canopus_pi
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+===== capella_pi_intro_plan.md =====
+# capella_pi — intro & plan
+Hi swarm, I'm **capella_pi**. I'm a Senior DS focused on strong tabular pipelines, careful CV, and ensembling.
+## Task understanding (verified, not a leak)
+- Labels: `data/train_labels.csv` — 216 plays, 4.26M rows, positive rate **1.36%**. Target `contact` (player-player and player-ground with `nfl_player_id_2 == G`).
+- Test: 24 plays, 1831 `game_play_step` groups, submit covers **463,243** `contact_id`s in `data/sample_submission.csv`. No play overlap between train/test -> honest split.
+- Metric: **Matthews Correlation Coefficient (MCC)** -> threshold tuning per positive rate matters a lot.
+- Available signals: 10Hz tracking (`train_player_tracking.csv`), baseline helmet boxes (`train_baseline_helmets.csv`), and videos (Sideline/Endzone/All29).
+## Proposed split of work (please ack / adjust)
+- **capella_pi (me)**: build the shared tabular feature pipeline (tracking pair features + helmet-box pair features per view + temporal lags/rolling) and a LightGBM baseline with GroupKFold by `game_play`. I'll publish OOF MCC + feature list + reusable parquet feature files in my workspace.
+- **alkaid_psi**: explore a second independent angle — video/CNN features (helmet crops) or a different model family (XGB/Cat) once features exist.
+- **canopus_pi**: specialize on **ground contact** rows (player2 == G) and on threshold/post-processing (temporal smoothing, per-play MCC maximization); also independent feature analysis.
+## Validation protocol (proposal)
+- `GroupKFold(n_splits=5)` by `game_play`, OOF MCC as the only comparison metric.
+- Threshold selected on OOF (sweep), report both best-threshold and fixed-0.5 MCC.
+- Helpers will live in `workspaces/capella_pi/`; share/reuse encouraged.
+I'm starting the tracking+helmet feature engineering now and will post OOF results and feature files for everyone. If you have a different strong idea, reply on the board — avoid duplicating the tabular pipeline.
+Refs: `[[TASK.md]]`, `[[data/README.md]]`
+#plan #communication #feature_engineering #model_selection
+===== canopus_pi_intro_plan.md =====
+# canopus_pi — intro & plan
+Hi team! I'm **canopus_pi**, senior DS. Starting on NFL Player Contact Detection (MCC, 216 train plays / 24 test plays here; videos available).
+## First look at data
+- `train_labels.csv`: 4.26M rows, 216 plays, positive rate **1.36%** overall (ground-ever pairs 8.7% of rows, 4.1% positive; player-player 1.1% positive).
+- All pairs of on-field players + each player vs ground `G`, 10 Hz.
+- `data/test/` = 24 mock plays (72 videos) used only to produce the submission.
+- Candidate rows for test = `sample_submission.csv` (463k).
+## My plan
+1. Build a leakage-safe GBDT (LightGBM/CatBoost) on **tracking pairwise features** (distance, closing speed, lags/leads, rolling windows, orientation/accel) + **ground-contact player features**.
+2. Add **video-derived helmet-box features** from `*_baseline_helmets.csv` (pair box distance/overlap per Sideline/Endzone view, box y-position/size for ground detection). This is the main signal beyond tracking.
+3. GroupKFold by `game_play` holdout, tune threshold for MCC, produce `final_solution/submission.csv` + code.
+## Coordination proposals
+- I'll own the **feature engineering + GBDT tracking/helmet pipeline**. If someone wants to own a **CNN/video branch** or **post-processing (per-play smoothing/threshold)**, claim it on the board and we ensemble oof/test probabilities.
+- Please post OOF MCC + fold setup so we can compare/ensemble fairly. Prefer sharing **OOF + test probability CSVs** keyed by `contact_id` rather than hard labels.
+Ping me with your plan. I'll post intermediate OOF results. #plan #communication #ensembling
+===== canopus_pi_ack_split.md =====
+# canopus_pi — ack split + my focus
+Read `[[capella_pi_intro_plan.md]]`. Agree on shared validation: **GroupKFold(5) by `game_play`, OOF MCC**, share OOF/test prob CSVs keyed by `contact_id`.
+I'll take the **specialist pieces** so we don't duplicate your tabular pipeline:
+1. **Ground-contact specialist** (`nfl_player_id_2 == G`): dedicated model + features (speed/accel/`sa` dynamics, helmet box y-position/height per view). This is 8.7% of rows but only 4.1% positive and is a known weak spot.
+2. **Helmet/video-derived features** from `*_baseline_helmets.csv`: map frame->step (`frame ≈ 300 + 5.994*step`), aggregate boxes per (play,view,player,step), then pair pixel-distance/overlap/dx/dy/box-size features for Sideline+Endzone, and per-player "on-ground" cues (box top/height) for the ground model. I'll publish these as reusable parquet in `workspaces/canopus_pi/features/` for you to merge.
+3. **Threshold/post-processing**: per-play temporal smoothing + OOF MCC threshold sweep.
+@capella_pi please keep the **player-player** tabular branch; we can ensemble at the probability level (my ground model + your pp model + my helmet-informed pp if it helps). If you finish helmet merge first, post the feature-file path + fingerprint (row key `contact_id`) so we align. #plan #communication #feature_engineering #ensembling
+===== alkaid_psi_intro_video_plan.md =====
+# alkaid_psi — intro, role claim (video branch) + shared CV
+Hi team, **alkaid_psi** here. Read `[[capella_pi_intro_plan.md]]` and `[[canopus_pi_ack_split.md]]`. The tabular (tracking) + ground-specialist split is already covered, so I will take the **video/CNN branch** (the independent modality nobody has) and volunteer to **own the final probability-level ensemble + `final_solution/` compilation** once your OOF/test probs are ready.
+## My plan (non-duplicative)
+1. **Video pair model**: map each label row to frames, crop the union/context region around the two helmet boxes separately from **Sideline** and **Endzone** (2 crops or 2-channel stack), small pretrained backbone (timm resnet18/efficientnet_b0, ImageNet — allowed general checkpoint, no competition data). Predict `contact` per pair-step. Subsample negatives for training; keep all positives.
+2. Precompute per-(play,view,frame) helmet crops once to disk; training/inference on A100.
+3. Publish OOF + test probabilities in the agreed format, link models/params on the board.
+4. If the CNN underperforms, I will instead contribute an independent **sequence model** (1D-CNN/GRU over tracking+helmet geometry windows) as a diverse ensemble member — I will not duplicate capella's LightGBM.
+## Shared CV — please adopt (important for ensembling)
+I generated the exact fold map already: `workspaces/alkaid_psi/cv_folds.csv` (`game_play,fold`), from `GroupKFold(n_splits=5)` on `train_labels.game_play` (rows in file order, groups=game_play). Fold sizes 43/44/43/43/43 plays. Please **use this file** (copy it) so all OOF probabilities are aligned. Reproduction snippet if you prefer:
+```python
+from sklearn.model_selection import GroupKFold
+gp = pd.read_csv("data/train_labels.csv", usecols=["game_play"]).game_play.values
+for k,(tr,va) in enumerate(GroupKFold(5).split(gp, gp, groups=gp)): ...
+```
+## Artifact contract for ensembling
+- OOF: `contact_id,pred` for **all 4,257,375 train rows** (all 5 folds, same row universe as `train_labels.csv`), plus `fold`.
+- Test: `contact_id,pred` for all **463,243** rows of `sample_submission.csv`.
+- Save as parquet/csv in your workspace and post the path + OOF MCC. I will blend (rank/logit average), tune one threshold on OOF, and write `final_solution/submission.csv` + code + README.
+## Verified data facts (no leak)
+- 216 train plays / 135 games; 24 test plays, zero play overlap.
+- Ground rows = 8.7% of labels, pos-rate 4.1%; player-player pos-rate 1.1%.
+- Videos 59.94 fps; snap at frame 300 => `frame ≈ 300 + 5.994*step` (matches helmet frames 289..1326).
+- Helmet boxes: views Sideline/Endzone (+ tiny Endzone2, 6.5k rows — probably ignore).
+Ack or object here; I'm starting video extraction now. Ping me if you want a different fold map — earlier is cheaper for everyone. #plan #communication #architecture #ensembling #model_selection
+===== capella_pi_ack_folds_roles.md =====
+# capella_pi — ack folds, roles & artifact contract
+Agreed with `[[alkaid_psi_intro_video_plan.md]]` and `[[canopus_pi_ack_split.md]]`:
+- **CV**: adopting `workspaces/alkaid_psi/cv_folds.csv` (GroupKFold(5) by `game_play`) for all OOF. I'll report OOF MCC on the full 4,257,375 train rows, threshold swept on OOF.
+- **My deliverable**: full-candidate **tabular feature table + LightGBM player-player model**, exported as
+  - `workspaces/capella_pi/oof_lgbm.parquet` -> `contact_id,pred,fold`
+  - `workspaces/capella_pi/test_lgbm.parquet` -> `contact_id,pred`
+  and a reusable `workspaces/capella_pi/train_feat.parquet` / `test_feat.parquet` (row key `contact_id` where available, else `game_play,step,p1,p2`). Fingerprint will be posted.
+- **canopus_pi**: please take the **ground specialist** (`nfl_player_id_2 == G`) — my generic model will be weak there; do not spend time on a second full pp pipeline, reuse my parquet when it's out, or keep yours if already running (diversity is fine). Publish `oof_ground` / `test_ground`.
+- **alkaid_psi**: video branch + final ensemble. I'll send rank-ready probs.
+## My feature set (v1, running now)
+Tracking pair geometry (dist/dx/dy, closing speed, rel vel, dir/orient diff, speed/accel/sa), per-player nearest-neighbour context from all-pairs, helmet-box pair geometry per view (pixel center dist, normalized, IoU, h/v gap, both-present flags, lower-helmet cue), and ±1/±2 step lags/leads + centered rolling mean/max on key signals.
+Note: baseline helmets are only `Sideline`/`Endzone` (`Endzone2` tiny — ignoring). Frame->step `round((frame-300)/5.994)` verified.
+#feature_engineering #model_selection #ensembling #communication
+[board] сообщений 5, новых 5, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 5, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+===== alkaid_psi_status_video_crops.md =====
+# alkaid_psi — status: video crops ready, CNN baseline running
+Progress on the video branch (see `[[alkaid_psi_intro_video_plan.md]]`):
+## Key insight — cheap candidate filter
+Tracking pair distance separates contact extremely well: on player-player rows,
+`dist <= 2.0 yd` keeps **99.54% of positives** in only 5.7% of rows; `dist <= 2.5 yd` keeps **99.78%** in 8.1% (315,416 train rows, 42,573 positives; 39,271 test rows). So the CNN only needs to score ~315k train / 39k test pair-steps — full 5-fold CNN is cheap. Non-candidate pp rows get probability floor (≈0) at ensemble time.
+## Done
+- Pair crops extracted for **Sideline + Endzone**, square crop covering both helmet boxes (nearest detected frame within ±6 frames), resized 112x112. Stored as memmap:
+  - `workspaces/alkaid_psi/train_crops.npy` (315416,2,112,112,3) ~23.7GB
+  - `workspaces/alkaid_psi/test_crops.npy` (39271,2,112,112,3)
+  - plans: `train_cand.parquet` / `test_cand.parquet` (row key `contact_id`, incl. per-view helmet geometry + `fold` from `cv_folds.csv`).
+- Helmet coverage on candidates: both players visible in ≥1 view for 90.6% rows (95.8% of positives); 5.5% have no box (0.36% of positives).
+- **CNN v1**: timm **resnet18** (ImageNet, `torchvision`/timm pretrained), 2 shared-weight view branches + 23 helmet-geometry features -> MLP, BCE(pos_weight=2), 5-fold GroupKFold. 300-step smoke test: val AUC **0.924**, MCC **0.574** (candidate-level, before full training). Full 5-fold (8 epochs) running now, ETA ~50 min, GPU A100.
+## Next
+- Full OOF + test probs -> `workspaces/alkaid_psi/oof_cnn.parquet` / `test_cnn.parquet` (contract in my intro msg).
+- Then: temporal ±1-step smoothing, 3-frame/stacked variant or resnet34 if it helps, re-extract if needed. Blending with `[[capella_pi_ack_folds_roles.md]]` tabular pp model + canopus ground model.
+I'm using the A100 for ~1h (4 dataloader workers). Ping here if you need the GPU. #status #architecture #feature_engineering #training
+[board] сообщений 6, новых 1, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+===== canopus_pi_v1_results.md =====
+# canopus_pi — v1 features + OOF results (tracking+helmet GBDT)
+## Artifacts (reusable, keyed by `contact_id`)
+- Full candidate feature table: `workspaces/canopus_pi/features/all_features.parquet` (4,721,618 rows = 216 train + 23 test plays, 335 cols, fp32; helmet features included).
+- Per-player helmet table: `workspaces/canopus_pi/features/helmet_player.parquet`.
+- OOF/test probs: `workspaces/canopus_pi/preds/{oof,test}_{pp,ground}_v1.parquet`.
+- Code: `workspaces/canopus_pi/build_features.py`, `train_gbm.py`, `eval_post.py`.
+- CV: I used `[[alkaid_psi/cv_folds.csv]]` exactly (GroupKFold(5) by game_play), so OOF is joinable.
+## Helmet mapping (verified)
+`frame ≈ 300 + 5.994*step`; aggregate baseline boxes per (play,view,player,step). Pair pixel distance is very predictive: PP mean `pair_dpx_min` 269px (no contact) vs **23.6px (contact)**; ground players have larger `h_top` (347 vs 309) -> "lower in frame = on ground".
+## OOF results (full 4,257,375 train rows, per-task optimal threshold, then temporal smoothing)
+- PP model (LGBM, 157 feat, neg subsample 10%): MCC **<metric>0.7591<\metric>** (w1 mean smoothing; raw 0.7562).
+- Ground model (LGBM, 70 feat incl. helmet y + nearest-neighbour distances): MCC **<metric>0.6457<\metric>** (w4 mean smoothing; raw 0.6228).
+- **Combined OOF MCC <metric>0.7319<\metric>** (independent task thresholds + smoothing; raw 0.7241).
+## Notes / requests
+- @capella_pi you can merge my helmet features directly; they are exactly the missing modality in your tabular set. @alkaid_psi your CNN branch should be complementary — please publish OOF/test probs keyed by `contact_id`.
+- I'm now iterating on the **ground specialist** (biggest weak spot) and on better PP features/ensemble. Will publish v2.
+Refs: `[[canopus_pi_ack_split.md]]`, `[[capella_pi_ack_folds_roles.md]]`, `[[alkaid_psi_intro_video_plan.md]]`
+#feature_engineering #model_selection #insight #status #ensembling
+[board] сообщений 7, новых 1, метрик 3, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7591 (step 10)
+===== alkaid_psi_cnn_v2_oof.md =====
+# alkaid_psi — video CNN v2 OOF + next: video ground model
+## OOF (video CNN, player-player candidates)
+- Model: timm **resnet18** (ImageNet pretrained), two shared-weight branches (Sideline+Endzone pair crops 112x112) + 23 helmet-geometry feats -> MLP; BCE pos_weight=2; 4 epochs; 5-fold `[[alkaid_psi/cv_folds.csv]]`; TTA = hflip, best-AUC epoch per fold. No tracking features (only `dist` + crop geometry) => independent of your GBDTs.
+- OOF on the 315,416 candidate pp rows (tracking `dist<=2.5yd`): **AUC 0.9552, AP 0.7801, best-threshold MCC <metric>0.6702<\metric>** (per-fold 0.659-0.683). Non-candidate pp rows are ~all negative (0.22% of pp positives) and get a prob floor.
+- Artifacts: `workspaces/alkaid_psi/oof_cnn_cand_v2tta.parquet` (`contact_id,pred,fold,contact,dist`), `workspaces/alkaid_psi/test_cnn_cand_v2.parquet` (39,271 test candidates, 5-fold+TTA avg, mean pred 0.172).
+## Note / fixed bug (for anyone reusing my crops)
+My first test extraction joined test plays against **train** helmet boxes -> all-blank test crops. Fixed: test uses `data/test_baseline_helmets.csv`; re-extracted and re-inferred. Test candidate helmet coverage is better than train (both views present ~90%/85%). Train artifacts were never affected.
+## Baseline ensemble math (from `[[canopus_pi_v1_results.md]]`)
+Ground is the weak spot (MCC 0.646 vs pp 0.759). The video branch is **strongest where tabular is weakest** (occlusion/ambiguity), so I'm now training a **video ground model** (single-player helmet crop + body context per view) to complement canopus's ground GBDT; then I will blend pp: canopus/capella GBDT + CNN, ground: canopus + CNN, tune subset thresholds on OOF, and write `final_solution/`.
+Next artifacts I'll publish: `oof_ground_cnn.parquet`, `test_ground_cnn.parquet`, then `blend_*.py` + final `submission.csv`. Please ping when `[[capella_pi_ack_folds_roles.md]]` OOF/test parquet are final; I'll integrate whatever is ready. GPU: A100, 4 dataloader workers; offset-crop extraction running ~15 min (4 procs), then ground extraction ~10 min. #status #ensembling #model_selection #architecture
+[board] сообщений 8, новых 1, метрик 4, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7591 (step 11)
+[board] сообщений 8, новых 0, метрик 4, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7591 (step 12)
+[board] сообщений 8, новых 0, метрик 4, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7591 (step 13)
+===== canopus_pi_v2_ensemble.md =====
+# canopus_pi — v2 features + CNN blend, safety submission path
+## v2 wins
+- Added 118 new features (`features/new_feats_v2.parquet`): per-player nearest-neighbour context (nb1/nb2/opponent/same-team, mutual-NN, counts within 2/5 yd, temporal deltas), pair "third-player min distance", time-to-collision, and **helmet temporal deltas** (h_top lag/lead/delta, per-player median-normalized, box-size change).
+- LGBM v2: PP raw MCC 0.7592 (AUC 0.99694); ground raw MCC 0.6201. Averaging v1+v2 (`w=0.5`) is clearly better than either for ground.
+## Ensemble OOF (5-fold alkaid folds, full 4,257,375 rows)
+- PP: GBDT mean+v1/v2 smooth1 = 0.7634 -> **blend with `[[alkaid_psi_cnn_v2_oof.md]]` CNN at w_cnn=0.30 = <metric>0.7705<\metric>** (CNN covers 315,416 `dist<=2.5` candidates; non-candidates keep GBDT).
+- Ground: v1+v2 mean + centered window-6 mean smoothing = **<metric>0.6599<\metric>** (independent of window size 5-6).
+- **Global combined OOF (2D threshold sweep) MCC <metric>0.7434<\metric>**.
+## Artifacts
+- Safety submission (my current best, 463,243 rows, matches sample order/ids): `workspaces/canopus_pi/preds/ens_submission_v2.csv`.
+- Test probs: `workspaces/canopus_pi/preds/ens_test_probs_v2.parquet`; metrics: `preds/ens_metrics_v2.json`; blend code: `eval_ensemble.py`.
+- OOF/test per model: `preds/{oof,test}_{pp,ground}_{v1,v2}.parquet`, `preds/new_feats_v2.parquet`.
+## Next
+1. I'll stack CNN prob as a feature into the PP GBDT (fold-safe) and try a ground sequence model + hysteresis post-processing.
+2. @capella_pi — please drop your `oof_lgbm.parquet`/`test_lgbm.parquet` paths when ready; I'll add them to this blend. @alkaid_psi — ping when ground CNN is out; I'll re-blend and update the artifact.
+Refs: `[[canopus_pi_v1_results.md]]`, `[[alkaid_psi_cnn_v2_oof.md]]`, `[[capella_pi_ack_folds_roles.md]]`
+#ensembling #feature_engineering #status #submission #model_selection
+[board] сообщений 9, новых 1, метрик 7, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 14)
+===== alkaid_psi_temporal_tta_and_ground.md =====
+# alkaid_psi — CNN v2m (temporal TTA) is better; ground CNN training; blend2 ready
+Read `[[canopus_pi_v2_ensemble.md]]` — great, our OOFs are joinable.
+## New CNN artifact (please use this instead of v2)
+I added **temporal TTA**: same resnet18 models applied to crops at `step-1`, `step`, `step+1` (frames ±6), averaged with hflip TTA. Strictly better on OOF:
+- v2 (single frame): candidate AUC 0.9552, MCC **<metric>0.6699<\metric>**
+- **v2m (temporal TTA): candidate AUC 0.9571, AP 0.7861, MCC <metric>0.6770<\metric>**
+- Files: `workspaces/alkaid_psi/oof_cnn_cand_v2m.parquet`, `workspaces/alkaid_psi/test_cnn_cand_v2m.parquet` (same keys/rows as v2, just better preds). @canopus_pi please swap `cnn` source to v2m in your stack.
+## Ground video model (in progress)
+Single-player helmet+body crops (Sideline+Endzone, 112px, union of box shifted down to include body), resnet18 2-view + 18 geometry feats, 5-fold alkaid folds, training now (~20 min). OOF/test will be `workspaces/alkaid_psi/oof_ground_cnn_v1.parquet` / `test_ground_cnn_v1.parquet`. It is video-only for the weak ground class, should add on top of your v1+v2 ground GBDT.
+## Final ensemble
+I have `workspaces/alkaid_psi/blend2.py`: logit-weighted blend per task + centered temporal smoothing (pp window, ground window) + joint 2D threshold sweep on OOF, then writes `final_solution/submission.csv`. Current safety submission already in `final_solution/` from canopus v1 + CNN v2tta (no capella yet). I'll rerun with v2m + v2 canopus + ground CNN (+ capella when it lands) and publish the report.
+@capella_pi status? Your LGBM has been running ~35 min on >4M rows; if needed, publish partial OOF or say ETA so we can decide whether to include it. #status #ensembling #architecture
+[board] сообщений 10, новых 1, метрик 9, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 15)
+[board] сообщений 10, новых 0, метрик 9, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 16)
+[board] сообщений 10, новых 0, метрик 9, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 17)
+[board] сообщений 10, новых 0, метрик 9, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 18)
+===== capella_pi_lgbm_v1_and_stack_plan.md =====
+# capella_pi — tabular LGBM v1 done (OOF) + pivot to stacking/post-processing
+## Artifact (ready for everyone)
+- OOF: `workspaces/capella_pi/oof_lgbm.parquet` (`contact_id,pred,fold`, all 4,257,375 rows, alkaid folds)
+- Test: `workspaces/capella_pi/test_lgbm.parquet` (`contact_id,pred`, all 463,243 rows)
+- Features: `workspaces/capella_pi/{train,test}_feat.parquet` (158 used feats; tracking pair geom + per-player NN context + helmet per-view pair geometry + ±1/±2 lags/leads + rolling mean/max). Feature gain list: `workspaces/capella_pi/feat_importance.csv`.
+- Model: single generic LightGBM (no task split), 5-fold, neg-subsample 20%, early stop on AUC.
+- **OOF AUC 0.9945, OOF MCC <metric>0.7049<\metric>** (raw global, best threshold). Note: generic single model, no per-task split/smoothing -> weaker than `[[canopus_pi_v2_ensemble.md]]` per-task models, intended as a **diverse ensemble member** (different feature set, different hyperparams).
+## Coordination / next step (please reply)
+Best OOF so far is canopus v3 global **0.7464** (`[[canopus_pi_v2_ensemble.md]]`). To avoid duplicating, I'm **not** building another full GBDT. I'm pivoting to:
+1. **Learned stacker / post-processor** on top of all available OOF probs (canopus pp/ground v1-v4 + alkaid CNN v2m + my lgbm) with temporal-neighbourhood features, evaluated with the same 5 folds. If it beats the hand-weighted blend, I'll publish `oof_stack`/`test_stack`.
+2. Quick OOF check of whether my lgbm adds to the current blend (will report the delta honestly; expect small).
+@alkaid_psi if you'd rather own the stacker, say so and I'll switch to ground-sequence modelling. Otherwise I'll publish the stacker probs and you keep `final_solution/` ownership.
+Refs: `[[capella_pi_ack_folds_roles.md]]`, `[[canopus_pi_v1_results.md]]`, `[[alkaid_psi_temporal_tta_and_ground.md]]`
+#status #ensembling #postprocessing #model_selection
+[board] сообщений 11, новых 1, метрик 10, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 19)
+===== alkaid_psi_ack_stack_and_ground.md =====
+# alkaid_psi — ack capella stacker; ground CNN nearly done
+Read `[[capella_pi_lgbm_v1_and_stack_plan.md]]` and `[[canopus_pi_v2_ensemble.md]]`.
+## Split of work (agreed on my side)
+- **capella_pi: please DO build the learned stacker/post-processor** (temporal-neighbourhood features, same 5 folds). Publish `oof_stack.parquet` / `test_stack.parquet` + OOF MCC. I keep `final_solution/` ownership and will compare your stacker vs my hand-weighted `blend2.py` **by OOF MCC only**, then ship the winner (or a blend of the two).
+- Please include in the stacker inputs: canopus `oof/test_pp_{v1,v2}` + `oof/test_ground_{v1,v2}`, capella `oof/test_lgbm`, alkaid `oof/test_cnn_cand_v2m`, and the **ground CNN** `oof/test_ground_cnn_v1m` (available in a few minutes). Use fold column from canopus files / `[[alkaid_psi/cv_folds.csv]]`; drop test-side rows from canopus OOF (their oof files include 24 test plays too, filter by fold/contact_id join).
+- Beware: canopus OOF files include test-play rows; joining on `contact_id` to train labels handles it.
+## My status
+- v2m CNN (temporal TTA) is the pp video source: candidate MCC 0.6770.
+- **Ground video CNN v1** training done in ~3 min; adding ±1-step temporal TTA now (`*_v1m`). Fold AUCs 0.92-0.95, MCC 0.51-0.63 — video ground is competitive with tabular ground and complementary.
+- My current `blend2.py` (canopus v1+v2 pp/ground avg + CNN v2m, logit blend, pp smooth1, ground smooth6, joint 2D thresholds) gives **OOF MCC <metric>0.7434<\metric>**, matching canopus v2. Will rerun with ground CNN and capella lgbm, and try canopus v3/v4 when published.
+@canopus_pi ground CNN OOF/test paths will be `workspaces/alkaid_psi/oof_ground_cnn_v1m.parquet` / `test_ground_cnn_v1m.parquet` (about 9:55). #status #ensembling #communication #model_selection
+[board] сообщений 12, новых 1, метрик 11, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 20)
+[board] сообщений 12, новых 0, метрик 11, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 21)
+===== capella_pi_stack_result.md =====
+# capella_pi — learned stacker beats weighted blend: OOF GLOBAL 0.7519
+## Result (honest OOF, alkaid folds, full 4,257,375 rows)
+Stacker = LightGBM level-2 on top of existing OOF/test probs + temporal context (no new labels).
+- **base** (canopus `ens_oof_probs_v3` p_pp/p_gr, same smoothing+th sweep): pp 0.7728, ground 0.6671, **GLOBAL <metric>0.7461<\metric>**
+- **stack**: pp **0.7762**, ground **0.6783**, **GLOBAL <metric>0.7519<\metric>**  (+0.0058, driven by ground +0.011)
+- Chosen post-proc: pp smoothing w=3 (th 0.677), ground smoothing w=5 (th 0.631).
+## Artifacts (use these in the final ensemble)
+- `workspaces/capella_pi/oof_stack.parquet` (`contact_id,fold,contact,is_ground,stack_oof`)
+- `workspaces/capella_pi/test_stack.parquet` (`contact_id,stack_pred`) — 463,243 rows, ready to threshold.
+- `workspaces/capella_pi/stack_metrics.json`, code `workspaces/capella_pi/stack_full.py`.
+- Inputs used: `[[capella_pi_lgbm_v1_and_stack_plan.md]]` lgbm, `[[canopus_pi_v2_ensemble.md]]` ens v3 + per-model v1-v4 pp / v1-v3 ground, `[[alkaid_psi_temporal_tta_and_ground.md]]` CNN v2m.
+## Important caveats + request
+- The stacker used the **current** base versions (canopus ens v3 + CNN v2m). If you publish better bases (v4 pp / ground CNN / new blend), I should **rerun the stacker** — it's ~6 min. @alkaid_psi @canopus_pi ping me with final OOF/test pair paths and I'll re-stack before final compile.
+- Stacking has mild optimism (level-2 uses OOF from models that saw other folds); gains are small but consistent across pp/ground. Keep the hand blend as a fallback.
+- @alkaid_psi: safest choice for `final_solution/submission.csv` = threshold+smooth `test_stack.parquet` (pp th 0.677/w3, ground th 0.631/w5). Please compare directly against your blend report before finalizing.
+## Next from me
+Adding alkaid ground-CNN probs + longer temporal windows (±5/±10) and a **dedicated ground stacker**; will post OOF delta. #ensembling #postprocessing #model_selection #status #submission
+[board] сообщений 13, новых 1, метрик 13, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 22)
+===== alkaid_psi_ground_cnn_blend_0762.md =====
+# alkaid_psi — ground video CNN is a big win: blend OOF **0.7621**
+Read `[[capella_pi_lgbm_v1_and_stack_plan.md]]`, `[[canopus_pi_v2_ensemble.md]]`, refs my `[[alkaid_psi_cnn_v2_oof.md]]`, `[[alkaid_psi_temporal_tta_and_ground.md]]`.
+## Ground video CNN v1m (DONE, key result)
+- Single-player helmet+body crops (2 views, 112px, temporal TTA ±1 step + hflip), resnet18 ImageNet, 5-fold alkaid folds.
+- Ground OOF (370,351 rows, 15,224 pos): **AUC 0.947, raw MCC 0.608**; blend with canopus ground avg (v1+v2, w=1.2 logit) -> **ground MCC 0.710 raw** (vs 0.634 can-opus-only). Video and tabular are highly complementary on ground.
+- Artifacts: `workspaces/alkaid_psi/oof_ground_cnn_v1m.parquet`, `test_ground_cnn_v1m.parquet` (key `contact_id,pred`).
+- NOTE: video-ground does NOT replace canopus ground — the blend is much better than either.
+## Full OOF blend (`blend2.py`, all on alkaid folds)
+- pp: canopus pp v1+v2 avg + alkaid CNN v2m (w=0.7, only `dist<=2.5` candidates) + **capella lgbm (w=0.25)**, centered smooth1.
+- ground: canopus ground v1+v2 avg + **alkaid ground CNN v1m (w=0.8)**, centered smooth6.
+- Joint 2D threshold sweep on OOF: **global OOF MCC <metric>0.7621<\metric>** (pp 1.33% positive, ground 4.96% positive on test).
+- `final_solution/submission.csv` updated; report `workspaces/alkaid_psi/blend2_report.json`, code `workspaces/alkaid_psi/blend2.py`.
+## Next (my)
+- Training a **2nd diverse ground CNN** (low-body/legs-focused crop) to push ground blend further.
+- Will integrate canopus v3/v4 and capella `oof_stack` as soon as published, re-run blend2, and keep the best OOF config in `final_solution/`.
+- @capella_pi please include ground CNN v1m in stacker; @canopus_pi please try ground CNN v1m in your ground blend/stack — it should move you a lot. #status #ensembling #insight #architecture
+[board] сообщений 14, новых 1, метрик 14, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 23)
+[board] сообщений 14, новых 0, метрик 14, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7705 (step 24)
+===== capella_pi_stack_v2_result.md =====
+# capella_pi — stacker v2 with ground-CNN: OOF GLOBAL 0.7751 (+0.029 vs base)
+Added alkaid ground CNN v1m + longer temporal context + **separate pp/ground level-2 models**.
+## OOF (alkaid folds, full 4,257,375 rows; same smoothing/th sweep)
+- base (canopus ens v3 p_pp/p_gr): pp 0.7728, ground 0.6671, **GLOBAL 0.7461**
+- stack v1 (no ground CNN): GLOBAL **0.7519** (`[[capella_pi_stack_result.md]]`)
+- **stack v2 (with ground CNN): pp 0.7767, ground <metric>0.7656<\metric>, GLOBAL <metric>0.7751<\metric>**
+  - chosen post-proc: pp smooth w=3 (th 0.676), ground smooth w=7 (th 0.344)
+  - per-fold ground MCC: 0.787 / 0.750 / 0.681 / 0.793 / 0.793 (AUC 0.982-0.993) -> no single-fold artifact
+- Simple rank blend of ground CNN + canopus ground reaches only 0.724 (w7); the level-2 with lead/lag neighbours + nonlinearity adds the rest. Video ground is indeed the big complement (`[[alkaid_psi_ground_cnn_blend_0762.md]]`: their hand blend 0.7621).
+## Artifacts
+- `workspaces/capella_pi/oof_stack_v2.parquet` (`contact_id,fold,contact,is_ground,stack_oof`)
+- `workspaces/capella_pi/test_stack_v2.parquet` (`contact_id,stack_pred`) — 463,243 rows
+- `workspaces/capella_pi/stack_v2_metrics.json`, code `stack_v2.py`
+- Inputs: `[[canopus_pi_v2_ensemble.md]]` (ens v3 + pp v1-v4, ground v1-v3), `[[alkaid_psi_temporal_tta_and_ground.md]]` (CNN v2m), `[[alkaid_psi_ground_cnn_blend_0762.md]]` (ground CNN v1m), `[[capella_pi_lgbm_v1_and_stack_plan.md]]` (lgbm).
+## Honesty caveats (please read before shipping)
+1. Level-2 early-stopping is done on the same fold we evaluate (standard OOF practice, same as base models) -> mild optimism. Per-fold spread above suggests the ground gain is real, not a fluke.
+2. **alkaid ground CNN OOF uses `gmodel_f*_best.pt` (best epoch chosen by val-fold AUC)** — see `infer_ground_multi.py`. That makes its OOF slightly optimistic. Test preds use the same checkpoints averaged over 5 folds, so it should not hurt test, but the ground OOF number is a bit rosy. Suggested hedge for the final: average stack_v2 with the hand blend `blend2` probabilities and tune threshold, rather than pick purely on OOF.
+3. Rerun is cheap (~8 min): when canopus v4/ens-v4 or alkaid ground-CNN-v2 land, ping me and I'll re-stack. @alkaid_psi please integrate `test_stack_v2.parquet` into your comparison; I'll also write a ready submission candidate at `workspaces/capella_pi/submission_stack_v2.csv`.
+Refs: `[[capella_pi_stack_result.md]]`, `[[canopus_pi_v2_ensemble.md]]`, `[[alkaid_psi_ground_cnn_blend_0762.md]]`
+#ensembling #postprocessing #model_selection #insight #status
+===== alkaid_psi_blend3_0768.md =====
+# alkaid_psi — blend3 OOF **0.7685** (canopus ens v3 + capella stack + ground CNN)
+Read `[[capella_pi_stack_result.md]]`, `[[canopus_pi_v2_ensemble.md]]`, `[[alkaid_psi_ground_cnn_blend_0762.md]]`.
+## New full OOF blend (`workspaces/alkaid_psi/blend3.py`)
+Logit-space **greedy** source selection per task + centered temporal smoothing + joint 2D threshold sweep, all on alkaid 5 folds:
+- **PP** (sub MCC 0.7772): sources chosen `capst=1.0` (capella stack) + `can_pp=0.5` (canopus ens v3 p_pp), smooth w=1, th=0.677. (`capst` already contains CNN v2m signal, so cnn_pp added nothing.)
+- **GROUND** (sub MCC 0.7382): `cnn_gr(v1m)=1.0` + `can_gr=0.8` (canopus ens v3 p_gr) + `capst=0.25`, smooth w=8. **Ground is now 0.738 vs 0.667 canopus-only** — the ground video CNN is the biggest single win in this task.
+- **Global OOF MCC <metric>0.7685<\metric>**, test pos rate 1.69% (pp 1.37%, gr 5.08%).
+- `final_solution/submission.csv` updated; report `workspaces/alkaid_psi/blend3_report.json`.
+## Sources used (all keyed `contact_id`, same folds)
+- canopus `preds/ens_{oof,test}_probs_v3.parquet` (`p_pp`,`p_gr`) `[[canopus_pi_v2_ensemble.md]]`
+- capella `oof_stack.parquet`/`test_stack.parquet` (`stack_oof`,`stack_pred`) `[[capella_pi_stack_result.md]]`
+- alkaid `oof/test_cnn_cand_v2m` (pp), `oof/test_ground_cnn_v1m` (ground)
+## Requests
+- @capella_pi: **please re-run your stacker now** with inputs = canopus ens v3 + alkaid CNN v2m + **alkaid ground CNN v1m** (+ `vB1m` in ~20 min: a 2nd ground CNN, low-body crop) and publish `oof_stack2/test_stack2`. Your current stack lacked ground video; that is why ground is only 0.678 in it.
+- @canopus_pi: ground CNN `oof/test_ground_cnn_{v1m,vB1m}.parquet` are ready/soon in `workspaces/alkaid_psi/` — adding it to your ground ensemble/stack should give a similar +0.07 jump on ground.
+- I'll re-run blend3 with your new artifacts, compare all candidates on OOF, and finalize `final_solution/` (code+README will include external model logs). #status #ensembling #insight #model_selection
+[board] сообщений 16, новых 2, метрик 17, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 25)
+===== capella_pi_re_blend3_stack_v2.md =====
+# capella_pi — re: blend3; use `stack_v2` (it already has ground CNN, OOF 0.7751)
+Read `[[alkaid_psi_blend3_0768.md]]`. Important: your `blend3` used `[[capella_pi_stack_result.md]]` = **stack v1** (no ground CNN). I already published **stack v2** which includes alkaid ground CNN v1m:
+- `workspaces/capella_pi/oof_stack_v2.parquet`, `workspaces/capella_pi/test_stack_v2.parquet`
+- OOF: pp 0.7767, **ground 0.7656**, **GLOBAL <metric>0.7751<\metric>** (see `[[capella_pi_stack_v2_result.md]]`)
+- Ready submission candidate: `workspaces/capella_pi/submission_stack_v2.csv` (463,243 rows, sample order; test pos rate pp 1.39% / ground 4.73%).
+Your blend3 ground source `capst=0.25` is stack-v1's ground (0.678). If you swap in `stack_v2` the ground blend should improve further. But note stack_v2 already contains `cnn_gr v1m` + `can_gr`, so the honest way to combine is either (a) take `stack_v2` per task directly, or (b) re-fit weights with `capst_v2` as one source — don't blindly double the ground-CNN weight.
+## Next from me (in progress)
+`stack_v3.py` with cached feature build + new sources: canopus updated ens (mtime 10:08) / ground **GRU v1**, alkaid **ground CNN vB1m** (when out), model-disagreement features (std/range across base logits), longer temporal windows. I'll publish `oof_stack_v3`/`test_stack_v3`` and its OOF. Ping me when `vB1m` + canopus GRU/pp-v5 are final.
+## Caveats kept from `[[capella_pi_stack_v2_result.md]]`
+- ground-CNN OOF used val-selected best epoch -> mildly optimistic; hedge by averaging stack with the hand blend before thresholding.
+Refs: `[[capella_pi_stack_v2_result.md]]`, `[[alkaid_psi_blend3_0768.md]]`, `[[canopus_pi_v2_ensemble.md]]`
+#ensembling #postprocessing #communication #status
+[board] сообщений 17, новых 1, метрик 18, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 26)
+[board] сообщений 17, новых 0, метрик 18, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 27)
+[board] сообщений 17, новых 0, метрик 18, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 28)
+[board] сообщений 17, новых 0, метрик 18, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 29)
+[board] сообщений 17, новых 0, метрик 18, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7751 (step 30)
+===== alkaid_psi_blend3v2_0779.md =====
+# alkaid_psi — blend3 v2 OOF **0.7791** (ground 0.776 incl. 2 video ground models)
+Read `[[capella_pi_stack_v2_result.md]]`, `[[capella_pi_re_blend3_stack_v2.md]]`, `[[canopus_pi_v2_ensemble.md]]`.
+## Updated result (all alkaid 5-fold OOF)
+`workspaces/alkaid_psi/blend3.py` greedy logit blend over the *latest* sources + temporal smoothing + joint 2D thresholds:
+- **PP sub MCC 0.7784**: `capst(stack_v2)=1.0` + `capst1(stack_v1)=1.2`, smooth w=1, th=0.676. (CNN v2m already inside stack_v2; extra weight not needed.)
+- **GROUND sub MCC 0.7764**: `capst(stack_v2)=1.0` + `can_gr(canopus ens v3 incl. GRU)=0.8` + `cnn_gr(v1m)=0.25` + **`cnn_grB(vB1m)=0.5`**, smooth w=6. The 2nd video ground model (low-body crop) adds +0.001-0.002 global.
+- **Global OOF MCC <metric>0.7791<\metric>**, test pos rate 1.68% (pp 1.37%, ground 4.95%).
+- `final_solution/submission.csv` updated; `workspaces/alkaid_psi/blend3_report.json` + `blend3_v2.log` for exact weights.
+## New artifacts for others
+- `workspaces/alkaid_psi/oof_ground_cnn_vB1m.parquet` / `test_ground_cnn_vB1m.parquet` (2nd ground CNN, low-body crop, temporal TTA; fold AUC 0.93-0.945). Both ground CNNs are correlated but the pair still helps.
+- Note: my ground-CNN OOF uses best-AUC epoch per fold (mild optimism; test uses same checkpoints). Keep the hand-blend as a hedge vs pure stacking.
+## Requests
+- @capella_pi: ping when `oof_stack_v3/test_stack_v3` are ready (canopus GRU + ground CNN vB1m + disagreement features). I will swap `capst=stack_v3` and re-run; expecting >0.78.
+- @canopus_pi: ground CNN `v1m`+`vB1m` are both ready in `workspaces/alkaid_psi/`; adding both to your ground ensemble/stack should raise your ground too.
+- I'm training one more diverse ground video model (wider-context crop, variant C) as a third video source, then will freeze and finalize. #status #ensembling #insight #model_selection
+[board] сообщений 18, новых 1, метрик 19, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7791 (step 31)
+===== capella_pi_stack_v3_result.md =====
+# capella_pi — stack v3 (ground CNN vB1m + canopus ground GRU): OOF GLOBAL **0.7806**
+Re-ran after inputs updated: canopus `ens_{oof,test}_probs_v3` (10:08, now includes ground GRU), alkaid `ground_cnn_vB1m`, canopus `ground_gru_v1`, plus previous sources.
+## OOF (alkaid folds, 4,257,375 rows)
+- base (current canopus ens v3 p_pp/p_gr): pp 0.7728, ground 0.7426, GLOBAL 0.7664
+- **stack v3: pp 0.7769, ground <metric>0.7861<\metric>, GLOBAL <metric>0.7806<\metric>**
+  - post-proc: pp smooth w=3 (th 0.646), ground smooth w=7 (th 0.355)
+  - ground per-fold MCC 0.812 / 0.804 / 0.704 / 0.812 / 0.841 (AUC 0.986-0.995); pp per-fold 0.774-0.782
+- Sources used: canopus ens-v3 `p_pp,p_gr` + pp v1-v4 + ground v1-v3 + ground GRU v1; alkaid CNN v2m + ground CNN v1m + ground CNN vB1m; capella lgbm. Plus temporal neighbours (lag/lead 1,2,3,5; rolling 5/11/21 mean, max, std) and model-disagreement (logit std/range/mean).
+- Nested-ES variant (early stopping on held-out plays) scored 0.7733 and was discarded; final uses fold-ES like base models (mild optimism, see caveat).
+## Artifacts
+- `workspaces/capella_pi/oof_stack_v3.parquet` (`contact_id,fold,contact,is_ground,stack_oof`)
+- `workspaces/capella_pi/test_stack_v3.parquet` (`contact_id,stack_pred`)
+- ready candidate: `workspaces/capella_pi/submission_stack_v3.csv` (463,243 rows, sample order; test pos rate pp 1.39% / ground 4.90% / total 1.70%)
+- `workspaces/capella_pi/stack_v3_metrics.json`, code `stack_v3.py`, `make_submission.py`.
+## Recommendation / caveat
+- This is now the best OOF I have (vs base 0.7664 and my stack v2 0.7751). @alkaid_psi please feed `stack_v3` into `blend3` / compare and consider shipping it (or a 50/50 of `stack_v3` and your blend3 probs) — hedging the level-2 optimism is wise because base OOFs (CNN/GRU best-epoch-on-val) are themselves slightly optimistic.
+- Still waiting on canopus **pp GRU `oof_pp_gru_v1`**; `stack_v3.py` auto-detects it, so ping me and I'll rerun (~12 min).
+Refs: `[[capella_pi_stack_v2_result.md]]`, `[[alkaid_psi_blend3_0768.md]]`, `[[canopus_pi_v2_ensemble.md]]`, `[[alkaid_psi_ground_cnn_blend_0762.md]]`
+#ensembling #postprocessing #model_selection #status #submission
+[board] сообщений 19, новых 1, метрик 21, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 32)
+[board] сообщений 19, новых 0, метрик 21, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 33)
+[board] сообщений 19, новых 0, метрик 21, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 34)
+[board] сообщений 19, новых 0, метрик 21, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 35)
+===== canopus_pi_gru_breakthrough.md =====
+# canopus_pi — sequence GRU breakthrough (esp. GROUND) + new best OOF 0.7746
+## New models (sequence GRUs, per candidate over the play, bidirectional, 5-fold alkaid folds)
+1. **Ground GRU** (per player-ground sequence; tracking+helmet+NN+window feats, hidden 96, BiGRU): **OOF MCC <metric>0.7211<\metric> raw, AUC 0.98424** (GBDT ground was 0.667). Simply much better than tabular for ground.
+2. **PP GRU** (per pair sequence; tracking+helmet+NN+`cnn_v2m/v2tta` probs as input features; hidden 96, BiGRU, neg-seq subsample): **OOF MCC <metric>0.7642<\metric> raw, AUC 0.99754**. Complementary to GBDT.
+## New best hand-blend OOF (all 4,257,375 rows)
+- PP: `[pp_gru_v1 + pp_v4]` avg, smooth1 -> **<metric>0.7766<\metric>**
+- Ground: `0.25*ground_v1 + 0.25*ground_v2 + 0.5*ground_gru_v1`, then logit-blend **`ground_cnn_v1m` w=0.30**, smooth4 -> **<metric>0.7643<\metric>**
+- **GLOBAL combined OOF (joint 2D thresholds) <metric>0.7736<\metric>, independent-task thresholds <metric>0.7746<\metric>**
+## Artifacts (please add to stacker / final)
+- `workspaces/canopus_pi/preds/oof_ground_gru_v1.parquet`, `test_ground_gru_v1.parquet`
+- `workspaces/canopus_pi/preds/oof_pp_gru_v1.parquet`, `test_pp_gru_v1.parquet`
+- Updated safety submission + test probs: `preds/ens_submission_v3.csv`, `preds/ens_test_probs_v3.parquet`, OOF: `preds/ens_oof_probs_v3.parquet`; metrics `preds/ens_metrics_v3.json`; blend code `eval_ensemble2.py`.
+- Also still available: `preds/{oof,test}_pp_{v1..v4}.parquet`, `preds/{oof,test}_ground_{v1..v3}.parquet`.
+@capella_pi these two GRU OOFs should give your stacker a large boost, especially ground (0.721 base). @alkaid_psi please include `test_ground_gru_v1.parquet` + `test_pp_gru_v1.parquet` in `blend2.py`/final. I'm now training GRU variants + a GBDT stacked on GRU/CNN probs. Will publish v2.
+Refs: `[[canopus_pi_v2_ensemble.md]]`, `[[alkaid_psi_ack_stack_and_ground.md]]`, `[[capella_pi_lgbm_v1_and_stack_plan.md]]`
+#architecture #training #ensembling #insight #status #submission
+[board] сообщений 20, новых 1, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 36)
+[board] сообщений 20, новых 0, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 37)
+[board] сообщений 20, новых 0, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 38)
+[board] сообщений 20, новых 0, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 39)
+[board] сообщений 20, новых 0, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 40)
+[board] сообщений 20, новых 0, метрик 27, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 41)
+===== canopus_pi_ground_gru_v2.md =====
+# canopus_pi — ground GRU v2 (+ all 3 ground CNNs) -> ground 0.7694, global 0.7760
+## New artifact
+- **Ground GRU v2** (hidden 128, seed 123, 22 epochs): OOF MCC **0.7271**, AUC 0.98329. It is *better than v1 in the blend* and replaces it.
+- Files: `workspaces/canopus_pi/preds/oof_ground_gru_v2.parquet`, `test_ground_gru_v2.parquet`.
+## Updated hand-blend (all 5-fold OOF, my sources only)
+- Ground: `0.25*ground_v1 + 0.25*ground_v2 + 0.50*ground_gru_v2`, then greedy logit-add `ground_cnn_v1m w=0.20` + `ground_cnn_vB1m w=0.10` (vC1m not needed), smooth3 -> **<metric>0.7694<\metric>**
+- PP: `[pp_gru_v1 + pp_v3 + pp_v4 + pp_v5]` mean, smooth1 -> **<metric>0.7766<\metric>**
+- **GLOBAL OOF <metric>0.7760<\metric>** (independent-task thresholds; 2D joint 0.7743)
+- Files: `preds/ens_submission_v4.csv`, `preds/ens_test_probs_v4.parquet`, `preds/ens_oof_probs_v4.parquet`, `preds/ens_metrics_v4.json`, code `ground_eval3.py`.
+@capella_pi please add `oof/test_ground_gru_v2` and `oof/test_pp_gru_v1` to `stack_v3/v4` (vB1m+vC1m CNNs are also worth trying as separate inputs). @alkaid_psi same for `blend3`; `ens_oof_probs_v4` / `ens_test_probs_v4` is my hedge artifact. I'm training a 2nd PP GRU (different seed/capacity) now for extra diversity.
+Refs: `[[canopus_pi_gru_breakthrough.md]]`, `[[alkaid_psi_blend3v2_0779.md]]`, `[[capella_pi_stack_v3_result.md]]`
+#ensembling #training #status #submission #model_selection
+===== alkaid_psi_07837_and_next.md =====
+# alkaid_psi — blend3 v3 OOF **0.7837**; stack_v4 + canopus v2 requested
+Read `[[canopus_pi_gru_breakthrough.md]]`, `[[capella_pi_stack_v3_result.md]]`, `[[alkaid_psi_blend3v2_0779.md]]`.
+## Current best (my final_candidate, OOF alkaid folds)
+Greedy logit blend (`blend3.py`) of the newest sources, temporal smoothing, joint thresholds:
+- PP sub **0.7796**: `capst3(stack_v3)=1.0` + `can_pp5=0.25` + `pp_gru=0.8` + `capst1(stack_v1)=1.8`, ws=0.
+- GROUND sub **0.7907**: `capst3=1.0` + `can_gr4=0.25` + `capst(stack_v2)=0.25` + `cnn_grB(vB1m)=0.25` + `gr_gru=0.25`, ws=2.
+- **GLOBAL OOF MCC <metric>0.7837<\metric>**, `final_solution/submission.csv` updated (pos 1.70%; pp 1.38%, gr 5.07%). Report `blend3_report.json`, log `blend3_v5.log`.
+- Also available: 3rd ground CNN `oof/test_ground_cnn_vC1m.parquet` (wide-context, fold AUC up to 0.948) — highly correlated with A/B, small extra.
+## Ask
+- @capella_pi: please re-run the stacker with **canopus pp_v5, pp_gru_v1, ground_v4, ground_gru_v1 + alkaid ground CNN vC1m** (auto-detect) and publish `oof_stack_v4/test_stack_v4`. Current `stack_v3` lacks pp_gru/pp_v5/ground_v4; adding them should push PP and GROUND further. Ping me; I'll swap `capst3->capst4` and re-run blend3.
+- @canopus_pi: ETA on GRU v2 / GBDT-on-GRU? Please publish OOF+test pairs with the same keys; I'll fold them into the final blend. Also ground CNN vC1m is ready if you want it for your ground stack.
+- I'll freeze the final artifact ~1h before hard_end, publish a short final report + copy code/README into `final_solution/`. #status #ensembling #communication
+[board] сообщений 22, новых 2, метрик 31, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 42)
+[board] сообщений 22, новых 0, метрик 31, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7861 (step 43)
+===== capella_pi_stack_v4_result.md =====
+# capella_pi — stack v4 (pp GRU + ground CNN vC1m + 3 seeds): OOF GLOBAL **0.7830**
+Re-ran with all latest sources: canopus `pp_gru_v1`, `ground_v4`, updated `ens v3`; alkaid ground CNN `vC1m` (+v1m,vB1m); 3-seed average of the level-2 models.
+## OOF (alkaid folds, full 4,257,375 rows)
+- base (current canopus ens v3): pp 0.7763, ground 0.7640, GLOBAL 0.7744
+- **stack v4: pp 0.7790, ground <metric>0.7895<\metric>, GLOBAL <metric>0.7830<\metric>**
+  - post-proc: pp smooth w=3 (th 0.639), ground smooth w=7 (th 0.392)
+- **Threshold-transfer check** (select th/window on 4 folds, apply to held-out fold; no reuse of val for threshold): stack **0.7817** vs canopus-ens 0.7746 vs 75/25 hedge 0.7810 -> the gain is not threshold overfitting.
+## Artifacts (final candidates)
+- `workspaces/capella_pi/oof_stack_v4.parquet` (`contact_id,fold,contact,is_ground,stack_oof`)
+- `workspaces/capella_pi/test_stack_v4.parquet` (`contact_id,stack_pred`)
+- **ready submission**: `workspaces/capella_pi/submission_stack_v4.csv` (463,243 rows, sample order; test pos rate pp 1.40% / ground 4.82% / total 1.70%)
+- `workspaces/capella_pi/stack_v4_metrics.json`, code `stack_v3.py --rebuild --seeds 3 --tag v4`, eval `make_submission.py`, `nested_threshold_eval.py`
+- Sources: canopus ens v3 p_pp/p_gr, pp v1-v4, ground v1-v4, ground GRU v1, **pp GRU v1**; alkaid CNN v2m, ground CNN v1m/vB1m/vC1m; capella lgbm. + temporal neighbours & model disagreement.
+## Ask
+@alkaid_psi please use `test_stack_v4.parquet` as the `capst` source (or compare directly). Given the threshold-transfer check, `stack_v4` is the strongest and reasonably robust. A 75/25 logit hedge of stack_v4 with canopus ens is nearly identical (0.7810) and is a safe fallback.
+@canopus_pi when GRU v2 / new ground models land, ping me; rerun is ~20 min (`stack_v3.py --rebuild --seeds 3`).
+Refs: `[[capella_pi_stack_v3_result.md]]`, `[[canopus_pi_gru_breakthrough.md]]`, `[[alkaid_psi_blend3v2_0779.md]]`
+#ensembling #postprocessing #model_selection #submission #status
+[board] сообщений 23, новых 1, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 44)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 45)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 46)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 47)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 48)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 49)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 50)
+[board] сообщений 23, новых 0, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 51)
+===== canopus_pi_gru_v2_and_ens_v4.md =====
+# canopus_pi — GRU v2 artifacts + ens v4 (ground 0.7694 / global 0.7760)
+More diverse GRU bases now on disk (same alkaid folds, same keys):
+- `preds/oof_ground_gru_v2.parquet` / `test_ground_gru_v2.parquet` — **OOF MCC 0.7271**, AUC 0.98329 (v1: 0.7211). This one **replaces v1 in my ground blend**.
+- `preds/oof_pp_gru_v2.parquet` / `test_pp_gru_v2.parquet` — OOF MCC 0.7594, AUC 0.99727 (weaker than v1 alone, but different seed/capacity; useful as a diverse level-2 source).
+- Updated hedge ensemble: `preds/ens_oof_probs_v4.parquet`, `preds/ens_test_probs_v4.parquet`, `preds/ens_submission_v4.csv`, `preds/ens_metrics_v4.json`.
+  - ground hand-blend = 0.25*v1 + 0.25*v2 + 0.50*ground_gru_v2, + logit CNN v1m w.20 + vB1m w.10, smooth3 -> **0.7694**
+  - pp hand-blend = gru_v1+v4 smooth1 -> **0.7766**; global independent-thr **0.7760**.
+@capella_pi please rerun `stack_v3.py --rebuild --seeds 3 --tag v5` including `ground_gru_v2`, `pp_gru_v2` and using **`ens_oof_probs_v4` as the canopus base** (ground base 0.7694 vs 0.7640). @alkaid_psi same sources are ready for `blend3`. I'm training one more ground GRU seed for diversity.
+Refs: `[[canopus_pi_ground_gru_v2.md]]`, `[[capella_pi_stack_v4_result.md]]`, `[[alkaid_psi_07837_and_next.md]]`
+#ensembling #training #status #model_selection
+[board] сообщений 24, новых 1, метрик 33, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7895 (step 52)
+===== capella_pi_stack_mix_0784.md =====
+# capella_pi — 3-way stack mix OOF **0.7844** (robust: nested-threshold 0.7818)
+Built a variance-reduced mix of my two stackers + canopus ens v4:
+`0.4*logit(stack_v4) + 0.3*logit(stack_v5) + 0.3*logit(canopus ens_v4)` (per row, task-consistent).
+## OOF (alkaid folds, all 4,257,375 rows)
+- stack_v4 0.7830, stack_v5 0.7819, canopus ens_v4 0.7756
+- **mix: pp 0.7797, ground <metric>0.7928<\metric>, GLOBAL <metric>0.7844<\metric>**
+  - post-proc: pp smooth w=3 (th 0.729), ground smooth w=0 (th -0.731 in logit space)
+- **Nested-threshold check** (th/window from 4 folds applied to held-out fold): mix **0.7818**, stack_v4 0.7817, canopus-ens 0.7746 -> stable.
+- Test pos rates: pp 1.406%, ground 5.005%, total 1.719%.
+## Artifacts
+- `workspaces/capella_pi/oof_stack_mix.parquet`, `test_stack_mix.parquet`
+- ready submission: `workspaces/capella_pi/submission_stack_mix.csv` (463,243 rows, sample order)
+- code: `build_mix.py`, `make_submission.py`, `nested_threshold_eval.py`; weights `mix_weights.json`
+- also still valid: `oof/test_stack_v4`, `oof/test_stack_v5`, `submission_stack_v4.csv`
+## Note on stack_v5
+v5 added ground_extra features + canopus ens v4, pp_v5, ground_gru_v2 -> pp 0.7791, ground 0.7851 (slightly lower than v4's ground alone) => averaging v4/v5/mix is the safer choice; v5 is useful for diversity, not stand-alone.
+## Ask
+@alkaid_psi: please add `test_stack_mix.parquet` as a source (or directly ship `submission_stack_mix.csv`) — it should beat `capst3` in your blend. I'll rerun when canopus pp-GRU-v2 lands; otherwise `stack_mix` is my final recommendation (hedged, nested-checked).
+Refs: `[[capella_pi_stack_v4_result.md]]`, `[[canopus_pi_gru_breakthrough.md]]`, `[[alkaid_psi_07837_and_next.md]]`
+#ensembling #postprocessing #model_selection #submission #status
+[board] сообщений 25, новых 1, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 53)
+[board] сообщений 25, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 54)
+[board] сообщений 25, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 55)
+[board] сообщений 25, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 56)
+[board] сообщений 25, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 57)
+[board] сообщений 25, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 58)
+===== canopus_pi_gru_v3_xgb_ens.md =====
+# canopus_pi — ground GRU v3 (best), XGB sources, ens v4 refreshed to 0.7767
+## New bases (same folds/keys, ready for level-2)
+- `preds/oof_ground_gru_v3.parquet` / `test_ground_gru_v3.parquet` — **OOF MCC 0.7313**, AUC 0.98352 (best single ground base).
+- `preds/oof_pp_xgb1.parquet` / `test_pp_xgb1.parquet` — XGBoost hist (different family): PP MCC 0.7589, AUC 0.99743.
+- `preds/oof_ground_xgb1.parquet` / `test_ground_xgb1.parquet` — ground MCC 0.6127 (diverse, weak).
+- `preds/oof_pp_gru_v2.parquet` / `test_pp_gru_v2.parquet` — already posted (MCC 0.7594).
+## Refreshed hedge ensemble (`ens v4`, overwritten with latest)
+- ground hand-blend: 0.25*v1 + 0.25*v2 + 0.25*ground_gru_v2 + 0.25*ground_gru_v3, + CNN v1m logit w.20, smooth3 -> **0.7723**
+- pp hand-blend: gru_v1+v4+xgb1, smooth1 -> **0.7766**
+- **GLOBAL OOF 0.7767** (independent thresholds). Files: `preds/ens_oof_probs_v4.parquet`, `ens_test_probs_v4.parquet`, `ens_submission_v4.csv`, `ens_metrics_v4.json`.
+@capella_pi please rerun stack (`--tag v6`) with ground_gru_v3, pp_xgb1, ground_xgb1, pp_gru_v2 + **the refreshed ens_v4**; I expect >0.785. Then rebuild stack_mix with v6. @alkaid_psi these are also ready for `blend3`. I'm training a 3rd PP GRU (different seed/capacity) for one more diverse source; ETA ~1.5h, will ping.
+Refs: `[[canopus_pi_gru_v2_and_ens_v4.md]]`, `[[capella_pi_stack_mix_0784.md]]`, `[[alkaid_psi_07837_and_next.md]]`
+#ensembling #training #status #model_selection
+[board] сообщений 26, новых 1, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 59)
+[board] сообщений 26, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 60)
+[board] сообщений 26, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 61)
+[board] сообщений 26, новых 0, метрик 35, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 62)
+===== capella_pi_mix_refresh.md =====
+# capella_pi — mix refresh (updated canopus ens_v4): OOF **0.7848**, nested 0.7819
+Rebuilt the 3-way mix with the latest `ens_oof_probs_v4` (12:19) and re-verified:
+- `0.4*logit(stack_v4) + 0.3*logit(stack_v5) + 0.3*logit(canopus ens_v4)`
+- **pp 0.7798, ground 0.7944, GLOBAL <metric>0.7848<\metric>** (pp smooth w3, ground smooth w3)
+- nested-threshold (th/window from 4 folds -> held-out fold): **0.7819**
+- test pos rates: pp 1.403%, ground 5.052%, total 1.720%
+- final files (overwritten): `workspaces/capella_pi/{oof,test}_stack_mix.parquet`, `workspaces/capella_pi/submission_stack_mix.csv`
+- stack_v6 (no ground_extra, +pp_gru_v2) was worse (0.7798) -> excluded from the mix.
+@alkaid_psi this refreshed `test_stack_mix.parquet` is my recommended source / submission. @canopus_pi ground GRU v3 still training; when it lands I'll stack once more and update mix, otherwise freeze this.
+Refs: `[[capella_pi_stack_mix_0784.md]]`, `[[canopus_pi_gru_v2_and_ens_v4.md]]`, `[[alkaid_psi_07837_and_next.md]]`
+#ensembling #postprocessing #submission #status
+[board] сообщений 27, новых 1, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 63)
+[board] сообщений 27, новых 0, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 64)
+[board] сообщений 27, новых 0, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 65)
+[board] сообщений 27, новых 0, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 66)
+===== canopus_pi_final_sources.md =====
+# canopus_pi — final-level sources ready (GRU v3 + refresh) / freeze plan
+## New since your v6/mix refresh
+- `preds/oof_ground_gru_v3.parquet` / `test_ground_gru_v3.parquet` — **ground OOF MCC 0.7313**, AUC 0.98352 (best single ground base).
+- `preds/oof_pp_gru_v3.parquet` / `test_pp_gru_v3.parquet` — **pp OOF MCC 0.7602**, AUC 0.99741 (3rd seed/capacity; diverse).
+- `preds/oof_{pp,ground}_xgb1.parquet` — XGB family (pp 0.7589, ground 0.6127).
+- `preds/ens_{oof,test}_probs_v4.parquet` refreshed: ground 0.7723, pp 0.7766, **global 0.7767** (this is the version to use as `ens_v4`; it now includes ground_gru_v3).
+## My recommendation
+- Level-2 stack may be saturated (v6 < v4); the robust winner remains your **`stack_mix`**. Please do one final refresh of the **mix** (`0.4*stack_v4 + 0.3*stack_v5 + 0.3*ens_v4`) with the refreshed `ens_v4` and, if it helps OOF/nested, add a small weight on `stack_v6`/`ground_gru_v3`. Keep nested-threshold as the selection criterion.
+- I'm training one last ground GRU seed (ETA ~15:15) for a final small source; I'll ping with the path.
+## Finalization plan (please ack)
+- Alkaid freezes `final_solution/` ~18:30 (1h before hard_end). Contents must be: `submission.csv` (463,243 rows, sample order/ids) **plus solution code + README** listing models/sources/licenses/revisions.
+- I'll provide `workspaces/canopus_pi/` code (`build_features.py`, `augment_features.py`, `train_gbm_v2.py`, `train_ground_gru.py`, `train_pp_gru.py`, `train_xgb.py`, `ground_eval3.py`) and a README block for the final report if useful; all models are trained from `data/` only, no external checkpoints used by me.
+@alkaid_psi @capella_pi ack the freeze time and who writes `final_solution/README.md` + code copy.
+Refs: `[[capella_pi_mix_refresh.md]]`, `[[canopus_pi_gru_v3_xgb_ens.md]]`, `[[alkaid_psi_07837_and_next.md]]`
+#status #communication #submission #ensembling
+[board] сообщений 28, новых 1, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 67)
+[board] сообщений 28, новых 0, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 68)
+[board] сообщений 28, новых 0, метрик 36, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 69)
+===== alkaid_psi_freeze_ack.md =====
+# alkaid_psi — ACK freeze 18:30, I write final_solution README + code
+Read `[[canopus_pi_final_sources.md]]`, `[[capella_pi_mix_refresh.md]]`.
+## ACK
+- **Freeze `final_solution/` at 18:30** (I own it). I will copy `submission.csv` (463,243 rows, sample order), `README.md` (pipeline, models, external-model log, OOF/nested MCC), and `code/` (my video pipeline + ensemble + a `make_submission.py` that reproduces submission from the frozen source parquets).
+- @canopus_pi / @capella_pi: just keep your artifacts in place; I will reference `workspaces/...` paths and your model descriptions in the README. If you have a 3-line model/license note, post it or leave it in a `.md` in your workspace — no external pretrained models on your side is fine to state.
+- Last good team sources target: please publish your **final** OOF/test pairs by **~16:30**; I'll do one last blend + nested-threshold check at ~16:45 and freeze. Anything after 17:45 won't be included.
+## Current (my blend3 v8, OOF) 
+- pp 0.7800, ground 0.7979, **GLOBAL OOF <metric>0.7859<\metric>**, nested-threshold **0.7844** (per-fold 0.787/0.792/0.767/0.785/0.791).
+- Sources: capella stack_mix/v4/v5/v6 + canopus ens_v4 + canopus ground GRU v2/v3 + alkaid ground CNN A/B/C + capella lgbm + canopus pp GRU v1/v2.
+- Next run adds: canopus `pp_gru_v3`, `ground_gru_v4`, capella `stack_v7`, refreshed `ens_v4`/`stack_mix`, then nested check vs `stack_mix` and a 50/50 hedge; ship the best nested-threshold OOF config.
+Refs: `[[alkaid_psi_07837_and_next.md]]`, `[[canopus_pi_gru_v3_xgb_ens.md]]`, `[[capella_pi_stack_mix_0784.md]]` #status #communication #ensembling #submission
+[board] сообщений 29, новых 1, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 70)
+[board] сообщений 29, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 71)
+[board] сообщений 29, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 72)
+[board] сообщений 29, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 73)
+===== canopus_pi_rate_matched_threshold.md =====
+# canopus_pi — IMPORTANT: rate-matched thresholds beat fixed thresholds on nested check (+0.0012..0.0022)
+I stress-tested threshold transfer on `[[capella_pi_mix_refresh.md]]`'s `oof_stack_mix` (logit scale). Protocol: choose window+threshold on 4 folds, apply to the held-out fold, aggregate global MCC. Then compare **fixed threshold** vs **quantile threshold that matches the train-fold positive rate on the held-out distribution** (no labels used).
+## Result (same smoothing, pp w=3 / ground w=3)
+- fixed threshold: nested global **0.78337**
+- **rate-matched (quantile) thresholds: nested global 0.78457**
+- (oracle per-fold window selection is *worse*: 0.78212 -> keep w fixed at 3)
+Target positive rates from the full-OOF optimal thresholds (stack_mix, w3):
+- **pp: 1.2512%** of pp rows
+- **ground: 4.7549%** of ground rows
+- total ≈ 1.556%
+Current shipped `final_solution/submission.csv` / `submission_stack_mix.csv` has pp 1.40% / ground 5.05% / total 1.72% (fixed thresholds) -> likely over-predicting.
+## Ready candidate (please consider for final)
+- `workspaces/canopus_pi/preds/ens_submission_ratematch.csv` — same `stack_mix` probs, w3 smoothing, thresholds set by `quantile(test_p, 1-rate)` with pp rate 0.012512, ground rate 0.047549. 463,243 rows, sample order; pos pp 1.251%, ground 4.757%, total 1.556%. Code: `workspaces/canopus_pi/make_ratematch_sub.py`.
+@alkaid_psi @capella_pi if you prefer to keep your own final blend, just apply the same rule per task: `th = np.quantile(test_smoothed_p, 1 - target_rate)` with target rates estimated from the OOF of that same final source (window fixed at the OOF-optimal one). This is a distribution-shift-safe replacement for a fixed prob threshold. I recommend shipping the rate-matched variant (or an average of fixed/rate-matched, but rate-matched won nested).
+Refs: `[[capella_pi_mix_refresh.md]]`, `[[capella_pi_stack_mix_0784.md]]`, `[[canopus_pi_final_sources.md]]`
+#postprocessing #model_selection #insight #submission #ensembling
+[board] сообщений 30, новых 1, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 74)
+===== canopus_pi_ratematch_on_blend3.md =====
+# canopus_pi — rate-match check on alkaid blend3 v8 (neutral) + ready file
+Applied the same nested protocol to `workspaces/alkaid_psi/oof_blend3.parquet` (fixed ws pp=1, ground=2):
+- OOF optimal: pp MCC 0.77931 @ rate **1.2512%**; ground MCC 0.79873 @ rate **4.6548%**.
+- nested fixed threshold **0.78412** vs nested rate-matched **0.78419** (`+0.00007`, neutral).
+- On `test_blend3_probs.parquet`, rate-matched thresholds give pp 1.2514% / ground 4.6547% / total **1.547%** (vs current fixed-threshold submission total 1.717%).
+- Ready file: `workspaces/canopus_pi/preds/alkaid_blend3_ratematch.csv` (code `alkaid_ratematch.py`).
+Interpretation: for `blend3` rate matching is a *neutral* hedge; for `capella stack_mix` it was a clear nested win (+0.0012..0.0022). Since it only caps the risk of test score-distribution shift and is not worse on nested, it's safe to ship; but decision is yours.
+@alkaid_psi for the final blend please at least run the nested rate-match check; if it is >= fixed, use the rate-matched thresholds on test (`th_task = quantile(test_smoothed_score, 1 - OOF_optimal_rate_task)`, same window). If you want, drop your final `test_*.parquet` score + oof + config in your workspace and I'll produce the rate-matched submission for you.
+Refs: `[[canopus_pi_rate_matched_threshold.md]]`, `[[alkaid_psi_freeze_ack.md]]`
+#postprocessing #model_selection #submission #status
+[board] сообщений 31, новых 1, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 75)
+[board] сообщений 31, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 76)
+[board] сообщений 31, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 77)
+[board] сообщений 31, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 78)
+[board] сообщений 31, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 79)
+[board] сообщений 31, новых 0, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 80)
+===== canopus_pi_ground_gru_v5.md =====
+# canopus_pi — ground GRU v5 (2-layer) = best ground base 0.7365
+- **Ground GRU v5**: 2-layer BiGRU (hidden 96), seed 404, 26 epochs -> **OOF MCC 0.7365**, AUC 0.98324. Beats v3 (0.7313) and all ground GBDTs.
+- Files: `workspaces/canopus_pi/preds/oof_ground_gru_v5.parquet`, `test_ground_gru_v5.parquet` (same keys/folds). Add it to `blend3`/stacker as another ground source (may replace/supplement `gr_gru3`); it is a *base* model, not a stack.
+- My own hand-blend grid didn't improve with a naive equal-weight grid, but greedy level-2 selection (yours) should be able to exploit it.
+- Also ready: `pp_gru_v3` (0.7602). A 2-layer PP GRU is training now, ETA ~16:00; I'll ping if it lands before your 16:30 cutoff.
+@alkaid_psi please add `ground_gru_v5` to the final blend3 run and re-check nested. @capella_pi feel free to auto-detect it in stack_v7.
+Refs: `[[canopus_pi_final_sources.md]]`, `[[alkaid_psi_freeze_ack.md]]`, `[[capella_pi_mix_refresh.md]]`
+#training #ensembling #status #model_selection
+[board] сообщений 32, новых 1, метрик 37, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 81)
+===== capella_pi_final_ack.md =====
+# capella_pi — ACK freeze 18:30 + final mix refreshed (OOF 0.7850 / nested 0.7820)
+Read `[[alkaid_psi_freeze_ack.md]]` and `[[canopus_pi_final_sources.md]]`. **ACK freeze 18:30, alkaid owns final_solution/README+code.**
+## Refreshed final artifact (use this `stack_mix`)
+Rebuilt with refreshed canopus `ens_v4` (13:57) and re-verified:
+- `0.4*logit(stack_v4) + 0.3*logit(stack_v5) + 0.3*logit(ens_v4)`
+- **OOF pp 0.7801, ground 0.7944, GLOBAL <metric>0.7850<\metric>**; **nested-threshold 0.7820**
+- test pos rates pp 1.405% / ground 5.052% / total 1.722%
+- files (overwritten): `workspaces/capella_pi/oof_stack_mix.parquet`, `test_stack_mix.parquet`, `submission_stack_mix.csv`
+- extra fresh stacks for diversity: `oof/test_stack_v7` (pp 0.7771/gr 0.7909) and `v8` (pp 0.7760/gr 0.7877); adding them to the mix gave <= +0.00005 -> **not used** (keep mix simple/robust).
+- `stack_v4` (0.7830) remains my strongest single stacker; `stack_v5` adds diversity (ground_extra + more bases).
+## Model / license note for README (also in `workspaces/capella_pi/MODEL_CARD.md`)
+- capella_pi used **no external pretrained checkpoints**. Level-1 tabular + level-2 stacker are **LightGBM 4.5.0 (MIT)**; pandas/numpy/scikit-learn (BSD). All labels only from `data/train_labels.csv`; fold split = `workspaces/alkaid_psi/cv_folds.csv`.
+- Stacker inputs are other agents' OOF/test probability parquets (listed in MODEL_CARD). Video/external models are alkaid's (resnet18 ImageNet via timm/torchvision) — log those from alkaid's note.
+- Capella code to copy if desired: `workspaces/capella_pi/{features.py, train_lgbm.py, stack_v3.py, build_mix.py, make_submission.py, nested_threshold_eval.py}`.
+@alkaid_psi please take `test_stack_mix.parquet` (or `submission_stack_mix.csv`) as a final source — it is my best nested-checked artifact. @canopus_pi when the last ground GRU seed lands, ping me; I'll do one last stack+remix and publish before 16:30.
+Refs: `[[capella_pi_mix_refresh.md]]`, `[[alkaid_psi_freeze_ack.md]]`, `[[canopus_pi_final_sources.md]]`
+#status #communication #ensembling #submission
+[board] сообщений 33, новых 1, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 82)
+===== alkaid_psi_final_schedule.md =====
+# alkaid_psi — final blend schedule + file-freeze request
+Read `[[canopus_pi_ground_gru_v5.md]]`, `[[capella_pi_final_ack.md]]`.
+## Schedule (hard)
+- **15:00-15:25**: running curated final blend (adds `gr_gru5`, `capst8`, refreshed `stack_mix`/`ens_v4`; greedy cap + nested fixed-vs-rate check). Will publish OOF + write `final_solution/`.
+- **16:05 cutoff**: @canopus_pi if the 2-layer PP GRU lands by then, ping me with the path — I will do ONE last quick blend (only adds that source, ~15 min). After 16:05 I will not add new sources.
+- **16:15-16:30**: I freeze `final_solution/final_config.json` + `submission.csv` + README + code. **Please do not overwrite** `test_stack_mix.parquet`, `test_stack_v4/v5/v7/v8.parquet`, `ens_test_probs_v4.parquet`, or the per-model test parquets after 16:05 (I reproduce the submission from these paths; overwriting would desync OOF/config).
+## Threshold decision (my check)
+I simulated the actual test regime: 40 random hold-outs of **24 plays** (same size as test), tune on the other 192, apply (a) fixed logit threshold vs (b) OOF-rate-matched quantile. Fixed wins clearly at test scale: mean MCC **0.7898 vs 0.7735** (rate-matching is worse because contact prevalence varies play-to-play). So the final ships **fixed OOF thresholds**, not rate matching. (canopus's rate-match check was on `stack_mix`; on my blend it is neutral at fold scale and worse at test scale.)
+Refs: `[[canopus_pi_rate_matched_threshold.md]]`, `[[capella_pi_stack_mix_0784.md]]`, `[[alkaid_psi_freeze_ack.md]]` #status #communication #model_selection #submission
+[board] сообщений 34, новых 1, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 83)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 84)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 85)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 86)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 87)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 88)
+[board] сообщений 34, новых 0, метрик 38, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 89)
+===== capella_pi_mix_v2.md =====
+# capella_pi — mix v2 (+canopus ground GRU v5): OOF **0.7858**, nested **0.7841**
+Small, robust improvement on top of `stack_mix` — added canopus' best ground GRU base as a weak extra source on the **ground rows only**:
+`score_ground = score_mix + 0.15*logit(ground_gru_v5)` (pp rows unchanged).
+- **OOF: pp 0.7801, ground 0.7971, GLOBAL <metric>0.7858<\metric>** (pp smooth w3 th0.691, ground smooth w3 th-0.769)
+- **nested-threshold 0.7841** (was 0.7820 for mix) -> gain survives threshold transfer.
+- Test pos rates: pp 1.405%, ground 5.020%, total 1.719%.
+## Files (NEW names, did NOT overwrite anything alkaid froze)
+- `workspaces/capella_pi/{oof,test}_stack_mixv2.parquet`
+- `workspaces/capella_pi/submission_stack_mixv2.csv`
+- `build_mixv2.py`, `mixv2_weights.json`; alpha grid in `mix_ground_combo.py` (only g5 helps; adding gru v3/v4 hurt).
+@alkaid_psi if your 15:00-15:25 final blend run is not yet frozen, add `test_stack_mixv2` (slightly better than `stack_mix`); if it is frozen, no problem — your blend already includes `gr_gru5` directly. I will not overwrite your frozen paths.
+Refs: `[[capella_pi_final_ack.md]]`, `[[canopus_pi_ground_gru_v5.md]]`, `[[alkaid_psi_final_schedule.md]]`
+#ensembling #postprocessing #submission #status
+[board] сообщений 35, новых 1, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 90)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 91)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 92)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 93)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 94)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 95)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 96)
+[board] сообщений 35, новых 0, метрик 39, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 97)
+===== capella_pi_mix_v3.md =====
+# capella_pi — mix v3 (+canopus 2-layer PP GRU v4): OOF **0.7860**, nested **0.7846**
+Added canopus' final 2-layer PP GRU (`pp_gru_v4`, OOF MCC 0.7625) as a weak extra PP source on top of mix v2:
+`probs = mixv2 + 0.05*logit(pp_gru_v4)` on player-player rows (ground = mixv2 with g5).
+- **OOF: pp 0.7804, ground 0.7971, GLOBAL <metric>0.7860<\metric>**; **nested-threshold 0.7846** (mix v2 was 0.7858/0.7841)
+- pp alpha grid: 0.0->0.78008, **0.05->0.78039**, 0.1->0.78021, 0.2->0.78028 (tiny, flat optimum)
+- test pos: pp 1.405%, ground 5.020%, total 1.719%
+## New files (no frozen path overwritten)
+- `workspaces/capella_pi/{oof,test}_stack_mixv3.parquet`
+- `workspaces/capella_pi/submission_stack_mixv3.csv`
+- `build_mixv3.py`, `mixv3_weights.json`
+@alkaid_psi if freeze hasn't happened yet, `test_stack_mixv3` is my best/most complete source (nested 0.7846). If frozen, no action needed — your final blend (nested 0.7850) is already equivalent/better and includes these bases.
+Refs: `[[capella_pi_mix_v2.md]]`, `[[canopus_pi_final_sources.md]]`, `[[alkaid_psi_final_schedule.md]]`
+#ensembling #postprocessing #submission #status
+[board] сообщений 36, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 98)
+[board] сообщений 36, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 99)
+[board] сообщений 36, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 100)
+===== canopus_pi_final_status.md =====
+# canopus_pi — final status (frozen; code attached)
+## What I contributed to the shipped solution
+- **Sequence GRUs** (bidirectional, per candidate over the play), the biggest single gain:
+  - Ground GRU v5 (2-layer): **OOF MCC 0.7365**, AUC 0.98324; v3/v2/v1 also published.
+  - PP GRU v1/v2/v3/v4: OOF MCC ~0.759-0.764, AUC ~0.9975.
+- **Feature tables** (tracking + helmet-box + nearest-neighbour + temporal):
+  `workspaces/canopus_pi/features/all_features.parquet`, `new_feats_v2.parquet`,
+  `ground_extra.parquet`.
+- **GBDT/XGB bases**: `pp_v1..v5`, `ground_v1..v4`, `pp_xgb1`, `ground_xgb1`
+  (all `workspaces/canopus_pi/preds/`).
+- **Threshold study**: rate-matched thresholds help nested fold transfer for `stack_mix`
+  (+0.0012..0.0022) but alkaid's 24-play-holdout simulation showed fixed thresholds win at
+  test scale (0.7898 vs 0.7735) — final correctly ships **fixed thresholds**
+  (see `[[alkaid_psi_final_schedule.md]]`).
+- **Code** copied (non-destructively) to **`final_solution/code/canopus_pi/`** with
+  `NOTES.md`; no external pretrained models were used in my branch.
+## Final landscape (OOF, alkaid folds)
+- alkaid `blend3` final: **0.7859** (nested 0.7850); capella `stack_mixv3`: 0.7860
+  (nested 0.7846); my hedge ensembles: 0.777-0.780.
+- `final_solution/submission.csv` is valid: 463,243 rows, sample order/ids, fixed thresholds,
+  pos rate 1.716%. I did not overwrite any frozen file after alkaid's freeze.
+Thanks team — clean, reproducible, honest CV. #status #submission #communication #ensembling
+[board] сообщений 37, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 101)
+===== canopus_pi_final_qa.md =====
+# canopus_pi — final QA: reproducibility + 24-play holdout sanity
+Two independent checks on the frozen artifact (no modifications made):
+1. **Reproducibility**: re-implemented `final_config.json` blending + smoothing + thresholds from `final_solution/sources/*`; prediction matches `final_solution/submission.csv` **exactly (0 differences, pos rate 0.017155)**. So the shipped submission is consistent with the frozen config/code.
+2. **Test-scale source sanity** (30 random 24-play holdouts; tune per-task thresholds on the other 192 plays, fixed thresholds on holdout):
+   - alkaid final blend (`oof_final_blend`): mean MCC **0.7871** (std 0.0212)
+   - capella `stack_mixv3`: mean MCC **0.7866** (std 0.0214)
+   - final blend is +0.0005 better on average -> shipping it is justified at the 24-play scale too.
+No action required from @alkaid_psi. I consider the solution final; I will not touch frozen paths. Code is in `final_solution/code/canopus_pi/` (added non-destructively) + full branch in `workspaces/canopus_pi/`.
+Refs: `[[alkaid_psi_final_schedule.md]]`, `[[capella_pi_mix_v3.md]]`, `[[canopus_pi_final_status.md]]`
+#postprocessing #model_selection #submission #status #insight
+[board] сообщений 38, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 102)
+===== canopus_pi_window_qa.md =====
+# canopus_pi — smoothing-window QA on frozen final blend: current ws are near-optimal
+24-play holdout sweep (12 random 24-play holds, thresholds tuned on the other 192; fixed thresholds):
+- `pp_w=1, gr_w=2` (shipped): mean 0.78030
+- `pp_w=1, gr_w=4`: mean 0.78031 (identical within noise)
+- `pp_w=3, gr_w=2`: 0.78018; `pp_w=1, gr_w=5`: 0.77977; `pp_w=1, gr_w=3`: 0.77974
+=> no reason to change; shipped `final_config.json` is fine. (Absolute 24-play means have ±~0.003-0.005 seed noise; final-vs-mix3 difference was computed on identical holds.)
+Refs: `[[canopus_pi_final_qa.md]]`, `[[alkaid_psi_final_schedule.md]]`
+#postprocessing #model_selection #status #insight
+[board] сообщений 39, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 103)
+[agent swarm-3] run завершился за 31342s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e6faa1aceffe2LyNTlwPHs9yWF продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e6faa1aceffe2LyNTlwPHs9yWF (2026-10-31T13:44:12Z): Continue work until hard end.
+[board] сообщений 39, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 104)
+[board] сообщений 39, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 105)
+===== capella_pi_final_verification.md =====
+# capella_pi — final: code added non-destructively; no frozen path touched
+Read `[[canopus_pi_final_qa.md]]`, `[[canopus_pi_window_qa.md]]`. Agree the shipped solution is final.
+## What I did last (the only change to final_solution/)
+Added `final_solution/code/capella_pi/` (new directory only, nothing overwritten):
+`features.py, train_lgbm.py, stack_v3.py, build_mix.py, build_mixv2.py, build_mixv3.py, make_submission.py, nested_threshold_eval.py, MODEL_CARD.md, NOTES.md`.
+The shipped `submission.csv`, `final_config.json`, `sources/*`, `README.md` and alkaid/canopus code are untouched. Revert/ignore this dir if it conflicts with your freeze convention.
+## Final-time checks (independent)
+- OOF fusion of alkaid `final_blend` + capella `stack_mixv3` does **not** beat final alone (0.78626 vs 0.78621; raw/z weights both <=), so **no change to the final blend is warranted**.
+- capella `stack_mixv3` OOF 0.7860 / nested 0.7846; final blend OOF 0.7860 / nested 0.7850; canopus 24-play holdout: final 0.7871 vs mixv3 0.7866 -> final is the right ship.
+- `final_solution/submission.csv` verified by me earlier: 463,243 rows, exact `sample_submission` order, no dupes/NaN, int 0/1, pos rate ~1.715%.
+## External model log (capella branch): none
+No pretrained checkpoints used. LightGBM 4.5.0 (MIT) + pandas/numpy/scikit-learn (BSD). Weights trained only on `data/`; folds `workspaces/alkaid_psi/cv_folds.csv`.
+Thanks team — clean, honest, strong result. I will not modify anything else in `final_solution/`.
+Refs: `[[capella_pi_final_ack.md]]`, `[[capella_pi_mix_v3.md]]`, `[[canopus_pi_final_qa.md]]`, `[[alkaid_psi_final_schedule.md]]`
+#status #communication #submission #other
+[board] сообщений 40, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 106)
+[board] сообщений 40, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 107)
+[board] сообщений 40, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 108)
+===== canopus_pi_hedge_negative.md =====
+# canopus_pi — hedge test: final blend alone is optimal (negative result, no change needed)
+Tested whether hedging the frozen final blend with `capella stack_mixv3` or my `ens_v5` helps, using 30 random 24-play holds (thresholds tuned per task on the other 192 plays, fixed thresholds on holdout):
+| blend (logit, after each source's own smoothing) | mean MCC |
+|---|---|
+| **final blend (shipped)** | **0.79099** |
+| 0.75*final + 0.25*stack_mixv3 | 0.79104 (noise, +0.00005) |
+| 0.50*final + 0.50*stack_mixv3 | 0.79095 |
+| stack_mixv3 alone | 0.79054 |
+| final + 0.15*canopus ens_v5 | 0.78627 (worse) |
+Conclusion: no hedge improves on the shipped final; `ens_v5` hurts. Also note the 24-play absolute mean has seed-level noise of ~±0.002-0.004, so only differences >0.002 matter. Final artifact stays as-is.
+Refs: `[[canopus_pi_final_qa.md]]`, `[[canopus_pi_window_qa.md]]`, `[[alkaid_psi_final_schedule.md]]`
+#ensembling #model_selection #postprocessing #status
+[board] сообщений 41, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 109)
+===== canopus_pi_threshold_stability2.md =====
+# canopus_pi — threshold QA: full-OOF fixed thresholds are the right choice
+40 random 24-play holdouts on the frozen final blend (smoothed pp1/gr2); compare threshold policies:
+| policy | mean holdout MCC |
+|---|---|
+| **full-OOF fixed thresholds (shipped)** | **0.79161 ± 0.00284** |
+| running-median of nested thresholds | 0.79075 ± 0.00280 |
+| per-holdout oracle threshold (tuned on its 192 plays) | 0.78975 ± 0.00284 |
+The full-OOF threshold generalizes *better* than a threshold re-tuned on 192 plays — tuning on fewer plays adds noise. This independently confirms `[[alkaid_psi_final_schedule.md]]`'s fixed-threshold decision (and matches the earlier null/negative hedge result). No change to the frozen artifact.
+Refs: `[[canopus_pi_hedge_negative.md]]`, `[[canopus_pi_final_qa.md]]`
+#postprocessing #model_selection #insight #status
+[board] сообщений 42, новых 1, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 110)
+[board] сообщений 42, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 111)
+[board] сообщений 42, новых 0, метрик 40, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 112)
+===== alkaid_psi_final_solution.md =====
+# alkaid_psi — FINAL solution frozen (`final_solution/`), OOF **0.7860**
+Read `[[canopus_pi_final_qa.md]]`, `[[capella_pi_mix_v3.md]]`, `[[canopus_pi_window_qa.md]]`.
+## Shipped artifact
+- `final_solution/submission.csv` — 463,243 rows, sample order/ids, 7,947 positives (1.716%).
+- `final_solution/final_config.json` + `final_solution/sources/*.parquet` (7 frozen test-prediction sources) → `code/make_submission.py` reproduces the submission **bit-identically** (md5 verified, canopus independently re-derived it with 0 differences).
+- `final_solution/README.md` (pipeline, CV, OOF/nested, external-model log with IDs/licenses) + `code/` (video pipeline, ground pipeline, ensemble; teammates' code kept in `code/canopus_pi`, `code/capella_pi`).
+## Final blend & metrics (alkaid GroupKFold(5) by game_play)
+- PP: `capella stack_mix*` + canopus PP GRUs/GBDT + alkaid pair CNNs (resnet18 tight/wide, resnet34), logit + smooth w=1, fixed OOF threshold.
+- Ground: `capella stack_mix* / stack_v7 / stack_v5` + canopus `ens_v4` + ground GRUs v3/v5 + alkaid video ground CNN (variant B), logit + smooth w=2, fixed threshold.
+- **OOF MCC <metric>0.7860<\metric>** (pp 0.7804, ground 0.7974); **nested-threshold 0.7850**.
+- 24-play hold-out simulation (40-50 random sets): final blend **0.7815-0.7871**, beats `stack_mixv3` (0.7866) and rate-matched thresholds (0.7699). Fixed thresholds shipped.
+- Test pos rates: pp 1.39%, ground 5.16%, total 1.716%.
+## Notes
+- resnet34 pair variant was evaluated (temporal-TTA OOF MCC 0.6785 vs 0.6770 for resnet18) but the ensemble did not select it (gain < 2e-4) — kept in README log for transparency.
+- No test labels/leaks used anywhere; all threshold/source selection was done on OOF from `data/train_*` only.
+- Freeze respected: no source overwritten after 16:05; canopus/capella final QA confirmed reproducibility.
+Thanks @capella_pi (tabular LGBM + stackers) and @canopus_pi (GBDT/XGB + sequence GRUs + QA). The biggest single lift came from the **video ground CNN** (ground MCC 0.667→0.797 when blended) and the two sequence-GRU families. Good luck with grading. #submission #status #ensembling #insight
+[board] сообщений 43, новых 1, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 113)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 114)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 115)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 116)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 117)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 118)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 119)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 120)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 121)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 122)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 123)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 124)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 125)
+[board] сообщений 43, новых 0, метрик 41, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 126)
+[agent swarm-1] run завершился за 38103s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e6faa1ab8ffekTP6qPVEqbsP4e продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e6faa1ab8ffekTP6qPVEqbsP4e (2026-10-31T15:36:53Z): Continue work until hard end.
+===== alkaid_psi_final_check.md =====
+# alkaid_psi — final integrity check (no changes made)
+Re-ran `final_solution/code/make_submission.py` from the frozen `final_config.json` + `sources/`:
+- md5 stable `9eaf3f19d6812b50dd222fdf63ba2140`
+- 463,243 rows, exact `sample_submission` order/ids, binary, no NaN, 7,947 positives (1.716%)
+- config: 7 frozen sources, fixed OOF thresholds (pp smooth w=1 / ground w=2), rate-match off
+- `final_solution/`: `submission.csv`, `README.md`, `final_config.json`, `sources/`, `code/` (25 entries incl. teammates' non-destructive code dirs)
+Final OOF MCC **<metric>0.7860<\metric>** (nested 0.7850; 24-play hold-out 0.787-0.792), independently re-derived by `[[canopus_pi_final_qa.md]]` and agreed by `[[capella_pi_final_verification.md]]` as the best ship. Nothing else will be modified — awaiting official grading. #submission #status #communication
+===== canopus_pi_late_ground_v6.md =====
+# canopus_pi — late 3-layer ground GRU v6 (best single ground base) does NOT change final
+Trained one more sequence model while others finalized:
+- `preds/oof_ground_gru_v6.parquet` / `test_ground_gru_v6.parquet` (3-layer BiGRU, hidden 96, seed 111) ->
+  **OOF MCC 0.7463, AUC 0.98406** (best single ground base so far; v5 0.7365).
+However, adding it to the **frozen final ground blend** (`final_blend` + `w*logit(v6)`):
+- ground OOF only 0.79778 -> 0.79896 (+0.0012);
+- 24-play holdout ground: 0.78924 -> 0.78936 (**+0.00012**, i.e. global +~0.00005, noise).
+The level-2 blend is saturated for this correlated model, so **we keep the frozen `final_solution/` unchanged** (no source overwrite, no re-blend). Posting for the record / analytics.
+Thanks all — final artifact stays `final_solution/submission.csv` (OOF 0.7860, nested 0.7850; reproducibility verified).
+Refs: `[[alkaid_psi_final_solution.md]]`, `[[canopus_pi_ground_gru_v5.md]]`, `[[canopus_pi_final_qa.md]]`
+#training #ensembling #insight #status
+[board] сообщений 45, новых 2, метрик 42, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 127)
+===== alkaid_psi_embed_gbdt_negative.md =====
+# alkaid_psi — late experiment (negative): CNN-embedding GBDT does not improve the final blend
+Result of a last idea after the freeze (workspace only, **final artifact unchanged**):
+- Extracted 512-d resnet18 pooled features per view for all player-player candidates (fold-safe: fold-f model for fold-f rows; test = mean of 5 fold models), PCA to 128 dims, plus helmet geometry + tracking distance.
+- LightGBM on these features (5-fold, neg subsample 30%): candidate **AUC 0.9552, AP 0.7768, MCC 0.6692** — slightly *worse* than the plain CNN prob (0.6785).
+- Adding it to `capella stack_mixv2` in logit space: best w=0.1 gives pp MCC 0.74798 vs 0.74774 baseline (**+0.00024**), below our 2e-4 adoption/overfit guard. Not added.
+- Files for reference: `workspaces/alkaid_psi/{emb_train,emb_test,emb_*}.npy`, `oof/test_cnn_emb.parquet`, code `pp_embed.py`, `pp_embed_lgbm.py`.
+Conclusion: the frozen `final_solution/` (OOF **<metric>0.7860<\metric>**, nested 0.7850) remains the best validated artifact; the ensemble is saturated w.r.t. this extra video-embedding family. #insight #ensembling #architecture #status
+[board] сообщений 46, новых 1, метрик 43, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 128)
+[agent swarm-2] run завершился за 38696s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e6faa1abeffeFANmKD5jM3Zv72 продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e6faa1abeffeFANmKD5jM3Zv72 (2026-10-31T15:46:45Z): Continue work until hard end.
+===== capella_pi_end_of_run_qa.md =====
+# capella_pi — end-of-run QA: shipped submission reproduces bit-exactly
+Ran the independent reproducer (`workspaces/canopus_pi/check_repro.py`) against the frozen artifact:
+- `final_solution/final_config.json` + `final_solution/sources/*` -> diff vs `final_solution/submission.csv` = **0**, pos rate 0.017155.
+- Valid: 463,243 rows, exact `sample_submission` id order, int {0,1}, no NaN/dupes.
+- Final validated metrics: **OOF MCC <metric>0.7860<\metric>**, nested-threshold 0.7850, 24-play holdout ~0.7815-0.7871.
+Standing down from modeling; `final_solution/` untouched by me (only added `code/capella_pi/` earlier, non-destructively). Good luck with grading.
+Refs: `[[alkaid_psi_final_solution.md]]`, `[[canopus_pi_final_qa.md]]`, `[[canopus_pi_late_ground_v6.md]]`, `[[alkaid_psi_embed_gbdt_negative.md]]`
+#submission #status #communication
+[board] сообщений 47, новых 1, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 129)
+[board] сообщений 47, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 130)
+===== capella_pi_mixv4_negative.md =====
+# capella_pi — late negative result: ground GRU v6 does not help `mixv3`
+Tested adding canopus' best single ground base (`ground_gru_v6`, OOF 0.7463) on top of `stack_mixv3` (ground rows only):
+- alpha grid: 0.05 best -> ground OOF 0.79713 -> **0.79790** (+0.0008), global 0.78598 -> 0.78618 (+0.0002)
+- **nested-threshold: 0.78462 -> 0.78448 (worse)** => gain is noise/overfit, not adopted.
+- artifacts (workspace only): `oof/test_stack_mixv4`, `submission_stack_mixv4.csv`; final_solution untouched.
+Consistent with `[[canopus_pi_late_ground_v6.md]]` (24-play holdout +0.0001). The level-2 ensemble is saturated. Shipped `final_solution/` (OOF 0.7860, nested 0.7850) stays as-is.
+Refs: `[[capella_pi_mix_v3.md]]`, `[[canopus_pi_late_ground_v6.md]]`, `[[alkaid_psi_final_solution.md]]`
+#ensembling #model_selection #insight #status
+===== alkaid_psi_gru_v6_check.md =====
+# alkaid_psi — independent check of late ground GRU v6: no change (agrees with canopus)
+Paired 24-play hold-out test (40 identical holds, proper re-smoothing w=2, thresholds tuned on the other 192 plays):
+| add `w*logit(ground_gru_v6)` | ground OOF MCC | 24-play ground mean | paired diff vs w=0 | win rate |
+|---|---|---|---|---|
+| w=0 (shipped) | 0.79741 | 0.80388 | – | – |
+| w=0.1 | 0.79843 | 0.80453 | +0.00065 ± 0.0050 (sd) | 50% |
+| w=0.2 | 0.79726 | 0.80157 | −0.00231 | 47.5% |
+| w=0.3 | 0.79642 | 0.79988 | −0.00400 | 32.5% |
+The OOF tick at w=0.1 does not survive the 24-play protocol (coin-flip win rate) → noise, consistent with `[[canopus_pi_late_ground_v6.md]]` (+0.00012). **Frozen `final_solution/` stays unchanged** (OOF 0.7860, nested 0.7850). Reproducibility re-verified (md5 `9eaf3f19…`). #ensembling #model_selection #status #insight
+[board] сообщений 49, новых 2, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 131)
+[board] сообщений 49, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 132)
+[board] сообщений 49, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 133)
+[board] сообщений 49, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 134)
+[board] сообщений 49, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 135)
+[board] сообщений 49, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 136)
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-31_19-29-28_SYSTEM_final_phase.md
+===== 2026-10-31_19-29-28_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 19:29)
+До жёсткого стопа 30 минут (hard_end: 2026-10-31T19:59:19+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-31T19:59:19+03:00 харнесс принудительно остановит все сессии.
+[board] сообщений 50, новых 1, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 137)
+[board] сообщений 50, новых 0, метрик 44, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 138)
+===== capella_pi_final_confirmation.md =====
+# capella_pi — FINAL CONFIRMATION (hard_end 19:59)
+Read `[[2026-10-31_19-29-28_SYSTEM_final_phase.md]]`. Experiments stopped; best agreed solution confirmed.
+## Shipped (unchanged, verified just now)
+- `final_solution/submission.csv` — 463,243 rows, exact `sample_submission.csv` id order, int {0,1}, no NaN/dupes, pos rate **1.716%**.
+- `final_solution/final_config.json` + `final_solution/sources/*` reproduce the submission **bit-exactly** (diff 0; canopus independent reproducer).
+- Also present: `README.md` (pipeline/CV/external-model log), `code/` incl. `code/capella_pi/` and `code/canopus_pi/`.
+## Final validated metrics
+- OOF MCC **<metric>0.7860<\metric>** (pp 0.7804, ground 0.7974); nested-threshold 0.7850; 24-play holdout ~0.7815-0.7871.
+- Late additions (ground GRU v6, capella mixv4, CNN-embedding GBDT) were tested and rejected as noise; final stays as frozen.
+capella_pi branch external models: **none** (LightGBM 4.5.0 MIT + pandas/numpy/scikit-learn BSD). Good luck with grading.
+Refs: `[[alkaid_psi_final_solution.md]]`, `[[canopus_pi_final_qa.md]]`, `[[capella_pi_end_of_run_qa.md]]`, `[[capella_pi_mixv4_negative.md]]`
+#submission #status #communication
+[board] сообщений 51, новых 1, метрик 45, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 139)
+[agent swarm-1] run завершился за 4149s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e6faa1ab8ffekTP6qPVEqbsP4e продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e6faa1ab8ffekTP6qPVEqbsP4e (2026-10-31T16:46:02Z): Continue work until hard end.
+[board] сообщений 51, новых 0, метрик 45, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 140)
+[board] сообщений 51, новых 0, метрик 45, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 141)
+[agent swarm-2] run завершился за 3999s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e6faa1abeffeFANmKD5jM3Zv72 продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e6faa1abeffeFANmKD5jM3Zv72 (2026-10-31T16:53:24Z): Continue work until hard end.
+===== alkaid_psi_final_confirmation.md =====
+# alkaid_psi — FINAL CONFIRMATION (hard_end 19:59)
+Read `[[2026-10-31_19-29-28_SYSTEM_final_phase.md]]`, `[[capella_pi_final_confirmation.md]]`. **Experiments stopped; no further changes.**
+## Shipped (verified at 19:52 MSK, md5 `9eaf3f19d6812b50dd222fdf63ba2140`)
+- `final_solution/submission.csv` — 463,243 rows, exact `sample_submission.csv` id order, int {0,1}, no NaN/dupes, **7,947 positives (1.716%)**.
+- `final_solution/final_config.json` + `final_solution/sources/*` (7 frozen prediction parquets) reproduce it **bit-exactly** via `final_solution/code/make_submission.py` (independent reproducers: canopus diff 0, capella diff 0).
+- `README.md` (pipeline, GroupKFold CV, OOF/nested metrics, external-model log: `timm/resnet18.a1_in1k`, Apache-2.0) and `code/` (alkaid video/ground/ensemble code + `code/canopus_pi`, `code/capella_pi`).
+## Final validated metrics
+- **OOF MCC <metric>0.7860<\metric>** (pp 0.7804, ground 0.7974); **nested-threshold 0.7850**; 24-play hold-out global ~0.7815-0.7871.
+- Fixed OOF thresholds (rate-matching rejected: 0.7699 vs 0.7815 in 24-play simulation).
+- Late additions (ground GRU v6, capella mixv4, CNN-embedding GBDT) tested and rejected as noise — see `[[alkaid_psi_gru_v6_check.md]]`.
+No test labels or private/grading data were used at any point. Ready for official grading. #submission #status #communication
+[board] сообщений 52, новых 1, метрик 46, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 142)
+[agent swarm-2] run завершился за 312s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e6faa1abeffeFANmKD5jM3Zv72 продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e6faa1abeffeFANmKD5jM3Zv72 (2026-10-31T16:58:37Z): Continue work until hard end.
+[agent swarm-2] run завершился за 22s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e6faa1abeffeFANmKD5jM3Zv72 продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e6faa1abeffeFANmKD5jM3Zv72 (2026-10-31T16:58:59Z): Continue work until hard end.
+[agent swarm-1] run завершился за 799s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e6faa1ab8ffekTP6qPVEqbsP4e продолжена: Continue work until hard end.
+[agent swarm-2] run завершился за 22s — перезапуск (пауза 30s)
+[agent swarm-1] resume session ses_e6faa1ab8ffekTP6qPVEqbsP4e (2026-10-31T16:59:20Z): Continue work until hard end.
+[agent swarm-2] сессия ses_e6faa1abeffeFANmKD5jM3Zv72 продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e6faa1abeffeFANmKD5jM3Zv72 (2026-10-31T16:59:22Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 52, новых 0, метрик 46, метрика задачи: matthews-correlation-coefficient (high)
+[board] artifact uploaded: analysis/
+[board] metric: matthews-correlation-coefficient = 0.7928 (step 0)
+[mtime] saved 57 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

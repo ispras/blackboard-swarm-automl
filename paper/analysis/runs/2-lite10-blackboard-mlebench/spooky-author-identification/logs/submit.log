@@ -1,0 +1,68 @@
+[2026-10-20 13:01:45,284] [data.py:213] Downloading the dataset for `spooky-author-identification` to `/home/travvy/.cache/mle-bench/data/spooky-author-identification`...
+Warning: Looks like you're using an outdated API Version, please consider updating (server 2.2.2 / client 1.6.17)
+Downloading spooky-author-identification.zip to /home/travvy/.cache/mle-bench/data/spooky-author-identification
+  0%|          | 0.00/1.81M [00:00<?, ?B/s] 55%|█████▌    | 1.00M/1.81M [00:00<00:00, 1.42MB/s]100%|██████████| 1.81M/1.81M [00:00<00:00, 2.52MB/s]100%|██████████| 1.81M/1.81M [00:00<00:00, 2.23MB/s]
+[2026-10-20 13:01:47,342] [data.py:67] Generating checksum for `/home/travvy/.cache/mle-bench/data/spooky-author-identification/spooky-author-identification.zip`...
+[2026-10-20 13:01:47,348] [data.py:80] Checksum for `/home/travvy/.cache/mle-bench/data/spooky-author-identification/spooky-author-identification.zip` matches the expected checksum.
+[2026-10-20 13:01:47,348] [data.py:83] Extracting `/home/travvy/.cache/mle-bench/data/spooky-author-identification/spooky-author-identification.zip` to `/home/travvy/.cache/mle-bench/data/spooky-author-identification/raw`...
+[2026-10-20 13:01:47,351] [data.py:85] Extracted `/home/travvy/.cache/mle-bench/data/spooky-author-identification/spooky-author-identification.zip` to `/home/travvy/.cache/mle-bench/data/spooky-author-identification/raw` successfully.
+[2026-10-20 13:01:47,351] [data.py:168] Public directory is empty.
+[2026-10-20 13:01:47,351] [data.py:96] Preparing the dataset using `prepare` from `../../Desktop/mle-bench/mlebench/competitions/spooky-author-identification/prepare.py`...
+[2026-10-20 13:01:47,777] [data.py:107] Data for competition `spooky-author-identification` prepared successfully.
+[2026-10-20 13:01:47,777] [data.py:113] Generating checksums for files in `/home/travvy/.cache/mle-bench/data/spooky-author-identification`...
+[2026-10-20 13:01:47,784] [data.py:141] Checksums for files in `/home/travvy/.cache/mle-bench/data/spooky-author-identification` match the expected checksums.
+[2026-10-20 13:01:47,784] [data.py:144] Removing the raw data directory for `spooky-author-identification`...
+
+== задача: Spooky Author Identification (`spooky-author-identification`)
+==> /home/travvy/.pyenv/versions/mle-bench/bin/python -c from mlebench.cli import main; main() prepare -c spooky-author-identification --data-dir /home/travvy/.cache/mle-bench/data
+== prepared: /home/travvy/.cache/mle-bench/data/spooky-author-identification/prepared (mlebench-prepare)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/spooky-author-identification/answers.csv ← /home/travvy/.cache/mle-bench/data/spooky-author-identification/prepared/private/test.csv
+  written private/competitions/spooky-author-identification/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (6.1 KiB) md5 6af9ede97a29e5f378c3ee865f693da3
+  installed data/sample_submission.csv (118.6 KiB) md5 3b754ff50b2b4416150bb00c86c34889
+  installed data/test.csv (311.0 KiB) md5 2ea5096a8e8cf340b13a7a18d9bdd914
+  installed data/train.csv (2.7 MiB) md5 1124166bf7b8b1e337a32fe568732447
+  written TASK.md (только description)
+  written data/README.md
+
+задача: Spooky Author Identification (`spooky-author-identification`)
+  метрика: `multi-class-log-loss` (меньше — лучше)
+  - пороги (1242 команд в лидерборде):
+  - gold 0.16506
+  - silver 0.26996
+  - bronze 0.29381
+  - median 0.41879
+  train: data/train.csv
+  test:  data/test.csv
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  spooky-author-identification
+sandbox/data:     3,2M (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (4MB) едут через бакет 'mlebench-spooky-author-identification' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-spooky-author-identification' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (196K)
+image:        swarm-mlm
+job:          spooky-author-identification
+/home/travvy/Desktop/sisyphus-blackboard-experiment/.venv-mlm/lib/python3.12/site-packages/ML_management/mlmanagement/git_info.py:93: UserWarning: Repo sisyphus-blackboard-experiment have changes.
+  warnings.warn(f"Repo {repo_name} have changes.")
+  0%|          | 0.00/176k [00:00<?, ?File/s]210kFile [00:00, 559kFile/s]                 
+{"job_id": "15659", "job_name": "spooky-author-identification", "status": "PLANNED"}
+
+Job запущен в MLM: spooky-author-identification (id 15659)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

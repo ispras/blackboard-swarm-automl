@@ -1,0 +1,26 @@
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: accuracy (high)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  graph.html
+  graph.json
+  metrics.csv
+MLE-bench grade — New York City Taxi Fare Prediction (`new-york-city-taxi-fare-prediction`)
+submission: sandbox/final_solution/submission.csv (md5 396138fbfdeee7d63ebe8d0c76e7b8d4)
+metric: root-mean-squared-error (lower is better)
+score: 3.87093
+thresholds: gold 2.83377 | silver 2.88191 | bronze 2.92371 | median 3.59741
+medals: gold=False silver=False bronze=False | above_median=False
+  official mle-bench grade: 3.8709300000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-31_07-58-22_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition new-york-city-taxi-fare-prediction)
+граф доски: 59 записей, 0 артефактов, 2 битых ссылок, 15 тегов, 344 связей (0 — входные, 197 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 59, новых 0, метрик 23, метрика задачи: root-mean-squared-error (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

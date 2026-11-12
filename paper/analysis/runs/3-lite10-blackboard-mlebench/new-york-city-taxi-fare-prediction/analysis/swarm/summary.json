@@ -1,0 +1,316 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "label": "new-york-city-taxi-fare-prediction",
+  "metric": "root-mean-squared-error",
+  "is_lower_better": true,
+  "final_score": 3.87093,
+  "thresholds": {
+    "gold": 2.83377,
+    "silver": 2.88191,
+    "bronze": 2.92371,
+    "median": 3.59741
+  },
+  "messages": {
+    "agent": 57,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 2,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 1,
+    "without_metric": 36,
+    "system_links": 3
+  },
+  "graph": {
+    "nodes": 57,
+    "edges": 142,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 33,
+    "mean_depth_all": 14.403508771929825,
+    "mean_depth_linked": 16.755102040816325,
+    "longest_path": [
+      "antares_omicron_final_confirm.md",
+      "antares_omicron_signoff.md",
+      "alkaid_phi_final_signoff.md",
+      "arcturus_upsilon_final_verified.md",
+      "antares_omicron_final_check_2.md",
+      "antares_omicron_seed_variance.md",
+      "antares_omicron_traffic_negative.md",
+      "antares_omicron_holdout_subset_check.md",
+      "arcturus_upsilon_final_confirmed.md",
+      "alkaid_phi_cv_verification.md",
+      "antares_omicron_nn_result.md",
+      "arcturus_upsilon_final_update2.md",
+      "antares_omicron_xgb_le_result.md",
+      "antares_omicron_final_verification.md",
+      "arcturus_upsilon_final_solution.md",
+      "arcturus_upsilon_ownership.md",
+      "antares_omicron_gpu_claim5.md",
+      "antares_omicron_te_bug_fixed.md",
+      "arcturus_upsilon_final_proposal.md",
+      "arcturus_upsilon_test_te_bug.md",
+      "alkaid_phi_blend_v1.md",
+      "arcturus_upsilon_blend_status.md",
+      "antares_omicron_gpu_done.md",
+      "antares_omicron_gpu_claim2.md",
+      "antares_omicron_xgb_v2_result.md",
+      "arcturus_upsilon_v2_result.md",
+      "alkaid_phi_v2_plan.md",
+      "arcturus_upsilon_critical_missing_coords.md",
+      "arcturus_upsilon_baseline6m.md",
+      "arcturus_upsilon_holdout_ack.md",
+      "antares_omicron_holdout_problem.md",
+      "antares_omicron_role_confirm.md",
+      "arcturus_upsilon_role_split.md",
+      "antares_omicron_intro_and_plan.md"
+    ],
+    "max_indegree": 8,
+    "hubs": [
+      {
+        "name": "alkaid_phi_blend_v1.md",
+        "agent": "alkaid",
+        "in_degree": 8,
+        "depth": 13,
+        "tags": [
+          "ensembling",
+          "insight",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-30T22:15:10+03:00"
+      },
+      {
+        "name": "antares_omicron_xgb_v2_result.md",
+        "agent": "antares",
+        "in_degree": 7,
+        "depth": 9,
+        "tags": [
+          "ensembling",
+          "feature_engineering",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-30T21:01:02+03:00"
+      },
+      {
+        "name": "antares_omicron_te_bug_fixed.md",
+        "agent": "antares",
+        "in_degree": 7,
+        "depth": 16,
+        "tags": [
+          "bug",
+          "communication",
+          "ensembling",
+          "problem",
+          "submission"
+        ],
+        "time": "2026-10-30T22:53:24+03:00"
+      },
+      {
+        "name": "arcturus_upsilon_cache_ready.md",
+        "agent": "arcturus",
+        "in_degree": 6,
+        "depth": 2,
+        "tags": [
+          "data_pipeline",
+          "data_preprocessing",
+          "insight",
+          "status"
+        ],
+        "time": "2026-10-30T20:05:25+03:00"
+      },
+      {
+        "name": "arcturus_upsilon_critical_missing_coords.md",
+        "agent": "arcturus",
+        "in_degree": 6,
+        "depth": 6,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "data_preprocessing",
+          "insight",
+          "problem"
+        ],
+        "time": "2026-10-30T20:28:47+03:00"
+      },
+      {
+        "name": "antares_omicron_xgb_le_result.md",
+        "agent": "antares",
+        "in_degree": 6,
+        "depth": 21,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-30T23:41:46+03:00"
+      },
+      {
+        "name": "alkaid_phi_v2_plan.md",
+        "agent": "alkaid",
+        "in_degree": 5,
+        "depth": 7,
+        "tags": [
+          "ensembling",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-30T20:46:41+03:00"
+      }
+    ],
+    "submission_count": 17,
+    "submission_depths": [
+      0,
+      0,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      25,
+      29,
+      30,
+      31,
+      32,
+      33,
+      33
+    ],
+    "final_submission": {
+      "name": "antares_omicron_final_confirm.md",
+      "time": "2026-10-31T07:46:57+03:00",
+      "depth": 33,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 17,
+      "mean": 0.010999999999999965,
+      "median": 0.0,
+      "positive": 0.4117647058823529,
+      "max": 0.07249999999999979
+    },
+    "transitive": {
+      "n": 18,
+      "mean": -0.27059999999999984,
+      "median": -0.2660999999999998,
+      "positive": 0.05555555555555555,
+      "max": 0.07179999999999964
+    },
+    "prev_linked": {
+      "n": 18,
+      "mean": -0.27059999999999984,
+      "median": -0.2660999999999998,
+      "positive": 0.05555555555555555,
+      "max": 0.07179999999999964
+    },
+    "prev_unlinked": {
+      "n": 2,
+      "mean": -0.2660999999999998,
+      "median": -0.2660999999999998,
+      "positive": 0.0,
+      "max": -0.2660999999999998
+    },
+    "perm_prev": {
+      "diff": -0.0045000000000000595,
+      "p": 0.8176182381761824
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 1,
+        "rate": 0.5,
+        "median_msgs": 4,
+        "mean_msgs": 4,
+        "median_seconds": 1410.0
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 3,
+        "median_seconds": 1210.0
+      }
+    },
+    "broad": {
+      "n_events": 11,
+      "direct": {
+        "events": 11,
+        "adopted": 9,
+        "rate": 0.8181818181818182,
+        "median_msgs": 1,
+        "mean_msgs": 1.7777777777777777,
+        "median_seconds": 730.0
+      },
+      "transitive": {
+        "events": 11,
+        "adopted": 10,
+        "rate": 0.9090909090909091,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.8,
+        "median_seconds": 870.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 1,
+        "rate": 0.5,
+        "median_msgs": 4,
+        "mean_msgs": 4,
+        "median_seconds": 1410.0
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 3.0,
+        "mean_msgs": 3,
+        "median_seconds": 1210.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 6,
+    "direct": {
+      "events": 6,
+      "recovered": 5,
+      "rate": 0.8333333333333334,
+      "median_msgs": 2,
+      "median_seconds": 183.0,
+      "different_author": 3
+    },
+    "transitive": {
+      "events": 6,
+      "recovered": 6,
+      "rate": 1.0,
+      "median_msgs": 2.0,
+      "median_seconds": 238.5,
+      "different_author": 4
+    },
+    "problem_authors": {
+      "antares": 3,
+      "arcturus": 2,
+      "alkaid": 1
+    },
+    "recovery_authors": {
+      "alkaid": 1,
+      "arcturus": 3,
+      "antares": 1
+    }
+  }
+}

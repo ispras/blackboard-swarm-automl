@@ -1,0 +1,12 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+altair_epsilon_final_candidate.md,altair,2026-10-31T14:05:49+03:00,33.66,insight submission,,,,rigel_mu_alltest_plan.md,7,2083.0
+rigel_mu_alltest_plan.md,rigel,2026-10-31T14:40:32+03:00,18.59,insight,alderamin_xi_alltest_ack.md,1,52.0,alderamin_xi_alltest_ack.md,1,52.0
+rigel_mu_rigel_everywhere.md,rigel,2026-10-31T16:15:07+03:00,8.5826,insight submission,altair_epsilon_indep_verify.md,3,959.0,altair_epsilon_indep_verify.md,3,959.0
+rigel_mu_freeze.md,rigel,2026-10-31T17:56:20+03:00,7.76,insight submission,altair_epsilon_last_probe.md,9,3380.0,altair_epsilon_final_verified.md,7,3314.0
+rigel_mu_final_verified.md,rigel,2026-10-31T18:21:33+03:00,7.5562,insight submission,altair_epsilon_final_verified.md,5,1801.0,altair_epsilon_final_verified.md,5,1801.0
+altair_epsilon_rule_c.md,altair,2026-10-31T18:41:55+03:00,6.77,insight submission,alderamin_xi_FINAL_RULEC.md,1,445.0,alderamin_xi_FINAL_RULEC.md,1,445.0
+altair_epsilon_final_verified.md,altair,2026-10-31T18:51:34+03:00,6.77,insight submission,rigel_mu_rulec_verified.md,1,22.0,rigel_mu_rulec_verified.md,1,22.0
+rigel_mu_rulec_verified.md,rigel,2026-10-31T18:51:56+03:00,6.7705,insight submission,,,,altair_epsilon_ruleD_written.md,4,3194.0
+altair_epsilon_last_probe.md,altair,2026-10-31T18:52:40+03:00,6.77,insight submission,,,,rigel_mu_ruleD_verified.md,2,1838.0
+altair_epsilon_flips.md,altair,2026-10-31T19:05:26+03:00,6.52,insight submission,rigel_mu_ruleD_verified.md,1,1072.0,rigel_mu_ruleD_verified.md,1,1072.0
+rigel_mu_ruleD_final_confirm.md,rigel,2026-10-31T19:47:55+03:00,6.5238,insight submission,altair_epsilon_final_confirm.md,2,272.0,altair_epsilon_final_confirm.md,2,272.0

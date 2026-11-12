@@ -1,0 +1,919 @@
+{
+  "created_at": "2026-10-21T13:38:53.218896+00:00",
+  "model": "deepseek-flash",
+  "vocabulary": [
+    "data_preprocessing",
+    "data_pipeline",
+    "feature_engineering",
+    "augmentation",
+    "architecture",
+    "loss",
+    "regularization",
+    "optimization",
+    "training",
+    "ensembling",
+    "model_selection",
+    "postprocessing",
+    "inference",
+    "plan",
+    "communication",
+    "submission",
+    "status",
+    "conflict",
+    "problem",
+    "bug",
+    "insight",
+    "other"
+  ],
+  "definitions": {
+    "data_preprocessing": "Cleaning, parsing, tokenization, or construction of the modelling dataset.",
+    "data_pipeline": "Data loading, caching, fold generation, file formats, or artifact I/O plumbing.",
+    "feature_engineering": "Handcrafted features, TF-IDF/n-gram features, stylometric features, or feature selection.",
+    "augmentation": "Synthetic examples, augmentation, mixup, or other artificial data expansion.",
+    "architecture": "Choice or design of a model architecture, backbone, or model family.",
+    "loss": "Loss function, objective, label smoothing, or class weighting.",
+    "regularization": "Dropout, weight decay, early stopping, or adversarial regularization such as FGM/AWP.",
+    "optimization": "Optimizer, learning-rate schedule, batch size, or training-loop optimization.",
+    "training": "Running, fine-tuning, or training a specific model, including epochs and seeds.",
+    "ensembling": "Blending, stacking, combining, or weighting predictions from multiple models.",
+    "model_selection": "Comparing candidate models or choosing the best model or configuration.",
+    "postprocessing": "Calibration, thresholding, probability normalization, or submission formatting.",
+    "inference": "Generating predictions on validation/test data or test-time inference.",
+    "plan": "Planning, role division, strategy, or lane allocation.",
+    "communication": "Coordination, acknowledgement, requests, or status updates to other agents.",
+    "submission": "Creating, checking, or publishing the final submission or final solution.",
+    "status": "A progress report whose main purpose is to say what has been done or is running.",
+    "conflict": "Disagreement, resource contention, ownership conflict, or warning about a race.",
+    "problem": "A blocker, failure, weak result, or unresolved issue.",
+    "bug": "A code bug, crash, shape mismatch, or reproducibility error.",
+    "insight": "An empirical finding, lesson, or unexpectedly strong/weak result.",
+    "other": "Use only when none of the above tags applies."
+  },
+  "annotations": [
+    {
+      "id": "deneb_upsilon_intro_plan.md",
+      "agent": "deneb",
+      "tags": [
+        "plan",
+        "data_pipeline",
+        "communication"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proposal: share ONE canonical CV split ... Proposed division of labor (reply on the board to claim / object)",
+      "title": "denebupsilon — Intro & Plan"
+    },
+    {
+      "id": "rigel_xi_intro_and_plan.md",
+      "agent": "rigel",
+      "tags": [
+        "plan",
+        "communication"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proposed role split (to avoid duplication)",
+      "title": "rigelxi — intro & proposal"
+    },
+    {
+      "id": "arcturus_alpha_intro_and_plan.md",
+      "agent": "arcturus",
+      "tags": [
+        "plan",
+        "communication"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proposed division of labor (please ack / adjust)",
+      "title": "arcturusalpha — intro & plan"
+    },
+    {
+      "id": "rigel_xi_ref_baseline_tfidf_lr.md",
+      "agent": "rigel",
+      "tags": [
+        "feature_engineering",
+        "training",
+        "communication"
+      ],
+      "confidence": 0.85,
+      "evidence": "Word TF-IDF (1-2) + Char WB TF-IDF (2-5), sublinear, min_df=2; LogisticRegression(C=8, liblinear). ... Please match the fold protocol",
+      "title": "rigelxi — reference baseline: TF-IDF + LogisticRegression"
+    },
+    {
+      "id": "rigel_xi_coordination_gpu_lanes.md",
+      "agent": "rigel",
+      "tags": [
+        "plan",
+        "conflict"
+      ],
+      "confidence": 0.93,
+      "evidence": "Proposed lanes (reply to claim/adjust) ... There is 1 GPU",
+      "title": "rigelxi — coordination: distinct lanes + single-GPU lock"
+    },
+    {
+      "id": "deneb_upsilon_status_baseline.md",
+      "agent": "deneb",
+      "tags": [
+        "data_pipeline",
+        "feature_engineering",
+        "training"
+      ],
+      "confidence": 0.86,
+      "evidence": "Word(1-2)+char_wb(2-5) TF-IDF → LogisticRegression(C=10)",
+      "title": "denebupsilon — Status: canonical folds + TF-IDF baseline"
+    },
+    {
+      "id": "deneb_upsilon_coordination_roberta.md",
+      "agent": "deneb",
+      "tags": [
+        "plan",
+        "communication"
+      ],
+      "confidence": 0.9,
+      "evidence": "Agreed on the lanes from [[rigel_xi_coordination_gpu_lanes.md]]",
+      "title": "denebupsilon — coordination: claiming roberta-base lane, GPU note"
+    },
+    {
+      "id": "arcturus_alpha_status_baseline.md",
+      "agent": "arcturus",
+      "tags": [
+        "model_selection",
+        "feature_engineering",
+        "plan"
+      ],
+      "confidence": 0.78,
+      "evidence": "Baseline suite (5-fold OOF logloss) ... Feature-space search ... I take the classical lane",
+      "title": "arcturusalpha — Status: baseline suite + lane ack"
+    },
+    {
+      "id": "rigel_xi_insight_ensemble_big_gain.md",
+      "agent": "rigel",
+      "tags": [
+        "insight",
+        "ensembling",
+        "communication"
+      ],
+      "confidence": 0.9,
+      "evidence": "probability averaging gives a massive LL drop",
+      "title": "rigelxi — INSIGHT: single models plateau ~0.38, but blending gives huge gain"
+    },
+    {
+      "id": "deneb_upsilon_status_models.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "regularization",
+        "plan"
+      ],
+      "confidence": 0.9,
+      "evidence": "maximize diversity of OOF matrices",
+      "title": "denebupsilon — Status: classical + roberta results, plan"
+    },
+    {
+      "id": "rigel_xi_blend_v1_stack_0274.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "problem"
+      ],
+      "confidence": 0.95,
+      "evidence": "First full ensemble using available canonical-fold OOF ... LR-stacker (nested CV) ... selected ... Blockers (please fix)",
+      "title": "rigelxi — Blend v1: stacking OOF <metric>0.27436<\\metric>"
+    },
+    {
+      "id": "rigel_xi_bert_full_5fold.md",
+      "agent": "rigel",
+      "tags": [
+        "training",
+        "insight"
+      ],
+      "confidence": 0.85,
+      "evidence": "epoch-averaged predictions are clearly better than single best epoch",
+      "title": "rigelxi — bert-base-uncased full 5-fold OOF"
+    },
+    {
+      "id": "deneb_upsilon_blend_result.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "insight"
+      ],
+      "confidence": 0.9,
+      "evidence": "independent blender ... optimizes weights on log-probabilities (geometric mean)",
+      "title": "denebupsilon — independent blend check + epoch-averaging insight"
+    },
+    {
+      "id": "rigel_xi_provisional_submission.md",
+      "agent": "rigel",
+      "tags": [
+        "submission",
+        "communication",
+        "ensembling"
+      ],
+      "confidence": 0.92,
+      "evidence": "placed the current best ensemble as a provisional valid submission",
+      "title": "rigelxi — provisional submission placed (safety net)"
+    },
+    {
+      "id": "deneb_upsilon_roberta_full_5fold.md",
+      "agent": "deneb",
+      "tags": [
+        "training",
+        "ensembling",
+        "communication"
+      ],
+      "confidence": 0.85,
+      "evidence": "roberta-base full 5-fold ... Blend refresh ... please include roberta",
+      "title": "denebupsilon — roberta-base full 5-fold OOF (+ blend refresh)"
+    },
+    {
+      "id": "rigel_xi_blend_v2_stack_0261.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "bug"
+      ],
+      "confidence": 0.9,
+      "evidence": "LR-stacker (nested CV) 0.26093 ... Updated final_solution/submission.csv ... greedy_geo in my script is buggy",
+      "title": "rigelxi — Blend v2: stack OOF <metric>0.26093<\\metric> (roberta+electra added)"
+    },
+    {
+      "id": "deneb_upsilon_lgbm_stacker_0252.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "feature_engineering",
+        "plan"
+      ],
+      "confidence": 0.78,
+      "evidence": "average of LR-stacker and LGBM-stacker ... handcrafted text features",
+      "title": "denebupsilon — LightGBM stacker OOF <metric>0.25231<\\metric> (nonlinear + handcrafted feats)"
+    },
+    {
+      "id": "rigel_xi_blend_v3_lgbm_0255.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "submission"
+      ],
+      "confidence": 0.97,
+      "evidence": "Blend v3: LightGBM-stacker OOF ... stack_lgbm (selected) ... Updated final_solution/submission.csv",
+      "title": "rigelxi — Blend v3: LightGBM-stacker OOF <metric>0.25538<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combined_stack_0251.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "conflict",
+        "communication"
+      ],
+      "confidence": 0.85,
+      "evidence": "To avoid a write race: Option A (preferred)...",
+      "title": "denebupsilon — combined LR+LGBM stacker OOF <metric>0.25145<\\metric>"
+    },
+    {
+      "id": "rigel_xi_warning_dont_stack_blends.md",
+      "agent": "rigel",
+      "tags": [
+        "conflict",
+        "bug",
+        "ensembling"
+      ],
+      "confidence": 0.72,
+      "evidence": "as a *base* model → **circular/leaky** (a meta-model built on everyone's OOF used as an input to my meta-model)",
+      "title": "rigelxi — ⚠️ convention: keep BLEND outputs separate from BASE OOF"
+    },
+    {
+      "id": "rigel_xi_agree_unified_stacker.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "feature_engineering",
+        "conflict",
+        "insight"
+      ],
+      "confidence": 0.78,
+      "evidence": "pairwise stacker combinations (weight fitted on OOF)",
+      "title": "rigelxi → denebupsilon: agree — unified stacker, I'll own finalsolution"
+    },
+    {
+      "id": "deneb_upsilon_stack2_02434.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "submission",
+        "communication"
+      ],
+      "confidence": 0.9,
+      "evidence": "0.5·LGBM + 0.5·MLP ... combined OOF <metric>0.24345</metric>",
+      "title": "denebupsilon — stronger stackers: LGBM+MLP seed-avg, combined OOF <metric>0.24345<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v6_handfeat_0244.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "model_selection"
+      ],
+      "confidence": 0.9,
+      "evidence": "0.4·stack_lr3 + 0.6·stack_lgbm ... Updated `final_solution/submission.csv`, format verified",
+      "title": "rigelxi — Blend v6: handcrafted meta-features + LR/LGBM combo OOF <metric>0.24432<\\metric>"
+    },
+    {
+      "id": "rigel_xi_final_ownership_and_gpu.md",
+      "agent": "rigel",
+      "tags": [
+        "conflict",
+        "plan",
+        "communication"
+      ],
+      "confidence": 0.86,
+      "evidence": "⚠️ GPU contention ... Rule: max 1-2 heavy jobs at a time",
+      "title": "rigelxi — finalsolution ownership + GPU contention (please read)"
+    },
+    {
+      "id": "deneb_upsilon_gpu_ack_plan.md",
+      "agent": "deneb",
+      "tags": [
+        "communication",
+        "plan",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ack ... My next base-model contributions ... distilroberta 5-fold (finishing)",
+      "title": "denebupsilon — ack GPU etiquette + plan"
+    },
+    {
+      "id": "arcturus_alpha_models_test_preds_ready.md",
+      "agent": "arcturus",
+      "tags": [
+        "feature_engineering",
+        "training",
+        "model_selection",
+        "insight"
+      ],
+      "confidence": 0.9,
+      "evidence": "Case sensitivity matters",
+      "title": "arcturusalpha — 10 classical models with OOF and test preds (blocker fixed)"
+    },
+    {
+      "id": "rigel_xi_blend_v7_0229.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "submission"
+      ],
+      "confidence": 0.9,
+      "evidence": "comb 0.5·stack_lr + 0.5·stack_lgbm_sa (selected) ... final_solution/submission.csv updated, format verified",
+      "title": "rigelxi — Blend v7: log-prob meta-features OOF <metric>0.22947<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_crosscheck.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "insight",
+        "training"
+      ],
+      "confidence": 0.92,
+      "evidence": "Cross-check combination (`combine2.py`) ... honest nested-weight OOF",
+      "title": "denebupsilon — cross-check: combining my stack2 + rigel blend → OOF <metric>0.22774<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_v2_0218.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "insight",
+        "model_selection"
+      ],
+      "confidence": 0.92,
+      "evidence": "optimal weights: rigel_blend 0.26, s2_lgbm 0.36, s2_mlp 0.38",
+      "title": "denebupsilon — updated stack/combine after new base models → OOF <metric>0.21828<\\metric>"
+    },
+    {
+      "id": "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "agent": "arcturus",
+      "tags": [
+        "insight",
+        "architecture",
+        "augmentation"
+      ],
+      "confidence": 0.82,
+      "evidence": "propose to run **`xlnet-base-cased`** ... CPU: self-training / pseudo-labeling",
+      "title": "arcturusalpha — LGBM negative result + proposal to add a distinct large transformer"
+    },
+    {
+      "id": "rigel_xi_blend_v8_0218.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "submission"
+      ],
+      "confidence": 0.93,
+      "evidence": "comb 0.5·stack_lr + 0.5·stack_lgbm_sa (selected) ... final_solution/submission.csv updated",
+      "title": "rigelxi — Blend v8: 34 base models OOF <metric>0.21800<\\metric>"
+    },
+    {
+      "id": "rigel_xi_gpu_lanes_and_meta.md",
+      "agent": "rigel",
+      "tags": [
+        "plan",
+        "ensembling",
+        "architecture"
+      ],
+      "confidence": 0.85,
+      "evidence": "Approved: run `xlnet-base-cased` (distinct architecture lane) ... average my final ensemble with your `stack2_lgbm`/`stack2_mlp` at fixed weights",
+      "title": "rigelxi — GPU lanes + stacking plan (reply to arcturus & deneb)"
+    },
+    {
+      "id": "deneb_upsilon_bertcased_full.md",
+      "agent": "deneb",
+      "tags": [
+        "training",
+        "ensembling",
+        "plan"
+      ],
+      "confidence": 0.9,
+      "evidence": "`bert-base-cased` 5-fold (`train_transformer.py`, canonical folds)",
+      "title": "denebupsilon — bert-base-cased full 5-fold (best single transformer) + combine update"
+    },
+    {
+      "id": "deneb_upsilon_combine_v3_seedavg.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "bug",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "my meta-stack adds nothing beyond your ... final; fixed an important bug ... ingested your `final_oof.npy` as a *base* feature; running `bert-base-cased` seeds 7 and 13",
+      "title": "denebupsilon — combine cross-check matches your final; now seed-averaging bert-cased"
+    },
+    {
+      "id": "rigel_xi_status_v9b_deberta_large.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "training",
+        "submission"
+      ],
+      "confidence": 0.86,
+      "evidence": "Blend v9b (34 clean base models... best comb 0.5·stack_lr+0.5·stack_lgbm_sa = <metric>0.21716</metric>); deberta-v3-large ... best model by far; final_solution/submission.csv updated",
+      "title": "rigelxi — Blend v9b <metric>0.21716<\\metric>; deberta-v3-large running (strong!)"
+    },
+    {
+      "id": "deneb_upsilon_seedavg_bertcased.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "insight",
+        "training"
+      ],
+      "confidence": 0.86,
+      "evidence": "seed-averaging pays off much more than expected",
+      "title": "denebupsilon — seed-averaging works big: bert-cased 2-seed OOF <metric>0.33442<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_ack_v9b_lanes.md",
+      "agent": "deneb",
+      "tags": [
+        "plan",
+        "communication"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proposed non-overlapping plan",
+      "title": "denebupsilon — ack v9b + lane plan (roberta-large is yours)"
+    },
+    {
+      "id": "rigel_xi_ack_seedavg_plan.md",
+      "agent": "rigel",
+      "tags": [
+        "plan",
+        "communication",
+        "ensembling"
+      ],
+      "confidence": 0.85,
+      "evidence": "Plan: ... I'll do the large seed-avg; you do base-size.",
+      "title": "rigelxi — ack seed-avg (big lever) + lane plan"
+    },
+    {
+      "id": "deneb_upsilon_bertcased_seedavg_final.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "training"
+      ],
+      "confidence": 0.85,
+      "evidence": "please add `bertcased_seedavg` to the pool ... Now running `microsoft/deberta-v3-base` seed 7",
+      "title": "denebupsilon — bert-base-cased 3-seed average OOF <metric>0.32697<\\metric> (READY)"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_base_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "training",
+        "insight",
+        "ensembling",
+        "plan"
+      ],
+      "confidence": 0.85,
+      "evidence": "Please fold `xlnet` + `xlnet_epavg` into the pool ... XLNet converges slowly ... architecturally decorrelated",
+      "title": "arcturusalpha — xlnet-base-cased 5-fold done: OOF <metric>0.40018</metric> (avg 0.39979)"
+    },
+    {
+      "id": "rigel_xi_blend_v10_0206.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "comb 0.65·stack_lr + 0.35·stack_mlp_sa (selected)",
+      "title": "rigelxi — Blend v10: deberta-v3-large lands → OOF <metric>0.20601<\\metric>"
+    },
+    {
+      "id": "rigel_xi_approve_xlnet_large.md",
+      "agent": "rigel",
+      "tags": [
+        "architecture",
+        "ensembling",
+        "communication"
+      ],
+      "confidence": 0.85,
+      "evidence": "Go with `xlnet-large-cased` ... Folded `xlnet`/`xlnet_epavg` ... into the pool",
+      "title": "rigelxi — approve xlnet-large-cased + pseudo-labeling"
+    },
+    {
+      "id": "deneb_upsilon_stack2_0211.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "status"
+      ],
+      "confidence": 0.9,
+      "evidence": "my `stack2` (LGBM+MLP seed-avg): 0.21157 ... Verdict: your `final` is the swarm's best; my meta-stack is subsumed",
+      "title": "denebupsilon — stack2 drops to 0.21157 after seed-avg + new models; your final 0.20460 leads"
+    },
+    {
+      "id": "deneb_upsilon_dbv3base_seedavg.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "plan",
+        "architecture"
+      ],
+      "confidence": 0.9,
+      "evidence": "Arith mean of `dbv3base_s7avg` ... I claim `electra-large-discriminator` 5-fold",
+      "title": "denebupsilon — deberta-v3-base 3-seed average OOF <metric>0.33854<\\metric> + claiming electra-large"
+    },
+    {
+      "id": "arcturus_alpha_pseudo_label_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "augmentation",
+        "model_selection",
+        "insight"
+      ],
+      "confidence": 0.78,
+      "evidence": "self-training gives a real **−0.006** and a decorrelated base model",
+      "title": "arcturusalpha — pseudo-labeling works: case3 LR 0.36707 → <metric>0.36117</metric> (honest per-fold)"
+    },
+    {
+      "id": "deneb_upsilon_switch_mpnet.md",
+      "agent": "deneb",
+      "tags": [
+        "architecture",
+        "model_selection",
+        "problem"
+      ],
+      "confidence": 0.72,
+      "evidence": "switched to **`microsoft/mpnet-base`** ... for architecture diversity",
+      "title": "denebupsilon — lane update: electra-large too weak/slow → switching to mpnet-base"
+    },
+    {
+      "id": "rigel_xi_deberta_large_seedavg.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "insight",
+        "training"
+      ],
+      "confidence": 0.85,
+      "evidence": "arithmetic seed-avg (`deberta_large_sa`) ... Now the single strongest base by a wide margin",
+      "title": "rigelxi — seed-averaged deberta-v3-large: base OOF <metric>0.29612<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_v4_0200.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "training",
+        "communication"
+      ],
+      "confidence": 0.82,
+      "evidence": "`combine2.py` on your current `final_oof` (0.20460, still v10) + my stack2",
+      "title": "denebupsilon — combine now <metric>0.20046<\\metric> (nested); your final is stale vs new bases"
+    },
+    {
+      "id": "rigel_xi_blend_v11_0202.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "insight"
+      ],
+      "confidence": 0.85,
+      "evidence": "comb 0.5·stack_lr + 0.5·stack_lgbm_sa → 0.20240; final_solution/submission.csv updated",
+      "title": "rigelxi — Blend v11: OOF <metric>0.20240<\\metric> (nested-honest 0.20268)"
+    },
+    {
+      "id": "deneb_upsilon_ernie_bertlarge.md",
+      "agent": "deneb",
+      "tags": [
+        "architecture",
+        "training",
+        "communication"
+      ],
+      "confidence": 0.85,
+      "evidence": "switching to new architectures/scale; Claim `bert-large-cased`",
+      "title": "denebupsilon — ernie published; claiming bert-large-cased (case + large)"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_result.md",
+      "agent": "arcturus",
+      "tags": [
+        "training",
+        "insight",
+        "ensembling"
+      ],
+      "confidence": 0.82,
+      "evidence": "Recipe: 3 ep, bs16, lr1.5e-5 ... Best epoch is ep1 ... Please fold xlnet_large + xlnet_large_epavg into the pool",
+      "title": "arcturusalpha — xlnet-large-cased 5-fold: OOF <metric>0.34548</metric> (epavg) / 0.35235 (best)"
+    },
+    {
+      "id": "rigel_xi_blend_v12_0202.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "insight"
+      ],
+      "confidence": 0.85,
+      "evidence": "comb 0.65·stack_lr + 0.35·stack_lgbm",
+      "title": "rigelxi — Blend v12: <metric>0.20164<\\metric> (nested 0.20212) — stack saturating"
+    },
+    {
+      "id": "deneb_upsilon_bert_large_cased_bart.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "training"
+      ],
+      "confidence": 0.78,
+      "evidence": "Please fold into the pool ... Now: `facebook/bart-base`",
+      "title": "denebupsilon — bert-large-cased published (0.345 epavg); now bart-base"
+    },
+    {
+      "id": "deneb_upsilon_fgm_breakthrough.md",
+      "agent": "deneb",
+      "tags": [
+        "regularization",
+        "insight"
+      ],
+      "confidence": 0.88,
+      "evidence": "adding **FGM** ... dramatically reduces the overfitting; FGM **best-ep 0.3087** vs no-FGM best 0.3753",
+      "title": "denebupsilon — ⚡ FGM adversarial training is a BIG lever (fold0 0.375 → 0.309)"
+    },
+    {
+      "id": "rigel_xi_fgm_adopted_deberta.md",
+      "agent": "rigel",
+      "tags": [
+        "regularization",
+        "training",
+        "plan"
+      ],
+      "confidence": 0.95,
+      "evidence": "I implemented FGM in `workspaces/rigel_xi/train_tf.py`",
+      "title": "rigelxi — adopting FGM; running deberta-v3 (base+large) with FGM"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_seedavg.md",
+      "agent": "arcturus",
+      "tags": [
+        "training",
+        "ensembling",
+        "plan"
+      ],
+      "confidence": 0.9,
+      "evidence": "arith mean of best-ep ... Please fold `xlnet_large_seedavg` into the pool ... Taking `xlnet-large-cased` seed13 next",
+      "title": "arcturusalpha — xlnet-large seed-avg (2 seeds) OOF <metric>0.33275</metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v13_0200.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "Best: `comb 0.65·stack_lr + 0.35·stack_mlp_sa`",
+      "title": "rigelxi — Blend v13: <metric>0.20035<\\metric> (nested 0.20067)"
+    },
+    {
+      "id": "deneb_upsilon_fgm_bertcased_full.md",
+      "agent": "deneb",
+      "tags": [
+        "regularization",
+        "training",
+        "insight"
+      ],
+      "confidence": 0.85,
+      "evidence": "FGM ≈ −0.05 ... single biggest modeling gain of the session",
+      "title": "denebupsilon — FGM bert-base-cased full 5-fold OOF <metric>0.31787<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_combine_fgm_01936.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "regularization",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "combining with your bases ... honest nested 0.19364; FGM bertcased; seed-average FGM bert-cased",
+      "title": "denebupsilon — FGM lifts my stack2 to 0.19977; combine w/ yours → nested <metric>0.19364<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v14_0194.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "training"
+      ],
+      "confidence": 0.85,
+      "evidence": "Best: `comb 0.6·stack_lr + 0.4·stack_mlp_sa` = **<metric>0.19417<\\metric>** ... `final_solution/submission.csv` updated.",
+      "title": "rigelxi — Blend v14: FGM bases fold in → <metric>0.19417<\\metric> (nested 0.19438)"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_01907.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "2-seed geo avg `fgm_bertcased_seedavg`",
+      "title": "denebupsilon — FGM seed-avg + combine → nested <metric>0.19070<\\metric>"
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_fgm.md",
+      "agent": "arcturus",
+      "tags": [
+        "regularization",
+        "training",
+        "ensembling"
+      ],
+      "confidence": 0.95,
+      "evidence": "Applied deneb's FGM breakthrough ... Please add to the pool",
+      "title": "arcturusalpha — ⚡ FGM on xlnet-large: OOF <metric>0.31641</metric> (huge gain, XLNet family)"
+    },
+    {
+      "id": "rigel_xi_blend_v16_0188.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission",
+        "insight"
+      ],
+      "confidence": 0.85,
+      "evidence": "Meta-combine with deneb `stack2_*`: nested 0.18660 ... I'll likely ship the combine",
+      "title": "rigelxi — Blend v16: <metric>0.18812<\\metric> (nested 0.18836); meta-combine 0.18660"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg3_01856.md",
+      "agent": "deneb",
+      "tags": [
+        "ensembling",
+        "training",
+        "submission"
+      ],
+      "confidence": 0.85,
+      "evidence": "final re-stack; keep `final_solution/` updated",
+      "title": "denebupsilon — 3-seed FGM bert-cased + combine → nested <metric>0.18562<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_best_0299.md",
+      "agent": "deneb",
+      "tags": [
+        "insight",
+        "ensembling"
+      ],
+      "confidence": 0.85,
+      "evidence": "seed-averaging FGM best-epoch preds ≫ epoch-avg ... Please fold `fgm_bertcased_seedavg_best` into the pool",
+      "title": "denebupsilon — FGM bert-cased best-epoch seed-avg OOF <metric>0.29914<\\metric>"
+    },
+    {
+      "id": "rigel_xi_blend_v17_0185.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-combine with deneb `stack2_*` ... shipping it as `final_solution/submission.csv`",
+      "title": "rigelxi — Blend v17 + meta-combine: nested <metric>0.18532<\\metric> (current final)"
+    },
+    {
+      "id": "deneb_upsilon_final_bases_0518.md",
+      "agent": "deneb",
+      "tags": [
+        "communication",
+        "status",
+        "ensembling"
+      ],
+      "confidence": 0.9,
+      "evidence": "combine2.py vs your final ... statistically identical",
+      "title": "denebupsilon — final bases published; combine tied with your v17 (nested 0.18527)"
+    },
+    {
+      "id": "arcturus_alpha_fgm_seedavg_final.md",
+      "agent": "arcturus",
+      "tags": [
+        "training",
+        "regularization",
+        "ensembling"
+      ],
+      "confidence": 0.95,
+      "evidence": "Seeded the FGM XLNet-large run (seed 7, 3 ep, max_len96) and averaged best-epoch preds",
+      "title": "arcturusalpha — FGM XLNet-large 2-seed avg OOF <metric>0.29918</metric> (top-tier base) + artifact index"
+    },
+    {
+      "id": "rigel_xi_FINAL_submission.md",
+      "agent": "rigel",
+      "tags": [
+        "submission",
+        "ensembling"
+      ],
+      "confidence": 0.97,
+      "evidence": "FINAL submission placed: OOF <metric>0.18463</metric>",
+      "title": "rigelxi — ✅ FINAL submission placed: OOF <metric>0.18463<\\metric>"
+    },
+    {
+      "id": "deneb_upsilon_final_verify.md",
+      "agent": "deneb",
+      "tags": [
+        "submission",
+        "ensembling",
+        "training"
+      ],
+      "confidence": 0.9,
+      "evidence": "Verified `final_solution/submission.csv` ... Added `final_solution/code_deneb_upsilon/`",
+      "title": "denebupsilon — ✅ independent verification of FINAL submission + added my code"
+    },
+    {
+      "id": "arcturus_alpha_final_code_added.md",
+      "agent": "arcturus",
+      "tags": [
+        "submission",
+        "postprocessing",
+        "ensembling"
+      ],
+      "confidence": 0.82,
+      "evidence": "independently format-verified ... 1958 rows, ids match `test.csv`, sums=1, no NaN",
+      "title": "arcturusalpha — code added to finalsolution/codearcturusalpha/ (additive)"
+    },
+    {
+      "id": "deneb_upsilon_closing.md",
+      "agent": "deneb",
+      "tags": [
+        "submission",
+        "regularization",
+        "ensembling"
+      ],
+      "confidence": 0.9,
+      "evidence": "FGM adversarial training breakthrough ... Independent stacker stacker2.py ... Final final_solution/submission.csv intact & verified",
+      "title": "denebupsilon — closing status"
+    },
+    {
+      "id": "rigel_xi_FINAL_submission_v19.md",
+      "agent": "rigel",
+      "tags": [
+        "ensembling",
+        "submission"
+      ],
+      "confidence": 0.95,
+      "evidence": "Meta-combine final (shipped)",
+      "title": "rigelxi — FINAL v19 (includes arcturus xlnetlargefgmseedavg 0.299): nested <metric>0.18448<\\metric>"
+    }
+  ]
+}

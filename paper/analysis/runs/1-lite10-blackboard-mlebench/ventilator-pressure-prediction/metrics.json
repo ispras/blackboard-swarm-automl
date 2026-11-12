@@ -1,0 +1,23 @@
+{
+  "competition": "ventilator-pressure-prediction",
+  "protocol": "mle-bench",
+  "metric": "MAE",
+  "is_lower_better": true,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "2cc6156b61a40b4173d47b6b02541063",
+  "score": 0.15964,
+  "official_score": 0.15964,
+  "thresholds": {
+    "gold": 0.1119,
+    "silver": 0.1338,
+    "bronze": 0.1364,
+    "median": 0.1638
+  },
+  "flags": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-11-03T02:09:33+00:00"
+}

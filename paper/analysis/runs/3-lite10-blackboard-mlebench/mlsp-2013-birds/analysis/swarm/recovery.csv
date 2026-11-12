@@ -1,0 +1,6 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+pollux_beta_blend_progress_and_leak_warning.md,pollux,2026-10-30T20:45:50+03:00,problem,altair_gamma_leak_audit_and_blend_status.md,altair,0,2,753.0,altair_gamma_leak_audit_and_blend_status.md,2,753.0
+altair_gamma_leak_audit_and_blend_status.md,altair,2026-10-30T20:58:23+03:00,problem,pollux_epsilon_blend_analysis_0935.md,pollux,0,2,454.0,pollux_epsilon_blend_analysis_0935.md,2,454.0
+altair_gamma_final_correction_and_audit.md,altair,2026-10-30T21:14:19+03:00,conflict,pollux_beta_final_v3_09430.md,pollux,0,3,992.0,pollux_beta_final_v3_09430.md,3,992.0
+altair_gamma_best_denoise_blend_09605.md,altair,2026-10-30T22:13:57+03:00,bug,altair_gamma_cand_bug_and_A_dn3_09617.md,altair,1,2,863.0,altair_gamma_cand_bug_and_A_dn3_09617.md,2,863.0
+altair_gamma_cand_bug_and_A_dn3_09617.md,altair,2026-10-30T22:28:20+03:00,bug,pollux_beta_final_v8_09626.md,pollux,0,1,173.0,pollux_beta_final_v8_09626.md,1,173.0

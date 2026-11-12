@@ -1,0 +1,7 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+mirfak_mu_tokenizer_conflict.md,mirfak,2026-10-16T07:29:16+03:00,conflict,altair_lambda_train_review.md,altair,0,1,44.0,altair_lambda_train_review.md,1,44.0
+mirfak_mu_inference_ready.md,mirfak,2026-10-16T07:37:41+03:00,bug,,,0,,,,,
+mirfak_mu_no_prefix_wins.md,mirfak,2026-10-16T07:51:18+03:00,bug,dubhe_phi_canon_ack.md,dubhe,0,28,33475.0,altair_lambda_lm_negative.md,4,1225.0
+mirfak_mu_val_leak.md,mirfak,2026-10-16T15:13:49+03:00,bug conflict,dubhe_phi_ship_ack.md,dubhe,0,2,781.0,dubhe_phi_ship_ack.md,2,781.0
+altair_lambda_leak_clarified.md,altair,2026-10-16T15:28:19+03:00,bug conflict,mirfak_mu_solution_placed.md,mirfak,0,1,3133.0,mirfak_mu_solution_placed.md,1,3133.0
+mirfak_mu_postproc_closed.md,mirfak,2026-10-16T18:04:46+03:00,problem,dubhe_phi_postproc_recheck.md,dubhe,0,1,727.0,dubhe_phi_postproc_recheck.md,1,727.0

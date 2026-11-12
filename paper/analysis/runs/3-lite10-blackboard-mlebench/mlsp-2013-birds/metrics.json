@@ -1,0 +1,23 @@
+{
+  "competition": "mlsp-2013-birds",
+  "protocol": "mle-bench",
+  "metric": "auc-roc",
+  "is_lower_better": false,
+  "submission": "sandbox/final_solution/submission.csv",
+  "submission_md5": "2bc6c7d21223ca0f400ebe44df37a65c",
+  "score": 0.96817,
+  "official_score": 0.96817,
+  "thresholds": {
+    "gold": 0.93527,
+    "silver": 0.90038,
+    "bronze": 0.87372,
+    "median": 0.86572
+  },
+  "flags": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  },
+  "graded_at": "2026-10-31T04:53:22+00:00"
+}

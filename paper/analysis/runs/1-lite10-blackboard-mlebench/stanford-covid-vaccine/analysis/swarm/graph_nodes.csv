@@ -1,0 +1,46 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+fomalhaut_beta_intro.md,fomalhaut,2026-10-15T03:20:31+03:00,communication data_pipeline plan,2,0,0,0
+vega_pi_intro_and_plan.md,vega,2026-10-15T03:20:34+03:00,communication insight plan,0,0,0,0
+mirfak_zeta_intro.md,mirfak,2026-10-15T03:20:44+03:00,communication data_pipeline plan,1,1,1,0
+mirfak_zeta_cv_baseline.md,mirfak,2026-10-15T03:23:40+03:00,data_pipeline ensembling insight model_selection status,4,0,0,0
+vega_pi_sn_filter_finding.md,vega,2026-10-15T03:26:06+03:00,data_pipeline ensembling insight model_selection training,3,2,1,0
+fomalhaut_beta_cv_protocol.md,fomalhaut,2026-10-15T03:33:34+03:00,data_preprocessing insight plan regularization,5,1,2,0
+vega_pi_oof_baseline.md,vega,2026-10-15T03:34:57+03:00,ensembling model_selection status submission training,3,3,3,1
+fomalhaut_beta_conflict_submission.md,fomalhaut,2026-10-15T03:41:20+03:00,communication conflict ensembling submission,2,1,4,1
+fomalhaut_beta_role.md,fomalhaut,2026-10-15T03:46:46+03:00,communication ensembling plan status,2,3,4,0
+mirfak_zeta_ensemble_result.md,mirfak,2026-10-15T03:46:48+03:00,ensembling insight status submission,3,3,4,1
+vega_pi_roles_ack.md,vega,2026-10-15T03:47:47+03:00,communication ensembling plan status,2,2,5,0
+mirfak_zeta_ownership_clarification.md,mirfak,2026-10-15T03:49:28+03:00,communication ensembling plan status,2,3,6,0
+vega_pi_diverse_oofs.md,vega,2026-10-15T04:03:15+03:00,ensembling inference status submission,7,2,6,1
+mirfak_zeta_blend_nnls.md,mirfak,2026-10-15T04:11:10+03:00,ensembling insight postprocessing status submission,4,3,7,1
+fomalhaut_beta_multiseed_and_blend.md,fomalhaut,2026-10-15T04:11:50+03:00,ensembling insight model_selection status,3,3,7,0
+fomalhaut_beta_blend_check.md,fomalhaut,2026-10-15T04:20:27+03:00,ensembling insight loss status training,2,2,8,0
+mirfak_zeta_blend_v2.md,mirfak,2026-10-15T04:43:56+03:00,communication ensembling status submission,1,2,9,1
+fomalhaut_beta_diverse_loss.md,fomalhaut,2026-10-15T04:49:32+03:00,ensembling loss status training,3,2,9,0
+mirfak_zeta_blend_v3.md,mirfak,2026-10-15T04:50:56+03:00,communication ensembling status,1,3,10,0
+mirfak_zeta_saturation_probes.md,mirfak,2026-10-15T04:52:12+03:00,ensembling insight model_selection postprocessing,6,1,11,0
+vega_pi_blend_and_insights.md,vega,2026-10-15T05:11:07+03:00,ensembling insight model_selection regularization status submission,7,3,8,1
+mirfak_zeta_blend_v4.md,mirfak,2026-10-15T05:11:11+03:00,ensembling insight status submission,3,3,12,1
+fomalhaut_beta_cnn_models.md,fomalhaut,2026-10-15T05:16:03+03:00,architecture ensembling status,0,3,13,0
+mirfak_zeta_watcher.md,mirfak,2026-10-15T05:19:14+03:00,communication data_pipeline ensembling status submission,5,3,13,1
+fomalhaut_beta_negative_results.md,fomalhaut,2026-10-15T05:24:25+03:00,architecture ensembling insight status,7,3,13,0
+mirfak_zeta_blend_v5.md,mirfak,2026-10-15T05:41:01+03:00,ensembling insight status submission,2,4,14,1
+mirfak_zeta_blend_v6.md,mirfak,2026-10-15T06:01:35+03:00,architecture ensembling insight status,2,4,15,0
+vega_pi_kfold10_finding.md,vega,2026-10-15T06:25:57+03:00,data_pipeline ensembling insight model_selection status training,5,3,15,0
+mirfak_zeta_kfold10_adopt.md,mirfak,2026-10-15T06:37:22+03:00,data_pipeline ensembling model_selection status training,4,2,16,0
+fomalhaut_beta_wide_lstm.md,fomalhaut,2026-10-15T07:14:13+03:00,architecture ensembling insight loss status,3,3,16,0
+mirfak_zeta_blend_v7.md,mirfak,2026-10-15T08:23:49+03:00,ensembling status submission,1,3,17,1
+vega_pi_ew_pair_kfold.md,vega,2026-10-15T09:26:12+03:00,architecture ensembling insight loss regularization status,1,3,17,0
+fomalhaut_beta_kfold10.md,fomalhaut,2026-10-15T09:42:56+03:00,ensembling insight loss status training,3,3,17,0
+vega_pi_k30_and_stacker.md,vega,2026-10-15T12:14:05+03:00,ensembling insight model_selection status submission,5,4,18,1
+mirfak_zeta_ack_stacker.md,mirfak,2026-10-15T12:44:45+03:00,communication ensembling status submission,3,3,19,1
+fomalhaut_beta_final_status.md,fomalhaut,2026-10-15T13:06:39+03:00,communication ensembling status submission,5,3,20,1
+mirfak_zeta_final_status.md,mirfak,2026-10-15T13:30:03+03:00,ensembling status submission,2,2,21,1
+vega_pi_final_status.md,vega,2026-10-15T13:38:50+03:00,communication ensembling insight status submission,1,7,21,1
+vega_pi_verification.md,vega,2026-10-15T13:45:39+03:00,ensembling insight model_selection status submission,3,3,22,1
+fomalhaut_beta_closing.md,fomalhaut,2026-10-15T14:16:57+03:00,communication ensembling insight status submission,1,6,23,1
+vega_pi_watcher_bug.md,vega,2026-10-15T14:24:58+03:00,bug conflict ensembling status submission,2,2,23,1
+mirfak_zeta_bugfix.md,mirfak,2026-10-15T14:48:22+03:00,bug ensembling status submission,1,1,24,1
+vega_pi_watcher_recovered.md,vega,2026-10-15T14:49:06+03:00,bug ensembling status submission,0,1,24,1
+fomalhaut_beta_work_complete.md,fomalhaut,2026-10-15T14:57:07+03:00,communication status submission,0,3,24,1
+mirfak_zeta_final_confirmed.md,mirfak,2026-10-15T15:06:01+03:00,communication ensembling status submission,0,10,25,1

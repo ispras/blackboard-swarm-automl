@@ -1,0 +1,331 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/cassava-leaf-disease-classification",
+  "label": "cassava-leaf-disease-classification",
+  "metric": "accuracy",
+  "is_lower_better": false,
+  "final_score": 0.89537,
+  "thresholds": {
+    "gold": 0.9013,
+    "silver": 0.8992,
+    "bronze": 0.8978,
+    "median": 0.8909
+  },
+  "messages": {
+    "agent": 58,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 1,
+    "forward_links": 5,
+    "multiple_metrics": 9,
+    "without_metric": 24,
+    "system_links": 3
+  },
+  "graph": {
+    "nodes": 58,
+    "edges": 120,
+    "is_dag": true,
+    "cycles_full": [
+      [
+        "aldebaran_epsilon_phase2_ack.md",
+        "bellatrix_delta_phase3_proposal.md",
+        "bellatrix_delta_phase_plan.md",
+        "vega_eta_family_locked.md",
+        "vega_eta_gpu_warning.md",
+        "vega_eta_phase2_ack.md",
+        "vega_eta_phase3_ack.md"
+      ]
+    ],
+    "cycles_time": [],
+    "max_depth": 35,
+    "mean_depth_all": 16.53448275862069,
+    "mean_depth_linked": 17.436363636363637,
+    "longest_path": [
+      "aldebaran_epsilon_system_final_confirm.md",
+      "vega_eta_FINAL_CONFIRMED.md",
+      "vega_eta_final_reverify_swinms.md",
+      "bellatrix_delta_lastmile_negative.md",
+      "vega_eta_closing.md",
+      "bellatrix_delta_closing_confirmed.md",
+      "vega_eta_final_subset_check.md",
+      "vega_eta_FINAL_verification_v2.md",
+      "aldebaran_epsilon_FINAL_verified.md",
+      "aldebaran_epsilon_final_verified.md",
+      "vega_eta_final_verified_v1.md",
+      "bellatrix_delta_final_assembled.md",
+      "aldebaran_epsilon_tta4_done.md",
+      "bellatrix_delta_tta_my_models.md",
+      "vega_eta_tta_done.md",
+      "vega_eta_tta_upgrade.md",
+      "bellatrix_delta_final_decision.md",
+      "vega_eta_combiner_and_9th.md",
+      "vega_eta_cnv2_result.md",
+      "vega_eta_pseudo_experiment.md",
+      "bellatrix_delta_final_timeline.md",
+      "bellatrix_delta_hedge6.md",
+      "bellatrix_delta_blend_cv_insight.md",
+      "aldebaran_epsilon_blend_check5.md",
+      "aldebaran_epsilon_swin_result.md",
+      "aldebaran_epsilon_phase3_ack.md",
+      "vega_eta_phase3_ack.md",
+      "bellatrix_delta_phase3_proposal.md",
+      "vega_eta_gpu_warning.md",
+      "aldebaran_epsilon_phase2_ack.md",
+      "bellatrix_delta_phase_plan.md",
+      "aldebaran_epsilon_swin_progress.md",
+      "bellatrix_delta_b5_training_started.md",
+      "bellatrix_delta_roles_resolved.md",
+      "aldebaran_epsilon_split_agreed.md",
+      "bellatrix_delta_intro_plan.md"
+    ],
+    "max_indegree": 6,
+    "hubs": [
+      {
+        "name": "bellatrix_delta_final_decision.md",
+        "agent": "bellatrix",
+        "in_degree": 6,
+        "depth": 19,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "submission"
+        ],
+        "time": "2026-10-31T04:54:01+03:00"
+      },
+      {
+        "name": "vega_eta_tta_done.md",
+        "agent": "vega",
+        "in_degree": 6,
+        "depth": 21,
+        "tags": [
+          "ensembling",
+          "inference",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T05:23:26+03:00"
+      },
+      {
+        "name": "aldebaran_epsilon_FINAL_verified.md",
+        "agent": "aldebaran",
+        "in_degree": 6,
+        "depth": 27,
+        "tags": [
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T06:20:47+03:00"
+      },
+      {
+        "name": "bellatrix_delta_phase3_proposal.md",
+        "agent": "bellatrix",
+        "in_degree": 5,
+        "depth": 8,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "training"
+        ],
+        "time": "2026-10-30T23:18:36+03:00"
+      },
+      {
+        "name": "vega_eta_phase3_ack.md",
+        "agent": "vega",
+        "in_degree": 4,
+        "depth": 9,
+        "tags": [
+          "communication",
+          "ensembling",
+          "optimization",
+          "plan",
+          "training"
+        ],
+        "time": "2026-10-30T23:25:00+03:00"
+      },
+      {
+        "name": "aldebaran_epsilon_blend_check5.md",
+        "agent": "aldebaran",
+        "in_degree": 4,
+        "depth": 12,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-10-31T01:04:08+03:00"
+      },
+      {
+        "name": "aldebaran_epsilon_tta4_done.md",
+        "agent": "aldebaran",
+        "in_degree": 4,
+        "depth": 23,
+        "tags": [
+          "ensembling",
+          "inference",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T05:40:06+03:00"
+      }
+    ],
+    "submission_count": 31,
+    "submission_depths": [
+      4,
+      10,
+      11,
+      13,
+      14,
+      15,
+      18,
+      18,
+      19,
+      20,
+      20,
+      21,
+      23,
+      24,
+      25,
+      25,
+      26,
+      27,
+      28,
+      28,
+      28,
+      29,
+      30,
+      31,
+      32,
+      32,
+      33,
+      33,
+      34,
+      35,
+      35
+    ],
+    "final_submission": {
+      "name": "bellatrix_delta_SYSTEM_final_confirm.md",
+      "time": "2026-10-31T07:37:23+03:00",
+      "depth": 35,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 28,
+      "mean": -0.00011071428571428938,
+      "median": 0.0,
+      "positive": 0.2857142857142857,
+      "max": 0.006939999999999946
+    },
+    "transitive": {
+      "n": 31,
+      "mean": -0.0029703225806451345,
+      "median": -0.0018699999999999273,
+      "positive": 0.16129032258064516,
+      "max": 0.006939999999999946
+    },
+    "prev_linked": {
+      "n": 33,
+      "mean": -0.003628484848484817,
+      "median": -0.0018699999999999273,
+      "positive": 0.12121212121212122,
+      "max": 0.006939999999999946
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 1,
+      "direct": {
+        "events": 1,
+        "adopted": 1,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 469.0
+      },
+      "transitive": {
+        "events": 1,
+        "adopted": 1,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 469.0
+      }
+    },
+    "broad": {
+      "n_events": 9,
+      "direct": {
+        "events": 9,
+        "adopted": 7,
+        "rate": 0.7777777777777778,
+        "median_msgs": 1,
+        "mean_msgs": 1.2857142857142858,
+        "median_seconds": 342.0
+      },
+      "transitive": {
+        "events": 9,
+        "adopted": 8,
+        "rate": 0.8888888888888888,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.375,
+        "median_seconds": 405.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 5,
+      "direct": {
+        "events": 5,
+        "adopted": 5,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 4,
+        "median_seconds": 2212.0
+      },
+      "transitive": {
+        "events": 5,
+        "adopted": 5,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 4,
+        "median_seconds": 2212.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 1,
+    "direct": {
+      "events": 1,
+      "recovered": 0,
+      "rate": 0.0,
+      "median_msgs": null,
+      "median_seconds": null,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 1,
+      "recovered": 1,
+      "rate": 1.0,
+      "median_msgs": 5,
+      "median_seconds": 6357.0,
+      "different_author": 1
+    },
+    "problem_authors": {
+      "vega": 1
+    },
+    "recovery_authors": {}
+  }
+}

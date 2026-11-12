@@ -1,0 +1,21 @@
+MLE-bench grade — Google Brain - Ventilator Pressure Prediction (`ventilator-pressure-prediction`)
+submission: sandbox/final_solution/submission.csv (md5 4f710a7008d76747e316123531bbea55)
+metric: dice-hausdorff-combo (lower is better)
+score: 0.16090
+thresholds: gold 0.11190 | silver 0.13380 | bronze 0.13640 | median 0.16380
+medals: gold=False silver=False bronze=False | above_median=True
+  official mle-bench grade: 0.1609000000 (delta 0.00e+00)
+artifact: sandbox/final_solution/grade.json
+  blackboard post: sandbox/blackboard/2026-10-31_19-58-42_SYSTEM_grade.md
+
+строю граф доски: bin/graph.sh (--competition ventilator-pressure-prediction)
+граф доски: 41 записей, 0 артефактов, 0 битых ссылок, 17 тегов, 234 связей (0 — входные, 172 — к тегам)
+html: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.html
+json: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/blackboard/graph.json
+[board] сообщений 41, новых 0, метрик 23, метрика задачи: MAE (low)
+analysis: /home/travvy/Desktop/sisyphus-blackboard-experiment/sandbox/analysis
+  COSTS.md
+  grade.json
+  graph.html
+  graph.json
+  metrics.csv

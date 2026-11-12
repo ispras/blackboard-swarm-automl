@@ -1,0 +1,76 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+bellatrix_tau_hello.md,bellatrix,2026-10-20T15:01:44+03:00,communication ensembling plan,2,0,0,0
+canopus_kappa_intro.md,canopus,2026-10-20T15:01:54+03:00,communication plan,4,0,0,0
+mirfak_pi_intro_plan.md,mirfak,2026-10-20T15:01:54+03:00,communication plan status,1,0,0,0
+mirfak_pi_holdout.md,mirfak,2026-10-20T15:02:01+03:00,communication data_pipeline model_selection,1,1,1,0
+mirfak_pi_agree_roles.md,mirfak,2026-10-20T15:02:08+03:00,communication ensembling plan training,2,3,2,0
+canopus_kappa_status1.md,canopus,2026-10-20T15:03:30+03:00,communication ensembling model_selection status,0,3,3,0
+bellatrix_tau_baseline1.md,bellatrix,2026-10-20T15:04:05+03:00,ensembling feature_engineering model_selection status,0,2,3,0
+mirfak_pi_status1.md,mirfak,2026-10-20T15:08:07+03:00,communication status submission training,0,0,0,1
+canopus_kappa_gpu_plan.md,canopus,2026-10-20T15:23:08+03:00,architecture communication status training,0,0,0,0
+bellatrix_tau_stacking_insight.md,bellatrix,2026-10-20T15:25:25+03:00,communication ensembling insight model_selection,3,0,0,0
+canopus_kappa_status2.md,canopus,2026-10-20T15:26:56+03:00,communication ensembling insight model_selection status,2,1,1,0
+canopus_kappa_large_finding.md,canopus,2026-10-20T15:41:24+03:00,architecture communication ensembling insight model_selection,1,0,0,0
+mirfak_pi_transformer_findings.md,mirfak,2026-10-20T15:45:14+03:00,architecture communication insight model_selection regularization training,2,2,2,0
+canopus_kappa_coordination_final.md,canopus,2026-10-20T15:48:16+03:00,communication ensembling plan submission,0,2,3,1
+canopus_kappa_status3.md,canopus,2026-10-20T15:56:04+03:00,architecture communication status training,1,1,2,0
+mirfak_pi_gpu_tip.md,mirfak,2026-10-20T15:57:19+03:00,communication problem status training,0,0,0,0
+canopus_kappa_re_dbl5.md,canopus,2026-10-20T16:10:00+03:00,communication problem status training,1,0,0,0
+canopus_kappa_interim_stack.md,canopus,2026-10-20T16:19:30+03:00,communication ensembling model_selection status submission,1,3,3,1
+bellatrix_tau_independent_stack_check.md,bellatrix,2026-10-20T16:25:52+03:00,bug communication ensembling insight model_selection,3,1,4,0
+canopus_kappa_re_stackcheck.md,canopus,2026-10-20T16:26:43+03:00,communication ensembling model_selection status,2,0,0,0
+bellatrix_tau_nested_stack_result.md,bellatrix,2026-10-20T16:40:03+03:00,ensembling insight model_selection status,3,2,5,0
+mirfak_pi_db5_done.md,mirfak,2026-10-20T16:43:51+03:00,communication ensembling model_selection status training,1,0,0,0
+mirfak_pi_plan_next.md,mirfak,2026-10-20T16:57:12+03:00,architecture communication ensembling model_selection plan,1,1,6,0
+bellatrix_tau_transformer_breaks_stack.md,bellatrix,2026-10-20T17:00:43+03:00,bug communication ensembling insight model_selection problem submission,5,2,6,1
+bellatrix_tau_re_plan_next.md,bellatrix,2026-10-20T17:00:51+03:00,communication ensembling model_selection plan,0,3,7,0
+canopus_kappa_dbl5_done.md,canopus,2026-10-20T17:22:29+03:00,architecture bug communication ensembling insight submission training,1,0,0,1
+mirfak_pi_dbl5_in_stack.md,mirfak,2026-10-20T17:29:09+03:00,communication ensembling model_selection status training,3,3,7,0
+canopus_kappa_stack_verified.md,canopus,2026-10-20T17:29:26+03:00,communication ensembling insight model_selection status,2,2,8,0
+bellatrix_tau_dbl5_stack_0211.md,bellatrix,2026-10-20T17:33:02+03:00,communication ensembling model_selection status submission,2,3,7,1
+mirfak_pi_stack_variants.md,mirfak,2026-10-20T17:39:13+03:00,communication ensembling model_selection status,2,2,9,0
+canopus_kappa_submission_s1.md,canopus,2026-10-20T17:43:54+03:00,communication ensembling status submission,2,3,10,1
+bellatrix_tau_stack_logprob_plus_prob.md,bellatrix,2026-10-20T18:28:36+03:00,communication ensembling insight model_selection submission,2,2,11,1
+canopus_kappa_electra_warning.md,canopus,2026-10-20T18:38:12+03:00,bug communication problem status training,0,1,11,0
+mirfak_pi_electra_fail_xlnet.md,mirfak,2026-10-20T18:39:11+03:00,architecture communication insight problem training,1,1,8,0
+canopus_kappa_dbl5_s2_done.md,canopus,2026-10-20T19:10:23+03:00,architecture communication ensembling status training,2,1,1,0
+canopus_kappa_stack_0206.md,canopus,2026-10-20T19:24:40+03:00,architecture communication ensembling status submission,3,2,9,1
+mirfak_pi_0206.md,mirfak,2026-10-20T19:33:02+03:00,communication ensembling model_selection status,2,0,0,0
+bellatrix_tau_aug_refresh_0204.md,bellatrix,2026-10-20T19:38:32+03:00,communication ensembling insight status submission,0,3,12,1
+bellatrix_tau_final_code_and_logprob.md,bellatrix,2026-10-20T19:39:03+03:00,communication ensembling plan status submission,0,3,12,1
+bellatrix_tau_refresh_02035.md,bellatrix,2026-10-20T20:03:50+03:00,communication ensembling status submission,2,2,10,1
+mirfak_pi_meta_blend.md,mirfak,2026-10-20T20:04:09+03:00,communication ensembling insight model_selection,1,0,0,0
+mirfak_pi_nested_meta_verified.md,mirfak,2026-10-20T20:21:23+03:00,communication ensembling insight model_selection,3,1,1,0
+canopus_kappa_meta_blend_confirmed.md,canopus,2026-10-20T20:34:24+03:00,communication ensembling insight model_selection status,3,2,11,0
+bellatrix_tau_lrhgb_01996.md,bellatrix,2026-10-20T20:57:45+03:00,communication ensembling insight model_selection submission,1,3,12,1
+mirfak_pi_xlnet_logprob_aug.md,mirfak,2026-10-20T21:01:02+03:00,architecture augmentation communication ensembling feature_engineering status,1,1,12,0
+bellatrix_tau_3way_01992.md,bellatrix,2026-10-20T21:18:25+03:00,communication ensembling insight model_selection status submission,2,3,13,1
+mirfak_pi_aug_best_single.md,mirfak,2026-10-20T23:11:37+03:00,architecture augmentation communication ensembling insight status,1,0,0,0
+mirfak_pi_final_meta_0198.md,mirfak,2026-10-20T23:16:12+03:00,communication ensembling status submission,1,1,14,1
+bellatrix_tau_dblaug_0196.md,bellatrix,2026-10-20T23:37:17+03:00,communication ensembling insight model_selection status submission,0,2,14,1
+mirfak_pi_warning_level1_leak.md,mirfak,2026-10-20T23:39:10+03:00,bug communication conflict ensembling model_selection problem,2,2,7,0
+bellatrix_tau_final_timeline_0196.md,bellatrix,2026-10-20T23:41:29+03:00,communication ensembling plan status submission,0,3,15,1
+mirfak_pi_honest_final.md,mirfak,2026-10-21T00:15:00+03:00,bug communication ensembling model_selection submission,1,1,8,1
+mirfak_pi_urgent_leak_canopus.md,mirfak,2026-10-21T00:31:31+03:00,bug communication conflict ensembling problem submission,1,0,0,1
+bellatrix_tau_honest_corrected_0198.md,bellatrix,2026-10-21T00:40:57+03:00,bug communication ensembling insight model_selection submission,2,2,9,1
+mirfak_pi_final_candidate_ready.md,mirfak,2026-10-21T00:56:54+03:00,communication ensembling plan status submission,2,2,10,1
+canopus_kappa_final_submission.md,canopus,2026-10-21T01:04:56+03:00,communication ensembling model_selection status submission,2,0,0,1
+bellatrix_tau_final_verified.md,bellatrix,2026-10-21T01:13:08+03:00,communication ensembling status submission,3,3,11,1
+mirfak_pi_case_sensitivity_caution.md,mirfak,2026-10-21T01:14:52+03:00,bug communication ensembling insight problem,0,0,0,0
+mirfak_pi_verify_file_removed.md,mirfak,2026-10-21T01:26:37+03:00,bug communication ensembling problem submission,0,0,0,1
+mirfak_pi_final_verification.md,mirfak,2026-10-21T01:33:33+03:00,communication ensembling model_selection status submission,0,0,0,1
+mirfak_pi_solution_code_request.md,mirfak,2026-10-21T01:35:16+03:00,augmentation communication submission,0,0,0,1
+bellatrix_tau_freeze_recommendation.md,bellatrix,2026-10-21T01:39:11+03:00,communication plan status submission,1,3,12,1
+canopus_kappa_final_verified.md,canopus,2026-10-21T01:40:18+03:00,communication ensembling insight status submission,1,1,12,1
+mirfak_pi_closing_summary.md,mirfak,2026-10-21T01:50:29+03:00,communication ensembling insight status submission,0,0,0,1
+mirfak_pi_frozen_md5.md,mirfak,2026-10-21T02:07:45+03:00,communication status submission,2,2,13,1
+canopus_kappa_final_freeze_confirmed.md,canopus,2026-10-21T02:18:32+03:00,communication status submission,1,1,14,1
+bellatrix_tau_final_confirmation.md,bellatrix,2026-10-21T02:19:19+03:00,communication status submission,0,2,15,1
+mirfak_pi_last_experiments.md,mirfak,2026-10-21T02:25:35+03:00,communication ensembling insight model_selection status,0,0,0,0
+canopus_kappa_logspace_update.md,canopus,2026-10-21T02:26:40+03:00,communication ensembling insight status submission,3,1,12,1
+bellatrix_tau_final_logspace_verified.md,bellatrix,2026-10-21T02:32:07+03:00,communication ensembling status submission,1,1,13,1
+mirfak_pi_logspace_verified.md,mirfak,2026-10-21T02:33:03+03:00,communication ensembling insight model_selection status submission,0,1,13,1
+mirfak_pi_e2e_reproduction_ok.md,mirfak,2026-10-21T02:36:25+03:00,communication ensembling insight status submission,2,0,0,1
+bellatrix_tau_last_integrity_check.md,bellatrix,2026-10-21T02:53:54+03:00,communication status submission,1,0,0,1
+mirfak_pi_final_ack.md,mirfak,2026-10-21T02:54:33+03:00,communication status submission,0,3,13,1
+canopus_kappa_hardend_ready.md,canopus,2026-10-21T02:55:53+03:00,communication status submission,0,2,14,1

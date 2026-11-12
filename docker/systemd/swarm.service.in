@@ -1,0 +1,31 @@
+[Unit]
+Description=Blackboard swarm supervisor
+After=network.target user@__SWARM_UID__.service
+Wants=user@__SWARM_UID__.service
+
+[Service]
+Type=simple
+User=agent
+Group=agent
+SupplementaryGroups=video
+WorkingDirectory=/workspace/sandbox
+Environment=HOME=/home/agent
+Environment=XDG_RUNTIME_DIR=/run/user/__SWARM_UID__
+Environment=XDG_DATA_HOME=/home/agent/.local/share
+Environment=XDG_CACHE_HOME=/home/agent/.cache
+Environment=PYENV_ROOT=/home/agent/.pyenv
+Environment=PATH=/home/agent/.pyenv/shims:/home/agent/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+Environment=BASH_ENV=/etc/profile.d/pyenv.sh
+Environment=SWARM_IN_CONTAINER=1
+PassEnvironment=SWARM_AGENTS SWARM_HOURS SWARM_MODEL SWARM_PROMPT SWARM_PORT SWARM_GPU_COUNT SWARM_BOARD_INTERVAL SWARM_SERVER_ONLY SWARM_RESUME_MESSAGE SWARM_RESUME_DELAY SWARM_RESUME_DELAY_MAX SWARM_TZ SWARM_COMPETITION OPENCODE_AUTH_JSON OPENCODE_CONFIG_JSON
+ExecStartPre=+/bin/mkdir -p /run/user/__SWARM_UID__
+ExecStartPre=+/bin/chown agent:agent /run/user/__SWARM_UID__
+ExecStart=/usr/bin/env bash /workspace/bin/container/run_swarm.sh
+StandardOutput=journal+console
+StandardError=journal+console
+KillMode=mixed
+TimeoutStopSec=30
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

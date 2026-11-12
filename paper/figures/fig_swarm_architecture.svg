@@ -1,0 +1,275 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 560" width="100%" height="100%" role="img" aria-labelledby="fig-title fig-desc">
+  <title id="fig-title">Role-free blackboard swarm architecture</title>
+  <desc id="fig-desc">Three peer agents work in separate workspaces and coordinate only through a shared blackboard of Markdown messages. Agents run experiments in their workspaces, read and write messages on the blackboard, and place the agreed best solution in final_solution.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#1d2730"/>
+    </marker>
+    <marker id="arrow-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M10 0 L0 5 L10 10 Z" fill="#1d2730"/>
+    </marker>
+
+    <style>
+      .col-title { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; fill: #5c6b75; text-anchor: middle; }
+      .agent-badge { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #1d2730; text-anchor: middle; }
+      .agent-name { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #1d2730; }
+      .mono { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; }
+      .root-label { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 11px; font-weight: 700; fill: #33424d; }
+      .ws-path { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 10.5px; fill: #33424d; }
+      .ws-files { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 10.5px; fill: #5c6b75; }
+      .board-title { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 21px; font-weight: 700; fill: #1d2730; }
+      .file { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 11px; font-weight: 600; fill: #1d2730; }
+      .tag-text { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 12px; font-weight: 600; fill: #1d2730; text-anchor: middle; }
+      .legend { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 12.5px; fill: #33424d; }
+      .legend-muted { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 12.5px; fill: #5c6b75; }
+      .note { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 11.5px; fill: #5c6b75; }
+      .arrow-label { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 11.5px; fill: #33424d; text-anchor: middle; }
+      .mini-label { font-family: "DejaVu Sans", "Liberation Sans", Arial, sans-serif; font-size: 8.5px; fill: #33424d; text-anchor: middle; }
+      .folder-title { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 14px; font-weight: 700; fill: #1d2730; }
+      .small-file { font-family: "DejaVu Sans Mono", "Liberation Mono", monospace; font-size: 12.5px; fill: #1d2730; }
+
+      .box { fill: #eef3f5; stroke: #1d2730; stroke-width: 1.5; }
+      .board { fill: #e7eff2; stroke: #1d2730; stroke-width: 1.5; }
+      .card { fill: #ffffff; stroke: #b9c8d0; stroke-width: 1.2; }
+      .tag { fill: #cfe3e8; }
+      .line { stroke: #1d2730; stroke-width: 1.6; fill: none; }
+      .line-soft { stroke: #c9d6dc; stroke-width: 1; }
+      .icon { fill: #f4f9fa; stroke: #5c7a86; stroke-width: 1.2; stroke-linejoin: round; }
+    </style>
+
+    <pattern id="opencode-checker" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="8" fill="#0b0b0b"/>
+      <rect width="4" height="4" fill="#171717"/>
+      <rect x="4" y="4" width="4" height="4" fill="#171717"/>
+    </pattern>
+
+    <g id="opencode-logo">
+      <rect width="140" height="50" rx="10" fill="url(#opencode-checker)"/>
+      <text x="70" y="33" text-anchor="middle" font-family="'DejaVu Sans Mono','Liberation Mono',monospace" font-size="21" font-weight="700" fill="#ffffff" letter-spacing="0.5">opencode</text>
+    </g>
+  </defs>
+
+  <rect width="1140" height="560" fill="#ffffff"/>
+
+  <!-- Shared repository boundary -->
+  <rect x="8" y="28" width="1124" height="520" rx="16" fill="none" stroke="#a9bcc4" stroke-width="1.2" stroke-dasharray="6 5"/>
+  <path d="M 8 28 L 8 18 Q 8 10 16 10 L 132 10 Q 140 10 144 16 L 150 28 Z" fill="#eef3f5" stroke="#a9bcc4" stroke-width="1.2"/>
+  <path d="M20 18 h5 l2 2 h7 v6 h-14 z" fill="#d5e6ea" stroke="#5c7a86" stroke-width="1" stroke-linejoin="round"/>
+  <text x="38" y="24" class="root-label">sandbox/</text>
+
+  <!-- Column headers -->
+  <text x="105" y="44" class="col-title">WORKSPACES</text>
+  <text x="335" y="44" class="col-title">AGENTS</text>
+  <text x="680" y="44" class="col-title">BLACKBOARD</text>
+  <text x="1020" y="44" class="col-title">FINAL SOLUTION</text>
+
+  <!-- Workspace A -->
+  <g>
+    <rect x="20" y="88" width="170" height="120" rx="14" class="box"/>
+    <path d="M32 99 h5 l2 2 h7 v6 h-14 z" fill="#d5e6ea" stroke="#5c7a86" stroke-width="1" stroke-linejoin="round"/>
+    <text x="50" y="108" class="ws-path">workspaces/agent_a/</text>
+    <rect x="32" y="118" width="146" height="82" rx="7" fill="#ffffff" stroke="#c6d3d9" stroke-width="1"/>
+    <path d="M42 124 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="132" class="ws-files">train.csv</text>
+    <path d="M42 139 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="147" class="ws-files">valid.parquet</text>
+    <path d="M42 154 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="162" class="ws-files">features.py</text>
+    <path d="M42 169 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="177" class="ws-files">eda.log</text>
+  </g>
+
+  <!-- Workspace B -->
+  <g>
+    <rect x="20" y="240" width="170" height="120" rx="14" class="box"/>
+    <path d="M32 251 h5 l2 2 h7 v6 h-14 z" fill="#d5e6ea" stroke="#5c7a86" stroke-width="1" stroke-linejoin="round"/>
+    <text x="50" y="260" class="ws-path">workspaces/agent_b/</text>
+    <rect x="32" y="270" width="146" height="82" rx="7" fill="#ffffff" stroke="#c6d3d9" stroke-width="1"/>
+    <path d="M42 276 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="284" class="ws-files">model_a.pkl</text>
+    <path d="M42 291 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="299" class="ws-files">model_b.pkl</text>
+    <path d="M42 306 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="314" class="ws-files">stack.py</text>
+    <path d="M42 321 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="329" class="ws-files">oof.npy</text>
+    <path d="M42 336 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="344" class="ws-files">fit.log</text>
+  </g>
+
+  <!-- Workspace C -->
+  <g>
+    <rect x="20" y="392" width="170" height="120" rx="14" class="box"/>
+    <path d="M32 403 h5 l2 2 h7 v6 h-14 z" fill="#d5e6ea" stroke="#5c7a86" stroke-width="1" stroke-linejoin="round"/>
+    <text x="50" y="412" class="ws-path">workspaces/agent_c/</text>
+    <rect x="32" y="422" width="146" height="82" rx="7" fill="#ffffff" stroke="#c6d3d9" stroke-width="1"/>
+    <path d="M42 428 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="436" class="ws-files">val_preds.csv</text>
+    <path d="M42 443 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="451" class="ws-files">errors.py</text>
+    <path d="M42 458 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="466" class="ws-files">analysis.py</text>
+    <path d="M42 473 h5 l2 2 v9 h-7 z" class="icon"/>
+    <text x="56" y="481" class="ws-files">error.log</text>
+  </g>
+
+  <!-- Agent A -->
+  <g>
+    <rect x="240" y="88" width="190" height="120" rx="14" class="box"/>
+    <circle cx="264" cy="112" r="14" fill="#d5e6ea" stroke="#9fb4bd" stroke-width="1.1"/>
+    <text x="264" y="117" class="agent-badge">A</text>
+    <text x="288" y="118" class="agent-name">Agent A</text>
+    <use href="#opencode-logo" x="265" y="138"/>
+  </g>
+
+  <!-- Agent B -->
+  <g>
+    <rect x="240" y="240" width="190" height="120" rx="14" class="box"/>
+    <circle cx="264" cy="264" r="14" fill="#d5e6ea" stroke="#9fb4bd" stroke-width="1.1"/>
+    <text x="264" y="269" class="agent-badge">B</text>
+    <text x="288" y="270" class="agent-name">Agent B</text>
+    <use href="#opencode-logo" x="265" y="290"/>
+  </g>
+
+  <!-- Agent C -->
+  <g>
+    <rect x="240" y="392" width="190" height="120" rx="14" class="box"/>
+    <circle cx="264" cy="416" r="14" fill="#d5e6ea" stroke="#9fb4bd" stroke-width="1.1"/>
+    <text x="264" y="421" class="agent-badge">C</text>
+    <text x="288" y="422" class="agent-name">Agent C</text>
+    <use href="#opencode-logo" x="265" y="442"/>
+  </g>
+
+  <!-- Experiment links: agent -> workspace -->
+  <line x1="240" y1="148" x2="192" y2="148" class="line" marker-end="url(#arrow)"/>
+  <text x="215" y="140" class="mini-label">experiment</text>
+  <line x1="240" y1="300" x2="192" y2="300" class="line" marker-end="url(#arrow)"/>
+  <text x="215" y="292" class="mini-label">experiment</text>
+  <line x1="240" y1="452" x2="192" y2="452" class="line" marker-end="url(#arrow)"/>
+  <text x="215" y="444" class="mini-label">experiment</text>
+
+  <!-- Read/write links: agent <-> board -->
+  <line x1="430" y1="148" x2="488" y2="148" class="line" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+  <text x="460" y="132" class="mini-label">read / write</text>
+  <text x="460" y="143" class="mini-label">messages</text>
+  <line x1="430" y1="300" x2="488" y2="300" class="line" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+  <text x="460" y="284" class="mini-label">read / write</text>
+  <text x="460" y="295" class="mini-label">messages</text>
+  <line x1="430" y1="452" x2="488" y2="452" class="line" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+  <text x="460" y="436" class="mini-label">read / write</text>
+  <text x="460" y="447" class="mini-label">messages</text>
+
+  <!-- Blackboard -->
+  <g transform="translate(150,0)">
+    <rect x="340" y="72" width="380" height="448" rx="14" class="board"/>
+    <text x="360" y="104" class="board-title">blackboard/</text>
+
+    <!-- Legend in the top-right corner of the board -->
+    <line x1="530" y1="92" x2="554" y2="92" class="line" marker-end="url(#arrow)"/>
+    <text x="560" y="96" class="legend mono">[[file.md]]</text>
+    <text x="650" y="96" class="legend-muted">citation</text>
+
+    <rect x="530" y="102" width="54" height="18" rx="9" class="tag"/>
+    <text x="557" y="115" class="tag-text">#tag</text>
+    <text x="650" y="115" class="legend-muted">topic label</text>
+
+    <line x1="360" y1="128" x2="700" y2="128" class="line-soft"/>
+
+    <!-- Message A: feature engineering -->
+    <g>
+      <rect x="358" y="160" width="162" height="74" rx="9" class="card"/>
+      <path d="M370 172 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M379 172 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="390" y="186" class="file">agent_a_features.md</text>
+      <rect x="370" y="200" width="140" height="22" rx="11" class="tag"/>
+      <text x="440" y="215" class="tag-text">#feature_engineering</text>
+    </g>
+
+    <!-- Message D: validation -->
+    <g>
+      <rect x="540" y="160" width="162" height="74" rx="9" class="card"/>
+      <path d="M552 172 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M561 172 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="572" y="186" class="file" textLength="126" lengthAdjust="spacingAndGlyphs">agent_b_validation.md</text>
+      <rect x="552" y="200" width="100" height="22" rx="11" class="tag"/>
+      <text x="602" y="215" class="tag-text">#validation</text>
+    </g>
+
+    <!-- Message E: data pipeline -->
+    <g>
+      <rect x="358" y="270" width="162" height="74" rx="9" class="card"/>
+      <path d="M370 282 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M379 282 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="390" y="296" class="file">agent_a_eda.md</text>
+      <rect x="370" y="310" width="112" height="22" rx="11" class="tag"/>
+      <text x="426" y="325" class="tag-text">#data_pipeline</text>
+    </g>
+
+    <!-- Message B: ensembling -->
+    <g>
+      <rect x="540" y="270" width="162" height="74" rx="9" class="card"/>
+      <path d="M552 282 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M561 282 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="572" y="296" class="file">agent_b_ensemble.md</text>
+      <rect x="552" y="310" width="112" height="22" rx="11" class="tag"/>
+      <text x="608" y="325" class="tag-text">#ensembling</text>
+    </g>
+
+    <!-- Message C: insight -->
+    <g>
+      <rect x="358" y="380" width="162" height="74" rx="9" class="card"/>
+      <path d="M370 392 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M379 392 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="390" y="406" class="file">agent_c_insight.md</text>
+      <rect x="370" y="420" width="78" height="22" rx="11" class="tag"/>
+      <text x="409" y="435" class="tag-text">#insight</text>
+    </g>
+
+    <!-- Message F: conflict -->
+    <g>
+      <rect x="540" y="380" width="162" height="74" rx="9" class="card"/>
+      <path d="M552 392 h9 l5 5 v15 h-14 z" class="icon"/>
+      <path d="M561 392 v5 h5" fill="none" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+      <text x="572" y="406" class="file">agent_c_conflict.md</text>
+      <rect x="552" y="420" width="88" height="22" rx="11" class="tag"/>
+      <text x="596" y="435" class="tag-text">#conflict</text>
+    </g>
+
+    <!-- Citation links inside the board -->
+    <path d="M430 270 L430 234" class="line" marker-end="url(#arrow)"/>
+    <path d="M520 197 C 532 230, 528 274, 540 307" class="line" marker-end="url(#arrow)"/>
+    <path d="M620 234 L620 270" class="line" marker-end="url(#arrow)"/>
+    <path d="M580 344 C 570 360, 540 370, 500 380" class="line" marker-end="url(#arrow)"/>
+    <path d="M620 344 L620 380" class="line" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Final solution -->
+  <g transform="translate(145,0)">
+    <rect x="785" y="190" width="180" height="182" rx="12" class="box"/>
+
+    <path d="M797 214 h8 l3 3 h11 v13 h-22 z" fill="#cfe3e8" stroke="#5c7a86" stroke-width="1.2" stroke-linejoin="round"/>
+    <text x="824" y="228" class="folder-title">final_solution/</text>
+    <line x1="797" y1="240" x2="953" y2="240" class="line-soft"/>
+
+    <g>
+      <path d="M797 252 h9 l5 5 v13 h-14 z" class="icon"/>
+      <text x="818" y="266" class="small-file">submission.csv</text>
+    </g>
+    <g>
+      <path d="M797 284 h9 l5 5 v13 h-14 z" class="icon"/>
+      <text x="818" y="298" class="small-file">solution.py</text>
+    </g>
+    <g>
+      <path d="M797 316 h9 l5 5 v13 h-14 z" class="icon"/>
+      <text x="818" y="330" class="small-file">README.md</text>
+    </g>
+
+    <circle cx="800" cy="352" r="3.5" fill="#2d6a7a"/>
+    <text x="812" y="356" class="note">agreed by the swarm</text>
+  </g>
+
+  <!-- Consensus -->
+  <line x1="872" y1="286" x2="928" y2="286" class="line" marker-end="url(#arrow)"/>
+  <text x="900" y="274" class="arrow-label">consensus</text>
+</svg>

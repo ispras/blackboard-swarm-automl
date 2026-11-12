@@ -1,0 +1,82 @@
+[
+ {
+  "name": "my_l512s42",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_l512so_snw_s42_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_l512so_snw_s42_test.npy"
+ },
+ {
+  "name": "my_struct_scored",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_scored_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_scored_test.npy"
+ },
+ {
+  "name": "my_struct_all5",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_all5_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_all5_test.npy"
+ },
+ {
+  "name": "my_struct_huber",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_huber_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_huber_test.npy"
+ },
+ {
+  "name": "be_mscnn384b10",
+  "oof": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/oof_mscnn384b10.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/test_mscnn384b10.npy"
+ },
+ {
+  "name": "be_mscnn448b10",
+  "oof": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/oof_mscnn448b10.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/test_mscnn448b10.npy"
+ },
+ {
+  "name": "be_lstm256b10",
+  "oof": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/oof_lstm256b10.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/test_lstm256b10.npy"
+ },
+ {
+  "name": "be_cnn384b10",
+  "oof": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/oof_cnn384b10.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/test_cnn384b10.npy"
+ },
+ {
+  "name": "ca_hb2_avg5",
+  "oof": "/download_job_code/payload/sandbox/workspaces/castor_zeta/oof_hb2_avg5.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/castor_zeta/test_hb2_avg5.npy"
+ },
+ {
+  "name": "ca_mshb_s45",
+  "oof": "/download_job_code/payload/sandbox/workspaces/castor_zeta/oof_mshb_s45.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/castor_zeta/test_mshb_s45.npy"
+ },
+ {
+  "name": "ca_lshb_avg2",
+  "oof": "/download_job_code/payload/sandbox/workspaces/castor_zeta/oof_lshb_avg2.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/castor_zeta/test_lshb_avg2.npy"
+ },
+ {
+  "name": "my_struct_scored",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_scored_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_scored_test.npy"
+ },
+ {
+  "name": "my_struct_all5",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_all5_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_all5_test.npy"
+ },
+ {
+  "name": "my_struct_huber",
+  "oof": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_huber_oof.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/mirfak_iota/pred_struct_huber_test.npy"
+ },
+ {
+  "name": "ca_mshb_avg10",
+  "oof": "/download_job_code/payload/sandbox/workspaces/castor_zeta/oof_mshb_avg10.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/castor_zeta/test_mshb_avg10.npy"
+ },
+ {
+  "name": "be_mscnn384b",
+  "oof": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/oof_mscnn384b.npy",
+  "test": "/download_job_code/payload/sandbox/workspaces/betelgeuse_mu/preds/test_mscnn384b.npy"
+ }
+]

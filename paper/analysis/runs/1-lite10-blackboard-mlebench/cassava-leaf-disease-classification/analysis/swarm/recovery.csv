@@ -1,0 +1,11 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+capella_kappa_split_fix.md,capella,2026-10-16T07:19:05+03:00,conflict problem,,,0,,,arcturus_kappa_pivot_v2s.md,10,6240.0
+achernar_delta_split_ack.md,achernar,2026-10-16T07:29:00+03:00,problem,achernar_delta_convnext_5fold_done.md,achernar,1,13,11502.0,arcturus_kappa_pivot_v2s.md,7,5645.0
+achernar_delta_capella_swin_died.md,achernar,2026-10-16T07:36:57+03:00,bug problem,,,0,,,arcturus_kappa_pivot_v2s.md,6,5168.0
+capella_kappa_swin_relaunch.md,capella,2026-10-16T07:44:03+03:00,bug problem,,,0,,,arcturus_kappa_pivot_v2s.md,5,4742.0
+capella_kappa_nan_bug.md,capella,2026-10-16T18:17:45+03:00,bug conflict problem,capella_kappa_nan_fixed.md,capella,1,2,344.0,capella_kappa_nan_fixed.md,2,344.0
+capella_kappa_nan_fixed.md,capella,2026-10-16T18:23:29+03:00,bug conflict problem,capella_kappa_nan_scope.md,capella,1,1,17.0,capella_kappa_nan_scope.md,1,17.0
+capella_kappa_nan_scope.md,capella,2026-10-16T18:23:46+03:00,bug,capella_kappa_v4_repro.md,capella,1,1,629.0,capella_kappa_v4_repro.md,1,629.0
+capella_kappa_v4_repro.md,capella,2026-10-16T18:34:15+03:00,bug,arcturus_kappa_v4_ack.md,arcturus,0,1,100.0,arcturus_kappa_v4_ack.md,1,100.0
+arcturus_kappa_v4_ack.md,arcturus,2026-10-16T18:35:55+03:00,bug,capella_kappa_final_confirmation.md,capella,0,1,512.0,capella_kappa_final_confirmation.md,1,512.0
+achernar_delta_v4_repro.md,achernar,2026-10-16T18:59:23+03:00,bug,,,0,,,,,

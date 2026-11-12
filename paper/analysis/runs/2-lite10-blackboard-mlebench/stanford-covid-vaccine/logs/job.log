@@ -1,0 +1,1564 @@
+chmod: changing permissions of 'job_entrypoint/docker-entrypoint.sh': Read-only file system
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Get:1 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie InRelease [140 kB]
+Get:2 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security InRelease [43.4 kB]
+Get:3 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates InRelease [47.3 kB]
+Get:4 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free-firmware amd64 Packages [6884 B]
+Get:5 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/main amd64 Packages [9678 kB]
+Get:6 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/non-free amd64 Packages [100 kB]
+Get:7 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie trixie/contrib amd64 Packages [53.9 kB]
+Get:8 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/non-free-firmware amd64 Packages [544 B]
+Get:9 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/main amd64 Packages [269 kB]
+Get:10 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-security trixie-security/contrib amd64 Packages [3152 B]
+Get:11 https://nexus-ai.intra.ispras.ru/repository/debian-proxy-trixie-updates trixie-updates/main amd64 Packages [4412 B]
+Fetched 10.3 MB in 2s (4609 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+478 packages can be upgraded. Run 'apt list --upgradable' to see them.
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 478 not upgraded.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (26.2.1)
+Collecting pip
+  Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 119.5 MB/s  0:00:00
+Requirement already satisfied: setuptools in /usr/local/lib/python3.11/site-packages (79.0.1)
+Collecting setuptools
+  Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 127.9 MB/s  0:00:00
+Requirement already satisfied: wheel in /usr/local/lib/python3.11/site-packages (0.48.0)
+Requirement already satisfied: packaging>=24.0 in /usr/local/lib/python3.11/site-packages (from wheel) (24.2)
+Installing collected packages: setuptools, pip
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 79.0.1
+    Uninstalling setuptools-79.0.1:
+      Successfully uninstalled setuptools-79.0.1
+  Attempting uninstall: pip
+    Found existing installation: pip 26.2.1
+    Uninstalling pip-26.2.1:
+      Successfully uninstalled pip-26.2.1
+Successfully installed pip-26.2.2 setuptools-84.2.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://gitlab-runner:****@nexus-ai.intra.ispras.ru/repository/pypi-public/simple/
+Collecting ml-management==0.15.0
+  Downloading ml_management-0.15.0-py3-none-any.whl (150 kB)
+Collecting sgqlc>=16 (from ml-management==0.15.0)
+  Downloading sgqlc-18-py3-none-any.whl (86 kB)
+Collecting boto3<2,>=1.36 (from ml-management==0.15.0)
+  Downloading boto3-1.43.117-py3-none-any.whl (140 kB)
+Requirement already satisfied: jsonschema<5,>=4.18 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (4.26.0)
+Collecting tqdm<5,>=4.66.6 (from ml-management==0.15.0)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Requirement already satisfied: pydantic<3,>=2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.14.0)
+Requirement already satisfied: httpx<1 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (0.28.1)
+Collecting websocket-client<2,>1 (from ml-management==0.15.0)
+  Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+Requirement already satisfied: pandas<3,>2 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (2.2.2)
+Requirement already satisfied: PyYAML<7,>6 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (6.0.2)
+Requirement already satisfied: numpy<2,>1.26 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (1.26.4)
+Requirement already satisfied: matplotlib<4,>=3.7 in /usr/local/lib/python3.11/site-packages (from ml-management==0.15.0) (3.9.2)
+Collecting gql==3.5.0 (from ml-management==0.15.0)
+  Downloading gql-3.5.0-py2.py3-none-any.whl (74 kB)
+Collecting websockets==13.1 (from ml-management==0.15.0)
+  Downloading websockets-13.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (164 kB)
+Collecting tenacity==9.1.4 (from ml-management==0.15.0)
+  Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+Collecting graphql-core<3.3,>=3.2 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading graphql_core-3.2.13-py3-none-any.whl (268 kB)
+Requirement already satisfied: yarl<2.0,>=1.6 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (1.25.1)
+Collecting backoff<3.0,>=1.11.1 (from gql==3.5.0->ml-management==0.15.0)
+  Downloading backoff-2.2.1-py3-none-any.whl (15 kB)
+Requirement already satisfied: anyio<5,>=3.0 in /usr/local/lib/python3.11/site-packages (from gql==3.5.0->ml-management==0.15.0) (4.15.1)
+Requirement already satisfied: idna>=2.8 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (3.20)
+Requirement already satisfied: typing_extensions>=4.16.0 in /usr/local/lib/python3.11/site-packages (from anyio<5,>=3.0->gql==3.5.0->ml-management==0.15.0) (4.16.0)
+Collecting botocore<1.44.0,>=1.43.117 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading botocore-1.43.117-py3-none-any.whl (16.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.1/16.1 MB 183.4 MB/s  0:00:00
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2,>=1.36->ml-management==0.15.0)
+  Downloading s3transfer-0.19.3-py3-none-any.whl (90 kB)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.117->boto3<2,>=1.36->ml-management==0.15.0) (2.9.0.post0)
+Requirement already satisfied: urllib3!=2.2.0,<3,>=1.25.4 in /usr/local/lib/python3.11/site-packages (from botocore<1.44.0,>=1.43.117->boto3<2,>=1.36->ml-management==0.15.0) (2.8.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (2026.7.22)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.11/site-packages (from httpx<1->ml-management==0.15.0) (1.0.9)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.11/site-packages (from httpcore==1.*->httpx<1->ml-management==0.15.0) (0.16.0)
+Requirement already satisfied: attrs>=22.2.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in /usr/local/lib/python3.11/site-packages (from jsonschema<5,>=4.18->ml-management==0.15.0) (2026.9.1)
+Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (4.66.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (1.5.1)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (24.2)
+Requirement already satisfied: pillow>=8 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (10.4.0)
+Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.11/site-packages (from matplotlib<4,>=3.7->ml-management==0.15.0) (3.1.4)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2024.1)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.11/site-packages (from pandas<3,>2->ml-management==0.15.0) (2026.5)
+Requirement already satisfied: annotated-types>=0.6.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.0 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (2.50.0)
+Requirement already satisfied: typing-inspection>=0.4.4 in /usr/local/lib/python3.11/site-packages (from pydantic<3,>=2->ml-management==0.15.0) (0.4.4)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.11/site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.117->boto3<2,>=1.36->ml-management==0.15.0) (1.17.0)
+Requirement already satisfied: multidict>=4.0 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (6.9.1)
+Requirement already satisfied: propcache>=0.2.1 in /usr/local/lib/python3.11/site-packages (from yarl<2.0,>=1.6->gql==3.5.0->ml-management==0.15.0) (0.5.4)
+Installing collected packages: websockets, websocket-client, tqdm, tenacity, jmespath, graphql-core, backoff, sgqlc, gql, botocore, s3transfer, boto3, ml-management
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.66.5
+    Uninstalling tqdm-4.66.5:
+      Successfully uninstalled tqdm-4.66.5
+  Attempting uninstall: tenacity
+    Found existing installation: tenacity 8.5.0
+    Uninstalling tenacity-8.5.0:
+      Successfully uninstalled tenacity-8.5.0
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+langchain 0.2.15 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+langchain-core 0.2.43 requires tenacity!=8.4.0,<9.0.0,>=8.1.0, but you have tenacity 9.1.4 which is incompatible.
+Successfully installed backoff-2.2.1 boto3-1.43.117 botocore-1.43.117 gql-3.5.0 graphql-core-3.2.13 jmespath-1.1.0 ml-management-0.15.0 s3transfer-0.19.3 sgqlc-18 tenacity-9.1.4 tqdm-4.70.1 websocket-client-1.9.2 websockets-13.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[32mStart to download job code to container ...[0m
+  0%|          | 0.00/183k [00:00<?, ?File/s][A
+210kFile [00:00, 13.0MFile/s]                
+[32mJob code was downloaded successfully[0m
+[32mStart to execute sh commands ...[0m
+[0;32mbash -c 'set -e; if [ -f mlm_run.sh ]; then exec bash mlm_run.sh; fi; cd payload && exec bash mlm_run.sh'[0m
+restoring setuptools<81 (pkg_resources для hyperopt/старых пакетов)
+pkg_resources: /usr/local/lib/python3.11/site-packages/pkg_resources/__init__.py
+downloading data from S3 bucket 'mlebench-stanford-covid-vaccine' -> /download_job_code/payload/sandbox/data ...
+Start to download bucket...
+  0%|          | 0.00/13.0M [00:00<?, ?B/s][A
+  2%|▏         | 256k/13.0M [00:00<00:08, 1.63MB/s][A
+ 61%|██████▏   | 8.00M/13.0M [00:00<00:00, 38.4MB/s][A
+100%|██████████| 13.0M/13.0M [00:00<00:00, 41.2MB/s]
+data ready: ['README.md', 'description.md', 'sample_submission.csv', 'test.json', 'train.json']
+== MLM swarm ==
+root:      /download_job_code/payload
+agents:    3
+hours:     12
+model:     deepseek/deepseek-flash
+prompt:    PROMPT.md
+deadline:  /download_job_code/payload/sandbox/blackboard/deadline.json
+starting opencode serve on 127.0.0.1:4096
+board digest: каждые 300s новые сообщения -> stdout job'а; analysis/ (metrics.csv, graph) -> артефакт + log_metric
+started 3 agents (gpus: 1, round-robin CUDA_VISIBLE_DEVICES)
+agent ids: swarm-1=betelgeuse_mu swarm-2=castor_zeta swarm-3=mirfak_iota
+supervision: агент, завершившийся до hard_end, продолжается в своей сессии сообщением: Continue work until hard end. (пауза 15s, максимум 300s)
+[board] сообщений 0, новых 0, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== castor_zeta_intro_and_plan.md =====
+# castor_zeta — intro & plan
+Hi swarm, I'm castor_zeta. Senior DS, focus: **deep sequence models for RNA degradation**.
+## Environment facts (verified)
+- A100 80GB, 128 CPU, ~500GB RAM. torch 2.2, tf 2.17, lightgbm/xgboost/catboost available.
+- Data: `data/train.json` = 2160 RNA (107 nt, 68 scored), `data/test.json` = 240.
+- Targets: predict 5, **scored = reactivity, deg_Mg_pH10, deg_Mg_50C**.
+- Metric: **MCRMSE** (lower better). Note: `data/README.md` says "multi-class-log-loss" — that is a copy-paste artifact; TASK.md and the actual format are regression MCRMSE. Trust MCRMSE.
+## My plan (I will own this)
+1. Baseline fast: BiGRU/LSTM on one-hot seq+structure+loop, all 5 targets with aux loss, 5-fold CV. Get a submission on disk early as a safety net.
+2. Improved: engineered features (pair distance, paired/unpaired, loop type stats), reverse-sequence augmentation, S/N/SN_filter weighting, seed+fold ensemble.
+3. Possible upgrade: CNN+BiGRU stack, 2nd architecture for diversity, snapshot/SWA.
+4. Deliver OOF + test preds as `.npy` in `workspaces/castor_zeta/` so we can blend.
+## Proposed swarm split (reply on board if you take one)
+- `castor_zeta`: deep seq models (main), OOF/test preds.
+- Someone: **thermodynamic / structure feature engineering** + GBDT (LightGBM) model for diversity.
+- Someone: **alternative deep arch** (transformer / dilated CNN) for ensemble diversity.
+- Someone: **validation protocol + ensembling chair**: define a shared fold split so OOFs are blendable; then blend.
+I'll publish the exact shared fold split indices + OOF format ASAP so our ensembles are compatible. Ping me with your agent id and chosen role.
+#communication #plan #status
+===== betelgeuse_mu_intro_plan.md =====
+# betelgeuse_mu — intro & plan
+Hi swarm, I'm **betelgeuse_mu** (swarm-1). I'm a Senior DS focused on deep sequence models. GPU A100-80G is visible; torch 2.2 + CUDA works.
+## Task facts I verified
+- `data/train.json` / `test.json` are **JSON-lines** (one JSON object per line). Train: 2160 samples, test: 240, all length 107, scored positions 0..67.
+- Scored targets (TASK.md): `reactivity`, `deg_Mg_pH10`, `deg_Mg_50C`; metric **MCRMSE** (lower better). Ignore the stale `multi-class-log-loss` line in `data/README.md`.
+- Submission: 240*107 = 25680 rows `id_seqpos,reactivity,deg_Mg_pH10,deg_pH10,deg_Mg_50C,deg_50C`.
+- SN_filter: 1349 positive / 811 negative. Common practice: train on SN_filter==1 (may try adding others later).
+## Proposed division of work (please reply/claim)
+1. **betelgeuse_mu (me)**: BiLSTM+CNN baseline with seq/structure/loop one-hot, 5-fold CV + holdout, seed ensemble; publish OOF preds + model for ensembling.
+2. **castor_zeta**: alternative architecture (e.g. dilated CNN / U-Net style / Transformer) + OOF preds; also investigate features (base-pair distance, pair probabilities).
+3. **mirfak_iota**: data/validation design + postprocessing + ensembling coordinator: build a *shared* fixed CV split file (id -> fold) and holdout so all OOF are comparable, then weighted ensemble + submission writer.
+## Shared conventions proposal
+- Fixed split: **5 folds, GroupKFold-like on sequence clusters** or simple KFold(seed=42) over SN_filter==1 ids. Whoever creates it first publishes `blackboard/<agent>_cv_split.json`.
+- Save OOF as `workspaces/<agent>/oof_<model>.npy` (2160x68x5 with NaN for non-fold rows) and test preds `test_<model>.npy` (240x68x5) + a short board post with `<metric>...<\metric>` (CV MCRMSE on 3 scored cols).
+- Ensemble only from saved predictions; final `final_solution/submission.csv` written by whoever owns the best ensemble, announced on board.
+I'll start building the pipeline now and publish CV numbers soon. If you have a better architecture idea, post it. Let's avoid duplicate baselines.
+#plan #communication #architecture #model_selection
+===== mirfak_iota_intro_plan.md =====
+# mirfak_iota — intro & proposal
+Hi swarm, I'm **mirfak_iota**. Peers so far: `betelgeuse_mu`, `castor_zeta`, me.
+## Environment facts (verified)
+- 3 agents, 1x **A100 80GB**, 128 CPU, ~500GB RAM, torch 2.2.0+cu121.
+- Schedule: start `06:12`, work_end `17:42`, hard_end `18:12` (≈11.5h). Plan to freeze final ~30 min before hard_end.
+- Data: `data/train.json` = 2160 JSONL records (107 nt, 68 scored). `data/test.json` = 240 JSONL records. `sample_submission.csv` = 25680 rows.
+- Targets: 5 cols, but **only `reactivity`, `deg_Mg_pH10`, `deg_Mg_50C` are scored** (per TASK.md). Metric = **MCRMSE** (lower better).
+## ⚠️ Important discrepancy
+`data/README.md` says metric `multi-class-log-loss`, but that is a generic MLE-bench template. TASK.md/description clearly define **MCRMSE** regression on 3 columns. I will optimize MCRMSE. Please don't build a classifier.
+## Proposal: shared validation protocol (please agree/adjust)
+To make OOF predictions **ensemble-able across agents**, I propose one canonical split:
+```python
+from sklearn.model_selection import KFold
+idx = np.arange(2160)
+folds = list(KFold(n_splits=5, shuffle=True, random_state=42).split(idx))
+```
+- Save OOF preds as `(2160, 68, 5)` float32 `.npy` + test preds `(240, 107, 5)` in your workspace.
+- Report **CV MCRMSE on the 3 scored cols**, computed only on first 68 positions and only on rows with `SN_filter==1`? → **Decision needed.** Kaggle test was SN-filtered, so CV restricted to `SN_filter==1` (and maybe `signal_to_noise` weighting) is more representative. I suggest **report both**: all-rows and SN==1. Ensemble weights chosen on SN==1.
+## Suggested role split (avoid duplicates)
+- **mirfak_iota (me)**: strong CNN+biGRU baseline (multi-seed), 5-fold, plus ensembling/postprocessing; will publish OOF/test arrays + CV.
+- **castor_zeta**: complementary architecture (e.g. biLSTM / GNN / transformer / dilated CNN) OR feature-engineering route.
+- **betelgeuse_mu**: postprocessing + alternative model (e.g. XGBoost on k-mer/structural features) + CV framework verification.
+Please reply with `[[<your>_plan.md]]` and which role you take. I'll start the shared-split baseline now. Ping me if you want a different split — better to agree early than merge later.
+#plan #communication #insight
+===== betelgeuse_mu_canonical_split.md =====
+# betelgeuse_mu — canonical CV split AGREED (v2)
+Refs: [[betelgeuse_mu_intro_plan.md]] · [[mirfak_iota_intro_plan.md]] · [[castor_zeta_intro_and_plan.md]]
+We proposed 3 slightly different splits. To be blendable, let's adopt **one canonical split** = exactly mirfak_iota's proposal:
+```python
+KFold(n_splits=5, shuffle=True, random_state=42).split(np.arange(2160))
+```
+Fold assignment for every one of the 2160 train ids (does not depend on SN_filter):
+- `blackboard/betelgeuse_mu_cv_split_canonical.json` = `{id: fold}`  (2160 entries) ← **use this**
+- My earlier `betelgeuse_mu_cv_split.json` (SN==1 only, different folds) is **deprecated**; ignore it.
+## Evaluation protocol
+- Train: fold-train rows. You MAY train on SN_filter==0 rows or SN_filter==1 only (your choice; note which).
+- Report **CV MCRMSE (3 scored cols, positions 0..67)** on validation rows with **SN_filter==1** (primary, matches filtered test). Also report all-rows for reference.
+- OOF arrays: `(2160, 68, 5)` float32, NaN on rows not in that model's OOF set; test arrays `(240, 107, 5)`.
+- Put arrays in `workspaces/<agent>/` and announce filenames + CV in a board message.
+If you already started with a different split, keep it for internal model selection but please **also** produce OOF/test preds on the canonical split for the ensemble. Reply if you disagree.
+#model_selection #communication #plan
+===== castor_zeta_baseline_and_split.md =====
+# castor_zeta — baseline up, adopting canonical split
+Refs: [[betelgeuse_mu_canonical_split.md]] · [[mirfak_iota_intro_plan.md]]
+## Status
+First model trains on A100 (torch 2.2, AMP). Adopting **canonical split** `KFold(5, shuffle, seed=42)` exactly as in [[betelgeuse_mu_canonical_split.md]]. I will publish `oof.npy (2160,107,5)` + `test_pred.npy (240,107,5)`.
+## Very important finding: validation leakage
+On a **random** KFold, my BiGRU+CNN gets `<metric>0.268<\metric>` MCRMSE on **SN_filter==1** val rows, but `<metric>0.647<\metric>` on **all** rows. Reason: 89 duplicated first-68 sequence clusters (one has 54 copies!) leak across random folds, and SN==0 rows are pure experimental noise (unpredictable; test IS SN-filtered, so sn1 is the right primary metric).
+→ I will also track a **GroupKFold-by-sequence** number (no dup leakage) to sanity-check model selection, while still producing canonical-split OOF for blending.
+## My lane (to avoid triplicating CNN+BiGRU)
+Both of you are on CNN+biGRU. I'll take:
+1. **Complementary architecture**: dilated CNN stack / transformer, plus my GRU variant for a strong OOF.
+2. **Engineering**: reverse-strand augmentation (5'↔3'), pair-distance features, target-space optimisation (target clipping / prediction clipping).
+3. **Pseudo-labeling / SN weighting** experiments later.
+I will NOT touch ensembling chair (mirfak_iota owns it) — I'll just hand over OOF/test arrays.
+## Protocol question
+When you report `<metric>`, state explicitly `sn1` vs `all`. I'll always give both. Agreed on `(2160,68,5)`? betelgeuse says 68, mirfak says 68 — fine, I'll write 68 (positions 0..67) and pad 107 at submission time.
+#status #model_selection #insight #communication #architecture
+[board] сообщений 5, новых 5, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== mirfak_iota_role_baseline.md =====
+# mirfak_iota — role accepted + baseline CV (safety submission written)
+Refs: [[betelgeuse_mu_canonical_split.md]] · [[castor_zeta_baseline_and_split.md]] · [[mirfak_iota_intro_plan.md]]
+## Role
+I accept **ensembling chair + validation/postprocessing**. I own `final_solution/` writes; ping me before touching it (avoid write conflicts).
+I will consume everyone's `(2160,68,5)` OOF + `(240,107,5)` test arrays on the **canonical split** `KFold(5,shuffle,seed=42)` (confirmed identical to my split).
+## Safety net already in place
+Baseline written to `final_solution/submission.csv` (BiGRU, 5-fold, 1 seed) + code. Will only improve it.
+## Baseline result (canonical split, GRU+CNN, 2-layer biGRU-256, 5-fold, MSE on 5 targets, rev-aug OFF)
+- **OOF sn1 MCRMSE = `<metric>0.26756<\metric>`** (per-col: reactivity 0.2530, deg_Mg_pH10 0.2964, deg_Mg_50C 0.2532)
+- OOF all-rows = 0.70010 (noise-dominated, not our target)
+- Best epochs 63–79/80 → needs more epochs / no early plateau; ~45s/fold.
+- Artifacts: `workspaces/mirfak_iota/pred_gru_v1_{oof,test}.npy`, `pred_gru_v1_meta.json`.
+## Findings so far
+1. **Select on sn1, not all** — my first run selected on all-rows → 0.59 sn1; selecting on sn1 gave 0.268. Huge.
+2. Confirmed castor's dup-cluster leakage: random CV is optimistic vs LB (~0.33). Use random-CV only for *relative* model comparison; I'll also report a duplicate-group holdout for sanity.
+3. Test is SN-filtered ⇒ train on all rows but **weight/validate on sn1**; keep sn0 as regularizer.
+## Next for me (next ~2h)
+- Postprocessing sweep (gaussian smoothing σ, clipping, per-col scaling) on OOF.
+- Baseline seed ensemble (3–5 seeds) → publish OOF/test.
+- Ensemble loader/optimizer (NNLS / ridge on OOF) ready for your arrays.
+**Ask:** publish OOF/test arrays as soon as you have them, even if single-seed. Please state: model name, architecture, sn1 CV, whether OOF covers all 2160 rows on canonical split. Also tell me if you already have **duplicate-cluster groups** (castor) — I'll reuse for group-CV sanity.
+#status #communication #ensembling #model_selection #submission
+[board] сообщений 6, новых 1, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 6, новых 0, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== betelgeuse_mu_cv_and_leakage_finding.md =====
+# betelgeuse_mu — CV 0.2294 + KEY leakage finding (random CV IS representative)
+Refs: [[betelgeuse_mu_canonical_split.md]] · [[castor_zeta_baseline_and_split.md]] · [[mirfak_iota_role_baseline.md]]
+## My models (canonical split, train SN==1 only, early-stop on sn1, 5-fold)
+- `lstm128` (CNN+2-layer BiLSTM-128, 2 seeds): **sn1 CV `<metric>0.23726<\metric>`**
+- `lstm256` (same, hid=256, 3 seeds): **sn1 CV `<metric>0.22937<\metric>`** cols [0.2116, 0.2578, 0.2187]
+- `cnn256` (6 dilated-conv blocks, 2 seeds): sn1 CV `<metric>0.23909<\metric>`
+- `bigru128` (3-layer BiGRU, 2 seeds): sn1 CV `<metric>0.24366<\metric>`
+- Training on ALL rows (SN==0 included) is much worse for sn1: 0.2633 vs 0.2373 → **train on SN==1 only**.
+- Artifacts: `workspaces/betelgeuse_mu/preds/oof_<tag>.npy` = (2160,107,5), `test_<tag>.npy` = (240,107,5), meta json.
+## KEY finding: the hidden test contains train near-duplicates
+I measured sequence identity between test and train (first 68 nt = scored region, and full 107):
+- **48 / 240** test sequences have an **exact first-68 match** in train; **89/240 ≥0.95** identity.
+- Full 107: 0 exact but 71/240 ≥0.95, median best-identity 0.90.
+- Within train, 542 rows have an exact first-68 duplicate, 944 have ≥0.95 neighbor.
+⇒ This MLE-bench split is a **random re-split of the original 2400** (not the diverse Kaggle test), so the duplicate/family leakage that inflates random CV **also exists between train and hidden test**. Therefore the canonical random-fold CV is a *representative* estimate, and exploiting near-duplicates is legitimate, not a leak. (Still report group-CV for sanity, but do NOT pessimistically tune away from it.)
+## Next for me
+- Blend my 4 OOFs (NNLS per target), then train bigger/more-seed variants and a GNN-ish/attention model for diversity.
+- Will hand OOF/test arrays to `mirfak_iota` for the swarm ensemble. Everyone please keep using the canonical split + sn1 metric.
+#status #insight #model_selection #data_preprocessing #ensembling
+[board] сообщений 7, новых 1, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 7, новых 0, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== mirfak_iota_postproc_and_snweight.md =====
+# mirfak_iota — postprocessing is a NO-OP + **SN-weighting helps a lot**
+Refs: [[betelgeuse_mu_cv_and_leakage_finding.md]] · [[castor_zeta_baseline_and_split.md]] · [[mirfak_iota_role_baseline.md]]
+## 1. Postprocessing sweep on OOF (canonical split, sn1)
+Using my 5-fold `pred_gru_v1_oof.npy`:
+- **Gaussian smoothing along positions HURTS badly**: σ=0.5 → 0.2763, σ=1 → 0.3321, σ=2 → 0.3739 (base 0.2676). Do **not** smooth.
+- **Lower clipping** (test filter guarantees true values > -0.5): clip at 0 → 0.26745, at 0.05 → 0.26739 (tiny +).
+- **Per-column affine recalibration** `a*p+b` fit on sn1 OOF: a≈0.99/0.99/0.96 → 0.26731 (tiny +).
+- Best combo: clip@0 + affine = **0.26721** (only −0.00035). Conclusion: **skip fancy postprocessing**; keep clip@0+affine as optional ensemble finishing touch.
+- Also note: `SN==1` subset == `test-like` subset (min>-0.5 filter adds nothing on train).
+## 2. Loss/regularization sweep (fold 0, so noisy but large effects)
+| variant | fold0 sn1 |
+|---|---|
+| gru256, 80ep, all-5 MSE | 0.2677 |
+| gru256, 130ep, all-5 MSE | 0.2629 |
+| gru256, 130ep, **scored-3 only** | 0.2533 |
+| gru512, scored-3 | 0.2567 |
+| gru512+CNN, scored-3 | 0.2435 |
+| **gru256, scored-3 + SN-weight(signal_to_noise)** | **0.2317** |
+| gru512, scored-3 + SN-weight | **0.2308** |
+| gru256, scored-3 + SN-weight + Huber | 0.2311 |
+| gru256, scored-3, train SN==1 only | 0.2367 |
+**Insight:** train on **all rows but weight each sample by `signal_to_noise`** (cap~17) + loss only on the **3 scored columns** + select on sn1. Beats train-SN1-only and all-5 loss. Castor/betelgeuse: worth trying SN-weight in your pipelines (should stack with your arch gains).
+Note `best_ep` ~110–125/130 ⇒ even longer schedules may help a bit.
+## 3. My next artifacts (ETA ~30 min)
+- Full 5-fold, multi-seed: `g512so_snw` (GRU) and `gso_snw` (GRU-256) → OOF/test `.npy` for the blend.
+- Then I run the ensemble optimizer as soon as your OOFs land. Please drop paths + CV here.
+#insight #postprocessing #loss #training #regularization #status
+[board] сообщений 8, новых 1, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== mirfak_iota_ensemble_v1.md =====
+# mirfak_iota — ensemble v1 is live: CV `<metric>0.22264<\metric>`
+Refs: [[betelgeuse_mu_cv_and_leakage_finding.md]] · [[mirfak_iota_postproc_and_snweight.md]] · [[castor_zeta_baseline_and_split.md]]
+## Ensemble v1 (canonical split, sn1, per-column NNLS on OOF)
+Consumed betelgeuse's canonical-split OOFs + my GRU v1:
+| model | sn1 CV |
+|---|---|
+| be_lstm384 | 0.22954 |
+| be_mscnn256 | 0.22938 |
+| be_lstm256 | 0.22937 |
+| be_lstm256s7 | 0.22985 |
+| be_cnn256 | 0.23909 |
+| be_bigru | 0.24366 |
+| my_v1 gru256 | 0.26756 |
+| **simple mean** | 0.22421 |
+| **NNLS per-col blend (5-fold CV of weights)** | **`<metric>0.22264<\metric>`** cols [0.2057, 0.2503, 0.2120] |
+Weights per column (col0/col1/col3): lstm384 ~0.23–0.33, mscnn256 ~0.21–0.31, cnn256 ~0.22–0.26, lstm256 ~0.04–0.10, lstm256s7 ~0.05–0.10, bigru ~0.05, my_v1 ~0.01–0.06. Note `be_lstm_sn1` got weight 0 (dominated).
+**`final_solution/submission.csv` updated to this blend** (was baseline 0.2676). Code: `workspaces/mirfak_iota/ensemble.py`.
+## Ensemble recipe I'm using
+1. Load each model's `(2160,107,5)` OOF + `(240,107,5)` test on canonical split.
+2. Per scored column: NNLS `min ||Y_sn1 − Σ w_m P_m||`, w≥0 (no intercept).
+3. Validate weights with 5-fold CV over rows (fit on 4 folds, predict held-out sn1).
+4. Apply final weights to test; unscored cols = model mean; clip@0; optional affine.
+## Requests
+- **castor_zeta**: please drop your OOF/test paths + CV (even a single strong model; diversity from your arch/features is valuable).
+- **betelgeuse_mu**: send any newer/better OOFs (lstm384/mscnn variants look best). Consider **multi-seed averaging per arch first**, then hand me the seed-averaged OOF/test.
+- Everyone: **do not write `final_solution/`** — I'll keep it in sync; ping me with better arrays.
+- I still have my 5-fold GRU-512 scored-only+SN-weight models training (fold0 0.2305), ETA ~30 min; will add for diversity.
+#ensembling #status #submission #model_selection
+===== mirfak_iota_knn_gate.md =====
+# mirfak_iota — similarity-gated kNN correction: +0.0018 CV (validated split-half)
+Refs: [[mirfak_iota_ensemble_v1.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]]
+## Construction (all train-only, no leak)
+- Sequence identity on first 68 nt for train↔train and test↔train (exact positional matches).
+- kNN target = similarity^4 weighted average over top-k=8 train neighbors; `knn_oof.npy`, `knn_test.npy`.
+- kNN alone: sn1 0.356 (weak overall), **but** on exact duplicates (id=1.0, n=236 sn1) it gets 0.177.
+## Error by nearest-neighbor identity (sn1, NN-ensemble vs kNN)
+| max-id bucket | n | NN-ens | kNN |
+|---|---|---|---|
+| [0,0.9) | 585 | 0.2547 | 0.4627 |
+| [0.9,0.95) | 246 | 0.2180 | 0.2938 |
+| [0.95,0.99) | 282 | 0.2012 | 0.2459 |
+| =1.0 | 236 | 0.1564 | 0.1769 |
+NN already beats kNN everywhere, but **gated blend** `p = (1-w)*NN + w*kNN`, `w = clip((id-0.85)/0.15,0,1)*wmax` helps.
+- Full-OOF: best thr=0.9,wmax=0.4 → sn1 **0.22098** (vs 0.22264 NN-only).
+- **Split-half validation (20 reps): gain = +0.00176 ± 0.00038, positive 20/20**, chosen (thr,wmax) mostly (0.85,0.2–0.4). ⇒ real, small.
+- Test coverage: **48/240 exact first-68 duplicates, 89/240 id≥0.95** ⇒ this matters for ~37% of hidden test rows.
+## Plan
+I'll add the gated kNN correction with **fixed thr=0.85, wmax=0.3** to the final ensemble (conservative; validated). I will NOT let it override on low-id rows.
+kNN artifacts in `workspaces/mirfak_iota/`: `knn_oof.npy (2160,68,5)`, `knn_test.npy (240,107,5)`, `knn_S_tr.npy`, `knn_S_te.npy` (similarity matrices) — reusable by anyone.
+**@castor_zeta @betelgeuse_mu**: if you build a kNN/similarity branch too, your similarity matrices can be combined; but no need to duplicate — just reuse mine.
+#ensembling #postprocessing #feature_engineering #insight #status
+[board] сообщений 10, новых 2, метрик 0, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+===== mirfak_iota_blend_plan.md =====
+# mirfak_iota — blend optimizer settled + what I still need from you
+Refs: [[mirfak_iota_ensemble_v1.md]] · [[mirfak_iota_knn_gate.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]]
+## Blend method bake-off (6 be models, canonical split, sn1, 5-fold weight-CV)
+| method | sn1 |
+|---|---|
+| per-col NNLS | **0.22273** |
+| ridge α=1/10/100 (neg weights allowed) | 0.22273 |
+| greedy Caruana | 0.22282 |
+| simple mean | 0.22329 |
+| **NNLS + gated kNN (thr .85, w .3)** | **`<metric>0.22068<\metric>`** |
+Per-loop-type and per-position weights: **worse** (0.22295 / 0.22398). So: global per-column NNLS + kNN gate. Done.
+## @castor_zeta — I scanned `workspaces/castor_zeta/runs/*/oof.npy`
+Only `base_gru_5f` covers all 5 folds (sn1 0.2713) but **has no test predictions**. Your fold0/1 partials look promising: `v2_huber_f0/f1` ≈ 0.240, `sel_big`, `sw_big2`, `sw_snw_only_big` ≈ 0.242. **Please finish the best 1–2 of these on all 5 folds and save `test*.npy (240,107,5)`**, then post paths+CV. Your `sw_tta` (0.37) confirms TTA/reverse hurts — drop it. Diversity from your huber/big models is what the blend needs.
+If it helps: reuse my `ensemble.py` + `knn_S_tr.npy/knn_S_te.npy`.
+## @betelgeuse_mu
+Your 6 canonical OOFs are in the blend. If you produce seed-averaged versions of `lstm384`/`mscnn256` or a genuinely different arch, post paths. Please **do not** spend more time on single-seed variants that are ~0.229 — diminishing returns.
+## Timeline proposal (11h budget, hard_end 18:12)
+- **until ~14:30**: base-model diversity (you two), I keep adding my GRU/LSTM scored-only+SN-weight models.
+- **14:30–16:30**: I run final NNLS+kNN ensemble, validate, write `final_solution/submission.csv` + code.
+- **16:30–17:15**: buffer for a last better-model swap; freeze at **17:15** (before hard_end).
+Reply if you want a different cutoff.
+#ensembling #communication #plan #status
+===== castor_zeta_huber_big_gru.md =====
+# castor_zeta — improving fast, huber + big GRU (CV ~0.240)
+Refs: [[mirfak_iota_role_baseline.md]] · [[betelgeuse_mu_canonical_split.md]] · [[castor_zeta_baseline_and_split.md]]
+## Ablations (canonical split, folds 0+1, metric = sn1 MCRMSE on 3 scored cols)
+| variant | fold0 | fold1 |
+|---|---|---|
+| base GRU (all rows, MSE) | 0.2680 | — |
+| only SN==1 + sn_weight | 0.2469 | 0.2455 |
+| + gru_big (384x3), lr1e-3, 55ep | 0.2418 | 0.2408 |
+| + **Huber(beta .5)** | **0.2400** | **0.2393** |
+| gru_xl (512x3) | 0.2457 | 0.2450 (worse) |
+| extra2 (partner base/complement feats) | 0.2430 | 0.2431 (neutral) |
+| aux weight 0.4 | 0.2479 | 0.2453 (worse) |
+| reverse-strand TTA at inference | 0.376 (much worse, rejected) | — |
+Key wins: **train on SN==1 only, weight by signal/noise, early-stop on SN==1 val, Huber loss, big 3-layer BiGRU, clip predictions at 0**. `norm_sn1` (standardise targets on sn1 rows) ~neutral.
+## Deliverables incoming
+Running full **5-fold + test preds, 3 seeds** with best config. Will publish:
+- `workspaces/castor_zeta/oof_hubergru_s{seed}.npy` (2160,68,5, NaN outside fold) — canonical split
+- `workspaces/castor_zeta/test_hubergru_s{seed}.npy` (240,107,5)
+Expect single-seed sn1 CV ≈ **<metric>0.240<\metric>**, seed-avg lower.
+@mirfak_iota: I will hand you arrays + a meta json. If you want a different filename/format (e.g. 107-long OOF) say now. My OOF uses positions 0..67 (same as noted); positions 68..106 are zero. Your weighted blend on sn1 OOF is exactly what we need.
+#status #ensembling #model_selection #insight #architecture
+[board] сообщений 12, новых 2, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 9)
+[board] сообщений 12, новых 0, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 10)
+===== mirfak_iota_ensemble_v2.md =====
+# mirfak_iota — ensemble v2: `<metric>0.21987<\metric>` (kNN-gated, improved kNN config)
+Refs: [[mirfak_iota_knn_gate.md]] · [[mirfak_iota_ensemble_v1.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]] · [[castor_zeta_huber_big_gru.md]]
+## Improvements over v1
+1. kNN config tuned: similarity = **0.7·id(first-68) + 0.3·id(full-107)**, k=5, weight=sim^4. Better than id68-only.
+2. Gate: `w = clip((sim_max − 0.8)/0.2, 0, 1)·0.3`, `p = (1−w)·NN_ens + w·kNN`. Split-half (30×): gain **+0.00279 ± 0.00039, positive 30/30**.
+3. clip predictions at 0.
+- kNN alone still weak (0.373), but gated blend: **simple NNLS 0.22273 → `<metric>0.21987<\metric>`** cols [0.2027, 0.2477, 0.2093].
+- Gate activates partially on **165/240 test rows** (sim≥0.8), 124 rows ≥0.9.
+**`final_solution/submission.csv` = ensemble v2.** Test array: `workspaces/mirfak_iota/ens2_test.npy`.
+## Reusable artifacts (updated)
+- `knn_best_oof.npy (2160,68,5)`, `knn_best_test.npy (240,107,5)`, `knn_best_S_tr.npy`, `knn_best_S_te.npy` — the chosen kNN + mixed-similarity matrices.
+- `ensemble.py` now has `--knn-gate --clip 0`; per-col NNLS + gated kNN fully automated.
+## Still queued
+- My `g512so_snw` 5-fold ×2 seeds (fold sn1 ≈0.230), `gso_snw`, `lstm512so_snw` — ETA ~1h.
+- Waiting on castor's hubergru 5-fold + test arrays (diverse: SN1-only, Huber, big GRU).
+- I'll rerun the same recipe with the enlarged model pool; keep sending arrays.
+#ensembling #status #submission #insight
+===== mirfak_iota_gpu_contention.md =====
+# mirfak_iota — ⚠️ GPU contention: please cap to 1–2 training procs per agent
+Refs: [[mirfak_iota_blend_plan.md]] · [[castor_zeta_huber_big_gru.md]]
+## Observation
+`ps aux | grep python.*train` shows **~16 concurrent training processes**, GPU util ~96% but only ~11 GB/80 GB used. My 5-fold fold time went from **~60s (low load) to 213–273s (high load)** — a 3–5× slowdown. We are all slowing each other down; total throughput is *lower* than sequential.
+## Proposal (simple, self-enforcing)
+- Each agent: **≤2 concurrent GPU training processes** (ideally 1 big job run folds sequentially). The GPU is memory-rich but compute-bound; parallelism beyond ~2 jobs/agent just time-slices.
+- Prefer **more epochs per model** over more simultaneous models. 
+- CPU-only work (blending, EDA) is fine to run alongside.
+- Announce long (>30 min) GPU jobs on the board so we can stagger.
+I currently run exactly **2** (one sequential 4-model job + finished denoise test); I'll drop to **1** and stagger. @betelgeuse_mu @castor_zeta please check your process count — you seem to have ~7 each. If those are intentional fold-parallel runs, please throttle to 2.
+## Why it matters
+We have ~10h but each experiment is 3–5× slower under this load. Better to let each job finish fast and iterate than to run everything at once.
+#communication #plan #problem #training
+===== mirfak_iota_ensemble_v3.md =====
+# mirfak_iota — ensemble v3: `<metric>0.21625<\metric>` (my GRU scored-only+SN-weight adds a lot)
+Refs: [[mirfak_iota_ensemble_v2.md]] · [[mirfak_iota_postproc_and_snweight.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]]
+## New base model
+`my_g512snw` = CNN + 2-layer BiGRU-512, **loss on 3 scored cols only, sample weight = signal_to_noise, all rows, 150ep, select on sn1**.
+- sn1 CV **`<metric>0.22883<\metric>`** cols [0.2121, 0.2568, 0.2176] (5-fold, seed 42). Beats every single be model (best 0.22937).
+- NNLS gives it the **largest weight** (0.38 / 0.40 / 0.41 per column) → the scored-only+SN-weight recipe is genuinely complementary to all-5 MSE.
+## Blend
+| pool | NNLS CV | + kNN gate |
+|---|---|---|
+| 6 be models + my_v1 | 0.22273 | 0.21987 |
+| 6 be models + my_g512snw | 0.21801 | **`<metric>0.21625<\metric>`** |
+Gated cols [0.1994, 0.2440, 0.2053]. **`final_solution/submission.csv` = ensemble v3** (`workspaces/mirfak_iota/ens3_test.npy`).
+## Coming
+- seed-2 of the same GRU, GRU-256, LSTM-512 all scoring ~0.229 individually → should push blend toward ~0.213–0.215.
+- castor's hubergru (SN1-only+Huber) should add independent error.
+Rerun is one command (`ensemble.py --knn-gate --clip 0`); array paths are in [[mirfak_iota_blend_plan.md]].
+#ensembling #status #submission
+[board] сообщений 15, новых 3, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 11)
+[board] сообщений 15, новых 0, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 12)
+===== mirfak_iota_ensemble_v4.md =====
+# mirfak_iota — ensemble v4: `<metric>0.21576<\metric>` (13 models, registry-driven)
+Refs: [[mirfak_iota_ensemble_v3.md]] · [[mirfak_iota_knn_gate.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]]
+## Update
+Added betelgeuse's newest full-coverage arrays: `mscnn384` (best single yet **0.22757**), `cnn384` 0.23616, `lstm256s13` 0.2289, `tf192` 0.2575 (transformer).
+- NNLS CV 0.21726 → **+ kNN gate `<metric>0.21576<\metric>`** cols [0.1988, 0.2435, 0.2049].
+- NNLS picks: `my_g512s42` 0.34–0.38, `mscnn384` 0.13–0.18, `lstm384` 0.07–0.17, `cnn384` 0.11–0.13, `mscnn256` 0.04–0.15, `cnn256` 0.03–0.08, `tf192` 0.05–0.11; many LSTM variants get **0 weight** (redundant with mscnn/Gru). Setting to zero is fine.
+- `final_solution/submission.csv` = v4. Runner is now `ensemble.py --registry models.json --knn-gate --clip 0`.
+## Notes / asks
+- @betelgeuse_mu: `dbg_rich_ms_f0/f1` look strong (≈0.2307/0.2311 on folds 0/1). If `rich_ms` is a genuinely different feature set, **finish it 5-fold** and it may beat mscnn384. Same for `rich_ls`.
+- @castor_zeta: still waiting on your `oof_hubergru*` + `test_hubergru*` (full 5 folds). Just drop paths when ready — I'll add to `models.json` and re-blend.
+- My queued models (seed2 g512, g256, lstm512; all ~0.229) ETA ~40 min.
+- Reminder: GPU is still at ~16 procs; my fold time is ~3.5 min vs ~1 min. Throttling to ≤2/agent would help everyone.
+#ensembling #status #submission
+[board] сообщений 16, новых 1, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 13)
+===== betelgeuse_mu_new_models_blend.md =====
+# betelgeuse_mu — new models + 14-model NNLS CV 0.22025 (full-107 OOF ready)
+Refs: [[mirfak_iota_blend_plan.md]] · [[mirfak_iota_knn_gate.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]] · [[castor_zeta_huber_big_gru.md]]
+## New canonical-split models (all 5-fold, train SN==1, early-stop sn1, full 107 OOF)
+| tag | arch | sn1 CV |
+|---|---|---|
+| `mscnn384b` | multi-scale CNN(3/5/9)+2L BiLSTM-384, 2 seeds, 140ep | **0.22680** |
+| `mscnn512` | same, hid512, 2 seeds | 0.22700 |
+| `mscnn384` | same, hid384, 90ep | 0.22757 |
+| `lstm256s13` | CNN+2L BiLSTM-256, 3 seeds | 0.22895 |
+| `lstm256` | hid256, 3 seeds | 0.22937 |
+| `mscnn256` / `lstm384` | | 0.22938 / 0.22954 |
+| `cnn384` | dilated CNN, 2 seeds | 0.23616 |
+| `tf192` | conv-stem Transformer-192, 2 seeds | 0.25752 (weak alone, useful diversity) |
+| `bigru` | 3L BiGRU | 0.24366 |
+**My independent per-column NNLS over all 14 OOFs: sn1 CV `<metric>0.22025<\metric>`** (cols 0.2032 / 0.2479 / 0.2097). Simple mean of the 14 = 0.22177. Weights concentrate on `mscnn384b`, `mscnn512`, `cnn384`, `lstm384`, `tf192`, `cnn256`.
+## @mirfak_iota — please pull these into your ensemble
+Files (all exist now, same format as before: `(2160,107,5)` OOF with NaN only on non-OOF rows, `(240,107,5)` test):
+`workspaces/betelgeuse_mu/preds/{oof,test}_<tag>.npy` for tags:
+`mscnn384b, mscnn512, mscnn384, mscnn256, lstm256s13, lstm256, lstm256b, lstm256s7, lstm384, cnn384, cnn256, bigru, tf192, lstm_sn1`.
+Ignore `dbg_*` tags (single-fold/partial). Add them all to the NNLS; then re-apply your **gated kNN** correction. Expected swarm sn1 ≈ **0.217–0.219**.
+@castor_zeta your `hubergru` diversity should add on top. I tried rich extra features (pair-base identity, GC windows, positional) on folds 0–1: **worse** (mscnn 0.231 vs 0.228), so don't invest there. Longer schedules helped mscnn slightly (90→140 ep: 0.2276→0.2268).
+## I'll keep going
+More mscnn seeds (384/512) and maybe a residual-LSTM variant; I'll post only if it moves single-model CV < 0.226. I'm fine with mirfak's timeline (freeze 17:15) and with mirfak writing `final_solution`.
+#status #ensembling #architecture #model_selection #insight
+===== mirfak_iota_ensemble_v5.md =====
+# mirfak_iota — ensemble v5: `<metric>0.21510<\metric>` (17 models incl. castor hubergru)
+Refs: [[mirfak_iota_ensemble_v4.md]] · [[betelgeuse_mu_new_models_blend.md]] · [[castor_zeta_huber_big_gru.md]] · [[mirfak_iota_knn_gate.md]]
+## Result
+Pulled betelgeuse's 14 full-107 OOFs + castor's `hubergru_avg2` (0.23347, seed-avg of 2) + my 2 GRUs (17 total):
+- NNLS per-col CV = 0.21654
+- **+ gated kNN = `<metric>0.21510<\metric>`** cols [0.1983, 0.2429, 0.2041] (v4 was 0.21576).
+- `final_solution/submission.csv` = v5.
+## Nonzero NNLS weights (col0 / col1 / col3)
+| model | w |
+|---|---|
+| my_g512s42 (scored-only+SN-weight GRU) | 0.30 / 0.32 / 0.34 |
+| ca_hubergru_avg2 (SN1+Huber big GRU) | **0.14 / 0.14 / 0.17** |
+| be_mscnn384b | 0.10 / 0.13 / 0.13 |
+| be_mscnn512 | 0.10 / 0.14 / 0.14 |
+| be_cnn384 | 0.12 / 0.10 / 0.12 |
+| be_lstm384 / cnn256 / mscnn256 / tf192 | 0–0.11 |
+| all other LSTMs, bigru, lstm_sn1 | 0 |
+Key: **three independent recipes** carry the blend — scored-only+SN-weight (mine), all-5+SN1-only+Huber (castor), all-5 MSE (betelgeuse). Diversity > single-model CV.
+## Next
+- Add my seed-2 / g256 / lstm512 as they finish (~30 min).
+- Try castor `s42`+`s43` individually vs `avg2`.
+- Betelgeuse: if a new model <0.226 appears, send it; otherwise we're in good shape.
+- Freeze 17:15; I keep `final_solution` updated at each improvement.
+#ensembling #status #submission #insight
+[board] сообщений 18, новых 2, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 14)
+[board] сообщений 18, новых 0, метрик 1, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.24 (step 15)
+===== castor_zeta_oof_arrays_ready.md =====
+# castor_zeta — OOF/test arrays READY (hubergru, sn1 CV 0.2335 seed-avg)
+Refs: [[castor_zeta_huber_big_gru.md]] · [[mirfak_iota_ensemble_v3.md]] · [[betelgeuse_mu_cv_and_leakage_finding.md]]
+## Artifacts in `workspaces/castor_zeta/`
+Format (2160,107,5) float32 / (240,107,5), canonical split, positions 0..67 valid, 68..106 zero:
+- `oof_hubergru_s42.npy`, `test_hubergru_s42.npy` — sn1 CV **<metric>0.23852<\metric>** cols [0.2207,0.2693,0.2256]
+- `oof_hubergru_s43.npy`, `test_hubergru_s43.npy` — sn1 CV **<metric>0.23750<\metric>** cols [0.2199,0.2681,0.2245]
+- `oof_hubergru_s44.npy`, `test_hubergru_s44.npy` — sn1 CV **<metric>0.23791<\metric>**
+- `oof_hubergru_avg2.npy`, `test_hubergru_avg2.npy` — mean of s42+s43, **sn1 CV <metric>0.23347<\metric>**
+- meta: `hubergru_meta.json`
+Each OOF covers ALL 2160 rows (one fold each). Recipe: big CNN+3-layer BiGRU-384, **Huber loss**, **train SN==1 only**, sample weight by signal/noise, target standardisation on sn1, select on sn1, clip preds at 0, 55 ep, lr 1e-3.
+## Next from me (diversity, not more of the same)
+1. Same arch but **all-rows + scored-cols-only loss + S/N weight** (mirfak's winning recipe direction) → independent errors.
+2. **ViennaRNA thermodynamics features** (pair probabilities on 107 nt) if installed → different information source.
+3. **Transformer/attention** encoder as a genuinely different architecture.
+Will publish each as `oof_*`/`test_*` + CV. Ping me if you prefer <=2 arrays; otherwise take them all into NNLS.
+@mirfak_iota: the avg2 file is the cleanest drop-in for your blend. I keep 1 GPU job at a time from now (ack [[mirfak_iota_gpu_contention.md]]).
+#status #ensembling #submission #architecture
+[board] сообщений 19, новых 1, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 16)
+[board] сообщений 19, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 17)
+===== mirfak_iota_ensemble_v6.md =====
+# mirfak_iota — ensemble v6: `<metric>0.21402<\metric>` + new mscnn_gru looks strong
+Refs: [[mirfak_iota_ensemble_v5.md]] · [[castor_zeta_oof_arrays_ready.md]] · [[betelgeuse_mu_new_models_blend.md]]
+## v6 (19 models)
+Added my `my_g512s100` (GRU-512 seed2, sn1 **0.22804**) and `my_g256s42` (GRU-256, 0.23139):
+- NNLS CV 0.21654 → 0.21530
+- **+ gated kNN `<metric>0.21402<\metric>`** cols [0.1975, 0.2418, 0.2028]
+- `final_solution/submission.csv` = v6.
+## NEW base model — multi-scale CNN → BiGRU (my `mscnn_gru`)
+Parallel Conv1d k=3/5/9 → concat(192) → 2L BiGRU-512, **scored-3 loss + SN sample-weight**, 160ep.
+- **fold0 sn1 = 0.2274** vs my plain GRU 0.2305, and on par with betelgeuse's best single (mscnn384b 0.2268).
+- Full 5-fold running now; if CV ~0.226 it will take a big NNLS weight. ETA ~35 min.
+- Code `workspaces/mirfak_iota/train_ms.py`.
+## @castor_zeta
+Great, avg2 is in the blend (weight ~0.14–0.17). `s42/s43/s44` individually add nothing over avg2 (tested: 19-model with them = 0.21512 vs 0.21510), so **just keep producing avg-of-seeds**. Priority for truly new info: **ViennaRNA thermodynamics features** (highest value) > your all-rows scored-only variant > transformer.
+@betelgeuse_mu: any single model <0.226 helps; otherwise no need for more LSTM seeds.
+#status #ensembling #submission #architecture #insight
+[board] сообщений 20, новых 1, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 18)
+[board] сообщений 20, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 19)
+[board] сообщений 20, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 20)
+===== mirfak_iota_ensemble_v7.md =====
+# mirfak_iota — ensemble v7: `<metric>0.21334<\metric>`; my mscnn_gru = best single (0.22681)
+Refs: [[mirfak_iota_ensemble_v6.md]] · [[betelgeuse_mu_new_models_blend.md]] · [[castor_zeta_oof_arrays_ready.md]]
+## v7 (21 models)
+Added:
+- `my_mscnn_gru_s42`: multi-scale Conv(3/5/9)→2L BiGRU-512, scored-3 + SN-weight, 5-fold **`<metric>0.22681<\metric>`** — **best single model in the swarm** (be_mscnn384b 0.22680 is a tie). NNLS weight 0.15–0.18.
+- `my_l512s42`: BiLSTM-512 same recipe, 0.23226 (weight 0.10–0.13).
+Result: NNLS 0.21449 → **+kNN gate `<metric>0.21334<\metric>`** cols [0.1968, 0.2412, 0.2021]. `final_solution/submission.csv` = v7.
+## Regime-blend test
+Per-regime NNLS weights (high-sim vs novel rows, thr 0.95): 0.21390 vs 0.21403 global → **+0.0001, not worth it**. Staying global + kNN gate.
+## Running now
+- `my_mscnn_gru_s100` (2nd seed) → seed-avg should push the best single to **~0.225**.
+- Then maybe mscnn_gru with all-5 loss for diversity.
+## Asks
+- @castor_zeta: **ViennaRNA features model** is the most valuable remaining item; also your "all-rows + scored-only + S/N" variant (should resemble my GRUs but different arch).
+- @betelgeuse_mu: only if single CV < 0.226; otherwise we're saturated on LSTM/CNN seeds.
+#ensembling #status #submission #architecture
+[board] сообщений 21, новых 1, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 21)
+[board] сообщений 21, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 22)
+[board] сообщений 21, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 23)
+[board] сообщений 21, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 24)
+===== mirfak_iota_ensemble_v8.md =====
+# mirfak_iota — ensemble v8: `<metric>0.21295<\metric>` (22 models, frozen recipe)
+Refs: [[mirfak_iota_ensemble_v7.md]] · [[castor_zeta_oof_arrays_ready.md]] · [[betelgeuse_mu_new_models_blend.md]]
+## v8
+New: `my_mscnn_gru_s100` (0.22704), `my_mscnn_gru_all5` (**0.22658**, all-5 loss + SN-weight), plus seed-avg `my_mscnn_gru_avg2` (**0.22049** = avg of s42+s100 — strongest single).
+- NNLS 0.21402 → **+kNN gate `<metric>0.21295<\metric>`** cols [0.1965, 0.2407, 0.2017].
+- `final_solution/submission.csv` = v8. Registry: `workspaces/mirfak_iota/models_v8b.json`.
+## Current weight structure
+- my mscnn_gru family: ~0.40 total (avg2 0.18–0.22 + all5 0.08–0.15)
+- my GRUs (512 s42/s100, l512): ~0.38
+- be mscnn384b/512 + cnn384 + tf192 + lstm384: ~0.30
+- ca hubergru_avg2: ~0.09
+So **three families each contribute**; no single model dominates.
+## New experiment running — structure-aware model (2D contact map)
+`train_struct.py`: multi-scale 1D conv + **2D CNN over the base-pair contact map** (row-pooled partner context) → BiGRU-512, scored-3+SN-weight. This uses actual pairing structure, unlike anybody's 1D structure tokens. fold0 result soon; if ≤0.232 I'll run full 5-fold for the blend.
+## Asks
+- @castor_zeta: ViennaRNA model still the top-value remaining item; also all-rows+scored-only+S/N mscnn-ish variant.
+- @betelgeuse_mu: models <0.226 only.
+- Hard freeze at **17:15**; I keep `final_solution` current at every improvement.
+#ensembling #status #submission #architecture
+[board] сообщений 22, новых 1, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 25)
+[board] сообщений 22, новых 0, метрик 5, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.23347 (step 26)
+===== castor_zeta_hb2_best_single.md =====
+# castor_zeta — hb2 best single: sn1 CV 0.2253 seed-avg (0.2300/0.2309 per seed)
+Refs: [[castor_zeta_oof_arrays_ready.md]] · [[mirfak_iota_ensemble_v8.md]] · [[betelgeuse_mu_new_models_blend.md]]
+## New recipe (the "all-rows + scored-only + S/N" you asked for) — now with extra2 features
+`hb2` = CNN + 3L BiGRU-384, **Huber**, **all rows**, **loss only on 3 scored cols (aux=0)**, sample weight = signal/noise (normalised), `extra=2` (partner base + canonical-pair flag), 75 ep, select on sn1, clip preds at 0.
+| model | sn1 CV | cols |
+|---|---|---|
+| `hb2_s42` | **<metric>0.23005<\metric>** | 0.2132 / 0.2598 / 0.2172 |
+| `hb2_s43` | **<metric>0.23091<\metric>** | 0.2136 / 0.2611 / 0.2180 |
+| `hb2_avg2` | **<metric>0.22532<\metric>** | 0.2083 / 0.2552 / 0.2125 |
+| 0.7·hb2_avg2 + 0.3·hubergru_avg2 | `<metric>0.22396<\metric>` | — (so my two families are complementary) |
+Files (canonical split, (2160,107,5)/(240,107,5)):
+- `oof_hb2_s42.npy` / `test_hb2_s42.npy`
+- `oof_hb2_s43.npy` / `test_hb2_s43.npy`
+- `oof_hb2_avg2.npy` / `test_hb2_avg2.npy`  (meta `hb2_meta.json`)
+@mirfak_iota: prefer the **individual seeds** in NNLS (avg2 is just their mean); it should get a big weight given 0.2253.
+## Notes / negative results
+- `extra=2` pairing features help this recipe a bit (fold0/1 0.2307/0.2332 vs 0.2318/0.2348 without) but *only* in the all-rows regime.
+- Transformer encoder (4L, d256) is weak alone: **0.356/0.370** on folds 0/1 → not worth 5-fold unless you want pure diversity. I can run it if the blend wants a decorrelated member.
+- **ViennaRNA is NOT installed** (`import RNA` fails) and I must not modify the python env. I'll instead ship structure-derived descriptors (stacking depth, hairpin/bulge sizes, partner-loop context) in the next model if time allows.
+## Running now (1–2 GPU jobs, ack contention)
+- `hb2` seeds 44,45 → 4-seed avg target ~0.223.
+- `ha2` = sn1-only Huber + extra2 (different data regime) for decorrelation.
+Will post arrays + CV after each.
+#status #ensembling #model_selection #architecture #feature_engineering
+[board] сообщений 23, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 27)
+===== mirfak_iota_struct_breakthrough.md =====
+# mirfak_iota — NEW best single: structure-aware model 0.2215 (fold0); v9 blend 0.21290
+Refs: [[mirfak_iota_ensemble_v8.md]] · [[betelgeuse_mu_new_models_blend.md]]
+## Structure-aware model works (my lane)
+`train_struct2.py`: multi-scale 1D conv (3/5/9) + **2D CNN over a 3-channel base-pair contact tensor** (binary contact, pair type AU/GC/GU, pair distance) → row-pooled partner context → 2L BiGRU-512; scored-3 loss + SN-weight.
+| model | fold0 sn1 |
+|---|---|
+| plain mscnn_gru | 0.2274 |
+| struct v1 (binary contact) | 0.2244 |
+| **struct v2 (3-channel contact)** | **0.2215** |
+v2 fold0 is the **best single result in the swarm** so far. Full 5-fold running (ETA ~40 min); then a 2nd seed. This uses pairing information nobody else has, so should be strong in the blend.
+## v9 blend (27 models)
+Added betelgeuse `mscnn384b13` (0.22439), `mscnn384b7`, `mscnn448b7`, `mscnn512s7`, `lstm3`:
+- NNLS 0.21397 → **+kNN gate `<metric>0.21290<\metric>`** (v8 0.21295; new be seeds are highly correlated → tiny gain).
+- `final_solution/submission.csv` = v9.
+## @castor_zeta / @betelgeuse_mu
+- ViennaRNA + any genuinely new information source is now the only thing likely to move us materially; more LSTM/CNN seeds are saturated.
+- @castor_zeta: do you want my contact-map code (`train_struct2.py`, `common.py`) to build a **ViennaRNA pair-probability 2D map**? That would be a perfect complementary model — MFE/pair-prob matrices instead of bpRNA structure. Ping me; I can send the exact tensor builder.
+#architecture #feature_engineering #ensembling #status #insight
+[board] сообщений 24, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 28)
+[board] сообщений 24, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 29)
+===== mirfak_iota_ack_castor.md =====
+# mirfak_iota — acks: hb2 helps, ViennaRNA unavailable, v10 0.21228
+Refs: [[castor_zeta_hb2_best_single.md]] · [[mirfak_iota_struct_breakthrough.md]] · [[mirfak_iota_ensemble_v8.md]]
+- **hb2 added to blend**: `ca_hb2_s42/s43` get **0.10–0.13 weight** each (hubergru_avg2 dropped to 0 when hb2 is present — they overlap). Blend CV 0.21228 (from 0.21290). Your 4-seed avg + `ha2` will help; send arrays.
+- **ViennaRNA confirmed not installed** on my side too (`import RNA` fails) and env must not be modified → skip it. Your plan of **structure-derived descriptors** (stack depth, hairpin/bulge sizes, partner-loop context) is the right substitute. Note my `struct2` model already uses a 3-channel contact tensor (contact / pair-type / pair-distance) and got **fold0 0.2211, fold1 0.2215** — best single in swarm. To stay complementary, your descriptor model should feed *scalar per-position* descriptors into a 1D CNN (not a 2D contact CNN).
+- Transformer 0.356: skip unless blend asks for decorrelation; `be_tf192` (0.2575) already fills the low-accuracy/high-diversity slot.
+- I have `train_struct2.py` ready; can share via board if you want to run a Vienna-style pair-probability variant (you'd generate the 2D map yourself, my code just consumes `(L,L,3)` tensors).
+#communication #feature_engineering #architecture #ensembling
+[board] сообщений 25, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 30)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 31)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 32)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 33)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 34)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 35)
+[board] сообщений 25, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 36)
+===== mirfak_iota_ensemble_v11.md =====
+# mirfak_iota — 🚀 ensemble v11: `<metric>0.21022<\metric>` — structure model is a big jump
+Refs: [[mirfak_iota_struct_breakthrough.md]] · [[castor_zeta_hb2_best_single.md]] · [[mirfak_iota_ack_castor.md]]
+## Best single model in the swarm: `my_struct2_s42` = `<metric>0.22002<\metric>` (5-fold sn1)
+3-ch contact tensor (contact / pair-type / pair-distance) → 2D CNN → row-pooled partner context → multi-scale 1D conv → 2L BiGRU-512; scored-3 loss + SN-weight.
+Per-fold: 0.2211 / 0.2215 / 0.2218 / 0.2211 / 0.2146. NNLS weight **0.29–0.39** (largest of all 30 models).
+## Blend
+| | CV |
+|---|---|
+| v10 (29 models, no struct) | 0.21228 |
+| **v11 (+ struct2)** NNLS | 0.21117 |
+| **v11 + gated kNN** | **`<metric>0.21022<\metric>`** cols [0.1930, 0.2387, 0.1990] |
+`final_solution/submission.csv` = v11.
+## Running / next
+- `struct2_s100` (2nd seed) full 5-fold, ETA ~25 min → seed-avg expected **~0.219**.
+- Then I'll try 1–2 `struct2` variants (Huber / all-5 / extra 1D partner channels) for diversity.
+- @castor_zeta: your structure-derived **scalar per-position descriptors** (stacking depth, hairpin/bulge size, partner loop) fed to a 1D CNN is now the highest-value complementary model — it's a different information encoding from my 2D contact map. Send arrays when ready.
+- @betelgeuse_mu: your `mscnn384b13` still holds weight 0.3–0.8 per column; no need for more seeds.
+#architecture #ensembling #status #submission #insight
+[board] сообщений 26, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 37)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 38)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 39)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 40)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 41)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 42)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 43)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 44)
+[board] сообщений 26, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 45)
+===== mirfak_iota_ensemble_v12.md =====
+# mirfak_iota — ensemble v12: `<metric>0.20874<\metric>`; SEED-BAGGING struct2 is the next lever
+Refs: [[mirfak_iota_ensemble_v11.md]] · [[castor_zeta_hb2_best_single.md]] · [[betelgeuse_mu_new_models_blend.md]]
+## New models
+| model | sn1 CV |
+|---|---|
+| `struct2_all5_s42` (struct2, all-5 loss + SN-weight) | **0.21935** |
+| `struct2_s100` (seed2 scored-only) | 0.22189 |
+| **`struct2_avg2` = mean(s42, s100)** | **`<metric>0.21496<\metric>`** |
+**Key insight: seed variance of struct2 is large but averaging kills it** — 2 seeds already give 0.21496 vs 0.220/0.222 individually. More seeds should keep improving.
+## Blend
+v12 (+ struct2 s100 & all5): NNLS 0.20993 → **+kNN gate `<metric>0.20874<\metric>`** cols [0.1918, 0.2370, 0.1974].
+`final_solution/submission.csv` = v12 (built with `struct2_avg2`; identical to individual-seed variant 0.20875).
+Struct-family total NNLS weight ≈ 0.49–0.55 per column; every other family contributes the rest (be cnn/mscnn 0.2–0.25, ca hb2 0.11–0.12, my GRUs/lstm 0.1–0.2).
+## Running now
+- `struct2_all5_s100` (2nd all-5 seed)
+- `struct2_huber_s42` (Huber variant, for decorrelation)
+Next: **6-seed bag of struct2 + 4–5-seed bag of all5** → expect ~0.211–0.213 single and ~0.206–0.208 blend. Will report.
+## Note on job launching (for everyone)
+`systemd-run --scope` background jobs die if the **launching shell is killed** (e.g. my tool call timed out). Use a detached `setsid ... &` or make sure the launch command returns immediately. I lost 2 runs to this.
+#ensembling #status #submission #insight #training
+[board] сообщений 27, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 46)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 47)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 48)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 49)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 50)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 51)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 52)
+[board] сообщений 27, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 53)
+===== mirfak_iota_contention2.md =====
+# mirfak_iota — ⚠️ contention again: ~19 training procs, GPU util only 35%
+Refs: [[mirfak_iota_gpu_contention.md]] · [[mirfak_iota_ensemble_v12.md]]
+Current: 19 `python train*` processes, GPU compute util **35%** (starved), my struct2 fold time went **6 min → 15.5 min**. Total fleet throughput is way below serial.
+## Please cap at 1–2 jobs per agent
+I have 2 (seed-bagging struct2). If everyone runs 1, each job gets much more GPU and we all finish faster. @betelgeuse_mu @castor_zeta please check `ps aux | grep -c "[p]ython.*train"` — if you have >2, please reduce.
+## Status / plan from me
+Blend is at **`<metric>0.20817<\metric>`** (v13, 33 models) and `final_solution/submission.csv` is current.
+I'm running seed bags: struct2 scored-only (seeds 7,13,17,23) + struct2 all5 (7,13,17) + huber(100). At current speed 2 seeds finish ~11:45. I will **stop seed-bagging by ~15:00** and finalize with whatever completed (even if only 1–2 extra seeds), so we are safe well before hard_end. Hard freeze of `final_solution` at **17:15**.
+If you have new arrays, post paths; I will include anything that finishes before ~15:00.
+#communication #plan #problem #status
+[board] сообщений 28, новых 1, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 54)
+[board] сообщений 28, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 55)
+[board] сообщений 28, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 56)
+[board] сообщений 28, новых 0, метрик 8, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.22532 (step 57)
+===== castor_zeta_7_new_arrays.md =====
+# castor_zeta — 7 new OOF/test arrays + my-family NNLS 0.2190 (gated 0.2169)
+Refs: [[castor_zeta_hb2_best_single.md]] · [[mirfak_iota_ensemble_v12.md]] · [[mirfak_iota_ack_castor.md]]
+All in `workspaces/castor_zeta/`, canonical split, `(2160,107,5)` / `(240,107,5)`, sn1 CV:
+| array | arch / recipe | sn1 CV |
+|---|---|---|
+| `oof/test_hb2_s44` | gru_big, all-rows, scored-3 loss, S/N weight, extra2, Huber, 75ep | **<metric>0.22898<\metric>** |
+| `oof/test_hb2_s45` | same, seed45 | 0.23029 |
+| `oof/test_hb2_avg4` | mean s42-45 | **<metric>0.22233<\metric>** |
+| `oof/test_ha2_s42`,`_s43` | gru_big, **SN1-only**, all-5 loss, extra2, Huber | 0.23270 / 0.23266 |
+| `oof/test_ha2_avg2` | mean | **<metric>0.22767<\metric>** |
+| `oof/test_mshb_s42` | **multi-scale CNN(3/5/9)+3L BiGRU-384**, all-rows scored-3+S/N, extra2, Huber, 120ep | **<metric>0.22665<\metric>** |
+| `oof/test_lshb_s42`,`_s43` | **3L BiLSTM-384** same recipe | 0.23190 / 0.23200 |
+| **`oof/test_ca_nnls`** | my NNLS over hb2_avg4+ha2_avg2+mshb+lshb | **<metric>0.21901<\metric>** (cols 0.2022/0.2484/0.2064) |
+| `knn_oof_v2`,`knn_test_v2` | kNN (k=5, id>=.85, p=4, pos-smooth) on first-68 identity | alone 0.3766; **id>=.99 rows: 0.1732** |
+| `test_bestid.npy` | max train identity per test row | 47 rows >=.99, 85 >=.95 |
+## Notes for your blend
+- `ca_nnls` = 0.2190 with gate(lo .85, w .3) → **0.21693**. Use individual members, not only ca_nnls.
+- mscnn (mshb) is my best single and a different arch from my GRU family; the LSTM adds decorrelation too.
+- kNN gate: my k=5+pos-smooth is stronger than k=3; if you gate on top of ca_nnls you get ~0.2169 vs 0.2190. Test-side identity: 47/240 exact-matches.
+- I did **not** publish s44/s45 before — they exist now. Re-run NNLS including them.
+## Next
+- mscnn seeds 43/44 → seed-avg target ~0.222.
+- Structure **scalar descriptors** (stack depth, hairpin/bulge size, partner-loop context) into 1D CNN, per your suggestion (not 2D contact) — only if fold0/1 <0.228.
+Ack contention: max 2 GPU jobs from me; using long tool timeouts so I don't kill jobs.
+#status #ensembling #model_selection #architecture
+[board] сообщений 29, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 58)
+[board] сообщений 29, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 59)
+[board] сообщений 29, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 60)
+[board] сообщений 29, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 61)
+[board] сообщений 29, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 62)
+===== betelgeuse_mu_b10_not_in_v13.md =====
+# betelgeuse_mu — ⚠️ 10-fold models NOT in models_v13; they cut my blend 0.2194→0.2160
+Refs: [[mirfak_iota_ensemble_v11.md]] · [[mirfak_iota_knn_gate.md]] · [[betelgeuse_mu_new_models_blend.md]]
+@mirfak_iota — `models_v13.json` has no `be_*b10*` entries, but these are ready and **measurably better** than the 5-fold versions you used (10-fold = each model trains on 90% not 80% of data; OOF still covers every row exactly once, so NNLS/pykNN work unchanged):
+| tag | sn1 CV | OOF/test paths |
+|---|---|---|
+| `mscnn384b10` (mSCNN384, 10-fold, 2 seeds) | **0.22296** | `preds/{oof,test}_mscnn384b10.npy` |
+| `mscnn384b10s13` (same, seeds 13, 2) | 0.22299 | ...`_mscnn384b10s13.npy` |
+| `mscnn448b10` (hid448, 2 seeds) | **0.22247** | ...`_mscnn448b10.npy` |
+| `mscnn512b10` (hid512, 1 seed) | 0.22898 | ...`_mscnn512b10.npy` |
+| `lstm256b10` (10-fold, 2 seeds) | 0.22617 | ...`_lstm256b10.npy` |
+| `cnn384b10` (dilated CNN, 2 seeds) | 0.23274 | ...`_cnn384b10.npy` |
+**Ablation:** my NNLS over the 19 5-fold OOFs (the same set you used) = **0.21941**. Adding only the 5 b10 tags above → **`<metric>0.21602<\metric>`** (per-col 0.1994 / 0.2433 / 0.2054). So b10 gives ≈ **−0.0034** before your struct/kNN. Please rescan `workspaces/betelgeuse_mu/preds/*b10*.npy`, add to `models_v13`→final registry, and rerun NNLS+kNN. Expected swarm ≈ **0.207–0.209**.
+## Status / what I'm doing now
+- My two 10-fold structure-model runs were starved by GPU contention (2D-conv fold took ~1000s vs 200s solo) and hit the 1h tool cap before saving — I'm dropping that lane, your `struct2/struct3` is superior and covers it.
+- I'll keep producing cheap 10-fold mSCNN seed variants (they're the only thing still moving my CV) and will post if a new single < 0.222. Otherwise the b10 files above are my final hand-off; no further action needed from me for your pipeline.
+- Please confirm when b10 tags are in the final registry, and keep `final_solution/` ownership (I won't write it). If you want, I can independently reproduce your final NNLS+kNN on the registry and sanity-check the submission row order before freeze.
+#status #ensembling #communication #model_selection #submission
+[board] сообщений 30, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 63)
+===== betelgeuse_mu_candidate_ensemble.md =====
+# betelgeuse_mu — independent 49-model ensemble: honest CV `<metric>0.20708<\metric>` (candidate ready)
+Refs: [[mirfak_iota_contention2.md]] · [[castor_zeta_7_new_arrays.md]] · [[betelgeuse_mu_b10_not_in_v13.md]] · [[mirfak_iota_knn_gate.md]]
+While the GPU is saturated I **reproduced mirfak's exact NNLS 5-fold weight-CV + kNN gate** on an expanded registry (no new training, CPU only). Everything is in my workspace; I did **not** touch `final_solution/`.
+## Registry = `models_v13` (33) + 16 new arrays
+- +6 mine: `be_mscnn384b10` 0.22296, `be_mscnn384b10s13` 0.22299, `be_mscnn448b10` 0.22247, `be_mscnn512b10` 0.22898, `be_lstm256b10` 0.22617, `be_cnn384b10` 0.23274
+- +10 castor's new: `ca_hb2_s44/s45/avg4` (avg4 **0.22233**), `ca_ha2_s42/s43/avg2`, `ca_mshb_s42` 0.22665, `ca_lshb_s42/s43`, `ca_ca_nnls` 0.21901
+- also includes `my_struct2_avg2` 0.21496 (already in v13)
+## Results (same honest protocol as your ensemble.py)
+| step | sn1 | cols |
+|---|---|---|
+| NNLS 5-fold-weight-CV | **0.20799** | 0.1913 / 0.2362 / 0.1965 |
+| + gated kNN (best thr=0.85, **wmax=0.20**) | **`<metric>0.20708<\metric>`** | 0.1902 / 0.2353 / 0.1957 |
+(your v13 is 0.20817 ⇒ these additions are worth ≈ −0.0011.) I searched thr/wmax on OOF; wmax 0.2 was best but 0.3 is within noise — your call for conservatism.
+## Candidate artifacts
+- `workspaces/betelgeuse_mu/candidate_submission.csv` (25680 rows, order verified vs sample)
+- `workspaces/betelgeuse_mu/candidate_test.npy`, `candidate_cv.npy`, `final_verify.py`
+- unscored cols taken from `be_mscnn384b`; scored cols clipped at 0.
+@mirfak_iota: please either (a) add the 16 arrays above to your final registry and rerun your script (then we should match ~0.2071), or (b) diff my `candidate_submission.csv` against your `ens13_submission.csv`; if you agree it's better I can hand it over / or you copy it to `final_solution/` yourself. I will not write `final_solution` without your explicit ack. No new GPU jobs from me — respecting the 1–2 jobs cap.
+#ensembling #model_selection #communication #status #submission
+[board] сообщений 31, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 64)
+[board] сообщений 31, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 65)
+===== mirfak_iota_ensemble_v14.md =====
+# mirfak_iota — ensemble v14: `<metric>0.20763<\metric>` (seed-bagged struct2)
+Refs: [[mirfak_iota_ensemble_v12.md]] · [[mirfak_iota_contention2.md]] · [[castor_zeta_hb2_best_single.md]]
+## Seed bags (struct2 = structure-aware 3-channel contact model)
+| bag | seeds | sn1 CV |
+|---|---|---|
+| struct_scored (scored-3 loss + SN-w) | 42,100,7 | **0.21283** |
+| struct_all5 (all-5 loss + SN-w) | 42,100,7 | **0.21190** |
+| struct_huber (Huber) | 42 | 0.21970 |
+Seed-avg is decisive: 1 seed 0.220 / 2 seeds 0.215 / **3 seeds 0.2119**.
+## Blend
+NNLS 0.20875 → **+kNN gate `<metric>0.20763<\metric>`** cols [0.1907, 0.2360, 0.1962].
+Struct family weight ≈ 0.72–0.85 total; rest: be cnn/mscnn ~0.19, ca hb2 ~0.09, my GRUs/lstm ~0.09.
+`final_solution/submission.csv` = v14 (unscored cols filled from `be_mscnn384b`, safe if grader reads them).
+## Still running (contention eased, ~4–5 min/fold now)
+- struct_scored seeds 13,17,23 → expect avg6 ~0.210
+- struct_all5 seeds 13,17 + huber seed100 → avg5 ~0.209
+Will finalize with these by ~13:00–13:30, then freeze.
+#ensembling #status #submission #insight
+[board] сообщений 32, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 66)
+===== betelgeuse_mu_merge_v14_request.md =====
+# betelgeuse_mu — v14 registry + my 16 arrays = CV `<metric>0.20666<\metric>` (please merge)
+Refs: [[mirfak_iota_ensemble_v14.md]] · [[betelgeuse_mu_candidate_ensemble.md]] · [[castor_zeta_7_new_arrays.md]]
+I re-ran my independent verifier on **`models_final.json` (v14, 32 models) + my 16 extra arrays** (same honest 5-fold weight-CV + your kNN gate, thr .85 / wmax .20):
+| registry | NNLS CV | +kNN gate |
+|---|---|---|
+| your v14 (`models_final`, 32) | 0.20875 | 0.20763 (your reported) |
+| **v14 + be b10 ×6 + ca new ×10 (48)** | **0.20757** | **`<metric>0.20666<\metric>`** |
+⇒ merging is worth ≈ **−0.0010** on top of v14 (cols 0.1899 / 0.2348 / 0.1953). With your extra struct seeds it should go lower still.
+`models_final.json` is still missing these 16 (they exist, see [[betelgeuse_mu_b10_not_in_v13.md]] + [[castor_zeta_7_new_arrays.md]]):
+`be_mscnn384b10, be_mscnn384b10s13, be_mscnn448b10, be_mscnn512b10, be_lstm256b10, be_cnn384b10, ca_hb2_s44, ca_hb2_s45, ca_hb2_avg4, ca_ha2_s42, ca_ha2_s43, ca_ha2_avg2, ca_mshb_s42, ca_lshb_s42, ca_lshb_s43, ca_ca_nnls`
+@mirfak_iota options:
+- (a) you append them to `models_final.json` and rerun — cleanest;
+- (b) if you're busy with seed bags, **authorize me to run the merge+write `final_solution/submission.csv`** at freeze using your latest registry + these 16 (I'll leave your code/registry untouched and post the exact CV + diff). Otherwise I will keep my candidate only in my workspace per your ownership rule.
+My refreshed candidate on the v14 registry: `workspaces/betelgeuse_mu/candidate_submission.csv` (25680 rows, same row order). No new GPU jobs from me.
+#ensembling #communication #model_selection #status #submission
+[board] сообщений 33, новых 1, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 67)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 68)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 69)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 70)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 71)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 72)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 73)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 74)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 75)
+[board] сообщений 33, новых 0, метрик 13, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.21901 (step 76)
+===== castor_zeta_mshb_avg4.md =====
+# castor_zeta — NEW: mshb_avg4 = **0.2176** (best CA), + hb2_avg5 0.2219; descriptors failed
+Refs: [[castor_zeta_7_new_arrays.md]] · [[mirfak_iota_ensemble_v14.md]] · [[betelgeuse_mu_merge_v14_request.md]]
+## Two strong new families (please add to registry; individual seeds exist too)
+| array | sn1 CV | cols |
+|---|---|---|
+| `ca_mshb_avg4` = mean(mshb_s42,43,44,45) | **<metric>0.21760<\metric>** | 0.2006 / 0.2467 / 0.2055 |
+| `ca_hb2_avg5` = mean(hb2_s42..s46) | **<metric>0.22186<\metric>** | 0.2048 / 0.2517 / 0.2091 |
+| `ca_mshb_s45` (new) | 0.22551 | 0.2077/0.2553/0.2136 |
+| `ca_hb2_s46` (new) | 0.23038 | — |
+Files (canonical, `(2160,107,5)` / `(240,107,5)`): `oof_/test_mshb_avg4`, `oof_/test_hb2_avg5`, `oof_/test_mshb_s45`, `oof_/test_hb2_s46` in `workspaces/castor_zeta/`.
+`mshb` = multi-scale CNN(3/5/9)+3L BiGRU-384, all-rows scored-3 loss, S/N weight, extra2, Huber, 120–140ep, EMA. Individual seeds are 0.2255–0.2267; seed-averaging is very effective (like your struct2).
+Earlier arrays are still valid: `ca_ca_nnls` 0.21901, `ca_hb2_avg4` 0.22233, `ca_ha2_avg2` 0.22767, `ca_lshb_s42/43`, `ca_mshb_s42`, `knn_oof_v2`/`knn_test_v2` (id>=.99 rows RMSE 0.1732), `test_bestid.npy`.
+## Negative result
+Structure **scalar descriptors** (stack depth, helix length/end, hairpin/bulge run size, dist-to-unpaired, GC window, partner-loop one-hot → 13 extra channels, `extra=3`) **hurt**: fold0 0.2336 / fold1 0.2325 vs 0.2283/0.2303 baseline. Rejected; don't spend time there.
+## Ask @mirfak_iota
+If "finalize by 13:00–13:30" means freezing `final_solution`, please hold the final write for the **~15:00 registry cutoff** we agreed earlier — the mshb/hb2 seed bags above plus 2 more mscnn seeds (running now, ETA ~14:00) should each give another ≈−0.001 in the blend. I'll stop GPU at ~15:00 and hand a final `ca_*` list. If you prefer, betelgeuse's merged candidate path is fine too — just make sure `ca_mshb_avg4` is in it.
+Ack: ≤2 GPU jobs from me.
+#status #ensembling #model_selection #architecture
+[board] сообщений 34, новых 1, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 77)
+[board] сообщений 34, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 78)
+[board] сообщений 34, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 79)
+[board] сообщений 34, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 80)
+[board] сообщений 34, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 81)
+===== mirfak_iota_ensemble_v16.md =====
+# mirfak_iota — ensemble v16: `<metric>0.20626<\metric>` (all new arrays merged) — I keep the pen
+Refs: [[betelgeuse_mu_merge_v14_request.md]] · [[castor_zeta_mshb_avg4.md]] · [[mirfak_iota_ensemble_v14.md]]
+## Merged everything (43 models)
+My registry now includes: 6-seed `struct_scored` (0.21074), 5-seed `struct_all5` (**0.21037**), 2-seed `struct_huber` (0.21422), all be cnn/mscnn families + new `*b10`, castor `mshb_avg4` (**0.21760**), `hb2_avg5` (0.22186), `ha2_avg2`, `mshb_s45`, `hb2_s44`, `ca_nnls`, `lshb_avg2`.
+| | CV |
+|---|---|
+| NNLS | 0.20712 |
+| **+ kNN gate** | **`<metric>0.20626<\metric>`** cols [0.1894, 0.2345, 0.1948] |
+`final_solution/submission.csv` = **v16**.
+## @betelgeuse_mu
+Thanks for the independent verifier — your 0.20666 was on my **older 3-seed** `models_final`; my current registry has 6/5/2-seed struct bags and is at 0.20626. **I'll keep ownership of `final_solution` writes** (no conflict). Do NOT write there. I already included your 6 `*b10` arrays. Send new ones and I rerun.
+New deep/wide struct variants failed (fold0 0.2228 vs 0.2211) — not worth it.
+## @castor_zeta
+`mshb_avg4` is in and gets weight; that's your best contribution yet. Ack on the **15:00 registry cutoff** — I will run the final merge at ~15:05 with whatever `ca_*`/`be_*` exist, then freeze. Please make sure your final bag filenames are the ones in your last post (`mshb_avg4`, `hb2_avg5`, etc.).
+## My next (13:05–15:05)
+- Re-tune kNN gate (thr/wmax) on the 43-model blend.
+- Run 0–2 more struct seeds only if cheap; otherwise hold.
+- At 15:05: final merge, refresh code bundle, sanity-check submission rows/values, freeze.
+#ensembling #status #submission #communication
+[board] сообщений 35, новых 1, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 82)
+[board] сообщений 35, новых 0, метрик 15, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2176 (step 83)
+===== castor_zeta_mshb_avg6.md =====
+# castor_zeta — mshb_avg6 = **0.21670** (new); confirm your v16 CV with 56-model independent run
+Refs: [[mirfak_iota_ensemble_v16.md]] · [[castor_zeta_mshb_avg4.md]]
+## Final additions for the 15:05 merge (all in `workspaces/castor_zeta/`)
+| array | sn1 CV | note |
+|---|---|---|
+| `oof/test_mshb_avg6` = mean s42–s47 | **<metric>0.21670<\metric>** cols 0.1996/0.2458/0.2047 | **use this instead of avg4** |
+| `oof/test_mshb_s46` | 0.22567 | |
+| `oof/test_mshb_s47` | 0.22731 | |
+| (already sent) `mshb_avg4` 0.21760, `hb2_avg5` 0.22186, `ca_nnls` 0.21901, `ha2_avg2`, `lshb_*`, `hb2_s44/s45/s46` | | |
+`mshb_avg6` is my strongest array and seed-averaging is still helping (avg4 0.2176 → avg6 0.2167).
+## Independent verification
+I reproduced your exact pipeline (your `ensemble.py`, 5-fold weight-CV NNLS + your `knn_best_*` gate, thr .85/wmax .2, clip 0) in my workspace on **models_final2 + all my arrays (`my_reg_full.json`, 56 models)**:
+- NNLS **0.20714**, **+kNN gate 0.20623** — matches your v16 0.20626 (different model subset), so we agree.
+- My candidate: `workspaces/castor_zeta/my_ens_full.csv` / `my_ens_full_test.npy` (not written to `final_solution`; you keep the pen).
+## Negative results (don't spend time)
+- **Gradient-boosting stacker** on all 56 OOFs + position/loop/pair/identity features: CV 0.21014, gated 0.20925 — **worse than NNLS** (collinear preds). Linear NNLS is better.
+- Structure scalar descriptors (13 channels) hurt (−0.003).
+So: no stacking, no descriptor features.
+## Remaining GPU work (≤2 jobs, stops ~15:00)
+`mshb` seeds 48/49 (140ep, EMA) → expect `mshb_avg8` ≈ **0.2160**; I'll post the path by ~14:15. Nothing else will change the final list after that.
+#status #ensembling #model_selection #submission
+[board] сообщений 36, новых 1, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 84)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 85)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 86)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 87)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 88)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 89)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 90)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 91)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 92)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 93)
+[board] сообщений 36, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 94)
+===== mirfak_iota_final_candidate.md =====
+# mirfak_iota — ✅ FINAL CANDIDATE written: `<metric>0.20599<\metric>` (7th beat of the same CV)
+Refs: [[mirfak_iota_ensemble_v16.md]] · [[castor_zeta_mshb_avg6.md]] · [[betelgeuse_mu_merge_v14_request.md]] · [[mirfak_iota_struct_breakthrough.md]]
+## Submitted now in `final_solution/submission.csv`
+Compact **11-model** blend (robust weights, no NNLS instability), canonical 5-fold sn1:
+- base NNLS CV **0.20704**
+- **+ similarity-gated kNN + clip@0: `<metric>0.20599<\metric>`** cols [0.1892, 0.2343, 0.1945]
+- Full 46-model registry gives 0.20602 → compact set chosen for stability (same CV).
+Members: `struct_scored` (9 seeds, 0.20995), `struct_all5` (8 seeds, 0.20952), `struct_huber` (2), `be_mscnn448b10` 0.2225, `be_mscnn384b10` 0.2230, `be_cnn384b10` 0.2327, `be_lstm256b10` 0.2262, `ca_mshb_avg8` ~0.216, `ca_mshb_s45`, `ca_lshb_avg2`, `be_mscnn512b10`, `my_l512s42`.
+Submission validated: 25680 rows, `id_seqpos` order identical to `sample_submission.csv`, no NaN, all values ≥0.
+## Solution code
+`final_solution/code/`: `README.md`, `common.py`, `train_nn.py`, `train_ms.py`, `train_struct2.py`, `knn_final.py`, `ensemble.py`, `build_final.py`, `make_submission.py`, `models_registry_final.json`, `ensemble_test_pred.npy`.
+## Ownership / freeze
+I keep the pen on `final_solution`. I will re-merge **once at ~15:05** if any genuinely new `ca_*`/`be_*` arrays appear, then **freeze**. Please do not write `final_solution/`.
+@betelgeuse_mu: thanks for the independent check — we agree within 0.0001. @castor_zeta: `mshb_avg8` evaluated; current blend CV is unchanged (0.2060) because struct2 dominates, but it contributes weight in the 46-model version. The swarm is at a CV plateau.
+#submission #ensembling #status #communication
+[board] сообщений 37, новых 1, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 95)
+[board] сообщений 37, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 96)
+[board] сообщений 37, новых 0, метрик 16, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.2167 (step 97)
+===== castor_zeta_final_mshb_avg10.md =====
+# castor_zeta — FINAL: mshb_avg10 = **0.21597**; my 60-model verify = **0.20606** (candidate saved)
+Refs: [[mirfak_iota_ensemble_v16.md]] · [[castor_zeta_mshb_avg6.md]] · [[betelgeuse_mu_merge_v14_request.md]]
+## Final array for the 15:05 merge (use this one)
+- **`oof_mshb_avg10.npy` / `test_mshb_avg10.npy`** = mean of mshb seeds 42,43,44,45,46,47,48,49,50,51
+  sn1 CV **<metric>0.21597<\metric>** cols [0.1989, 0.2451, 0.2040]  ← my strongest single family
+- also available: `mshb_avg8` 0.21618, `mshb_avg6` 0.21670, individual `mshb_s42..s51` (0.2255–0.2273), `hb2_avg5` 0.22186, `ha2_avg2` 0.22767, `lshb_s42/s43`, `ca_nnls` 0.21901, `knn_oof_v2`/`knn_test_v2`, `test_bestid.npy`.
+All in `workspaces/castor_zeta/`, canonical split, `(2160,107,5)`/`(240,107,5)`, 0 outside 0..67.
+**I stopped all GPU jobs at ~14:10** — GPU is free for your final merge/seeds.
+## Independent verification with your exact `ensemble.py` + your `knn_best_*` gate
+Registry = `models_final2.json` + all my arrays incl. `mshb_avg10`+avg8+seeds (`my_reg_final.json`, **60 models**):
+- SIMPLE MEAN 0.21288 · NNLS **0.20696** · **+kNN gate 0.20608** · gated+clip **<metric>0.20606<\metric>** (cols 0.1893/0.2343/0.1946)
+- Candidate (validated: 25680 rows, ids identical to sample, no NaNs): `workspaces/castor_zeta/my_ens_final.csv` / `my_ens_final_test.npy`
+Compare: your v16 = 0.20626 (43 models). My 0.20606 is within noise but uses `mshb_avg10` instead of avg4 → **please swap in avg10**; expected v17 ≈ 0.2058–0.2060.
+## Handover
+You keep `final_solution` ownership — no conflict from me. If your final gated CV ends up **> 0.2061**, my candidate is a safe fallback (same format/order). Code: `workspaces/castor_zeta/{common.py,train.py,stacker.py,knn2.py}` + run tags in `runs/`.
+Negative results for the record: GBDT stacker 0.20925 (worse than NNLS), structure scalar descriptors hurt, reverse-TTA hurts, transformer weak.
+Thanks — good swarm run. #status #ensembling #submission #model_selection
+[board] сообщений 38, новых 1, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 98)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 99)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 100)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 101)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 102)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 103)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 104)
+[board] сообщений 38, новых 0, метрик 18, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 105)
+===== castor_zeta_avg12_final.md =====
+# castor_zeta — FINAL bag: mshb_avg12 = **0.21590** (drop-in before 15:05)
+Refs: [[castor_zeta_final_mshb_avg10.md]] · [[mirfak_iota_final_candidate.md]]
+New 2 seeds finished (s52 0.22583, s53 0.22663). Best CA array:
+- **`oof_mshb_avg12.npy` / `test_mshb_avg12.npy`** = mean of mshb seeds 42–53, sn1 CV **<metric>0.21590<\metric>** (cols ~0.1988/0.2450/0.2040)
+- previous `mshb_avg10` 0.21597, `mshb_avg8` 0.21618; individual s48–s53 saved too.
+@mirfak_iota: if you re-merge at ~15:05, please use `ca_mshb_avg12` instead of `ca_mshb_avg8` (same format/paths in my workspace). Expected effect is small (≤0.0002) since struct2 dominates, but it is a strict improvement on my side. If it is already too late, no problem — v16/0.20599 is fine.
+I have **stopped all GPU work** and will not add anything else before freeze. My candidate `workspaces/castor_zeta/my_ens_final.csv` (gated CV 0.20606) remains available as a fallback only.
+#status #ensembling #submission
+[board] сообщений 39, новых 1, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 106)
+[board] сообщений 39, новых 0, метрик 19, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 107)
+===== castor_zeta_qa_final.md =====
+# castor_zeta — QA of `final_solution/submission.csv` ✅ + avg12 correction
+Refs: [[mirfak_iota_final_candidate.md]] · [[castor_zeta_avg12_final.md]]
+## Correction
+`mshb_avg12` sn1 = **<metric>0.21573<\metric>** (cols 0.1986/0.2448/0.2038), not 0.21590 — even slightly better. `mshb_avg10` 0.21597.
+## QA performed on the current `final_solution/submission.csv` (ens18, 14:11)
+- shape **25680×6**, columns exactly `id_seqpos,reactivity,deg_Mg_pH10,deg_pH10,deg_Mg_50C,deg_50C`
+- `id_seqpos` order **identical** to `data/sample_submission.csv`; 240 unique ids × 107 rows each
+- **no NaNs**, all values finite and ≥ 0; ranges sane (reactivity 0–5.22, Mg_pH10 0–5.01)
+- matches `final_solution/code/ensemble_test_pred.npy` to <1e-6 on all 5 columns → code and CSV agree
+- unscored cols filled (deg_pH10 mean 0.370, deg_50C 0.323) → valid even if grader read all 5
+⇒ The artifact is correct and safe to submit.
+## Final negative results (all validated by CV, already in code README)
+- per-position intercept calibration: 0.20618 vs 0.20608 → no gain
+- two-regime kNN gate (higher weight for exact duplicates): no gain; wmax 0.2 at thr .85 is optimal
+- Gaussian smoothing along sequence: hurts (+0.01…) — targets are genuinely position-sharp
+- GBDT stacking, structure scalar descriptors, reverse-strand TTA: all worse
+My final arrays for the record: `mshb_avg12` 0.21573, `hb2_avg5` 0.22186, `ha2_avg2` 0.22767, `lshb`, `ca_nnls` 0.21901; candidate `my_ens_final.csv` (gated CV 0.20606) — fallback only, mirfak keeps the pen.
+#status #submission #postprocessing #model_selection
+[board] сообщений 40, новых 1, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 108)
+===== mirfak_iota_final_v2.md =====
+# mirfak_iota — ✅ FINAL v2 `<metric>0.20579<\metric>` (11/10/2-seed struct bags + avg10)
+Refs: [[mirfak_iota_final_candidate.md]] · [[castor_zeta_final_mshb_avg10.md]] · [[mirfak_iota_struct_breakthrough.md]]
+## Final submission written
+`final_solution/submission.csv` = compact 16-model NNLS + similarity-gated kNN + clip@0.
+- base NNLS CV **0.20666**
+- **+ gate `<metric>0.20579<\metric>`** cols [0.1890, 0.2341, 0.1943]
+- validated: 25680 rows, `id_seqpos` identical to sample, no NaN, values ≥ 0.
+New since previous candidate:
+- `struct_scored` bag now **11 seeds** → 0.20952
+- `struct_all5` bag now **10 seeds** → **0.20876**
+- swapped castor's `mshb_avg8` → **`mshb_avg10`** (0.21597), per their final handover.
+- compact registry kept (full 43–60 model NNLS gives the same CV but less stable weights).
+## Code bundle (self-contained description)
+`final_solution/code/`: `README.md`, `train_nn.py`, `train_ms.py`, **`train_struct2.py`** (best model), `common.py`, `knn_final.py`, `ensemble.py`, `build_final.py`, `make_submission.py`, `models_registry_final.json` (16 models), `ensemble_test_pred.npy` (exact test predictions used).
+## Status
+One last all-5 seed (`s47`) is training; if it finishes before ~15:50 I'll do a single final re-merge and only overwrite `submission.csv` if CV strictly improves. Otherwise **this is frozen**. `final_solution` ownership stays with me.
+Score progression (my CV numbers): 0.2676 → 0.2226 → 0.2163 → 0.2102 → 0.2071 → **0.20579**.
+Thanks swarm — the cross-family diversity (my struct2 seeds, betelgeuse mscnn/cnn, castor mshb/hb2) is what got us here.
+#submission #ensembling #status #insight
+[board] сообщений 41, новых 1, метрик 20, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20606 (step 109)
+===== castor_zeta_audit_final.md =====
+# castor_zeta — independent audit of FINAL: reproduces **0.20579** exactly; CSV == registry output
+Refs: [[mirfak_iota_final_v2.md]] · [[castor_zeta_qa_final.md]]
+I re-ran the exact final recipe from scratch in my workspace (their `ensemble.py`, `final_solution/code/models_registry_final.json`, their `knn_best_*` arrays, canonical split, DATA_DIR pointing only at `data/`):
+| step | my audit | mirfak reported |
+|---|---|---|
+| SIMPLE MEAN | 0.20808 | — |
+| NNLS 5-fold weight-CV | 0.20666 | 0.20666 |
+| + similarity-gated kNN | 0.20582 | — |
+| **+ clip@0** | **<metric>0.20579<\metric>** cols 0.1890/0.2341/0.1943 | **0.20579** |
+Also: my reproduced `audit_sub.csv` is **numerically identical** to `final_solution/submission.csv` (ids same order, max abs diff < 1e-5), and the file passes all format checks (25680×6, no NaN, ≥0). ⇒ Final artifact is verified end-to-end; no conflict.
+Consensus: **final_solution = 0.20579 CV**. I stop here (no more GPU jobs from me); available if anyone wants a last check before hard_end.
+#submission #status #ensembling #model_selection
+===== castor_zeta_gate_verified.md =====
+# castor_zeta — kNN-gate grid search: current config is already optimal (no change needed)
+Refs: [[mirfak_iota_final_v2.md]] · [[castor_zeta_audit_final.md]]
+I re-tuned the final similarity-gated kNN honestly (split sn1 rows in halves; pick config on worst half, 1080 configs over similarity mix `a·id68+(1-a)·id107`, k∈{3,5,7}, thr∈{.8,.85,.9}, power∈{2,4,8}, position-smooth, wmax∈{.1..3}) on the **final 16-model NNLS CV** (`audit_cv`):
+| config | half-A | half-B | all |
+|---|---|---|---|
+| **current** (mirfak: mixed sim, k=5, thr .85, p=4, wmax .2) | 0.20716 | 0.20436 | **<metric>0.20578<\metric>** |
+| best by worst-half (k=7, thr .80, p=4, sm=0, wmax .2) | 0.20720 | 0.20452 | 0.20586 |
+⇒ **No config beats the shipped gate** (differences ≤0.0001, in-sample). The gate is at its optimum; do not change it. My tuned test preds are in `workspaces/castor_zeta/tuned_gate_test.npy` (not used).
+Final state agreed: `final_solution/submission.csv` = **0.20579**, independently reproduced + numerically identical. Swarm done from my side; no GPU jobs running. Good luck with the grade.
+#status #ensembling #model_selection #postprocessing
+[board] сообщений 43, новых 2, метрик 22, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20578 (step 110)
+[board] сообщений 43, новых 0, метрик 22, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20578 (step 111)
+[board] сообщений 43, новых 0, метрик 22, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20578 (step 112)
+[board] сообщений 43, новых 0, метрик 22, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20578 (step 113)
+[board] сообщений 43, новых 0, метрик 22, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20578 (step 114)
+===== castor_zeta_audit_final2.md =====
+# castor_zeta — audit of FINAL v3 (15:44): reproduces **0.20576** exactly ✅
+Refs: [[mirfak_iota_final_v2.md]] · [[castor_zeta_audit_final.md]] · [[castor_zeta_gate_verified.md]]
+Re-ran the updated compact registry (`final_solution/code/models_registry_final.json`, 16 entries incl. 11-seed struct_all5) with their exact `ensemble.py` + `knn_best_*` gate in my workspace:
+- NNLS CV 0.20664 → **gated+clip <metric>0.20576<\metric>** cols 0.1890/0.2340/0.1942 — matches their README 0.20576 exactly.
+- My reproduced submission is numerically identical to `final_solution/submission.csv` (same ids order, max abs diff < 1e-9).
+- Format re-checked: 25680×6, no NaN, all ≥0, 240 ids × 107 rows.
+Minor note: registry lists `my_struct_{scored,all5,huber}` twice (build_final appended duplicates). Harmless (identical arrays) but can be de-duplicated for cleanliness — no need to re-merge.
+Consensus: final = **0.20576** CV, independently verified. Done from my side.
+#submission #status #ensembling
+===== betelgeuse_mu_final_audit.md =====
+# betelgeuse_mu — independent audit of FINAL (15:44): CV `<metric>0.20576<\metric>`, artifact valid ✅
+Refs: [[mirfak_iota_final_v2.md]] · [[castor_zeta_audit_final2.md]] · [[castor_zeta_gate_verified.md]] · [[betelgeuse_mu_candidate_ensemble.md]]
+I re-ran the **exact shipped recipe** in my workspace from `final_solution/code/` + `models_registry_final.json` + mirfak's `knn_best_*` arrays (canonical 5-fold, DATA_DIR=`data/` only, no GPU jobs):
+| step | my audit |
+|---|---|
+| registry | 16 entries (3 dup struct bags, harmless) |
+| NNLS 5-fold weight-CV | 0.20664 |
+| + similarity-gated kNN (thr .85 / wmax .20) + clip@0 | **`<metric>0.20576<\metric>`** cols [0.1890, 0.2340, 0.1942] |
+**Artifact QA on `final_solution/submission.csv`:**
+- 25680 rows × 6 cols; `id_seqpos` **identical order** to `data/sample_submission.csv`.
+- no NaN/inf; all values ≥ 0 (scored cols clipped at 0).
+- my recomputation vs shipped `ensemble_test_pred.npy`: corr 0.99999999, max abs diff 0.0071 (duplicate-registry weight split, CV identical) — numerically equivalent.
+- matches `code/ensemble_test_pred.npy` and castor's independent audit within tolerance.
+⇒ Three independent reproductions (mirfak 0.20579 / castor 0.20576 / me 0.20576) agree. **`final_solution/submission.csv` is correct and is the swarm's best agreed solution.** No conflict, no further writes from me. I'll idle-check the artifact near hard_end in case of accidental overwrite; ping me if a last re-merge lands.
+My hand-off: `be_*b10` 10-fold mscnn/lstm/cnn arrays (single-model 0.2225–0.2327) are in the final blend; my best independent full-registry candidate was 0.20607, so mirfak's compact 16-model registry at **0.20576** is the better, more stable choice. Great teamwork.
+#submission #status #ensembling #insight
+[board] сообщений 45, новых 2, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 115)
+[board] сообщений 45, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 116)
+[board] сообщений 45, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 117)
+[board] сообщений 45, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 118)
+[board] сообщений 45, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 119)
+===== betelgeuse_mu_pair_model_negative.md =====
+# betelgeuse_mu — last experiment: pair-message-passing model 0.22340, adds ZERO to final (negative)
+Refs: [[betelgeuse_mu_final_audit.md]] · [[mirfak_iota_final_v2.md]]
+Tried one genuinely new arch before freeze: **pair-message-passing BiLSTM** (`train_pair.py`) — conv → BiLSTM → gather each base's partner hidden state (from the given bpRNA structure) → fuse → second BiLSTM → residual head. 5-fold, 3 seeds, canonical split, same SN1/early-stop protocol.
+- single-model sn1 CV **`<metric>0.22340<\metric>`** (cols 0.2059 / 0.2521 / 0.2122) — competitive with 10-fold mscnn, different inductive bias.
+- **But NNLS on the shipped 16-model registry gives it exactly 0 weight**: `0.205765` with vs `0.205765` without (and adding extra mscnn b10 doesn't move it either; pair with extra: 0.205765).
+⇒ no re-merge needed; **final stays `0.20576`**. This confirms the compact registry is on the plateau and why mirfak kept it compact.
+Artifacts (for the record, not in final): `workspaces/betelgeuse_mu/preds/{oof,test}_pair256.npy`, `train_pair.py`.
+No GPU jobs left. Final artifact already independently audited (me + castor) and unchanged. I'll only re-check near hard_end.
+#architecture #model_selection #ensembling #insight #status
+[board] сообщений 46, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 120)
+[board] сообщений 46, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 121)
+[board] сообщений 46, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 122)
+[board] сообщений 46, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 123)
+[board] сообщений 46, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 124)
+===== mirfak_iota_frozen_final.md =====
+# mirfak_iota — 🏁 FROZEN FINAL: `<metric>0.20576<\metric>` — submission validated
+Refs: [[mirfak_iota_final_v2.md]] · [[castor_zeta_final_mshb_avg10.md]] · [[betelgeuse_mu_merge_v14_request.md]]
+## Final state of `final_solution/`
+- `submission.csv` — 25680 rows, `id_seqpos` order identical to `sample_submission.csv`, no NaN, values ≥ 0.
+- `code/` — full reproducible pipeline + `README.md` + `models_registry_final.json` (16 models) + `ensemble_test_pred.npy` (exact `(240,107,5)` test prediction used).
+**Final CV (canonical 5-fold, SN_filter==1, MCRMSE over 3 scored cols): `<metric>0.20576<\metric>`**
+cols: reactivity **0.1890**, deg_Mg_pH10 **0.2341**, deg_Mg_50C **0.1942**.
+## What is in the final blend
+- `struct_scored` 11 seeds (0.20952), `struct_all5` 11 seeds (**0.20862**), `struct_huber` 2 seeds (0.21422) — my 3-channel base-pair-contact CNN+BiGRU.
+- betelgeuse `mscnn448b10` (0.2225), `mscnn384b10` (0.2230), `cnn384b10` (0.2327), `lstm256b10` (0.2262), `mscnn512b10`.
+- castor `mshb_avg10` (0.21597), `mshb_s45`, `lshb_avg2`.
+- my `l512s42`; all-5 `be_mscnn384b` supplies unscored columns.
+Post: ridge-NNLS per column → similarity-gated kNN (sim^4, k=5, thr .85, w .2, clip 0).
+## Tried and rejected (CV-verified, so nobody repeats them)
+struct LSTM bag (0.20577 — no gain), wide/deep struct (fold0 0.2228), 3-channel→scalar descriptor features, GBDT stacking, per-loop/per-position blend weights, Gaussian smoothing, reverse TTA, ridge/mean/greedy vs NNLS, per-regime gate, curated-vs-full registry averaging. Everything is documented in earlier messages.
+## Final CV trajectory (my messages)
+0.2676 → 0.2226 → 0.2163 → 0.2102 → 0.2071 → 0.2060 → **0.20576**
+Freezing here (~30 min before work_end). No more writes to `final_solution`. The coordinator can grade. Good swarm run — the diversification (struct2 seeds + be CNN/LSTM + ca mshb/hb2) is what took us from 0.23 to 0.206.
+#submission #status #ensembling #insight
+[board] сообщений 47, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 125)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 126)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 127)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 128)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 129)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 130)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 131)
+[board] сообщений 47, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 132)
+[agent swarm-2] run завершился за 40021s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e9e66de62ffeqIo66NK6jL6aKO продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e9e66de62ffeqIo66NK6jL6aKO (2026-10-22T14:20:07Z): Continue work until hard end.
+===== castor_zeta_alignment_qa.md =====
+# castor_zeta — final alignment QA: no position shift, profiles corr 0.994–0.999 ✅
+Refs: [[mirfak_iota_frozen_final.md]] · [[castor_zeta_audit_final2.md]]
+Last sanity check on the frozen `final_solution/submission.csv` (md5 `eb62d6c6a840f51bb68a7735ee2be4a8`):
+- every id has `seqpos` exactly `0..106` in order; 240 ids in sample-submission order; no NaN; ≥0.
+- mean predicted per-position profile vs mean train profile (SN==1), positions 0..67:
+  reactivity r=**0.994**, deg_Mg_pH10 **0.997**, deg_pH10 **0.999**, deg_Mg_50C **0.998**, deg_50C **0.997**;
+  means match (0.378/0.382, 0.460/0.462, 0.411/0.421). ⇒ **no off-by-one/position shift**, predictions well calibrated.
+- backup copy + md5 saved in `workspaces/castor_zeta/final_submission_backup.csv` in case of an accidental overwrite before hard_end.
+Nothing else to change. Idle-monitoring the artifact until hard_end.
+#submission #status #postprocessing #inference
+[board] сообщений 48, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 133)
+[board] сообщений 48, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 134)
+[agent swarm-1] run завершился за 40814s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e9e66de68ffeFUtmt8Ba3XgqGP продолжена: Continue work until hard end.
+[agent swarm-1] resume session ses_e9e66de68ffeFUtmt8Ba3XgqGP (2026-10-22T14:33:21Z): Continue work until hard end.
+===== betelgeuse_mu_end_check.md =====
+# betelgeuse_mu — end-of-run check: final artifact unchanged & valid
+Refs: [[mirfak_iota_frozen_final.md]] · [[betelgeuse_mu_final_audit.md]]
+Last check at work_end: `final_solution/submission.csv` unchanged since the 15:44 freeze (md5 `eb62d6c6a840f51bb68a7735ee2be4a8`), 25680 rows, correct `id_seqpos` order, no NaN, values ≥ 0; `final_solution/code/` present (README + full pipeline + 16-model registry + exact test-pred array). Independently reproduced CV **`<metric>0.20576<\metric>`** (3 agents agree). Nothing to change; no GPU jobs running.
+#submission #status #communication
+[board] сообщений 49, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 135)
+[board] сообщений 49, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 136)
+[agent swarm-3] run завершился за 41266s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e9e66de7affefI3DreWinUNtCZ продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e9e66de7affefI3DreWinUNtCZ (2026-10-22T14:40:53Z): Continue work until hard end.
+final phase published: /download_job_code/payload/sandbox/blackboard/2026-10-22_17-43-20_SYSTEM_final_phase.md
+===== mirfak_iota_workend_check.md =====
+# mirfak_iota — work_end check: final intact
+`final_solution/submission.csv` unchanged since freeze (15:44), verified at 17:40: 25680 rows, 6 cols, `id_seqpos` matches `sample_submission.csv`, no NaN, reproducible byte-identically from `final_solution/code/`.
+Final CV `<metric>0.20576<\metric>`. Independently audited by betelgeuse_mu and castor_zeta (both 0.20576). Done.
+#status #submission
+===== mirfak_iota_final_update_20533.md =====
+# mirfak_iota — FINAL UPDATE (pre-hard_end): `<metric>0.20533<\metric>` — please re-audit
+Refs: [[mirfak_iota_frozen_final.md]] · [[betelgeuse_mu_final_audit.md]] · [[castor_zeta_final_mshb_avg10.md]]
+I continued until hard_end as instructed and found one more **consistent, CV-validated** post-processing gain. `final_solution/submission.csv` was updated:
+## Change
+Re-tuned the similarity-gated kNN on the frozen blend (grid over similarity mix / k / power / thr / wmax):
+- old: k=5, sim^4, thr .85, wmax .20 → 0.20576
+- **new: k=3, sim^5, thr .85, wmax .25 → `<metric>0.20533<\metric>`** cols [0.1886, 0.2336, 0.1938]
+- **Validation:** better on **all 5 folds** vs old config (0.2067/0.2072/0.2053/0.2078/0.1998 vs 0.2070/0.2077/0.2056/0.2084/0.2002); neighbouring configs (k=3,p=5,w=.20 and k=3,p=4,w=.25) also improve → not a knife-edge. No model retraining, only kNN/k gate + clip.
+- NNLS base unchanged at 0.20664; registry unchanged (16 models).
+## Artifact QA
+- 25680 rows, `id_seqpos` identical order to `sample_submission.csv`, 0 NaN, scored cols ≥ 0.
+- **Reproducible byte-identically** with `final_solution/code/{models_registry_final.json, ensemble.py, knn_final.py}` + `knn_best_*` arrays (`/tmp/repro2.csv` == shipped file).
+- `final_solution/code/` refreshed (`knn_final.py` k=3/p=5, `ensemble.py` wmax=.25, `README.md` 0.20533, `ensemble_test_pred.npy` exact predictions).
+@betelgeuse_mu @castor_zeta: if you re-audit near hard_end, expect **0.20533** now (was 0.20576). Same 16-model registry, only the kNN gate hyperparameters changed. This is the last write — freezing until hard_end.
+#submission #ensembling #postprocessing #status
+===== 2026-10-22_17-43-20_SYSTEM_final_phase.md =====
+# SYSTEM: ФИНАЛЬНАЯ ФАЗА (MSK 17:43)
+До жёсткого стопа 30 минут (hard_end: 2026-10-22T18:12:56+03:00).
+1. Немедленно прекратите запускать новые эксперименты и обучения.
+2. Соберите лучшее согласованное решение.
+3. Загрузите финальный submission в `final_solution/`.
+4. Подтвердите на доске постом.
+После 2026-10-22T18:12:56+03:00 харнесс принудительно остановит все сессии.
+===== betelgeuse_mu_final_confirmation.md =====
+# betelgeuse_mu — FINAL CONFIRMATION: `<metric>0.20533<\metric>` reproduced; artifact valid ✅
+Refs: [[mirfak_iota_final_update_20533.md]] · [[betelgeuse_mu_final_audit.md]] · [[2026-10-22_17-43-20_SYSTEM_final_phase.md]]
+Re-audited the 17:41 update with the shipped code (`models_registry_final.json`, `ensemble.py`, `knn_final.py` k=3/sim^5, gate thr .85 / wmax .25, clip@0) and the refreshed `knn_best_*` arrays:
+- NNLS 5-fold weight-CV **0.20664**
+- + new gated kNN + clip@0 → **`<metric>0.20533<\metric>`** cols [0.1886, 0.2336, 0.1938] — **exactly matches mirfak's reported CV**.
+- `final_solution/submission.csv`: 25680 rows, 6 cols, `id_seqpos` order identical to `sample_submission.csv`, no NaN/inf, values ≥ 0.
+- My recomputation vs shipped `ensemble_test_pred.npy`: corr 0.99999999, max abs diff 0.011 (only from the duplicated registry entries splitting NNLS weight; CV identical).
+⇒ Final agreed solution = `final_solution/submission.csv`, CV `<metric>0.20533<\metric>`, independently reproduced. No new experiments/trainings launched (per final-phase instruction); no GPU jobs running; I made no writes to `final_solution/`.
+#submission #status #ensembling #communication
+[board] сообщений 53, новых 4, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 137)
+===== castor_zeta_final_confirmation.md =====
+# castor_zeta — FINAL CONFIRMATION: `<metric>0.20533<\metric>` reproduced; artifact identical ✅
+Refs: [[2026-10-22_17-43-20_SYSTEM_final_phase.md]] · [[betelgeuse_mu_final_confirmation.md]] · [[mirfak_iota_frozen_final.md]] · [[castor_zeta_alignment_qa.md]]
+Per final-phase instruction (no new experiments/trainings): re-audited the 17:41 update using the **shipped code** (`final_solution/code/ensemble.py`, `models_registry_final.json`, refreshed `knn_best_*` arrays; k=3 sim^5, gate thr .85 / **wmax .25**, clip 0):
+- NNLS 5-fold weight-CV 0.20664 → **+gated kNN +clip = `<metric>0.20533<\metric>`** cols [0.1886, 0.2336, 0.1938] — **exactly matches** mirfak/betelgeuse.
+- My reproduced `audit3_sub.csv` is **numerically identical** to `final_solution/submission.csv` (max abs diff 1e-10).
+- QA: 25680×6; `id_seqpos` order identical to sample; seqpos 0..106 per id; no NaN/inf; all ≥0; CSV == shipped `ensemble_test_pred.npy` (max diff 0.0); position-profile corr vs train 0.994–0.999 (no shift).
+**Final agreed solution = `final_solution/submission.csv`, CV 0.20533.** Backup + md5 stored in `workspaces/castor_zeta/final_submission_backup_20533.csv` (`81a4105006365177f84d660b4e8eee5d`). No writes to `final_solution/`, no GPU jobs. Ready for grading.
+#submission #status #ensembling #communication
+[board] сообщений 54, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] сообщений 54, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 139)
+[board] сообщений 54, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 140)
+===== mirfak_iota_final_confirmation.md =====
+# mirfak_iota — FINAL CONFIRMATION ✅ (`<metric>0.20533<\metric>`)
+Refs: [[2026-10-22_17-43-20_SYSTEM_final_phase.md]] · [[mirfak_iota_final_update_20533.md]] · [[betelgeuse_mu_final_confirmation.md]] · [[castor_zeta_final_confirmation.md]]
+Per final-phase instruction: **no new experiments, no trainings, no GPU jobs.** Final artifact confirmed.
+## `final_solution/`
+- `submission.csv` — md5 **`81a4105006365177f84d660b4e8eee5d`**, 25680 rows × 6 cols, `id_seqpos` order identical to `data/sample_submission.csv`, positions 0..106 per id, no NaN/inf, scored-column values ≥ 0. Unchanged since 17:41.
+- `code/` — `README.md`, `train_struct2.py` (best model), `train_ms.py`, `train_nn.py`, `common.py`, `knn_final.py`, `ensemble.py`, `build_final.py`, `make_submission.py`, `models_registry_final.json` (16 models), `ensemble_test_pred.npy` (exact test predictions).
+## Final CV
+Canonical 5-fold, SN_filter==1, MCRMSE (3 scored cols): **`<metric>0.20533<\metric>`** — [0.1886 / 0.2336 / 0.1938].
+Independently reproduced by **betelgeuse_mu** and **castor_zeta** (both 0.20533; castor's CSV numerically identical, md5 match).
+This is the swarm's best agreed solution. Ready for grading. No further writes to `final_solution`.
+#submission #status #ensembling #communication
+[board] сообщений 55, новых 1, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 141)
+[board] сообщений 55, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 142)
+[agent swarm-2] run завершился за 3000s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e9e66de62ffeqIo66NK6jL6aKO продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e9e66de62ffeqIo66NK6jL6aKO (2026-10-22T15:10:08Z): Continue work until hard end.
+[agent swarm-3] run завершился за 1787s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e9e66de7affefI3DreWinUNtCZ продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e9e66de7affefI3DreWinUNtCZ (2026-10-22T15:10:40Z): Continue work until hard end.
+[agent swarm-2] run завершился за 134s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e9e66de62ffeqIo66NK6jL6aKO продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e9e66de62ffeqIo66NK6jL6aKO (2026-10-22T15:12:22Z): Continue work until hard end.
+[agent swarm-2] run завершился за 22s — перезапуск (пауза 15s)
+[agent swarm-2] сессия ses_e9e66de62ffeqIo66NK6jL6aKO продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e9e66de62ffeqIo66NK6jL6aKO (2026-10-22T15:12:44Z): Continue work until hard end.
+[agent swarm-3] run завершился за 146s — перезапуск (пауза 15s)
+[agent swarm-3] сессия ses_e9e66de7affefI3DreWinUNtCZ продолжена: Continue work until hard end.
+[agent swarm-3] resume session ses_e9e66de7affefI3DreWinUNtCZ (2026-10-22T15:13:06Z): Continue work until hard end.
+[agent swarm-1] run завершился за 2397s — перезапуск (пауза 15s)
+[agent swarm-1] сессия ses_e9e66de68ffeFUtmt8Ba3XgqGP продолжена: Continue work until hard end.
+[agent swarm-2] run завершился за 34s — перезапуск (пауза 30s)
+[agent swarm-1] resume session ses_e9e66de68ffeFUtmt8Ba3XgqGP (2026-10-22T15:13:18Z): Continue work until hard end.
+[agent swarm-2] сессия ses_e9e66de62ffeqIo66NK6jL6aKO продолжена: Continue work until hard end.
+[agent swarm-2] resume session ses_e9e66de62ffeqIo66NK6jL6aKO (2026-10-22T15:13:20Z): Continue work until hard end.
+hard_end reached, stopping agents
+final board dump (сообщения после последнего тика):
+[board] сообщений 55, новых 0, метрик 23, метрика задачи: MCRMSE (low)
+[board] artifact uploaded: analysis/
+[board] metric: MCRMSE = 0.20576 (step 0)
+[mtime] saved 62 -> blackboard/.mtime.tsv
+uploading artifacts (blackboard, final_solution)...
+[artifacts] uploaded: blackboard
+[artifacts] uploaded: final_solution
+[artifacts] uploaded: analysis
+[artifacts] uploaded: ../costs
+The job is coming to an end. Uploading deferred artifacts ...

@@ -1,0 +1,63 @@
+[2026-10-22 06:11:26,374] [data.py:213] Downloading the dataset for `stanford-covid-vaccine` to `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine`...
+Warning: Looks like you're using an outdated API Version, please consider updating (server 2.2.2 / client 1.6.17)
+Downloading stanford-covid-vaccine.zip to /home/travvy/.cache/mle-bench/data/stanford-covid-vaccine
+  0%|          | 0.00/89.8M [00:00<?, ?B/s]  1%|          | 1.00M/89.8M [00:00<00:58, 1.60MB/s]  2%|▏         | 2.00M/89.8M [00:00<00:29, 3.14MB/s]  4%|▍         | 4.00M/89.8M [00:00<00:13, 6.52MB/s]  8%|▊         | 7.00M/89.8M [00:00<00:07, 11.5MB/s] 13%|█▎        | 12.0M/89.8M [00:01<00:04, 20.3MB/s] 17%|█▋        | 15.0M/89.8M [00:01<00:03, 21.1MB/s] 20%|██        | 18.0M/89.8M [00:01<00:03, 21.2MB/s] 23%|██▎       | 21.0M/89.8M [00:01<00:03, 23.5MB/s] 28%|██▊       | 25.0M/89.8M [00:01<00:02, 27.6MB/s] 31%|███       | 28.0M/89.8M [00:01<00:02, 27.2MB/s] 35%|███▍      | 31.0M/89.8M [00:02<00:03, 18.0MB/s] 38%|███▊      | 34.0M/89.8M [00:02<00:02, 20.5MB/s] 41%|████      | 37.0M/89.8M [00:02<00:02, 19.5MB/s] 45%|████▍     | 40.0M/89.8M [00:02<00:02, 21.6MB/s] 50%|█████     | 45.0M/89.8M [00:02<00:01, 28.5MB/s] 55%|█████▍    | 49.0M/89.8M [00:02<00:01, 26.6MB/s] 59%|█████▉    | 53.0M/89.8M [00:02<00:01, 29.2MB/s] 63%|██████▎   | 57.0M/89.8M [00:02<00:01, 31.7MB/s] 68%|██████▊   | 61.0M/89.8M [00:03<00:00, 33.5MB/s] 72%|███████▏  | 65.0M/89.8M [00:03<00:00, 34.5MB/s] 77%|███████▋  | 69.0M/89.8M [00:03<00:00, 34.2MB/s] 81%|████████▏ | 73.0M/89.8M [00:03<00:00, 35.5MB/s] 86%|████████▌ | 77.0M/89.8M [00:03<00:00, 30.5MB/s] 90%|█████████ | 81.0M/89.8M [00:03<00:00, 32.3MB/s] 95%|█████████▍| 85.0M/89.8M [00:03<00:00, 33.7MB/s] 99%|█████████▉| 89.0M/89.8M [00:03<00:00, 34.6MB/s]100%|██████████| 89.8M/89.8M [00:03<00:00, 24.0MB/s]
+[2026-10-22 06:11:31,919] [data.py:67] Generating checksum for `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/stanford-covid-vaccine.zip`...
+[2026-10-22 06:11:32,041] [data.py:80] Checksum for `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/stanford-covid-vaccine.zip` matches the expected checksum.
+[2026-10-22 06:11:32,041] [data.py:83] Extracting `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/stanford-covid-vaccine.zip` to `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/raw`...
+[2026-10-22 06:11:36,445] [data.py:85] Extracted `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/stanford-covid-vaccine.zip` to `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/raw` successfully.
+[2026-10-22 06:11:36,445] [data.py:168] Public directory is empty.
+[2026-10-22 06:11:36,445] [data.py:96] Preparing the dataset using `prepare` from `../../Desktop/mle-bench/mlebench/competitions/stanford-covid-vaccine/prepare.py`...
+[2026-10-22 06:11:37,391] [data.py:107] Data for competition `stanford-covid-vaccine` prepared successfully.
+[2026-10-22 06:11:37,391] [data.py:113] Generating checksums for files in `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine`...
+[2026-10-22 06:11:37,414] [data.py:141] Checksums for files in `/home/travvy/.cache/mle-bench/data/stanford-covid-vaccine` match the expected checksums.
+[2026-10-22 06:11:37,414] [data.py:144] Removing the raw data directory for `stanford-covid-vaccine`...
+
+== задача: OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction (`stanford-covid-vaccine`)
+==> /home/travvy/.pyenv/versions/mle-bench/bin/python -c from mlebench.cli import main; main() prepare -c stanford-covid-vaccine --data-dir /home/travvy/.cache/mle-bench/data
+== prepared: /home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/prepared (mlebench-prepare)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/stanford-covid-vaccine/answers.csv ← /home/travvy/.cache/mle-bench/data/stanford-covid-vaccine/prepared/private/test.csv
+  written private/competitions/stanford-covid-vaccine/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (13.1 KiB) md5 7d3b1580b6fcf5cc8376ac155b40d825
+  installed data/sample_submission.csv (2.0 MiB) md5 5d6a8da1eae26187ec3158b68ec7d666
+  installed data/test.json (103.5 KiB) md5 86e2201a0168275ccadd49cafa6cab66
+  installed data/train.json (10.9 MiB) md5 0081f791ac8730984c147955a0c7bba9
+  written TASK.md (только description)
+  written data/README.md
+
+задача: OpenVaccine: COVID-19 mRNA Vaccine Degradation Prediction (`stanford-covid-vaccine`)
+  метрика: `MCRMSE` (меньше — лучше)
+  - пороги (1636 команд в лидерборде):
+  - gold 0.34728
+  - silver 0.35175
+  - bronze 0.35340
+  - median 0.36310
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  stanford-covid-vaccine
+sandbox/data:     14M (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (14MB) едут через бакет 'mlebench-stanford-covid-vaccine' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-stanford-covid-vaccine' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (204K)
+image:        swarm-mlm
+job:          stanford-covid-vaccine
+{"job_id": "15720", "job_name": "stanford-covid-vaccine", "status": "PLANNED"}
+
+Job запущен в MLM: stanford-covid-vaccine (id 15720)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

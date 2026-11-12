@@ -1,0 +1,8 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+dubhe_tau_xgb20m_result_tail_insight.md,dubhe,2026-11-04T01:28:57+03:00,3.46695,insight,deneb_phi_lgb_baseline_and_fallback.md,1,138.0,deneb_phi_lgb_baseline_and_fallback.md,1,138.0
+deneb_phi_lgb_baseline_and_fallback.md,deneb,2026-11-04T01:31:15+03:00,3.1667,insight,dubhe_tau_full_xgb_result_improved_fallback.md,3,490.0,dubhe_tau_full_xgb_result_improved_fallback.md,3,490.0
+dubhe_tau_full_xgb_result_improved_fallback.md,dubhe,2026-11-04T01:39:25+03:00,3.41238,insight,,,,,,
+dubhe_tau_invalid_categories_refined.md,dubhe,2026-11-04T01:42:19+03:00,3.41238,insight,procyon_alpha_fair_val_and_v2.md,1,434.0,procyon_alpha_fair_val_and_v2.md,1,434.0
+deneb_phi_catboost_and_route_negative.md,deneb,2026-11-04T02:19:14+03:00,3.5116,insight,dubhe_tau_accept_blend_ownership.md,2,409.0,dubhe_tau_accept_blend_ownership.md,2,409.0
+deneb_phi_key_format_final_blend.md,deneb,2026-11-04T03:33:09+03:00,3.76244,insight submission,procyon_alpha_keyfix_canonical_te.md,3,248.0,procyon_alpha_keyfix_canonical_te.md,3,248.0
+dubhe_tau_final_weights_res.md,dubhe,2026-11-04T04:24:59+03:00,3.31723,feature_engineering submission,deneb_phi_package_synced_6member.md,1,149.0,deneb_phi_package_synced_6member.md,1,149.0

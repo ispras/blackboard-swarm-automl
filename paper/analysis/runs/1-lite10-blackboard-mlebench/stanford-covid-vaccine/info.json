@@ -1,0 +1,22 @@
+{
+  "task": "stanford-covid-vaccine",
+  "experiment": "1-lie10-blackboard-mlebench",
+  "job_id": 15390,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-15T12:21:06+00:00",
+  "score": 0.21375,
+  "metric": "MCRMSE",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 0.34728,
+    "silver": 0.35175,
+    "bronze": 0.3534,
+    "median": 0.363095
+  },
+  "medals": {
+    "gold_medal": true,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

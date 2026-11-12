@@ -1,0 +1,40 @@
+name,agent,time,tags,in_degree,out_degree,depth,is_submission
+canopus_omega_hello.md,canopus,2026-10-31T07:58:29+03:00,communication plan status,2,0,0,0
+bellatrix_omicron_intro.md,bellatrix,2026-10-31T07:58:44+03:00,communication feature_engineering plan status,2,1,1,0
+canopus_omega_shared_split.md,canopus,2026-10-31T07:59:10+03:00,communication model_selection plan,3,1,2,0
+aldebaran_eta_plan_agreement.md,aldebaran,2026-10-31T07:59:26+03:00,communication data_pipeline plan status,2,2,2,0
+bellatrix_omicron_fold_convention.md,bellatrix,2026-10-31T07:59:59+03:00,communication model_selection plan,2,2,3,0
+aldebaran_eta_split_decision.md,aldebaran,2026-10-31T08:00:58+03:00,communication data_pipeline model_selection plan,4,3,4,0
+canopus_omega_switch_mod5.md,canopus,2026-10-31T08:03:17+03:00,communication plan status,1,2,5,0
+bellatrix_omicron_status_0808.md,bellatrix,2026-10-31T08:07:03+03:00,communication feature_engineering status training,0,2,6,0
+aldebaran_eta_status_pipeline.md,aldebaran,2026-10-31T08:18:02+03:00,insight model_selection status training,0,1,5,0
+bellatrix_omicron_fold0_result.md,bellatrix,2026-10-31T08:33:27+03:00,communication insight model_selection status training,2,0,0,0
+aldebaran_eta_fold0_h512.md,aldebaran,2026-10-31T09:11:55+03:00,insight model_selection status training,2,1,1,0
+bellatrix_omicron_overfit_insight.md,bellatrix,2026-10-31T09:47:42+03:00,communication insight model_selection regularization training,3,0,0,0
+canopus_omega_fold0_result.md,canopus,2026-10-31T09:50:44+03:00,communication insight status training,3,3,3,0
+canopus_omega_on_overfit.md,canopus,2026-10-31T10:08:22+03:00,communication ensembling insight regularization status,1,1,1,0
+bellatrix_omicron_reg_experiment.md,bellatrix,2026-10-31T10:16:21+03:00,architecture communication ensembling feature_engineering loss regularization status,2,1,2,0
+canopus_omega_fold1_result.md,canopus,2026-10-31T11:11:08+03:00,communication insight status training,0,3,4,0
+canopus_omega_valmode_bug.md,canopus,2026-10-31T11:37:54+03:00,bug communication ensembling insight status,2,3,3,0
+aldebaran_eta_fold0_0178.md,aldebaran,2026-10-31T11:42:40+03:00,communication ensembling insight status training,4,2,4,0
+bellatrix_omicron_leader_0162.md,bellatrix,2026-10-31T12:25:47+03:00,architecture communication feature_engineering insight loss model_selection status training,3,3,5,0
+canopus_omega_plan_blend_division.md,canopus,2026-10-31T12:38:52+03:00,communication ensembling plan status,3,2,6,0
+canopus_omega_x2_folds_split.md,canopus,2026-10-31T12:39:29+03:00,communication ensembling feature_engineering plan status,1,2,7,0
+bellatrix_omicron_division_confirm.md,bellatrix,2026-10-31T13:53:38+03:00,communication ensembling plan status submission,0,3,8,1
+canopus_omega_5fold_34feat_ready.md,canopus,2026-10-31T14:48:13+03:00,communication ensembling status submission,1,0,0,1
+canopus_omega_maskbug_alert.md,canopus,2026-10-31T16:05:22+03:00,bug communication conflict ensembling insight u_out,1,1,5,0
+bellatrix_omicron_blend_0172.md,bellatrix,2026-10-31T16:27:18+03:00,bug communication ensembling insight status submission,1,2,7,1
+bellatrix_omicron_final_assembly.md,bellatrix,2026-10-31T16:29:18+03:00,communication ensembling plan status submission,1,2,8,1
+aldebaran_eta_5fold_01784.md,aldebaran,2026-10-31T17:04:52+03:00,communication ensembling status submission,2,1,9,1
+bellatrix_omicron_final_blend_01718.md,bellatrix,2026-10-31T17:10:17+03:00,communication ensembling insight status submission,1,1,10,1
+canopus_omega_verify_01718.md,canopus,2026-10-31T17:14:14+03:00,communication ensembling status submission,2,2,11,1
+bellatrix_omicron_final_submission.md,bellatrix,2026-10-31T18:13:12+03:00,communication ensembling status submission,1,1,12,1
+canopus_omega_freeze_confirmation.md,canopus,2026-10-31T18:24:56+03:00,communication ensembling status submission,2,1,13,1
+aldebaran_eta_verify_freeze.md,aldebaran,2026-10-31T18:35:23+03:00,communication ensembling insight status submission,1,3,14,1
+bellatrix_omicron_freeze_final.md,bellatrix,2026-10-31T18:36:45+03:00,communication ensembling status submission,1,2,15,1
+aldebaran_eta_postproc_negative.md,aldebaran,2026-10-31T18:51:28+03:00,insight model_selection postprocessing status submission,2,2,16,1
+canopus_omega_robustness_final.md,canopus,2026-10-31T19:02:02+03:00,communication ensembling insight status submission,2,1,17,1
+canopus_omega_repro_verified.md,canopus,2026-10-31T19:22:24+03:00,communication status submission,2,1,18,1
+aldebaran_eta_FINAL_confirmation.md,aldebaran,2026-10-31T19:31:47+03:00,communication status submission,0,3,19,1
+canopus_omega_FINAL_confirmation.md,canopus,2026-10-31T19:45:34+03:00,communication status submission,0,1,19,1
+bellatrix_omicron_FINAL_confirmation.md,bellatrix,2026-10-31T19:51:41+03:00,communication ensembling status submission,0,0,0,1

@@ -1,0 +1,42 @@
+{
+  "tag": "ens_eq",
+  "probs": [
+    "workspaces/mimosa_sigma/ensemble/oof_eq.npy"
+  ],
+  "weights": [
+    1.0
+  ],
+  "overall_holdout_combo": 0.9529152742463411,
+  "classes": {
+    "large_bowel": {
+      "thr": 0.75,
+      "cc2d": 0,
+      "cc3d": 800,
+      "keep_top": 0,
+      "tune_combo": 0.9475712204726258,
+      "hold_combo": 0.9418244647600661,
+      "hold_dice": 0.9212470317346131,
+      "hold_hd": 0.04445724655629879
+    },
+    "small_bowel": {
+      "thr": 0.5,
+      "cc2d": 0,
+      "cc3d": 1500,
+      "keep_top": 0,
+      "tune_combo": 0.9355751348362992,
+      "hold_combo": 0.9420332670330976,
+      "hold_dice": 0.9176640797202527,
+      "hold_hd": 0.04172060809167248
+    },
+    "stomach": {
+      "thr": 0.5,
+      "cc2d": 100,
+      "cc3d": 4000,
+      "keep_top": 1,
+      "tune_combo": 0.9757486150607065,
+      "hold_combo": 0.9748880909458599,
+      "hold_dice": 0.9665043648184282,
+      "hold_hd": 0.01952275830251909
+    }
+  }
+}

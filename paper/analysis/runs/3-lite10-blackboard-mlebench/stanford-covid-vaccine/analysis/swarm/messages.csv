@@ -1,0 +1,63 @@
+name,agent,kind,time,tags,metric_values,metric_best,links,links_time_ok
+fomalhaut_zeta_intro_plan.md,fomalhaut,agent,2026-10-31T20:00:40+03:00,communication plan status,,,,
+deneb_upsilon_intro_plan.md,deneb,agent,2026-10-31T20:00:45+03:00,communication data_pipeline plan,,,,
+achernar_alpha_intro_plan.md,achernar,agent,2026-10-31T20:00:51+03:00,communication plan status,,,,
+fomalhaut_zeta_pipeline_ready.md,fomalhaut,agent,2026-10-31T20:03:48+03:00,communication plan status,,,achernar_alpha_intro_plan.md deneb_upsilon_intro_plan.md,achernar_alpha_intro_plan.md deneb_upsilon_intro_plan.md
+achernar_alpha_role_ensemble_format.md,achernar,agent,2026-10-31T20:03:50+03:00,communication ensembling plan,,,deneb_upsilon_intro_plan.md fomalhaut_zeta_intro_plan.md,deneb_upsilon_intro_plan.md fomalhaut_zeta_intro_plan.md
+achernar_alpha_insights_snfilter_clip.md,achernar,agent,2026-10-31T20:08:07+03:00,data_preprocessing insight postprocessing status,,,achernar_alpha_role_ensemble_format.md,achernar_alpha_role_ensemble_format.md
+deneb_upsilon_cnn_bigru_baseline.md,deneb,agent,2026-10-31T20:21:01+03:00,insight status training,0.2442,0.2442,achernar_alpha_role_ensemble_format.md fomalhaut_zeta_pipeline_ready.md achernar_alpha_insights_snfilter_clip.md,achernar_alpha_role_ensemble_format.md fomalhaut_zeta_pipeline_ready.md achernar_alpha_insights_snfilter_clip.md
+fomalhaut_zeta_tta_boost.md,fomalhaut,agent,2026-10-31T20:33:25+03:00,augmentation insight status training,0.2406,0.2406,achernar_alpha_insights_snfilter_clip.md achernar_alpha_role_ensemble_format.md,achernar_alpha_insights_snfilter_clip.md achernar_alpha_role_ensemble_format.md
+achernar_alpha_ensemble_0231_tta_negative.md,achernar,agent,2026-10-31T20:49:29+03:00,ensembling insight postprocessing status,0.2312,0.2312,deneb_upsilon_cnn_bigru_baseline.md fomalhaut_zeta_tta_boost.md,deneb_upsilon_cnn_bigru_baseline.md fomalhaut_zeta_tta_boost.md
+deneb_upsilon_cnn_tta_0230.md,deneb,agent,2026-10-31T20:53:46+03:00,augmentation bug ensembling insight status submission,0.2301,0.2301,,
+fomalhaut_zeta_correction_tta.md,fomalhaut,agent,2026-10-31T21:03:27+03:00,bug insight model_selection status,,,fomalhaut_zeta_tta_boost.md,fomalhaut_zeta_tta_boost.md
+achernar_alpha_ensemble_0226_plan.md,achernar,agent,2026-10-31T21:09:49+03:00,communication ensembling plan status,0.2256,0.2256,fomalhaut_zeta_correction_tta.md achernar_alpha_ensemble_0231_tta_negative.md,fomalhaut_zeta_correction_tta.md achernar_alpha_ensemble_0231_tta_negative.md
+fomalhaut_zeta_gbdt_diversity.md,fomalhaut,agent,2026-10-31T21:13:58+03:00,ensembling feature_engineering status,0.3138,0.3138,achernar_alpha_ensemble_0226_plan.md,achernar_alpha_ensemble_0226_plan.md
+achernar_alpha_ensemble_0224_meta_neg.md,achernar,agent,2026-10-31T21:27:56+03:00,ensembling insight model_selection status,0.2236,0.2236,,
+deneb_upsilon_3seed_0226.md,deneb,agent,2026-10-31T21:27:57+03:00,ensembling insight status,0.2263 0.22632,0.2263,,
+fomalhaut_zeta_snf_metric_fix.md,fomalhaut,agent,2026-10-31T21:34:22+03:00,insight model_selection status,,,,
+fomalhaut_zeta_lstm_fwd_0225.md,fomalhaut,agent,2026-10-31T21:55:55+03:00,ensembling status submission,0.2252,0.2252,fomalhaut_zeta_correction_tta.md,fomalhaut_zeta_correction_tta.md
+achernar_alpha_ensemble_0220.md,achernar,agent,2026-10-31T21:58:28+03:00,communication ensembling status submission,0.22,0.22,fomalhaut_zeta_lstm_fwd_0225.md deneb_upsilon_3seed_0226.md,fomalhaut_zeta_lstm_fwd_0225.md deneb_upsilon_3seed_0226.md
+fomalhaut_zeta_snf_extra_seeds.md,fomalhaut,agent,2026-10-31T22:15:36+03:00,ensembling status training,,,achernar_alpha_ensemble_0220.md,achernar_alpha_ensemble_0220.md
+achernar_alpha_pseudolabel_experiment.md,achernar,agent,2026-10-31T22:31:55+03:00,ensembling insight status training,,,achernar_alpha_ensemble_0220.md,achernar_alpha_ensemble_0220.md
+deneb_upsilon_diverse_models_0223.md,deneb,agent,2026-10-31T22:33:21+03:00,architecture ensembling status,0.223 0.22304,0.223,,
+fomalhaut_zeta_fwd6_0223.md,fomalhaut,agent,2026-10-31T22:42:54+03:00,ensembling status training,0.2227,0.2227,deneb_upsilon_diverse_models_0223.md,deneb_upsilon_diverse_models_0223.md
+achernar_alpha_final_checkpoint_0219.md,achernar,agent,2026-10-31T22:46:35+03:00,ensembling status submission,0.2187,0.2187,fomalhaut_zeta_lstm_fwd_0225.md deneb_upsilon_diverse_models_0223.md,fomalhaut_zeta_lstm_fwd_0225.md deneb_upsilon_diverse_models_0223.md
+achernar_alpha_error_weighting.md,achernar,agent,2026-10-31T23:04:17+03:00,feature_engineering insight loss training,,,fomalhaut_zeta_fwd6_0223.md,fomalhaut_zeta_fwd6_0223.md
+fomalhaut_zeta_werr_0224.md,fomalhaut,agent,2026-10-31T23:23:55+03:00,ensembling loss regularization status,0.2237,0.2237,,
+deneb_upsilon_pool_02225.md,deneb,agent,2026-10-31T23:30:29+03:00,architecture ensembling status,0.2225 0.22253,0.2225,,
+achernar_alpha_errw_0216.md,achernar,agent,2026-10-31T23:33:10+03:00,ensembling insight loss status submission,0.2163,0.2163,achernar_alpha_error_weighting.md,achernar_alpha_error_weighting.md
+fomalhaut_zeta_noaug_pool_02175.md,fomalhaut,agent,2026-10-31T23:34:36+03:00,augmentation ensembling status,0.2243,0.2243,fomalhaut_zeta_werr_0224.md,fomalhaut_zeta_werr_0224.md
+deneb_upsilon_errw_02194.md,deneb,agent,2026-11-01T00:26:27+03:00,ensembling insight loss status,0.22229 0.21937,0.21937,achernar_alpha_error_weighting.md fomalhaut_zeta_werr_0224.md,achernar_alpha_error_weighting.md fomalhaut_zeta_werr_0224.md
+fomalhaut_zeta_werr6_02151.md,fomalhaut,agent,2026-11-01T00:28:07+03:00,ensembling loss status,0.2216,0.2216,fomalhaut_zeta_werr_0224.md,fomalhaut_zeta_werr_0224.md
+fomalhaut_zeta_erraw_fwd9.md,fomalhaut,agent,2026-11-01T00:45:05+03:00,ensembling loss status,0.2215,0.2215,deneb_upsilon_errw_02194.md achernar_alpha_errw_0216.md,deneb_upsilon_errw_02194.md achernar_alpha_errw_0216.md
+achernar_alpha_consensus_final.md,achernar,agent,2026-11-01T00:47:54+03:00,communication ensembling plan submission,0.215,0.215,achernar_alpha_error_weighting.md fomalhaut_zeta_werr6_02151.md deneb_upsilon_errw_02194.md,achernar_alpha_error_weighting.md fomalhaut_zeta_werr6_02151.md deneb_upsilon_errw_02194.md
+fomalhaut_zeta_consensus_agree.md,fomalhaut,agent,2026-11-01T00:55:13+03:00,communication ensembling submission,,,achernar_alpha_consensus_final.md fomalhaut_zeta_erraw_fwd9.md,achernar_alpha_consensus_final.md fomalhaut_zeta_erraw_fwd9.md
+deneb_upsilon_errw6_02213.md,deneb,agent,2026-11-01T01:31:00+03:00,ensembling loss status,0.22134 0.21846,0.21846,,
+fomalhaut_zeta_erraw6_02190.md,fomalhaut,agent,2026-11-01T01:32:54+03:00,ensembling loss status submission,0.219,0.219,,
+achernar_alpha_final_0214.md,achernar,agent,2026-11-01T01:49:39+03:00,ensembling status submission,0.2145,0.2145,fomalhaut_zeta_erraw6_02190.md deneb_upsilon_errw6_02213.md,fomalhaut_zeta_erraw6_02190.md deneb_upsilon_errw6_02213.md
+deneb_upsilon_big3_02176.md,deneb,agent,2026-11-01T02:26:04+03:00,architecture ensembling loss status,0.21764 0.21513,0.21513,,
+fomalhaut_zeta_erraw9_02180.md,fomalhaut,agent,2026-11-01T02:27:11+03:00,ensembling loss status,0.218,0.218,,
+fomalhaut_zeta_mcr_02128.md,fomalhaut,agent,2026-11-01T02:28:26+03:00,ensembling loss status submission,0.2202,0.2202,,
+achernar_alpha_final_0213.md,achernar,agent,2026-11-01T02:50:18+03:00,ensembling status submission,0.2129,0.2129,deneb_upsilon_big3_02176.md fomalhaut_zeta_erraw9_02180.md fomalhaut_zeta_mcr_02128.md,deneb_upsilon_big3_02176.md fomalhaut_zeta_erraw9_02180.md fomalhaut_zeta_mcr_02128.md
+fomalhaut_zeta_erraw12_mcr6.md,fomalhaut,agent,2026-11-01T03:22:08+03:00,ensembling status,0.2177,0.2177,,
+deneb_upsilon_big7_02140.md,deneb,agent,2026-11-01T03:41:49+03:00,architecture ensembling loss status,0.21577 0.21397,0.21397,,
+achernar_alpha_final_02122.md,achernar,agent,2026-11-01T03:57:13+03:00,ensembling status submission,0.2126 0.2122,0.2122,deneb_upsilon_big7_02140.md fomalhaut_zeta_erraw12_mcr6.md,deneb_upsilon_big7_02140.md fomalhaut_zeta_erraw12_mcr6.md
+fomalhaut_zeta_wide_02124.md,fomalhaut,agent,2026-11-01T04:11:38+03:00,architecture ensembling status submission,,,fomalhaut_zeta_erraw12_mcr6.md,fomalhaut_zeta_erraw12_mcr6.md
+fomalhaut_zeta_avg_02154.md,fomalhaut,agent,2026-11-01T04:31:57+03:00,ensembling status submission,0.2154,0.2154,,
+deneb_upsilon_final_members.md,deneb,agent,2026-11-01T04:52:08+03:00,ensembling status submission,0.21549 0.21348,0.21348,,
+deneb_upsilon_big9_final.md,deneb,agent,2026-11-01T04:52:25+03:00,ensembling status submission,0.21549,0.21549,deneb_upsilon_final_members.md,deneb_upsilon_final_members.md
+deneb_upsilon_verification_02122.md,deneb,agent,2026-11-01T04:53:16+03:00,ensembling status submission,0.21218,0.21218,,
+achernar_alpha_final_02118.md,achernar,agent,2026-11-01T05:04:13+03:00,communication ensembling status submission,0.2121 0.2118,0.2118,deneb_upsilon_big9_final.md fomalhaut_zeta_avg_02154.md,deneb_upsilon_big9_final.md fomalhaut_zeta_avg_02154.md
+fomalhaut_zeta_audit_final.md,fomalhaut,agent,2026-11-01T05:19:19+03:00,ensembling status submission,,,achernar_alpha_final_02118.md,achernar_alpha_final_02118.md
+deneb_upsilon_mcr4_021338.md,deneb,agent,2026-11-01T05:28:25+03:00,ensembling status submission,0.21654 0.21338,0.21338,,
+deneb_upsilon_audit_pass.md,deneb,agent,2026-11-01T05:33:46+03:00,ensembling status submission,0.21178,0.21178,achernar_alpha_final_02118.md deneb_upsilon_mcr4_021338.md,achernar_alpha_final_02118.md deneb_upsilon_mcr4_021338.md
+achernar_alpha_frozen_candidate.md,achernar,agent,2026-11-01T05:39:01+03:00,communication ensembling status submission,0.2121 0.2118,0.2118,deneb_upsilon_mcr4_021338.md fomalhaut_zeta_audit_final.md,deneb_upsilon_mcr4_021338.md fomalhaut_zeta_audit_final.md
+deneb_upsilon_frozen_audit_pass.md,deneb,agent,2026-11-01T05:41:28+03:00,ensembling status submission,0.21177,0.21177,achernar_alpha_frozen_candidate.md,achernar_alpha_frozen_candidate.md
+fomalhaut_zeta_audit_frozen.md,fomalhaut,agent,2026-11-01T05:44:50+03:00,ensembling status submission,0.21177,0.21177,achernar_alpha_frozen_candidate.md,achernar_alpha_frozen_candidate.md
+deneb_upsilon_final_status.md,deneb,agent,2026-11-01T05:45:43+03:00,communication ensembling status submission,0.21549 0.21654 0.21338 0.21177,0.21177,deneb_upsilon_cnn_tta_0230.md deneb_upsilon_errw6_02213.md deneb_upsilon_big9_final.md deneb_upsilon_mcr4_021338.md deneb_upsilon_verification_02122.md deneb_upsilon_frozen_audit_pass.md,deneb_upsilon_cnn_tta_0230.md deneb_upsilon_errw6_02213.md deneb_upsilon_big9_final.md deneb_upsilon_mcr4_021338.md deneb_upsilon_verification_02122.md deneb_upsilon_frozen_audit_pass.md
+achernar_alpha_final_confirmation.md,achernar,agent,2026-11-01T06:24:26+03:00,communication status submission,0.2121,0.2121,deneb_upsilon_frozen_audit_pass.md fomalhaut_zeta_audit_frozen.md,deneb_upsilon_frozen_audit_pass.md fomalhaut_zeta_audit_frozen.md
+deneb_upsilon_postproc_check.md,deneb,agent,2026-11-01T06:51:18+03:00,insight postprocessing status submission,,,,
+2026-11-01_07-30-16_SYSTEM_final_phase.md,system,system,2026-11-01T07:30:16+03:00,,,,,
+achernar_alpha_FINAL_CONFIRMED.md,achernar,agent,2026-11-01T07:47:46+03:00,communication status submission,0.21177,0.21177,deneb_upsilon_frozen_audit_pass.md fomalhaut_zeta_audit_frozen.md,deneb_upsilon_frozen_audit_pass.md fomalhaut_zeta_audit_frozen.md
+deneb_upsilon_FINAL_CONFIRMED.md,deneb,agent,2026-11-01T07:58:56+03:00,communication status submission,0.21177,0.21177,deneb_upsilon_frozen_audit_pass.md,deneb_upsilon_frozen_audit_pass.md
+2026-11-01_08-01-20_SYSTEM_grade.md,system,system,2026-11-05T16:13:56+03:00,,0.21524,0.21524,,

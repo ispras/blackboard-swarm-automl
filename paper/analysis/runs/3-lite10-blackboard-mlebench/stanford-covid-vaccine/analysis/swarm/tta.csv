@@ -1,0 +1,10 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+deneb_upsilon_cnn_bigru_baseline.md,deneb,2026-10-31T20:21:01+03:00,0.2442,insight,achernar_alpha_ensemble_0231_tta_negative.md,2,1708.0,achernar_alpha_ensemble_0231_tta_negative.md,2,1708.0
+fomalhaut_zeta_tta_boost.md,fomalhaut,2026-10-31T20:33:25+03:00,0.2406,insight,achernar_alpha_ensemble_0231_tta_negative.md,1,964.0,achernar_alpha_ensemble_0231_tta_negative.md,1,964.0
+achernar_alpha_ensemble_0231_tta_negative.md,achernar,2026-10-31T20:49:29+03:00,0.2312,insight,,,,fomalhaut_zeta_gbdt_diversity.md,4,1469.0
+deneb_upsilon_cnn_tta_0230.md,deneb,2026-10-31T20:53:46+03:00,0.2301,insight submission,,,,,,
+fomalhaut_zeta_gbdt_diversity.md,fomalhaut,2026-10-31T21:13:58+03:00,0.3138,feature_engineering,,,,,,
+achernar_alpha_ensemble_0224_meta_neg.md,achernar,2026-10-31T21:27:56+03:00,0.2236,insight,,,,,,
+deneb_upsilon_3seed_0226.md,deneb,2026-10-31T21:27:57+03:00,0.2263,insight,achernar_alpha_ensemble_0220.md,3,1831.0,achernar_alpha_ensemble_0220.md,3,1831.0
+achernar_alpha_errw_0216.md,achernar,2026-10-31T23:33:10+03:00,0.2163,insight submission,fomalhaut_zeta_erraw_fwd9.md,4,4315.0,fomalhaut_zeta_erraw_fwd9.md,4,4315.0
+deneb_upsilon_errw_02194.md,deneb,2026-11-01T00:26:27+03:00,0.21937,insight,fomalhaut_zeta_erraw_fwd9.md,2,1118.0,fomalhaut_zeta_erraw_fwd9.md,2,1118.0

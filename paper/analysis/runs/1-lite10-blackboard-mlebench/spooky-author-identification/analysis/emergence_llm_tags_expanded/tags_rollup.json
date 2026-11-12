@@ -1,0 +1,586 @@
+{
+  "annotations": [
+    {
+      "id": "deneb_upsilon_intro_plan.md",
+      "tags": [
+        "data_pipeline",
+        "plan"
+      ]
+    },
+    {
+      "id": "rigel_xi_intro_and_plan.md",
+      "tags": [
+        "plan",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_intro_and_plan.md",
+      "tags": [
+        "plan",
+        "data_pipeline",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_ref_baseline_tfidf_lr.md",
+      "tags": [
+        "training",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_coordination_gpu_lanes.md",
+      "tags": [
+        "communication",
+        "plan",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_baseline.md",
+      "tags": [
+        "data_pipeline",
+        "training",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_coordination_roberta.md",
+      "tags": [
+        "communication",
+        "plan",
+        "data_pipeline",
+        "architecture"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_status_baseline.md",
+      "tags": [
+        "training",
+        "model_selection",
+        "data_pipeline",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_insight_ensemble_big_gain.md",
+      "tags": [
+        "ensembling",
+        "data_pipeline",
+        "model_selection",
+        "postprocessing"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_models.md",
+      "tags": [
+        "model_selection",
+        "problem",
+        "training"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v1_stack_0274.md",
+      "tags": [
+        "ensembling",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_bert_full_5fold.md",
+      "tags": [
+        "training",
+        "model_selection",
+        "postprocessing"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_blend_result.md",
+      "tags": [
+        "ensembling",
+        "training",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_provisional_submission.md",
+      "tags": [
+        "submission",
+        "communication"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_roberta_full_5fold.md",
+      "tags": [
+        "training",
+        "ensembling",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v2_stack_0261.md",
+      "tags": [
+        "ensembling",
+        "submission",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_lgbm_stacker_0252.md",
+      "tags": [
+        "ensembling",
+        "feature_engineering",
+        "training",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v3_lgbm_0255.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combined_stack_0251.md",
+      "tags": [
+        "ensembling",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_warning_dont_stack_blends.md",
+      "tags": [
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_agree_unified_stacker.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "communication"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_02434.md",
+      "tags": [
+        "ensembling",
+        "training",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v6_handfeat_0244.md",
+      "tags": [
+        "ensembling",
+        "submission"
+      ]
+    },
+    {
+      "id": "rigel_xi_final_ownership_and_gpu.md",
+      "tags": [
+        "communication",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_gpu_ack_plan.md",
+      "tags": [
+        "communication",
+        "model_selection",
+        "plan"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_models_test_preds_ready.md",
+      "tags": [
+        "data_pipeline",
+        "training",
+        "feature_engineering",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v7_0229.md",
+      "tags": [
+        "ensembling",
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_crosscheck.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v2_0218.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "tags": [
+        "problem",
+        "model_selection",
+        "augmentation",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v8_0218.md",
+      "tags": [
+        "ensembling",
+        "submission"
+      ]
+    },
+    {
+      "id": "rigel_xi_gpu_lanes_and_meta.md",
+      "tags": [
+        "data_pipeline",
+        "ensembling",
+        "communication"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_full.md",
+      "tags": [
+        "training",
+        "model_selection",
+        "data_pipeline",
+        "ensembling"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v3_seedavg.md",
+      "tags": [
+        "data_pipeline",
+        "training",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_status_v9b_deberta_large.md",
+      "tags": [
+        "ensembling",
+        "training",
+        "communication",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_seedavg_bertcased.md",
+      "tags": [
+        "training",
+        "data_pipeline",
+        "plan"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ack_v9b_lanes.md",
+      "tags": [
+        "plan",
+        "communication",
+        "training"
+      ]
+    },
+    {
+      "id": "rigel_xi_ack_seedavg_plan.md",
+      "tags": [
+        "training",
+        "plan",
+        "communication",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_seedavg_final.md",
+      "tags": [
+        "training",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_base_result.md",
+      "tags": [
+        "training",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v10_0206.md",
+      "tags": [
+        "ensembling",
+        "communication"
+      ]
+    },
+    {
+      "id": "rigel_xi_approve_xlnet_large.md",
+      "tags": [
+        "architecture",
+        "augmentation",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_0211.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "problem",
+        "training"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_dbv3base_seedavg.md",
+      "tags": [
+        "training",
+        "data_pipeline",
+        "architecture",
+        "communication"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_pseudo_label_result.md",
+      "tags": [
+        "augmentation",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_switch_mpnet.md",
+      "tags": [
+        "problem",
+        "architecture",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_deberta_large_seedavg.md",
+      "tags": [
+        "training",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v4_0200.md",
+      "tags": [
+        "ensembling",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v11_0202.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "communication"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ernie_bertlarge.md",
+      "tags": [
+        "data_pipeline",
+        "architecture",
+        "model_selection",
+        "communication"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_result.md",
+      "tags": [
+        "training",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v12_0202.md",
+      "tags": [
+        "ensembling",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bert_large_cased_bart.md",
+      "tags": [
+        "training",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_breakthrough.md",
+      "tags": [
+        "regularization",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_fgm_adopted_deberta.md",
+      "tags": [
+        "regularization",
+        "training",
+        "plan",
+        "architecture"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_seedavg.md",
+      "tags": [
+        "training",
+        "data_pipeline",
+        "model_selection"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v13_0200.md",
+      "tags": [
+        "ensembling",
+        "problem",
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_bertcased_full.md",
+      "tags": [
+        "regularization",
+        "model_selection",
+        "data_pipeline",
+        "training"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_fgm_01936.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v14_0194.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_01907.md",
+      "tags": [
+        "training",
+        "ensembling",
+        "model_selection",
+        "communication"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_fgm.md",
+      "tags": [
+        "regularization",
+        "training",
+        "model_selection",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v16_0188.md",
+      "tags": [
+        "ensembling",
+        "training"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg3_01856.md",
+      "tags": [
+        "training",
+        "ensembling",
+        "model_selection",
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_best_0299.md",
+      "tags": [
+        "training",
+        "regularization",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v17_0185.md",
+      "tags": [
+        "ensembling",
+        "model_selection",
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_bases_0518.md",
+      "tags": [
+        "data_pipeline",
+        "model_selection",
+        "communication",
+        "submission"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_fgm_seedavg_final.md",
+      "tags": [
+        "training",
+        "regularization",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission.md",
+      "tags": [
+        "submission",
+        "ensembling"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_verify.md",
+      "tags": [
+        "submission",
+        "data_pipeline"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_final_code_added.md",
+      "tags": [
+        "submission"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_closing.md",
+      "tags": [
+        "submission",
+        "data_pipeline",
+        "regularization",
+        "ensembling"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission_v19.md",
+      "tags": [
+        "ensembling",
+        "submission"
+      ]
+    }
+  ]
+}

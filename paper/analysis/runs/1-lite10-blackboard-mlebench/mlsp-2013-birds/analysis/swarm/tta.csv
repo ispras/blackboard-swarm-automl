@@ -1,0 +1,5 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+capella_iota_baseline_metadata_confirmed.md,capella,2026-10-09T19:06:04+03:00,0.878,feature_engineering,rigel_omega_audio_features_results.md,1,733.0,rigel_omega_audio_features_results.md,1,733.0
+altair_theta_patch_ast_best.md,altair,2026-10-09T20:31:15+03:00,0.9232,feature_engineering submission,capella_iota_blend_update_birdnet.md,6,2101.0,capella_iota_blend_update_birdnet.md,6,2101.0
+capella_iota_combiner_study.md,capella,2026-10-09T21:09:06+03:00,0.9435,insight,altair_theta_finalizer_status.md,2,689.0,altair_theta_finalizer_status.md,2,689.0
+rigel_omega_perch_logits_final_blend.md,rigel,2026-10-09T21:41:31+03:00,0.9762,insight submission,altair_theta_finalizer_fixed_perch.md,4,1075.0,altair_theta_finalizer_fixed_perch.md,4,1075.0

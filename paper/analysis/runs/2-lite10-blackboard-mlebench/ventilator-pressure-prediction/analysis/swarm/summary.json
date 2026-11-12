@@ -1,0 +1,303 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "label": "ventilator-pressure-prediction",
+  "metric": "MAE",
+  "is_lower_better": true,
+  "final_score": 0.15212,
+  "thresholds": {
+    "gold": 0.1119,
+    "silver": 0.1338,
+    "bronze": 0.1364,
+    "median": 0.1638
+  },
+  "messages": {
+    "agent": 53,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 45,
+    "system_links": 2
+  },
+  "graph": {
+    "nodes": 53,
+    "edges": 63,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 11,
+    "mean_depth_all": 4.037735849056604,
+    "mean_depth_linked": 5.487179487179487,
+    "longest_path": [
+      "castor_eta_final_integrity_530d.md",
+      "canopus_iota_distributional_sanity.md",
+      "canopus_iota_final_twin_refresh.md",
+      "bellatrix_iota_no_objection_final.md",
+      "canopus_iota_3rdseed_016029.md",
+      "castor_eta_final2_e3all.md",
+      "canopus_iota_e3seed_01606.md",
+      "castor_eta_final_refresh_01609.md",
+      "canopus_iota_blend_0161.md",
+      "castor_eta_all2_done_ema_promising.md",
+      "castor_eta_ema_features.md",
+      "canopus_iota_5f2_done_heavytail.md"
+    ],
+    "max_indegree": 4,
+    "hubs": [
+      {
+        "name": "bellatrix_iota_first_result_metric_hedge.md",
+        "agent": "bellatrix",
+        "in_degree": 4,
+        "depth": 3,
+        "tags": [
+          "communication",
+          "insight",
+          "loss",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-21T16:58:00+03:00"
+      },
+      {
+        "name": "canopus_iota_metric_and_status.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-21T16:50:17+03:00"
+      },
+      {
+        "name": "castor_eta_gru_v1_result.md",
+        "agent": "castor",
+        "in_degree": 3,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "training"
+        ],
+        "time": "2026-10-21T17:04:18+03:00"
+      },
+      {
+        "name": "canopus_iota_blend_0161.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 3,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-22T01:30:15+03:00"
+      },
+      {
+        "name": "canopus_iota_3rdseed_016029.md",
+        "agent": "canopus",
+        "in_degree": 3,
+        "depth": 7,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-22T03:12:44+03:00"
+      },
+      {
+        "name": "bellatrix_iota_final_refresh_16models.md",
+        "agent": "bellatrix",
+        "in_degree": 3,
+        "depth": 8,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-22T04:07:13+03:00"
+      },
+      {
+        "name": "bellatrix_iota_conformer_blend.md",
+        "agent": "bellatrix",
+        "in_degree": 2,
+        "depth": 5,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-21T17:08:39+03:00"
+      }
+    ],
+    "submission_count": 31,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      7,
+      8,
+      8,
+      9,
+      9,
+      9,
+      9,
+      10,
+      10,
+      11,
+      11,
+      11
+    ],
+    "final_submission": {
+      "name": "canopus_iota_final_confirmation.md",
+      "time": "2026-10-22T04:30:35+03:00",
+      "depth": 9,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 1,
+      "mean": 0.11260000000000003,
+      "median": 0.11260000000000003,
+      "positive": 1.0,
+      "max": 0.11260000000000003
+    },
+    "transitive": {
+      "n": 4,
+      "mean": 0.038855,
+      "median": 0.02142999999999999,
+      "positive": 0.5,
+      "max": 0.11260000000000003
+    },
+    "prev_linked": {
+      "n": 6,
+      "mean": 0.035565,
+      "median": 0.02142999999999999,
+      "positive": 0.5,
+      "max": 0.11260000000000003
+    },
+    "prev_unlinked": {
+      "n": 1,
+      "mean": -4.000000000001225e-05,
+      "median": -4.000000000001225e-05,
+      "positive": 0.0,
+      "max": -4.000000000001225e-05
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 1.0,
+        "mean_msgs": 1,
+        "median_seconds": 319.5
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 1.0,
+        "mean_msgs": 1,
+        "median_seconds": 319.5
+      }
+    },
+    "broad": {
+      "n_events": 3,
+      "direct": {
+        "events": 3,
+        "adopted": 2,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.0,
+        "mean_msgs": 1,
+        "median_seconds": 319.5
+      },
+      "transitive": {
+        "events": 3,
+        "adopted": 2,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.0,
+        "mean_msgs": 1,
+        "median_seconds": 319.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 3,
+        "rate": 0.75,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 330.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 3,
+        "rate": 0.75,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 330.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 1,
+      "rate": 0.5,
+      "median_msgs": 3,
+      "median_seconds": 4352.0,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 2,
+      "rate": 1.0,
+      "median_msgs": 3.5,
+      "median_seconds": 4401.0,
+      "different_author": 2
+    },
+    "problem_authors": {
+      "bellatrix": 1,
+      "canopus": 1
+    },
+    "recovery_authors": {
+      "castor": 1
+    }
+  }
+}

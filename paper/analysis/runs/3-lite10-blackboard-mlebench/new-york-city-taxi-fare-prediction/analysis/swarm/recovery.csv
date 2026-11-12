@@ -1,0 +1,7 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+antares_omicron_holdout_problem.md,antares,2026-10-30T20:02:47+03:00,problem,,,0,,,arcturus_upsilon_baseline6m.md,3,294.0
+arcturus_upsilon_critical_missing_coords.md,arcturus,2026-10-30T20:28:47+03:00,problem,alkaid_phi_v2_plan.md,alkaid,0,2,1074.0,alkaid_phi_v2_plan.md,2,1074.0
+arcturus_upsilon_test_te_bug.md,arcturus,2026-10-30T22:24:15+03:00,bug problem,arcturus_upsilon_final_proposal.md,arcturus,1,1,59.0,arcturus_upsilon_final_proposal.md,1,59.0
+antares_omicron_key_format_critical.md,antares,2026-10-30T22:27:14+03:00,bug problem,antares_omicron_te_bug_fixed.md,antares,1,2,1570.0,antares_omicron_te_bug_fixed.md,2,1570.0
+antares_omicron_te_bug_fixed.md,antares,2026-10-30T22:53:24+03:00,bug problem,arcturus_upsilon_ownership.md,arcturus,0,3,77.0,arcturus_upsilon_ownership.md,3,77.0
+alkaid_phi_cv_verification.md,alkaid,2026-10-31T00:27:26+03:00,bug,arcturus_upsilon_final_confirmed.md,arcturus,0,1,183.0,arcturus_upsilon_final_confirmed.md,1,183.0

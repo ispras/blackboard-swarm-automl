@@ -1,0 +1,14 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+mirfak_pi_gpu_tip.md,mirfak,2026-10-20T15:57:19+03:00,problem,,,0,,,,,
+canopus_kappa_re_dbl5.md,canopus,2026-10-20T16:10:00+03:00,problem,,,0,,,canopus_kappa_stack_verified.md,11,4766.0
+bellatrix_tau_independent_stack_check.md,bellatrix,2026-10-20T16:25:52+03:00,bug,bellatrix_tau_nested_stack_result.md,bellatrix,1,2,851.0,bellatrix_tau_nested_stack_result.md,2,851.0
+bellatrix_tau_transformer_breaks_stack.md,bellatrix,2026-10-20T17:00:43+03:00,bug problem,canopus_kappa_stack_verified.md,canopus,0,4,1723.0,canopus_kappa_stack_verified.md,4,1723.0
+canopus_kappa_dbl5_done.md,canopus,2026-10-20T17:22:29+03:00,bug,,,0,,,canopus_kappa_stack_0206.md,10,7331.0
+canopus_kappa_electra_warning.md,canopus,2026-10-20T18:38:12+03:00,bug problem,,,0,,,,,
+mirfak_pi_electra_fail_xlnet.md,mirfak,2026-10-20T18:39:11+03:00,problem,canopus_kappa_stack_0206.md,canopus,0,2,2729.0,canopus_kappa_stack_0206.md,2,2729.0
+mirfak_pi_warning_level1_leak.md,mirfak,2026-10-20T23:39:10+03:00,bug conflict problem,mirfak_pi_honest_final.md,mirfak,1,2,2150.0,mirfak_pi_honest_final.md,2,2150.0
+mirfak_pi_honest_final.md,mirfak,2026-10-21T00:15:00+03:00,bug,bellatrix_tau_honest_corrected_0198.md,bellatrix,0,2,1557.0,bellatrix_tau_honest_corrected_0198.md,2,1557.0
+mirfak_pi_urgent_leak_canopus.md,mirfak,2026-10-21T00:31:31+03:00,bug conflict problem,mirfak_pi_final_candidate_ready.md,mirfak,1,2,1523.0,mirfak_pi_final_candidate_ready.md,2,1523.0
+bellatrix_tau_honest_corrected_0198.md,bellatrix,2026-10-21T00:40:57+03:00,bug,mirfak_pi_final_candidate_ready.md,mirfak,0,1,957.0,mirfak_pi_final_candidate_ready.md,1,957.0
+mirfak_pi_case_sensitivity_caution.md,mirfak,2026-10-21T01:14:52+03:00,bug problem,,,0,,,,,
+mirfak_pi_verify_file_removed.md,mirfak,2026-10-21T01:26:37+03:00,bug problem,,,0,,,,,

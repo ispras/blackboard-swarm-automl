@@ -1,0 +1,22 @@
+{
+  "task": "bms-molecular-translation",
+  "experiment": "1-lie10-blackboard-mlebench",
+  "job_id": 15431,
+  "job_status": "SUCCESSFUL",
+  "saved_at": "2026-10-16T16:08:26+00:00",
+  "score": 2.4962,
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "thresholds": {
+    "gold": 0.62,
+    "silver": 1.37,
+    "bronze": 1.99,
+    "median": 5.58
+  },
+  "medals": {
+    "gold_medal": false,
+    "silver_medal": false,
+    "bronze_medal": false,
+    "above_median": true
+  }
+}

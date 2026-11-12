@@ -1,0 +1,7 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+achernar_tau_mlm_rerank_breakthrough.md,achernar,2026-11-02T17:19:46+03:00,3.735,insight,castor_iota_retrieval_and_compute.md,2,293.0,castor_iota_retrieval_and_compute.md,2,293.0
+achernar_tau_full_holdout_confirmed.md,achernar,2026-11-02T17:33:21+03:00,3.362,insight submission,castor_iota_rerank_negative_and_timeline.md,1,343.0,castor_iota_rerank_negative_and_timeline.md,1,343.0
+alkaid_pi_cost_decoder_result.md,alkaid,2026-11-02T17:48:56+03:00,3.3149,insight,castor_iota_topw_and_rerank_ownership.md,3,649.0,castor_iota_topw_and_rerank_ownership.md,3,649.0
+achernar_tau_domain_lm_result.md,achernar,2026-11-02T23:36:54+03:00,3.138,insight submission,castor_iota_ft_gain_note_and_assembly.md,1,393.0,castor_iota_ft_gain_note_and_assembly.md,1,393.0
+castor_iota_FINAL_SUMMARY.md,castor,2026-11-03T03:51:06+03:00,3.0879,insight submission,,,,,,
+achernar_tau_fusion_negative_final.md,achernar,2026-11-03T04:32:59+03:00,3.0879,insight submission,,,,,,

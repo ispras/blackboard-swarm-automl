@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root{--bar:#fff;--line:#e2e8f0;--ink:#0f172a;--mut:#64748b;--bg:#f8fafc}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font:13px/1.4 'DejaVu Sans','Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg)}
+#bar{position:fixed;top:0;left:0;right:0;height:46px;background:var(--bar);border-bottom:1px solid var(--line);
+     display:flex;align-items:center;gap:10px;padding:0 12px;z-index:30;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+#bar .t{font-weight:700;font-size:15px;white-space:nowrap}
+#bar .stat{font-size:12px;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#bar .spacer{flex:1}
+button{border:1px solid #cbd5e1;background:#fff;border-radius:7px;padding:5px 10px;font-size:12px;cursor:pointer;color:var(--ink)}
+button:hover{background:#f1f5f9}
+button.on{background:#0f172a;color:#fff;border-color:#0f172a}
+.views{display:flex;gap:4px;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px;padding:2px}
+.views button{border:none;background:transparent;padding:4px 9px}
+.views button.on{background:#0f172a;color:#fff}
+#side{position:fixed;top:46px;left:0;bottom:0;width:290px;background:#fff;border-right:1px solid var(--line);
+      overflow-y:auto;padding:12px 12px 40px;z-index:20}
+#side h3{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:#334155;margin:16px 0 7px}
+#search{width:100%;padding:7px 9px;border:1px solid #cbd5e1;border-radius:8px;font-size:13px}
+.ck{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:3px 0;cursor:pointer}
+.ck input{margin:0}
+.agent-row{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:2px 0;cursor:pointer}
+.tag-row{display:flex;align-items:center;gap:7px;font-size:12.5px;padding:2px 0;cursor:pointer}
+.tag-row .cnt{margin-left:auto;color:#94a3b8;font-variant-numeric:tabular-nums}
+#taglist{max-height:250px;overflow:auto;border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);padding:4px 0}
+.sw{width:11px;height:11px;border-radius:3px;flex:none}
+.dia{width:10px;height:10px;background:#0f766e;transform:rotate(45deg);flex:none;margin:0 1px}
+.trow{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--mut);margin:4px 0}
+.trow input{flex:1}
+.trow .val{width:42px;text-align:right;font-variant-numeric:tabular-nums;color:#334155}
+.legend{font-size:12px;color:#334155;display:flex;align-items:center;gap:7px;margin:3px 0}
+.legend .ring{width:12px;height:12px;border-radius:50%;border:2.5px solid;flex:none}
+.legend .sq{width:11px;height:11px;background:#64748b;border-radius:2px;flex:none}
+#detail{margin-top:10px}
+#detail .card{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}
+#detail .h{font-weight:700;font-size:13px;overflow-wrap:anywhere}
+#detail .meta{font-size:11.5px;color:var(--mut);margin:4px 0 7px}
+#detail .badge{display:inline-block;font-size:10.5px;border-radius:999px;padding:1px 7px;margin-right:4px;border:1px solid}
+.mdbox{font-size:11.5px;color:#475569;max-height:340px;overflow:auto;border-top:1px dashed var(--line);padding-top:6px;margin-top:6px;white-space:normal}
+.mdbox p{margin:0 0 7px}
+.mdbox h3,.mdbox h4,.mdbox h5,.mdbox h6{margin:9px 0 5px;font-size:12.5px;color:#0f172a}
+.mdbox ul,.mdbox ol{margin:4px 0 7px;padding-left:18px}
+.mdbox li{margin:2px 0}
+.mdbox code{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:4px;padding:0 3px;font-size:11px}
+.mdbox .md-pre{background:#0f172a;color:#e2e8f0;border-radius:6px;padding:7px 8px;overflow:auto;font-size:11px;white-space:pre;margin:5px 0}
+.mdbox blockquote{border-left:3px solid #cbd5e1;margin:4px 0;padding:1px 0 1px 8px;color:#64748b}
+.mdbox hr{border:none;border-top:1px dashed var(--line);margin:7px 0}
+.mdbox .md-table{border-collapse:collapse;margin:5px 0;font-size:11px}
+.mdbox .md-table td,.mdbox .md-table th{border:1px solid #e2e8f0;padding:2px 5px}
+.mdbox .md-table th{background:#f8fafc}
+.mdbox .wikilink{color:#2563eb;border-bottom:1px dotted #93c5fd;cursor:pointer}
+.mdbox .md-link{color:#2563eb;text-decoration:underline dotted;text-underline-offset:2px}
+.mdbox .chip{margin:1px 2px 0 0}
+#listview{position:absolute;inset:0;display:none;overflow-y:auto;padding:56px 16px 80px;background:var(--bg)}
+#listview .msg{border:1px solid var(--line);border-radius:10px;background:#fff;margin:0 0 8px}
+#listview .msg.sel{border-color:#0f172a;box-shadow:0 0 0 2px rgba(15,23,42,.12)}
+#listview .msg.focus{border-left:3px solid #2563eb}
+#listview .msg.dim{opacity:.45}
+#listview .mhead{display:flex;align-items:center;gap:8px;padding:7px 10px;cursor:pointer;flex-wrap:wrap}
+#listview .mhead:hover{background:#f8fafc}
+#listview .mt{font-weight:600;font-size:11.5px;color:#334155;font-variant-numeric:tabular-nums;min-width:92px}
+#listview .mdot{width:9px;height:9px;border-radius:50%;flex:none}
+#listview .ma{font-size:11.5px;font-weight:600}
+#listview .mname{font-size:12.5px;overflow-wrap:anywhere}
+#listview .mmeta{margin-left:auto;font-size:11px;color:#94a3b8;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+#listview .mbadge{display:inline-block;font-size:10px;border:1px solid #e2e8f0;border-radius:999px;padding:0 6px;color:#475569}
+#listview .mmetric{font-size:10.5px;color:#b45309;border:1px solid #fde68a;background:#fffbeb;border-radius:6px;padding:0 5px;white-space:nowrap}
+#listview .mchev{color:#94a3b8;font-size:11px}
+#listview .mbody{display:none;border-top:1px dashed var(--line)}
+#listview .mdbox{max-height:none;border-top:none;margin:0;padding:8px 12px}
+#detail .links{margin-top:7px;font-size:11.5px}
+#detail .links b{display:block;margin:6px 0 3px;font-size:11px;color:#334155;text-transform:uppercase;letter-spacing:.4px}
+.chip{display:inline-block;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;padding:1px 6px;margin:2px 3px 0 0;
+      cursor:pointer;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip:hover{background:#e2e8f0}
+.chip.tag{background:#ecfdf5;border-color:#99f6e4;color:#0f766e}
+.chip.tag.on{background:#0f766e;border-color:#0f766e;color:#fff}
+#stage{position:fixed;top:46px;left:290px;right:0;bottom:0}
+#stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#cv{cursor:grab}
+#cv.drag{cursor:grabbing}
+.ovl{position:absolute;top:10px;left:12px;z-index:5;display:flex;align-items:center;gap:6px;
+     background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:9px;padding:5px 8px}
+.ovl .hint{font-size:11.5px;color:var(--mut);margin-left:4px}
+#tip{position:fixed;display:none;background:#0f172a;color:#f1f5f9;padding:8px 11px;border-radius:8px;font-size:12px;
+     max-width:380px;z-index:50;box-shadow:0 8px 22px rgba(0,0,0,.28);pointer-events:none;line-height:1.45}
+#tip b{font-size:12.5px}
+#tip .m{color:#fbbf24}
+#tip .g{color:#94a3b8}
+#tip .t{color:#5eead4}
+</style></head>
+<body>
+<div id="bar">
+  <span class="t">Граф доски роя</span>
+  <div class="views" id="views">
+    <button data-view="graph" class="on">Граф</button>
+    <button data-view="time">Таймлайн</button>
+    <button data-view="metric">Метрики</button>
+    <button data-view="list">Сообщения</button>
+    <button data-view="matrix">Матрицы</button>
+  </div>
+  <span class="stat" id="stats"></span>
+  <span class="spacer"></span>
+  <button id="btn-time" class="on" title="раскладывать узлы слева-направо по времени публикации">Ось времени</button>
+  <button id="btn-phys" class="on" title="включить/остановить симуляцию раскладки">Физика</button>
+  <button id="btn-fit" title="показать весь граф">Уместить</button>
+  <button id="btn-reset" title="снять выделение и фильтры">Сброс</button>
+</div>
+<aside id="side">
+  <input id="search" placeholder="поиск: имя, текст, #тег…">
+  <h3>Агенты</h3><div id="agents"></div>
+  <h3>Теги (<span id="tag-n"></span>)</h3><div id="taglist"></div>
+  <h3>Типы узлов</h3>
+  <label class="ck"><input type="checkbox" id="ck-tagnodes"> тег-узлы (ромбы)</label>
+  <label class="ck"><input type="checkbox" id="ck-deep"> подсветка: всё достижимое (иначе только прямые)</label>
+  <label class="ck"><input type="checkbox" id="ck-art" checked> артефакты (csv/npy)</label>
+  <label class="ck"><input type="checkbox" id="ck-miss" checked> битые ссылки</label>
+  <label class="ck"><input type="checkbox" id="ck-sys" checked> SYSTEM-сообщения</label>
+  <h3>Время (<span id="t-span"></span>)</h3>
+  <div class="trow"><span>с</span><input type="range" id="t0"><span class="val" id="t0v"></span></div>
+  <div class="trow"><span>по</span><input type="range" id="t1"><span class="val" id="t1v"></span></div>
+  <label class="ck" style="margin-top:4px"><input type="checkbox" id="ck-notime" checked> узлы без времени</label>
+  <h3>Легенда</h3>
+  <div id="legend"></div>
+  <h3>Выбранный узел</h3>
+  <div id="detail"><div class="legend" style="color:#64748b">клик по узлу — подсветка всех связанных (зелёные — предки, оранжевые — потомки, синие — прочие); клик по #тегу — фильтр</div></div>
+</aside>
+<div id="stage">
+  <canvas id="cv"></canvas>
+  <canvas id="cv2" style="display:none"></canvas>
+  <canvas id="cv3" style="display:none"></canvas>
+  <canvas id="cv4" style="display:none"></canvas>
+  <div id="listview" style="display:none"></div>
+  <div id="lstbar" class="ovl" style="display:none">
+    <button id="ls-expand">Развернуть все</button>
+    <button id="ls-collapse">Свернуть все</button>
+    <span class="hint">клик по строке — открыть узел и развернуть текст</span>
+  </div>
+  <div id="tlbar" class="ovl" style="display:none">
+    <button id="tl-tags" class="on">По тегам</button>
+    <button id="tl-agents">По агентам</button>
+    <span class="hint">точка = сообщение · клик — открыть узел</span>
+  </div>
+  <div id="mtbar" class="ovl" style="display:none">
+    <button id="mt-best" class="on" title="линия лучшего результата на текущий момент">Best-so-far</button>
+    <button id="mt-lines" class="on" title="соединять метрики одного агента по времени">Линии агентов</button>
+    <span class="hint">точка = метрика из сообщения · клик — открыть узел</span>
+  </div>
+  <div id="mxbar" class="ovl" style="display:none">
+    <span class="hint">клик по клетке: теги — фильтр, агенты — список документов · цифра = док/ссылок</span>
+  </div>
+</div>
+<div id="tip"></div>
+<script>
+"use strict";
+const DATA = __DATA__;
+const VERD = DATA.verdict_colors;
+const AGENTS = DATA.agents;
+const AGENT_KEYS = Object.keys(AGENTS);
+const LANE_KEYS = AGENT_KEYS.concat(['tag']);
+const LANE_IDX = new Map(LANE_KEYS.map((a, i) => [a, i]));
+const TAGCOL = DATA.tag_color || '#0f766e';
+const WORLD = {w: 1680, h: 940};
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+const cv2 = document.getElementById('cv2');
+const ctx2 = cv2.getContext('2d');
+const cv3 = document.getElementById('cv3');
+const ctx3 = cv3.getContext('2d');
+const cv4 = document.getElementById('cv4');
+const ctx4 = cv4.getContext('2d');
+const stage = document.getElementById('stage');
+const tip = document.getElementById('tip');
+
+const nodes = DATA.nodes.map(n => Object.assign({}, n));
+const byId = new Map(nodes.map(n => [n.id, n]));
+const edges = DATA.edges.filter(e => byId.has(e.s) && byId.has(e.t)).map(e => Object.assign({}, e, {vis: 1}));
+const adj = new Map(nodes.map(n => [n.id, {out: [], in: [], all: []}]));
+for (const e of edges) {
+  adj.get(e.s).out.push(e);
+  adj.get(e.t).in.push(e);
+  adj.get(e.s).all.push(e);
+  adj.get(e.t).all.push(e);
+}
+const DOCS = nodes.filter(n => n.kind === 'doc' || n.kind === 'system');
+const TAGLIST = DATA.tags || [];
+const TAG_BY_NAME = new Map(TAGLIST.map(t => [t.name, t]));
+
+let alpha = 1, simOn = true, timeAxis = true, hovered = null, selected = null;
+let ancSet = new Set(), desSet = new Set(), connSet = new Set(), dirSet = new Set(), focusSet = null;
+let dirAncN = 0, dirDesN = 0, deepHighlight = false;
+let currentView = 'graph';
+const tagFilter = new Set();
+const cam = {x: WORLD.w / 2, y: WORLD.h / 2, k: 0.55};
+let W = 0, H = 0, DPR = 1;
+let tlMode = 'tags', tlHover = null, tlDots = [];
+let mtBest = true, mtLines = true, mtHover = null, mtDots = [];
+let mxCells = [], mxHover = null, mxAgentEdges = {};
+
+nodes.forEach(n => {
+  const isTag = n.kind === 'tag';
+  const li = LANE_IDX.has(n.author) ? LANE_IDX.get(n.author) : (isTag ? LANE_KEYS.length - 1 : 0);
+  const lanes = Math.max(LANE_KEYS.length - 1, 1);
+  const xf = n.ofrac != null ? n.ofrac : (n.frac != null ? n.frac : 0.5);
+  n.x = 80 + 1500 * xf + (Math.random() - 0.5) * 120;
+  n.y = 70 + (li / lanes) * 790 + (Math.random() - 0.5) * 200;
+  n.vx = 0; n.vy = 0;
+  n.deg = (n.in || 0) + (n.out || 0);
+  n.r = isTag ? 5 + Math.min(12, Math.sqrt(n.count || 0) * 1.7)
+              : 4.5 + Math.min(11, Math.sqrt(n.in || 0) * 2.1);
+  n.vis = 1;
+});
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function fmtTime(min) {
+  if (min == null) return '—';
+  const h = Math.floor(min / 60) % 24, m = Math.round(min % 60);
+  return String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0');
+}
+function fmtDateTime(min) {
+  if (min == null) return '—';
+  const d = new Date(DATA.base_date + 'T00:00:00');
+  d.setMinutes(min);
+  const p = n => String(n).padStart(2, '0');
+  return p(d.getDate()) + '.' + p(d.getMonth() + 1) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes());
+}
+function stem(n) { return n.label.replace(/\.md$/, ''); }
+function nodeColor(n) {
+  if (n.kind === 'system' || n.kind === 'artifact') return '#64748b';
+  if (n.kind === 'missing') return '#b91c1c';
+  if (n.kind === 'tag') return TAGCOL;
+  return AGENTS[n.author] || '#94a3b8';
+}
+
+function bfsDir(id, dir) {
+  const seen = new Set(), q = [id];
+  while (q.length) {
+    const u = q.pop();
+    for (const e of adj.get(u)[dir]) {
+      if (!e.vis) continue;
+      const v = dir === 'in' ? e.s : e.t;
+      if (v !== id && !seen.has(v)) { seen.add(v); q.push(v); }
+    }
+  }
+  return seen;
+}
+function bfsAll(id) {
+  const seen = new Set(), q = [id];
+  while (q.length) {
+    const u = q.pop();
+    for (const e of adj.get(u).all) {
+      if (!e.vis) continue;
+      const v = e.s === u ? e.t : e.s;
+      if (v !== id && !seen.has(v)) { seen.add(v); q.push(v); }
+    }
+  }
+  return seen;
+}
+function directSets(id) {
+  const dir = new Set();
+  let da = 0, dd = 0;
+  for (const e of adj.get(id).all) {
+    if (!e.vis) continue;
+    const v = e.s === id ? e.t : e.s;
+    if (v === id) continue;
+    dir.add(v);
+    if (e.s === id) da++; else dd++;
+  }
+  return {dir, da, dd};
+}
+function hiSet() { return deepHighlight ? connSet : dirSet; }
+function setSelection(id) {
+  selected = id;
+  if (id) {
+    const n = byId.get(id);
+    if (n && n.kind === 'tag') { ancSet = new Set(); desSet = new Set(); }
+    else { ancSet = bfsDir(id, 'out'); desSet = bfsDir(id, 'in'); }
+    connSet = bfsAll(id);
+    const d = directSets(id);
+    dirSet = d.dir; dirAncN = d.da; dirDesN = d.dd;
+  } else {
+    ancSet = new Set(); desSet = new Set(); connSet = new Set(); dirSet = new Set();
+    dirAncN = 0; dirDesN = 0;
+  }
+  renderDetail();
+  refreshActive();
+  draw();
+  listReveal();
+}
+
+function toggleTagFilter(t) {
+  if (tagFilter.has(t)) tagFilter.delete(t); else tagFilter.add(t);
+  syncTagChecks();
+  updateFocus();
+  refreshActive();
+  draw();
+}
+
+function updateFocus() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  let s = null;
+  if (q) {
+    s = new Set();
+    for (const n of nodes) {
+      if (n.kind === 'tag') continue;
+      const hay = (n.label + ' ' + n.title + ' ' + (n.excerpt || '') + ' ' + (n.md || '') + ' ' + (n.tags || []).join(' ')).toLowerCase();
+      if (hay.includes(q)) s.add(n.id);
+    }
+  }
+  if (tagFilter.size) {
+    let ts = null;
+    for (const t of tagFilter) {
+      const td = TAG_BY_NAME.get(t);
+      const cur = new Set(td ? td.docs : []);
+      ts = ts ? new Set([...ts].filter(x => cur.has(x))) : cur;
+    }
+    s = s ? new Set([...s].filter(x => ts.has(x))) : ts;
+  }
+  focusSet = s && s.size ? s : (s ? new Set() : null);
+}
+
+const filterState = {agents: new Set(AGENT_KEYS), tagnodes: false, art: true, miss: true, sys: true, notime: true, t0: DATA.t0, t1: DATA.t1};
+
+function applyFilters() {
+  for (const n of nodes) {
+    let vis = 1;
+    if (n.kind === 'tag' && !filterState.tagnodes) vis = 0;
+    else if (n.author === 'system' && !filterState.sys) vis = 0;
+    else if (n.kind === 'artifact' && !filterState.art) vis = 0;
+    else if (n.kind === 'missing' && !filterState.miss) vis = 0;
+    else if (n.minutes == null) vis = filterState.notime ? 1 : 0;
+    else if (n.minutes < filterState.t0 || n.minutes > filterState.t1) vis = 0;
+    else if (AGENT_KEYS.includes(n.author) && !filterState.agents.has(n.author)) vis = 0;
+    n.vis = vis;
+  }
+  for (const e of edges) e.vis = (byId.get(e.s).vis && byId.get(e.t).vis) ? 1 : 0;
+  const nv = nodes.filter(n => n.vis).length, ev = edges.filter(e => e.vis).length;
+  document.getElementById('stats').textContent =
+    `видно ${nv}/${nodes.length} узлов, ${ev}/${edges.length} связей · всего ${DATA.stats.docs} записей` +
+    ` · тегов ${DATA.stats.tags}` +
+    (DATA.stats.missing ? ` · битых ссылок ${DATA.stats.missing}` : '') +
+    ` · ${DATA.generated_at}`;
+  updateToggleButtons();
+  if (currentView !== 'graph') refreshActive();
+}
+function buildLegend() {
+  const lg = document.getElementById('legend');
+  let html = '';
+  for (const a of AGENT_KEYS) {
+    html += `<div class="legend"><span class="sw" style="background:${AGENTS[a]}"></span>${esc(a)}</div>`;
+  }
+  html += `<div class="legend"><span class="sq"></span>артефакт (данные/код)</div>`;
+  html += `<div class="legend"><span class="dia"></span>тег (ромб)</div>`;
+  html += `<div class="legend"><span class="ring" style="border-color:#b91c1c;border-style:dashed"></span>битая ссылка</div>`;
+  html += `<div class="legend" style="margin-top:7px">подсветка клика:</div>`;
+  html += `<div class="legend"><span class="ring" style="border-color:#16a34a"></span>прямые предки (на что опирается)</div>`;
+  html += `<div class="legend"><span class="ring" style="border-color:#f59e0b"></span>прямые потомки (кто цитирует)</div>`;
+  html += `<div class="legend"><span class="ring" style="border-color:#2563eb"></span>прочие прямые связи (теги)</div>`;
+  html += `<div class="legend" style="color:#94a3b8">остальные узлы и связи тускнеют</div>`;
+  html += `<div class="legend" style="margin-top:7px">рамка вердикта:</div>`;
+  for (const [v, c] of Object.entries(VERD)) {
+    if (v === 'system') continue;
+    html += `<div class="legend"><span class="ring" style="border-color:${c}"></span>${esc(v)}</div>`;
+  }
+  lg.innerHTML = html;
+  const ag = document.getElementById('agents');
+  ag.innerHTML = AGENT_KEYS.map(a =>
+    `<label class="agent-row"><input type="checkbox" data-agent="${esc(a)}" checked>
+     <span class="sw" style="background:${AGENTS[a]}"></span>${esc(a)}</label>`).join('');
+  ag.querySelectorAll('input').forEach(cb => cb.addEventListener('change', () => {
+    if (cb.checked) filterState.agents.add(cb.dataset.agent); else filterState.agents.delete(cb.dataset.agent);
+    applyFilters(); draw();
+  }));
+}
+
+function buildTagList() {
+  document.getElementById('tag-n').textContent = TAGLIST.length;
+  const box = document.getElementById('taglist');
+  box.innerHTML = TAGLIST.map(t =>
+    `<label class="tag-row"><input type="checkbox" data-tag="${esc(t.name)}">
+     <span class="chip tag" style="margin:0;cursor:inherit">#${esc(t.name)}</span><span class="cnt">${t.count}</span></label>`).join('');
+  box.querySelectorAll('input').forEach(cb => cb.addEventListener('change', () => {
+    const t = cb.dataset.tag;
+    if (cb.checked) tagFilter.add(t); else tagFilter.delete(t);
+    updateFocus(); refreshActive(); draw();
+  }));
+}
+function syncTagChecks() {
+  document.querySelectorAll('#taglist input').forEach(cb => { cb.checked = tagFilter.has(cb.dataset.tag); });
+}
+
+function mdInline(s) {
+  let t = esc(s);
+  // mask code so <metric>…</metric> examples in backticks are not turned into chips
+  const codeSpans = [];
+  t = t.replace(/`([^`]+)`/g, (m, c) => {
+    codeSpans.push(c);
+    return `\u0000C${codeSpans.length - 1}\u0000`;
+  });
+  t = t.replace(/&lt;\\?metric&gt;\s*([-+]?\d+(?:[.,]\d+)?%?)\s*&lt;\/?\\?metric&gt;/gi,
+    (m, v) => `<span class="mmetric">метрика ${v}</span>`);
+  t = t.replace(/\u0000C(\d+)\u0000/g, (m, i) => '<code>' + codeSpans[+i] + '</code>');
+  t = t.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+  t = t.replace(/__([^_]+)__/g, '<b>$1</b>');
+  t = t.replace(/(^|[^*\w])\*([^*\n]+)\*(?!\*)/g, '$1<i>$2</i>');
+  t = t.replace(/\[\[([^\]|]+)(?:\|([^\]]+))?\]\]/g, (m, tgt, alias) =>
+    `<span class="wikilink" data-wiki="${tgt.trim()}">${(alias || tgt).trim()}</span>`);
+  t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<span class="md-link" title="$2">$1</span>');
+  t = t.replace(/(^|[\s(])(#([A-Za-zА-Яа-яЁё0-9_]{2,}))/g, (m, pre, full, name) => {
+    const key = name.toLowerCase();
+    if (!TAG_BY_NAME.has(key)) return m;
+    return `${pre}<span class="chip tag" data-tag="${key}">${full}</span>`;
+  });
+  return t;
+}
+function mdTable(rows) {
+  const cells = rows.map(r => r.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim()));
+  let html = '<table class="md-table">';
+  cells.forEach((cs, idx) => {
+    if (cs.every(c => c === '' || /^:?-{2,}:?$/.test(c))) return;
+    const isHead = idx === 0;
+    html += '<tr>' + cs.map(c => `<${isHead ? 'th' : 'td'}>${mdInline(c)}</${isHead ? 'th' : 'td'}>`).join('') + '</tr>';
+  });
+  return html + '</table>';
+}
+function renderMarkdown(text) {
+  if (!text) return '';
+  const lines = text.replace(/\r/g, '').split('\n');
+  const out = [];
+  let i = 0, para = [], list = null;
+  const flushPara = () => { if (para.length) { out.push('<p>' + para.join('<br>') + '</p>'); para = []; } };
+  const flushList = () => {
+    if (list) { out.push(`<${list.tag}>` + list.items.map(x => '<li>' + x + '</li>').join('') + `</${list.tag}>`); list = null; }
+  };
+  while (i < lines.length) {
+    const raw = lines[i].replace(/\s+$/, '');
+    if (/^```/.test(raw.trim())) {
+      flushPara(); flushList();
+      const buf = [];
+      i++;
+      while (i < lines.length && !/^```/.test(lines[i].trim())) { buf.push(esc(lines[i])); i++; }
+      i++;
+      out.push('<pre class="md-pre">' + buf.join('\n') + '</pre>');
+      continue;
+    }
+    if (/^\s*\|.*\|\s*$/.test(raw)) {
+      flushPara(); flushList();
+      const rows = [];
+      while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) { rows.push(lines[i]); i++; }
+      out.push(mdTable(rows));
+      continue;
+    }
+    let m = raw.match(/^(#{1,6})\s+(.*)$/);
+    if (m) {
+      flushPara(); flushList();
+      const lvl = Math.min(m[1].length + 2, 6);
+      out.push(`<h${lvl}>${mdInline(m[2])}</h${lvl}>`);
+      i++; continue;
+    }
+    if (/^\s*(---|\*\*\*|___)\s*$/.test(raw)) { flushPara(); flushList(); out.push('<hr>'); i++; continue; }
+    if (/^\s*>/.test(raw)) {
+      flushPara(); flushList();
+      const buf = [];
+      while (i < lines.length && /^\s*>/.test(lines[i])) { buf.push(mdInline(lines[i].replace(/^\s*>\s?/, ''))); i++; }
+      out.push('<blockquote>' + buf.join('<br>') + '</blockquote>');
+      continue;
+    }
+    const mu = raw.match(/^\s*([-*+])\s+(.*)$/);
+    const mo = raw.match(/^\s*(\d+)[.)]\s+(.*)$/);
+    if (mu || mo) {
+      flushPara();
+      const tag = mu ? 'ul' : 'ol';
+      if (!list || list.tag !== tag) { flushList(); list = {tag, items: []}; }
+      list.items.push(mdInline(mu ? mu[2] : mo[2]));
+      i++; continue;
+    }
+    if (!raw.trim()) { flushPara(); flushList(); i++; continue; }
+    para.push(mdInline(raw.trim()));
+    i++;
+  }
+  flushPara(); flushList();
+  return out.join('');
+}
+
+function renderDetail() {
+  const box = document.getElementById('detail');
+  if (!selected) {
+    box.innerHTML = '<div class="legend" style="color:#64748b">клик по узлу — подсветка всех связанных</div>';
+    return;
+  }
+  const n = byId.get(selected);
+  if (n.kind === 'tag') {
+    const td = TAG_BY_NAME.get(n.tag) || {docs: [], agents: {}, first: n.minutes, last: n.minutes};
+    const docs = td.docs.map(id => byId.get(id)).filter(Boolean);
+    const ags = Object.entries(td.agents || {}).map(([a, c]) =>
+      `<span class="chip">${esc(a)}: ${c}</span>`).join('');
+    let html = `<div class="card">
+      <div class="h">#${esc(n.tag)}</div>
+      <div class="meta">тег · документов: <b>${docs.length}</b> · ${esc(fmtTime(td.first))}–${esc(fmtTime(td.last))} MSK<br>
+        ${tagFilter.has(n.tag) ? '<span class="badge" style="border-color:#0f766e;color:#0f766e">фильтр включён</span>' : '<span class="badge" style="border-color:#cbd5e1;color:#64748b">клик по ромбу — вкл/выкл фильтр</span>'}</div>
+      <div class="links"><b>агенты</b>${ags}</div>`;
+    if (docs.length) html += `<div class="links"><b>документы</b>${docs.map(x => `<span class="chip" data-goto="${esc(x.id)}">${esc(stem(x))}</span>`).join('')}</div>`;
+    html += '</div>';
+    box.innerHTML = html;
+    box.querySelectorAll('.chip[data-goto]').forEach(el => el.addEventListener('click', () => setSelection(el.dataset.goto)));
+    return;
+  }
+  const outs = adj.get(selected).out.filter(e => !e.tag).map(e => byId.get(e.t));
+  const ins = adj.get(selected).in.filter(e => !e.tag).map(e => byId.get(e.s));
+  let badges = '';
+  if (n.verdict && n.verdict !== 'system') badges += `<span class="badge" style="border-color:${VERD[n.verdict] || '#cbd5e1'};color:${VERD[n.verdict] || '#475569'}">${esc(n.verdict)}</span>`;
+  if (n.kind === 'artifact') badges += `<span class="badge" style="border-color:#94a3b8;color:#475569">артефакт</span>`;
+  if (n.kind === 'missing') badges += `<span class="badge" style="border-color:#b91c1c;color:#b91c1c">битая ссылка</span>`;
+  const chip = (x) => `<span class="chip" data-goto="${esc(x.id)}" title="${esc(stem(x))}">${esc(stem(x))}</span>`;
+  let html = `<div class="card">
+    <div class="h">${esc(n.title || stem(n))}</div>
+    <div class="meta">${esc(stem(n))} · автор: <b>${esc(n.author)}</b> · ${esc(fmtTime(n.minutes))} MSK
+      ${n.metric ? ' · метрика <b style="color:#b45309">' + esc(n.metric) + '</b>' : ''}
+      · цитирует: ${outs.length} · цитируют: ${ins.length}<br>
+      <span style="color:#16a34a">подсвечено прямых: ${dirSet.size}</span> ·
+      достижимо: ${connSet.size} · <b>${deepHighlight ? 'всё достижимое' : 'только прямые'}</b><br>${badges}</div>`;
+  if ((n.tags || []).length) {
+    html += '<div class="links"><b>теги</b>' + n.tags.map(t =>
+      `<span class="chip tag${tagFilter.has(t) ? ' on' : ''}" data-tag="${esc(t)}">#${esc(t)}</span>`).join('') + '</div>';
+  }
+  if (n.md || n.excerpt) html += `<div class="mdbox">${renderMarkdown(n.md || n.excerpt)}</div>`;
+  if (outs.length) html += `<div class="links"><b>опирается на (предшественники)</b>${outs.map(chip).join('')}</div>`;
+  if (ins.length) html += `<div class="links"><b>использовали / цитируют (потомки)</b>${ins.map(chip).join('')}</div>`;
+  html += '</div>';
+  box.innerHTML = html;
+  box.querySelectorAll('.chip[data-goto]').forEach(el => el.addEventListener('click', () => setSelection(el.dataset.goto)));
+  box.querySelectorAll('.chip[data-tag]').forEach(el => el.addEventListener('click', () => toggleTagFilter(el.dataset.tag)));
+  box.querySelectorAll('.ex .wikilink').forEach(el => el.addEventListener('click', () => {
+    const raw = el.dataset.wiki.trim();
+    const want = raw.replace(/\.md$/, '');
+    const hit = nodes.find(x => x.kind !== 'tag' && (x.label === raw || x.label.replace(/\.md$/, '') === want));
+    if (hit) setSelection(hit.id);
+  }));
+  box.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+}
+
+function showCellDocs(title, ids) {
+  const box = document.getElementById('detail');
+  const docs = [...new Set(ids)].map(id => byId.get(id)).filter(Boolean);
+  box.innerHTML = `<div class="card"><div class="h">${esc(title)}</div>
+    <div class="meta">документов: ${docs.length}</div>
+    <div class="links">${docs.map(x => `<span class="chip" data-goto="${esc(x.id)}">${esc(stem(x))}</span>`).join('')}</div></div>`;
+  box.querySelectorAll('.chip[data-goto]').forEach(el => el.addEventListener('click', () => setSelection(el.dataset.goto)));
+}
+
+function showRawTip(html, cx, cy) {
+  tip.innerHTML = html;
+  tip.style.display = 'block';
+  const pad = 14, tw = tip.offsetWidth, th = tip.offsetHeight;
+  let x = cx + pad, y = cy + pad;
+  if (x + tw > window.innerWidth - 6) x = cx - tw - pad;
+  if (y + th > window.innerHeight - 6) y = cy - th - pad;
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+function showNodeTip(n, cx, cy) {
+  let out = `<b>${esc(stem(n))}</b><br>`;
+  if (n.kind === 'tag') {
+    out += `<span class="t">тег #${esc(n.tag)}</span> · документов: ${n.count}`;
+  } else {
+    if (n.title && n.title !== n.label) out += `<span class="g">${esc(n.title.slice(0, 160))}</span><br>`;
+    out += `${esc(n.author)} · ${esc(fmtTime(n.minutes))} MSK · →${n.out} ←${n.in}`;
+    if (n.metric) out += ` · <span class="m">${esc(n.metric)}</span>`;
+    if ((n.tags || []).length) out += `<br><span class="t">${n.tags.slice(0, 8).map(t => '#' + esc(t)).join(' ')}</span>`;
+    if (n.kind === 'artifact') out += ' · <span class="g">артефакт</span>';
+    if (n.kind === 'missing') out += ' · <span class="g">битая ссылка</span>';
+  }
+  showRawTip(out, cx, cy);
+}
+
+function tick() {
+  if (!simOn || alpha < 0.01) return;
+  alpha *= 0.99;
+  const vs = nodes.filter(n => n.vis);
+  for (let i = 0; i < vs.length; i++) {
+    const a = vs[i];
+    for (let j = i + 1; j < vs.length; j++) {
+      const b = vs[j];
+      let dx = b.x - a.x, dy = b.y - a.y, d2 = dx * dx + dy * dy;
+      if (d2 > 360000) continue;
+      let d = Math.sqrt(d2);
+      if (d2 < 0.25) { dx = Math.random() - 0.5; dy = Math.random() - 0.5; d = Math.hypot(dx, dy) || 0.5; }
+      let f = Math.min(2000 / d2, 3.4) * alpha;
+      const minD = a.r + b.r + 22;
+      if (d < minD) f += (minD - d) * 0.35 * alpha;
+      dx /= d; dy /= d;
+      a.vx -= dx * f; a.vy -= dy * f; b.vx += dx * f; b.vy += dy * f;
+    }
+  }
+  for (const e of edges) {
+    if (!e.vis) continue;
+    const a = byId.get(e.s), b = byId.get(e.t);
+    let dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 1;
+    const L = e.tag ? 70 : (e.artifact ? 80 : 46 + 70 / (1 + Math.min(a.deg, 10)));
+    const f = (d - L) * 0.0025 * alpha;
+    dx /= d; dy /= d;
+    a.vx += dx * f; a.vy += dy * f; b.vx -= dx * f; b.vy -= dy * f;
+  }
+  for (const n of vs) {
+    if (n.fixed) continue;
+    const xf = n.ofrac != null ? n.ofrac : n.frac;
+    if (timeAxis) {
+      if (xf != null) {
+        const tx = 80 + 1520 * xf;
+        n.vx += (tx - n.x) * (n.kind === 'tag' ? 0.006 : 0.013) * alpha;
+      }
+      const lanes = Math.max(LANE_KEYS.length - 1, 1);
+      const ai = LANE_IDX.has(n.author) ? LANE_IDX.get(n.author) : lanes;
+      const ly = 70 + (ai / lanes) * 790;
+      n.vy += (ly - n.y) * 0.03 * alpha;
+    }
+    n.vx += (WORLD.w / 2 - n.x) * 0.00035 * alpha;
+    n.vy += (WORLD.h / 2 - n.y) * (timeAxis ? 0.00005 : 0.0006) * alpha;
+    n.vx *= 0.87; n.vy *= 0.87;
+    n.x += n.vx; n.y += n.vy;
+    n.x = Math.max(-600, Math.min(WORLD.w + 600, n.x));
+    n.y = Math.max(-300, Math.min(WORLD.h + 300, n.y));
+  }
+}
+
+function toWorld(mx, my) {
+  return {x: cam.x + (mx - W / 2) / cam.k, y: cam.y + (my - H / 2) / cam.k};
+}
+function hitNode(mx, my) {
+  const p = toWorld(mx, my);
+  let best = null, bestD = 1e9;
+  for (const n of nodes) {
+    if (!n.vis) continue;
+    const rr = n.r + 6;
+    const d = Math.hypot(n.x - p.x, n.y - p.y);
+    if (d < rr && d < bestD) { best = n; bestD = d; }
+  }
+  return best;
+}
+
+function edgeState(e) {
+  if (selected) {
+    if (e.s === selected) return 'anc';
+    if (e.t === selected) return 'des';
+    if (deepHighlight) {
+      const ss = ancSet.has(e.s), st = ancSet.has(e.t);
+      const ds = desSet.has(e.s), dt = desSet.has(e.t);
+      if (ss && st) return 'anc';
+      if (ds && dt) return 'des';
+      if (connSet.has(e.s) && connSet.has(e.t)) return 'conn';
+    }
+    return 'dim';
+  }
+  if (focusSet) return (focusSet.has(e.s) || focusSet.has(e.t)) ? 'norm' : 'dim';
+  return 'norm';
+}
+function nodeState(n) {
+  if (selected) {
+    if (n.id === selected) return 'sel';
+    if (deepHighlight) {
+      if (ancSet.has(n.id)) return 'anc';
+      if (desSet.has(n.id)) return 'des';
+      if (connSet.has(n.id)) return 'conn';
+    } else {
+      if (ancSet.has(n.id) && dirSet.has(n.id)) return 'anc';
+      if (desSet.has(n.id) && dirSet.has(n.id)) return 'des';
+      if (dirSet.has(n.id)) return 'conn';
+    }
+    return 'dim';
+  }
+  if (focusSet) {
+    if (focusSet.has(n.id)) return 'sel';
+    if (n.kind === 'tag' && tagFilter.has(n.tag)) return 'sel';
+    return 'dim';
+  }
+  return 'norm';
+}
+const RING = {sel: '#111827', anc: '#16a34a', des: '#f59e0b', conn: '#2563eb'};
+
+function draw() {
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  ctx.save();
+  ctx.translate(W / 2, H / 2);
+  ctx.scale(cam.k, cam.k);
+  ctx.translate(-cam.x, -cam.y);
+  const lw = 1.05 / cam.k;
+
+  for (const e of edges) {
+    if (!e.vis) continue;
+    const a = byId.get(e.s), b = byId.get(e.t);
+    const state = edgeState(e);
+    let col = e.tag ? TAGCOL : (e.artifact ? '#94a3b8' : '#cbd5e1');
+    if (state === 'anc') col = '#16a34a';
+    else if (state === 'des') col = '#f59e0b';
+    else if (state === 'conn') col = '#2563eb';
+    ctx.globalAlpha = state === 'dim' ? 0.04 : (state === 'norm' ? (e.tag ? 0.4 : (e.artifact ? 0.75 : 0.55)) : 0.85);
+    ctx.strokeStyle = col;
+    ctx.lineWidth = (state === 'dim' ? 1 : (e.input ? 1.35 : 1)) * lw;
+    if (e.tag) ctx.setLineDash([2 / cam.k, 3 / cam.k]);
+    else ctx.setLineDash(e.input ? [] : (e.artifact ? [3 / cam.k, 3 / cam.k] : [5 / cam.k, 4 / cam.k]));
+    ctx.beginPath();
+    ctx.moveTo(a.x, a.y);
+    ctx.lineTo(b.x, b.y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    if (e.tag) continue;
+    const d = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+    const ux = (b.x - a.x) / d, uy = (b.y - a.y) / d;
+    const ex = b.x - ux * (b.r + 5), ey = b.y - uy * (b.r + 5);
+    const ah = 4.6 / cam.k;
+    ctx.globalAlpha = state === 'dim' ? 0.04 : 0.9;
+    ctx.fillStyle = col;
+    ctx.beginPath();
+    ctx.moveTo(ex, ey);
+    ctx.lineTo(ex - ux * ah - uy * ah * 0.5, ey - uy * ah + ux * ah * 0.5);
+    ctx.lineTo(ex - ux * ah + uy * ah * 0.5, ey - uy * ah - ux * ah * 0.5);
+    ctx.closePath();
+    ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  const labelCand = [];
+
+  for (const n of nodes) {
+    if (!n.vis) continue;
+    const state = nodeState(n);
+    ctx.globalAlpha = state === 'dim' ? 0.05 : 1;
+    const col = nodeColor(n);
+    const r = n.r;
+    if (n.kind === 'tag') {
+      ctx.save();
+      ctx.translate(n.x, n.y);
+      ctx.rotate(Math.PI / 4);
+      ctx.fillStyle = col;
+      ctx.fillRect(-r * 0.72, -r * 0.72, r * 1.44, r * 1.44);
+      ctx.strokeStyle = 'rgba(15,23,42,.35)';
+      ctx.lineWidth = lw;
+      ctx.strokeRect(-r * 0.72, -r * 0.72, r * 1.44, r * 1.44);
+      ctx.restore();
+    } else if (n.kind === 'artifact') {
+      ctx.fillStyle = col;
+      ctx.fillRect(n.x - r * 0.85, n.y - r * 0.85, r * 1.7, r * 1.7);
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = lw;
+      ctx.strokeRect(n.x - r * 0.85, n.y - r * 0.85, r * 1.7, r * 1.7);
+    } else {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r, 0, 6.2832);
+      ctx.fillStyle = col;
+      ctx.fill();
+      if (n.kind === 'missing') {
+        ctx.setLineDash([3 / cam.k, 2.5 / cam.k]);
+        ctx.strokeStyle = '#b91c1c';
+        ctx.lineWidth = 1.6 * lw;
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else if (n.verdict && n.verdict !== 'system' && VERD[n.verdict]) {
+        ctx.strokeStyle = VERD[n.verdict];
+        ctx.lineWidth = 2.4 * lw;
+        ctx.stroke();
+      } else {
+        ctx.strokeStyle = 'rgba(15,23,42,.35)';
+        ctx.lineWidth = lw;
+        ctx.stroke();
+      }
+    }
+    const ring = RING[state];
+    if (ring) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, r + 3.5, 0, 6.2832);
+      ctx.strokeStyle = ring;
+      ctx.lineWidth = 2.2 * lw;
+      ctx.stroke();
+    }
+    const showLabel = state !== 'dim' && (cam.k > 1.25 || n.deg >= 10 || n === hovered || n.id === selected ||
+      (focusSet && focusSet.has(n.id)) || (n.kind === 'tag' && tagFilter.has(n.tag)));
+    if (showLabel) labelCand.push(n);
+  }
+
+  labelCand.sort((a, b) => labelPrio(b) - labelPrio(a));
+  ctx.font = (10.5 / cam.k) + 'px "DejaVu Sans",Arial,sans-serif';
+  ctx.textAlign = 'center';
+  const placed = [];
+  for (const n of labelCand) {
+    const txt = stem(n).slice(0, 30);
+    const tw = ctx.measureText(txt).width;
+    const h = 11.5 / cam.k;
+    const lx = n.x - tw / 2 - 2, ly = n.y + n.r + 2 / cam.k;
+    let clash = false;
+    for (const q of placed) {
+      if (lx < q.x + q.w && lx + tw + 4 > q.x && ly < q.y + q.h && ly + h > q.y) { clash = true; break; }
+    }
+    if (clash) continue;
+    placed.push({x: lx, y: ly, w: tw + 4, h: h});
+    ctx.globalAlpha = 0.8;
+    ctx.fillStyle = 'rgba(255,255,255,.78)';
+    ctx.fillRect(lx, ly, tw + 4, h);
+    ctx.fillStyle = '#0f172a';
+    ctx.fillText(txt, n.x, ly + h - 1.5 / cam.k);
+  }
+  ctx.restore();
+  ctx.globalAlpha = 1;
+}
+
+function labelPrio(n) {
+  return (n.id === selected ? 100 : 0) + (n === hovered ? 90 : 0) +
+    (selected && hiSet().has(n.id) ? 85 : 0) + (focusSet && focusSet.has(n.id) ? 80 : 0) +
+    (n.kind === 'tag' && tagFilter.has(n.tag) ? 70 : 0) + (selected ? 0 : Math.min(n.deg, 50));
+}
+
+function fit() {
+  const vs = nodes.filter(n => n.vis);
+  if (!vs.length) return;
+  let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+  for (const n of vs) { x0 = Math.min(x0, n.x - n.r); y0 = Math.min(y0, n.y - n.r); x1 = Math.max(x1, n.x + n.r); y1 = Math.max(y1, n.y + n.r); }
+  const bw = Math.max(x1 - x0 + 120, 200), bh = Math.max(y1 - y0 + 120, 200);
+  cam.k = Math.max(0.12, Math.min(2.5, Math.min(W / bw, H / bh) * 0.92));
+  cam.x = (x0 + x1) / 2; cam.y = (y0 + y1) / 2;
+  draw();
+}
+let dragNode = null, panning = null, moved = 0, downPos = null, interacted = false;
+cv.addEventListener('mousedown', ev => {
+  interacted = true;
+  const r = cv.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  downPos = {x: mx, y: my}; moved = 0;
+  const n = hitNode(mx, my);
+  if (n) { dragNode = n; n.fixed = true; alpha = Math.max(alpha, 0.25); }
+  else { panning = {x: mx, y: my, vx: cam.x, vy: cam.y}; cv.classList.add('drag'); }
+  ev.preventDefault();
+});
+window.addEventListener('mousemove', ev => {
+  if (currentView !== 'graph') return;
+  const r = cv.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  if (dragNode) {
+    const p = toWorld(mx, my);
+    dragNode.x = p.x; dragNode.y = p.y; moved = 99;
+  } else if (panning) {
+    cam.x = panning.vx - (mx - panning.x) / cam.k;
+    cam.y = panning.vy - (my - panning.y) / cam.k;
+    moved = 99;
+  } else if (mx >= 0 && my >= 0 && mx <= W && my <= H) {
+    const n = hitNode(mx, my);
+    if (n !== hovered) { hovered = n; if (!n) hideTip(); else showNodeTip(n, ev.clientX, ev.clientY); }
+    else if (n) showNodeTip(n, ev.clientX, ev.clientY);
+  }
+});
+window.addEventListener('mouseup', ev => {
+  if (currentView !== 'graph') { dragNode = null; panning = null; return; }
+  if (dragNode) { dragNode.fixed = false; dragNode = null; }
+  if (panning) { panning = null; cv.classList.remove('drag'); }
+  if (downPos && moved < 5) {
+    const r = cv.getBoundingClientRect();
+    const n = hitNode(ev.clientX - r.left, ev.clientY - r.top);
+    if (n && n.kind === 'tag') { toggleTagFilter(n.tag); setSelection(n.id); }
+    else setSelection(n ? n.id : null);
+  }
+  downPos = null;
+});
+cv.addEventListener('click', ev => ev.preventDefault());
+cv.addEventListener('mouseleave', () => { hideTip(); hovered = null; draw(); });
+cv.addEventListener('wheel', ev => {
+  if (currentView !== 'graph') return;
+  interacted = true;
+  const r = cv.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  const p = toWorld(mx, my);
+  const factor = Math.exp(-ev.deltaY * 0.0011);
+  cam.k = Math.max(0.1, Math.min(4, cam.k * factor));
+  cam.x = p.x - (mx - W / 2) / cam.k;
+  cam.y = p.y - (my - H / 2) / cam.k;
+  draw();
+  ev.preventDefault();
+}, {passive: false});
+
+function resizeCanvas() {
+  const r = stage.getBoundingClientRect();
+  DPR = window.devicePixelRatio || 1;
+  W = r.width; H = r.height;
+  for (const c of [cv, cv2, cv3, cv4]) { c.width = Math.round(W * DPR); c.height = Math.round(H * DPR); }
+}
+function resize() {
+  resizeCanvas();
+  applyFilters();
+  if (currentView === 'graph') { if (interacted) draw(); else fit(); }
+  else refreshActive();
+}
+window.addEventListener('resize', resize);
+
+function setView(v) {
+  currentView = v;
+  cv.style.display = v === 'graph' ? 'block' : 'none';
+  cv2.style.display = v === 'time' ? 'block' : 'none';
+  cv3.style.display = v === 'matrix' ? 'block' : 'none';
+  cv4.style.display = v === 'metric' ? 'block' : 'none';
+  document.getElementById('tlbar').style.display = v === 'time' ? 'flex' : 'none';
+  document.getElementById('mxbar').style.display = v === 'matrix' ? 'flex' : 'none';
+  document.getElementById('mtbar').style.display = v === 'metric' ? 'flex' : 'none';
+  document.getElementById('listview').style.display = v === 'list' ? 'block' : 'none';
+  document.getElementById('lstbar').style.display = v === 'list' ? 'flex' : 'none';
+  document.querySelectorAll('#views button').forEach(b => { b.className = b.dataset.view === v ? 'on' : ''; });
+  for (const id of ['btn-time', 'btn-phys', 'btn-fit']) document.getElementById(id).style.display = v === 'graph' ? '' : 'none';
+  hideTip();
+  resizeCanvas();
+  if (v === 'graph') fit(); else refreshActive();
+}
+document.querySelectorAll('#views button').forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
+
+function updateToggleButtons() {
+  document.getElementById('btn-time').className = timeAxis ? 'on' : '';
+  document.getElementById('btn-phys').className = simOn ? 'on' : '';
+}
+document.getElementById('btn-time').addEventListener('click', () => { timeAxis = !timeAxis; alpha = Math.max(alpha, 0.5); updateToggleButtons(); });
+document.getElementById('btn-phys').addEventListener('click', () => { simOn = !simOn; if (simOn) alpha = Math.max(alpha, 0.4); updateToggleButtons(); });
+document.getElementById('btn-fit').addEventListener('click', () => { interacted = false; fit(); });
+document.getElementById('btn-reset').addEventListener('click', () => {
+  document.getElementById('search').value = '';
+  tagFilter.clear();
+  syncTagChecks();
+  filterState.agents = new Set(AGENT_KEYS);
+  filterState.tagnodes = false;
+  deepHighlight = false;
+  filterState.art = filterState.miss = filterState.sys = filterState.notime = true;
+  filterState.t0 = DATA.t0; filterState.t1 = DATA.t1;
+  document.querySelectorAll('#agents input').forEach(cb => { cb.checked = true; });
+  for (const id of ['ck-tagnodes', 'ck-deep', 'ck-art', 'ck-miss', 'ck-sys', 'ck-notime']) {
+    document.getElementById(id).checked = (id === 'ck-tagnodes' || id === 'ck-deep') ? false : true;
+  }
+  document.getElementById('t0').value = DATA.t0; document.getElementById('t1').value = DATA.t1;
+  syncTimeLabels();
+  updateFocus();
+  setSelection(null);
+  applyFilters();
+  if (currentView === 'graph') { interacted = false; fit(); } else refreshActive();
+});
+document.getElementById('search').addEventListener('input', () => { updateFocus(); refreshActive(); draw(); });
+for (const id of ['ck-tagnodes', 'ck-deep', 'ck-art', 'ck-miss', 'ck-sys', 'ck-notime']) {
+  document.getElementById(id).addEventListener('change', ev => {
+    if (id === 'ck-deep') {
+      deepHighlight = ev.target.checked;
+      if (selected) setSelection(selected); else { draw(); refreshActive(); }
+      return;
+    }
+    if (id === 'ck-tagnodes') filterState.tagnodes = ev.target.checked;
+    if (id === 'ck-art') filterState.art = ev.target.checked;
+    if (id === 'ck-miss') filterState.miss = ev.target.checked;
+    if (id === 'ck-sys') filterState.sys = ev.target.checked;
+    if (id === 'ck-notime') filterState.notime = ev.target.checked;
+    applyFilters();
+    if (id === 'ck-tagnodes' && selected) setSelection(selected); else draw();
+  });
+}
+function syncTimeLabels() {
+  document.getElementById('t0v').textContent = fmtTime(+document.getElementById('t0').value);
+  document.getElementById('t1v').textContent = fmtTime(+document.getElementById('t1').value);
+  document.getElementById('t-span').textContent = fmtTime(DATA.t0) + '–' + fmtTime(DATA.t1);
+}
+for (const id of ['t0', 't1']) {
+  const el = document.getElementById(id);
+  el.min = DATA.t0; el.max = DATA.t1; el.step = 5; el.value = id === 't0' ? DATA.t0 : DATA.t1;
+  el.addEventListener('input', () => {
+    let a = +document.getElementById('t0').value, b = +document.getElementById('t1').value;
+    if (a > b) { if (id === 't0') a = b; else b = a; document.getElementById('t0').value = a; document.getElementById('t1').value = b; }
+    filterState.t0 = a; filterState.t1 = b;
+    syncTimeLabels(); applyFilters(); draw();
+  });
+}
+/* ---------- timeline ---------- */
+function tlRows() {
+  let rows;
+  if (tlMode === 'tags') {
+    rows = TAGLIST.map(t => ({key: t.name, label: '#' + t.name, count: t.count, first: t.first, color: TAGCOL}));
+  } else {
+    rows = LANE_KEYS.filter(k => k !== 'tag').map(k => {
+      const ds = DOCS.filter(n => n.author === k);
+      const mins = ds.map(n => n.minutes).filter(v => v != null);
+      return {key: k, label: k, count: ds.length, first: mins.length ? Math.min(...mins) : null, color: AGENTS[k] || '#94a3b8'};
+    }).filter(r => r.count > 0);
+  }
+  rows.sort((a, b) => (a.first == null) - (b.first == null) || (a.first || 0) - (b.first || 0));
+  return rows;
+}
+
+function drawTimeline() {
+  ctx2.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx2.clearRect(0, 0, W, H);
+  tlDots = [];
+  const rows = tlRows();
+  const rowIdx = new Map(rows.map((r, i) => [r.key, i]));
+  const padL = 152, padR = 34, padT = 78, padB = 52;
+  const rowH = Math.max(14, Math.min(34, (H - padT - padB) / Math.max(rows.length, 1)));
+  const mins = DOCS.filter(n => n.kind === 'doc' && n.minutes != null).map(n => n.minutes);
+  let t0, t1;
+  if (mins.length) {
+    const lo = Math.min(...mins), hi = Math.max(...mins);
+    const pad = Math.max((hi - lo) * 0.03, 8);
+    t0 = lo - pad; t1 = hi + pad;
+  } else { t0 = DATA.t0; t1 = DATA.t1; }
+  const span = Math.max(t1 - t0, 1);
+  const X = m => padL + (m - t0) / span * Math.max(W - padL - padR, 50);
+  ctx2.fillStyle = '#334155';
+  ctx2.font = '600 13px "DejaVu Sans",Arial,sans-serif';
+  ctx2.textAlign = 'left';
+  ctx2.fillText('Таймлайн: ' + (tlMode === 'tags' ? 'темы во времени' : 'активность агентов'), padL, H - 30);
+  ctx2.fillStyle = '#64748b';
+  ctx2.font = '11.5px "DejaVu Sans",Arial,sans-serif';
+  ctx2.fillText('документов: ' + DOCS.length + ' · строк: ' + rows.length +
+    (t1 < DATA.t1 ? ' · окно по активности' : '') +
+    (focusSet ? ' · в фокусе: ' + focusSet.size : '') +
+    (selected ? ' · выделен: ' + stem(byId.get(selected)) : ''), padL, H - 12);
+  let step = 30;
+  for (const s of [30, 60, 120, 180, 360]) { step = s; if (X(t0 + s) - X(t0) >= 58) break; }
+  ctx2.textAlign = 'center';
+  for (let m = Math.ceil(t0 / step) * step; m <= t1; m += step) {
+    const px = X(m);
+    ctx2.strokeStyle = '#eef2f7';
+    ctx2.beginPath(); ctx2.moveTo(px, padT - 8); ctx2.lineTo(px, padT + rowH * rows.length); ctx2.stroke();
+    ctx2.fillStyle = '#94a3b8';
+    ctx2.fillText(fmtTime(m), px, padT - 14);
+  }
+  rows.forEach((r, i) => {
+    const y = padT + rowH * i + rowH / 2;
+    if (i % 2) { ctx2.fillStyle = '#f8fafc'; ctx2.fillRect(padL, y - rowH / 2, W - padL - padR, rowH); }
+    ctx2.fillStyle = r.color;
+    ctx2.beginPath(); ctx2.arc(padL - 132, y, 3, 0, 6.2832); ctx2.fill();
+    ctx2.fillStyle = '#334155';
+    ctx2.font = (tlMode === 'tags' ? '' : '600 ') + '11.5px "DejaVu Sans",Arial,sans-serif';
+    ctx2.textAlign = 'left';
+    ctx2.fillText(r.label.slice(0, 22), padL - 124, y + 3.5);
+    ctx2.fillStyle = '#94a3b8';
+    ctx2.fillText(String(r.count), W - padR + 6, y + 3.5);
+  });
+  for (const n of DOCS) {
+    if (n.minutes == null) continue;
+    const keys = tlMode === 'tags' ? (n.tags || []) : [n.author];
+    const dim = (focusSet && !focusSet.has(n.id)) || (selected && n.id !== selected && !hiSet().has(n.id));
+    const isSel = selected === n.id;
+    for (const k of keys) {
+      const ri = rowIdx.get(k);
+      if (ri == null) continue;
+      const px = X(n.minutes), py = padT + rowH * ri + rowH / 2;
+      tlDots.push({x: px, y: py, id: n.id});
+      ctx2.globalAlpha = dim ? 0.12 : 1;
+      ctx2.beginPath(); ctx2.arc(px, py, isSel ? 5 : 3.4, 0, 6.2832);
+      ctx2.fillStyle = nodeColor(n);
+      ctx2.fill();
+      if (isSel) { ctx2.strokeStyle = '#111827'; ctx2.lineWidth = 1.6; ctx2.stroke(); }
+      else if (selected && hiSet().has(n.id)) { ctx2.strokeStyle = '#2563eb'; ctx2.lineWidth = 1.2; ctx2.stroke(); }
+    }
+  }
+  ctx2.globalAlpha = 1;
+  if (tlHover && byId.get(tlHover) && byId.get(tlHover).minutes != null) {
+    const px = X(byId.get(tlHover).minutes);
+    ctx2.strokeStyle = '#0f172a';
+    ctx2.lineWidth = 1;
+    ctx2.beginPath(); ctx2.moveTo(px, padT - 8); ctx2.lineTo(px, padT + rowH * rows.length); ctx2.stroke();
+  }
+}
+
+cv2.addEventListener('mousemove', ev => {
+  const r = cv2.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  let best = null, bd = 9;
+  for (const d of tlDots) { const dd = Math.hypot(d.x - mx, d.y - my); if (dd < bd) { bd = dd; best = d; } }
+  const id = best ? best.id : null;
+  if (id !== tlHover) { tlHover = id; drawTimeline(); }
+  if (id) {
+    const n = byId.get(id);
+    showRawTip(`<b>${esc(stem(n))}</b><br>${esc(fmtTime(n.minutes))} · ${esc(n.author)}<br><span class="t">${(n.tags || []).map(t => '#' + esc(t)).join(' ')}</span>`, ev.clientX, ev.clientY);
+  } else hideTip();
+});
+cv2.addEventListener('mouseleave', () => { tlHover = null; hideTip(); drawTimeline(); });
+cv2.addEventListener('click', ev => {
+  const r = cv2.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  let best = null, bd = 9;
+  for (const d of tlDots) { const dd = Math.hypot(d.x - mx, d.y - my); if (dd < bd) { bd = dd; best = d; } }
+  if (best) setSelection(best.id);
+});
+document.getElementById('tl-tags').addEventListener('click', () => {
+  tlMode = 'tags';
+  document.getElementById('tl-tags').className = 'on';
+  document.getElementById('tl-agents').className = '';
+  drawTimeline();
+});
+document.getElementById('tl-agents').addEventListener('click', () => {
+  tlMode = 'agents';
+  document.getElementById('tl-agents').className = 'on';
+  document.getElementById('tl-tags').className = '';
+  drawTimeline();
+});
+/* ---------- matrices ---------- */
+function shortLabel(s) { return s.length > 14 ? s.slice(0, 13) + '…' : s; }
+
+function buildTagMatrix(docs) {
+  const top = TAGLIST.slice(0, 14).map(t => t.name);
+  const idx = new Map(top.map((t, i) => [t, i]));
+  const m = top.map(() => top.map(() => 0));
+  for (const n of docs) {
+    const ts = (n.tags || []).filter(t => idx.has(t));
+    for (const a of ts) for (const b of ts) m[idx.get(a)][idx.get(b)]++;
+  }
+  return {labels: top, m, kind: 'tag'};
+}
+function buildAgentMatrix(docs) {
+  const keys = LANE_KEYS.filter(k => k !== 'tag');
+  const idx = new Map(keys.map((k, i) => [k, i]));
+  const m = keys.map(() => keys.map(() => 0));
+  const ok = new Set(docs.map(n => n.id));
+  mxAgentEdges = {};
+  for (const e of edges) {
+    if (e.tag) continue;
+    const a = byId.get(e.s), b = byId.get(e.t);
+    if (!a || !b || !ok.has(a.id) || !ok.has(b.id)) continue;
+    const i = idx.get(a.author), j = idx.get(b.author);
+    if (i == null || j == null) continue;
+    m[i][j]++;
+    const key = i + ':' + j;
+    (mxAgentEdges[key] = mxAgentEdges[key] || new Set()).add(a.id);
+  }
+  return {labels: keys, m, kind: 'agent'};
+}
+
+let mxMouse = {x: -1, y: -1};
+function drawPanel(g, ox, oy, aw, ah, data, rgb, title) {
+  const labels = data.labels, m = data.m;
+  g.fillStyle = '#334155';
+  g.font = '600 12.5px "DejaVu Sans",Arial,sans-serif';
+  g.textAlign = 'left';
+  g.fillText(title, ox, oy - 30);
+  if (!labels.length) return;
+  const labelL = 96, labelT = 62;
+  const maxN = Math.max(4, Math.floor((ah - labelT) / 11));
+  const n = Math.min(labels.length, maxN);
+  let max = 1;
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) max = Math.max(max, m[i][j]);
+  const cell = Math.max(9, Math.min(30, Math.floor(Math.min((aw - labelL) / n, (ah - labelT) / n))));
+  const gx = ox + labelL, gy = oy + labelT;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      const v = m[i][j];
+      const x = gx + j * cell, y = gy + i * cell;
+      const a = v === 0 ? 0 : 0.1 + 0.8 * v / max;
+      g.fillStyle = v === 0 ? '#f1f5f9' : `rgba(${rgb},${a.toFixed(3)})`;
+      g.fillRect(x, y, cell - 1, cell - 1);
+      if (cell >= 20) {
+        g.fillStyle = v === 0 ? '#cbd5e1' : (a > 0.55 ? '#fff' : '#334155');
+        g.font = '10px "DejaVu Sans",Arial,sans-serif';
+        g.textAlign = 'center';
+        g.fillText(String(v), x + cell / 2 - 0.5, y + cell / 2 + 3);
+      }
+      mxCells.push({x, y, w: cell - 1, h: cell - 1, i, j, kind: data.kind, labels, m});
+    }
+  }
+  g.fillStyle = '#334155';
+  g.font = '10.5px "DejaVu Sans",Arial,sans-serif';
+  for (let j = 0; j < n; j++) {
+    g.save();
+    g.translate(gx + j * cell + cell / 2, gy - 6);
+    g.rotate(-Math.PI / 3);
+    g.textAlign = 'left';
+    g.fillText(shortLabel(labels[j]), 0, 0);
+    g.restore();
+  }
+  g.textAlign = 'right';
+  for (let i = 0; i < n; i++) g.fillText(shortLabel(labels[i]), gx - 6, gy + i * cell + cell / 2 + 3.5);
+  if (mxHover && mxHover.kind === data.kind) {
+    const x = gx + mxHover.j * cell, y = gy + mxHover.i * cell;
+    g.strokeStyle = '#0f172a';
+    g.lineWidth = 1.6;
+    g.strokeRect(x - 0.5, y - 0.5, cell, cell);
+  }
+}
+
+function drawMatrix() {
+  ctx3.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx3.clearRect(0, 0, W, H);
+  mxCells = [];
+  let docs = DOCS;
+  if (focusSet) docs = docs.filter(n => focusSet.has(n.id));
+  if (selected) docs = docs.filter(n => n.id === selected || (deepHighlight ? connSet : dirSet).has(n.id));
+  const tagM = buildTagMatrix(docs);
+  const agM = buildAgentMatrix(docs);
+  ctx3.fillStyle = '#334155';
+  ctx3.font = '600 13px "DejaVu Sans",Arial,sans-serif';
+  ctx3.textAlign = 'left';
+  ctx3.fillText('Матрицы: теги и координация агентов (учтено документов: ' + docs.length + ')', 30, H - 14);
+  if (W >= 1020) {
+    drawPanel(ctx3, 30, 92, (W - 90) / 2, H - 150, tagM, '29,78,216', 'со-встречаемость тегов (док.)');
+    drawPanel(ctx3, W / 2 + 20, 92, (W - 90) / 2, H - 150, agM, '22,163,74', 'ссылки агент → агент (cite)');
+  } else {
+    const panelH = Math.max(110, (H - 200) / 2);
+    drawPanel(ctx3, 30, 86, W - 60, panelH, tagM, '29,78,216', 'со-встречаемость тегов (док.)');
+    drawPanel(ctx3, 30, 86 + panelH + 42, W - 60, panelH, agM, '22,163,74', 'ссылки агент → агент (cite)');
+  }
+}
+
+cv3.addEventListener('mousemove', ev => {
+  const r = cv3.getBoundingClientRect();
+  mxMouse = {x: ev.clientX - r.left, y: ev.clientY - r.top};
+  const cell = mxCells.find(c => mxMouse.x >= c.x && mxMouse.x < c.x + c.w && mxMouse.y >= c.y && mxMouse.y < c.y + c.h);
+  if (cell !== mxHover) { mxHover = cell || null; drawMatrix(); }
+  if (cell) {
+    const a = cell.labels[cell.i], b = cell.labels[cell.j], v = cell.m[cell.i][cell.j];
+    const txt = cell.kind === 'tag'
+      ? (cell.i === cell.j ? `<b>#${esc(a)}</b>: ${v} док.` : `<b>#${esc(a)}</b> ∩ <b>#${esc(b)}</b>: ${v} док.`)
+      : `<b>${esc(a)}</b> → <b>${esc(b)}</b>: ${v} ссылок`;
+    showRawTip(txt, ev.clientX, ev.clientY);
+  } else hideTip();
+});
+cv3.addEventListener('mouseleave', () => { mxHover = null; hideTip(); drawMatrix(); });
+cv3.addEventListener('click', () => {
+  if (!mxHover) return;
+  const cell = mxHover;
+  if (cell.kind === 'tag') {
+    tagFilter.clear();
+    tagFilter.add(cell.labels[cell.i]);
+    if (cell.i !== cell.j) tagFilter.add(cell.labels[cell.j]);
+    syncTagChecks();
+    updateFocus();
+    drawMatrix(); draw();
+  } else {
+    const ids = mxAgentEdges[cell.i + ':' + cell.j];
+    if (ids && ids.size) showCellDocs(cell.labels[cell.i] + ' → ' + cell.labels[cell.j], [...ids]);
+  }
+});
+
+/* ---------- metric chart ---------- */
+const MT_PADL = 74, MT_PADR = 34;
+let mtWin = null, mtMap = null, mtDrag = null, mtMoved = false;
+function metricPoints() {
+  const pts = [];
+  for (const n of DOCS) {
+    if (n.minutes == null || !(n.metrics || []).length) continue;
+    const seen = new Set();
+    for (const m of n.metrics) {
+      const key = m.v.toFixed(4);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      pts.push({x: n.minutes, y: m.v, n, label: m.label, dir: m.dir || null});
+    }
+  }
+  pts.sort((a, b) => a.x - b.x || a.y - b.y);
+  return pts;
+}
+function drawMetric() {
+  ctx4.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx4.clearRect(0, 0, W, H);
+  mtDots = [];
+  const padL = MT_PADL, padR = MT_PADR, padT = 64, padB = 56;
+  const allPts = metricPoints();
+  const gradePts = allPts.filter(p => p.n.kind === 'system' && p.label === 'score');
+  const pts = allPts.filter(p => !(p.n.kind === 'system' && p.label === 'score'));
+  const grade = gradePts.length ? Math.max(...gradePts.map(p => p.y)) : null;
+  const xs = pts.map(p => p.x);
+  const nLow = pts.filter(p => p.dir === 'low').length;
+  const nHigh = pts.filter(p => p.dir === 'high').length;
+  const lowBetter = nLow > nHigh;
+  ctx4.fillStyle = '#334155';
+  ctx4.font = '11.5px "DejaVu Sans",Arial,sans-serif';
+  ctx4.textAlign = 'left';
+  ctx4.fillText('Метрики из сообщений: ' + pts.length + ' точек' + (lowBetter ? ' · меньше — лучше' : '') + (grade != null ? ' · пунктир — финальный grade' : '') + (xs.length ? ' · зум: колесо, сдвиг: драг, 2×клик: сброс' : ''), padL, H - 10);
+  if (!pts.length && grade == null) {
+    ctx4.fillStyle = '#64748b';
+    ctx4.font = '11.5px "DejaVu Sans",Arial,sans-serif';
+    ctx4.fillText('метрики не найдены (нужны теги <metric>2.23</metric> в сообщениях)', padL, 44);
+    return;
+  }
+  let lo = pts.length ? Math.min(...pts.map(p => p.y)) : grade;
+  let hi = pts.length ? Math.max(...pts.map(p => p.y)) : grade;
+  if (grade != null) { lo = Math.min(lo, grade); hi = Math.max(hi, grade); }
+  let span = hi - lo;
+  if (span < 0.01) span = 0.01;
+  const y0 = lo - span * 0.12, y1 = hi + span * 0.12;
+  let t0, t1;
+  if (mtWin) { t0 = mtWin.t0; t1 = mtWin.t1; }
+  else if (xs.length) {
+    const xlo = Math.min(...xs), xhi = Math.max(...xs);
+    const pad = Math.max((xhi - xlo) * 0.04, 8);
+    t0 = xlo - pad; t1 = xhi + pad;
+  } else { t0 = DATA.t0; t1 = DATA.t1; }
+  mtMap = {t0, t1};
+  const tsp = Math.max(t1 - t0, 1);
+  const X = m => padL + (m - t0) / tsp * Math.max(W - padL - padR, 60);
+  const Y = v => H - padB - (v - y0) / (y1 - y0) * Math.max(H - padT - padB, 80);
+  ctx4.font = '10.5px "DejaVu Sans",Arial,sans-serif';
+  for (let i = 0; i <= 5; i++) {
+    const v = y0 + (y1 - y0) * i / 5;
+    const py = Y(v);
+    ctx4.strokeStyle = '#eef2f7';
+    ctx4.beginPath(); ctx4.moveTo(padL, py); ctx4.lineTo(W - padR, py); ctx4.stroke();
+    ctx4.fillStyle = '#94a3b8';
+    ctx4.textAlign = 'right';
+    ctx4.fillText(v.toFixed(3), padL - 6, py + 3.5);
+  }
+  let step = 30;
+  for (const s of [30, 60, 120, 180, 360]) { step = s; if (X(t0 + s) - X(t0) >= 58) break; }
+  ctx4.textAlign = 'center';
+  for (let m = Math.ceil(t0 / step) * step; m <= t1; m += step) {
+    const px = X(m);
+    ctx4.strokeStyle = '#f4f7fa';
+    ctx4.beginPath(); ctx4.moveTo(px, padT - 6); ctx4.lineTo(px, H - padB); ctx4.stroke();
+    ctx4.fillStyle = '#94a3b8';
+    ctx4.fillText(fmtTime(m), px, H - padB + 14);
+  }
+  ctx4.fillStyle = '#64748b';
+  ctx4.textAlign = 'left';
+  ctx4.fillText('метрика', 10, padT - 22);
+  ctx4.textAlign = 'right';
+  ctx4.fillText('время', W - padR, H - padB + 30);
+  if (mtLines) {
+    const byAgent = new Map();
+    for (const p of pts) {
+      if (p.n.author === 'system') continue;
+      if (!byAgent.has(p.n.author)) byAgent.set(p.n.author, []);
+      byAgent.get(p.n.author).push(p);
+    }
+    for (const [a, arr] of byAgent) {
+      arr.sort((u, v) => u.x - v.x);
+      ctx4.strokeStyle = AGENTS[a] || '#94a3b8';
+      ctx4.globalAlpha = 0.35;
+      ctx4.lineWidth = 1.3;
+      ctx4.beginPath();
+      arr.forEach((p, i) => { const px = X(p.x), py = Y(p.y); if (i) ctx4.lineTo(px, py); else ctx4.moveTo(px, py); });
+      ctx4.stroke();
+      ctx4.globalAlpha = 1;
+    }
+  }
+  if (mtBest) {
+    const env = [];
+    const envPts = pts.filter(p => p.dir === (lowBetter ? 'low' : 'high') &&
+      !['no_op', 'noop', 'baseline', 'sota'].includes(p.label));
+    let best = null;
+    for (const p of envPts) {
+      if (best === null || (lowBetter ? p.y < best : p.y > best)) { best = p.y; env.push(p); }
+    }
+    ctx4.strokeStyle = '#111827';
+    ctx4.lineWidth = 1.6;
+    ctx4.beginPath();
+    env.forEach((p, i) => { const px = X(p.x), py = Y(p.y); if (i) ctx4.lineTo(px, py); else ctx4.moveTo(px, py); });
+    ctx4.stroke();
+    ctx4.fillStyle = '#111827';
+    for (const p of env) { ctx4.beginPath(); ctx4.arc(X(p.x), Y(p.y), 2.4, 0, 6.2832); ctx4.fill(); }
+  }
+  for (const p of pts) {
+    const st = nodeState(p.n);
+    const dim = st === 'dim' || !p.n.vis;
+    const isSel = p.n.id === selected;
+    const px = X(p.x), py = Y(p.y);
+    mtDots.push({x: px, y: py, p});
+    ctx4.globalAlpha = dim ? 0.12 : 1;
+    const col = nodeColor(p.n);
+    ctx4.beginPath(); ctx4.arc(px, py, isSel ? 5 : 3.6, 0, 6.2832);
+    ctx4.fillStyle = col; ctx4.fill();
+    if (isSel) { ctx4.strokeStyle = '#111827'; ctx4.lineWidth = 1.6; ctx4.stroke(); }
+    else if (selected && hiSet().has(p.n.id)) { ctx4.strokeStyle = '#2563eb'; ctx4.lineWidth = 1.2; ctx4.stroke(); }
+  }
+  ctx4.globalAlpha = 1;
+  if (grade != null) {
+    const py = Y(grade);
+    ctx4.strokeStyle = '#0f172a';
+    ctx4.lineWidth = 1.5;
+    ctx4.setLineDash([7, 4]);
+    ctx4.beginPath(); ctx4.moveTo(padL, py); ctx4.lineTo(W - padR, py); ctx4.stroke();
+    ctx4.setLineDash([]);
+    const txt = 'grade ' + grade.toFixed(5);
+    ctx4.font = '600 11.5px "DejaVu Sans",Arial,sans-serif';
+    const tw = ctx4.measureText(txt).width;
+    const lx = W - padR - tw - 9;
+    ctx4.fillStyle = 'rgba(255,255,255,.92)';
+    ctx4.fillRect(lx - 4, py - 17, tw + 8, 15);
+    ctx4.fillStyle = '#0f172a';
+    ctx4.textAlign = 'left';
+    ctx4.fillText(txt, lx, py - 6);
+  }
+  if (mtHover) {
+    const px = X(mtHover.x), py = Y(mtHover.y);
+    ctx4.strokeStyle = '#0f172a';
+    ctx4.setLineDash([3, 3]);
+    ctx4.beginPath(); ctx4.moveTo(px, padT - 6); ctx4.lineTo(px, H - padB); ctx4.stroke();
+    ctx4.beginPath(); ctx4.moveTo(padL, py); ctx4.lineTo(W - padR, py); ctx4.stroke();
+    ctx4.setLineDash([]);
+  }
+}
+function mtNearest(ev) {
+  const r = cv4.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  let best = null, bd = 10;
+  for (const d of mtDots) { const dd = Math.hypot(d.x - mx, d.y - my); if (dd < bd) { bd = dd; best = d; } }
+  return best;
+}
+cv4.addEventListener('mousemove', ev => {
+  if (mtDrag) return;
+  const best = mtNearest(ev);
+  const p = best ? best.p : null;
+  if (p !== mtHover) { mtHover = p; drawMetric(); }
+  if (p) {
+    showRawTip(`<b>${esc(stem(p.n))}</b><br><span class="m">${esc(p.label)} = ${p.y.toFixed(5)}</span><br>${esc(fmtTime(p.x))} · ${esc(p.n.author)}`, ev.clientX, ev.clientY);
+  } else hideTip();
+});
+cv4.addEventListener('mouseleave', () => { mtHover = null; hideTip(); drawMetric(); });
+cv4.addEventListener('click', ev => {
+  if (mtMoved) { mtMoved = false; return; }
+  const best = mtNearest(ev); if (best) setSelection(best.p.n.id);
+});
+cv4.addEventListener('wheel', ev => {
+  if (!mtMap || !mtMap.t1) return;
+  ev.preventDefault();
+  const r = cv4.getBoundingClientRect();
+  const mx = ev.clientX - r.left;
+  const span = mtMap.t1 - mtMap.t0;
+  const factor = ev.deltaY < 0 ? 0.8 : 1.25;
+  const nspan = Math.max(10, Math.min(span * factor, Math.max(DATA.t1 - DATA.t0, span) * 1.5));
+  const fr = Math.max(0, Math.min(1, (mx - MT_PADL) / Math.max(W - MT_PADL - MT_PADR, 50)));
+  const anchor = mtMap.t0 + fr * span;
+  mtWin = {t0: anchor - fr * nspan, t1: anchor + (1 - fr) * nspan};
+  drawMetric();
+}, {passive: false});
+cv4.addEventListener('mousedown', ev => {
+  if (!mtMap) return;
+  mtDrag = {mx: ev.clientX, t0: mtMap.t0, t1: mtMap.t1};
+  mtMoved = false;
+});
+window.addEventListener('mousemove', ev => {
+  if (!mtDrag) return;
+  const dx = ev.clientX - mtDrag.mx;
+  if (Math.abs(dx) < 3 && !mtMoved) return;
+  mtMoved = true;
+  const span = mtDrag.t1 - mtDrag.t0;
+  const dmin = -dx / Math.max(W - MT_PADL - MT_PADR, 50) * span;
+  mtWin = {t0: mtDrag.t0 + dmin, t1: mtDrag.t1 + dmin};
+  drawMetric();
+});
+window.addEventListener('mouseup', () => { mtDrag = null; });
+cv4.addEventListener('dblclick', () => { mtWin = null; mtMoved = false; drawMetric(); });
+document.getElementById('mt-best').addEventListener('click', () => {
+  mtBest = !mtBest;
+  document.getElementById('mt-best').className = mtBest ? 'on' : '';
+  drawMetric();
+});
+document.getElementById('mt-lines').addEventListener('click', () => {
+  mtLines = !mtLines;
+  document.getElementById('mt-lines').className = mtLines ? 'on' : '';
+  drawMetric();
+});
+
+/* ---------- message list ---------- */
+function buildList() {
+  const box = document.getElementById('listview');
+  const arr = DOCS.slice().sort((a, b) =>
+    (a.minutes == null) - (b.minutes == null) || (a.minutes || 0) - (b.minutes || 0) || (a.order || 0) - (b.order || 0));
+  box.innerHTML = arr.map(n => {
+    const col = nodeColor(n);
+    const tags = (n.tags || []).map(t => `<span class="chip tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('');
+    const mets = (n.metrics || []).slice(0, 4).map(m =>
+      `<span class="mmetric">${esc(m.label)} ${m.v.toFixed(4)}</span>`).join('');
+    const vb = (n.verdict && n.verdict !== 'system') ? `<span class="mbadge">${esc(n.verdict)}</span>` : '';
+    const sys = n.kind === 'system' ? '<span class="mbadge">SYSTEM</span>' : '';
+    return `<div class="msg" data-id="${esc(n.id)}">
+      <div class="mhead">
+        <span class="mt">${esc(fmtDateTime(n.minutes))}</span>
+        <span class="mdot" style="background:${col}"></span><span class="ma">${esc(n.author)}</span>
+        ${sys}${vb}<span class="mname">${esc(stem(n))}</span>
+        <span class="mmeta">${tags}${mets}<span class="mchev">▾</span></span>
+      </div>
+      <div class="mbody mdbox">${renderMarkdown(n.md || '')}</div>
+    </div>`;
+  }).join('');
+  box.querySelectorAll('.msg').forEach(el => {
+    el.querySelector('.mhead').addEventListener('click', ev => {
+      if (ev.target.closest('.chip')) return;
+      const body = el.querySelector('.mbody');
+      const open = body.style.display !== 'block';
+      body.style.display = open ? 'block' : 'none';
+      el.classList.toggle('open', open);
+      setSelection(el.dataset.id);
+    });
+  });
+  box.querySelectorAll('.chip[data-tag]').forEach(el => el.addEventListener('click', ev => {
+    ev.stopPropagation();
+    toggleTagFilter(el.dataset.tag);
+  }));
+  box.querySelectorAll('.wikilink').forEach(el => el.addEventListener('click', ev => {
+    ev.stopPropagation();
+    const raw = el.dataset.wiki.trim();
+    const want = raw.replace(/\.md$/, '');
+    const hit = nodes.find(x => x.kind !== 'tag' && (x.label === raw || x.label.replace(/\.md$/, '') === want));
+    if (hit) setSelection(hit.id);
+  }));
+}
+function updateList() {
+  const box = document.getElementById('listview');
+  for (const el of box.querySelectorAll('.msg')) {
+    const n = byId.get(el.dataset.id);
+    if (!n) continue;
+    el.style.display = n.vis ? '' : 'none';
+    el.classList.toggle('sel', n.id === selected);
+    const infocus = focusSet ? focusSet.has(n.id) : false;
+    el.classList.toggle('focus', infocus);
+    el.classList.toggle('dim', !!focusSet && !infocus);
+  }
+}
+function listReveal() {
+  if (currentView !== 'list' || !selected) return;
+  const el = document.querySelector('#listview .msg.sel');
+  if (el) el.scrollIntoView({block: 'center', behavior: 'smooth'});
+}
+document.getElementById('ls-expand').addEventListener('click', () => {
+  document.querySelectorAll('#listview .mbody').forEach(b => { b.style.display = 'block'; });
+  document.querySelectorAll('#listview .msg').forEach(m => m.classList.add('open'));
+});
+document.getElementById('ls-collapse').addEventListener('click', () => {
+  document.querySelectorAll('#listview .mbody').forEach(b => { b.style.display = 'none'; });
+  document.querySelectorAll('#listview .msg').forEach(m => m.classList.remove('open'));
+});
+
+function refreshActive() {
+  if (currentView === 'time') drawTimeline();
+  else if (currentView === 'matrix') drawMatrix();
+  else if (currentView === 'metric') drawMetric();
+  else if (currentView === 'list') updateList();
+}
+
+buildLegend();
+buildTagList();
+buildList();
+syncTimeLabels();
+updateFocus();
+for (let i = 0; i < 520; i++) tick();
+resizeCanvas();
+setSelection(null);
+applyFilters();
+setView('graph');
+(function frame() { if (currentView === 'graph') { tick(); draw(); } requestAnimationFrame(frame); })();
+</script>
+</body></html>

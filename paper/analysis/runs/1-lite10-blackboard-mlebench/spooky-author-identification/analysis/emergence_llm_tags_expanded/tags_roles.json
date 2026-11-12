@@ -1,0 +1,442 @@
+{
+  "annotations": [
+    {
+      "id": "deneb_upsilon_intro_plan.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "rigel_xi_intro_and_plan.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_intro_and_plan.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "rigel_xi_ref_baseline_tfidf_lr.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_coordination_gpu_lanes.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_baseline.md",
+      "tags": [
+        "role_validation_owner"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_coordination_roberta.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_status_baseline.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_insight_ensemble_big_gain.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_models.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v1_stack_0274.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_bert_full_5fold.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_blend_result.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_provisional_submission.md",
+      "tags": [
+        "role_releaser"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_roberta_full_5fold.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v2_stack_0261.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_lgbm_stacker_0252.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v3_lgbm_0255.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combined_stack_0251.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_warning_dont_stack_blends.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_agree_unified_stacker.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_02434.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v6_handfeat_0244.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_final_ownership_and_gpu.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_gpu_ack_plan.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_models_test_preds_ready.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v7_0229.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_crosscheck.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v2_0218.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "tags": [
+        "role_analyst"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v8_0218.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_gpu_lanes_and_meta.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_full.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v3_seedavg.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_status_v9b_deberta_large.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_seedavg_bertcased.md",
+      "tags": [
+        "role_training_technique_specialist"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ack_v9b_lanes.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "rigel_xi_ack_seedavg_plan.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_seedavg_final.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_base_result.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v10_0206.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_approve_xlnet_large.md",
+      "tags": [
+        "role_coordinator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_0211.md",
+      "tags": [
+        "role_analyst"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_dbv3base_seedavg.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_pseudo_label_result.md",
+      "tags": [
+        "role_training_technique_specialist"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_switch_mpnet.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_deberta_large_seedavg.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v4_0200.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v11_0202.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ernie_bertlarge.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_result.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v12_0202.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bert_large_cased_bart.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_breakthrough.md",
+      "tags": [
+        "role_training_technique_specialist"
+      ]
+    },
+    {
+      "id": "rigel_xi_fgm_adopted_deberta.md",
+      "tags": [
+        "role_training_technique_specialist"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_seedavg.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v13_0200.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_bertcased_full.md",
+      "tags": [
+        "role_training_technique_specialist"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_fgm_01936.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v14_0194.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_01907.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_fgm.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v16_0188.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg3_01856.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_best_0299.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v17_0185.md",
+      "tags": [
+        "role_integrator"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_bases_0518.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_fgm_seedavg_final.md",
+      "tags": [
+        "role_base_model_producer"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission.md",
+      "tags": [
+        "role_releaser"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_verify.md",
+      "tags": [
+        "role_releaser"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_final_code_added.md",
+      "tags": [
+        "role_releaser"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_closing.md",
+      "tags": [
+        "role_releaser"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission_v19.md",
+      "tags": [
+        "role_integrator"
+      ]
+    }
+  ]
+}

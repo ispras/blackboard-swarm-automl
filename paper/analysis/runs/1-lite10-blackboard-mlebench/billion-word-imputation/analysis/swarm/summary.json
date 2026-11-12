@@ -1,0 +1,308 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/billion-word-imputation",
+  "label": "billion-word-imputation",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "final_score": 3.05541,
+  "thresholds": {
+    "gold": 5.37017,
+    "silver": 5.54372,
+    "bronze": 5.55209,
+    "median": 5.55211
+  },
+  "messages": {
+    "agent": 63,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 5,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 44,
+    "system_links": 1
+  },
+  "graph": {
+    "nodes": 63,
+    "edges": 47,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 8,
+    "mean_depth_all": 1.1587301587301588,
+    "mean_depth_linked": 2.3548387096774195,
+    "longest_path": [
+      "castor_iota_FINAL_SUMMARY.md",
+      "achernar_tau_reranker_bakeoff_ensemble.md",
+      "castor_iota_topw_and_rerank_ownership.md",
+      "alkaid_pi_cost_decoder_result.md",
+      "castor_iota_rerank_negative_and_timeline.md",
+      "achernar_tau_full_holdout_confirmed.md",
+      "castor_iota_mlm_recall_pruning.md",
+      "achernar_tau_mlm_rerank_breakthrough.md",
+      "alkaid_pi_holdout_and_baselines.md"
+    ],
+    "max_indegree": 3,
+    "hubs": [
+      {
+        "name": "alkaid_pi_holdout_and_baselines.md",
+        "agent": "alkaid",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "data_pipeline",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-11-02T17:14:07+03:00"
+      },
+      {
+        "name": "achernar_tau_mlm_rerank_breakthrough.md",
+        "agent": "achernar",
+        "in_degree": 3,
+        "depth": 1,
+        "tags": [
+          "architecture",
+          "ensembling",
+          "inference",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-11-02T17:19:46+03:00"
+      },
+      {
+        "name": "alkaid_pi_cascade_comparison_final.md",
+        "agent": "alkaid",
+        "in_degree": 3,
+        "depth": 0,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "submission"
+        ],
+        "time": "2026-11-02T18:49:58+03:00"
+      },
+      {
+        "name": "castor_iota_intro_and_plan.md",
+        "agent": "castor",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "model_selection",
+          "plan",
+          "status"
+        ],
+        "time": "2026-11-02T17:11:31+03:00"
+      },
+      {
+        "name": "castor_iota_cost_structure.md",
+        "agent": "castor",
+        "in_degree": 2,
+        "depth": 0,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "insight",
+          "model_selection",
+          "plan"
+        ],
+        "time": "2026-11-02T17:15:12+03:00"
+      },
+      {
+        "name": "castor_iota_mlm_recall_pruning.md",
+        "agent": "castor",
+        "in_degree": 2,
+        "depth": 2,
+        "tags": [
+          "communication",
+          "inference",
+          "model_selection",
+          "plan",
+          "submission"
+        ],
+        "time": "2026-11-02T17:25:43+03:00"
+      },
+      {
+        "name": "alkaid_pi_cost_decoder_result.md",
+        "agent": "alkaid",
+        "in_degree": 2,
+        "depth": 5,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection"
+        ],
+        "time": "2026-11-02T17:48:56+03:00"
+      }
+    ],
+    "submission_count": 39,
+    "submission_depths": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      6,
+      8
+    ],
+    "final_submission": {
+      "name": "achernar_tau_FINAL_CONFIRMATION.md",
+      "time": "2026-11-03T05:03:35+03:00",
+      "depth": 0,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 3,
+      "mean": 0.12433333333333325,
+      "median": 0.0,
+      "positive": 0.3333333333333333,
+      "max": 0.3729999999999998
+    },
+    "transitive": {
+      "n": 5,
+      "mean": 0.08401999999999994,
+      "median": 0.0,
+      "positive": 0.4,
+      "max": 0.3729999999999998
+    },
+    "prev_linked": {
+      "n": 9,
+      "mean": 0.020633333333333406,
+      "median": -0.0010999999999996568,
+      "positive": 0.3333333333333333,
+      "max": 0.3729999999999998
+    },
+    "prev_unlinked": {
+      "n": 9,
+      "mean": -0.00921111111111101,
+      "median": -0.06789999999999985,
+      "positive": 0.4444444444444444,
+      "max": 0.09060000000000024
+    },
+    "perm_prev": {
+      "diff": 0.029844444444444417,
+      "p": 0.6756324367563243
+    }
+  },
+  "tta": {
+    "strict": {
+      "n_events": 4,
+      "direct": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      },
+      "transitive": {
+        "events": 4,
+        "adopted": 4,
+        "rate": 1.0,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      }
+    },
+    "broad": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 4,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 4,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 8,
+      "direct": {
+        "events": 8,
+        "adopted": 4,
+        "rate": 0.5,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      },
+      "transitive": {
+        "events": 8,
+        "adopted": 4,
+        "rate": 0.5,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.75,
+        "median_seconds": 368.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 1,
+    "direct": {
+      "events": 1,
+      "recovered": 1,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 101.0,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 1,
+      "recovered": 1,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 101.0,
+      "different_author": 1
+    },
+    "problem_authors": {
+      "alkaid": 1
+    },
+    "recovery_authors": {
+      "achernar": 1
+    }
+  }
+}

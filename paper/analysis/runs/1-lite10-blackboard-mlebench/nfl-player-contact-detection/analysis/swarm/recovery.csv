@@ -1,0 +1,4 @@
+problem,agent,time,tags,recovery,recovery_agent,same_author,msgs,seconds,trans_recovery,trans_msgs,trans_seconds
+sirius_tau_final_write_check.md,sirius,2026-10-17T06:15:41+03:00,conflict,fomalhaut_omicron_final_clarify.md,fomalhaut,0,8,5355.0,fomalhaut_omicron_final_clarify.md,8,5355.0
+sirius_tau_pertype_threshold_gain.md,sirius,2026-10-17T08:13:55+03:00,conflict,procyon_theta_endorse_thr.md,procyon,0,1,255.0,procyon_theta_endorse_thr.md,1,255.0
+procyon_theta_endorse_thr.md,procyon,2026-10-17T08:18:10+03:00,conflict,procyon_theta_final_confirmation.md,procyon,1,1,194.0,procyon_theta_final_confirmation.md,1,194.0

@@ -1,0 +1,22 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+bellatrix_tau_baseline1.md,bellatrix,2026-10-20T15:04:05+03:00,0.3828,feature_engineering,,,,,,
+bellatrix_tau_stacking_insight.md,bellatrix,2026-10-20T15:25:25+03:00,0.30581,insight,canopus_kappa_status2.md,1,91.0,canopus_kappa_status2.md,1,91.0
+canopus_kappa_status2.md,canopus,2026-10-20T15:26:56+03:00,0.37381,insight,mirfak_pi_transformer_findings.md,2,1098.0,mirfak_pi_transformer_findings.md,2,1098.0
+canopus_kappa_large_finding.md,canopus,2026-10-20T15:41:24+03:00,0.32474,insight,,,,bellatrix_tau_independent_stack_check.md,7,2668.0
+bellatrix_tau_independent_stack_check.md,bellatrix,2026-10-20T16:25:52+03:00,0.28684,insight,,,,mirfak_pi_plan_next.md,4,1880.0
+bellatrix_tau_nested_stack_result.md,bellatrix,2026-10-20T16:40:03+03:00,0.26964,insight,mirfak_pi_plan_next.md,2,1029.0,mirfak_pi_plan_next.md,2,1029.0
+bellatrix_tau_transformer_breaks_stack.md,bellatrix,2026-10-20T17:00:43+03:00,0.2324,insight submission,mirfak_pi_dbl5_in_stack.md,3,1706.0,mirfak_pi_dbl5_in_stack.md,3,1706.0
+canopus_kappa_dbl5_done.md,canopus,2026-10-20T17:22:29+03:00,0.31727,insight submission,,,,bellatrix_tau_aug_refresh_0204.md,12,8163.0
+canopus_kappa_stack_verified.md,canopus,2026-10-20T17:29:26+03:00,0.21066,insight,mirfak_pi_stack_variants.md,2,587.0,mirfak_pi_stack_variants.md,2,587.0
+bellatrix_tau_stack_logprob_plus_prob.md,bellatrix,2026-10-20T18:28:36+03:00,0.20919,insight submission,,,,,,
+bellatrix_tau_aug_refresh_0204.md,bellatrix,2026-10-20T19:38:32+03:00,0.20416,insight submission,,,,,,
+mirfak_pi_meta_blend.md,mirfak,2026-10-20T20:04:09+03:00,0.20212,insight,,,,canopus_kappa_meta_blend_confirmed.md,2,1815.0
+mirfak_pi_nested_meta_verified.md,mirfak,2026-10-20T20:21:23+03:00,0.20107,insight,canopus_kappa_meta_blend_confirmed.md,1,781.0,canopus_kappa_meta_blend_confirmed.md,1,781.0
+canopus_kappa_meta_blend_confirmed.md,canopus,2026-10-20T20:34:24+03:00,0.19951,insight,bellatrix_tau_lrhgb_01996.md,1,1401.0,bellatrix_tau_lrhgb_01996.md,1,1401.0
+bellatrix_tau_lrhgb_01996.md,bellatrix,2026-10-20T20:57:45+03:00,0.19971,insight submission,,,,mirfak_pi_final_meta_0198.md,4,8307.0
+bellatrix_tau_3way_01992.md,bellatrix,2026-10-20T21:18:25+03:00,0.19924,insight submission,mirfak_pi_final_meta_0198.md,2,7067.0,mirfak_pi_final_meta_0198.md,2,7067.0
+mirfak_pi_aug_best_single.md,mirfak,2026-10-20T23:11:37+03:00,0.30676,insight,bellatrix_tau_final_timeline_0196.md,4,1792.0,bellatrix_tau_final_timeline_0196.md,4,1792.0
+bellatrix_tau_dblaug_0196.md,bellatrix,2026-10-20T23:37:17+03:00,0.19674,insight submission,,,,,,
+bellatrix_tau_honest_corrected_0198.md,bellatrix,2026-10-21T00:40:57+03:00,0.19828,insight submission,mirfak_pi_final_candidate_ready.md,1,957.0,mirfak_pi_final_candidate_ready.md,1,957.0
+canopus_kappa_final_verified.md,canopus,2026-10-21T01:40:18+03:00,0.19863,insight submission,mirfak_pi_frozen_md5.md,2,1647.0,mirfak_pi_frozen_md5.md,2,1647.0
+mirfak_pi_closing_summary.md,mirfak,2026-10-21T01:50:29+03:00,0.19839,insight submission,,,,,,

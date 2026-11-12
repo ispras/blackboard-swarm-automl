@@ -1,0 +1,27 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+antares_upsilon_trigram_results.md,antares,2026-10-31T08:28:59+03:00,5.0382,insight,arcturus_kappa_detector_start.md,2,1195.0,arcturus_kappa_detector_start.md,2,1195.0
+spica_psi_fusion_prototype.md,spica,2026-10-31T08:56:09+03:00,4.3267,insight,arcturus_kappa_detector_first_results.md,1,342.0,arcturus_kappa_detector_first_results.md,1,342.0
+arcturus_kappa_detector_first_results.md,arcturus,2026-10-31T09:01:51+03:00,3.86,insight,spica_psi_mlm_ownership.md,2,954.0,spica_psi_mlm_ownership.md,2,954.0
+arcturus_kappa_fusion_3way_result.md,arcturus,2026-10-31T09:15:36+03:00,3.1487,insight,spica_psi_mlm_ownership.md,1,129.0,spica_psi_mlm_ownership.md,1,129.0
+arcturus_kappa_pipeline_2_95_and_word_model.md,arcturus,2026-10-31T09:28:33+03:00,2.9456,insight,antares_upsilon_holdout_contamination.md,1,209.0,antares_upsilon_holdout_contamination.md,1,209.0
+spica_psi_full30k_result.md,spica,2026-10-31T11:07:11+03:00,2.9715,insight,antares_upsilon_final_plan_confirmed.md,1,72.0,antares_upsilon_final_plan_confirmed.md,1,72.0
+spica_psi_final_det_2908.md,spica,2026-10-31T11:44:02+03:00,2.9082,insight submission,antares_upsilon_final_solution_baseline_written.md,1,149.0,antares_upsilon_final_solution_baseline_written.md,1,149.0
+antares_upsilon_prefix_hedging.md,antares,2026-10-31T12:51:01+03:00,2.8777,insight submission,spica_psi_mixed_detector_2795.md,1,247.0,spica_psi_mixed_detector_2795.md,1,247.0
+spica_psi_mixed_detector_2795.md,spica,2026-10-31T12:55:08+03:00,2.7952,insight submission,antares_upsilon_substr_hedge.md,1,1085.0,antares_upsilon_substr_hedge.md,1,1085.0
+spica_psi_decisions_v2_ready.md,spica,2026-10-31T13:23:56+03:00,2.7952,insight submission,antares_upsilon_mixed_substr_written.md,1,259.0,antares_upsilon_mixed_substr_written.md,1,259.0
+antares_upsilon_mixed_substr_written.md,antares,2026-10-31T13:28:15+03:00,2.7857,insight submission,,,,arcturus_kappa_large2_gapacc.md,2,1017.0
+antares_upsilon_full30k_rich_sweep.md,antares,2026-10-31T13:36:34+03:00,2.7842,insight,arcturus_kappa_large2_gapacc.md,1,518.0,arcturus_kappa_large2_gapacc.md,1,518.0
+spica_psi_v2_extended_strings.md,spica,2026-10-31T13:52:50+03:00,2.7824,insight submission,arcturus_kappa_mix3_arith_correction.md,1,626.0,arcturus_kappa_mix3_arith_correction.md,1,626.0
+arcturus_kappa_v3_independent_repro.md,arcturus,2026-10-31T14:25:12+03:00,2.7619,insight,antares_upsilon_v3_written.md,1,521.0,antares_upsilon_v3_written.md,1,521.0
+antares_upsilon_v3_written.md,antares,2026-10-31T14:33:53+03:00,2.7609,insight submission,arcturus_kappa_large3_stop_v4.md,2,2251.0,arcturus_kappa_large3_stop_v4.md,2,2251.0
+spica_psi_v3_ready_2762.md,spica,2026-10-31T14:38:55+03:00,2.7618,insight submission,antares_upsilon_FINAL.md,12,4875.0,antares_upsilon_FINAL.md,12,4875.0
+arcturus_kappa_negative_results_and_audit.md,arcturus,2026-10-31T15:33:13+03:00,2.7619,insight submission,antares_upsilon_v3b_adopted.md,2,763.0,antares_upsilon_v3b_adopted.md,2,763.0
+spica_psi_albert_word_model.md,spica,2026-10-31T15:54:39+03:00,2.7438,insight,arcturus_kappa_v4_independent_confirm.md,2,973.0,arcturus_kappa_v4_independent_confirm.md,2,973.0
+antares_upsilon_FINAL.md,antares,2026-10-31T16:00:10+03:00,2.7536,insight submission,arcturus_kappa_v4_independent_confirm.md,1,642.0,arcturus_kappa_v4_independent_confirm.md,1,642.0
+antares_upsilon_v4_adopting.md,antares,2026-10-31T16:25:28+03:00,2.7423,insight submission,arcturus_kappa_v4_decisions_ready.md,1,366.0,arcturus_kappa_v4_decisions_ready.md,1,366.0
+antares_upsilon_v4_FINAL.md,antares,2026-10-31T16:48:00+03:00,2.7423,insight submission,arcturus_kappa_v4_audit_PASS.md,1,553.0,arcturus_kappa_v4_audit_PASS.md,1,553.0
+arcturus_kappa_v4_audit_PASS.md,arcturus,2026-10-31T16:57:13+03:00,2.7423,insight submission,spica_psi_final_audit.md,1,652.0,spica_psi_final_audit.md,1,652.0
+spica_psi_final_audit.md,spica,2026-10-31T17:08:05+03:00,2.7425,insight submission,,,,,,
+antares_upsilon_FREEZE_CONFIRMED.md,antares,2026-10-31T18:43:57+03:00,2.7423,insight submission,arcturus_kappa_FINAL_audit_confirmed.md,1,338.0,arcturus_kappa_FINAL_audit_confirmed.md,1,338.0
+arcturus_kappa_FINAL_audit_confirmed.md,arcturus,2026-10-31T18:49:35+03:00,2.7426,insight submission,antares_upsilon_last_hour_no_gain.md,1,1660.0,antares_upsilon_last_hour_no_gain.md,1,1660.0
+antares_upsilon_last_hour_no_gain.md,antares,2026-10-31T19:17:15+03:00,2.7423,insight submission,,,,,,

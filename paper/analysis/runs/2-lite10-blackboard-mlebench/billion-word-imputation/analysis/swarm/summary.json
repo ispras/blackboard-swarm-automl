@@ -1,0 +1,354 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/billion-word-imputation",
+  "label": "billion-word-imputation",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "final_score": 2.84678,
+  "thresholds": {
+    "gold": 5.37017,
+    "silver": 5.54372,
+    "bronze": 5.55209,
+    "median": 5.55211
+  },
+  "messages": {
+    "agent": 60,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 3,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 50,
+    "system_links": 1
+  },
+  "graph": {
+    "nodes": 60,
+    "edges": 158,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 42,
+    "mean_depth_all": 19.4,
+    "mean_depth_linked": 20.785714285714285,
+    "longest_path": [
+      "fomalhaut_zeta_final_confirmation.md",
+      "betelgeuse_tau_final_phase_confirmation.md",
+      "mirfak_chi_final_phase_confirmation.md",
+      "mirfak_chi_assembly_consistency.md",
+      "mirfak_chi_signed_off.md",
+      "fomalhaut_zeta_recipe_resweep_no_gain.md",
+      "fomalhaut_zeta_final_validation_signoff.md",
+      "betelgeuse_tau_v3_final_2p88.md",
+      "mirfak_chi_v7_final_confirmed.md",
+      "fomalhaut_zeta_v3_gaps_delivered.md",
+      "mirfak_chi_v7_final_validated.md",
+      "mirfak_chi_v7_gaps_ready.md",
+      "mirfak_chi_two_stage_v7_plan.md",
+      "mirfak_chi_v7_validated_0853.md",
+      "mirfak_chi_v7_plan.md",
+      "mirfak_chi_large_verifier_validated.md",
+      "mirfak_chi_conflict_dual_large_verifier.md",
+      "betelgeuse_tau_fusion6_no_gain_v3_proposal.md",
+      "betelgeuse_tau_final_frozen_2p9895.md",
+      "fomalhaut_zeta_v2_final_file_ready.md",
+      "fomalhaut_zeta_v2_trigram_validated_2p99.md",
+      "fomalhaut_zeta_trigram_v2_ready.md",
+      "fomalhaut_zeta_v2_gaps_delivered.md",
+      "mirfak_chi_verif_ft_test_complete.md",
+      "betelgeuse_tau_v2_assembly_coordination.md",
+      "fomalhaut_zeta_v2_fusion_3p13.md",
+      "betelgeuse_tau_verifier_v2_refit_request.md",
+      "betelgeuse_tau_final_submission_3p23.md",
+      "fomalhaut_zeta_fused_test_gaps_delivered.md",
+      "betelgeuse_tau_word_recipe_final_assembly.md",
+      "fomalhaut_zeta_verifier_causal_fusion_3p35.md",
+      "fomalhaut_zeta_causal_features_fusion_plan.md",
+      "mirfak_chi_verifier_validated_3p50.md",
+      "betelgeuse_tau_test_submission_4p19.md",
+      "fomalhaut_zeta_20m_val_test_gap_probs_ready.md",
+      "fomalhaut_zeta_top10_consistent_val_test.md",
+      "betelgeuse_tau_request_full_test_gap_probs.md",
+      "betelgeuse_tau_fused_gap_gated_4p21.md",
+      "fomalhaut_zeta_shared_holdout_gap_probs_ready.md",
+      "fomalhaut_zeta_ngram_localizer_results.md",
+      "mirfak_chi_mlm_word_choice_vs_localization.md",
+      "fomalhaut_zeta_intro_localization_plan.md",
+      "mirfak_chi_intro_plan.md"
+    ],
+    "max_indegree": 8,
+    "hubs": [
+      {
+        "name": "mirfak_chi_verifier_v2_3p23.md",
+        "agent": "mirfak",
+        "in_degree": 8,
+        "depth": 15,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T02:16:25+03:00"
+      },
+      {
+        "name": "betelgeuse_tau_final_frozen_2p9895.md",
+        "agent": "betelgeuse",
+        "in_degree": 8,
+        "depth": 24,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T03:46:20+03:00"
+      },
+      {
+        "name": "betelgeuse_tau_v3_final_2p88.md",
+        "agent": "betelgeuse",
+        "in_degree": 7,
+        "depth": 35,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T08:04:08+03:00"
+      },
+      {
+        "name": "mirfak_chi_mlm_word_choice_vs_localization.md",
+        "agent": "mirfak",
+        "in_degree": 6,
+        "depth": 2,
+        "tags": [
+          "architecture",
+          "communication",
+          "insight",
+          "model_selection",
+          "status",
+          "training"
+        ],
+        "time": "2026-11-03T22:07:44+03:00"
+      },
+      {
+        "name": "betelgeuse_tau_fused_gap_gated_4p21.md",
+        "agent": "betelgeuse",
+        "in_degree": 6,
+        "depth": 5,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-03T22:42:26+03:00"
+      },
+      {
+        "name": "fomalhaut_zeta_final_validation_signoff.md",
+        "agent": "fomalhaut",
+        "in_degree": 6,
+        "depth": 36,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T08:06:41+03:00"
+      },
+      {
+        "name": "mirfak_chi_verifier_validated_3p50.md",
+        "agent": "mirfak",
+        "in_degree": 5,
+        "depth": 10,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T00:56:51+03:00"
+      }
+    ],
+    "submission_count": 45,
+    "submission_depths": [
+      0,
+      0,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      14,
+      15,
+      15,
+      17,
+      18,
+      19,
+      19,
+      20,
+      20,
+      21,
+      22,
+      23,
+      24,
+      26,
+      26,
+      27,
+      28,
+      30,
+      30,
+      31,
+      32,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42
+    ],
+    "final_submission": {
+      "name": "fomalhaut_zeta_final_confirmation.md",
+      "time": "2026-11-04T09:50:19+03:00",
+      "depth": 42,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 7,
+      "mean": 0.016871428571428586,
+      "median": 0.0,
+      "positive": 0.42857142857142855,
+      "max": 0.06979999999999986
+    },
+    "transitive": {
+      "n": 9,
+      "mean": 0.1445111111111111,
+      "median": 0.014000000000000234,
+      "positive": 0.5555555555555556,
+      "max": 0.9569999999999999
+    },
+    "prev_linked": {
+      "n": 9,
+      "mean": 0.1445111111111111,
+      "median": 0.014000000000000234,
+      "positive": 0.5555555555555556,
+      "max": 0.9569999999999999
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 0,
+      "direct": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      },
+      "transitive": {
+        "events": 0,
+        "adopted": 0,
+        "rate": null,
+        "median_msgs": null,
+        "mean_msgs": null,
+        "median_seconds": null
+      }
+    },
+    "broad": {
+      "n_events": 1,
+      "direct": {
+        "events": 1,
+        "adopted": 1,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 185.0
+      },
+      "transitive": {
+        "events": 1,
+        "adopted": 1,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1,
+        "median_seconds": 185.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 6,
+      "direct": {
+        "events": 6,
+        "adopted": 4,
+        "rate": 0.6666666666666666,
+        "median_msgs": 1.5,
+        "mean_msgs": 1.5,
+        "median_seconds": 452.0
+      },
+      "transitive": {
+        "events": 6,
+        "adopted": 6,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2.1666666666666665,
+        "median_seconds": 983.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 2,
+    "direct": {
+      "events": 2,
+      "recovered": 2,
+      "rate": 1.0,
+      "median_msgs": 2.0,
+      "median_seconds": 2150.0,
+      "different_author": 1
+    },
+    "transitive": {
+      "events": 2,
+      "recovered": 2,
+      "rate": 1.0,
+      "median_msgs": 2.0,
+      "median_seconds": 2150.0,
+      "different_author": 1
+    },
+    "problem_authors": {
+      "fomalhaut": 1,
+      "mirfak": 1
+    },
+    "recovery_authors": {
+      "mirfak": 2
+    }
+  }
+}

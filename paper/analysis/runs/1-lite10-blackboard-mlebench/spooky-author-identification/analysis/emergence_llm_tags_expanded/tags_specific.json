@@ -1,0 +1,640 @@
+{
+  "annotations": [
+    {
+      "id": "deneb_upsilon_intro_plan.md",
+      "tags": [
+        "fold_protocol",
+        "role_negotiation"
+      ]
+    },
+    {
+      "id": "rigel_xi_intro_and_plan.md",
+      "tags": [
+        "role_negotiation",
+        "fold_protocol",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_intro_and_plan.md",
+      "tags": [
+        "role_negotiation",
+        "fold_protocol",
+        "artifact_io",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "rigel_xi_ref_baseline_tfidf_lr.md",
+      "tags": [
+        "classical_linear_model",
+        "fold_protocol",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_coordination_gpu_lanes.md",
+      "tags": [
+        "gpu_scheduling",
+        "role_negotiation",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_baseline.md",
+      "tags": [
+        "fold_protocol",
+        "artifact_io",
+        "classical_linear_model",
+        "cross_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_coordination_roberta.md",
+      "tags": [
+        "gpu_scheduling",
+        "role_negotiation",
+        "fold_protocol",
+        "backbone_selection"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_status_baseline.md",
+      "tags": [
+        "classical_linear_model",
+        "cross_validation",
+        "fold_protocol",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "rigel_xi_insight_ensemble_big_gain.md",
+      "tags": [
+        "blending",
+        "artifact_io",
+        "base_model_diversity",
+        "calibration"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_status_models.md",
+      "tags": [
+        "cross_validation",
+        "negative_result",
+        "base_model_diversity",
+        "classical_linear_model"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v1_stack_0274.md",
+      "tags": [
+        "stacking",
+        "blending",
+        "artifact_io",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_bert_full_5fold.md",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "cross_validation",
+        "calibration"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_blend_result.md",
+      "tags": [
+        "blending",
+        "weight_optimization",
+        "checkpoint_averaging",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_provisional_submission.md",
+      "tags": [
+        "submission_validation",
+        "ownership_handoff",
+        "code_release"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_roberta_full_5fold.md",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "blending",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v2_stack_0261.md",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "submission_validation",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_lgbm_stacker_0252.md",
+      "tags": [
+        "meta_feature_stacking",
+        "stylometric_features",
+        "tree_model",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v3_lgbm_0255.md",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "submission_validation",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combined_stack_0251.md",
+      "tags": [
+        "blending",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "rigel_xi_warning_dont_stack_blends.md",
+      "tags": [
+        "leakage_control",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_agree_unified_stacker.md",
+      "tags": [
+        "meta_feature_stacking",
+        "nested_validation",
+        "ownership_handoff",
+        "weight_optimization"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_02434.md",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "seed_averaging",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v6_handfeat_0244.md",
+      "tags": [
+        "meta_feature_stacking",
+        "weight_optimization",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "rigel_xi_final_ownership_and_gpu.md",
+      "tags": [
+        "ownership_handoff",
+        "gpu_scheduling",
+        "base_model_diversity",
+        "nested_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_gpu_ack_plan.md",
+      "tags": [
+        "gpu_scheduling",
+        "ownership_handoff",
+        "base_model_diversity",
+        "role_negotiation"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_models_test_preds_ready.md",
+      "tags": [
+        "artifact_io",
+        "classical_linear_model",
+        "text_vectorization",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v7_0229.md",
+      "tags": [
+        "stacking",
+        "meta_feature_stacking",
+        "weight_optimization",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_crosscheck.md",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "base_model_diversity",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v2_0218.md",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "nested_validation",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_lgbm_weak_gpu_proposal.md",
+      "tags": [
+        "negative_result",
+        "base_model_diversity",
+        "pseudo_labeling",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v8_0218.md",
+      "tags": [
+        "stacking",
+        "blending",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "rigel_xi_gpu_lanes_and_meta.md",
+      "tags": [
+        "leakage_control",
+        "blending",
+        "gpu_scheduling",
+        "stacking"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_full.md",
+      "tags": [
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io",
+        "weight_optimization"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v3_seedavg.md",
+      "tags": [
+        "leakage_control",
+        "seed_averaging",
+        "transformer_finetuning",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "rigel_xi_status_v9b_deberta_large.md",
+      "tags": [
+        "blending",
+        "transformer_finetuning",
+        "gpu_scheduling",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_seedavg_bertcased.md",
+      "tags": [
+        "seed_averaging",
+        "artifact_io",
+        "role_negotiation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ack_v9b_lanes.md",
+      "tags": [
+        "role_negotiation",
+        "gpu_scheduling",
+        "seed_averaging"
+      ]
+    },
+    {
+      "id": "rigel_xi_ack_seedavg_plan.md",
+      "tags": [
+        "seed_averaging",
+        "role_negotiation",
+        "gpu_scheduling",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bertcased_seedavg_final.md",
+      "tags": [
+        "seed_averaging",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_base_result.md",
+      "tags": [
+        "transformer_finetuning",
+        "artifact_io",
+        "cross_validation",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v10_0206.md",
+      "tags": [
+        "blending",
+        "stacking",
+        "weight_optimization",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "rigel_xi_approve_xlnet_large.md",
+      "tags": [
+        "backbone_selection",
+        "pseudo_labeling",
+        "fold_protocol",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_stack2_0211.md",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "negative_result",
+        "seed_averaging"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_dbv3base_seedavg.md",
+      "tags": [
+        "seed_averaging",
+        "artifact_io",
+        "backbone_selection",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_pseudo_label_result.md",
+      "tags": [
+        "pseudo_labeling",
+        "leakage_control",
+        "artifact_io",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_switch_mpnet.md",
+      "tags": [
+        "negative_result",
+        "backbone_selection",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_deberta_large_seedavg.md",
+      "tags": [
+        "seed_averaging",
+        "transformer_finetuning",
+        "artifact_io",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_v4_0200.md",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "nested_validation",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v11_0202.md",
+      "tags": [
+        "stacking",
+        "blending",
+        "nested_validation",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_ernie_bertlarge.md",
+      "tags": [
+        "artifact_io",
+        "backbone_selection",
+        "base_model_diversity",
+        "gpu_scheduling"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_result.md",
+      "tags": [
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v12_0202.md",
+      "tags": [
+        "stacking",
+        "blending",
+        "weight_optimization",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_bert_large_cased_bart.md",
+      "tags": [
+        "transformer_finetuning",
+        "checkpoint_averaging",
+        "cross_validation",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_breakthrough.md",
+      "tags": [
+        "adversarial_training",
+        "cross_validation",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_fgm_adopted_deberta.md",
+      "tags": [
+        "adversarial_training",
+        "transformer_finetuning",
+        "role_negotiation",
+        "backbone_selection"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_seedavg.md",
+      "tags": [
+        "transformer_finetuning",
+        "seed_averaging",
+        "artifact_io",
+        "base_model_diversity"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v13_0200.md",
+      "tags": [
+        "blending",
+        "weight_optimization",
+        "negative_result",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_bertcased_full.md",
+      "tags": [
+        "adversarial_training",
+        "cross_validation",
+        "artifact_io",
+        "seed_averaging"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_combine_fgm_01936.md",
+      "tags": [
+        "stacking",
+        "nested_validation",
+        "weight_optimization",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v14_0194.md",
+      "tags": [
+        "blending",
+        "stacking",
+        "nested_validation",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_01907.md",
+      "tags": [
+        "seed_averaging",
+        "stacking",
+        "nested_validation",
+        "ownership_handoff"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_xlnet_large_fgm.md",
+      "tags": [
+        "adversarial_training",
+        "transformer_finetuning",
+        "cross_validation",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v16_0188.md",
+      "tags": [
+        "blending",
+        "stacking",
+        "weight_optimization",
+        "checkpoint_averaging"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg3_01856.md",
+      "tags": [
+        "seed_averaging",
+        "stacking",
+        "base_model_diversity",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_fgm_seedavg_best_0299.md",
+      "tags": [
+        "seed_averaging",
+        "checkpoint_averaging",
+        "adversarial_training",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_blend_v17_0185.md",
+      "tags": [
+        "blending",
+        "stacking",
+        "nested_validation",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_bases_0518.md",
+      "tags": [
+        "artifact_io",
+        "nested_validation",
+        "ownership_handoff",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_fgm_seedavg_final.md",
+      "tags": [
+        "seed_averaging",
+        "adversarial_training",
+        "transformer_finetuning",
+        "artifact_io"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission.md",
+      "tags": [
+        "submission_validation",
+        "code_release",
+        "stacking",
+        "blending"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_final_verify.md",
+      "tags": [
+        "submission_validation",
+        "code_release",
+        "fold_protocol"
+      ]
+    },
+    {
+      "id": "arcturus_alpha_final_code_added.md",
+      "tags": [
+        "code_release",
+        "submission_validation"
+      ]
+    },
+    {
+      "id": "deneb_upsilon_closing.md",
+      "tags": [
+        "submission_validation",
+        "fold_protocol",
+        "adversarial_training",
+        "stacking"
+      ]
+    },
+    {
+      "id": "rigel_xi_FINAL_submission_v19.md",
+      "tags": [
+        "stacking",
+        "weight_optimization",
+        "submission_validation",
+        "code_release"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
+  "label": "uw-madison-gi-tract-image-segmentation",
+  "metric": "dice-hausdorff-combo",
+  "is_lower_better": false,
+  "final_score": 0.86262,
+  "thresholds": {
+    "gold": 0.87917,
+    "silver": 0.87139,
+    "bronze": 0.86699,
+    "median": 0.85499
+  },
+  "messages": {
+    "agent": 47,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 1,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 0,
+    "without_metric": 33,
+    "system_links": 0
+  },
+  "graph": {
+    "nodes": 47,
+    "edges": 111,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 26,
+    "mean_depth_all": 11.595744680851064,
+    "mean_depth_linked": 13.292682926829269,
+    "longest_path": [
+      "mimosa_sigma_final_submission_confirmed.md",
+      "dubhe_zeta_full_qa_pass.md",
+      "betelgeuse_zeta_SIGN_OFF.md",
+      "dubhe_zeta_final_verify_0716.md",
+      "betelgeuse_zeta_postproc_check.md",
+      "betelgeuse_zeta_FINAL_ack.md",
+      "dubhe_zeta_FINAL.md",
+      "betelgeuse_zeta_final_verify.md",
+      "dubhe_zeta_standby_decision.md",
+      "betelgeuse_zeta_b4_probs_ready.md",
+      "betelgeuse_zeta_b4_fold0_change.md",
+      "dubhe_zeta_fourth_model.md",
+      "dubhe_zeta_alldata_probs_ready.md",
+      "mimosa_sigma_fold0_done.md",
+      "betelgeuse_zeta_ack_finetune_timeline.md",
+      "mimosa_sigma_ack_timeline.md",
+      "betelgeuse_zeta_confirm_alldata.md",
+      "dubhe_zeta_oof_e2.md",
+      "betelgeuse_zeta_decode_bug_fixed.md",
+      "dubhe_zeta_bug_mimosa_valgt.md",
+      "betelgeuse_zeta_status_2.md",
+      "dubhe_zeta_status_2.md",
+      "mimosa_sigma_cache_metric_ready.md",
+      "betelgeuse_zeta_status_1.md",
+      "dubhe_zeta_coordination.md",
+      "betelgeuse_zeta_intro_plan.md",
+      "dubhe_zeta_intro_plan.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "mimosa_sigma_ensemble_ready.md",
+        "agent": "mimosa",
+        "in_degree": 7,
+        "depth": 15,
+        "tags": [
+          "ensembling",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T02:58:42+03:00"
+      },
+      {
+        "name": "mimosa_sigma_final_frozen.md",
+        "agent": "mimosa",
+        "in_degree": 6,
+        "depth": 20,
+        "tags": [
+          "communication",
+          "ensembling",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T05:29:49+03:00"
+      },
+      {
+        "name": "dubhe_zeta_URGENT_rle_order_bug.md",
+        "agent": "dubhe",
+        "in_degree": 5,
+        "depth": 0,
+        "tags": [
+          "bug",
+          "conflict",
+          "data_pipeline",
+          "data_preprocessing",
+          "problem"
+        ],
+        "time": "2026-11-03T21:38:06+03:00"
+      },
+      {
+        "name": "mimosa_sigma_ack_timeline.md",
+        "agent": "mimosa",
+        "in_degree": 5,
+        "depth": 11,
+        "tags": [
+          "communication",
+          "ensembling",
+          "plan",
+          "status"
+        ],
+        "time": "2026-11-03T22:45:00+03:00"
+      },
+      {
+        "name": "mimosa_sigma_final_solution_updated.md",
+        "agent": "mimosa",
+        "in_degree": 5,
+        "depth": 16,
+        "tags": [
+          "ensembling",
+          "postprocessing",
+          "status",
+          "submission"
+        ],
+        "time": "2026-11-04T03:42:50+03:00"
+      },
+      {
+        "name": "mimosa_sigma_cache_metric_ready.md",
+        "agent": "mimosa",
+        "in_degree": 4,
+        "depth": 4,
+        "tags": [
+          "communication",
+          "data_pipeline",
+          "status",
+          "training"
+        ],
+        "time": "2026-11-03T20:46:03+03:00"
+      },
+      {
+        "name": "betelgeuse_zeta_decode_bug_fixed.md",
+        "agent": "betelgeuse",
+        "in_degree": 4,
+        "depth": 8,
+        "tags": [
+          "bug",
+          "communication",
+          "data_preprocessing",
+          "insight",
+          "status"
+        ],
+        "time": "2026-11-03T22:02:43+03:00"
+      }
+    ],
+    "submission_count": 22,
+    "submission_depths": [
+      0,
+      2,
+      5,
+      9,
+      12,
+      13,
+      13,
+      13,
+      14,
+      15,
+      16,
+      16,
+      18,
+      18,
+      19,
+      20,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26
+    ],
+    "final_submission": {
+      "name": "mimosa_sigma_final_submission_confirmed.md",
+      "time": "2026-11-04T08:29:17+03:00",
+      "depth": 26,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 12,
+      "mean": 0.003308333333333339,
+      "median": 0.0,
+      "positive": 0.3333333333333333,
+      "max": 0.017199999999999993
+    },
+    "transitive": {
+      "n": 13,
+      "mean": 0.0034692307692307713,
+      "median": 0.0,
+      "positive": 0.38461538461538464,
+      "max": 0.017199999999999993
+    },
+    "prev_linked": {
+      "n": 13,
+      "mean": 0.0018769230769230837,
+      "median": 0.0,
+      "positive": 0.3076923076923077,
+      "max": 0.017199999999999993
+    },
+    "prev_unlinked": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "positive": null,
+      "max": null
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 2,
+      "direct": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 1917.5
+      },
+      "transitive": {
+        "events": 2,
+        "adopted": 2,
+        "rate": 1.0,
+        "median_msgs": 2.0,
+        "mean_msgs": 2,
+        "median_seconds": 1917.5
+      }
+    },
+    "broad": {
+      "n_events": 3,
+      "direct": {
+        "events": 3,
+        "adopted": 3,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 1.6666666666666667,
+        "median_seconds": 1892.0
+      },
+      "transitive": {
+        "events": 3,
+        "adopted": 3,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 1.6666666666666667,
+        "median_seconds": 1892.0
+      }
+    },
+    "all_new_best": {
+      "n_events": 5,
+      "direct": {
+        "events": 5,
+        "adopted": 5,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 2.6,
+        "median_seconds": 1892.0
+      },
+      "transitive": {
+        "events": 5,
+        "adopted": 5,
+        "rate": 1.0,
+        "median_msgs": 2,
+        "mean_msgs": 2.4,
+        "median_seconds": 1892.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 7,
+    "direct": {
+      "events": 7,
+      "recovered": 7,
+      "rate": 1.0,
+      "median_msgs": 3,
+      "median_seconds": 1594.0,
+      "different_author": 4
+    },
+    "transitive": {
+      "events": 7,
+      "recovered": 7,
+      "rate": 1.0,
+      "median_msgs": 3,
+      "median_seconds": 1594.0,
+      "different_author": 4
+    },
+    "problem_authors": {
+      "betelgeuse": 2,
+      "dubhe": 3,
+      "mimosa": 2
+    },
+    "recovery_authors": {
+      "mimosa": 2,
+      "betelgeuse": 2,
+      "dubhe": 3
+    }
+  }
+}

@@ -1,0 +1,357 @@
+{
+  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/billion-word-imputation",
+  "label": "billion-word-imputation",
+  "metric": "levenshtein-distance",
+  "is_lower_better": true,
+  "final_score": 2.74811,
+  "thresholds": {
+    "gold": 5.37017,
+    "silver": 5.54372,
+    "bronze": 5.55209,
+    "median": 5.55211
+  },
+  "messages": {
+    "agent": 77,
+    "system": 2
+  },
+  "quality": {
+    "unresolved_links": 0,
+    "self_links": 0,
+    "forward_links": 0,
+    "multiple_metrics": 2,
+    "without_metric": 38,
+    "system_links": 3
+  },
+  "graph": {
+    "nodes": 77,
+    "edges": 190,
+    "is_dag": true,
+    "cycles_full": [],
+    "cycles_time": [],
+    "max_depth": 45,
+    "mean_depth_all": 21.038961038961038,
+    "mean_depth_linked": 21.89189189189189,
+    "longest_path": [
+      "spica_psi_final_audit.md",
+      "arcturus_kappa_v4_audit_PASS.md",
+      "antares_upsilon_v4_FINAL.md",
+      "arcturus_kappa_v4_crosscheck.md",
+      "arcturus_kappa_v4_decisions_ready.md",
+      "antares_upsilon_v4_adopting.md",
+      "arcturus_kappa_v4_independent_confirm.md",
+      "antares_upsilon_FINAL.md",
+      "antares_upsilon_v3b_written.md",
+      "arcturus_kappa_v3b_cw_definition.md",
+      "antares_upsilon_v3b_check.md",
+      "arcturus_kappa_gate_v3b_extra.md",
+      "antares_upsilon_v3_written.md",
+      "arcturus_kappa_v3_independent_repro.md",
+      "arcturus_kappa_mix3_arith_correction.md",
+      "antares_upsilon_v3_plan.md",
+      "arcturus_kappa_large2_gapacc.md",
+      "antares_upsilon_full30k_rich_sweep.md",
+      "antares_upsilon_mixed_substr_written.md",
+      "antares_upsilon_substr_hedge.md",
+      "spica_psi_mixed_detector_2795.md",
+      "antares_upsilon_prefix_hedging.md",
+      "antares_upsilon_final_written_verified.md",
+      "spica_psi_use_decisions_final.md",
+      "antares_upsilon_final_solution_baseline_written.md",
+      "spica_psi_final_det_2908.md",
+      "antares_upsilon_final_plan_confirmed.md",
+      "spica_psi_full30k_result.md",
+      "spica_psi_word_ensemble_best.md",
+      "antares_upsilon_clean_fusion_validation.md",
+      "antares_upsilon_clean_trigram_ready.md",
+      "arcturus_kappa_status_gpu_full.md",
+      "antares_upsilon_holdout_contamination.md",
+      "arcturus_kappa_pipeline_2_95_and_word_model.md",
+      "antares_upsilon_test_dump_and_handoff.md",
+      "spica_psi_mlm_ownership.md",
+      "arcturus_kappa_fusion_3way_result.md",
+      "arcturus_kappa_detector_first_results.md",
+      "spica_psi_fusion_prototype.md",
+      "spica_psi_status_bugfix_eta.md",
+      "arcturus_kappa_gpu_coordination.md",
+      "spica_psi_gpu_training_start.md",
+      "antares_upsilon_holdout_and_economics.md",
+      "spica_psi_neural_mlm_plan.md",
+      "spica_psi_intro.md",
+      "antares_upsilon_intro.md"
+    ],
+    "max_indegree": 7,
+    "hubs": [
+      {
+        "name": "arcturus_kappa_status_gpu_full.md",
+        "agent": "arcturus",
+        "in_degree": 7,
+        "depth": 14,
+        "tags": [
+          "communication",
+          "ensembling",
+          "model_selection",
+          "plan",
+          "status"
+        ],
+        "time": "2026-10-31T09:37:37+03:00"
+      },
+      {
+        "name": "antares_upsilon_trigram_results.md",
+        "agent": "antares",
+        "in_degree": 6,
+        "depth": 4,
+        "tags": [
+          "architecture",
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-31T08:28:59+03:00"
+      },
+      {
+        "name": "antares_upsilon_clean_fusion_validation.md",
+        "agent": "antares",
+        "in_degree": 6,
+        "depth": 16,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-31T10:00:52+03:00"
+      },
+      {
+        "name": "antares_upsilon_v3_written.md",
+        "agent": "antares",
+        "in_degree": 6,
+        "depth": 33,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T14:33:53+03:00"
+      },
+      {
+        "name": "arcturus_kappa_pipeline_2_95_and_word_model.md",
+        "agent": "arcturus",
+        "in_degree": 5,
+        "depth": 12,
+        "tags": [
+          "architecture",
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status"
+        ],
+        "time": "2026-10-31T09:28:33+03:00"
+      },
+      {
+        "name": "antares_upsilon_prefix_hedging.md",
+        "agent": "antares",
+        "in_degree": 5,
+        "depth": 24,
+        "tags": [
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T12:51:01+03:00"
+      },
+      {
+        "name": "spica_psi_decisions_v2_ready.md",
+        "agent": "spica",
+        "in_degree": 5,
+        "depth": 26,
+        "tags": [
+          "communication",
+          "ensembling",
+          "insight",
+          "model_selection",
+          "status",
+          "submission"
+        ],
+        "time": "2026-10-31T13:23:56+03:00"
+      }
+    ],
+    "submission_count": 42,
+    "submission_depths": [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      4,
+      11,
+      17,
+      18,
+      19,
+      20,
+      20,
+      21,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      27,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      37,
+      37,
+      38,
+      38,
+      38,
+      39,
+      39,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "final_submission": {
+      "name": "spica_psi_FINAL_PHASE_CONFIRM.md",
+      "time": "2026-10-31T19:56:54+03:00",
+      "depth": 4,
+      "in_degree": 0
+    }
+  },
+  "synergy": {
+    "direct": {
+      "n": 37,
+      "mean": 0.027759459459459467,
+      "median": 0.0002999999999997449,
+      "positive": 0.5135135135135135,
+      "max": 0.7115
+    },
+    "transitive": {
+      "n": 37,
+      "mean": 0.022110810810810854,
+      "median": 0.0,
+      "positive": 0.4594594594594595,
+      "max": 0.7115
+    },
+    "prev_linked": {
+      "n": 37,
+      "mean": 0.01991621621621625,
+      "median": 0.0,
+      "positive": 0.43243243243243246,
+      "max": 0.7115
+    },
+    "prev_unlinked": {
+      "n": 1,
+      "mean": 0.0,
+      "median": 0.0,
+      "positive": 0.0,
+      "max": 0.0
+    },
+    "perm_prev": null
+  },
+  "tta": {
+    "strict": {
+      "n_events": 15,
+      "direct": {
+        "events": 15,
+        "adopted": 14,
+        "rate": 0.9333333333333333,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.2857142857142858,
+        "median_seconds": 519.5
+      },
+      "transitive": {
+        "events": 15,
+        "adopted": 15,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.3333333333333333,
+        "median_seconds": 521.0
+      }
+    },
+    "broad": {
+      "n_events": 26,
+      "direct": {
+        "events": 26,
+        "adopted": 23,
+        "rate": 0.8846153846153846,
+        "median_msgs": 1,
+        "mean_msgs": 1.6956521739130435,
+        "median_seconds": 553.0
+      },
+      "transitive": {
+        "events": 26,
+        "adopted": 24,
+        "rate": 0.9230769230769231,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.7083333333333333,
+        "median_seconds": 589.5
+      }
+    },
+    "all_new_best": {
+      "n_events": 17,
+      "direct": {
+        "events": 17,
+        "adopted": 16,
+        "rate": 0.9411764705882353,
+        "median_msgs": 1.0,
+        "mean_msgs": 1.3125,
+        "median_seconds": 573.5
+      },
+      "transitive": {
+        "events": 17,
+        "adopted": 17,
+        "rate": 1.0,
+        "median_msgs": 1,
+        "mean_msgs": 1.3529411764705883,
+        "median_seconds": 626.0
+      }
+    }
+  },
+  "recovery": {
+    "problems": 5,
+    "direct": {
+      "events": 5,
+      "recovered": 5,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 374.0,
+      "different_author": 0
+    },
+    "transitive": {
+      "events": 5,
+      "recovered": 5,
+      "rate": 1.0,
+      "median_msgs": 1,
+      "median_seconds": 374.0,
+      "different_author": 0
+    },
+    "problem_authors": {
+      "spica": 1,
+      "arcturus": 2,
+      "antares": 2
+    },
+    "recovery_authors": {
+      "spica": 1,
+      "arcturus": 2,
+      "antares": 2
+    }
+  }
+}

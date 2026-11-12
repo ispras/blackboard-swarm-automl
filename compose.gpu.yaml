@@ -1,0 +1,11 @@
+# Enable with: SWARM_GPU_COUNT=N bin/cli/swarm.sh up ...
+# Requires NVIDIA Container Toolkit on the host.
+services:
+  swarm:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: ${SWARM_GPU_COUNT:-1}
+              capabilities: [gpu]

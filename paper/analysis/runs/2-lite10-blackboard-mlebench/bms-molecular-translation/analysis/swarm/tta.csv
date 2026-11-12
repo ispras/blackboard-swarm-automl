@@ -1,0 +1,18 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+regulus_omega_molscribe_zeroshot_and_finetune_plan.md,regulus,2026-10-22T05:20:08+03:00,46.18,insight,altair_theta_molscribe_letterbox_fix.md,1,1161.0,altair_theta_molscribe_letterbox_fix.md,1,1161.0
+altair_theta_molscribe_letterbox_fix.md,altair,2026-10-22T05:39:29+03:00,61.4,insight,regulus_iota_smiles_target_insight.md,1,258.0,regulus_iota_smiles_target_insight.md,1,258.0
+regulus_iota_scratch_2k_lev37.md,regulus,2026-10-22T06:10:13+03:00,37.4,insight,altair_theta_revised_swarm_plan.md,2,329.0,altair_theta_revised_swarm_plan.md,2,329.0
+regulus_iota_plan_primary_scratch.md,regulus,2026-10-22T06:31:38+03:00,17.8,insight,altair_theta_schedule_confirmed.md,4,618.0,altair_theta_schedule_confirmed.md,4,618.0
+regulus_iota_cascade_analysis.md,regulus,2026-10-22T06:43:32+03:00,11.19,insight,altair_theta_cascade_fusion_measured.md,3,1347.0,altair_theta_cascade_fusion_measured.md,3,1347.0
+regulus_omega_step1000_lev25.md,regulus,2026-10-22T06:44:18+03:00,25.18,insight,altair_theta_cascade_fusion_measured.md,2,1301.0,altair_theta_cascade_fusion_measured.md,2,1301.0
+regulus_omega_step2000_lev14_9.md,regulus,2026-10-22T07:08:00+03:00,14.88,insight,,,,altair_theta_three_source_endgame.md,5,1852.0
+regulus_iota_learned_reranker.md,regulus,2026-10-22T07:11:11+03:00,3.57,insight,altair_theta_three_source_endgame.md,3,1661.0,altair_theta_three_source_endgame.md,3,1661.0
+regulus_omega_step3000_lev10_6.md,regulus,2026-10-22T07:24:54+03:00,10.65,insight,altair_theta_three_source_endgame.md,2,838.0,altair_theta_three_source_endgame.md,2,838.0
+regulus_iota_polish_24000_lev2_76.md,regulus,2026-10-22T09:06:47+03:00,2.76,insight,,,,altair_theta_primary_running_900ips.md,6,4552.0
+regulus_omega_final_val_6_54_fullpass.md,regulus,2026-10-22T10:16:50+03:00,6.54,insight,altair_theta_primary_running_900ips.md,4,349.0,altair_theta_primary_running_900ips.md,4,349.0
+regulus_omega_negative_fusion_result.md,regulus,2026-10-22T10:19:42+03:00,6.54,insight,,,,altair_theta_medoid_plan.md,9,2025.0
+regulus_omega_medoid_check.md,regulus,2026-10-22T11:42:29+03:00,1.447,insight,,,,altair_theta_phase3_adopted.md,4,2713.0
+regulus_omega_phase3_f8_routing.md,regulus,2026-10-22T12:35:15+03:00,1.406,insight,,,,altair_theta_safety_125.md,16,5740.0
+regulus_iota_final_signoff.md,regulus,2026-10-22T15:51:16+03:00,1.2507,insight submission,altair_theta_final_signoff.md,1,39.0,altair_theta_final_signoff.md,1,39.0
+regulus_iota_last_negative_tta.md,regulus,2026-10-22T16:18:17+03:00,1.2507,insight,,,,altair_theta_FINAL_CONFIRMATION.md,2,494.0
+regulus_iota_last_negative_tta2.md,regulus,2026-10-22T16:21:03+03:00,1.2507,insight,altair_theta_FINAL_CONFIRMATION.md,1,328.0,altair_theta_FINAL_CONFIRMATION.md,1,328.0

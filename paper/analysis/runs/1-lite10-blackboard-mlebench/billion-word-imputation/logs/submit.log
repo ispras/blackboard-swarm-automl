@@ -1,0 +1,49 @@
+== задача: Billion Word Imputation (`billion-word-imputation`)
+== prepared: /home/travvy/.cache/mle-bench/data/billion-word-imputation/prepared (cache:/home/travvy/.cache/mle-bench/data)
+== проверка контрольных сумм
+== снапшот приватной части
+  snapshot private/competitions/billion-word-imputation/answers.csv ← /home/travvy/.cache/mle-bench/data/billion-word-imputation/prepared/private/test.csv
+  written private/competitions/billion-word-imputation/meta.json
+== установка public-данных в sandbox/data
+  installed data/description.md (3.7 KiB) md5 23d7b2425963dbe9a0c4406210858966
+  installed data/test_v2.txt.zip (17.1 MiB) md5 155a9e0744172d0fce267c30c93d0ed4
+  installed data/train_v2.txt.zip (1.6 GiB) md5 715b9210c5475ecdd4d5809340b26032
+  written TASK.md (только description)
+  written data/README.md
+
+задача: Billion Word Imputation (`billion-word-imputation`)
+  метрика: `levenshtein-distance` (меньше — лучше)
+  - пороги (88 команд в лидерборде):
+  - gold 5.37017
+  - silver 5.54372
+  - bronze 5.55209
+  - median 5.55211
+  сабмит агентов: sandbox/final_solution/submission.csv
+
+== проверка перед MLM-запуском
+активная задача:  billion-word-imputation
+sandbox/data:     1,7G (уедет в payload job'а)
+private/:         в MLM не уезжает (исключён из payload)
+дальше:           mlm/swarm.sh up --agents N --hours H --model M --prompt sandbox/PROMPT.md
+Будет удалено: всё в sandbox/, что создали агенты:
+  blackboard/, workspaces/, final_solution/, shared/, catboost_info/ и любые
+  прочие их файлы и папки в sandbox/.
+Не тронет: sandbox/data/, sandbox/PROMPT.md, sandbox/TASK.md, private/, .git/, .kilo/, bin/, results/
+История sandbox/blackboard/ остаётся в git.
+готово: sandbox/ очищен, созданы пустые sandbox/blackboard/, sandbox/workspaces/, sandbox/final_solution/
+S3: данные (1684MB) едут через бакет 'mlebench-billion-word-imputation' (--no-data-s3 отключает, --data-bucket переопределяет)
+image ok: swarm-mlm id=56
+data.tar уже есть в бакете 'mlebench-billion-word-imputation' — заливка не нужна (--data-force-upload чтобы перезалить)
+payload:      /home/travvy/Desktop/sisyphus-blackboard-experiment/mlm/.build/payload (196K)
+image:        swarm-mlm
+job:          billion-word-imputation
+/home/travvy/Desktop/sisyphus-blackboard-experiment/.venv-mlm/lib/python3.12/site-packages/ML_management/mlmanagement/git_info.py:93: UserWarning: Repo sisyphus-blackboard-experiment have changes.
+  warnings.warn(f"Repo {repo_name} have changes.")
+  0%|          | 0.00/178k [00:00<?, ?File/s]210kFile [00:00, 806kFile/s]                 
+{"job_id": "16185", "job_name": "billion-word-imputation", "status": "PLANNED"}
+
+Job запущен в MLM: billion-word-imputation (id 16185)
+Статус:           mlm/swarm.sh status
+Логи:             mlm/swarm.sh logs            (или в UI MLM)
+Забрать итоги:    mlm/swarm.sh pull --merge --grade
+Остановить:       mlm/swarm.sh stop

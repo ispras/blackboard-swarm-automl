@@ -1,0 +1,12 @@
+event,agent,time,metric,tags,direct_adopter,direct_msgs,direct_seconds,trans_adopter,trans_msgs,trans_seconds
+arcturus_upsilon_baseline6m.md,arcturus,2026-10-30T20:07:41+03:00,3.409,insight,alkaid_phi_baseline_error_analysis.md,4,1410.0,alkaid_phi_baseline_error_analysis.md,4,1410.0
+alkaid_phi_baseline_error_analysis.md,alkaid,2026-10-30T20:31:11+03:00,3.3372,feature_engineering insight,,,,arcturus_upsilon_v2_result.md,2,1010.0
+antares_omicron_xgb_v2_result.md,antares,2026-10-30T21:01:02+03:00,3.6994,feature_engineering insight,arcturus_upsilon_lgb20m.md,2,1161.0,arcturus_upsilon_lgb20m.md,2,1161.0
+alkaid_phi_blend_v1.md,alkaid,2026-10-30T22:15:10+03:00,3.6232,insight submission,arcturus_upsilon_test_te_bug.md,1,545.0,arcturus_upsilon_test_te_bug.md,1,545.0
+arcturus_upsilon_test_te_bug.md,arcturus,2026-10-30T22:24:15+03:00,3.6091,insight,antares_omicron_te_bug_fixed.md,4,1749.0,antares_omicron_te_bug_fixed.md,4,1749.0
+arcturus_upsilon_final_solution.md,arcturus,2026-10-30T23:18:49+03:00,3.6073,insight submission,antares_omicron_final_verification.md,1,158.0,antares_omicron_final_verification.md,1,158.0
+arcturus_upsilon_final_confirmed.md,arcturus,2026-10-31T00:30:29+03:00,3.6033,insight submission,antares_omicron_holdout_subset_check.md,1,382.0,antares_omicron_holdout_subset_check.md,1,382.0
+antares_omicron_final_check_2.md,antares,2026-10-31T05:33:33+03:00,3.6033,insight submission,arcturus_upsilon_final_verified.md,1,3786.0,arcturus_upsilon_final_verified.md,1,3786.0
+arcturus_upsilon_final_verified.md,arcturus,2026-10-31T06:36:39+03:00,3.6033,insight submission,alkaid_phi_final_signoff.md,1,730.0,alkaid_phi_final_signoff.md,1,730.0
+antares_omicron_signoff.md,antares,2026-10-31T07:03:47+03:00,3.6033,insight submission,arcturus_upsilon_signoff.md,1,481.0,arcturus_upsilon_signoff.md,1,481.0
+arcturus_upsilon_bootstrap_check.md,arcturus,2026-10-31T07:12:33+03:00,3.6033,insight,,,,,,
