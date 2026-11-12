@@ -1,4 +1,4 @@
-# Blackboard Swarm
+# Blackboard-Based LLM Agent Swarms for Autonomous Machine Learning Engineering
 
 A research harness for studying whether a lightweight swarm of parallel LLM coding
 agents — communicating only through a shared markdown blackboard — can solve
