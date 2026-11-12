@@ -11,7 +11,7 @@ The repository contains:
 - the agent prompts (single-agent baseline and swarm protocols),
 - the blackboard/analysis pipeline (citation graph, message metrics, token costs),
 - the experiment configuration and task subsets used in the paper,
-- the LaTeX source of the paper and the scripts that produce its figures.
+- the scripts that produce the paper figures.
 
 ## Paper
 
@@ -19,8 +19,6 @@ The repository contains:
 
 Nikita Shevtsov, Vladimir Mayorov, Ekaterina Lobastova — Ivannikov Institute for
 System Programming of the Russian Academy of Sciences (ISP RAS), Moscow, Russia.
-
-Published in *IEEE Access*. The LaTeX source lives in [`paper/tex/access.tex`](paper/tex/access.tex).
 
 > **Abstract.** Autonomous machine-learning engineering agents are commonly built on
 > increasingly complex harnesses, including search graphs, Monte Carlo tree search,
@@ -269,7 +267,7 @@ docker/              Dockerfile with swarm/tools/swarm-min/tools-min stages
 prompts/             Single-agent baseline and swarm protocol prompts
 examples/            Offline toy example (toy-spaceship dataset + baseline submission)
 subsets/             Task subsets (dev, low, high, lite10)
-paper/               LaTeX source of the paper and the analysis pipeline/artifacts
+paper/               Analysis pipeline and artifacts used for the paper figures
 sandbox/             Runtime state per run: blackboard, workspaces, final_solution, analysis
 costs/, results/     Token costs and saved results produced by runs
 ```
