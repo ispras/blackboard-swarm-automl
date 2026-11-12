@@ -12,7 +12,8 @@ OPENCODE_BIN="${OPENCODE_BIN:-$(command -v opencode)}"
 mkdir -p "$SANDBOX/blackboard/agent_logs"
 LOG_FILE="$SANDBOX/blackboard/agent_logs/$TITLE.log"
 extra=()
-[ -n "${MODEL:-}" ] && extra=(-m "$MODEL")
+[ -n "${MODEL:-}" ] && extra+=(-m "$MODEL")
+[ -n "${REASONING:-}" ] && extra+=(--variant "$REASONING")
 
 # OPENCODE_AGENT_LOG_ONLY=1 (Docker supervisor): agent output is not streamed to stdout
 # (otherwise parallel agents produce a mess) — it goes only to the agent's log file.

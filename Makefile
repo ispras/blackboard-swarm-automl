@@ -3,7 +3,8 @@ SHELL := /bin/bash
 AGENTS ?= 3
 HOURS ?= 12
 MODEL ?= deepseek/deepseek-flash
-PROMPT ?= prompts/PROMPT_SWARM.md
+REASONING ?= max
+PROMPT ?= prompts/PROMPT_SWARM_v2_internet_usage_rules.md
 SUBSET ?= subsets/lite10.txt
 
 .PHONY: help build build-min up batch status logs down clean toy-prepare toy-grade analysis shell
@@ -30,11 +31,11 @@ build-min:
 	@echo "hint: for subsequent commands set SWARM_TARGET=swarm-min and SWARM_TOOLS_TARGET=tools-min in .env"
 
 up:
-	bin/cli/swarm.sh up --agents $(AGENTS) --hours $(HOURS) --model $(MODEL) --prompt $(PROMPT)
+	bin/cli/swarm.sh up --agents $(AGENTS) --hours $(HOURS) --model $(MODEL) --reasoning $(REASONING) --prompt $(PROMPT)
 
 batch:
 	bin/cli/swarm.sh batch --subset $(SUBSET) \
-		--agents $(AGENTS) --hours $(HOURS) --model $(MODEL) --prompt $(PROMPT)
+		--agents $(AGENTS) --hours $(HOURS) --model $(MODEL) --reasoning $(REASONING) --prompt $(PROMPT)
 
 status:
 	bin/cli/swarm.sh status

@@ -8,7 +8,7 @@ source "$ROOT/bin/lib/_docker.sh"
 usage() {
   cat >&2 <<'USAGE'
 usage:
-  bin/cli/swarm.sh up [--agents N] [--hours H] [--model MODEL] --prompt FILE [OPTIONS]
+  bin/cli/swarm.sh up [--agents N] [--hours H] [--model MODEL] [--reasoning LEVEL] --prompt FILE [OPTIONS]
   bin/cli/swarm.sh batch --subset FILE [OPTIONS]
   bin/cli/swarm.sh server
   bin/cli/swarm.sh final-phase
@@ -24,7 +24,8 @@ up:
   --hours H             бюджет работы в часах, целое >= 1 (default: 12)
                         work_end = start + H - 30 мин, hard_end = start + H
   --model M             модель opencode (default: deepseek/deepseek-flash)
-  --prompt FILE         файл промпта (prompts/PROMPT_SWARM.md, prompts/PROMPT_RUS.md, ...)
+  --reasoning LEVEL     уровень reasoning модели (default: max; пробрасывается как opencode --variant)
+  --prompt FILE         файл промпта (prompts/PROMPT_SWARM_v2_internet_usage_rules.md, prompts/PROMPT_SWARM_v1.md, ...)
   --isolation M         принимается для совместимости; в Docker всегда включена изоляция
   --gpus N              число GPU для swarm-контейнера (0 = без GPU; нужен nvidia runtime; default: 1)
   --board-interval SEC  период дайджеста доски (0 = выключить; default: 300)
@@ -35,7 +36,7 @@ batch:
   --subset FILE         subset file (repeatable); bare names resolve under
                         subsets/
   --list                list available subset files
-  all other up flags (--agents, --hours, --model, --prompt, --gpus) apply per task;
+  all other up flags (--agents, --hours, --model, --reasoning, --prompt, --gpus) apply per task;
   see bin/cli/batch.sh --help for --no-clean/--no-prepare/--no-save/--fail-fast/--dry-run.
 
 Всё работает в Docker: swarm-контейнер видит только sandbox/ (data, blackboard,
@@ -96,6 +97,7 @@ parse_up() {
   AGENT_COUNT="${SWARM_AGENTS:-3}"
   HOURS="${SWARM_HOURS:-12}"
   MODEL="${SWARM_MODEL:-deepseek/deepseek-flash}"
+  REASONING="${SWARM_REASONING:-max}"
   PROMPT_FILE=""
   ISOLATION="docker"
   GPU_COUNT="${SWARM_GPU_COUNT:-1}"
@@ -106,6 +108,7 @@ parse_up() {
       --agents) [ $# -ge 2 ] || usage; AGENT_COUNT="$2"; shift 2 ;;
       --hours) [ $# -ge 2 ] || usage; HOURS="$2"; shift 2 ;;
       --model) [ $# -ge 2 ] || usage; MODEL="$2"; shift 2 ;;
+      --reasoning) [ $# -ge 2 ] || usage; REASONING="$2"; shift 2 ;;
       --prompt) [ $# -ge 2 ] || usage; PROMPT_FILE="$2"; shift 2 ;;
       --isolation) [ $# -ge 2 ] || usage; ISOLATION="$2"; shift 2 ;;
       --gpus) [ $# -ge 2 ] || usage; GPU_COUNT="$2"; shift 2 ;;
@@ -118,6 +121,7 @@ parse_up() {
   [ -n "$AGENT_COUNT" ] || die "не задан --agents"
   [ -n "$HOURS" ] || die "не задан --hours"
   [ -n "$MODEL" ] || die "не задан --model"
+  [ -n "$REASONING" ] || die "не задан --reasoning"
   [ -n "$PROMPT_FILE" ] || die "не задан --prompt"
   need_int --agents "$AGENT_COUNT" 1
   need_int --hours "$HOURS" 1
@@ -140,6 +144,7 @@ cmd_up() {
   export SWARM_AGENTS="$AGENT_COUNT"
   export SWARM_HOURS="$HOURS"
   export SWARM_MODEL="$MODEL"
+  export SWARM_REASONING="$REASONING"
   export SWARM_PROMPT="$PROMPT_REL"
   export SWARM_GPU_COUNT="$GPU_COUNT"
   export SWARM_BOARD_INTERVAL="$BOARD_INTERVAL"
@@ -185,7 +190,7 @@ cmd_up() {
   local comp
   comp="$(active_competition)"
   cat <<SUMMARY
-Сессий: $AGENT_COUNT, бюджет: ${HOURS}ч, модель: $MODEL, изоляция: docker
+Сессий: $AGENT_COUNT, бюджет: ${HOURS}ч, модель: $MODEL, reasoning: $REASONING, изоляция: docker
 Агенты: $(print_agent_map)
 Задача: ${comp:-(не выбрана — bin/cli/prepare_data.sh install -c <competition-id>)}
 Промпт: $PROMPT_FILE
@@ -211,8 +216,9 @@ cmd_server() {
   export SWARM_AGENTS=0
   export SWARM_SERVER_ONLY=1
   export SWARM_HOURS="${SWARM_HOURS:-12}"
-  export SWARM_PROMPT="${SWARM_PROMPT:-prompts/PROMPT_SWARM.md}"
+  export SWARM_PROMPT="${SWARM_PROMPT:-prompts/PROMPT_SWARM_v2_internet_usage_rules.md}"
   export SWARM_MODEL="${SWARM_MODEL:-deepseek/deepseek-flash}"
+  export SWARM_REASONING="${SWARM_REASONING:-max}"
   ensure_swarm_image
   rm -f "$ROOT/sandbox/blackboard/.swarm_port"
   compose up -d --remove-orphans swarm

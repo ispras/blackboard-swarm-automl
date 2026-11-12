@@ -16,6 +16,7 @@ mkdir -p "$LOGDIR" "$SANDBOX/workspaces" "$SANDBOX/final_solution" "$SANDBOX/ana
 AGENTS="${SWARM_AGENTS:-3}"
 HOURS="${SWARM_HOURS:-12}"
 MODEL="${SWARM_MODEL:-deepseek/deepseek-flash}"
+REASONING="${SWARM_REASONING:-max}"
 SERVER_ONLY="${SWARM_SERVER_ONLY:-0}"
 OPENCODE_BIN="${OPENCODE_BIN:-$(command -v opencode)}"
 GPU_COUNT="${SWARM_GPU_COUNT:-1}"
@@ -30,7 +31,7 @@ case "$HOURS" in ''|*[!0-9]*) HOURS=12 ;; esac
 case "$GPU_COUNT" in ''|*[!0-9]*) GPU_COUNT=1 ;; esac
 case "$BOARD_INTERVAL" in ''|*[!0-9]*) BOARD_INTERVAL=300 ;; esac
 
-PROMPT="${SWARM_PROMPT:-prompts/PROMPT_SWARM.md}"
+PROMPT="${SWARM_PROMPT:-prompts/PROMPT_SWARM_v2_internet_usage_rules.md}"
 case "$PROMPT" in
   /*) ;;
   *)
@@ -195,6 +196,7 @@ echo "cwd:       $(pwd)"
 echo "agents:    $AGENTS"
 echo "hours:     $HOURS"
 echo "model:     ${MODEL:-(default)}"
+echo "reasoning: $REASONING"
 if [ "$SERVER_ONLY" = "1" ]; then echo "prompt:    (server-only)"; else echo "prompt:    $PROMPT"; fi
 echo "gpus:      $GPU_COUNT"
 if [ "$SERVER_ONLY" = "1" ]; then
@@ -286,7 +288,7 @@ start_agent() {
   if [ "$resume" = "1" ]; then
     sid="$(agent_session_id "$title")"
     if [ -n "$sid" ]; then
-      MODEL="$MODEL" OPENCODE_BIN="$OPENCODE_BIN" AGENT_ID="${AGENT_NAMES[$((i - 1))]}" \
+      MODEL="$MODEL" REASONING="$REASONING" OPENCODE_BIN="$OPENCODE_BIN" AGENT_ID="${AGENT_NAMES[$((i - 1))]}" \
         OPENCODE_AGENT_LOG_ONLY=1 \
         OPENCODE_AGENT_SESSION="$sid" OPENCODE_AGENT_MESSAGE="$RESUME_MESSAGE" \
         "${gpu_env[@]}" \
@@ -297,7 +299,7 @@ start_agent() {
     fi
     echo "[agent $title] сессия не найдена (opencode.db) — стартую заново с промптом" >&2
   fi
-  MODEL="$MODEL" PROMPT_FILE="$PROMPT" OPENCODE_BIN="$OPENCODE_BIN" AGENT_ID="${AGENT_NAMES[$((i - 1))]}" \
+  MODEL="$MODEL" REASONING="$REASONING" PROMPT_FILE="$PROMPT" OPENCODE_BIN="$OPENCODE_BIN" AGENT_ID="${AGENT_NAMES[$((i - 1))]}" \
     OPENCODE_AGENT_LOG_ONLY=1 \
     "${gpu_env[@]}" \
     setsid bash "$ROOT/bin/container/opencode_agent.sh" "$URL" "$title" &

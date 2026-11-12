@@ -19,7 +19,8 @@ TASK_FILES=()
 AGENT_COUNT="${SWARM_AGENTS:-3}"
 HOURS="${SWARM_HOURS:-12}"
 MODEL="${SWARM_MODEL:-deepseek/deepseek-flash}"
-PROMPT_FILE="${SWARM_PROMPT:-prompts/PROMPT_SWARM.md}"
+REASONING="${SWARM_REASONING:-max}"
+PROMPT_FILE="${SWARM_PROMPT:-prompts/PROMPT_SWARM_v2_internet_usage_rules.md}"
 GPU_COUNT="${SWARM_GPU_COUNT:-1}"
 BOARD_INTERVAL="${SWARM_BOARD_INTERVAL:-300}"
 DO_CLEAN=1
@@ -42,7 +43,8 @@ options:
   --agents N            parallel agent sessions per task (default: 3)
   --hours H             wall-clock budget per task in hours (default: 12)
   --model M             opencode model (default: deepseek/deepseek-flash)
-  --prompt FILE         prompt file (default: prompts/PROMPT_SWARM.md)
+  --reasoning LEVEL     model reasoning variant (default: max)
+  --prompt FILE         prompt file (default: prompts/PROMPT_SWARM_v2_internet_usage_rules.md)
   --gpus N              GPUs for the swarm container (default: 1)
   --board-interval SEC  board digest period (default: 300; 0 disables)
   --no-clean            keep sandbox artifacts between tasks
@@ -73,6 +75,7 @@ while [ $# -gt 0 ]; do
     --agents) [ $# -ge 2 ] || usage; AGENT_COUNT="$2"; shift 2 ;;
     --hours) [ $# -ge 2 ] || usage; HOURS="$2"; shift 2 ;;
     --model) [ $# -ge 2 ] || usage; MODEL="$2"; shift 2 ;;
+    --reasoning) [ $# -ge 2 ] || usage; REASONING="$2"; shift 2 ;;
     --prompt) [ $# -ge 2 ] || usage; PROMPT_FILE="$2"; shift 2 ;;
     --gpus) [ $# -ge 2 ] || usage; GPU_COUNT="$2"; shift 2 ;;
     --board-interval) [ $# -ge 2 ] || usage; BOARD_INTERVAL="$2"; shift 2 ;;
@@ -92,6 +95,7 @@ need_int --agents "$AGENT_COUNT" 1
 need_int --hours "$HOURS" 1
 need_int --gpus "$GPU_COUNT" 0
 need_int --board-interval "$BOARD_INTERVAL" 0
+[ -n "$REASONING" ] || die "--reasoning: value expected"
 
 if [ "$LIST" = 1 ]; then
   [ -d "$SUBSET_DIR" ] || die "subset directory not found: $SUBSET_DIR"
@@ -150,6 +154,7 @@ exec > >(tee -a "$LOG") 2>&1
 export SWARM_AGENTS="$AGENT_COUNT"
 export SWARM_HOURS="$HOURS"
 export SWARM_MODEL="$MODEL"
+export SWARM_REASONING="$REASONING"
 export SWARM_GPU_COUNT="$GPU_COUNT"
 export SWARM_BOARD_INTERVAL="$BOARD_INTERVAL"
 if [ "$DO_SAVE" = 1 ]; then
@@ -159,7 +164,7 @@ else
 fi
 
 echo "[batch] log: ${LOG#$ROOT/}"
-echo "[batch] tasks: ${#TASKS[@]}, agents: $AGENT_COUNT, hours: $HOURS, model: $MODEL, gpus: $GPU_COUNT"
+echo "[batch] tasks: ${#TASKS[@]}, agents: $AGENT_COUNT, hours: $HOURS, model: $MODEL, reasoning: $REASONING, gpus: $GPU_COUNT"
 echo "[batch] clean: $DO_CLEAN, prepare: $DO_PREPARE, save: $DO_SAVE"
 
 stop_swarm() {
@@ -233,6 +238,7 @@ run_one() {
       --agents "$AGENT_COUNT" \
       --hours "$HOURS" \
       --model "$MODEL" \
+      --reasoning "$REASONING" \
       --prompt "$PROMPT_FILE" \
       --gpus "$GPU_COUNT" \
       --board-interval "$BOARD_INTERVAL" \

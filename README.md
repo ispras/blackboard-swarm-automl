@@ -106,7 +106,7 @@ make build              # full swarm + tools images (several GB)
 bin/cli/prepare_data.sh install -c spooky-author-identification
 
 # Launch a 12-hour, 3-agent swarm on one task:
-make up AGENTS=3 HOURS=12 MODEL=deepseek/deepseek-flash PROMPT=prompts/PROMPT_SWARM_v2.md
+make up AGENTS=3 HOURS=12 MODEL=deepseek/deepseek-flash REASONING=max PROMPT=prompts/PROMPT_SWARM_v2_internet_usage_rules.md
 
 make logs               # follow swarm and grader logs
 make status             # show Docker and swarm state
@@ -186,14 +186,12 @@ paper analyzes (depth, cross-agent share, citation lag, etc.).
 
 **Prompts.** [`prompts/`](prompts) contains the single-agent baseline
 (`PROMPT_SINGLE.md`) and the swarm protocols (`PROMPT_SWARM_v1.md`,
-`PROMPT_SWARM_v2.md`), which define the blackboard etiquette, message format,
+`PROMPT_SWARM_v2_internet_usage_rules.md`), which define the blackboard etiquette, message format,
 hashtag vocabulary, and the `<metric>` reporting convention.
 
 **Sandbox.** Each run uses an isolated `sandbox/` workspace with the task data
 (`sandbox/data`), the shared blackboard (`sandbox/blackboard`), per-agent
 workspaces, the assembled `final_solution`, and the generated `analysis/` output.
-A board digest is injected into agent context every `SWARM_BOARD_INTERVAL`
-seconds.
 
 ## Configuration reference
 
@@ -222,7 +220,8 @@ seconds.
 | `SWARM_AGENTS` | `3` | Number of parallel agent sessions. |
 | `SWARM_HOURS` | `12` | Wall-clock budget per task (work ends 30 min early, hard end at H). |
 | `SWARM_MODEL` | `deepseek/deepseek-flash` | OpenCode model identifier. |
-| `SWARM_PROMPT` | `prompts/PROMPT_SWARM.md` | Agent prompt file (pass explicitly via `--prompt`; see `prompts/` for available files). |
+| `SWARM_REASONING` | `max` | Model reasoning variant, passed to OpenCode as `--variant` (`--reasoning` on `up`/`batch`). |
+| `SWARM_PROMPT` | `prompts/PROMPT_SWARM_v2_internet_usage_rules.md` | Agent prompt file (pass explicitly via `--prompt`; see `prompts/` for available files). |
 | `SWARM_GPU_COUNT` | `1` | GPUs reserved for the swarm container (`0` = CPU-only toy demo). |
 | `SWARM_CPUS` | `32` | CPU limit for the swarm container. |
 | `SWARM_MEM_LIMIT` | `96g` | Memory limit for the swarm container. |
