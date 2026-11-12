@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/bms-molecular-translation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/3-lite10-blackboard-mlebench/bms-molecular-translation",
   "label": "bms-molecular-translation",
   "metric": "levenshtein-distance",
   "is_lower_better": true,
@@ -80,8 +80,8 @@
       "altair_epsilon_molscribe_results.md",
       "alderamin_xi_shared_infra.md",
       "alderamin_xi_no_dict_snapping.md",
-      "rigel_mu_rdkit_and_stats.md",
-      "alderamin_xi_intro.md"
+      "alderamin_xi_roles.md",
+      "rigel_mu_intro_plan.md"
     ],
     "max_indegree": 8,
     "hubs": [

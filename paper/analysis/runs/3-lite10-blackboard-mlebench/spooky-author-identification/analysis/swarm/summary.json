@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/spooky-author-identification",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/3-lite10-blackboard-mlebench/spooky-author-identification",
   "label": "spooky-author-identification",
   "metric": "multi-class-log-loss",
   "is_lower_better": true,

@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/billion-word-imputation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/billion-word-imputation",
   "label": "billion-word-imputation",
   "metric": "levenshtein-distance",
   "is_lower_better": true,

@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
   "label": "new-york-city-taxi-fare-prediction",
   "metric": "root-mean-squared-error",
   "is_lower_better": true,
@@ -32,7 +32,7 @@
     "mean_depth_all": 1.0545454545454545,
     "mean_depth_linked": 2.5217391304347827,
     "longest_path": [
-      "canopus_pi_corrupt_improved.md",
+      "canopus_pi_result_lgb19m.md",
       "aldebaran_omicron_corrupt_and_blend.md",
       "mimosa_omicron_corrupt_fallback_v2.md",
       "mimosa_omicron_xgb_full_result.md",

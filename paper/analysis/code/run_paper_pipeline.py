@@ -37,7 +37,7 @@ def main():
         else:
             path = raw
             n = Path(raw).name
-            name = "1-lie" if n.startswith("1-lie") else "2-lite10" if n.startswith("2-lite10") else n
+            name = n.split("-", 1)[0] if n.split("-", 1)[0] in {"1", "2", "3"} else n
         runs.append((name, Path(path)))
     out = args.out
     out.mkdir(parents=True, exist_ok=True)

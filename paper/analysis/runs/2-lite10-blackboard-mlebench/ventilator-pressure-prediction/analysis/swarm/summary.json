@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/ventilator-pressure-prediction",
   "label": "ventilator-pressure-prediction",
   "metric": "MAE",
   "is_lower_better": true,
@@ -32,9 +32,9 @@
     "mean_depth_all": 4.037735849056604,
     "mean_depth_linked": 5.487179487179487,
     "longest_path": [
-      "castor_eta_final_integrity_530d.md",
-      "canopus_iota_distributional_sanity.md",
-      "canopus_iota_final_twin_refresh.md",
+      "canopus_iota_confirmed_final.md",
+      "bellatrix_iota_final_verified.md",
+      "canopus_iota_final_submission.md",
       "bellatrix_iota_no_objection_final.md",
       "canopus_iota_3rdseed_016029.md",
       "castor_eta_final2_e3all.md",

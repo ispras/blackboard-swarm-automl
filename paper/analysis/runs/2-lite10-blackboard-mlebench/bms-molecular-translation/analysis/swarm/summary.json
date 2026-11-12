@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/bms-molecular-translation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/bms-molecular-translation",
   "label": "bms-molecular-translation",
   "metric": "levenshtein-distance",
   "is_lower_better": true,
@@ -57,7 +57,7 @@
       "regulus_omega_phase3_f8_routing.md",
       "altair_theta_phase3_adopted.md",
       "regulus_omega_final_verified.md",
-      "altair_theta_medoid_ms_candidate.md",
+      "regulus_iota_solution_code_and_phase3_ready.md",
       "altair_theta_ms_robust_rerun.md",
       "altair_theta_ms_hang_killed_phase3_go.md",
       "regulus_iota_confirm_phase3_medoid.md",

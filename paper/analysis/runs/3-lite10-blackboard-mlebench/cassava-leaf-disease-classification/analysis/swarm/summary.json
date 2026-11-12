@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/cassava-leaf-disease-classification",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/3-lite10-blackboard-mlebench/cassava-leaf-disease-classification",
   "label": "cassava-leaf-disease-classification",
   "metric": "accuracy",
   "is_lower_better": false,
@@ -42,7 +42,7 @@
     "mean_depth_all": 16.53448275862069,
     "mean_depth_linked": 17.436363636363637,
     "longest_path": [
-      "aldebaran_epsilon_system_final_confirm.md",
+      "bellatrix_delta_SYSTEM_final_confirm.md",
       "vega_eta_FINAL_CONFIRMED.md",
       "vega_eta_final_reverify_swinms.md",
       "bellatrix_delta_lastmile_negative.md",

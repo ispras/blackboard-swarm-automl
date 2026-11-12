@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/spooky-author-identification",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/spooky-author-identification",
   "label": "spooky-author-identification",
   "metric": "multi-class-log-loss",
   "is_lower_better": true,
@@ -43,8 +43,8 @@
       "rigel_xi_blend_v17_0185.md",
       "arcturus_alpha_xlnet_large_fgm.md",
       "rigel_xi_blend_v12_0202.md",
-      "deneb_upsilon_ernie_bertlarge.md",
-      "rigel_xi_blend_v11_0202.md",
+      "arcturus_alpha_xlnet_large_result.md",
+      "rigel_xi_approve_xlnet_large.md",
       "arcturus_alpha_xlnet_base_result.md",
       "deneb_upsilon_bertcased_full.md",
       "rigel_xi_gpu_lanes_and_meta.md",

@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/stanford-covid-vaccine",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/stanford-covid-vaccine",
   "label": "stanford-covid-vaccine",
   "metric": "MCRMSE",
   "is_lower_better": true,
@@ -42,7 +42,7 @@
       "castor_zeta_audit_final.md",
       "castor_zeta_qa_final.md",
       "castor_zeta_avg12_final.md",
-      "castor_zeta_final_mshb_avg10.md",
+      "mirfak_iota_final_candidate.md",
       "castor_zeta_mshb_avg6.md",
       "mirfak_iota_ensemble_v16.md",
       "castor_zeta_mshb_avg4.md",
@@ -52,7 +52,7 @@
       "mirfak_iota_ensemble_v12.md",
       "mirfak_iota_ensemble_v11.md",
       "mirfak_iota_ack_castor.md",
-      "castor_zeta_hb2_best_single.md",
+      "mirfak_iota_struct_breakthrough.md",
       "mirfak_iota_ensemble_v8.md",
       "mirfak_iota_ensemble_v7.md",
       "mirfak_iota_ensemble_v6.md",
@@ -67,7 +67,7 @@
       "mirfak_iota_role_baseline.md",
       "castor_zeta_baseline_and_split.md",
       "betelgeuse_mu_canonical_split.md",
-      "mirfak_iota_intro_plan.md"
+      "castor_zeta_intro_and_plan.md"
     ],
     "max_indegree": 9,
     "hubs": [

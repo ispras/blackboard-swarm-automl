@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/3-lite10-blackboard-mlebench/ventilator-pressure-prediction",
   "label": "ventilator-pressure-prediction",
   "metric": "MAE",
   "is_lower_better": true,
@@ -32,7 +32,7 @@
     "mean_depth_all": 6.794871794871795,
     "mean_depth_linked": 7.794117647058823,
     "longest_path": [
-      "canopus_omega_FINAL_confirmation.md",
+      "aldebaran_eta_FINAL_confirmation.md",
       "canopus_omega_repro_verified.md",
       "canopus_omega_robustness_final.md",
       "aldebaran_eta_postproc_negative.md",
@@ -48,10 +48,10 @@
       "canopus_omega_plan_blend_division.md",
       "bellatrix_omicron_leader_0162.md",
       "aldebaran_eta_fold0_0178.md",
-      "canopus_omega_fold0_result.md",
-      "canopus_omega_shared_split.md",
-      "bellatrix_omicron_intro.md",
-      "canopus_omega_hello.md"
+      "canopus_omega_valmode_bug.md",
+      "bellatrix_omicron_reg_experiment.md",
+      "canopus_omega_on_overfit.md",
+      "bellatrix_omicron_overfit_insight.md"
     ],
     "max_indegree": 4,
     "hubs": [

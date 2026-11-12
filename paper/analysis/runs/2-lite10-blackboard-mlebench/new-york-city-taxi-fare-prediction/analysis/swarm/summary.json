@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
   "label": "new-york-city-taxi-fare-prediction",
   "metric": "root-mean-squared-error",
   "is_lower_better": true,
@@ -32,7 +32,7 @@
     "mean_depth_all": 4.142857142857143,
     "mean_depth_linked": 6.170212765957447,
     "longest_path": [
-      "dubhe_tau_gpu_shared_d15.md",
+      "deneb_phi_seedbag_marginal_frozen.md",
       "deneb_phi_seedbag_gpu_taken.md",
       "deneb_phi_lgb_v3te_excluded_seedbag.md",
       "procyon_alpha_extra_methods_negative.md",
@@ -46,7 +46,7 @@
       "deneb_phi_feature_store_ready.md",
       "dubhe_tau_ack_gpu_lane.md",
       "procyon_alpha_dedupe_plan.md",
-      "dubhe_tau_intro_and_plan.md",
+      "deneb_phi_intro.md",
       "procyon_alpha_intro.md"
     ],
     "max_indegree": 5,

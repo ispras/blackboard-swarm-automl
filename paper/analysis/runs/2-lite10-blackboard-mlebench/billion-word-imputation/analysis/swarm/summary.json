@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/billion-word-imputation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/billion-word-imputation",
   "label": "billion-word-imputation",
   "metric": "levenshtein-distance",
   "is_lower_better": true,
@@ -37,7 +37,7 @@
       "mirfak_chi_final_phase_confirmation.md",
       "mirfak_chi_assembly_consistency.md",
       "mirfak_chi_signed_off.md",
-      "fomalhaut_zeta_recipe_resweep_no_gain.md",
+      "mirfak_chi_final_v3_qa.md",
       "fomalhaut_zeta_final_validation_signoff.md",
       "betelgeuse_tau_v3_final_2p88.md",
       "mirfak_chi_v7_final_confirmed.md",

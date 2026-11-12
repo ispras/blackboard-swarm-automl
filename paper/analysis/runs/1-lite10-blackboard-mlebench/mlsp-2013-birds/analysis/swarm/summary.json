@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/1-lie10-blackboard-mlebench/mlsp-2013-birds",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/mlsp-2013-birds",
   "label": "mlsp-2013-birds",
   "metric": "auc-roc",
   "is_lower_better": false,

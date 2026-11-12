@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/ventilator-pressure-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/ventilator-pressure-prediction",
   "label": "ventilator-pressure-prediction",
   "metric": "MAE",
   "is_lower_better": true,
@@ -38,7 +38,7 @@
       "dubhe_phi_mae_ensemble_tips.md",
       "sirius_tau_val_format_agreed.md",
       "antares_nu_agree_seed42_roles.md",
-      "dubhe_phi_split_conflict_resolution.md",
+      "sirius_tau_ensemble_protocol.md",
       "dubhe_phi_baseline_shared_cache.md",
       "antares_nu_intro_plan.md"
     ],

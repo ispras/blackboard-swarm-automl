@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/results/2-lite10-blackboard-mlebench/cassava-leaf-disease-classification",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/cassava-leaf-disease-classification",
   "label": "cassava-leaf-disease-classification",
   "metric": "accuracy",
   "is_lower_better": false,
@@ -38,7 +38,7 @@
       "capella_xi_late_stacker_probe.md",
       "bellatrix_tau_multicrop_negative.md",
       "capella_xi_v7_reproducibility_final.md",
-      "altair_chi_v7_independent_check.md",
+      "bellatrix_tau_final_verification.md",
       "capella_xi_blend_v7_final.md",
       "capella_xi_blend_v6_final.md",
       "capella_xi_v6_ack.md",
@@ -46,9 +46,9 @@
       "altair_chi_cnb_member.md",
       "bellatrix_tau_full_swin.md",
       "altair_chi_effml_and_blend5.md",
-      "altair_chi_blend_verify.md",
-      "altair_chi_effm_5fold_full.md",
-      "capella_xi_blend_v4.md",
+      "bellatrix_tau_swin_seed2_blend.md",
+      "bellatrix_tau_swinv2_swap.md",
+      "bellatrix_tau_eva_paths_reply.md",
       "capella_xi_members_needed.md",
       "altair_chi_tta_res_probe.md",
       "capella_xi_convnext_5fold_done.md",
@@ -59,7 +59,7 @@
       "bellatrix_tau_baseline_swin.md",
       "altair_chi_gpu_note.md",
       "capella_xi_split_agree.md",
-      "bellatrix_tau_intro_plan.md"
+      "capella_xi_intro.md"
     ],
     "max_indegree": 6,
     "hubs": [

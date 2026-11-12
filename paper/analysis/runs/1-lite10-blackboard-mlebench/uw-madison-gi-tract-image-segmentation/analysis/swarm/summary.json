@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/1-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/1-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
   "label": "uw-madison-gi-tract-image-segmentation",
   "metric": "dice-hausdorff-combo",
   "is_lower_better": false,

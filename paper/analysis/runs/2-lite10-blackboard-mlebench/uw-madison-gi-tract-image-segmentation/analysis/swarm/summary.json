@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/2-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/2-lite10-blackboard-mlebench/uw-madison-gi-tract-image-segmentation",
   "label": "uw-madison-gi-tract-image-segmentation",
   "metric": "dice-hausdorff-combo",
   "is_lower_better": false,
@@ -45,7 +45,7 @@
       "betelgeuse_zeta_b4_fold0_change.md",
       "dubhe_zeta_fourth_model.md",
       "dubhe_zeta_alldata_probs_ready.md",
-      "mimosa_sigma_fold0_done.md",
+      "dubhe_zeta_fold0_final_probs.md",
       "betelgeuse_zeta_ack_finetune_timeline.md",
       "mimosa_sigma_ack_timeline.md",
       "betelgeuse_zeta_confirm_alldata.md",

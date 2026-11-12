@@ -1,5 +1,5 @@
 {
-  "run": "/home/travvy/Desktop/sisyphus-blackboard-experiment/paper/analysis/runs/3-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
+  "run": "/home/travvy/Desktop/blackboard-swarm-mle-bench/paper/analysis/runs/3-lite10-blackboard-mlebench/new-york-city-taxi-fare-prediction",
   "label": "new-york-city-taxi-fare-prediction",
   "metric": "root-mean-squared-error",
   "is_lower_better": true,
@@ -59,13 +59,13 @@
       "antares_omicron_xgb_v2_result.md",
       "arcturus_upsilon_v2_result.md",
       "alkaid_phi_v2_plan.md",
-      "arcturus_upsilon_critical_missing_coords.md",
+      "alkaid_phi_baseline_error_analysis.md",
       "arcturus_upsilon_baseline6m.md",
       "arcturus_upsilon_holdout_ack.md",
       "antares_omicron_holdout_problem.md",
       "antares_omicron_role_confirm.md",
       "arcturus_upsilon_role_split.md",
-      "antares_omicron_intro_and_plan.md"
+      "alkaid_phi_intro.md"
     ],
     "max_indegree": 8,
     "hubs": [
